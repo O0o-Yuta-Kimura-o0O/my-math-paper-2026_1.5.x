@@ -1,0 +1,19 @@
+{
+  "paperVersion": "1.5.4",
+  "interpreterVersion": "8.0.1",
+  "paper": "manuscripts/A_New_Foundation_of_Mathematics_ja_v1.5.4.md",
+  "interpreter": "interpreter/lambda_interpreter_v8.0.1.html",
+  "audit": "research/source-audit-v1.5.4.md",
+  "applications": "research/applications-v1.5.4.md",
+  "concepts": "research/concept-symbols-v1.5.4.md",
+  "conceptExamples": "research/concept-examples-v1.5.4.md",
+  "conceptInventory": "research/concept-inventory-v1.5.4.md",
+  "releaseDate": "2026-09-13",
+  "outputDirectory": "output",
+  "conceptDataDirectory": "verification/concept-symbols-v1.5.4",
+  "fOnlyAppendix": "appendices/A_New_Foundation_of_Mathematics_ja_v1.5.4_f_only.md",
+  "fOnlyCoverage": "research/f-only-coverage-v1.5.4.md",
+  "fOnlyDataDirectory": "verification/f-only-v1.5.4",
+  "traceExtensions": "research/trace-extensions-v1.5.4.md",
+  "lambdaArithmetic": "research/lambda-arithmetic-v1.5.4.md"
+}
