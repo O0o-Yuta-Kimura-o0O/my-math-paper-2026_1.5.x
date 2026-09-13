@@ -1,0 +1,63 @@
+{
+  "format": "research-source-manifest/1",
+  "recordedDate": "2026-09-13",
+  "note": "Hashes of the original source files retained unchanged in the workspace. The ten earlier source hashes were rechecked before adding Generative_Reals_ja_v1.4.1.md. This manifest accompanies paper v1.5.4; source files are not included in the latest-release output folder.",
+  "files": [
+    {
+      "path": "origin/1-new-number-composition-Japanese.txt",
+      "bytes": 17433,
+      "sha256": "d3c04f1ebd4428f143e77e84e33777b3818058ce474c3b42bb20a0877cbddca2"
+    },
+    {
+      "path": "origin/A_New_Foundation_of_Mathematics_ja_01_v2.md",
+      "bytes": 15753,
+      "sha256": "40fbeb9bff98067fa191e68f129b7332bb82a6b878dcebffe7faf426033ca296"
+    },
+    {
+      "path": "origin/A_New_Foundation_of_Mathematics_ja_02_v2.md",
+      "bytes": 11791,
+      "sha256": "79edd8e707768a4ef86b9d2d84b8e366a4ff226ee0b0899c30584cb8013ee0f6"
+    },
+    {
+      "path": "origin/A_New_Foundation_of_Mathematics_ja_03_v2.md",
+      "bytes": 19249,
+      "sha256": "7f3544ba3e9785a3931b17bc3312c9eb6023f26418468e3cfca0bf5eaa10641d"
+    },
+    {
+      "path": "origin/A_New_Foundation_of_Mathematics_ja_04_v2.md",
+      "bytes": 11323,
+      "sha256": "75188bbb27b7e0be3c58fd5225eec4d0e19ca8fa9036e32a79a16ab4e426ee41"
+    },
+    {
+      "path": "origin/A_New_Foundation_of_Mathematics_ja_05_v2.md",
+      "bytes": 9479,
+      "sha256": "009e4ba436a874dae435a28394460fff4958f5a10934927d20b4c918994d24c1"
+    },
+    {
+      "path": "origin/A_New_Foundation_of_Mathematics_ja_06_v2.md",
+      "bytes": 10824,
+      "sha256": "e7313dfdf52d1f7fdc5305f41f72dcd816a200ce507d359409d002dcb620a19d"
+    },
+    {
+      "path": "origin/A_New_Foundation_of_Mathematics_ja_07_v2.md",
+      "bytes": 10309,
+      "sha256": "67454bc5bb9221bc8187061f25ac306123ef4a310d039462ab437c10e09a3696"
+    },
+    {
+      "path": "origin/Generative_Reals_ja_v1.4.1.md",
+      "bytes": 208557,
+      "sha256": "e13448c27e260edd08619fa52b3201193b5b6763e3d7598c99781a6804619c08"
+    },
+    {
+      "path": "origin/lambda_interpreter_v6_M-CR.html",
+      "bytes": 21914,
+      "sha256": "56aa3a051fe0d57eca6dbc24b237b441c2553ccee35f91b8b995c8811aa117f8"
+    },
+    {
+      "path": "origin/memo_01.txt",
+      "bytes": 3856,
+      "sha256": "3893fddd83abd2aa8cd7c493d5f9c1363c3f7bb606cd727f0813a981d71bf396"
+    }
+  ],
+  "paperVersion": "1.5.4"
+}
