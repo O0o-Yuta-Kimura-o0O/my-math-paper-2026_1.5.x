@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="ja">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>λ計算インタプリタ v8.0.1</title>
+<style>
+:root{color-scheme:light dark;--bg:#f5f7fa;--panel:#fff;--ink:#172538;--muted:#54657a;--line:#cbd5e1;--accent:#155e75}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.7 system-ui,sans-serif}main{max-width:1120px;margin:auto;padding:24px}h1{font-size:25px;margin:0}h2{font-size:18px}p{margin:8px 0}.muted{color:var(--muted)}.panel{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px;margin:18px 0}.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}button,input,select,textarea{font:inherit}button{border:1px solid var(--line);border-radius:7px;padding:7px 13px;background:var(--panel);color:var(--ink);cursor:pointer}button.primary{background:var(--accent);color:white}button:disabled{opacity:.5;cursor:default}textarea{width:100%;min-height:120px;resize:vertical;border:1px solid var(--line);border-radius:7px;padding:12px;background:var(--bg);color:var(--ink);font-family:ui-monospace,monospace}input[type=number]{width:100px;padding:5px}pre{white-space:pre-wrap;overflow-wrap:anywhere;max-height:420px;overflow:auto;font:13px/1.6 ui-monospace,monospace;background:var(--bg);padding:12px;border-radius:6px}summary{cursor:pointer}label{display:block}.status{font-weight:650}.ok{color:#047857}.bad{color:#b91c1c}.run{border-top:1px solid var(--line);padding-top:16px;margin-top:16px}.run h3{font-size:16px;margin:0}.small{font-size:13px}a{color:var(--accent)}@media(prefers-color-scheme:dark){:root{--bg:#101923;--panel:#172432;--ink:#e4edf7;--muted:#a1b1c5;--line:#3a4c61;--accent:#16768d}.ok{color:#68ddb2}.bad{color:#ffaaaa}}@media(max-width:600px){main{padding:12px}.panel{padding:12px}}
+</style>
+<main>
+<h1>λ計算インタプリタ <span class="muted">v8.0.1</span></h1>
+<p>名前付きの式を読み、捕獲を避けて定義展開と β 簡約を記録します。ネット接続は不要です。</p>
+<p class="muted small">履歴が証明するのは、記録した規則による有限の変換です。任意の数についての帰納的な定理や、収束性を自動で証明する機能は含みません。</p>
+<section class="panel">
+<label for="source"><strong>式</strong>（複数の式は ; で区切ります）</label>
+<textarea id="source" spellcheck="false">Add Two Three</textarea>
+<div class="row" style="margin:10px 0"><label for="example">例</label><select id="example"><option value="Add Two Three">2 + 3</option><option value="Mul Two Three">2 × 3</option><option value="EqNat (Add Two Three) (Succ Four)">2 + 3 = 5 の具体的な計算</option><option value="(λy_1.λy.y) y">束縛を保つ置換</option><option value="Fst (Pair Two Three)">対の第1成分</option><option value="(λx.x x) (λx.x x)">停止しない例（上限で打切り）</option><option value="ZAdd ZTwo ZMinusOne">整数 2 + (−1)</option><option value="QRepAdd QHalf QHalf">有理表示 1/2 + 1/2（約分前の4/4）</option><option value="QRepInv QZero">零の逆数：明示的な失敗値</option></select><button id="useExample">例を入力</button></div>
+<details><summary>追加の定義と構文</summary><p class="small muted">定義は <code>A = λx.x;</code> の形式です。定義を使う式の束縛変数は定義内部の自由変数を捕獲しません。名前付きの循環定義は拒否します。再帰を表す場合は固定点コンビネータ等の λ 項を明示してください。</p><label for="definitions">追加の定義</label><textarea id="definitions" spellcheck="false" placeholder="Identity = λx.x;"></textarea><p class="small">変数名は英数字と _（数字で始まる場合は数字のみ）。λ または \、単一の束縛変数、ピリオド、括弧、関数適用を使います。例：<code>λf.λx.f x</code>。適用は左結合です。<code>//</code> 以降は行コメントです。# / ♭ の表層記法は未実装です。</p><details><summary>内蔵の定義（自然数・整数・有理表示・真偽値・対）</summary><pre id="builtinList"></pre></details></details>
+<p class="small">整数は符号0/1と自然数の対です。有理表示 QRep は正の非零分母を持つ整数対で、約分前の表示も許します。QMake・QRepInv・QRepDiv は ResultOk または ResultErr を返します。各演算の入力は指定した型を前提とします。</p>
+<div class="row" style="margin-top:12px"><label for="maxSteps">変換の上限</label><input id="maxSteps" type="number" min="1" max="100000" value="5000"><button id="evaluate" class="primary">評価して記録</button><button id="stop" disabled>停止</button><span id="liveStatus" role="status" aria-live="polite"></span></div>
+<p class="small muted">定義展開 δ と β 簡約を合わせて左端最外の位置から行い、λ の内部も処理します。上限は定義展開 δ と β の合計です。上限到達や手動停止は、発散の証明を意味しません。</p>
+</section>
+<section class="panel"><div class="row"><h2 style="margin:0">計算履歴と再検証</h2><button id="export">全履歴を JSON 保存</button><button id="import">JSON を読み込み検証</button><input id="file" type="file" accept=".json,application/json" hidden><button id="clear">表示を消去</button></div><p class="small muted">入力と定義を固定した証跡を保存します。再検証器は評価器の β 簡約関数を呼ばず、各変換を別の置換手順で検査します。α 同値は内部の束縛位置で判定します。</p><p id="message" role="status"></p><div id="history"><p id="empty" class="muted">まだ履歴はありません。</p></div></section>
+</main>
+<script id="lambda-core">
+'use strict';
+(() => {
+const VERSION = '8.0.1', SCHEMA = 'lambda-trace/1';
+const LIMITS = Object.freeze({sourceLength:100000, nodes:50000, depth:512, steps:100000});
+const V = n => ({t:'v',n}), B = i => ({t:'b',i}), L = b => ({t:'l',b}), A = (f,a) => ({t:'a',f,a});
+const identifier = /^(?:[A-Za-z_][A-Za-z0-9_]*|[0-9]+)$/;
+function assert(c,m) { if (!c) throw new Error(m); }
+function lex(source) {
+  assert(typeof source === 'string' && source.length <= LIMITS.sourceLength,'入力が文字列でないか、長さの上限を超えています。');
+  const tokens=[]; let i=0;
+  while(i<source.length){
+    if(/\s/.test(source[i])){i++;continue;}
+    if(source.slice(i,i+2)==='//'){while(i<source.length&&source[i]!=='\n')i++;continue;}
+    const c=source[i];
+    if('().λ\\'.includes(c)){tokens.push({s:c==='\\'?'λ':c,p:i});i++;continue;}
+    const m=source.slice(i).match(/^(?:[A-Za-z_][A-Za-z0-9_]*|[0-9]+)/);
+    assert(m,`位置 ${i+1}: 使用できない文字 ${JSON.stringify(c)}。`);
+    assert(!/^[0-9]+$/.test(m[0])||!/[A-Za-z_]/.test(source[i+m[0].length]||''),`位置 ${i+1}: 数字で始まる名前は数字だけにしてください。`);
+    tokens.push({s:m[0],p:i});i+=m[0].length;
+  }
+  return tokens;
+}
+function parse(source){
+  const ts=lex(source);let p=0,nodes=0;
+  function expr(scope,depth){
+    assert(depth<LIMITS.depth,'構文の入れ子が上限を超えています。');
+    if(ts[p]?.s==='λ'){
+      p++;const name=ts[p++]?.s;assert(name&&identifier.test(name),'λ の後に変数名が必要です。');
+      assert(ts[p++]?.s==='.',"束縛変数の後に . が必要です。");
+      assert(++nodes<=LIMITS.nodes,'項の大きさが上限を超えています。');
+      return L(expr([name,...scope],depth+1));
+    }
+    let out=atom(scope,depth);
+    while(ts[p]&&(ts[p].s==='('||identifier.test(ts[p].s))){
+      assert(++nodes<=LIMITS.nodes,'項の大きさが上限を超えています。');
+      out=A(out,atom(scope,depth));
+    }
+    return out;
+  }
+  function atom(scope,depth){
+    const tok=ts[p++];assert(tok,'式が途中で終わっています。');
+    if(tok.s==='('){const out=expr(scope,depth+1);assert(ts[p++]?.s===')',') が必要です。');return out;}
+    assert(identifier.test(tok.s),`位置 ${tok.p+1}: 変数または ( が必要です。`);
+    assert(++nodes<=LIMITS.nodes,'項の大きさが上限を超えています。');
+    const index=scope.indexOf(tok.s);return index<0?V(tok.s):B(index);
+  }
+  const result=expr([],0);assert(p===ts.length,`末尾に解釈されない構文があります: ${ts[p]?.s||''}`);validateTerm(result);return result;
+}
+function validateTerm(term){
+  let count=0;
+  function go(t,scope,depth){
+    assert(t&&typeof t==='object'&&++count<=LIMITS.nodes&&depth<LIMITS.depth,'項の構造・大きさ・深さが不正です。');
+    if(t.t==='v'){assert(identifier.test(t.n),'自由変数名が不正です。');return;}
+    if(t.t==='b'){assert(Number.isInteger(t.i)&&t.i>=0&&t.i<scope,'束縛位置が不正です。');return;}
+    if(t.t==='l'){go(t.b,scope+1,depth+1);return;}
+    assert(t.t==='a','未知の項です。');go(t.f,scope,depth+1);go(t.a,scope,depth+1);
+  }
+  go(term,0,0);return term;
+}
+function freeVariables(term){
+  const names=new Set();function go(t){if(t.t==='v')names.add(t.n);else if(t.t==='l')go(t.b);else if(t.t==='a'){go(t.f);go(t.a);}}go(term);return [...names].sort();
+}
+function print(term){
+  const forbidden=new Set(freeVariables(term));
+  function go(t,scope){
+    if(t.t==='v')return t.n;if(t.t==='b'){assert(scope[t.i]!==undefined,'束縛位置が不正です。');return scope[t.i];}
+    if(t.t==='a')return '('+go(t.f,scope)+' '+go(t.a,scope)+')';
+    let n='x'+scope.length;while(forbidden.has(n)||scope.includes(n))n+='_';return '(λ'+n+'.'+go(t.b,[n,...scope])+')';
+  }const out=go(term,[]);assert(out.length<=LIMITS.sourceLength,'表示される項の長さが上限を超えています。');return out;
+}
+function alphaEqual(a,b){
+  if(typeof a==='string')a=parse(a);if(typeof b==='string')b=parse(b);
+  if(!a||!b||a.t!==b.t)return false;
+  if(a.t==='v')return a.n===b.n;if(a.t==='b')return a.i===b.i;
+  if(a.t==='l')return alphaEqual(a.b,b.b);return alphaEqual(a.f,b.f)&&alphaEqual(a.a,b.a);
+}
+function shift(t,amount,cutoff=0){
+  if(t.t==='b')return B(t.i>=cutoff?t.i+amount:t.i);
+  if(t.t==='l')return L(shift(t.b,amount,cutoff+1));
+  if(t.t==='a')return A(shift(t.f,amount,cutoff),shift(t.a,amount,cutoff));return t;
+}
+function substituteIndex(t,index,value,depth=0){
+  if(t.t==='b')return t.i===index+depth?shift(value,depth):t;
+  if(t.t==='l')return L(substituteIndex(t.b,index,value,depth+1));
+  if(t.t==='a')return A(substituteIndex(t.f,index,value,depth),substituteIndex(t.a,index,value,depth));return t;
+}
+function contract(redex){return shift(substituteIndex(redex.f.b,0,shift(redex.a,1)),-1);}
+function at(term,path){let t=term;for(const k of path){assert((k==='body'&&t.t==='l')||((k==='fn'||k==='arg')&&t.t==='a'),'変換位置が不正です。');t=k==='body'?t.b:k==='fn'?t.f:t.a;}return t;}
+function replaceAt(t,path,replacement){
+  if(path.length===0)return replacement;
+  const [k,...rest]=path;
+  if(k==='body'&&t.t==='l')return L(replaceAt(t.b,rest,replacement));
+  if(k==='fn'&&t.t==='a')return A(replaceAt(t.f,rest,replacement),t.a);
+  if(k==='arg'&&t.t==='a')return A(t.f,replaceAt(t.a,rest,replacement));throw new Error('変換位置が不正です。');
+}
+function firstBeta(t,path=[]){
+  if(t.t==='a'){if(t.f.t==='l')return path;return firstBeta(t.f,[...path,'fn'])??firstBeta(t.a,[...path,'arg']);}
+  if(t.t==='l')return firstBeta(t.b,[...path,'body']);return null;
+}
+function firstDefinition(t,env,path=[]){
+  if(t.t==='v')return env.has(t.n)?path:null;
+  if(t.t==='l')return firstDefinition(t.b,env,[...path,'body']);
+  if(t.t==='a')return firstDefinition(t.f,env,[...path,'fn'])??firstDefinition(t.a,env,[...path,'arg']);return null;
+}
+function firstReduction(t,env,path=[]){
+  if(t.t==='v'&&env.has(t.n))return {rule:'delta',path};
+  if(t.t==='a'){
+    if(t.f.t==='l')return {rule:'beta',path};
+    return firstReduction(t.f,env,[...path,'fn'])??firstReduction(t.a,env,[...path,'arg']);
+  }
+  if(t.t==='l')return firstReduction(t.b,env,[...path,'body']);
+  return null;
+}
+const BUILTINS=Object.freeze([
+['True','λt.λf.t'],['False','λt.λf.f'],['If','λb.λt.λe.b t e'],['And','λp.λq.p q p'],['Or','λp.λq.p p q'],['Not','λb.b False True'],
+['Pair','λa.λb.λf.f a b'],['Fst','λp.p (λa.λb.a)'],['Snd','λp.p (λa.λb.b)'],
+['Zero','λf.λx.x'],['Succ','λn.λf.λx.f (n f x)'],['One','Succ Zero'],['Two','Succ One'],['Three','Succ Two'],['Four','Succ Three'],
+['Add','λm.λn.λf.λx.m f (n f x)'],['Mul','λm.λn.λf.λx.m (n f) x'],['Pred','λn.λf.λx.n (λg.λh.h (g f)) (λu.x) (λu.u)'],
+['Sub','λm.λn.n Pred m'],['IsZero','λn.n (λx.False) True'],['Leq','λm.λn.IsZero (Sub m n)'],['EqNat','λm.λn.And (Leq m n) (Leq n m)'],
+['N0','Zero'],['N1','One'],['N2','Two'],['N3','Three'],['N4','Four'],['0','Zero'],['1','One'],['2','Two'],['3','Three'],['4','Four']
+,
+["ResultOk", "λv.λok.λerr.ok v"],
+["ResultErr", "λe.λok.λerr.err e"],
+["ResultBind", "λr.λk.r k ResultErr"],
+["ZMake", "λs.λn.Pair (If (IsZero n) Zero s) n"],
+["ZSign", "Fst"],
+["ZMagnitude", "Snd"],
+["ZZero", "ZMake Zero Zero"],
+["ZOne", "ZMake Zero One"],
+["ZTwo", "ZMake Zero Two"],
+["ZMinusOne", "ZMake One One"],
+["ZNeg", "λz.ZMake (If (IsZero (Fst z)) One Zero) (Snd z)"],
+["ZAdd", "λa.λb.If (EqNat (Fst a) (Fst b)) (ZMake (Fst a) (Add (Snd a) (Snd b))) (If (Leq (Snd a) (Snd b)) (ZMake (Fst b) (Sub (Snd b) (Snd a))) (ZMake (Fst a) (Sub (Snd a) (Snd b))))"],
+["ZSub", "λa.λb.ZAdd a (ZNeg b)"],
+["ZMul", "λa.λb.ZMake (If (EqNat (Fst a) (Fst b)) Zero One) (Mul (Snd a) (Snd b))"],
+["ZEq", "λa.λb.And (EqNat (Fst a) (Fst b)) (EqNat (Snd a) (Snd b))"],
+["ZLeq", "λa.λb.If (EqNat (Fst a) (Fst b)) (If (IsZero (Fst a)) (Leq (Snd a) (Snd b)) (Leq (Snd b) (Snd a))) (IsZero (Fst b))"],
+["ZFromDiff", "λp.λn.If (Leq p n) (ZMake One (Sub n p)) (ZMake Zero (Sub p n))"],
+["ZToDiff", "λz.If (IsZero (Fst z)) (Pair (Snd z) Zero) (Pair Zero (Snd z))"],
+["QRep", "Pair"],
+["QRepNum", "Fst"],
+["QRepDen", "Snd"],
+["QRepValid", "λr.And (IsZero (Fst (Snd r))) (Not (IsZero (Snd (Snd r))))"],
+["QMake", "λn.λd.If (IsZero (Snd d)) (ResultErr Zero) (ResultOk (Pair (If (IsZero (Fst d)) n (ZNeg n)) (ZMake Zero (Snd d))))"],
+["QZero", "QRep ZZero ZOne"],
+["QOne", "QRep ZOne ZOne"],
+["QHalf", "QRep ZOne ZTwo"],
+["QRepNeg", "λr.QRep (ZNeg (Fst r)) (Snd r)"],
+["QRepAdd", "λa.λb.QRep (ZAdd (ZMul (Fst a) (Snd b)) (ZMul (Fst b) (Snd a))) (ZMul (Snd a) (Snd b))"],
+["QRepSub", "λa.λb.QRepAdd a (QRepNeg b)"],
+["QRepMul", "λa.λb.QRep (ZMul (Fst a) (Fst b)) (ZMul (Snd a) (Snd b))"],
+["QRepEq", "λa.λb.ZEq (ZMul (Fst a) (Snd b)) (ZMul (Fst b) (Snd a))"],
+["QRepLeq", "λa.λb.ZLeq (ZMul (Fst a) (Snd b)) (ZMul (Fst b) (Snd a))"],
+["QRepInv", "λr.QMake (Snd r) (Fst r)"],
+["QRepDiv", "λa.λb.QMake (ZMul (Fst a) (Snd b)) (ZMul (Snd a) (Fst b))"]
+].map(([name,source])=>Object.freeze({name,source})));
+function createEnvironment(extra=[]){
+  assert(Array.isArray(extra),'定義は配列で指定してください。');
+  const env=new Map(BUILTINS.map(d=>[d.name,{...d}]));
+  for(const d of extra){assert(d&&identifier.test(d.name)&&typeof d.source==='string','定義が不正です。');parse(d.source);env.set(d.name,{name:d.name,source:d.source});}
+  return [...env.values()];
+}
+function compileDefinitions(definitions){
+  assert(Array.isArray(definitions)&&definitions.length<=1000,'定義の一覧が不正です。');
+  const env=new Map();for(const d of definitions){assert(d&&typeof d.name==='string'&&identifier.test(d.name)&&!env.has(d.name),'定義名が不正または重複しています。');env.set(d.name,parse(d.source));}return env;
+}
+function checkCycles(term,env){
+  const done=new Set(),active=new Set();
+  function visit(name){if(!env.has(name)||done.has(name))return;assert(!active.has(name),'循環定義を展開できません: '+name);active.add(name);for(const n of freeVariables(env.get(name)))visit(n);active.delete(name);done.add(name);}
+  for(const name of freeVariables(term))visit(name);
+}
+function splitExpressions(text){return text.split('\n').map(s=>s.replace(/\/\/.*$/,'')).join('\n').split(';').map(s=>s.trim()).filter(Boolean);}
+function parseDefinitions(text){return splitExpressions(text).map(s=>{const m=s.match(/^([A-Za-z_][A-Za-z0-9_]*|[0-9]+)\s*=\s*([\s\S]+)$/);assert(m,'定義は Name = 式; の形式で入力してください。');parse(m[2]);return {name:m[1],source:m[2]};});}
+async function evaluate(source,{definitions=createEnvironment(),maxSteps=5000,onStep,signal}={}){
+  let trace=null;
+  try{
+    assert(Number.isInteger(maxSteps)&&maxSteps>=0&&maxSteps<=LIMITS.steps,'変換上限が不正です。');
+    const snapshot=definitions.map(d=>({name:d.name,source:d.source})),env=compileDefinitions(snapshot);let cur=parse(source);checkCycles(cur,env);
+    trace={schema:SCHEMA,version:VERSION,strategy:'leftmost-outermost-interleaved',source,definitions:snapshot,maxSteps,initial:print(cur),expandedStart:null,steps:[],final:null,status:'running'};
+    while(true){
+      if(trace.expandedStart===null&&firstDefinition(cur,env)===null)trace.expandedStart=print(cur);
+      const next=firstReduction(cur,env),path=next?.path??null,rule=next?.rule;
+      if(signal?.aborted){trace.status='stopped';break;}
+      if(path===null){trace.status='normal-form';break;}
+      if(trace.steps.length>=maxSteps){trace.status='step-limit';break;}
+      const target=at(cur,path),record={index:trace.steps.length+1,rule,path,before:print(cur)};
+      if(rule==='delta'){record.definition=target.n;cur=replaceAt(cur,path,env.get(target.n));}
+      else cur=replaceAt(cur,path,contract(target));
+      validateTerm(cur);record.after=print(cur);trace.steps.push(record);
+      if(onStep)await onStep({...record,path:[...record.path]});
+      if(trace.steps.length%16===0)await new Promise(resolve=>setTimeout(resolve,0));
+    }
+    trace.final=print(cur);return {status:trace.status,term:cur,trace};
+  }catch(error){
+    if(trace){trace.status='error';trace.error=String(error.message||error);trace.final=trace.steps.at(-1)?.after||trace.initial;
+      if(trace.expandedStart===null&&firstDefinition(parse(trace.final),compileDefinitions(trace.definitions))===null)trace.expandedStart=trace.final;
+    }
+    return {status:'error',source,error:String(error.message||error),trace};
+  }
+}
+// Replay uses direct removal of a binder, independently of contract/shift/substituteIndex.
+// Parser, immutable term constructors and path access are the shared trusted syntax layer.
+function replayBeta(redex){
+  assert(redex.t==='a'&&redex.f.t==='l','β 規則の位置に簡約可能な項がありません。');
+  function lift(t,depth,inside){
+    if(t.t==='b')return B(t.i<inside?t.i:t.i+depth);
+    if(t.t==='l')return L(lift(t.b,depth,inside+1));
+    if(t.t==='a')return A(lift(t.f,depth,inside),lift(t.a,depth,inside));return t;
+  }
+  function remove(t,depth){
+    if(t.t==='b'){if(t.i<depth)return t;if(t.i===depth)return lift(redex.a,depth,0);return B(t.i-1);}
+    if(t.t==='l')return L(remove(t.b,depth+1));
+    if(t.t==='a')return A(remove(t.f,depth),remove(t.a,depth));return t;
+  }return remove(redex.f.b,0);
+}
+function replayNext(term,env,interleaved=false){
+  if(interleaved){
+    const todo=[{term,path:[]}];
+    while(todo.length){
+      const item=todo.pop(),t=item.term,p=item.path;
+      if(t.t==='v'&&env.has(t.n))return {rule:'delta',path:p};
+      if(t.t==='a'&&t.f.t==='l')return {rule:'beta',path:p};
+      if(t.t==='a'){todo.push({term:t.a,path:p.concat('arg')});todo.push({term:t.f,path:p.concat('fn')});}
+      else if(t.t==='l')todo.push({term:t.b,path:p.concat('body')});
+    }
+    return null;
+  }
+  function scan(t,kind,path){
+    if(kind==='delta'&&t.t==='v'&&env.has(t.n))return path;
+    if(kind==='beta'&&t.t==='a'&&t.f.t==='l')return path;
+    if(t.t==='l')return scan(t.b,kind,path.concat('body'));
+    if(t.t==='a')return scan(t.f,kind,path.concat('fn'))??scan(t.a,kind,path.concat('arg'));return null;
+  }
+  const delta=scan(term,'delta',[]);if(delta!==null)return {rule:'delta',path:delta};
+  const beta=scan(term,'beta',[]);return beta===null?null:{rule:'beta',path:beta};
+}
+function verifyTrace(trace){
+  try{
+    assert(trace&&trace.schema===SCHEMA&&((trace.version==='8.0.0'&&trace.strategy==='leftmost-outermost')||(trace.version===VERSION&&trace.strategy==='leftmost-outermost-interleaved')),'証跡の形式または版が対応していません。');
+    const interleaved=trace.version===VERSION;
+    assert(Number.isInteger(trace.maxSteps)&&trace.maxSteps>=0&&trace.maxSteps<=LIMITS.steps,'証跡の上限が不正です。');
+    assert(Array.isArray(trace.steps)&&trace.steps.length<=trace.maxSteps,'段数が不正です。');
+    assert(['normal-form','step-limit','stopped','error'].includes(trace.status),'終了状態が不正です。');
+    const env=compileDefinitions(trace.definitions);let cur=parse(trace.source);checkCycles(cur,env);
+    assert(typeof trace.initial==='string'&&alphaEqual(cur,parse(trace.initial)),'開始項が入力と一致しません。');
+    let expandedStart=null,betaSteps=0,deltaSteps=0;
+    for(let i=0;i<trace.steps.length;i++){
+      const s=trace.steps[i],next=replayNext(cur,env,interleaved);
+      if(firstDefinition(cur,env)===null&&expandedStart===null)expandedStart=print(cur);
+      assert(s&&s.index===i+1&&next&&s.rule===next.rule&&Array.isArray(s.path)&&JSON.stringify(s.path)===JSON.stringify(next.path),`第 ${i+1} 段: 規則・位置・順序が不正です。`);
+      assert(typeof s.before==='string'&&alphaEqual(cur,parse(s.before)),`第 ${i+1} 段: 前項が一致しません。`);
+      const target=at(cur,s.path);let replacement;
+      if(s.rule==='delta'){assert(target.t==='v'&&s.definition===target.n&&env.has(s.definition),'定義展開の根拠が不正です。');replacement=env.get(s.definition);deltaSteps++;}
+      else {replacement=replayBeta(target);betaSteps++;}
+      cur=replaceAt(cur,s.path,replacement);validateTerm(cur);
+      assert(typeof s.after==='string'&&alphaEqual(cur,parse(s.after)),`第 ${i+1} 段: 規則の結果と到達項が一致しません。`);
+    }
+    const pending=replayNext(cur,env,interleaved);if(firstDefinition(cur,env)===null&&expandedStart===null)expandedStart=print(cur);
+    assert(trace.expandedStart===null?expandedStart===null:typeof trace.expandedStart==='string'&&expandedStart!==null&&alphaEqual(parse(expandedStart),parse(trace.expandedStart)),'定義名が初めてなくなった項が一致しません。');
+    assert(typeof trace.final==='string'&&alphaEqual(cur,parse(trace.final)),'最終項が一致しません。');
+    if(trace.status==='normal-form')assert(pending===null,'正規形という終了表示が誤っています。');
+    if(trace.status==='step-limit')assert(pending!==null&&trace.steps.length===trace.maxSteps,'上限による打切りという終了表示が誤っています。');
+    if(trace.status==='error')assert(typeof trace.error==='string'&&trace.error.length>0,'エラーの説明がありません。');
+    return {valid:true,status:trace.status,steps:trace.steps.length,betaSteps,deltaSteps,normalForm:pending===null,note:trace.status==='stopped'||trace.status==='error'?'有限の接頭履歴を検証しました。停止操作・外部エラーの発生自体はこの証跡から証明しません。':'各変換と終了条件を検証しました。'};
+  }catch(error){return {valid:false,error:String(error.message||error)};}
+}
+function decodeNat(term){
+  if(term?.t!=='l'||term.b.t!=='l')return null;let t=term.b.b,n=0;
+  while(t.t==='a'&&t.f.t==='b'&&t.f.i===1){n++;t=t.a;}return t.t==='b'&&t.i===0?n:null;
+}
+globalThis.LambdaCore=Object.freeze({VERSION,SCHEMA,LIMITS,BUILTINS,parse,print,alphaEqual,freeVariables,createEnvironment,parseDefinitions,splitExpressions,evaluate,verifyTrace,decodeNat});
+})();
+</script>
+<script id="lambda-ui">
+'use strict';
+(() => {
+const C=globalThis.LambdaCore,$=id=>document.getElementById(id),saved=[],failures=[];
+let controller=null,busy=false;
+const statusNames={'normal-form':'正規形に到達','step-limit':'上限で打切り',stopped:'手動停止',error:'エラー'};
+$('builtinList').textContent=C.BUILTINS.map(d=>d.name+' = '+d.source+';').join('\n');
+function message(text,bad=false){$('message').textContent=text;$('message').className=bad?'bad':'ok';}
+function element(name,text,cls){const e=document.createElement(name);if(text!==undefined)e.textContent=text;if(cls)e.className=cls;return e;}
+function addResult(result,imported=false){
+  $('empty')?.remove();const box=element('article',undefined,'run'),trace=result.trace;
+  box.append(element('h3',(imported?'読込：':'計算：')+(statusNames[result.status]||result.status)));
+  if(trace){
+    saved.push(trace);box.append(element('pre',trace.source));
+    const v=C.verifyTrace(trace),count=trace.steps.length;
+    box.append(element('p',v.valid?`再検証済み：${count} 段（δ ${v.deltaSteps} / β ${v.betaSteps}）`:'検証失敗：'+v.error,v.valid?'ok':'bad'));
+    if(v.valid&&(trace.status==='stopped'||trace.status==='error'))box.append(element('p',v.note,'small muted'));
+    box.append(element('p','到達項'),element('pre',trace.final));
+    try{const nat=C.decodeNat(C.parse(trace.final));if(nat!==null)box.append(element('p','Church 自然数として読むと '+nat+' です。','small'));}catch{}
+    const detail=element('details');detail.append(element('summary','入力・定義展開・全変換を表示'));
+    const log=['入力項: '+trace.initial,'定義名が初めてなくなった項: '+(trace.expandedStart??'未到達'),...trace.steps.map(s=>`${s.index}. ${s.rule==='delta'?'δ '+s.definition:'β'} @ ${s.path.join('/')||'root'}\n${s.after}`)];detail.append(element('pre',log.join('\n\n')));box.append(detail);
+    const verify=element('button','この証跡を再検証');verify.addEventListener('click',()=>{const check=C.verifyTrace(trace);message(check.valid?'各段の変換を再検証しました。 '+check.note:'検証失敗：'+check.error,!check.valid);});box.append(verify);
+  }
+  if(!trace){const failure={status:'error',source:typeof result.source==='string'?result.source:'',error:String(result.error||'開始前のエラー')};failures.push(failure);if(failure.source)box.append(element('pre',failure.source));box.append(element('p','開始前のエラー記録です。検証対象となる変換証跡はありません。','small muted'));}
+  if(result.error||trace?.error)box.append(element('p',result.error||trace.error,'bad'));
+  $('history').append(box);
+}
+function setBusy(value){busy=value;for(const id of ['evaluate','source','definitions','maxSteps','useExample','import','clear'])$(id).disabled=value;$('stop').disabled=!value;}
+$('useExample').addEventListener('click',()=>{$('source').value=$('example').value;});
+$('stop').addEventListener('click',()=>{controller?.abort();$('liveStatus').textContent='停止を処理しています…';});
+$('evaluate').addEventListener('click',async()=>{
+  if(busy)return;setBusy(true);controller=new AbortController();message('');
+  try{
+    const definitions=C.createEnvironment(C.parseDefinitions($('definitions').value));
+    const expressions=C.splitExpressions($('source').value);if(!expressions.length)throw new Error('式を入力してください。');
+    const maxSteps=Number($('maxSteps').value);
+    for(let i=0;i<expressions.length;i++){
+      if(controller.signal.aborted)break;
+      const result=await C.evaluate(expressions[i],{definitions,maxSteps,signal:controller.signal,onStep:s=>{$('liveStatus').textContent=`式 ${i+1}/${expressions.length}：${s.index} 段`;}});addResult(result);
+    }
+  }catch(error){addResult({status:'error',source:$('source').value,error:error.message,trace:null});}
+  finally{setBusy(false);controller=null;$('liveStatus').textContent='処理を終了しました。';}
+});
+$('export').addEventListener('click',()=>{
+  if(!saved.length&&!failures.length){message('保存できる履歴がありません。',true);return;}
+  const blob=new Blob([JSON.stringify({schema:'lambda-trace-bundle/1',version:C.VERSION,traces:saved,failures},null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=element('a');a.href=url;a.download='lambda-traces-v8.0.1.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);message(saved.length+' 件の証跡と '+failures.length+' 件の開始前エラーを保存しました。');
+});
+$('import').addEventListener('click',()=>$('file').click());
+$('file').addEventListener('change',async()=>{
+  const file=$('file').files[0];if(!file)return;
+  try{
+    if(file.size>20*1024*1024)throw new Error('読込ファイルの上限は 20 MiB です。');
+    const data=JSON.parse(await file.text()),traces=data.schema==='lambda-trace-bundle/1'?data.traces:[data],errors=data.schema==='lambda-trace-bundle/1'?(data.failures??[]):[];
+    if(!Array.isArray(traces)||traces.length>1000)throw new Error('証跡一覧が不正です。');
+    if(!Array.isArray(errors)||errors.length>1000||errors.some(e=>!e||e.status!=='error'||typeof e.source!=='string'||typeof e.error!=='string'))throw new Error('開始前エラーの記録が不正です。');
+    for(let i=0;i<traces.length;i++){const v=C.verifyTrace(traces[i]);if(!v.valid)throw new Error(`${i+1} 件目の証跡：${v.error}`);}
+    for(const trace of traces)addResult({status:trace.status,trace},true);for(const error of errors)addResult({...error,trace:null},true);message(traces.length+' 件の証跡を再検証して読み込みました。開始前エラー '+errors.length+' 件は証跡と区別して表示しました。');
+  }catch(error){message('読込・検証失敗：'+error.message,true);}finally{$('file').value='';}
+});
+$('clear').addEventListener('click',()=>{saved.length=0;failures.length=0;const empty=element('p','まだ履歴はありません。','muted');empty.id='empty';$('history').replaceChildren(empty);message('表示と保存対象の履歴を消去しました。');});
+})();
+</script>
+</html>
