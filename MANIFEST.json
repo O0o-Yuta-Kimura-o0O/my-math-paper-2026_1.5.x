@@ -1,8 +1,8 @@
 {
   "format": "math-release-manifest/1",
-  "paperVersion": "1.5.4",
+  "paperVersion": "1.5.7",
   "interpreterVersion": "8.0.1",
-  "releaseDate": "2026-09-13",
+  "releaseDate": "2026-09-27",
   "scope": "Latest release artifacts; original research sources remain unchanged in the workspace origin directory.",
   "files": [
     {
@@ -12,22 +12,32 @@
     },
     {
       "path": "CHANGELOG.md",
-      "sha256": "afa5b874cb8780c8e9160223d6be57c1d1d65b1abbb874949bd1863672a8c939",
-      "bytes": 8477
+      "sha256": "2ebe486626c0d3269cec96cec7e81e79aa405ac077708940ea2a545cbe33512c",
+      "bytes": 14157
+    },
+    {
+      "path": "README.en.md",
+      "sha256": "efe8212e3b2e98118ed9757cf444901776a7f837572973450862d8e314a84a83",
+      "bytes": 7848
     },
     {
       "path": "README.md",
-      "sha256": "038b1d8350333d4acf1e15452072095abb06196c02f8bfc7990cfe4e99b925b4",
-      "bytes": 9174
+      "sha256": "8732367ff23f824710bc173fb1b22f7612dce05eec56f0a9e90107b1d1c49003",
+      "bytes": 13199
     },
     {
-      "path": "appendices/A_New_Foundation_of_Mathematics_ja_v1.5.4_f_only.md",
-      "sha256": "2f925a78428bdabdb23a8ed6caf507043bc71ef80abb3de8f00c5548d6e90d18",
-      "bytes": 163830
+      "path": "appendices/A_New_Foundation_of_Mathematics_en_v1.5.7_f_only.md",
+      "sha256": "0c1ff97b5703b3ff276c89115bc8b9bd87a36d5c2f410cc58a69650b2091088a",
+      "bytes": 263518
+    },
+    {
+      "path": "appendices/A_New_Foundation_of_Mathematics_ja_v1.5.7_f_only.md",
+      "sha256": "51ebc6a570153f7781b51871d635471d5a10c4d229b3003cd0649e07add972e3",
+      "bytes": 229589
     },
     {
       "path": "interpreter/README.md",
-      "sha256": "7c5f1d6d9a7d87e1620e54a3bb9703a964936d8db9171422588813ee0429c774",
+      "sha256": "98c443d879c564634a2f3105e8a42d55cb9f616ec7856d05584ab5173f30ee80",
       "bytes": 7619
     },
     {
@@ -36,69 +46,104 @@
       "bytes": 30108
     },
     {
-      "path": "manuscripts/A_New_Foundation_of_Mathematics_ja_v1.5.4.md",
-      "sha256": "3fd0ddddd671a58eaf9cb299af5dbccd10143c44d1795a4a52c674962f4bbdad",
-      "bytes": 107163
+      "path": "manuscripts/A_New_Foundation_of_Mathematics_en_v1.5.7.md",
+      "sha256": "eea826740cbacde75daa2df96f4a150c4dc2e25ae3dd209ed9f73241b66909a4",
+      "bytes": 188212
+    },
+    {
+      "path": "manuscripts/A_New_Foundation_of_Mathematics_ja_v1.5.7.md",
+      "sha256": "9307ca0483196baa34cd4098448bee3b2f4cc6e4250bfb9fa1f07c99b74d57e7",
+      "bytes": 172308
     },
     {
       "path": "release.json",
-      "sha256": "c976cb16524c3a034b12a017d9743eb7e5b5b47b61e34014c9bab417c1cfd3fe",
-      "bytes": 915
+      "sha256": "ac8f396152472bd3cfe00fbe237b7e2df9a3b7268964b040fe0ac1a6a97e3e64",
+      "bytes": 1561
     },
     {
-      "path": "research/applications-v1.5.4.md",
-      "sha256": "748ddd75973e477151f86748c80fd428bce59a8e8cae6da2a4b26a3307ee3429",
-      "bytes": 43162
+      "path": "research/applications-v1.5.7.md",
+      "sha256": "d902de7b8d132a3fbeadca54a599c0c2dfd99536779b6808b0fa4272f458a95a",
+      "bytes": 52583
     },
     {
-      "path": "research/concept-examples-v1.5.4.md",
-      "sha256": "6bf5254597505192a86c5d3cbb87007fb5c2b24dee0c7c26df3c3f934097412e",
-      "bytes": 187694
+      "path": "research/author-design-decisions-v1.5.7.md",
+      "sha256": "063e8263c25c1a509d1c8ad0dcf76cfd769db5d9db11b19acd396d005c218a03",
+      "bytes": 3970
     },
     {
-      "path": "research/concept-inventory-v1.5.4.md",
-      "sha256": "be4da11b8ffb0148d39eefebcf7f1392a4010d688f90449bde5f0ccd5945b3e7",
-      "bytes": 63706
+      "path": "research/concept-examples-v1.5.7.md",
+      "sha256": "276d28c736909c85696f4aa7a9cae0d1d0d5c60e9407ad3fb92cba7c2fa010cc",
+      "bytes": 265058
     },
     {
-      "path": "research/concept-symbols-v1.5.4.md",
-      "sha256": "84a033231789b8f4ddeaa62ec51b58b25552aa3f227caceb4c86088c2ae9e1f4",
-      "bytes": 33001
+      "path": "research/concept-inventory-v1.5.7.md",
+      "sha256": "a548f5ed4d1626def7735f0db234a1b5196141deb3c967d16a967174de421237",
+      "bytes": 75422
     },
     {
-      "path": "research/f-only-coverage-v1.5.4.md",
-      "sha256": "39e3575c38f486c9de0c25d018bd122c4d8b8a0e5137cc9025f2aa2e1ee56dba",
-      "bytes": 30511
+      "path": "research/concept-symbols-v1.5.7.md",
+      "sha256": "c389e855d634085be4b6262a579e7e4196ff5c74dc0e80d1a691032a111e5fe3",
+      "bytes": 49476
     },
     {
-      "path": "research/lambda-arithmetic-v1.5.4.md",
-      "sha256": "908d93ae1070ca8f0187e7a695c8c2ede4f50020690fb3ac5256193dce68875a",
-      "bytes": 7572
+      "path": "research/extension-example-v1.5.7.md",
+      "sha256": "02b73ea642be25ba6992e29c71d51e3982a738401bf5274a4c4876e87be86bca",
+      "bytes": 22439
     },
     {
-      "path": "research/source-audit-v1.5.4.md",
-      "sha256": "b3f7c5c171624b3622991676a797479d9edb587cac13722d127abf642b5703c6",
-      "bytes": 36375
+      "path": "research/f-only-coverage-v1.5.7.md",
+      "sha256": "2755803036aa62638967656c03947b2b85aea61a2558f6c1880a4d73d97fa5ef",
+      "bytes": 40750
     },
     {
-      "path": "research/source-manifest-v1.5.4.json",
-      "sha256": "1abb250e467b1aa47d839bc713ba71870f20ab15862b44ec1ee5bd53b64cf645",
-      "bytes": 2385
+      "path": "research/f-only-labels-en-v1.5.7.json",
+      "sha256": "5920271482c927b46e92f45d25a1264edf98801aea818ccd81f41db832dc4c4a",
+      "bytes": 58967
     },
     {
-      "path": "research/trace-extensions-v1.5.4.md",
-      "sha256": "817d906c057717d2529ca146ecb59096394e83f19b66b2ac954b4d72d8caf3bf",
+      "path": "research/label-design-v1.5.7.md",
+      "sha256": "f7b8897d8903a6fcb94eebe415d7c2032d626d5accbc45fc2454a847b2ba725e",
+      "bytes": 19415
+    },
+    {
+      "path": "research/lambda-arithmetic-v1.5.7.md",
+      "sha256": "248804862e155cbf1f163da5925c514f6ef923b6e07a6ae35b5d81867beb62b2",
+      "bytes": 7655
+    },
+    {
+      "path": "research/source-audit-v1.5.7.md",
+      "sha256": "1daed29f905e449261d3265a6f3ed0a220a2e59784aa7672f1e596557281fd64",
+      "bytes": 42686
+    },
+    {
+      "path": "research/source-manifest-v1.5.7.json",
+      "sha256": "eb782888430d0caba4ad3e83a8195584fe3418eb71486ea50fd28f7cee1d5744",
+      "bytes": 2273
+    },
+    {
+      "path": "research/trace-extensions-v1.5.7.md",
+      "sha256": "afc40c3ab83182b5144bea9c920cf53c0b8b994385cb53076c79a17092317901",
       "bytes": 15689
     },
     {
+      "path": "scripts/check-english-translation.mjs",
+      "sha256": "e55af83321956c05909aba8fc9680f727e87c817c7a928fa382ae8c0d41564d0",
+      "bytes": 6447
+    },
+    {
       "path": "scripts/check-release.mjs",
-      "sha256": "14bd39a6ac5872675a3b59394d44c46e626b283926e1c453635cd6b06885cca7",
-      "bytes": 3037
+      "sha256": "6af4c5d51bebff8b13c68ef93423187254af32487ed7832ecd816b596be5aa4d",
+      "bytes": 3622
     },
     {
       "path": "scripts/generate-concepts.mjs",
-      "sha256": "5413dd7d3d21bbb684e4252d44b3fd60fb7c51a15fa8575b6b6e0d7f6aaab5d8",
-      "bytes": 24573
+      "sha256": "2871a2a8f3d83a821af8ed162494187118575e1672e5c55ed53d960ce85c0dd0",
+      "bytes": 52501
+    },
+    {
+      "path": "scripts/generate-english-appendix.mjs",
+      "sha256": "e18b05a94c41d1f25d607f0eddf657ba2092ebe19eba68923f954ab3ed5e498f",
+      "bytes": 17135
     },
     {
       "path": "scripts/generate-evidence.mjs",
@@ -107,8 +152,8 @@
     },
     {
       "path": "scripts/generate-f-only.mjs",
-      "sha256": "c21ade8baf6f303ecb15e22e0c464e811f991d104f8477d6420e9aa683b167db",
-      "bytes": 15315
+      "sha256": "9cd54675ac77be2cbcd3cbb94e027617ed55b0137764daf78d2861eabc4d283d",
+      "bytes": 17826
     },
     {
       "path": "scripts/verify.mjs",
@@ -117,8 +162,8 @@
     },
     {
       "path": "verification/README.md",
-      "sha256": "eb187199f5ac77b1d732dc5d35605f427ffe738f1052e62bc45068a5bbbb6aac",
-      "bytes": 14444
+      "sha256": "e55987b4a511af861fc4658fb5f9fab17ba6e2f0587fcbabea11e9766d8e3986",
+      "bytes": 18484
     },
     {
       "path": "verification/applications-tests.mjs",
@@ -136,17 +181,17 @@
       "bytes": 4384
     },
     {
-      "path": "verification/certificates/application-examples-v1.5.4.json",
-      "sha256": "b68be8a648769a3ce0dffff2fb3aa84b76f5d7dab2b955c1e67ee07d3d8dcc7c",
+      "path": "verification/certificates/application-examples-v1.5.7.json",
+      "sha256": "22bdaaf402b526d3b60437a36c3da4e4353e366d11fbaf6dd6b2c40edf66f30b",
       "bytes": 36044
     },
     {
-      "path": "verification/certificates/formal-field-examples-v1.5.4.json",
-      "sha256": "90b4e436f448d016a10272c33cb9a2097cd32ce720dddb822abf1521a4ca04a5",
+      "path": "verification/certificates/formal-field-examples-v1.5.7.json",
+      "sha256": "34e16685b2c8b8ae2a1308acef4214a28abb3b6ed9518dd56c65ee808786f5a3",
       "bytes": 12085
     },
     {
-      "path": "verification/certificates/generator-extensions-v1.5.4.json",
+      "path": "verification/certificates/generator-extensions-v1.5.7.json",
       "sha256": "0c6488fd7b886a3e6f7b19cd158fb21ab5f78d5e9c24b92eef19743f48d5b789",
       "bytes": 85214
     },
@@ -156,7 +201,7 @@
       "bytes": 46439
     },
     {
-      "path": "verification/certificates/model-extensions-v1.5.4.json",
+      "path": "verification/certificates/model-extensions-v1.5.7.json",
       "sha256": "7a103f2b480b2565557c5ae7a8516914bd0f26cf69a64161224a409714a75fb3",
       "bytes": 15815
     },
@@ -176,1117 +221,1452 @@
       "bytes": 15959
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/alternating-rule.f",
+      "path": "verification/concept-symbols-v1.5.7/alternating-rule.f",
       "sha256": "e79419cc16eea9a10df78ee15698efec936b3531d3ae6ba20973d5e3dbff2195",
       "bytes": 10528
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/beta-step.f",
+      "path": "verification/concept-symbols-v1.5.7/approx-value-error-bracket.f",
+      "sha256": "c31b296dc59b0b31d1d33020714640d1a5eb6682b286e0e37562a5459499f936",
+      "bytes": 763
+    },
+    {
+      "path": "verification/concept-symbols-v1.5.7/approx-value-error-residual.f",
+      "sha256": "52808042d0c71dadd0baab23e1123c8aa3718d05adf40b6a025d1f5bf0685fb6",
+      "bytes": 1015
+    },
+    {
+      "path": "verification/concept-symbols-v1.5.7/beta-step.f",
       "sha256": "300f3e6ac61abd843025783c979c7844e7deed9f93c1d0f5c1d292c573bcc525",
       "bytes": 157
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/bool-false.f",
+      "path": "verification/concept-symbols-v1.5.7/bool-false.f",
       "sha256": "07d6b0de1af2f0e71ad001630d6c94a599cde970023233b8a440e9e8faddc530",
       "bytes": 4
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/bool-true.f",
+      "path": "verification/concept-symbols-v1.5.7/bool-true.f",
       "sha256": "d5bb654fb7396f18931c15b2a874974963dfcb2c5348356f6baad05fcf5748c0",
       "bytes": 7
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/cauchy-center-radius.f",
+      "path": "verification/concept-symbols-v1.5.7/cauchy-center-radius.f",
       "sha256": "a56cbd9ee90c5553178620a899dd2a4b4b64c0eaf8ed515bcda4c3a667199974",
       "bytes": 76
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/cauchy-modulus.f",
+      "path": "verification/concept-symbols-v1.5.7/cauchy-modulus.f",
       "sha256": "7fddc0657e1448868b8844e4d75dbee1eb31b2783a828fbc0c27c6d1e3c32c64",
       "bytes": 898
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/complex-i.f",
+      "path": "verification/concept-symbols-v1.5.7/complex-i.f",
       "sha256": "8c9b344023c3dd3898eea79ab10814aa99c1fbe689f9832b5cad476e75c2e657",
       "bytes": 229
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/complex-one-minus-i.f",
+      "path": "verification/concept-symbols-v1.5.7/complex-one-minus-i.f",
       "sha256": "30d684cfdf3a78d6c34e97044f9c9d72c69e4086a90d318213fa13fed74e862d",
       "bytes": 289
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/complex-one-plus-i.f",
+      "path": "verification/concept-symbols-v1.5.7/complex-one-plus-i.f",
       "sha256": "48f7905e9f9bf801b99a9795d6640d8d46121789382550741e973c3253a3c8ac",
       "bytes": 289
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/complex-one.f",
+      "path": "verification/concept-symbols-v1.5.7/complex-one.f",
       "sha256": "f294eb4c0298647522c4c459f50a548b51864cc8a19eab91b49738b5cda18782",
       "bytes": 226
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/complex-zero.f",
+      "path": "verification/concept-symbols-v1.5.7/complex-zero.f",
       "sha256": "a40b6a8ff572944be8c1c7c26d1b6abe1828a8a423ffe4a9dc8b675692a39dcc",
       "bytes": 166
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/f-epsilon.f",
+      "path": "verification/concept-symbols-v1.5.7/decimal-exact-third.f",
+      "sha256": "26a00c7cc3088e328a20f127bea52b44b47ff600ba413412449adadcc3328bcc",
+      "bytes": 127
+    },
+    {
+      "path": "verification/concept-symbols-v1.5.7/decimal-exact-two-thirds.f",
+      "sha256": "58b2e6f42a76a517dad440c8ee386ac640e03ac8dada982bbcf610f403fcfb1a",
+      "bytes": 142
+    },
+    {
+      "path": "verification/concept-symbols-v1.5.7/decimal-lower-sum.f",
+      "sha256": "6d8377b0a08bf56995025fe746e8ea5722d0ad4417363527305af4e1cba27203",
+      "bytes": 178
+    },
+    {
+      "path": "verification/concept-symbols-v1.5.7/decimal-mixed-sum.f",
+      "sha256": "9a8ec66f9a2b871df132ca1e8404ec6d6f57d127409ec3277d30c001fdb35d34",
+      "bytes": 160
+    },
+    {
+      "path": "verification/concept-symbols-v1.5.7/decimal-prefix-1.f",
+      "sha256": "420e84539d7cc5a616dec11a8cbf05ea1a4561a6476b6a571f5f10fe5d9934d4",
+      "bytes": 376
+    },
+    {
+      "path": "verification/concept-symbols-v1.5.7/decimal-prefix-2.f",
+      "sha256": "4cfc3114b941ed35a9de9d624c3a0f1338f7729d72bc9d5e5a47f6668d8e8d7f",
+      "bytes": 1009
+    },
+    {
+      "path": "verification/concept-symbols-v1.5.7/decimal-prefix-3.f",
+      "sha256": "dc3284dc3264da623babe1e0b0bf7bd72642933e9169749e5d21988fa500d52a",
+      "bytes": 7312
+    },
+    {
+      "path": "verification/concept-symbols-v1.5.7/decimal-record-third.f",
+      "sha256": "7bf89df16bc338cc44b5874f21d7ef0d11d38b9ccc9027f5e386a759b03fa2b5",
+      "bytes": 37
+    },
+    {
+      "path": "verification/concept-symbols-v1.5.7/decimal-record-two-thirds.f",
+      "sha256": "a4720ee39e11a0f71df4b4d628548e346d07d4a91079618b55e67873061e17e5",
+      "bytes": 46
+    },
+    {
+      "path": "verification/concept-symbols-v1.5.7/f-epsilon.f",
       "sha256": "c2ab14277570ea1fb22442ca70a6db60a0da96eb5fa2ab8bc296df405087865a",
       "bytes": 97
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/f-inverse-epsilon.f",
+      "path": "verification/concept-symbols-v1.5.7/f-inverse-epsilon.f",
       "sha256": "f6ea0dbe409e70f1d534d0f08739f988513a0fe4474be5a84300b45376520857",
       "bytes": 97
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/f-minus-one.f",
+      "path": "verification/concept-symbols-v1.5.7/f-minus-one.f",
       "sha256": "4f2ec64ebf4be98dd4b7539b2f9200adcc5c7d3dadf1432da136db00bcb9e9ff",
       "bytes": 73
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/f-one.f",
+      "path": "verification/concept-symbols-v1.5.7/f-one.f",
       "sha256": "310090207368e899d5762ea93de116ccf68b4a05b56b63bacd80f7d126755504",
       "bytes": 70
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/f-square-ratio.f",
+      "path": "verification/concept-symbols-v1.5.7/f-square-ratio.f",
       "sha256": "eb8d615b13dcb83f7b24be34ed39ec5d8158cc87d05a176cc61e96f077088252",
       "bytes": 154
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/f-zero.f",
+      "path": "verification/concept-symbols-v1.5.7/f-zero.f",
       "sha256": "b93a6cad87f8b74ecaf4c96b85f67203b58e46112a352db54ef7220923b0b0ed",
       "bytes": 40
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/identity-arrow.f",
+      "path": "verification/concept-symbols-v1.5.7/fixed-t-product-conjugate.f",
+      "sha256": "08ee41b95c9819ccaaac6fec73bb221304001611760d1f6643e52bee6d330a99",
+      "bytes": 1429
+    },
+    {
+      "path": "verification/concept-symbols-v1.5.7/fixed-t-product-sigma-square.f",
+      "sha256": "9b5a1050ed5d0f729bbf0517bafbf93df674d147cdb1bc5cf541505fd079ee4c",
+      "bytes": 1366
+    },
+    {
+      "path": "verification/concept-symbols-v1.5.7/geometric-decimal-reject-empty-repeat.f",
+      "sha256": "35b22889cc3fe0e74f262f0d6ef25dd7f4ac2cca7c330c099f46ca0ee068d024",
+      "bytes": 3919
+    },
+    {
+      "path": "verification/concept-symbols-v1.5.7/geometric-decimal-reject-false-direction.f",
+      "sha256": "05bb8a08dfd9cd62715038bc665df980f2551b79d732d6bd4c3c51af11c019df",
+      "bytes": 1126
+    },
+    {
+      "path": "verification/concept-symbols-v1.5.7/geometric-decimal-reject-false-exact-label.f",
+      "sha256": "22999aba04b370cbc9805cc856b83600184df0936a5c3e2eb889dc7ec25ff5cd",
+      "bytes": 3790
+    },
+    {
+      "path": "verification/concept-symbols-v1.5.7/geometric-decimal-reject-false-recurrence.f",
+      "sha256": "107434b7e03742f8cc71d258bb8378d4a3e9ef5608dc08c80fd8ade1426f2fdc",
+      "bytes": 1987
+    },
+    {
+      "path": "verification/concept-symbols-v1.5.7/geometric-decimal-reject-invalid-digit.f",
+      "sha256": "e5667531ba60b5220344978afd2e408a46139d1cfaf5b428786ec0b0b7febb91",
+      "bytes": 3955
+    },
+    {
+      "path": "verification/concept-symbols-v1.5.7/geometric-decimal-reject-invalid-ratio.f",
+      "sha256": "39362ad2229f48aae3af5abb5b8e6f43669466222ae2bdb96cd427511dfc5c0c",
+      "bytes": 2101
+    },
+    {
+      "path": "verification/concept-symbols-v1.5.7/geometric-h-menger-volume.f",
+      "sha256": "8c7683772ea51690bceabe0887120870ff7bf7168a29e5f544c845f5a15bde66",
+      "bytes": 220
+    },
+    {
+      "path": "verification/concept-symbols-v1.5.7/geometric-h-third-fixed.f",
+      "sha256": "0b5160bb3c449e284223adc925195e25109fd0157644f9c47cdcf76bcbb4e5ce",
+      "bytes": 118
+    },
+    {
+      "path": "verification/concept-symbols-v1.5.7/geometric-h-third-lower.f",
+      "sha256": "5fb3a9d86f3792659f70aede3497723a09de4e9b1b1a6b1339ab392ece5380b3",
+      "bytes": 130
+    },
+    {
+      "path": "verification/concept-symbols-v1.5.7/geometric-h-third-upper.f",
+      "sha256": "d8a3e64b3b11921d3072d7beafdbc2d5fe934bcd82a15095bbcb32f0581c1c94",
+      "bytes": 130
+    },
+    {
+      "path": "verification/concept-symbols-v1.5.7/geometric-h-two-thirds-lower.f",
+      "sha256": "8bfdfc0e70c6e2af9d1a2fa1b4e4b29f3ec740321223470ac88a1360c5255dba",
+      "bytes": 136
+    },
+    {
+      "path": "verification/concept-symbols-v1.5.7/geometric-intro-menger-volume.f",
+      "sha256": "75b2984359c29dd30dcfe46e0a15c42a671aaeb807fccf94a8db6dfe267cd50c",
+      "bytes": 271
+    },
+    {
+      "path": "verification/concept-symbols-v1.5.7/geometric-intro-third-fixed.f",
+      "sha256": "2d4096710df904d51a30bc5fee7579555aeadabcd36f70166d387091680403c3",
+      "bytes": 172
+    },
+    {
+      "path": "verification/concept-symbols-v1.5.7/geometric-intro-third-lower.f",
+      "sha256": "88a38b3126ceb3bfde799fc217cc504878a918727a606ffb33f4326718926cd2",
+      "bytes": 193
+    },
+    {
+      "path": "verification/concept-symbols-v1.5.7/geometric-intro-third-upper.f",
+      "sha256": "a54d101ea31f2e88cb183538c7c56991ff081c96d606e89599060f196c78215b",
+      "bytes": 190
+    },
+    {
+      "path": "verification/concept-symbols-v1.5.7/geometric-intro-two-thirds-lower.f",
+      "sha256": "0924c0c0e79eb30e21fca07bae3173c96df7cdee5c12fcd810eb8c498fc25b52",
+      "bytes": 202
+    },
+    {
+      "path": "verification/concept-symbols-v1.5.7/geometric-trace-menger-volume.f",
+      "sha256": "bf34f071828f800f4e9fd066593f862c37b751a5a3a6521c7893b2dac833dfbe",
+      "bytes": 86977
+    },
+    {
+      "path": "verification/concept-symbols-v1.5.7/geometric-trace-third-fixed.f",
+      "sha256": "a18e7e24024f6837121f182114ad8e279253e38c58fb847ce6765e535ecbdd51",
+      "bytes": 340
+    },
+    {
+      "path": "verification/concept-symbols-v1.5.7/geometric-trace-third-lower.f",
+      "sha256": "aa892b68ec135aab0d99a804d32fd3c6dd953bf2aa1fce1a1ba6c9972765a71a",
+      "bytes": 4744
+    },
+    {
+      "path": "verification/concept-symbols-v1.5.7/geometric-trace-third-upper.f",
+      "sha256": "bb4ee3d02b68270f3ff0730fe675ddd6afc75668b9b6327431a82ec350f52dcc",
+      "bytes": 2533
+    },
+    {
+      "path": "verification/concept-symbols-v1.5.7/geometric-trace-two-thirds-lower.f",
+      "sha256": "8e6f3917247182ac29d0ea08dfd3ac47706c9d968cf680affbabd5178cd2f497",
+      "bytes": 3085
+    },
+    {
+      "path": "verification/concept-symbols-v1.5.7/identity-arrow.f",
       "sha256": "0181c5bd8ac82891ccde65ae462b62c0def45c109cd4bddd09d8cc91c19dddf9",
       "bytes": 43
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/int-0.f",
+      "path": "verification/concept-symbols-v1.5.7/int-0.f",
       "sha256": "e4c59dd5d0476cf3a242936768568bb1aca97257bf1aab98600f670cd0cd4033",
       "bytes": 10
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/int-1.f",
+      "path": "verification/concept-symbols-v1.5.7/int-1.f",
       "sha256": "c307aeda9e7b007a8ae5b64450554f000f6f02415223cb0b488d805fe879023e",
       "bytes": 13
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/int-2.f",
+      "path": "verification/concept-symbols-v1.5.7/int-2.f",
       "sha256": "52ad92afb5f81926d4640bf6600be1083766720cec629639e5af1f89a66a2387",
       "bytes": 16
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/int-minus-1.f",
+      "path": "verification/concept-symbols-v1.5.7/int-minus-1.f",
       "sha256": "e20865ac89f27fb28adf14a7c940377c4f638931d201cc67a2a2096a46b53f2c",
       "bytes": 16
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/int-minus-2.f",
+      "path": "verification/concept-symbols-v1.5.7/int-minus-2.f",
       "sha256": "10ed98260583a8ddf9de03436d4dc347ecf3ae924c5ea17d1142c080df7c8ec7",
       "bytes": 19
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/interval-sqrt2-initial.f",
+      "path": "verification/concept-symbols-v1.5.7/interval-sqrt2-initial.f",
       "sha256": "81c0d4a31c3a6b663fb25308e6635663a5e4bc6e30aa1edb9ea1ec7b52e284bd",
       "bytes": 58
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/interval-sqrt2-refined.f",
+      "path": "verification/concept-symbols-v1.5.7/interval-sqrt2-refined.f",
       "sha256": "2d4daa8ee28486151685a375da39bce8e3167d73a8a5a95d9d2e5cf41224e674",
       "bytes": 67
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/interval-unit.f",
+      "path": "verification/concept-symbols-v1.5.7/interval-unit.f",
       "sha256": "1b7e9a7affb396930c3e87ef6d849d58868579327b4f0fb8c6b8241e20601e55",
       "bytes": 55
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/json-2.f",
+      "path": "verification/concept-symbols-v1.5.7/json-2.f",
       "sha256": "7c3159072794f82d2691b887b1dbcecd5975e45acdaa9192f7c1e473ee6ba1ee",
       "bytes": 175
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/json-a.f",
+      "path": "verification/concept-symbols-v1.5.7/json-a.f",
       "sha256": "6b693518d27cc7d723fc54531cdcac568d2b2f2eb103a4b1c986bff5ded17a29",
       "bytes": 319
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/json-array.f",
+      "path": "verification/concept-symbols-v1.5.7/json-array.f",
       "sha256": "baf17945ff1a6de245313605d8f9a4ba243289fc7d951c8f0f7bbb22995a8f75",
       "bytes": 376
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/json-false.f",
+      "path": "verification/concept-symbols-v1.5.7/json-false.f",
       "sha256": "c13e3baeee9ead6301820e34dd85d6e2a2a1594bcebe037ef29af9a5e16bce7b",
       "bytes": 13
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/json-null.f",
+      "path": "verification/concept-symbols-v1.5.7/json-null.f",
       "sha256": "e4c59dd5d0476cf3a242936768568bb1aca97257bf1aab98600f670cd0cd4033",
       "bytes": 10
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/json-record.f",
+      "path": "verification/concept-symbols-v1.5.7/json-record.f",
       "sha256": "9c42692e7ee6327b8d92335e3ae2e02f949a407ef9725a263ffe84dbfe1c9a40",
       "bytes": 505
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/json-true.f",
+      "path": "verification/concept-symbols-v1.5.7/json-true.f",
       "sha256": "109c09c37c50b4e5de65d9ac4eaba538ce54bbdb92d2f4a363d2f2049ceb9e9a",
       "bytes": 16
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/judgment.f",
+      "path": "verification/concept-symbols-v1.5.7/judgment.f",
       "sha256": "749185804ccae0dfc605217efd98116e61edb6b485e776092b6a18e1d044411f",
       "bytes": 100
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/label-pending-division.f",
+      "path": "verification/concept-symbols-v1.5.7/label-pending-division.f",
       "sha256": "80f9e4d18e087afd605cca4da6fde73cf494678d43def64d7c042b44e966fb38",
       "bytes": 10420
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/label-with-evidence.f",
-      "sha256": "bafc711313344b51ca375c196a29d1269b6bf6bffb4d58bbc4cc9d220a3589ab",
-      "bytes": 25198
+      "path": "verification/concept-symbols-v1.5.7/label-with-evidence.f",
+      "sha256": "bcede8cf774dbb112e73d442da8423039489de5adda40dd3d781b52d552dbf82",
+      "bytes": 25216
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/lambda-0.f",
+      "path": "verification/concept-symbols-v1.5.7/lambda-0.f",
       "sha256": "5cf2d48f19af09d84da453ac37f1de524a1da931acf35e039b3799605b0c1914",
       "bytes": 1291
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/lambda-1.f",
+      "path": "verification/concept-symbols-v1.5.7/lambda-1.f",
       "sha256": "a59faabbde892391668c51c906dcdf2793de08380fd8fe84f2c7e87383a7b026",
       "bytes": 907
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/lambda-2.f",
+      "path": "verification/concept-symbols-v1.5.7/lambda-2.f",
       "sha256": "04f669753cf62e1e13cff32c17e9131a6dfd99c260c397c8652c2951c2b1f193",
       "bytes": 979
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/lambda-3.f",
+      "path": "verification/concept-symbols-v1.5.7/lambda-3.f",
       "sha256": "fd6b14b6d16be52eec4c1463f726823d57c4df6bef2a7bab44b8e662d220c8af",
       "bytes": 1561
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/lambda-4.f",
+      "path": "verification/concept-symbols-v1.5.7/lambda-4.f",
       "sha256": "438d4f800e0ecf0943756f73e070a6cc4288b0525fb1c4ebdc6d5cabf4882a7f",
       "bytes": 1279
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/lambda-add.f",
+      "path": "verification/concept-symbols-v1.5.7/lambda-add.f",
       "sha256": "0421bcdfb3de8f38f45829cdda1379d25554b8b258dbc6ac09371967aa0c96cb",
       "bytes": 265
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/lambda-and.f",
+      "path": "verification/concept-symbols-v1.5.7/lambda-and.f",
       "sha256": "42d0646c1db0e725359057338e65f0c1613116eb951242e9c5efb8f103a74062",
       "bytes": 136
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/lambda-application.f",
+      "path": "verification/concept-symbols-v1.5.7/lambda-application.f",
       "sha256": "9e321276a59382ab1efa82d50d0d9b3142456a1de8f71561ae4012e448039812",
       "bytes": 94
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/lambda-environment.f",
+      "path": "verification/concept-symbols-v1.5.7/lambda-environment.f",
       "sha256": "f2ffa025afd1178ece026c031cd4f5df100bc4b99e3dab0d2516390dc885161f",
       "bytes": 337444
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/lambda-eqnat.f",
+      "path": "verification/concept-symbols-v1.5.7/lambda-eqnat.f",
       "sha256": "1312c9586748629901d14636200a44b5df6bc417b1fee34d450cfe3e4b2b246f",
       "bytes": 2908
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/lambda-false.f",
+      "path": "verification/concept-symbols-v1.5.7/lambda-false.f",
       "sha256": "b1e47087d69340330307296ab771fc1dcdfd033e7bcbc3c2b70086d2bfc7a53d",
       "bytes": 58
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/lambda-fixy.f",
+      "path": "verification/concept-symbols-v1.5.7/lambda-fixy.f",
       "sha256": "5e3e1fa667a8e9ef3a135949884a1c09d340105e79fd929e023e69210a41a20d",
       "bytes": 265
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/lambda-four.f",
+      "path": "verification/concept-symbols-v1.5.7/lambda-four.f",
       "sha256": "26f8cc831b1c874dda554307b652166a04c20a2a6fb56c7a16f90f923fb9f790",
       "bytes": 2818
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/lambda-fst.f",
+      "path": "verification/concept-symbols-v1.5.7/lambda-fst.f",
       "sha256": "bd11867c766b88ec09a4cfcc33b8e70b4e127b11a2f32c554d1797413db5ff2a",
       "bytes": 118
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/lambda-identity.f",
+      "path": "verification/concept-symbols-v1.5.7/lambda-identity.f",
       "sha256": "5146ab13db2cbd7860f40ad4c4d40e3f276dab7b642b7f524190074999838c86",
       "bytes": 37
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/lambda-if.f",
+      "path": "verification/concept-symbols-v1.5.7/lambda-if.f",
       "sha256": "c14279bc390d01ba7b561f02731c1d3e58297911300a328f285f7f21e581ee98",
       "bytes": 160
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/lambda-iszero.f",
+      "path": "verification/concept-symbols-v1.5.7/lambda-iszero.f",
       "sha256": "1e49b28b56a38293f9d98c62ef09f697ae446383788df6a4ba5cda704561fcc4",
       "bytes": 2911
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/lambda-leq.f",
+      "path": "verification/concept-symbols-v1.5.7/lambda-leq.f",
       "sha256": "e857e229b382e63635b90a9d199c1545c24648f8c35aa1480fcba424e0a66334",
       "bytes": 2935
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/lambda-mul.f",
+      "path": "verification/concept-symbols-v1.5.7/lambda-mul.f",
       "sha256": "e4fa8d6b0683d3cca61d5bee63469852bd04092b3312a61c727c0059db021024",
       "bytes": 226
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/lambda-n0.f",
+      "path": "verification/concept-symbols-v1.5.7/lambda-n0.f",
       "sha256": "5cf2d48f19af09d84da453ac37f1de524a1da931acf35e039b3799605b0c1914",
       "bytes": 1291
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/lambda-n1.f",
+      "path": "verification/concept-symbols-v1.5.7/lambda-n1.f",
       "sha256": "a59faabbde892391668c51c906dcdf2793de08380fd8fe84f2c7e87383a7b026",
       "bytes": 907
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/lambda-n2.f",
+      "path": "verification/concept-symbols-v1.5.7/lambda-n2.f",
       "sha256": "04f669753cf62e1e13cff32c17e9131a6dfd99c260c397c8652c2951c2b1f193",
       "bytes": 979
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/lambda-n3.f",
+      "path": "verification/concept-symbols-v1.5.7/lambda-n3.f",
       "sha256": "fd6b14b6d16be52eec4c1463f726823d57c4df6bef2a7bab44b8e662d220c8af",
       "bytes": 1561
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/lambda-n4.f",
+      "path": "verification/concept-symbols-v1.5.7/lambda-n4.f",
       "sha256": "438d4f800e0ecf0943756f73e070a6cc4288b0525fb1c4ebdc6d5cabf4882a7f",
       "bytes": 1279
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/lambda-not.f",
+      "path": "verification/concept-symbols-v1.5.7/lambda-not.f",
       "sha256": "b8d430ff7300df09dd244597b2064bb8dcbc38e0ab504e787efd311c97b79b2d",
       "bytes": 2890
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/lambda-one.f",
+      "path": "verification/concept-symbols-v1.5.7/lambda-one.f",
       "sha256": "4a969cee6036d43233ae198abd46d722c062dcacf52f3882eac8d9cdd296a77e",
       "bytes": 2548
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/lambda-or.f",
+      "path": "verification/concept-symbols-v1.5.7/lambda-or.f",
       "sha256": "72a42f41cb2017c4d47c67a594808482c69f4d9c2d2dc49344a4ee6d0b345802",
       "bytes": 136
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/lambda-pair.f",
+      "path": "verification/concept-symbols-v1.5.7/lambda-pair.f",
       "sha256": "7e37afb7bd8b55d603b6da609a898cb10d42c7036d51e5b3e57eb01bdc9e7c8b",
       "bytes": 160
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/lambda-position.f",
+      "path": "verification/concept-symbols-v1.5.7/lambda-position.f",
       "sha256": "c0f432c6a03e7f28c8f050e2df7dc11ce80c34e658aa58dceb5387513c9df7a7",
       "bytes": 31
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/lambda-pred.f",
+      "path": "verification/concept-symbols-v1.5.7/lambda-pred.f",
       "sha256": "d5c809595584fa87f43b05e87b85b736f5b4358d4c3c3cb4df8e7228255b4bb6",
       "bytes": 364
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/lambda-qhalf.f",
+      "path": "verification/concept-symbols-v1.5.7/lambda-qhalf.f",
       "sha256": "54708bb918e42b8efe5e620e2b46e4f86e9eb94dced1c6154d5b130136ffbabe",
       "bytes": 3649
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/lambda-qmake.f",
+      "path": "verification/concept-symbols-v1.5.7/lambda-qmake.f",
       "sha256": "802588bda018405d943f609be0d6d192f57264f15a7122c97885cdf7414623da",
       "bytes": 19966
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/lambda-qone.f",
+      "path": "verification/concept-symbols-v1.5.7/lambda-qone.f",
       "sha256": "a664ffa55b0b7230472351a0bdcbe8b0f18b0125b097a5aea6c09cf5d9f8dfe6",
       "bytes": 3577
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/lambda-qrep.f",
+      "path": "verification/concept-symbols-v1.5.7/lambda-qrep.f",
       "sha256": "a2c87cb98b629a25402354417ef4db745a745069b038d33752aa946f782815f2",
       "bytes": 1231
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/lambda-qrepadd.f",
+      "path": "verification/concept-symbols-v1.5.7/lambda-qrepadd.f",
       "sha256": "35c9916b3272347da6e6bf58fd55270cb143854b0a523339252a7182d3be8395",
       "bytes": 11947
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/lambda-qrepden.f",
+      "path": "verification/concept-symbols-v1.5.7/lambda-qrepden.f",
       "sha256": "084507ec09b2b10531c520f6784ca3ef9a658a6c7e2b2d5f477dce8a9429914d",
       "bytes": 916
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/lambda-qrepdiv.f",
+      "path": "verification/concept-symbols-v1.5.7/lambda-qrepdiv.f",
       "sha256": "2d82ced2efd741a9e0ebdfd083f2f798bdd48910fc43a11e682ee1f5d3d96acd",
       "bytes": 7900
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/lambda-qrepeq.f",
+      "path": "verification/concept-symbols-v1.5.7/lambda-qrepeq.f",
       "sha256": "3fc5f4154a604097b56ad9c7e4de57d1d8127457fd9eb3f9f22648c5de3e8f81",
       "bytes": 7315
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/lambda-qrepinv.f",
+      "path": "verification/concept-symbols-v1.5.7/lambda-qrepinv.f",
       "sha256": "4ab199384cd4ffafc3f5f20cf809652703fa9a58d4dd88c0c7821ec9be3e695d",
       "bytes": 3427
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/lambda-qrepleq.f",
+      "path": "verification/concept-symbols-v1.5.7/lambda-qrepleq.f",
       "sha256": "0277ddb75119497722b327762455e9b4b1585e877304b99d2e1bad9b507b857e",
       "bytes": 7645
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/lambda-qrepmul.f",
+      "path": "verification/concept-symbols-v1.5.7/lambda-qrepmul.f",
       "sha256": "10ba998f8ffb724c8595eef3a679fa74e35442966bf15a28424857c18cc89c58",
       "bytes": 7633
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/lambda-qrepneg.f",
+      "path": "verification/concept-symbols-v1.5.7/lambda-qrepneg.f",
       "sha256": "c05226d1ae329ad7f3a8f0826c84c39f8e6e44599c705a7600edd111f6957ed7",
       "bytes": 4339
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/lambda-qrepnum.f",
+      "path": "verification/concept-symbols-v1.5.7/lambda-qrepnum.f",
       "sha256": "38749e8724132c4ee090b91f30c71670dae2ad773238bbe9227420d11001ee78",
       "bytes": 940
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/lambda-qrepsub.f",
+      "path": "verification/concept-symbols-v1.5.7/lambda-qrepsub.f",
       "sha256": "cb2543668d514a4de31d7012664b541f666ad860539757d384be1069f7c9ab6d",
       "bytes": 4156
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/lambda-qrepvalid.f",
+      "path": "verification/concept-symbols-v1.5.7/lambda-qrepvalid.f",
       "sha256": "b9aab4d6383f1552eb17bb96f78cc32f00176dcb32197aaa6dfd413b2d30b029",
       "bytes": 9469
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/lambda-qzero.f",
+      "path": "verification/concept-symbols-v1.5.7/lambda-qzero.f",
       "sha256": "382ef1604c8fc1f49f3bb204f968dc677fd71adf811c8089706673ee55d45a73",
       "bytes": 3961
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/lambda-resultbind.f",
+      "path": "verification/concept-symbols-v1.5.7/lambda-resultbind.f",
       "sha256": "9a0f60a77dedd4a5708cf358cb2c3b10e753f46cc3df1ed7fadf34e5c3ac44d1",
       "bytes": 2998
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/lambda-resulterr.f",
+      "path": "verification/concept-symbols-v1.5.7/lambda-resulterr.f",
       "sha256": "14614a945b0f7a274cab2bdb05de372e42d7121e1ef4cb8fd97ec9cff412a060",
       "bytes": 121
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/lambda-resultok.f",
+      "path": "verification/concept-symbols-v1.5.7/lambda-resultok.f",
       "sha256": "a340a6b4cedcef30ed8218588bb9eb426ec9d2be9055f5ed5ee06a75b33cff50",
       "bytes": 124
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/lambda-snd.f",
+      "path": "verification/concept-symbols-v1.5.7/lambda-snd.f",
       "sha256": "21ee532eaa44c07d99e8120670a8366743cce931136f4ec96f5c2806de2eae46",
       "bytes": 115
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/lambda-sub.f",
+      "path": "verification/concept-symbols-v1.5.7/lambda-sub.f",
       "sha256": "fda5fa8d2855ee0913b4723c8e392514eb6813f0a9f73e414a3aa37fabdd0226",
       "bytes": 1345
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/lambda-succ.f",
+      "path": "verification/concept-symbols-v1.5.7/lambda-succ.f",
       "sha256": "79306d476acc4b2661aab9eab8e10cd430b30e5d3a3960316ca622f92481155a",
       "bytes": 199
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/lambda-three.f",
+      "path": "verification/concept-symbols-v1.5.7/lambda-three.f",
       "sha256": "38d997e15aed896bca216b3ccf4cdb98083b78ae7c2b9e03a075e38665967057",
       "bytes": 2236
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/lambda-true.f",
+      "path": "verification/concept-symbols-v1.5.7/lambda-true.f",
       "sha256": "62f82a4a6117519b9895796f09d5f022836ca4dcf6244b0494dafe1618938bbe",
       "bytes": 61
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/lambda-two.f",
+      "path": "verification/concept-symbols-v1.5.7/lambda-two.f",
       "sha256": "1ded91b02d03a7b19ca6cab673fa988f3273c01f761c9bd8d8a53959e60ff807",
       "bytes": 2164
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/lambda-zadd.f",
+      "path": "verification/concept-symbols-v1.5.7/lambda-zadd.f",
       "sha256": "5c6eefe79e6816cf5f664a3c86f86bdadef024b9598a91d6a026f4a07f1ce017",
       "bytes": 23575
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/lambda-zeq.f",
+      "path": "verification/concept-symbols-v1.5.7/lambda-zeq.f",
       "sha256": "cba9b9fffb838a1a3f3792da5aeeafeb6ac2b74fd4b35fc368a6e8247b17dd79",
       "bytes": 7822
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/lambda-zero.f",
+      "path": "verification/concept-symbols-v1.5.7/lambda-zero.f",
       "sha256": "b1e47087d69340330307296ab771fc1dcdfd033e7bcbc3c2b70086d2bfc7a53d",
       "bytes": 58
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/lambda-zfromdiff.f",
+      "path": "verification/concept-symbols-v1.5.7/lambda-zfromdiff.f",
       "sha256": "449b80a75644faf78a3086feb7b30f733a60edc4e3fbab051eb2a52d4ffc69b0",
       "bytes": 8860
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/lambda-zleq.f",
+      "path": "verification/concept-symbols-v1.5.7/lambda-zleq.f",
       "sha256": "fcd0bb7a2eba37ce705d94077543469914fe030fccfbf098951c0571b47c91d7",
       "bytes": 16174
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/lambda-zmagnitude.f",
+      "path": "verification/concept-symbols-v1.5.7/lambda-zmagnitude.f",
       "sha256": "084507ec09b2b10531c520f6784ca3ef9a658a6c7e2b2d5f477dce8a9429914d",
       "bytes": 916
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/lambda-zmake.f",
+      "path": "verification/concept-symbols-v1.5.7/lambda-zmake.f",
       "sha256": "bf2a89369d74fe20ef42e7033ba27df73439ff00c666a949fb6b3b05bce982f3",
       "bytes": 5158
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/lambda-zminusone.f",
+      "path": "verification/concept-symbols-v1.5.7/lambda-zminusone.f",
       "sha256": "fb9f30b599277ee7c0b524d442f8dd7b5d446f701a190157adb4cef7a309db8c",
       "bytes": 3319
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/lambda-zmul.f",
+      "path": "verification/concept-symbols-v1.5.7/lambda-zmul.f",
       "sha256": "8bbf3ae23d06446ce47a0d7a456ebc999f9190eabeeeb7007e91443fd93d6232",
       "bytes": 10714
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/lambda-zneg.f",
+      "path": "verification/concept-symbols-v1.5.7/lambda-zneg.f",
       "sha256": "35b613ac76a34b18ad3ceb962a7664f0f70ac3db1a3c07150b6d827ef86610b4",
       "bytes": 8155
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/lambda-zone.f",
+      "path": "verification/concept-symbols-v1.5.7/lambda-zone.f",
       "sha256": "409450f0f969c3f8ea016abbfdb82bcb55e7a8bee4ff717f181df0a7abea2414",
       "bytes": 3703
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/lambda-zsign.f",
+      "path": "verification/concept-symbols-v1.5.7/lambda-zsign.f",
       "sha256": "38749e8724132c4ee090b91f30c71670dae2ad773238bbe9227420d11001ee78",
       "bytes": 940
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/lambda-zsub.f",
+      "path": "verification/concept-symbols-v1.5.7/lambda-zsub.f",
       "sha256": "235cd3c7a40f0c5b77d101fb46ae81ad6aec374db2d3ddfca93226a5ba52fc84",
       "bytes": 2404
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/lambda-ztodiff.f",
+      "path": "verification/concept-symbols-v1.5.7/lambda-ztodiff.f",
       "sha256": "cb99eac606d988b062a2fd3b27d40af6ad58f93e763a1ff4ed525f3e4c3fda74",
       "bytes": 10528
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/lambda-ztwo.f",
+      "path": "verification/concept-symbols-v1.5.7/lambda-ztwo.f",
       "sha256": "a25e52de2a9f607736a4b2ddc42bcb983311e276e6b9c882575b0079013ea5dd",
       "bytes": 3775
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/lambda-zzero.f",
+      "path": "verification/concept-symbols-v1.5.7/lambda-zzero.f",
       "sha256": "2725d31445f7a5b686cef3d6a2f3c030188a1e91a853673584dd0e09eac6c984",
       "bytes": 4087
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/legacy-l.f",
+      "path": "verification/concept-symbols-v1.5.7/legacy-l.f",
       "sha256": "1ddefd67bf82ae74e0fed7790366079200ccb461a8e590ba2617899e2752da1b",
       "bytes": 40
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/leibniz-state.f",
+      "path": "verification/concept-symbols-v1.5.7/leibniz-state.f",
       "sha256": "af4c22cf705cc3533624920c00997b54860c34bf48b9d4a4771cc0a4b5d9af42",
       "bytes": 106
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/list-0.f",
+      "path": "verification/concept-symbols-v1.5.7/list-0.f",
       "sha256": "07d6b0de1af2f0e71ad001630d6c94a599cde970023233b8a440e9e8faddc530",
       "bytes": 4
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/list-1.f",
+      "path": "verification/concept-symbols-v1.5.7/list-1.f",
       "sha256": "e4c59dd5d0476cf3a242936768568bb1aca97257bf1aab98600f670cd0cd4033",
       "bytes": 10
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/list-3.f",
+      "path": "verification/concept-symbols-v1.5.7/list-3.f",
       "sha256": "c0f432c6a03e7f28c8f050e2df7dc11ce80c34e658aa58dceb5387513c9df7a7",
       "bytes": 31
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/m-epsilon-half.f",
+      "path": "verification/concept-symbols-v1.5.7/m-epsilon-half.f",
       "sha256": "f18be534cd88ffc83f0141862fccbcdc4ca45180c7061af7d4c97dd168c986e2",
       "bytes": 64
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/m-epsilon-squared.f",
+      "path": "verification/concept-symbols-v1.5.7/m-epsilon-squared.f",
       "sha256": "6710612f118641c940c9ffc42cbf5a50f59385002aa502cbdc89e4d8921bc181",
       "bytes": 88
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/m-epsilon.f",
+      "path": "verification/concept-symbols-v1.5.7/m-epsilon.f",
       "sha256": "64f81aa2c594679604f03a79f2fe1ba3d4ea16ad852997c57bee09bb155b159c",
       "bytes": 61
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/m-general.f",
+      "path": "verification/concept-symbols-v1.5.7/m-general.f",
       "sha256": "727b3756c6cb81c335e3315b771eff3ae6852c3713083e2a54c6302229bdcb36",
       "bytes": 103
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/m-one-plus-epsilon.f",
+      "path": "verification/concept-symbols-v1.5.7/m-one-plus-epsilon.f",
       "sha256": "b01638f787debea5e8f75bc65a6f4de15a62f6d55252edcdad19cf15a67e9ffa",
       "bytes": 64
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/m-one.f",
+      "path": "verification/concept-symbols-v1.5.7/m-one.f",
       "sha256": "00cb9d0d5a2dc78d712bf3a1cde8ef87c52793ae7994671da1561f45f77435a0",
       "bytes": 34
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/m-zero.f",
+      "path": "verification/concept-symbols-v1.5.7/m-zero.f",
       "sha256": "07d6b0de1af2f0e71ad001630d6c94a599cde970023233b8a440e9e8faddc530",
       "bytes": 4
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/manifest.json",
-      "sha256": "524811f597dd6dac894dcae915641974e857613a956cc7bc21b064318ab85208",
-      "bytes": 102122
+      "path": "verification/concept-symbols-v1.5.7/manifest.json",
+      "sha256": "862979ebdcdb75eed67cf0785c811c4b82182078ef24ebe6e209c0617d4277b8",
+      "bytes": 145305
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/nat-0.f",
+      "path": "verification/concept-symbols-v1.5.7/nat-0.f",
       "sha256": "07d6b0de1af2f0e71ad001630d6c94a599cde970023233b8a440e9e8faddc530",
       "bytes": 4
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/nat-1.f",
+      "path": "verification/concept-symbols-v1.5.7/nat-1.f",
       "sha256": "d5bb654fb7396f18931c15b2a874974963dfcb2c5348356f6baad05fcf5748c0",
       "bytes": 7
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/nat-2.f",
+      "path": "verification/concept-symbols-v1.5.7/nat-2.f",
       "sha256": "dbd34bca5e825e8b8508174c5a4d592820c781bd84c199b03d2ce0fd618836ca",
       "bytes": 10
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/nat-3.f",
+      "path": "verification/concept-symbols-v1.5.7/nat-3.f",
       "sha256": "3cc8421d89fd55465f9685ef8e0d656359be0050922a908a45c11aaf8c29661c",
       "bytes": 13
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/nat-4.f",
+      "path": "verification/concept-symbols-v1.5.7/nat-4.f",
       "sha256": "824202512946f3c550a64b83df3b876e36773b9ae126779813cbace810dce117",
       "bytes": 16
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/newton-state.f",
+      "path": "verification/concept-symbols-v1.5.7/natform-nested-pair.f",
+      "sha256": "9530c7fb53fc23255ae331df9cee7af812382326d8361d64a030b8fdba9bd2e0",
+      "bytes": 109
+    },
+    {
+      "path": "verification/concept-symbols-v1.5.7/natform-pair.f",
+      "sha256": "8b9aa756f21d3bbe88240fb113d3cee929423beddc4b0be73494b584df27b09c",
+      "bytes": 106
+    },
+    {
+      "path": "verification/concept-symbols-v1.5.7/natform-program.f",
+      "sha256": "ec9dcc1d76123195dc8c928923c6d921ae870eecf6d3b948b2ca72df04d479c8",
+      "bytes": 70
+    },
+    {
+      "path": "verification/concept-symbols-v1.5.7/natform-successor.f",
+      "sha256": "c27cf534b1e227579ce312b425940fa5c863f3aa0dfa22e5cf12ef637b862c53",
+      "bytes": 106
+    },
+    {
+      "path": "verification/concept-symbols-v1.5.7/natform-zero.f",
+      "sha256": "3b1c5fe9d97888171173efdbe66368d1ce0ced97beaa0677cd8c87bbbf717a6a",
+      "bytes": 103
+    },
+    {
+      "path": "verification/concept-symbols-v1.5.7/newton-state.f",
       "sha256": "ed73979adbcb11018f0bf224be548249154f394c370c9e793a46117010485c85",
       "bytes": 97
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/one-step-arrow.f",
+      "path": "verification/concept-symbols-v1.5.7/one-step-arrow.f",
       "sha256": "888158baf4ef803f2f89acb1ed8c35aff2cf37033ed22956c48eb021d6a6dde5",
       "bytes": 259
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/option-none.f",
+      "path": "verification/concept-symbols-v1.5.7/option-none.f",
       "sha256": "e4c59dd5d0476cf3a242936768568bb1aca97257bf1aab98600f670cd0cd4033",
       "bytes": 10
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/option-some.f",
+      "path": "verification/concept-symbols-v1.5.7/option-some.f",
       "sha256": "0cced9f2440379afeeef14c848442f40afa2c41c96651f4929c50f22ef8b7bb5",
       "bytes": 25
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/ordering-0.f",
+      "path": "verification/concept-symbols-v1.5.7/ordering-0.f",
       "sha256": "e4c59dd5d0476cf3a242936768568bb1aca97257bf1aab98600f670cd0cd4033",
       "bytes": 10
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/ordering-1.f",
+      "path": "verification/concept-symbols-v1.5.7/ordering-1.f",
       "sha256": "c307aeda9e7b007a8ae5b64450554f000f6f02415223cb0b488d805fe879023e",
       "bytes": 13
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/ordering-minus-1.f",
+      "path": "verification/concept-symbols-v1.5.7/ordering-minus-1.f",
       "sha256": "e20865ac89f27fb28adf14a7c940377c4f638931d201cc67a2a2096a46b53f2c",
       "bytes": 16
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/pair-nat.f",
+      "path": "verification/concept-symbols-v1.5.7/pair-nat.f",
       "sha256": "10ed98260583a8ddf9de03436d4dc347ecf3ae924c5ea17d1142c080df7c8ec7",
       "bytes": 19
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/poly-degree.f",
+      "path": "verification/concept-symbols-v1.5.7/poly-degree.f",
       "sha256": "dbd34bca5e825e8b8508174c5a4d592820c781bd84c199b03d2ce0fd618836ca",
       "bytes": 10
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/polynomial-derivative.f",
+      "path": "verification/concept-symbols-v1.5.7/polynomial-derivative.f",
       "sha256": "259a323191ee13f087322e373eaa087d85cd2bb9f0fad9b489cae422ed7570eb",
       "bytes": 64
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/polynomial-integral.f",
+      "path": "verification/concept-symbols-v1.5.7/polynomial-integral.f",
       "sha256": "e611ff5b578ba99d628650a1f4cabb88fdf68f244a0d9b2370306e29f65c880c",
       "bytes": 43
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/polynomial-primitive.f",
+      "path": "verification/concept-symbols-v1.5.7/polynomial-primitive.f",
       "sha256": "9fccd042d434775d0e2860fd4fe39079bf2046ffa24d3453c9cb3e1226471449",
       "bytes": 124
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/precision-field-epsilon.f",
+      "path": "verification/concept-symbols-v1.5.7/precision-field-epsilon.f",
       "sha256": "c2ab14277570ea1fb22442ca70a6db60a0da96eb5fa2ab8bc296df405087865a",
       "bytes": 97
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/precision-two.f",
+      "path": "verification/concept-symbols-v1.5.7/precision-two.f",
       "sha256": "dbd34bca5e825e8b8508174c5a4d592820c781bd84c199b03d2ce0fd618836ca",
       "bytes": 10
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/precision-width.f",
+      "path": "verification/concept-symbols-v1.5.7/precision-width.f",
       "sha256": "60d56462cb59587e868ec3205cd361160ed45b373ad8337fb99f989331989f63",
       "bytes": 37
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/proof-applications.f",
-      "sha256": "b2ef3036e5733d6724a3768e4f674b824016472e47e42ae203db43c5efa05e64",
-      "bytes": 2930569
+      "path": "verification/concept-symbols-v1.5.7/proof-applications.f",
+      "sha256": "7648bafcd9614c5a5c62a6662fb95521487f608b523f4989718af4a162ef9943",
+      "bytes": 2930578
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/proof-field.f",
-      "sha256": "4a9347f4f16257b1ccab6f4aae85a6223f881a24b4f3083004987379bdd3087d",
-      "bytes": 745396
+      "path": "verification/concept-symbols-v1.5.7/proof-field.f",
+      "sha256": "e7eb83be048f485a58262a40b562bb9b19fb24a1a31db94941f670ce8f903b9b",
+      "bytes": 745405
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/proof-generators.f",
+      "path": "verification/concept-symbols-v1.5.7/proof-generators.f",
       "sha256": "f887fe8fcb6d62b6e358890db7aa44091228b8c06415e57a4eee8e9bdcb19195",
       "bytes": 6110440
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/proof-induction-data.f",
+      "path": "verification/concept-symbols-v1.5.7/proof-induction-data.f",
       "sha256": "c0f432c6a03e7f28c8f050e2df7dc11ce80c34e658aa58dceb5387513c9df7a7",
       "bytes": 31
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/proof-lambda.f",
+      "path": "verification/concept-symbols-v1.5.7/proof-lambda.f",
       "sha256": "ad8e5cb76be076b07212ff7049f63be969a32625cc0010ae653713739fe2c718",
       "bytes": 5707771
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/proof-models.f",
+      "path": "verification/concept-symbols-v1.5.7/proof-models.f",
       "sha256": "57d4d64d14d6d40c2636ded5bd82e87a0bb90a90051ae95c94f231aaa295a05c",
       "bytes": 812239
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/proof-nat-paths.f",
+      "path": "verification/concept-symbols-v1.5.7/proof-nat-paths.f",
       "sha256": "976536c64a15ba531e75c78ee60b12f56a82a2c507d69a1ff98f60b922426d7d",
       "bytes": 1200829
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/proof-node-reflexivity.f",
+      "path": "verification/concept-symbols-v1.5.7/proof-node-reflexivity.f",
       "sha256": "b5583aaa22dbf5f7a7d4dfadd72c10eccad206b679044e98065b22a7cf4b9721",
       "bytes": 169
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/proposition-and.f",
+      "path": "verification/concept-symbols-v1.5.7/proposition-and.f",
       "sha256": "9e2d33d6caebac6c6477f7940ba4e6163de2b991472b4fbf0b6ac18bb20c9861",
       "bytes": 208
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/proposition-associativity.f",
+      "path": "verification/concept-symbols-v1.5.7/proposition-associativity.f",
       "sha256": "42ac1e1de04af580d30a62a0cb005add923926c9344fcc29722eec37df68e493",
       "bytes": 3646
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/proposition-equal.f",
+      "path": "verification/concept-symbols-v1.5.7/proposition-equal.f",
       "sha256": "2bb7cc45895c2dad217070a2f441173ead661d5871b55f6e6184fcedb749d5f4",
       "bytes": 94
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/proposition-exists.f",
+      "path": "verification/concept-symbols-v1.5.7/proposition-exists.f",
       "sha256": "8ba7c78bd6f503dd32ec02dbe7ddd3ac87fc4b1e9719536fe1322606b9e470bd",
       "bytes": 118
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/proposition-false.f",
+      "path": "verification/concept-symbols-v1.5.7/proposition-false.f",
       "sha256": "e21c9b942f5762b692d42e1c37020434db9376a3a31047155165c173cd43bc7b",
       "bytes": 25
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/proposition-forall.f",
+      "path": "verification/concept-symbols-v1.5.7/proposition-forall.f",
       "sha256": "aeab8b51c4548d522c92073b11d7d384634ecd1f4ca920e64438c6edc5c6b43c",
       "bytes": 100
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/proposition-implies.f",
+      "path": "verification/concept-symbols-v1.5.7/proposition-implies.f",
       "sha256": "adef1f6d869337fc1d9e53ba06b9c6c682dfa00ac25c2dcf4f3039d5ce67420a",
       "bytes": 214
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/proposition-less.f",
+      "path": "verification/concept-symbols-v1.5.7/proposition-less.f",
       "sha256": "2d0ab379090eb2ed8e0fbeaaad94c886dd2df8f09db6665496ca69eef5926331",
       "bytes": 94
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/proposition-not.f",
+      "path": "verification/concept-symbols-v1.5.7/proposition-not.f",
       "sha256": "c02a4d19d974d8d1122318b9faa3d9102ff871e9840b69d2de96f3ad67be8104",
       "bytes": 145
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/proposition-or.f",
+      "path": "verification/concept-symbols-v1.5.7/proposition-or.f",
       "sha256": "223be9bf6b5ae1c79970ab50287c20c0c646b9bc56555be7fac6d596819c79da",
       "bytes": 211
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/proposition-predicate.f",
+      "path": "verification/concept-symbols-v1.5.7/proposition-predicate.f",
       "sha256": "c774e7f4fbe74eb30d6b97c7a74e2c38886beb6990fa845fd3edd2120460061c",
       "bytes": 2461
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/qlim-call.f",
+      "path": "verification/concept-symbols-v1.5.7/qlim-call.f",
       "sha256": "7b69d2b80f00a51246de3315cf1eb595d7568df30317ac26b7653f96c4782db3",
       "bytes": 1516
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/qlim-parameters.f",
+      "path": "verification/concept-symbols-v1.5.7/qlim-parameters.f",
       "sha256": "1b7e9a7affb396930c3e87ef6d849d58868579327b4f0fb8c6b8241e20601e55",
       "bytes": 55
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/qlim-response.f",
+      "path": "verification/concept-symbols-v1.5.7/qlim-response.f",
       "sha256": "4c0b8cad911be240fe6df42fb55bd71313ee5c38381491e245054006444514f5",
       "bytes": 31
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/qrep-four-four.f",
+      "path": "verification/concept-symbols-v1.5.7/qrep-four-four.f",
       "sha256": "806a7679ffe98e8d5355d59193cf59e8b65a689ce6c71e7b4d78350f62c98912",
       "bytes": 46
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/quaternion-all-one.f",
+      "path": "verification/concept-symbols-v1.5.7/quaternion-all-one.f",
       "sha256": "796f57ff8c0576a28da722baa76e50727a6f34955633e8385d9c3c2a01a0a6e8",
       "bytes": 580
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/quaternion-i.f",
+      "path": "verification/concept-symbols-v1.5.7/quaternion-i.f",
       "sha256": "cccf892bcb01d0752425a2b54da8210da97b47d0af39ed92bfbd12fbe4625ba8",
       "bytes": 397
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/quaternion-j.f",
+      "path": "verification/concept-symbols-v1.5.7/quaternion-j.f",
       "sha256": "b8dfc74360a23544fdf1deff566bbab43dacae6352dc06b3f3c6d0ec6f5df76f",
       "bytes": 394
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/quaternion-k.f",
+      "path": "verification/concept-symbols-v1.5.7/quaternion-k.f",
       "sha256": "156cd30a0d85c62fd6c57b1a0e63d09c169c4273fe392adc02e5011dc226bf4d",
       "bytes": 397
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/quaternion-one.f",
+      "path": "verification/concept-symbols-v1.5.7/quaternion-one.f",
       "sha256": "c8608ff783aa8546cb3fa984f0da6aa9156336e9bd68415ae824cbfc780f6268",
       "bytes": 394
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/rat-0-1.f",
+      "path": "verification/concept-symbols-v1.5.7/rat-0-1.f",
       "sha256": "102e8988927543a96a231c7083a56899f7704a50f73fa16100b96c5e82688830",
       "bytes": 25
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/rat-1-1.f",
+      "path": "verification/concept-symbols-v1.5.7/rat-1-1.f",
       "sha256": "74be10b70e2a330f390f8a598a08deada3fe72d42f41644a063843d269c8380e",
       "bytes": 28
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/rat-1-2.f",
+      "path": "verification/concept-symbols-v1.5.7/rat-1-2.f",
       "sha256": "4c0b8cad911be240fe6df42fb55bd71313ee5c38381491e245054006444514f5",
       "bytes": 31
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/rat-2-1.f",
+      "path": "verification/concept-symbols-v1.5.7/rat-2-1.f",
       "sha256": "f86443a2ed53bd2150ec13693bfb59b65ac593df13c569762ea3c03431213204",
       "bytes": 31
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/rat-minus-1-1.f",
+      "path": "verification/concept-symbols-v1.5.7/rat-minus-1-1.f",
       "sha256": "8c4929a2b6b19772776a3030b72fb1748b521f97b519be7a648b2e64716b5983",
       "bytes": 31
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/rat-minus-1-3.f",
+      "path": "verification/concept-symbols-v1.5.7/rat-minus-1-3.f",
       "sha256": "be42de176c223dbe61204177d8e19c22dd27c487dfd37ac7dfd74b8ab5924712",
       "bytes": 37
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/rat-minus-2-1.f",
+      "path": "verification/concept-symbols-v1.5.7/rat-minus-2-1.f",
       "sha256": "96df8127b8e3c20e45cd0ad196aed664e540a5e6043eb3e9637a5044481ef201",
       "bytes": 34
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/register-program.f",
+      "path": "verification/concept-symbols-v1.5.7/register-program.f",
       "sha256": "831e6aac8777fdc3e3fd5353cc26cb75ea9b212cb6cbe4ef455c5e3d6f24a4b3",
       "bytes": 31207
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/register-state.f",
+      "path": "verification/concept-symbols-v1.5.7/register-state.f",
       "sha256": "e46d8c228e6c038b5fbf70883b7733147c4db8cd26ee4d705712b3295850b144",
       "bytes": 43
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/report.json",
-      "sha256": "301e780db5386192b25b3eec8d9e0042969f18736392a5e206ed1cf36382afe3",
-      "bytes": 52252
+      "path": "verification/concept-symbols-v1.5.7/relation-common-1.f",
+      "sha256": "d677d33007be7ed7f4d9a02d9e634692e67a37d124f236dff510b2437fb764e3",
+      "bytes": 232
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/result-failure.f",
+      "path": "verification/concept-symbols-v1.5.7/relation-common-2.f",
+      "sha256": "6443b58f9539eb59b444c225ef85a82d613496caaaf9514070b2282c77b49427",
+      "bytes": 262
+    },
+    {
+      "path": "verification/concept-symbols-v1.5.7/relation-common-3.f",
+      "sha256": "066ce044542eb59d1031e0f39446c43cbaf8e20c2cf492db5276dcc236ea03ef",
+      "bytes": 292
+    },
+    {
+      "path": "verification/concept-symbols-v1.5.7/relation-g-half.f",
+      "sha256": "fc270773ff7d5771daba3247bb4a0f9c3d3190e07a383c4fa4da8647c9ad4d59",
+      "bytes": 58
+    },
+    {
+      "path": "verification/concept-symbols-v1.5.7/relation-g-three-quarters.f",
+      "sha256": "767ccc5bdcd6406883d7fd1761cf0f1673c965c3d5886c130d1f3664070ab1d9",
+      "bytes": 70
+    },
+    {
+      "path": "verification/concept-symbols-v1.5.7/relation-intro-negative.f",
+      "sha256": "ee43c78eb1a04b0111d753235e183bd864d02e17c7c57d7e7bc92a7fe0263fa6",
+      "bytes": 115
+    },
+    {
+      "path": "verification/concept-symbols-v1.5.7/relation-intro-not-additive.f",
+      "sha256": "99e4b197a194ee902b2c8310d6de4ecaeddca14d11cfb748fdd53a4365ae764a",
+      "bytes": 217
+    },
+    {
+      "path": "verification/concept-symbols-v1.5.7/relation-intro-positive-half.f",
+      "sha256": "71f344739a1848b1a1b2400dc918f0a89b13c8708b20fb24fe5773975b82ba96",
+      "bytes": 109
+    },
+    {
+      "path": "verification/concept-symbols-v1.5.7/relation-intro-positive-three-quarters.f",
+      "sha256": "407f59cc304f3d77282a0efa1d594d2f15b1fd32916e000c7aec786263d7b1f4",
+      "bytes": 121
+    },
+    {
+      "path": "verification/concept-symbols-v1.5.7/relation-intro-zero.f",
+      "sha256": "a00aa984916aa9dbb107715e5a4ab4adf35742a35436eb6dd7f8edca768ef688",
+      "bytes": 109
+    },
+    {
+      "path": "verification/concept-symbols-v1.5.7/relation-l-addition.f",
+      "sha256": "d3f3f08838c84bf0b96058ca0f39b0cf96d581c14ec75f5fdef3c58378346d22",
+      "bytes": 145
+    },
+    {
+      "path": "verification/concept-symbols-v1.5.7/relation-l-four-steps.f",
+      "sha256": "7f425f251ede4f551356edd6d0d9aeb079f274501b571455adb6377d9e4b1f0e",
+      "bytes": 49
+    },
+    {
+      "path": "verification/concept-symbols-v1.5.7/relation-l-one-step.f",
+      "sha256": "1ddefd67bf82ae74e0fed7790366079200ccb461a8e590ba2617899e2752da1b",
+      "bytes": 40
+    },
+    {
+      "path": "verification/concept-symbols-v1.5.7/relation-l-order.f",
+      "sha256": "44908c2e0041d465ce0dca30cef078451cc5898d26c0efcbec41a281df1508b6",
+      "bytes": 181
+    },
+    {
+      "path": "verification/concept-symbols-v1.5.7/relation-l-two-steps.f",
+      "sha256": "7cf9056bf4d2568ec530c44018448dbc2840218d31b6a8d35cb5b95631734de7",
+      "bytes": 43
+    },
+    {
+      "path": "verification/concept-symbols-v1.5.7/relation-rational-error.f",
+      "sha256": "f48474f34c6a09e2936784bed64784916f087cd8f1f0a09a65c2b0f3d0f46cc8",
+      "bytes": 166
+    },
+    {
+      "path": "verification/concept-symbols-v1.5.7/relation-reject-compressed-sum.f",
+      "sha256": "9ae4a51c6216695786b744a0f8b684ff45a939761ee0c2a5675dc80acaa794a5",
+      "bytes": 1204
+    },
+    {
+      "path": "verification/concept-symbols-v1.5.7/relation-reject-false-introduction.f",
+      "sha256": "641734aea73626923bd754b4254ecd450baee2dfd1ddabead871669e5a8748f9",
+      "bytes": 1018
+    },
+    {
+      "path": "verification/concept-symbols-v1.5.7/relation-reject-malformed-label.f",
+      "sha256": "08c142a208c6867572674d4a606ee5ae21d70005e6962257ad8daa61648e0d91",
+      "bytes": 2065
+    },
+    {
+      "path": "verification/concept-symbols-v1.5.7/report.json",
+      "sha256": "72e79cf38f18477488b9abad0beb3973bccaceb69777b1ffecd2a1f4785222d6",
+      "bytes": 78612
+    },
+    {
+      "path": "verification/concept-symbols-v1.5.7/result-failure.f",
       "sha256": "f7c537f3129908a5d25be12739f0aabc7ff16b946aaaff3289ab7f88d6b44224",
       "bytes": 1387
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/result-success.f",
+      "path": "verification/concept-symbols-v1.5.7/result-success.f",
       "sha256": "d0e638c5962ecf24f503f3fcca1bd05fdd54e281d5154c4a6fe6e8c022edcfd2",
       "bytes": 43
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/separation-witness.f",
+      "path": "verification/concept-symbols-v1.5.7/separation-witness.f",
       "sha256": "109f7549aa9991d3cd91b2a335a81f12c2c79fdf927668484fd4aeeb22a4c4ec",
       "bytes": 67
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/sign-0.f",
+      "path": "verification/concept-symbols-v1.5.7/sign-0.f",
       "sha256": "07d6b0de1af2f0e71ad001630d6c94a599cde970023233b8a440e9e8faddc530",
       "bytes": 4
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/sign-1.f",
+      "path": "verification/concept-symbols-v1.5.7/sign-1.f",
       "sha256": "d5bb654fb7396f18931c15b2a874974963dfcb2c5348356f6baad05fcf5748c0",
       "bytes": 7
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/sqrt2-state.f",
+      "path": "verification/concept-symbols-v1.5.7/sqrt2-state.f",
       "sha256": "3fb2eedf56bbee6e92d323f2c1347ecae2af496ffdea8ed071112d19b4b82525",
       "bytes": 85
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/standard-part.f",
+      "path": "verification/concept-symbols-v1.5.7/standard-part.f",
       "sha256": "4c0b8cad911be240fe6df42fb55bd71313ee5c38381491e245054006444514f5",
       "bytes": 31
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/status-error.f",
+      "path": "verification/concept-symbols-v1.5.7/status-error.f",
       "sha256": "801260a13132a162ce599ca42e1e41712dd9c4f4344b5e09fed8537ce41e1f6e",
       "bytes": 19
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/status-normal-form.f",
+      "path": "verification/concept-symbols-v1.5.7/status-normal-form.f",
       "sha256": "e4c59dd5d0476cf3a242936768568bb1aca97257bf1aab98600f670cd0cd4033",
       "bytes": 10
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/status-step-limit.f",
+      "path": "verification/concept-symbols-v1.5.7/status-step-limit.f",
       "sha256": "c13e3baeee9ead6301820e34dd85d6e2a2a1594bcebe037ef29af9a5e16bce7b",
       "bytes": 13
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/status-stopped.f",
+      "path": "verification/concept-symbols-v1.5.7/status-stopped.f",
       "sha256": "109c09c37c50b4e5de65d9ac4eaba538ce54bbdb92d2f4a363d2f2049ceb9e9a",
       "bytes": 16
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/term-add-call.f",
+      "path": "verification/concept-symbols-v1.5.7/t-minus-one.f",
+      "sha256": "0a669e1c4d3c45e6281b8c660d532b6e6f5830fbac5ce9ac289b12915901da17",
+      "bytes": 115
+    },
+    {
+      "path": "verification/concept-symbols-v1.5.7/t-one-minus-sigma.f",
+      "sha256": "8a95256c1d44ba26996ce68f4e7a3b62da16f3e264e5964cb1d79f138cfc9173",
+      "bytes": 145
+    },
+    {
+      "path": "verification/concept-symbols-v1.5.7/t-one-plus-sigma.f",
+      "sha256": "d5df8b30418407047a0f13a511e832203f4c3a3425c0a72ef8b0dee840b6dec8",
+      "bytes": 142
+    },
+    {
+      "path": "verification/concept-symbols-v1.5.7/t-one.f",
+      "sha256": "3f074367bc45d483ccfdbc7092cce55c6d9b74afadb3fad540d05c9ea4e5a74a",
+      "bytes": 112
+    },
+    {
+      "path": "verification/concept-symbols-v1.5.7/t-sigma-half.f",
+      "sha256": "b2c82b879c243015b32bd2dc7b9d5d80c39393d7a700eb87671aa741f9cafccd",
+      "bytes": 115
+    },
+    {
+      "path": "verification/concept-symbols-v1.5.7/t-sigma.f",
+      "sha256": "63c8a5a2f8d32f22d06111de5f22028fff6f39764b08fb7d4c07249cfe1fc7b0",
+      "bytes": 112
+    },
+    {
+      "path": "verification/concept-symbols-v1.5.7/t-two.f",
+      "sha256": "2cbd4d81d311c0a0ad2fbcd33726e4f87fe503dd136ecc30ca53b1165f99594c",
+      "bytes": 115
+    },
+    {
+      "path": "verification/concept-symbols-v1.5.7/t-zero.f",
+      "sha256": "af2ae6f085b34097824307414a262ed68c604562c0bf420963df5b967a84c0ad",
+      "bytes": 82
+    },
+    {
+      "path": "verification/concept-symbols-v1.5.7/term-add-call.f",
       "sha256": "b26c548f4daea0e8daa7df971c702937ea6545a2ae7dec81afe7dda8cf9d86d0",
       "bytes": 913
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/term-literal.f",
+      "path": "verification/concept-symbols-v1.5.7/term-literal.f",
       "sha256": "651348d1dfd024f18c0daf03cf7cc238d191e2f019dcf8b31da22ed11e047169",
       "bytes": 34
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/term-variable.f",
+      "path": "verification/concept-symbols-v1.5.7/term-variable.f",
       "sha256": "88a12c9ba0ebf623ad09c3ec73a9375e2bdbbe7bff1c5706eca723fbce41bd6f",
       "bytes": 16
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/text-a.f",
+      "path": "verification/concept-symbols-v1.5.7/text-a.f",
       "sha256": "a84a196c35a08f82ecaf5738a08ff0135467e0c96a316ebaefe2d84d4998ac0a",
       "bytes": 301
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/text-lambda.f",
+      "path": "verification/concept-symbols-v1.5.7/text-lambda.f",
       "sha256": "9c990fd6468caf56a1af812a8bc01bf5a8c309dd23fcefa6e2da524dd6d1a366",
       "bytes": 1195
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/translated-label.f",
+      "path": "verification/concept-symbols-v1.5.7/translated-label.f",
       "sha256": "b6d07a405ccab616aff07ea2af04e78558fe07276de665fca9c9215b40c8d359",
       "bytes": 271
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/translation-arrow.f",
+      "path": "verification/concept-symbols-v1.5.7/translation-arrow.f",
       "sha256": "bdf931c2e905a0aadf2d7bb690dbe690569244480549407e91c61bd0c8d2a2b2",
       "bytes": 292
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/type-arrow.f",
+      "path": "verification/concept-symbols-v1.5.7/type-arrow.f",
       "sha256": "ad4cef965de1f56dde73ab5ee10a573a7ac2f3e176a34354b27174e9470fa9e4",
       "bytes": 37
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/type-bool.f",
+      "path": "verification/concept-symbols-v1.5.7/type-bool.f",
       "sha256": "86eccd3d1b74da912f47754e262d2f40d55930a751717a6daf77bcc46e30a414",
       "bytes": 31
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/type-c.f",
+      "path": "verification/concept-symbols-v1.5.7/type-c.f",
       "sha256": "e21c9b942f5762b692d42e1c37020434db9376a3a31047155165c173cd43bc7b",
       "bytes": 25
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/type-f.f",
+      "path": "verification/concept-symbols-v1.5.7/type-f.f",
       "sha256": "5abc762d95c5bc1f9170aa9f6aa871f711fbc1747cf99e0e770d7a69e50937ad",
       "bytes": 22
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/type-function.f",
+      "path": "verification/concept-symbols-v1.5.7/type-function.f",
       "sha256": "8c3ffe779220a2c2bc13ceab124d2b09de25f9b9e9b322a48fbc6d85d1fa2b8a",
       "bytes": 97
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/type-generator.f",
+      "path": "verification/concept-symbols-v1.5.7/type-generator.f",
       "sha256": "fb0e90b4c4fa98cbb7ef25d2a04dcfe6eb8f4b15b4420d28a4d70d90e612730e",
       "bytes": 151
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/type-h.f",
+      "path": "verification/concept-symbols-v1.5.7/type-h.f",
       "sha256": "6a7414421e7dfd8adfd9fe6a916791a820013331b6ad3bfdcb991a737defdd44",
       "bytes": 28
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/type-interval.f",
+      "path": "verification/concept-symbols-v1.5.7/type-interval.f",
       "sha256": "765bd98761b08d059d018aed6010df978bf31e6e61ef31eb6dae9f359ff40d40",
       "bytes": 67
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/type-lambda.f",
+      "path": "verification/concept-symbols-v1.5.7/type-lambda.f",
       "sha256": "3a684f46365d03222119068190c436c55f884cf45b2c471ba2bff14a230ff92f",
       "bytes": 40
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/type-list.f",
+      "path": "verification/concept-symbols-v1.5.7/type-list.f",
       "sha256": "26f61d600e8939a06a32d68292016e4232f8fe34b10b09aba26a4536e72ee5ca",
       "bytes": 70
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/type-m.f",
+      "path": "verification/concept-symbols-v1.5.7/type-m.f",
       "sha256": "801260a13132a162ce599ca42e1e41712dd9c4f4344b5e09fed8537ce41e1f6e",
       "bytes": 19
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/type-n.f",
+      "path": "verification/concept-symbols-v1.5.7/type-n.f",
       "sha256": "e4c59dd5d0476cf3a242936768568bb1aca97257bf1aab98600f670cd0cd4033",
       "bytes": 10
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/type-option.f",
+      "path": "verification/concept-symbols-v1.5.7/type-option.f",
       "sha256": "52dbc756d91497ba6e1b641074c5cc89c92cfd7e2abea83814cb5820d21e21e6",
       "bytes": 70
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/type-ordering.f",
+      "path": "verification/concept-symbols-v1.5.7/type-ordering.f",
       "sha256": "45bad8f30b619fd22fbedc18a281c36d852f2f266f5dba5e7d50852cdfa717bf",
       "bytes": 64
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/type-pair.f",
+      "path": "verification/concept-symbols-v1.5.7/type-pair.f",
       "sha256": "5220616298ccd7c32afea1aed4928ebe19bc00de0887802ecfc388e043e8acbc",
       "bytes": 85
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/type-proof.f",
+      "path": "verification/concept-symbols-v1.5.7/type-proof.f",
       "sha256": "e5e0d0d8d128acfe71e80a554c82578f3c82e2efa0fe1ca0669ed1ae931d9ac7",
       "bytes": 46
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/type-proposition.f",
+      "path": "verification/concept-symbols-v1.5.7/type-proposition.f",
       "sha256": "758808a46fc1fb9942328b404ed5d8588001305e4b8c0f0cdc688bad9b6a5387",
       "bytes": 43
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/type-q.f",
+      "path": "verification/concept-symbols-v1.5.7/type-q.f",
       "sha256": "109c09c37c50b4e5de65d9ac4eaba538ce54bbdb92d2f4a363d2f2049ceb9e9a",
       "bytes": 16
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/type-qrep.f",
+      "path": "verification/concept-symbols-v1.5.7/type-qrep.f",
       "sha256": "a9073f382bde54c26b66ec9bda11959d3f24c54df69468641c24b7b72552f843",
       "bytes": 73
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/type-result.f",
+      "path": "verification/concept-symbols-v1.5.7/type-result.f",
       "sha256": "3abd2ca92abb9946644fa51404f74adcf88cbc6c8e0261930d82aa1c0810279e",
       "bytes": 151
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/type-text.f",
+      "path": "verification/concept-symbols-v1.5.7/type-t.f",
+      "sha256": "af67ef1f836bcc809052627ee92af702169cf1b5c88e87f6ed0e0dd1b3c1ccd8",
+      "bytes": 79
+    },
+    {
+      "path": "verification/concept-symbols-v1.5.7/type-text.f",
       "sha256": "a8904f1ce47d16bb542f2c480735d26ee4c4897aab2430acde67345fcb879486",
       "bytes": 34
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/type-unit.f",
+      "path": "verification/concept-symbols-v1.5.7/type-unit.f",
       "sha256": "9a196e6f49b5558305a36b460bb696158e531ac0e814cef97eabfd755127e8e3",
       "bytes": 49
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/type-z.f",
+      "path": "verification/concept-symbols-v1.5.7/type-z.f",
       "sha256": "c13e3baeee9ead6301820e34dd85d6e2a2a1594bcebe037ef29af9a5e16bce7b",
       "bytes": 13
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/valuation-negative.f",
+      "path": "verification/concept-symbols-v1.5.7/valuation-negative.f",
       "sha256": "e20865ac89f27fb28adf14a7c940377c4f638931d201cc67a2a2096a46b53f2c",
       "bytes": 16
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/zero-classification-nonzero.f",
+      "path": "verification/concept-symbols-v1.5.7/zero-classification-nonzero.f",
       "sha256": "c13e3baeee9ead6301820e34dd85d6e2a2a1594bcebe037ef29af9a5e16bce7b",
       "bytes": 13
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/zero-classification-unknown.f",
+      "path": "verification/concept-symbols-v1.5.7/zero-classification-unknown.f",
       "sha256": "109c09c37c50b4e5de65d9ac4eaba538ce54bbdb92d2f4a363d2f2049ceb9e9a",
       "bytes": 16
     },
     {
-      "path": "verification/concept-symbols-v1.5.4/zero-classification-zero.f",
+      "path": "verification/concept-symbols-v1.5.7/zero-classification-zero.f",
       "sha256": "e4c59dd5d0476cf3a242936768568bb1aca97257bf1aab98600f670cd0cd4033",
       "bytes": 10
     },
@@ -1307,7 +1687,7 @@
     },
     {
       "path": "verification/evidence-report.json",
-      "sha256": "5b1f1dca721e4969f40735651340be97426be6e68a6cf3fbdd7f6f681a3f9196",
+      "sha256": "c854f40ad3c45a4833c4700c41f1c7a12af8a7e366c6f4df28ec02280a1767a8",
       "bytes": 6650
     },
     {
@@ -1321,1217 +1701,1637 @@
       "bytes": 5178
     },
     {
-      "path": "verification/f-only-v1.5.4/alternating-rule.f",
+      "path": "verification/f-only-en-v1.5.7/manifest.json",
+      "sha256": "5e67ffb8d8a8aedf1470ffbc774768e7395f6e34f20b997df8c7b9e1fe6712f1",
+      "bytes": 95755
+    },
+    {
+      "path": "verification/f-only-en-v1.5.7/paper-00.f",
+      "sha256": "00dcc3031d81648ecc2ef173c934a4348b0bd4645d4cae0da33e809a9ec323da",
+      "bytes": 2371702
+    },
+    {
+      "path": "verification/f-only-en-v1.5.7/paper-01.f",
+      "sha256": "487fe1ebf57a6a42cc61ef37ffcc8a25406b0f6dbe46b1a188d26ef39adb2a57",
+      "bytes": 4583032
+    },
+    {
+      "path": "verification/f-only-en-v1.5.7/paper-02.f",
+      "sha256": "fee720fe4326ad36f7bf2e1c5ae8fe987ed77a3368b938b9964acbc60b96607f",
+      "bytes": 6930253
+    },
+    {
+      "path": "verification/f-only-en-v1.5.7/paper-03.f",
+      "sha256": "7ccb5e73b4b6111be48800e810ca31e17227aa86c0aba5eb1525a1bd987b1eaf",
+      "bytes": 1147366
+    },
+    {
+      "path": "verification/f-only-en-v1.5.7/paper-04.f",
+      "sha256": "ff6c440e7b01ed8bd12bca44ebf2671ae44233846c2755c0e70b1c7956afc100",
+      "bytes": 1144003
+    },
+    {
+      "path": "verification/f-only-en-v1.5.7/paper-05.f",
+      "sha256": "ca4f85abff84372684864c1640b79fc6729bff59ad385c8d181e79f1b7e20db4",
+      "bytes": 1662004
+    },
+    {
+      "path": "verification/f-only-en-v1.5.7/paper-06.f",
+      "sha256": "a355210cadaddd69677e87038aee07a18775748374d88ac1bb574cde55a75a8e",
+      "bytes": 2398174
+    },
+    {
+      "path": "verification/f-only-en-v1.5.7/paper-07.f",
+      "sha256": "1796a247027c6ab953be7f9ec989cae0d04649876b37954800a32409ea5b95ae",
+      "bytes": 1838398
+    },
+    {
+      "path": "verification/f-only-en-v1.5.7/paper-08.f",
+      "sha256": "0813c474acc8a3185b1c16d2ce931dbe99c3a4f1ceaa494ca0329db8d7db94a7",
+      "bytes": 7807420
+    },
+    {
+      "path": "verification/f-only-en-v1.5.7/paper-09.f",
+      "sha256": "61af485c17ba7ada05183356c3afb074ef5e6474d7b37d13a9b7b49a91727f7d",
+      "bytes": 7771225
+    },
+    {
+      "path": "verification/f-only-en-v1.5.7/paper-10.f",
+      "sha256": "883b694681917a476f72ad82f89f0106bc257070f138db2a6b184e5a18a53b75",
+      "bytes": 3023041
+    },
+    {
+      "path": "verification/f-only-en-v1.5.7/paper-11.f",
+      "sha256": "f6c870589dc3c4516d2910a9b2d4c8f95b1091265259d113c80f74f62a22c6aa",
+      "bytes": 774217
+    },
+    {
+      "path": "verification/f-only-en-v1.5.7/paper-12.f",
+      "sha256": "11e11f9d50bf8c2ddb473ca0a0119c2bd5626bfb8bf9166cf982cc80f03a1c05",
+      "bytes": 3904750
+    },
+    {
+      "path": "verification/f-only-en-v1.5.7/paper-13.f",
+      "sha256": "f941c10d5982215d5e98e9acd54cf6e3804bbffd88021c37b574e3c2ad6dd50f",
+      "bytes": 7609591
+    },
+    {
+      "path": "verification/f-only-en-v1.5.7/report.json",
+      "sha256": "16556d22f02da110b1e0b9f8e7a39866fca405ff050b73426232447b387f475d",
+      "bytes": 69616
+    },
+    {
+      "path": "verification/f-only-v1.5.7/alternating-rule.f",
       "sha256": "a93f293124dfcfbc609ca2d6705d08c1321be15c8ed527083dbecc5d80e65aee",
       "bytes": 10528
     },
     {
-      "path": "verification/f-only-v1.5.4/beta-step.f",
+      "path": "verification/f-only-v1.5.7/approx-value-error-bracket.f",
+      "sha256": "d00166d3d352f2bd4d307b2483f0f2aaf725d8f50babaf9ff178efe268cacfd1",
+      "bytes": 763
+    },
+    {
+      "path": "verification/f-only-v1.5.7/approx-value-error-residual.f",
+      "sha256": "5ed1e45554b23ba5d2b892969275180583b812430d603772a621bef8c94ec62f",
+      "bytes": 1015
+    },
+    {
+      "path": "verification/f-only-v1.5.7/beta-step.f",
       "sha256": "d9f691dd0f01451bed596e7f42911ceb33e5df8c0babfe50d4911af317848e26",
       "bytes": 157
     },
     {
-      "path": "verification/f-only-v1.5.4/bool-false.f",
+      "path": "verification/f-only-v1.5.7/bool-false.f",
       "sha256": "07d6b0de1af2f0e71ad001630d6c94a599cde970023233b8a440e9e8faddc530",
       "bytes": 4
     },
     {
-      "path": "verification/f-only-v1.5.4/bool-true.f",
+      "path": "verification/f-only-v1.5.7/bool-true.f",
       "sha256": "d5bb654fb7396f18931c15b2a874974963dfcb2c5348356f6baad05fcf5748c0",
       "bytes": 7
     },
     {
-      "path": "verification/f-only-v1.5.4/cauchy-center-radius.f",
+      "path": "verification/f-only-v1.5.7/cauchy-center-radius.f",
       "sha256": "4772429e06a7be8468b9592e9d63197629377209c64b88fd2abaa43d4b5868d6",
       "bytes": 76
     },
     {
-      "path": "verification/f-only-v1.5.4/cauchy-modulus.f",
+      "path": "verification/f-only-v1.5.7/cauchy-modulus.f",
       "sha256": "6ae717d3160613b8070718cfc43ad839b75403e5f8c2cdde7f7781ccc383a029",
       "bytes": 898
     },
     {
-      "path": "verification/f-only-v1.5.4/complex-i.f",
+      "path": "verification/f-only-v1.5.7/complex-i.f",
       "sha256": "2c02303f791f22529bb5a7de60d2e3016588451747250b0bca9a28f596a41b3b",
       "bytes": 229
     },
     {
-      "path": "verification/f-only-v1.5.4/complex-one-minus-i.f",
+      "path": "verification/f-only-v1.5.7/complex-one-minus-i.f",
       "sha256": "7b9361b19b030e5ffda5483fab68c35848203252f305c94b6b6554f131561862",
       "bytes": 289
     },
     {
-      "path": "verification/f-only-v1.5.4/complex-one-plus-i.f",
+      "path": "verification/f-only-v1.5.7/complex-one-plus-i.f",
       "sha256": "e638115c741fc748f65e14e8c57c23f1ae8c3250fc4b7368f4073978bf25bcd4",
       "bytes": 289
     },
     {
-      "path": "verification/f-only-v1.5.4/complex-one.f",
+      "path": "verification/f-only-v1.5.7/complex-one.f",
       "sha256": "f0f1cb01dc8d25e73f6f57ded355648d0a9cc55f6f5bb6956ac481b290ab2465",
       "bytes": 226
     },
     {
-      "path": "verification/f-only-v1.5.4/complex-zero.f",
+      "path": "verification/f-only-v1.5.7/complex-zero.f",
       "sha256": "405b6dc358003d44eb0b4942fb143e7802521b1874905b46486d947c26d3c7d7",
       "bytes": 166
     },
     {
-      "path": "verification/f-only-v1.5.4/f-epsilon.f",
+      "path": "verification/f-only-v1.5.7/decimal-exact-third.f",
+      "sha256": "103dbe3546491b4ade711300f2704c9fa87e0254a1f2427ada69d9c7ce55405e",
+      "bytes": 127
+    },
+    {
+      "path": "verification/f-only-v1.5.7/decimal-exact-two-thirds.f",
+      "sha256": "bc120a7fc61add3b29ea391d650a42853a08db2e02e5f22f6e2dce7bc4731e62",
+      "bytes": 142
+    },
+    {
+      "path": "verification/f-only-v1.5.7/decimal-lower-sum.f",
+      "sha256": "5a87eef3960b7bc965cf9247352be0a6640b1e8f9cf942533a5dbb4aee8cfbfe",
+      "bytes": 178
+    },
+    {
+      "path": "verification/f-only-v1.5.7/decimal-mixed-sum.f",
+      "sha256": "c5309d7e42e6d5a57d6faeea4ebfecbba4c2513a551005946fda755d0f51dcee",
+      "bytes": 160
+    },
+    {
+      "path": "verification/f-only-v1.5.7/decimal-prefix-1.f",
+      "sha256": "ecabd5257c105d78d696363fac6771df45a97c9e32ef29340f6b1f5fd5824a7d",
+      "bytes": 376
+    },
+    {
+      "path": "verification/f-only-v1.5.7/decimal-prefix-2.f",
+      "sha256": "0eaa53745ccf6070f2e923cc901fe4f289b3ab62cafb7f9eef6727dcbf066ad5",
+      "bytes": 1009
+    },
+    {
+      "path": "verification/f-only-v1.5.7/decimal-prefix-3.f",
+      "sha256": "f9d83b635792a533eaf9667c348d216d09c696e64028c4307af97a706648bdb3",
+      "bytes": 7312
+    },
+    {
+      "path": "verification/f-only-v1.5.7/decimal-record-third.f",
+      "sha256": "3e7d18f0a9de6c73e5bf944c85ae3b0d3830f96a76a0f75401e0770a584b6fda",
+      "bytes": 37
+    },
+    {
+      "path": "verification/f-only-v1.5.7/decimal-record-two-thirds.f",
+      "sha256": "51cd7d95837ac1d2160e32594c5c361d078a49836401b869e2a0d03bab3d3316",
+      "bytes": 46
+    },
+    {
+      "path": "verification/f-only-v1.5.7/f-epsilon.f",
       "sha256": "598dadd3b2b0c797dc2a45c426d5ef4513f30856d221e8494d45fe84a9e1bed0",
       "bytes": 97
     },
     {
-      "path": "verification/f-only-v1.5.4/f-inverse-epsilon.f",
+      "path": "verification/f-only-v1.5.7/f-inverse-epsilon.f",
       "sha256": "9a55b630435a6f3e73c113adb72e39708f4c670d70312845429f544f159128be",
       "bytes": 97
     },
     {
-      "path": "verification/f-only-v1.5.4/f-minus-one.f",
+      "path": "verification/f-only-v1.5.7/f-minus-one.f",
       "sha256": "6ee3f4b31688c3af855576d26220258c2fcb75f2046e8d107aec7fd2143f4fc6",
       "bytes": 73
     },
     {
-      "path": "verification/f-only-v1.5.4/f-one.f",
+      "path": "verification/f-only-v1.5.7/f-one.f",
       "sha256": "17808a5fa10d5b898bd805c16a54a88c404a604d13f8a016d89ae3e63d70d27b",
       "bytes": 70
     },
     {
-      "path": "verification/f-only-v1.5.4/f-square-ratio.f",
+      "path": "verification/f-only-v1.5.7/f-square-ratio.f",
       "sha256": "c094abf4b2be9089e254143a3245e1b9e1c26d55db817823ce19de7a68a121ad",
       "bytes": 154
     },
     {
-      "path": "verification/f-only-v1.5.4/f-zero.f",
+      "path": "verification/f-only-v1.5.7/f-zero.f",
       "sha256": "3cf99db80860e1b74fbf63eb1c75e146d4280b80f463d2ab9ccc12a055b5fbea",
       "bytes": 40
     },
     {
-      "path": "verification/f-only-v1.5.4/identity-arrow.f",
+      "path": "verification/f-only-v1.5.7/fixed-t-product-conjugate.f",
+      "sha256": "cbe7efee41d1266b884cf871fcf78710050e70c75d38960c3971070599cfd637",
+      "bytes": 1429
+    },
+    {
+      "path": "verification/f-only-v1.5.7/fixed-t-product-sigma-square.f",
+      "sha256": "8e9e3848f593202fb1844d4263f0d9fd85a2b5f89ceafe5919c1bcf5b3f9e781",
+      "bytes": 1366
+    },
+    {
+      "path": "verification/f-only-v1.5.7/geometric-decimal-reject-empty-repeat.f",
+      "sha256": "da6350d1ff67bea9287d8b97c45ef22458222a50b8c38dc9acb83c984ed7737c",
+      "bytes": 3919
+    },
+    {
+      "path": "verification/f-only-v1.5.7/geometric-decimal-reject-false-direction.f",
+      "sha256": "b513c53f37ab81a25d98eaa2da058cef220d6b0c7f68c2bd5bc7803303fb7d00",
+      "bytes": 1126
+    },
+    {
+      "path": "verification/f-only-v1.5.7/geometric-decimal-reject-false-exact-label.f",
+      "sha256": "ade6659cb561a4231d7455cff461f93432d1023898c5b0b5d9010bf75ab56a8c",
+      "bytes": 3790
+    },
+    {
+      "path": "verification/f-only-v1.5.7/geometric-decimal-reject-false-recurrence.f",
+      "sha256": "0cedda1d8c89521f4830ceadf989322a2920ca6bc897b7ad7eda2848f4cc8c80",
+      "bytes": 1987
+    },
+    {
+      "path": "verification/f-only-v1.5.7/geometric-decimal-reject-invalid-digit.f",
+      "sha256": "15362a769a01476b05f31b1e9f11fde0b3a7e50c64a8971148a6a8ac2ef0ce6d",
+      "bytes": 3955
+    },
+    {
+      "path": "verification/f-only-v1.5.7/geometric-decimal-reject-invalid-ratio.f",
+      "sha256": "3bdd2ed81af384a4cdfc5f94531d5da8da96cd3d431a5329c3f74ce49b484cea",
+      "bytes": 2101
+    },
+    {
+      "path": "verification/f-only-v1.5.7/geometric-h-menger-volume.f",
+      "sha256": "9618578a6505ce82a59be7fa66b8246c3002360c0bb9d2d025b1c4bc3c0aae3e",
+      "bytes": 220
+    },
+    {
+      "path": "verification/f-only-v1.5.7/geometric-h-third-fixed.f",
+      "sha256": "e2eeea39cf18766359d9102bfc659462c04019672be634fbe5c4bd062b6b3339",
+      "bytes": 118
+    },
+    {
+      "path": "verification/f-only-v1.5.7/geometric-h-third-lower.f",
+      "sha256": "7c39a92758f86ae58b5a411000563f5880683d4cb3982082cda9aa5daf780c29",
+      "bytes": 130
+    },
+    {
+      "path": "verification/f-only-v1.5.7/geometric-h-third-upper.f",
+      "sha256": "a8669d553edf6fae693331b1bc9db5f4631c04dbff1cc6afda53f9030d46fc1e",
+      "bytes": 130
+    },
+    {
+      "path": "verification/f-only-v1.5.7/geometric-h-two-thirds-lower.f",
+      "sha256": "db661828344357f5d4336163b24e7daacea365d0155961661c6683100339ea67",
+      "bytes": 136
+    },
+    {
+      "path": "verification/f-only-v1.5.7/geometric-intro-menger-volume.f",
+      "sha256": "c63b0c0e37028328eb57ec8744107c59e6e2c170b673d34d996f6d187f65c5cd",
+      "bytes": 271
+    },
+    {
+      "path": "verification/f-only-v1.5.7/geometric-intro-third-fixed.f",
+      "sha256": "0536c6d2158c1d79749eed8a7d983c6e3ea546a13d636d86cb4f2e6f83d374b8",
+      "bytes": 172
+    },
+    {
+      "path": "verification/f-only-v1.5.7/geometric-intro-third-lower.f",
+      "sha256": "ec07ae4f0929fdce089fdafebda19fb70da86d830dafc959de989a734ae90869",
+      "bytes": 193
+    },
+    {
+      "path": "verification/f-only-v1.5.7/geometric-intro-third-upper.f",
+      "sha256": "47adad9f74e5c7c963a9f19fbecccb34725b22084e77b6045d19f3b6d85d1521",
+      "bytes": 190
+    },
+    {
+      "path": "verification/f-only-v1.5.7/geometric-intro-two-thirds-lower.f",
+      "sha256": "ad129e3f07fa9e11ae6a7390afb1898c1b6cc73ab9af2eb9f359a88beddbdfc0",
+      "bytes": 202
+    },
+    {
+      "path": "verification/f-only-v1.5.7/geometric-trace-menger-volume.f",
+      "sha256": "f55b146b76e264b9e1d0290756111a0f95d243b12dace2459a3d77097bc1b146",
+      "bytes": 86977
+    },
+    {
+      "path": "verification/f-only-v1.5.7/geometric-trace-third-fixed.f",
+      "sha256": "42dc8d23500a838397c20b6a50b039e63e3b2a60ff0aad6697aa31d143c0f654",
+      "bytes": 340
+    },
+    {
+      "path": "verification/f-only-v1.5.7/geometric-trace-third-lower.f",
+      "sha256": "8444bd9d7995a535a79fac355468d5602fdc4c795041f063f43ead11d28b7a7a",
+      "bytes": 4744
+    },
+    {
+      "path": "verification/f-only-v1.5.7/geometric-trace-third-upper.f",
+      "sha256": "25c40a992eac4c76450175ec609d441a39fe631fc9017752c5d21b9e94a3bb84",
+      "bytes": 2533
+    },
+    {
+      "path": "verification/f-only-v1.5.7/geometric-trace-two-thirds-lower.f",
+      "sha256": "5575188d3f306d46cdbfd5be4d257ce53152b3272ed15175fd7c4072ca9df527",
+      "bytes": 3085
+    },
+    {
+      "path": "verification/f-only-v1.5.7/identity-arrow.f",
       "sha256": "0d8f5b156b42e8dfba7a89201e56bb82510bf6dc1e839159b04dcf6779e43b93",
       "bytes": 43
     },
     {
-      "path": "verification/f-only-v1.5.4/int-0.f",
+      "path": "verification/f-only-v1.5.7/int-0.f",
       "sha256": "d81d5cc8f4d7a3a66da6d9b4669f0178da2fe73a5a867b966ac2e49a9b2906b2",
       "bytes": 10
     },
     {
-      "path": "verification/f-only-v1.5.4/int-1.f",
+      "path": "verification/f-only-v1.5.7/int-1.f",
       "sha256": "77d5f08b6cc75efc8569ae6ee51150b1b1d24a8337f42744610f39a6fe1c8f53",
       "bytes": 13
     },
     {
-      "path": "verification/f-only-v1.5.4/int-2.f",
+      "path": "verification/f-only-v1.5.7/int-2.f",
       "sha256": "a2c632e79db9212e9443f6a98de2d4aa8ec9c816500075c7d85755b9b90ce844",
       "bytes": 16
     },
     {
-      "path": "verification/f-only-v1.5.4/int-minus-1.f",
+      "path": "verification/f-only-v1.5.7/int-minus-1.f",
       "sha256": "f0fba5908b68af4dc22eb25ae7eb2b9219765b5a68f3c0646b95f32a55146b16",
       "bytes": 16
     },
     {
-      "path": "verification/f-only-v1.5.4/int-minus-2.f",
+      "path": "verification/f-only-v1.5.7/int-minus-2.f",
       "sha256": "96da41332fdfa5864547ce6d2678bf354be0a608f6af3f69b004d866f6af1df0",
       "bytes": 19
     },
     {
-      "path": "verification/f-only-v1.5.4/interval-sqrt2-initial.f",
+      "path": "verification/f-only-v1.5.7/interval-sqrt2-initial.f",
       "sha256": "77da3f1fd5c351f5363e3f22b16a067eab92a90757a7f46bb3d5f2aaf891ab42",
       "bytes": 58
     },
     {
-      "path": "verification/f-only-v1.5.4/interval-sqrt2-refined.f",
+      "path": "verification/f-only-v1.5.7/interval-sqrt2-refined.f",
       "sha256": "515599f9865a19e32d3464cc10d349c9b62e3e731859c54acff6a195dd83de7a",
       "bytes": 67
     },
     {
-      "path": "verification/f-only-v1.5.4/interval-unit.f",
+      "path": "verification/f-only-v1.5.7/interval-unit.f",
       "sha256": "cbb4305298e048de16f164e0bfdcbc9b571d4e4436460235d6ca832665c7fc00",
       "bytes": 55
     },
     {
-      "path": "verification/f-only-v1.5.4/json-2.f",
+      "path": "verification/f-only-v1.5.7/json-2.f",
       "sha256": "d87ab4877d4496568e77bcd43abd6a5e50ce9bac76049a2b1eb1330504626e06",
       "bytes": 175
     },
     {
-      "path": "verification/f-only-v1.5.4/json-a.f",
+      "path": "verification/f-only-v1.5.7/json-a.f",
       "sha256": "83ccf822345a73f257b3bc9a362677f5f8cc2dfe1843177089812ac769c41165",
       "bytes": 319
     },
     {
-      "path": "verification/f-only-v1.5.4/json-array.f",
+      "path": "verification/f-only-v1.5.7/json-array.f",
       "sha256": "f9f0509ddc16f4c2729000ef797870d0cb028f6e74ada1153e57352ffa66e8af",
       "bytes": 376
     },
     {
-      "path": "verification/f-only-v1.5.4/json-false.f",
+      "path": "verification/f-only-v1.5.7/json-false.f",
       "sha256": "036ba09a1c52fff04cc42d0836f5321f8a2ec124be5d0d52086e95735f0c93a0",
       "bytes": 13
     },
     {
-      "path": "verification/f-only-v1.5.4/json-null.f",
+      "path": "verification/f-only-v1.5.7/json-null.f",
       "sha256": "d81d5cc8f4d7a3a66da6d9b4669f0178da2fe73a5a867b966ac2e49a9b2906b2",
       "bytes": 10
     },
     {
-      "path": "verification/f-only-v1.5.4/json-record.f",
+      "path": "verification/f-only-v1.5.7/json-record.f",
       "sha256": "1dbdde4db1714a9a8e34f50b6aa08eec3ec0fed6c9c8f98c24a471c69502d3b7",
       "bytes": 505
     },
     {
-      "path": "verification/f-only-v1.5.4/json-true.f",
+      "path": "verification/f-only-v1.5.7/json-true.f",
       "sha256": "cc230dd163117703dedca2e65e872d99b75c0f4dedf71beabf1e1bcc43bc62de",
       "bytes": 16
     },
     {
-      "path": "verification/f-only-v1.5.4/judgment.f",
+      "path": "verification/f-only-v1.5.7/judgment.f",
       "sha256": "61c683e56428a87b74f2a128bfd64188b46edb5b70af5bc5bb69f5485c0fd13c",
       "bytes": 100
     },
     {
-      "path": "verification/f-only-v1.5.4/label-pending-division.f",
+      "path": "verification/f-only-v1.5.7/label-pending-division.f",
       "sha256": "948c2f13893542dcefee4d4340cb3692c23c5e14263ead0dbbfa6f4ae319f77f",
       "bytes": 10420
     },
     {
-      "path": "verification/f-only-v1.5.4/label-with-evidence.f",
-      "sha256": "085047b799367839e4b4f713e440b448537951aabd4e849662e3be0d94a87700",
-      "bytes": 25198
+      "path": "verification/f-only-v1.5.7/label-with-evidence.f",
+      "sha256": "651460429bc457ddc8ac57b03be1605bc4a61fec3312473849f1fc2d6600772a",
+      "bytes": 25216
     },
     {
-      "path": "verification/f-only-v1.5.4/lambda-0.f",
+      "path": "verification/f-only-v1.5.7/lambda-0.f",
       "sha256": "ad3a7c7bdcefdf7623c9338cadb676c0506706a534d0df0f8004f57058febcb2",
       "bytes": 1291
     },
     {
-      "path": "verification/f-only-v1.5.4/lambda-1.f",
+      "path": "verification/f-only-v1.5.7/lambda-1.f",
       "sha256": "6a6efbeca08fce5d1bf306e4ff9332447563eb23e0f0de34edb5aaf03dba0cb7",
       "bytes": 907
     },
     {
-      "path": "verification/f-only-v1.5.4/lambda-2.f",
+      "path": "verification/f-only-v1.5.7/lambda-2.f",
       "sha256": "46eff4c841a10d1ebccf2daf46d8248f314cfca84567cfef81b34d361bb59919",
       "bytes": 979
     },
     {
-      "path": "verification/f-only-v1.5.4/lambda-3.f",
+      "path": "verification/f-only-v1.5.7/lambda-3.f",
       "sha256": "69b5e6e03fd22a5bc92537d30f1f73f04b3778f885acc7158d7811f49c0800df",
       "bytes": 1561
     },
     {
-      "path": "verification/f-only-v1.5.4/lambda-4.f",
+      "path": "verification/f-only-v1.5.7/lambda-4.f",
       "sha256": "96abda57e0d33f53514189d553b7af2adaf6f70f2376e88261758c4ca5c8b825",
       "bytes": 1279
     },
     {
-      "path": "verification/f-only-v1.5.4/lambda-add.f",
+      "path": "verification/f-only-v1.5.7/lambda-add.f",
       "sha256": "56070bdc1c83b116b93eed809f56617096f62d7dba5a1654fb6f3a5624092a83",
       "bytes": 265
     },
     {
-      "path": "verification/f-only-v1.5.4/lambda-and.f",
+      "path": "verification/f-only-v1.5.7/lambda-and.f",
       "sha256": "35d280480e69f48d6fbdbf7df92dfe6549f0a78c51fc07e1570b2fadce75b470",
       "bytes": 136
     },
     {
-      "path": "verification/f-only-v1.5.4/lambda-application.f",
+      "path": "verification/f-only-v1.5.7/lambda-application.f",
       "sha256": "5d53d177d4f3ccb3e6338dcc9621d6386d386f8bfeeb9ed831bec199f4e49688",
       "bytes": 94
     },
     {
-      "path": "verification/f-only-v1.5.4/lambda-environment.f",
+      "path": "verification/f-only-v1.5.7/lambda-environment.f",
       "sha256": "a27d37e875ec997e8ff3739633e22260765b372313227f31052d95617bd42561",
       "bytes": 337444
     },
     {
-      "path": "verification/f-only-v1.5.4/lambda-eqnat.f",
+      "path": "verification/f-only-v1.5.7/lambda-eqnat.f",
       "sha256": "2e236ad706534e5807417301f9a948b59b2008deef31d756ac10befdd7435b8a",
       "bytes": 2908
     },
     {
-      "path": "verification/f-only-v1.5.4/lambda-false.f",
+      "path": "verification/f-only-v1.5.7/lambda-false.f",
       "sha256": "09c92adf062962430ac42da40623862f7d00f264de07f7fbbbf17c161d2887b9",
       "bytes": 58
     },
     {
-      "path": "verification/f-only-v1.5.4/lambda-fixy.f",
+      "path": "verification/f-only-v1.5.7/lambda-fixy.f",
       "sha256": "fe9ab48ef6a84ab25fe771228810ac7838ce77affe366f52ea7f1eee3021418c",
       "bytes": 265
     },
     {
-      "path": "verification/f-only-v1.5.4/lambda-four.f",
+      "path": "verification/f-only-v1.5.7/lambda-four.f",
       "sha256": "b24e49e23ddbca01f08c6f9581dfe4a357fa77707f991432a54582dc4767e35d",
       "bytes": 2818
     },
     {
-      "path": "verification/f-only-v1.5.4/lambda-fst.f",
+      "path": "verification/f-only-v1.5.7/lambda-fst.f",
       "sha256": "4e1bcc0882052012fa31913f163945fcbe6ea0f88200c96f1c88438a6d93d8af",
       "bytes": 118
     },
     {
-      "path": "verification/f-only-v1.5.4/lambda-identity.f",
+      "path": "verification/f-only-v1.5.7/lambda-identity.f",
       "sha256": "d45ebdead9fd2d8217c7a332792bdfc36b2e6e15676f611fd904faa9d82cf5ef",
       "bytes": 37
     },
     {
-      "path": "verification/f-only-v1.5.4/lambda-if.f",
+      "path": "verification/f-only-v1.5.7/lambda-if.f",
       "sha256": "3b84d8005184ac501ce8616e751ee93e513c5ac9e27c094f5c013bd94bf6199c",
       "bytes": 160
     },
     {
-      "path": "verification/f-only-v1.5.4/lambda-iszero.f",
+      "path": "verification/f-only-v1.5.7/lambda-iszero.f",
       "sha256": "4a68db2716225f94bb6a2ba8411c030c68d47864a1cc44d8ba078e187f82b4e7",
       "bytes": 2911
     },
     {
-      "path": "verification/f-only-v1.5.4/lambda-leq.f",
+      "path": "verification/f-only-v1.5.7/lambda-leq.f",
       "sha256": "bea0d426117e04552f60a56f6997a1d3eb9574796abef77ed53b77b775ba5fe1",
       "bytes": 2935
     },
     {
-      "path": "verification/f-only-v1.5.4/lambda-mul.f",
+      "path": "verification/f-only-v1.5.7/lambda-mul.f",
       "sha256": "e1a1ff557b04db9e40ed489937e1cd83950ee97f1992e34fc973b5f2ff6424ad",
       "bytes": 226
     },
     {
-      "path": "verification/f-only-v1.5.4/lambda-n0.f",
+      "path": "verification/f-only-v1.5.7/lambda-n0.f",
       "sha256": "ad3a7c7bdcefdf7623c9338cadb676c0506706a534d0df0f8004f57058febcb2",
       "bytes": 1291
     },
     {
-      "path": "verification/f-only-v1.5.4/lambda-n1.f",
+      "path": "verification/f-only-v1.5.7/lambda-n1.f",
       "sha256": "6a6efbeca08fce5d1bf306e4ff9332447563eb23e0f0de34edb5aaf03dba0cb7",
       "bytes": 907
     },
     {
-      "path": "verification/f-only-v1.5.4/lambda-n2.f",
+      "path": "verification/f-only-v1.5.7/lambda-n2.f",
       "sha256": "46eff4c841a10d1ebccf2daf46d8248f314cfca84567cfef81b34d361bb59919",
       "bytes": 979
     },
     {
-      "path": "verification/f-only-v1.5.4/lambda-n3.f",
+      "path": "verification/f-only-v1.5.7/lambda-n3.f",
       "sha256": "69b5e6e03fd22a5bc92537d30f1f73f04b3778f885acc7158d7811f49c0800df",
       "bytes": 1561
     },
     {
-      "path": "verification/f-only-v1.5.4/lambda-n4.f",
+      "path": "verification/f-only-v1.5.7/lambda-n4.f",
       "sha256": "96abda57e0d33f53514189d553b7af2adaf6f70f2376e88261758c4ca5c8b825",
       "bytes": 1279
     },
     {
-      "path": "verification/f-only-v1.5.4/lambda-not.f",
+      "path": "verification/f-only-v1.5.7/lambda-not.f",
       "sha256": "9ea48dc8ce7a72750bbbff449e3c544965a9b7595a21a2cef8230c03b783ff6b",
       "bytes": 2890
     },
     {
-      "path": "verification/f-only-v1.5.4/lambda-one.f",
+      "path": "verification/f-only-v1.5.7/lambda-one.f",
       "sha256": "590512941e5a161f8c98e82539992ceaeb9b36713c82e4268a25b67abe4d3f2f",
       "bytes": 2548
     },
     {
-      "path": "verification/f-only-v1.5.4/lambda-or.f",
+      "path": "verification/f-only-v1.5.7/lambda-or.f",
       "sha256": "cbf558e11860633a96ded13289d4fec419f5b6680be9d617ba559c2a8033c9ac",
       "bytes": 136
     },
     {
-      "path": "verification/f-only-v1.5.4/lambda-pair.f",
+      "path": "verification/f-only-v1.5.7/lambda-pair.f",
       "sha256": "94103036b741317f3d98f017a2025b5b9de3448c6c8e978da65aabd0843119b4",
       "bytes": 160
     },
     {
-      "path": "verification/f-only-v1.5.4/lambda-position.f",
+      "path": "verification/f-only-v1.5.7/lambda-position.f",
       "sha256": "3db4a75ae63505449eabe656d54cc1ddb69e8dd62d64d3b18eb9461bd64a51d2",
       "bytes": 31
     },
     {
-      "path": "verification/f-only-v1.5.4/lambda-pred.f",
+      "path": "verification/f-only-v1.5.7/lambda-pred.f",
       "sha256": "00c940b97122a92841669353be4e736058a96af000856120a2da541224b5e0ae",
       "bytes": 364
     },
     {
-      "path": "verification/f-only-v1.5.4/lambda-qhalf.f",
+      "path": "verification/f-only-v1.5.7/lambda-qhalf.f",
       "sha256": "985ed8f92e725bed7fb7ae6fc18b42b72ab246da895740fade29ee19712224c4",
       "bytes": 3649
     },
     {
-      "path": "verification/f-only-v1.5.4/lambda-qmake.f",
+      "path": "verification/f-only-v1.5.7/lambda-qmake.f",
       "sha256": "b9bef994240033d8ba3fd335b9ddebe8157e2abaa2ee4904dedf8e3d9bf9a5ae",
       "bytes": 19966
     },
     {
-      "path": "verification/f-only-v1.5.4/lambda-qone.f",
+      "path": "verification/f-only-v1.5.7/lambda-qone.f",
       "sha256": "ba0e9066df3262d4d1902d884bbe09f34f3465c8f8b0cf96fba5678568aa36cc",
       "bytes": 3577
     },
     {
-      "path": "verification/f-only-v1.5.4/lambda-qrep.f",
+      "path": "verification/f-only-v1.5.7/lambda-qrep.f",
       "sha256": "78f0aed8aea5c3cef7802cd0807e109ac605de8eea57db2a3493a0e16cccbdbe",
       "bytes": 1231
     },
     {
-      "path": "verification/f-only-v1.5.4/lambda-qrepadd.f",
+      "path": "verification/f-only-v1.5.7/lambda-qrepadd.f",
       "sha256": "bc0e5ed6b3e07e19b8514d2bfaf33c164654167744092a3fd9771be50d648830",
       "bytes": 11947
     },
     {
-      "path": "verification/f-only-v1.5.4/lambda-qrepden.f",
+      "path": "verification/f-only-v1.5.7/lambda-qrepden.f",
       "sha256": "bd888f91e7933cf12a28a09557d75e513380e484b9a800da6ba1034339937295",
       "bytes": 916
     },
     {
-      "path": "verification/f-only-v1.5.4/lambda-qrepdiv.f",
+      "path": "verification/f-only-v1.5.7/lambda-qrepdiv.f",
       "sha256": "3705005df48ee97ab546fc5719cb29ffea325ad24b7a6e3e05b3bfc86dea340a",
       "bytes": 7900
     },
     {
-      "path": "verification/f-only-v1.5.4/lambda-qrepeq.f",
+      "path": "verification/f-only-v1.5.7/lambda-qrepeq.f",
       "sha256": "19e7d172498789f9bfc7cffcc5ab120ae528e17b76c8aa080fd300751f46a071",
       "bytes": 7315
     },
     {
-      "path": "verification/f-only-v1.5.4/lambda-qrepinv.f",
+      "path": "verification/f-only-v1.5.7/lambda-qrepinv.f",
       "sha256": "2f05c331c810b5ba9c660b3164065f51524aa17d4b963ae0fd2453064b87c923",
       "bytes": 3427
     },
     {
-      "path": "verification/f-only-v1.5.4/lambda-qrepleq.f",
+      "path": "verification/f-only-v1.5.7/lambda-qrepleq.f",
       "sha256": "8f291688f05efb66b5796c5fd48c6961030fc8e328b2c637ec5927ee76d09047",
       "bytes": 7645
     },
     {
-      "path": "verification/f-only-v1.5.4/lambda-qrepmul.f",
+      "path": "verification/f-only-v1.5.7/lambda-qrepmul.f",
       "sha256": "e9cfa00a52f52bb17f94985505a13aedccfd432d8c6ab0dd627ca3267fc821df",
       "bytes": 7633
     },
     {
-      "path": "verification/f-only-v1.5.4/lambda-qrepneg.f",
+      "path": "verification/f-only-v1.5.7/lambda-qrepneg.f",
       "sha256": "46009f58be8046e60c3bbfc010f9fe6f0e944c024c624a54253da7cf1ac4a7af",
       "bytes": 4339
     },
     {
-      "path": "verification/f-only-v1.5.4/lambda-qrepnum.f",
+      "path": "verification/f-only-v1.5.7/lambda-qrepnum.f",
       "sha256": "47447c2ab0ab543494f68425403dff00d852c9f57da744dd912253454a259837",
       "bytes": 940
     },
     {
-      "path": "verification/f-only-v1.5.4/lambda-qrepsub.f",
+      "path": "verification/f-only-v1.5.7/lambda-qrepsub.f",
       "sha256": "7e0d7b0165dc7368476572d973fc6edcf7597b5d01721824dc5255043761720a",
       "bytes": 4156
     },
     {
-      "path": "verification/f-only-v1.5.4/lambda-qrepvalid.f",
+      "path": "verification/f-only-v1.5.7/lambda-qrepvalid.f",
       "sha256": "41d2c2e1281620912616ba80515eab8825e1bdd2161f0be624c6cfc00437b502",
       "bytes": 9469
     },
     {
-      "path": "verification/f-only-v1.5.4/lambda-qzero.f",
+      "path": "verification/f-only-v1.5.7/lambda-qzero.f",
       "sha256": "eab313f7db6c7194c122ccf1b22aebf5b9c79262f4afa2f7aa202e21d22f9754",
       "bytes": 3961
     },
     {
-      "path": "verification/f-only-v1.5.4/lambda-resultbind.f",
+      "path": "verification/f-only-v1.5.7/lambda-resultbind.f",
       "sha256": "7ef98bbd2eb890c3a7b3e6682fcf04d5248e7a574c5b9aeaf79242e5fa3a51d2",
       "bytes": 2998
     },
     {
-      "path": "verification/f-only-v1.5.4/lambda-resulterr.f",
+      "path": "verification/f-only-v1.5.7/lambda-resulterr.f",
       "sha256": "b5027547f75ad0a85ba2ed7a37f42c1a4d2b530065ee1410d16982e3461bd24c",
       "bytes": 121
     },
     {
-      "path": "verification/f-only-v1.5.4/lambda-resultok.f",
+      "path": "verification/f-only-v1.5.7/lambda-resultok.f",
       "sha256": "1536db6b19d91a7691a94193bbe7b561645f3fde2c52ae0562bbb6d83cf99c8d",
       "bytes": 124
     },
     {
-      "path": "verification/f-only-v1.5.4/lambda-snd.f",
+      "path": "verification/f-only-v1.5.7/lambda-snd.f",
       "sha256": "bf841066d9475defb79e14b4d8c4d23266b0fcc14da94baef048ebe1020987bd",
       "bytes": 115
     },
     {
-      "path": "verification/f-only-v1.5.4/lambda-sub.f",
+      "path": "verification/f-only-v1.5.7/lambda-sub.f",
       "sha256": "a4a32def01d7e54c046829400e2197f16df07e77dc287bf5a1335f3fe5dbd98f",
       "bytes": 1345
     },
     {
-      "path": "verification/f-only-v1.5.4/lambda-succ.f",
+      "path": "verification/f-only-v1.5.7/lambda-succ.f",
       "sha256": "67601cdd614354ad5ea3960598b64423e0043fea5d5b7506f3ecb2bcc1cc662b",
       "bytes": 199
     },
     {
-      "path": "verification/f-only-v1.5.4/lambda-three.f",
+      "path": "verification/f-only-v1.5.7/lambda-three.f",
       "sha256": "9896d4d583e0baad4f190e5c9480ebccd6c31f3d2bec6f075c6abc7c39ceecc9",
       "bytes": 2236
     },
     {
-      "path": "verification/f-only-v1.5.4/lambda-true.f",
+      "path": "verification/f-only-v1.5.7/lambda-true.f",
       "sha256": "8809cd4c64b768cb904f2628affbf6235a810aaca62540647b929ca1b9376553",
       "bytes": 61
     },
     {
-      "path": "verification/f-only-v1.5.4/lambda-two.f",
+      "path": "verification/f-only-v1.5.7/lambda-two.f",
       "sha256": "fa4b2e9be36aeb123a6e69de4894e0fb3575f1739d1bda8ea49bbfe4685ff0e1",
       "bytes": 2164
     },
     {
-      "path": "verification/f-only-v1.5.4/lambda-zadd.f",
+      "path": "verification/f-only-v1.5.7/lambda-zadd.f",
       "sha256": "6fc2ab7a6dd347cb4d02cd517634d5015977fa0e1ca4c8ecd20a91667283c030",
       "bytes": 23575
     },
     {
-      "path": "verification/f-only-v1.5.4/lambda-zeq.f",
+      "path": "verification/f-only-v1.5.7/lambda-zeq.f",
       "sha256": "6ac40514f2262c7843ea8e0192e31fc3a688c978a726a02c0b3188c45c8f13df",
       "bytes": 7822
     },
     {
-      "path": "verification/f-only-v1.5.4/lambda-zero.f",
+      "path": "verification/f-only-v1.5.7/lambda-zero.f",
       "sha256": "09c92adf062962430ac42da40623862f7d00f264de07f7fbbbf17c161d2887b9",
       "bytes": 58
     },
     {
-      "path": "verification/f-only-v1.5.4/lambda-zfromdiff.f",
+      "path": "verification/f-only-v1.5.7/lambda-zfromdiff.f",
       "sha256": "ddbd043b639e3e0e39ee103765bc0a342b9154029c7e693becd53a8e30291e89",
       "bytes": 8860
     },
     {
-      "path": "verification/f-only-v1.5.4/lambda-zleq.f",
+      "path": "verification/f-only-v1.5.7/lambda-zleq.f",
       "sha256": "d0558d5b419cf7b4b9f1030021eb281630037210575a5cb08bad5cbfe5fc83b5",
       "bytes": 16174
     },
     {
-      "path": "verification/f-only-v1.5.4/lambda-zmagnitude.f",
+      "path": "verification/f-only-v1.5.7/lambda-zmagnitude.f",
       "sha256": "bd888f91e7933cf12a28a09557d75e513380e484b9a800da6ba1034339937295",
       "bytes": 916
     },
     {
-      "path": "verification/f-only-v1.5.4/lambda-zmake.f",
+      "path": "verification/f-only-v1.5.7/lambda-zmake.f",
       "sha256": "04a0c26bc69214b3202e7fe5b18778fbe26c56530ded6789c21099f8d6f45fcc",
       "bytes": 5158
     },
     {
-      "path": "verification/f-only-v1.5.4/lambda-zminusone.f",
+      "path": "verification/f-only-v1.5.7/lambda-zminusone.f",
       "sha256": "32233b6613390c89e0003210703a94cb858590ea8589db5ea000f4f70438bb63",
       "bytes": 3319
     },
     {
-      "path": "verification/f-only-v1.5.4/lambda-zmul.f",
+      "path": "verification/f-only-v1.5.7/lambda-zmul.f",
       "sha256": "b874bfc313243f75277472f04799e958c88357f030dfa841a667af61b62f8497",
       "bytes": 10714
     },
     {
-      "path": "verification/f-only-v1.5.4/lambda-zneg.f",
+      "path": "verification/f-only-v1.5.7/lambda-zneg.f",
       "sha256": "f840e4e9dab73bc429546a9a70af53601804c3a96a447db655fed25dd38374e8",
       "bytes": 8155
     },
     {
-      "path": "verification/f-only-v1.5.4/lambda-zone.f",
+      "path": "verification/f-only-v1.5.7/lambda-zone.f",
       "sha256": "98a628bbbb91b5f4212cf82bb40900dac59b19bcee6b675edba56ab0bf4980e9",
       "bytes": 3703
     },
     {
-      "path": "verification/f-only-v1.5.4/lambda-zsign.f",
+      "path": "verification/f-only-v1.5.7/lambda-zsign.f",
       "sha256": "47447c2ab0ab543494f68425403dff00d852c9f57da744dd912253454a259837",
       "bytes": 940
     },
     {
-      "path": "verification/f-only-v1.5.4/lambda-zsub.f",
+      "path": "verification/f-only-v1.5.7/lambda-zsub.f",
       "sha256": "9876a3e61c3ae6bc80a17f7027b09a765ffb1fe5ab7caa5c352da0b45677efc6",
       "bytes": 2404
     },
     {
-      "path": "verification/f-only-v1.5.4/lambda-ztodiff.f",
+      "path": "verification/f-only-v1.5.7/lambda-ztodiff.f",
       "sha256": "e9b5a15a7372d3f92f7498718e4d521feef27770eef00988143d38422302a2d1",
       "bytes": 10528
     },
     {
-      "path": "verification/f-only-v1.5.4/lambda-ztwo.f",
+      "path": "verification/f-only-v1.5.7/lambda-ztwo.f",
       "sha256": "4ced51c3c3630b7d2c520e1f7970b23dc56e953a38b3e2b276623bddd95b0c9f",
       "bytes": 3775
     },
     {
-      "path": "verification/f-only-v1.5.4/lambda-zzero.f",
+      "path": "verification/f-only-v1.5.7/lambda-zzero.f",
       "sha256": "f13251bae0a44262a2f1e1524db2d901b6bdd6425092497871ce8d7306449c81",
       "bytes": 4087
     },
     {
-      "path": "verification/f-only-v1.5.4/legacy-l.f",
+      "path": "verification/f-only-v1.5.7/legacy-l.f",
       "sha256": "41e03bf71ba88cd26ec432428b825e5699c7d5be5ea4962e04212faf790d2a82",
       "bytes": 40
     },
     {
-      "path": "verification/f-only-v1.5.4/leibniz-state.f",
+      "path": "verification/f-only-v1.5.7/leibniz-state.f",
       "sha256": "6c6aef1c2ad6dd85b11f1e26147d8e350f8b5a417b53e509715877c6947e961d",
       "bytes": 106
     },
     {
-      "path": "verification/f-only-v1.5.4/list-0.f",
+      "path": "verification/f-only-v1.5.7/list-0.f",
       "sha256": "07d6b0de1af2f0e71ad001630d6c94a599cde970023233b8a440e9e8faddc530",
       "bytes": 4
     },
     {
-      "path": "verification/f-only-v1.5.4/list-1.f",
+      "path": "verification/f-only-v1.5.7/list-1.f",
       "sha256": "d81d5cc8f4d7a3a66da6d9b4669f0178da2fe73a5a867b966ac2e49a9b2906b2",
       "bytes": 10
     },
     {
-      "path": "verification/f-only-v1.5.4/list-3.f",
+      "path": "verification/f-only-v1.5.7/list-3.f",
       "sha256": "3db4a75ae63505449eabe656d54cc1ddb69e8dd62d64d3b18eb9461bd64a51d2",
       "bytes": 31
     },
     {
-      "path": "verification/f-only-v1.5.4/m-epsilon-half.f",
+      "path": "verification/f-only-v1.5.7/m-epsilon-half.f",
       "sha256": "a8a36b302fb8367c077f727a0ab6afd642ec781cfffc2041ad0c6606a7d7741a",
       "bytes": 64
     },
     {
-      "path": "verification/f-only-v1.5.4/m-epsilon-squared.f",
+      "path": "verification/f-only-v1.5.7/m-epsilon-squared.f",
       "sha256": "eec9f19e98fbf551ebfde131db3fd2c447b288bcefb47164080dea4f7ae94d33",
       "bytes": 88
     },
     {
-      "path": "verification/f-only-v1.5.4/m-epsilon.f",
+      "path": "verification/f-only-v1.5.7/m-epsilon.f",
       "sha256": "c675465b8c814c67d4a59bb9954e787b97789c30e72ca67123c67e19d175c3ea",
       "bytes": 61
     },
     {
-      "path": "verification/f-only-v1.5.4/m-general.f",
+      "path": "verification/f-only-v1.5.7/m-general.f",
       "sha256": "5424269a00112c8addd9b3edd17fb0a727311bc95c73899a68fac594e61c729c",
       "bytes": 103
     },
     {
-      "path": "verification/f-only-v1.5.4/m-one-plus-epsilon.f",
+      "path": "verification/f-only-v1.5.7/m-one-plus-epsilon.f",
       "sha256": "6f9cc182ca4c8ef79528673f7b92e0491fceda9f024c7ca8723cea29c6ffd93b",
       "bytes": 64
     },
     {
-      "path": "verification/f-only-v1.5.4/m-one.f",
+      "path": "verification/f-only-v1.5.7/m-one.f",
       "sha256": "71601c4ac293e8e1237c18764825bb8feb7fb106c5cd975791156747d0d82d20",
       "bytes": 34
     },
     {
-      "path": "verification/f-only-v1.5.4/m-zero.f",
+      "path": "verification/f-only-v1.5.7/m-zero.f",
       "sha256": "07d6b0de1af2f0e71ad001630d6c94a599cde970023233b8a440e9e8faddc530",
       "bytes": 4
     },
     {
-      "path": "verification/f-only-v1.5.4/manifest.json",
-      "sha256": "c426e872ae180314a6cdd2acad2e6c367abf7f384099268187dd888f1ca487c7",
-      "bytes": 120939
+      "path": "verification/f-only-v1.5.7/manifest.json",
+      "sha256": "232e583339e55167700b4bfc8747a8f44ccfcde28c49462ccafa8baccaa5e3a2",
+      "bytes": 160161
     },
     {
-      "path": "verification/f-only-v1.5.4/nat-0.f",
+      "path": "verification/f-only-v1.5.7/nat-0.f",
       "sha256": "07d6b0de1af2f0e71ad001630d6c94a599cde970023233b8a440e9e8faddc530",
       "bytes": 4
     },
     {
-      "path": "verification/f-only-v1.5.4/nat-1.f",
+      "path": "verification/f-only-v1.5.7/nat-1.f",
       "sha256": "d5bb654fb7396f18931c15b2a874974963dfcb2c5348356f6baad05fcf5748c0",
       "bytes": 7
     },
     {
-      "path": "verification/f-only-v1.5.4/nat-2.f",
+      "path": "verification/f-only-v1.5.7/nat-2.f",
       "sha256": "dbd34bca5e825e8b8508174c5a4d592820c781bd84c199b03d2ce0fd618836ca",
       "bytes": 10
     },
     {
-      "path": "verification/f-only-v1.5.4/nat-3.f",
+      "path": "verification/f-only-v1.5.7/nat-3.f",
       "sha256": "3cc8421d89fd55465f9685ef8e0d656359be0050922a908a45c11aaf8c29661c",
       "bytes": 13
     },
     {
-      "path": "verification/f-only-v1.5.4/nat-4.f",
+      "path": "verification/f-only-v1.5.7/nat-4.f",
       "sha256": "824202512946f3c550a64b83df3b876e36773b9ae126779813cbace810dce117",
       "bytes": 16
     },
     {
-      "path": "verification/f-only-v1.5.4/newton-state.f",
+      "path": "verification/f-only-v1.5.7/natform-nested-pair.f",
+      "sha256": "72096e1c1b63b2476c602494a0f87ece7dc0dc31da6390395b67bc2bffc57ce6",
+      "bytes": 109
+    },
+    {
+      "path": "verification/f-only-v1.5.7/natform-pair.f",
+      "sha256": "5326aef807de515bd87ba31a24c8ed0ae0f3c944848befa56ed5ef898c83965f",
+      "bytes": 106
+    },
+    {
+      "path": "verification/f-only-v1.5.7/natform-program.f",
+      "sha256": "cca15a0cbde2ab975e58b5e4a9df316fbd68bf81a53b731f8efbe50e1968439c",
+      "bytes": 70
+    },
+    {
+      "path": "verification/f-only-v1.5.7/natform-successor.f",
+      "sha256": "82cf3951388351040529c6aae953e528f72b2c7ec067551bc97339323cea1eae",
+      "bytes": 106
+    },
+    {
+      "path": "verification/f-only-v1.5.7/natform-zero.f",
+      "sha256": "8efee0552f5763c084ae698f2e5c94ddc3399ca04650ab775ecd3ca57ccc24c1",
+      "bytes": 103
+    },
+    {
+      "path": "verification/f-only-v1.5.7/newton-state.f",
       "sha256": "f71c7de2df956d7b0b3d19a86b0e54c300fd1a85c55e7ee43d288ab44dcacba9",
       "bytes": 97
     },
     {
-      "path": "verification/f-only-v1.5.4/one-step-arrow.f",
+      "path": "verification/f-only-v1.5.7/one-step-arrow.f",
       "sha256": "a62cf109072a3e22746d70d930d189c995388c6c0f7264d394c723fd0d122046",
       "bytes": 259
     },
     {
-      "path": "verification/f-only-v1.5.4/option-none.f",
+      "path": "verification/f-only-v1.5.7/option-none.f",
       "sha256": "d81d5cc8f4d7a3a66da6d9b4669f0178da2fe73a5a867b966ac2e49a9b2906b2",
       "bytes": 10
     },
     {
-      "path": "verification/f-only-v1.5.4/option-some.f",
+      "path": "verification/f-only-v1.5.7/option-some.f",
       "sha256": "fbd9e5d4ee572b4f33b9f5ea531e286f579591b582b53a69e2226c0d9b3293ff",
       "bytes": 25
     },
     {
-      "path": "verification/f-only-v1.5.4/ordering-0.f",
+      "path": "verification/f-only-v1.5.7/ordering-0.f",
       "sha256": "d81d5cc8f4d7a3a66da6d9b4669f0178da2fe73a5a867b966ac2e49a9b2906b2",
       "bytes": 10
     },
     {
-      "path": "verification/f-only-v1.5.4/ordering-1.f",
+      "path": "verification/f-only-v1.5.7/ordering-1.f",
       "sha256": "77d5f08b6cc75efc8569ae6ee51150b1b1d24a8337f42744610f39a6fe1c8f53",
       "bytes": 13
     },
     {
-      "path": "verification/f-only-v1.5.4/ordering-minus-1.f",
+      "path": "verification/f-only-v1.5.7/ordering-minus-1.f",
       "sha256": "f0fba5908b68af4dc22eb25ae7eb2b9219765b5a68f3c0646b95f32a55146b16",
       "bytes": 16
     },
     {
-      "path": "verification/f-only-v1.5.4/pair-nat.f",
+      "path": "verification/f-only-v1.5.7/pair-nat.f",
       "sha256": "96da41332fdfa5864547ce6d2678bf354be0a608f6af3f69b004d866f6af1df0",
       "bytes": 19
     },
     {
-      "path": "verification/f-only-v1.5.4/paper-00.f",
-      "sha256": "a20c589dca9a594081fcfa8ad1deb2651c682bc8f78a2d3056f9af093fa5ed17",
-      "bytes": 2354011
+      "path": "verification/f-only-v1.5.7/paper-00.f",
+      "sha256": "e9e0ae4a7cfc48b8e6208a878b2186842161638bd97aa3a7ddef60156b1615b9",
+      "bytes": 3543733
     },
     {
-      "path": "verification/f-only-v1.5.4/paper-01.f",
-      "sha256": "1adfa34cecfbb0b7d45e8a272cf49fe8496a0fb5300a0421becb2fcaddd7250b",
-      "bytes": 3238336
+      "path": "verification/f-only-v1.5.7/paper-01.f",
+      "sha256": "40410d8a36b3f8cbd796af4bedde49fad509fbcd67bb8846bb58089c860d6c19",
+      "bytes": 7440565
     },
     {
-      "path": "verification/f-only-v1.5.4/paper-02.f",
-      "sha256": "80101c896da79eecd0718c62151abe94917c0d2e0982479ca28756bae29eb1f6",
-      "bytes": 8318536
+      "path": "verification/f-only-v1.5.7/paper-02.f",
+      "sha256": "dd65ee3c5e388387955aa6a119e7cb71ac93170820b99a8f8bc0f37f6d1225db",
+      "bytes": 11382691
     },
     {
-      "path": "verification/f-only-v1.5.4/paper-03.f",
+      "path": "verification/f-only-v1.5.7/paper-03.f",
       "sha256": "afae0833e93014ef1039d9a084152069bb28021545a358d44235021ced0b2167",
       "bytes": 1632925
     },
     {
-      "path": "verification/f-only-v1.5.4/paper-04.f",
+      "path": "verification/f-only-v1.5.7/paper-04.f",
       "sha256": "4fd1576b3e411d4e0df7436c170b9c4550d3c2993dabd5b8e79aa6d791b9bead",
       "bytes": 1748788
     },
     {
-      "path": "verification/f-only-v1.5.4/paper-05.f",
-      "sha256": "1acfdbbe6e8dbe7a842ea432d831914c37bc693963837bce868f380d0d059bed",
-      "bytes": 2355757
+      "path": "verification/f-only-v1.5.7/paper-05.f",
+      "sha256": "cbfb6ba885df3fd5e10938ef133a2ca1cb188e7c6c2418bbd8d06652cee8754b",
+      "bytes": 2550817
     },
     {
-      "path": "verification/f-only-v1.5.4/paper-06.f",
-      "sha256": "7526028518fc59565fb0775aafeedf268f2dd6668a844d1914c3ccd168e7c54c",
-      "bytes": 2198311
+      "path": "verification/f-only-v1.5.7/paper-06.f",
+      "sha256": "bd5956915ff1730820c6fa65770c7693205e00fc7aa0f534e4293f4b0c7b87b1",
+      "bytes": 4002040
     },
     {
-      "path": "verification/f-only-v1.5.4/paper-07.f",
-      "sha256": "c9d011ddcc90a56d735cf5f3d8b5b6013378698bdee03ff3ff959234ad0ca12c",
-      "bytes": 1674055
+      "path": "verification/f-only-v1.5.7/paper-07.f",
+      "sha256": "71bf0d73a12b00f77b6b387659f3704e8f5b340466e1677456d00d24e6dfc68a",
+      "bytes": 2944588
     },
     {
-      "path": "verification/f-only-v1.5.4/paper-08.f",
-      "sha256": "c141ddc757dd8063f1674c179f24f55d880372d91f242942f4ebffb977b1b276",
-      "bytes": 8253526
+      "path": "verification/f-only-v1.5.7/paper-08.f",
+      "sha256": "45cb48f3d6548d51cf2179bc88484bc0491026cff71bdf38738d916a4337ad5c",
+      "bytes": 11665198
     },
     {
-      "path": "verification/f-only-v1.5.4/paper-09.f",
-      "sha256": "a440a97f42c1d2eb691a9d675cdfbffca25812e2771467d4aaddb6a94e4ff6c5",
-      "bytes": 7914835
+      "path": "verification/f-only-v1.5.7/paper-09.f",
+      "sha256": "46d69b0e5fa0879a7fa2b6ac99b704102ccdd5c7805434747d5b8b1855c5281d",
+      "bytes": 11872141
     },
     {
-      "path": "verification/f-only-v1.5.4/paper-10.f",
-      "sha256": "849be5f8105b5727af3fd8be993ce46bab5fd9977be982a26e08e045fa4c215b",
-      "bytes": 4752949
+      "path": "verification/f-only-v1.5.7/paper-10.f",
+      "sha256": "98e35b87bc0e85f04063c7e1f361fae28b3c2af821b9c8290c5aed19b9a3c3c7",
+      "bytes": 4766104
     },
     {
-      "path": "verification/f-only-v1.5.4/paper-11.f",
-      "sha256": "9f5fc724a3232de8eea96145e72da6141a0ae12f2a5d7a64ce68db0a0cb7edb0",
-      "bytes": 943942
+      "path": "verification/f-only-v1.5.7/paper-11.f",
+      "sha256": "dd2364ad44a521672d806193ef8332f775be4de5da7a46da0a032f54f3d99605",
+      "bytes": 1243015
     },
     {
-      "path": "verification/f-only-v1.5.4/paper-12.f",
-      "sha256": "1b22a58d5e2dc37581303fe598ed223c2ec3f661e145445a1f043142ec151ecf",
-      "bytes": 3986692
+      "path": "verification/f-only-v1.5.7/paper-12.f",
+      "sha256": "fe2f6996fcb8626d3a5b90a55825a4d8e54d95b20af5c2faf7c11d8281bde8bd",
+      "bytes": 5554720
     },
     {
-      "path": "verification/f-only-v1.5.4/paper-13.f",
-      "sha256": "233390d459a0181bba0e545b8b09a84d517c45a12b4cedd663d88886a8420083",
-      "bytes": 1667002
+      "path": "verification/f-only-v1.5.7/paper-13.f",
+      "sha256": "79e1053e462ac9258790bd783fcb06cfaa1c9e41e2ad575e49ae1cb0781cd350",
+      "bytes": 12241141
     },
     {
-      "path": "verification/f-only-v1.5.4/poly-degree.f",
+      "path": "verification/f-only-v1.5.7/poly-degree.f",
       "sha256": "dbd34bca5e825e8b8508174c5a4d592820c781bd84c199b03d2ce0fd618836ca",
       "bytes": 10
     },
     {
-      "path": "verification/f-only-v1.5.4/polynomial-derivative.f",
+      "path": "verification/f-only-v1.5.7/polynomial-derivative.f",
       "sha256": "c5719ed223c16994019a211a015334356823f493701c03a9c6bfc1f80507d1c4",
       "bytes": 64
     },
     {
-      "path": "verification/f-only-v1.5.4/polynomial-integral.f",
+      "path": "verification/f-only-v1.5.7/polynomial-integral.f",
       "sha256": "a01e14caaa117867998fdad94d971dc9576bebdbee11dae5ddc55834b98c280a",
       "bytes": 43
     },
     {
-      "path": "verification/f-only-v1.5.4/polynomial-primitive.f",
+      "path": "verification/f-only-v1.5.7/polynomial-primitive.f",
       "sha256": "94c04bfa91ced1b8d448987664f52462f13f39fddac6cb42be0bf4d4883c70ee",
       "bytes": 124
     },
     {
-      "path": "verification/f-only-v1.5.4/precision-field-epsilon.f",
+      "path": "verification/f-only-v1.5.7/precision-field-epsilon.f",
       "sha256": "598dadd3b2b0c797dc2a45c426d5ef4513f30856d221e8494d45fe84a9e1bed0",
       "bytes": 97
     },
     {
-      "path": "verification/f-only-v1.5.4/precision-two.f",
+      "path": "verification/f-only-v1.5.7/precision-two.f",
       "sha256": "dbd34bca5e825e8b8508174c5a4d592820c781bd84c199b03d2ce0fd618836ca",
       "bytes": 10
     },
     {
-      "path": "verification/f-only-v1.5.4/precision-width.f",
+      "path": "verification/f-only-v1.5.7/precision-width.f",
       "sha256": "a581ef273efbcaa97638dee009be614ffceae63629a8f28c8686ec3680c88d53",
       "bytes": 37
     },
     {
-      "path": "verification/f-only-v1.5.4/program-applications.f",
+      "path": "verification/f-only-v1.5.7/program-applications.f",
       "sha256": "0c2bae468a7b5f9a512cd08e53f273319b8d8f8d54cf42c5f06bbed4ef12bd9c",
       "bytes": 6562315
     },
     {
-      "path": "verification/f-only-v1.5.4/program-equational-checker.f",
+      "path": "verification/f-only-v1.5.7/program-concept-examples.f",
+      "sha256": "c87d46bcc7b2af8ee991d36d528ad9cd50b18630ca6c1b39d4bb1d7997c39bc7",
+      "bytes": 17483899
+    },
+    {
+      "path": "verification/f-only-v1.5.7/program-equational-checker.f",
       "sha256": "8319362a60b4310317c1e74121116ccf5705bf12d1df178291dc3c1e9c655d0e",
       "bytes": 2665546
     },
     {
-      "path": "verification/f-only-v1.5.4/program-formal-field.f",
+      "path": "verification/f-only-v1.5.7/program-formal-field.f",
       "sha256": "9bc5452571dfebd30455e7c65f14549c9f60e43e8765ccc8c27a69c4c7ca6590",
       "bytes": 3846775
     },
     {
-      "path": "verification/f-only-v1.5.4/program-generator-extensions.f",
+      "path": "verification/f-only-v1.5.7/program-generator-extensions.f",
       "sha256": "5d9c3db8d00a2e0efb449bdb14eb250396de0362445e6323e08369c24fd1c55d",
       "bytes": 5642932
     },
     {
-      "path": "verification/f-only-v1.5.4/program-lambda-core.f",
+      "path": "verification/f-only-v1.5.7/program-lambda-core.f",
       "sha256": "0eae0346ed3bd1de4d2913924b884eb1dc71553b629eb7360f683f3dfa81f286",
       "bytes": 5245216
     },
     {
-      "path": "verification/f-only-v1.5.4/program-model-extensions.f",
+      "path": "verification/f-only-v1.5.7/program-model-extensions.f",
       "sha256": "f45ab14bd977f15c08ecd371944b9f22775c22c94c1e9058f38311f9e573a5a1",
       "bytes": 4934101
     },
     {
-      "path": "verification/f-only-v1.5.4/proof-applications.f",
-      "sha256": "3f21065023c2f17125e1bb21ca9277a82286c2745bd1cc082eee9d1b39a788ea",
-      "bytes": 2930569
+      "path": "verification/f-only-v1.5.7/proof-applications.f",
+      "sha256": "76e688055d588db5b4fd7c85d6f8cfef49ffb2040485e7dcc8478afa75bf9518",
+      "bytes": 2930578
     },
     {
-      "path": "verification/f-only-v1.5.4/proof-field.f",
-      "sha256": "972aad72371d8ec638e636164b4c4f097acfc0ddb00a4139e8f60841de079395",
-      "bytes": 745396
+      "path": "verification/f-only-v1.5.7/proof-field.f",
+      "sha256": "e4a6a0d0aa9fa401d876e9a167d3015c5e688e7c44a4f98f22c5e4d86179296d",
+      "bytes": 745405
     },
     {
-      "path": "verification/f-only-v1.5.4/proof-generators.f",
+      "path": "verification/f-only-v1.5.7/proof-generators.f",
       "sha256": "2b38e7b7031465a5dceb23d75ec3604410a0e0267eb1f74a8c6953dd425b83a8",
       "bytes": 6110440
     },
     {
-      "path": "verification/f-only-v1.5.4/proof-induction-data.f",
+      "path": "verification/f-only-v1.5.7/proof-induction-data.f",
       "sha256": "3db4a75ae63505449eabe656d54cc1ddb69e8dd62d64d3b18eb9461bd64a51d2",
       "bytes": 31
     },
     {
-      "path": "verification/f-only-v1.5.4/proof-lambda.f",
+      "path": "verification/f-only-v1.5.7/proof-lambda.f",
       "sha256": "6d5489a0f1a80d33d2ff03cbab40720be9d63053f17a61566070f8a7c9f37fc9",
       "bytes": 5707771
     },
     {
-      "path": "verification/f-only-v1.5.4/proof-models.f",
+      "path": "verification/f-only-v1.5.7/proof-models.f",
       "sha256": "cac0bc253bc909ecfee60ac1cc8af30c6e94aaf065358c03a4d2e9bad869a715",
       "bytes": 812239
     },
     {
-      "path": "verification/f-only-v1.5.4/proof-nat-paths.f",
+      "path": "verification/f-only-v1.5.7/proof-nat-paths.f",
       "sha256": "d60eeddc4e0f56b7d2f67e3d84cfd477373e29433ee90b0d5f9d14cb2122ac48",
       "bytes": 1200829
     },
     {
-      "path": "verification/f-only-v1.5.4/proof-node-reflexivity.f",
+      "path": "verification/f-only-v1.5.7/proof-node-reflexivity.f",
       "sha256": "dd16b1792d6326ed62ad42d16c57cedc7fe5d70aa2e7997100958da3eb2c6caf",
       "bytes": 169
     },
     {
-      "path": "verification/f-only-v1.5.4/proposition-and.f",
+      "path": "verification/f-only-v1.5.7/proposition-and.f",
       "sha256": "56f3d7fdf161e0ea76489bf15590fb4205dfd4698373453cb397573ccd30ad85",
       "bytes": 208
     },
     {
-      "path": "verification/f-only-v1.5.4/proposition-associativity.f",
+      "path": "verification/f-only-v1.5.7/proposition-associativity.f",
       "sha256": "d8a3ce9a0d4e214b6de172dfb82c0d7db88f7dde876e5ab052b8d185e7354f08",
       "bytes": 3646
     },
     {
-      "path": "verification/f-only-v1.5.4/proposition-equal.f",
+      "path": "verification/f-only-v1.5.7/proposition-equal.f",
       "sha256": "86e4eddafd4d95e852df684f479c9305086663d11405b44205a035399944f1a3",
       "bytes": 94
     },
     {
-      "path": "verification/f-only-v1.5.4/proposition-exists.f",
+      "path": "verification/f-only-v1.5.7/proposition-exists.f",
       "sha256": "9f2a68a18e60ca7cd08a3348444fa6a1df7c2dfe41f0ec35f07f82db24f3ba96",
       "bytes": 118
     },
     {
-      "path": "verification/f-only-v1.5.4/proposition-false.f",
+      "path": "verification/f-only-v1.5.7/proposition-false.f",
       "sha256": "19d481011121e405a66223380e37fad733ae2d673d22fbda605aa0de215dc34f",
       "bytes": 25
     },
     {
-      "path": "verification/f-only-v1.5.4/proposition-forall.f",
+      "path": "verification/f-only-v1.5.7/proposition-forall.f",
       "sha256": "c3246b83b666f5d2ffb58d29336392f9a09c193dedb80734ec60775e2576803b",
       "bytes": 100
     },
     {
-      "path": "verification/f-only-v1.5.4/proposition-implies.f",
+      "path": "verification/f-only-v1.5.7/proposition-implies.f",
       "sha256": "b75d08845a48a295e3deb139302b1589692049398d0defec97017406f938d0d7",
       "bytes": 214
     },
     {
-      "path": "verification/f-only-v1.5.4/proposition-less.f",
+      "path": "verification/f-only-v1.5.7/proposition-less.f",
       "sha256": "d9755c90c661a9014a9a0d1be1595933d057207e581ebd4bcc327fe3b660cd95",
       "bytes": 94
     },
     {
-      "path": "verification/f-only-v1.5.4/proposition-not.f",
+      "path": "verification/f-only-v1.5.7/proposition-not.f",
       "sha256": "06cff8e7d71075224ceaf48c4aaa7155510d508668fc3351ade730a7a9ac4d01",
       "bytes": 145
     },
     {
-      "path": "verification/f-only-v1.5.4/proposition-or.f",
+      "path": "verification/f-only-v1.5.7/proposition-or.f",
       "sha256": "bdc1df8818fade0f01366ff8acaf74229933bc3f065c3ef8f92b94380782ddfc",
       "bytes": 211
     },
     {
-      "path": "verification/f-only-v1.5.4/proposition-predicate.f",
+      "path": "verification/f-only-v1.5.7/proposition-predicate.f",
       "sha256": "63b6142ba4464e2cbc6b45ea7cb3b23f70215aeef8d72bb422dc4c97dbec1d5b",
       "bytes": 2461
     },
     {
-      "path": "verification/f-only-v1.5.4/qlim-call.f",
+      "path": "verification/f-only-v1.5.7/qlim-call.f",
       "sha256": "45dcab53155dbc6e9c71b6d060ea3f8c317c71fc31b758fea0d7e682b6f9af7d",
       "bytes": 1516
     },
     {
-      "path": "verification/f-only-v1.5.4/qlim-parameters.f",
+      "path": "verification/f-only-v1.5.7/qlim-parameters.f",
       "sha256": "cbb4305298e048de16f164e0bfdcbc9b571d4e4436460235d6ca832665c7fc00",
       "bytes": 55
     },
     {
-      "path": "verification/f-only-v1.5.4/qlim-response.f",
+      "path": "verification/f-only-v1.5.7/qlim-response.f",
       "sha256": "7c3d5f0d56c4e3619d44fcf050142338cb903f13e3bc8651804c247700083be0",
       "bytes": 31
     },
     {
-      "path": "verification/f-only-v1.5.4/qrep-four-four.f",
+      "path": "verification/f-only-v1.5.7/qrep-four-four.f",
       "sha256": "a31b8920ecafcf02d686845c55835a62294b9338052ae57f1cfe4f786865bbb2",
       "bytes": 46
     },
     {
-      "path": "verification/f-only-v1.5.4/quaternion-all-one.f",
+      "path": "verification/f-only-v1.5.7/quaternion-all-one.f",
       "sha256": "b7c7b8ec4fb6765d185290b4b7a94153c3dfbc794e4f9c7f84dcdc87156b92d2",
       "bytes": 580
     },
     {
-      "path": "verification/f-only-v1.5.4/quaternion-i.f",
+      "path": "verification/f-only-v1.5.7/quaternion-i.f",
       "sha256": "e4f780352a6991f40918dca303bce90ea8615ec945f3bdb439f7bb2e992d30ab",
       "bytes": 397
     },
     {
-      "path": "verification/f-only-v1.5.4/quaternion-j.f",
+      "path": "verification/f-only-v1.5.7/quaternion-j.f",
       "sha256": "8e0de7fda8e3fcfed75cadb0d2fdca87788507f8c54e50f9e6ac5b5d903bbe66",
       "bytes": 394
     },
     {
-      "path": "verification/f-only-v1.5.4/quaternion-k.f",
+      "path": "verification/f-only-v1.5.7/quaternion-k.f",
       "sha256": "5a4fdeb5bf214ffe59cc8454241014440745393772c7af850ae07e211bd7b3e2",
       "bytes": 397
     },
     {
-      "path": "verification/f-only-v1.5.4/quaternion-one.f",
+      "path": "verification/f-only-v1.5.7/quaternion-one.f",
       "sha256": "e4c9d9032d2693f99d64c4e7246f4020de6de8268438263835630949ac0292ae",
       "bytes": 394
     },
     {
-      "path": "verification/f-only-v1.5.4/rat-0-1.f",
+      "path": "verification/f-only-v1.5.7/rat-0-1.f",
       "sha256": "2de69184ab97ffb9f7e34a40caf833116e29b2478984d0cc0df877a67074f5ea",
       "bytes": 25
     },
     {
-      "path": "verification/f-only-v1.5.4/rat-1-1.f",
+      "path": "verification/f-only-v1.5.7/rat-1-1.f",
       "sha256": "39436593c9f3f8d0b9bf22635824c6b735d61ecbcea4fda771019a3369eb5152",
       "bytes": 28
     },
     {
-      "path": "verification/f-only-v1.5.4/rat-1-2.f",
+      "path": "verification/f-only-v1.5.7/rat-1-2.f",
       "sha256": "7c3d5f0d56c4e3619d44fcf050142338cb903f13e3bc8651804c247700083be0",
       "bytes": 31
     },
     {
-      "path": "verification/f-only-v1.5.4/rat-2-1.f",
+      "path": "verification/f-only-v1.5.7/rat-2-1.f",
       "sha256": "122533868ee93ec4bb8a82448eb7074b7ba03a0d8bc61b7df1a54be184b00bfd",
       "bytes": 31
     },
     {
-      "path": "verification/f-only-v1.5.4/rat-minus-1-1.f",
+      "path": "verification/f-only-v1.5.7/rat-minus-1-1.f",
       "sha256": "7834b3b00ddceca744ed4bb698953a2b2eeb8ae51e06e98c4a9f88afaa76804d",
       "bytes": 31
     },
     {
-      "path": "verification/f-only-v1.5.4/rat-minus-1-3.f",
+      "path": "verification/f-only-v1.5.7/rat-minus-1-3.f",
       "sha256": "929ba7897488a6e49baff02734dcfde21bfba7e1529443fbb7e90fd50f48c553",
       "bytes": 37
     },
     {
-      "path": "verification/f-only-v1.5.4/rat-minus-2-1.f",
+      "path": "verification/f-only-v1.5.7/rat-minus-2-1.f",
       "sha256": "7e3ab0d046c95805c0a674dc3bee5c08b2e6c5a8a17b83910becf24799bed522",
       "bytes": 34
     },
     {
-      "path": "verification/f-only-v1.5.4/register-program.f",
+      "path": "verification/f-only-v1.5.7/register-program.f",
       "sha256": "c4062470eaa64fc1d7c618d52d9c816dd2144efe28c249f12d6328e88b96385d",
       "bytes": 31207
     },
     {
-      "path": "verification/f-only-v1.5.4/register-state.f",
+      "path": "verification/f-only-v1.5.7/register-state.f",
       "sha256": "41e2ddbf1c53582d5ebceb2f7e0fff5a89842a673794c700330179e4609b095b",
       "bytes": 43
     },
     {
-      "path": "verification/f-only-v1.5.4/report.json",
-      "sha256": "30f0f5b18a0c3d59f5ce4559ff3b8e4a6b8a205f89d8a1e4c73e89cf85f50c4f",
-      "bytes": 31910
+      "path": "verification/f-only-v1.5.7/relation-common-1.f",
+      "sha256": "76d8a834c48d624747a0875d46cf0dfade4c164cc4e9158756dd6f35a88a6e7f",
+      "bytes": 232
     },
     {
-      "path": "verification/f-only-v1.5.4/result-failure.f",
+      "path": "verification/f-only-v1.5.7/relation-common-2.f",
+      "sha256": "0e87eb3d699a78f3464a4996f2959436f8daa48473f77dfd8737a897a475d923",
+      "bytes": 262
+    },
+    {
+      "path": "verification/f-only-v1.5.7/relation-common-3.f",
+      "sha256": "912c93c66f50583447b030a38d56dcc65dc1fb91f134cdb18c8d3c06a3223e5f",
+      "bytes": 292
+    },
+    {
+      "path": "verification/f-only-v1.5.7/relation-g-half.f",
+      "sha256": "99a031cd0e25f25225a588021e5af3bda91ea7519ac8962d0b94ad75da90ce7d",
+      "bytes": 58
+    },
+    {
+      "path": "verification/f-only-v1.5.7/relation-g-three-quarters.f",
+      "sha256": "c23040baa65a2feb8fd2c670a14341dc77887985538870d59894102a2db3caf5",
+      "bytes": 70
+    },
+    {
+      "path": "verification/f-only-v1.5.7/relation-intro-negative.f",
+      "sha256": "7f444e785eb7631ed0c2b67c888677072efdcf40e47c0f7006969f616f378c6a",
+      "bytes": 115
+    },
+    {
+      "path": "verification/f-only-v1.5.7/relation-intro-not-additive.f",
+      "sha256": "be0337c986c0813547507b3397ad1815f54ecfe2a5ff26628642acc28d30b5f0",
+      "bytes": 217
+    },
+    {
+      "path": "verification/f-only-v1.5.7/relation-intro-positive-half.f",
+      "sha256": "167ca2e0d39b1a0866adb6e0081713d57905028e3c20ad563bbbccdf4c69faff",
+      "bytes": 109
+    },
+    {
+      "path": "verification/f-only-v1.5.7/relation-intro-positive-three-quarters.f",
+      "sha256": "d79bf8b88568cc23da42ce0b3c25c44e6d9b285c1e91d7365da93ed2badb2367",
+      "bytes": 121
+    },
+    {
+      "path": "verification/f-only-v1.5.7/relation-intro-zero.f",
+      "sha256": "fa3ccfd1817e4252b91556007fc9f526fc71f13ce462af63d12c9b162a9773e1",
+      "bytes": 109
+    },
+    {
+      "path": "verification/f-only-v1.5.7/relation-l-addition.f",
+      "sha256": "5a3ebbc80655d61bba2860c48b4608874cf08dd9aa562f74afa7abbcd6a46124",
+      "bytes": 145
+    },
+    {
+      "path": "verification/f-only-v1.5.7/relation-l-four-steps.f",
+      "sha256": "b4d04b0768cbbb4fdc0895b4cbb6abca9b931537418ddb96579f4bbebfffd576",
+      "bytes": 49
+    },
+    {
+      "path": "verification/f-only-v1.5.7/relation-l-one-step.f",
+      "sha256": "41e03bf71ba88cd26ec432428b825e5699c7d5be5ea4962e04212faf790d2a82",
+      "bytes": 40
+    },
+    {
+      "path": "verification/f-only-v1.5.7/relation-l-order.f",
+      "sha256": "67ca8c3f1a6d668920fd59f99d5ad5c9b3b1090183fd407cd775ea26f07ab6a0",
+      "bytes": 181
+    },
+    {
+      "path": "verification/f-only-v1.5.7/relation-l-two-steps.f",
+      "sha256": "e508beb8b3edd1f71c71869ad4f555c604a3a4fd3ef5b3c0128c39ebfb18961a",
+      "bytes": 43
+    },
+    {
+      "path": "verification/f-only-v1.5.7/relation-rational-error.f",
+      "sha256": "828e7484766f4ddf5ebe3c84c2d9340dfaad883c93b9da2db55627a373f84913",
+      "bytes": 166
+    },
+    {
+      "path": "verification/f-only-v1.5.7/relation-reject-compressed-sum.f",
+      "sha256": "77deba5ee94db13ce445af2943c820b7c05624475ef3eb5a26b438d46a3fb03a",
+      "bytes": 1204
+    },
+    {
+      "path": "verification/f-only-v1.5.7/relation-reject-false-introduction.f",
+      "sha256": "840f3aabc229d8df439cc24c911d406534641a7d829066277e9b4020d8293083",
+      "bytes": 1018
+    },
+    {
+      "path": "verification/f-only-v1.5.7/relation-reject-malformed-label.f",
+      "sha256": "4970bd3d6ab5b716cbdc07d27a8611a327f3378be9455d93c75e0085d3bfe154",
+      "bytes": 2065
+    },
+    {
+      "path": "verification/f-only-v1.5.7/report.json",
+      "sha256": "2c2a2c42bc8a97554b908af766ad36ecdd9f35178673caf4c6c2e7d44e474029",
+      "bytes": 41544
+    },
+    {
+      "path": "verification/f-only-v1.5.7/result-failure.f",
       "sha256": "189f9d1be4e69a1490c543c0c765d73760533084a95cdcae5ab3ceeb52f30787",
       "bytes": 1387
     },
     {
-      "path": "verification/f-only-v1.5.4/result-success.f",
+      "path": "verification/f-only-v1.5.7/result-success.f",
       "sha256": "ebfc70583103b8959b40da8233f9dc7cc2ba79c07cc01c1e9abf1eeb8fc280c8",
       "bytes": 43
     },
     {
-      "path": "verification/f-only-v1.5.4/separation-witness.f",
+      "path": "verification/f-only-v1.5.7/separation-witness.f",
       "sha256": "5c04fed62e8baf86cd3565560bf5600278e6dd3e4fd5a258c0c49fe2cdab4c63",
       "bytes": 67
     },
     {
-      "path": "verification/f-only-v1.5.4/sign-0.f",
+      "path": "verification/f-only-v1.5.7/sign-0.f",
       "sha256": "07d6b0de1af2f0e71ad001630d6c94a599cde970023233b8a440e9e8faddc530",
       "bytes": 4
     },
     {
-      "path": "verification/f-only-v1.5.4/sign-1.f",
+      "path": "verification/f-only-v1.5.7/sign-1.f",
       "sha256": "d5bb654fb7396f18931c15b2a874974963dfcb2c5348356f6baad05fcf5748c0",
       "bytes": 7
     },
     {
-      "path": "verification/f-only-v1.5.4/sqrt2-state.f",
+      "path": "verification/f-only-v1.5.7/sqrt2-state.f",
       "sha256": "497d31560bedefbe58fc4db8d3dc9ab5d8424601bcfb1a15d8ef13dcca5d5867",
       "bytes": 85
     },
     {
-      "path": "verification/f-only-v1.5.4/standard-part.f",
+      "path": "verification/f-only-v1.5.7/standard-part.f",
       "sha256": "7c3d5f0d56c4e3619d44fcf050142338cb903f13e3bc8651804c247700083be0",
       "bytes": 31
     },
     {
-      "path": "verification/f-only-v1.5.4/status-error.f",
+      "path": "verification/f-only-v1.5.7/status-error.f",
       "sha256": "ac4a809713e59dc4fcc54750ebfbcff118acf66a9bfcd625befd99dbfbc35abd",
       "bytes": 19
     },
     {
-      "path": "verification/f-only-v1.5.4/status-normal-form.f",
+      "path": "verification/f-only-v1.5.7/status-normal-form.f",
       "sha256": "d81d5cc8f4d7a3a66da6d9b4669f0178da2fe73a5a867b966ac2e49a9b2906b2",
       "bytes": 10
     },
     {
-      "path": "verification/f-only-v1.5.4/status-step-limit.f",
+      "path": "verification/f-only-v1.5.7/status-step-limit.f",
       "sha256": "036ba09a1c52fff04cc42d0836f5321f8a2ec124be5d0d52086e95735f0c93a0",
       "bytes": 13
     },
     {
-      "path": "verification/f-only-v1.5.4/status-stopped.f",
+      "path": "verification/f-only-v1.5.7/status-stopped.f",
       "sha256": "cc230dd163117703dedca2e65e872d99b75c0f4dedf71beabf1e1bcc43bc62de",
       "bytes": 16
     },
     {
-      "path": "verification/f-only-v1.5.4/term-add-call.f",
+      "path": "verification/f-only-v1.5.7/t-minus-one.f",
+      "sha256": "2efe30a99ab285bb56ee2261851600a946d0939ef971bbe05b73aa2b4c97ea2b",
+      "bytes": 115
+    },
+    {
+      "path": "verification/f-only-v1.5.7/t-one-minus-sigma.f",
+      "sha256": "5686126760b1c2f8f622667375612af35cdd7ae7cb7ff74e0ced0282f156770f",
+      "bytes": 145
+    },
+    {
+      "path": "verification/f-only-v1.5.7/t-one-plus-sigma.f",
+      "sha256": "c1b93df067e9015805a0d190d24a95cb0791489a266982ffa5c78117f2740b40",
+      "bytes": 142
+    },
+    {
+      "path": "verification/f-only-v1.5.7/t-one.f",
+      "sha256": "af2d8b632f16ea58e59923c0355e3311bf7400e320c561c52ddeab56972adbe1",
+      "bytes": 112
+    },
+    {
+      "path": "verification/f-only-v1.5.7/t-sigma-half.f",
+      "sha256": "2b7e9a95154381cd76d6b8d8b6a3b5117c28570a505f7e2529ce742bb60a7737",
+      "bytes": 115
+    },
+    {
+      "path": "verification/f-only-v1.5.7/t-sigma.f",
+      "sha256": "2cfc2bc59a5ba05b5bcb49fecf144453c5686c884f6f3b630e2bbfadcdf1cd90",
+      "bytes": 112
+    },
+    {
+      "path": "verification/f-only-v1.5.7/t-two.f",
+      "sha256": "12b6b2171f5483766af3e6231b42b04fa12e5d71e4fcaef12a1ba652ce7d6f40",
+      "bytes": 115
+    },
+    {
+      "path": "verification/f-only-v1.5.7/t-zero.f",
+      "sha256": "9083ea3eb70b32ec358d4f85c7f5bcb6b35f09d231025d2c7988430ad8342e10",
+      "bytes": 82
+    },
+    {
+      "path": "verification/f-only-v1.5.7/term-add-call.f",
       "sha256": "acf74a111513f61b9914cb200d1cc05b854d5752b5d72506173071bb99bde107",
       "bytes": 913
     },
     {
-      "path": "verification/f-only-v1.5.4/term-literal.f",
+      "path": "verification/f-only-v1.5.7/term-literal.f",
       "sha256": "15985e551ce0db6942d54f0869a386734ce6d4a176440d527ac128fa6f92ad07",
       "bytes": 34
     },
     {
-      "path": "verification/f-only-v1.5.4/term-variable.f",
+      "path": "verification/f-only-v1.5.7/term-variable.f",
       "sha256": "f75822fa8057ad06885b73dfa9cb4756d364c4e1731bdd7d3cee5d1087b9df00",
       "bytes": 16
     },
     {
-      "path": "verification/f-only-v1.5.4/text-a.f",
+      "path": "verification/f-only-v1.5.7/text-a.f",
       "sha256": "aa39fe556b5e72d3623052ab7774b764df17245bc84e52014b08c3f3780fc57d",
       "bytes": 301
     },
     {
-      "path": "verification/f-only-v1.5.4/text-lambda.f",
+      "path": "verification/f-only-v1.5.7/text-lambda.f",
       "sha256": "b4fe5135d0f5301c8116e8e28bed403dc33eb3392651ae133fb021e375ce3ec1",
       "bytes": 1195
     },
     {
-      "path": "verification/f-only-v1.5.4/translated-label.f",
+      "path": "verification/f-only-v1.5.7/translated-label.f",
       "sha256": "69cf483ae5c42c5f09a4b0dc36e19b972e6e1c6ffeaa62c4327afbf1aa921405",
       "bytes": 271
     },
     {
-      "path": "verification/f-only-v1.5.4/translation-arrow.f",
+      "path": "verification/f-only-v1.5.7/translation-arrow.f",
       "sha256": "f22926809f286570dcd7081e67a1844959538d9e5ad9e134dfeb6f687df3aa74",
       "bytes": 292
     },
     {
-      "path": "verification/f-only-v1.5.4/type-arrow.f",
+      "path": "verification/f-only-v1.5.7/type-arrow.f",
       "sha256": "f05f33cde3fc0395d856592a7e7590f367cf58a569f40cbf9c10ce8a0ed11371",
       "bytes": 37
     },
     {
-      "path": "verification/f-only-v1.5.4/type-bool.f",
+      "path": "verification/f-only-v1.5.7/type-bool.f",
       "sha256": "8f3342a1026fb46e4b22a58fa4e1da28836196e2dbac2407ac064c8d42b108b5",
       "bytes": 31
     },
     {
-      "path": "verification/f-only-v1.5.4/type-c.f",
+      "path": "verification/f-only-v1.5.7/type-c.f",
       "sha256": "19d481011121e405a66223380e37fad733ae2d673d22fbda605aa0de215dc34f",
       "bytes": 25
     },
     {
-      "path": "verification/f-only-v1.5.4/type-f.f",
+      "path": "verification/f-only-v1.5.7/type-f.f",
       "sha256": "7635fbf2fd51ebd0589ebf6681c3ef4c8fe300c7b4eb3570afbfd4645085bddb",
       "bytes": 22
     },
     {
-      "path": "verification/f-only-v1.5.4/type-function.f",
+      "path": "verification/f-only-v1.5.7/type-function.f",
       "sha256": "f0ff72a347eaca60d1695af281325e18cc8e1dc333142c6d9a339688cde7ff88",
       "bytes": 97
     },
     {
-      "path": "verification/f-only-v1.5.4/type-generator.f",
+      "path": "verification/f-only-v1.5.7/type-generator.f",
       "sha256": "8aa92a8ca7a3019974531f5995ed246763be34b538da7371143588538bcb7789",
       "bytes": 151
     },
     {
-      "path": "verification/f-only-v1.5.4/type-h.f",
+      "path": "verification/f-only-v1.5.7/type-h.f",
       "sha256": "d088879c286e4687b78c83bbdda72591a5df373dccfec96449725454cd06aa8b",
       "bytes": 28
     },
     {
-      "path": "verification/f-only-v1.5.4/type-interval.f",
+      "path": "verification/f-only-v1.5.7/type-interval.f",
       "sha256": "7f71b14e697c2022bc75ef13474c66d2ad363f6df100f327971089d53db8fdc3",
       "bytes": 67
     },
     {
-      "path": "verification/f-only-v1.5.4/type-lambda.f",
+      "path": "verification/f-only-v1.5.7/type-lambda.f",
       "sha256": "35cbf7c2525d664115379cc2413608b9e0fb945094ad05e8dc7e0f51eafb7ecd",
       "bytes": 40
     },
     {
-      "path": "verification/f-only-v1.5.4/type-list.f",
+      "path": "verification/f-only-v1.5.7/type-list.f",
       "sha256": "8c1e7242e7598e06b4793ee6406bc320d746b3f3b20173eb178d12dbc87a0f20",
       "bytes": 70
     },
     {
-      "path": "verification/f-only-v1.5.4/type-m.f",
+      "path": "verification/f-only-v1.5.7/type-m.f",
       "sha256": "ac4a809713e59dc4fcc54750ebfbcff118acf66a9bfcd625befd99dbfbc35abd",
       "bytes": 19
     },
     {
-      "path": "verification/f-only-v1.5.4/type-n.f",
+      "path": "verification/f-only-v1.5.7/type-n.f",
       "sha256": "d81d5cc8f4d7a3a66da6d9b4669f0178da2fe73a5a867b966ac2e49a9b2906b2",
       "bytes": 10
     },
     {
-      "path": "verification/f-only-v1.5.4/type-option.f",
+      "path": "verification/f-only-v1.5.7/type-option.f",
       "sha256": "6c37e10a3e875f1b019c4858dcee516904937e8251690ff5144f023a5e676456",
       "bytes": 70
     },
     {
-      "path": "verification/f-only-v1.5.4/type-ordering.f",
+      "path": "verification/f-only-v1.5.7/type-ordering.f",
       "sha256": "63521a067a73be75c429c76ff99aba4c4139ab2f4369bfa00224031025fd5dbd",
       "bytes": 64
     },
     {
-      "path": "verification/f-only-v1.5.4/type-pair.f",
+      "path": "verification/f-only-v1.5.7/type-pair.f",
       "sha256": "f75ce8dd65f10c2ffbd24b99188471c741df191b2c077634bd8cbc46ca3c299f",
       "bytes": 85
     },
     {
-      "path": "verification/f-only-v1.5.4/type-proof.f",
+      "path": "verification/f-only-v1.5.7/type-proof.f",
       "sha256": "94ef48eee5c4481f8f85864b35ba4b19351039597f8c38c2521a7a6167c11563",
       "bytes": 46
     },
     {
-      "path": "verification/f-only-v1.5.4/type-proposition.f",
+      "path": "verification/f-only-v1.5.7/type-proposition.f",
       "sha256": "930849c7427edd7002a41023c35f8323f81360acd18b89248d8aede88182a63c",
       "bytes": 43
     },
     {
-      "path": "verification/f-only-v1.5.4/type-q.f",
+      "path": "verification/f-only-v1.5.7/type-q.f",
       "sha256": "cc230dd163117703dedca2e65e872d99b75c0f4dedf71beabf1e1bcc43bc62de",
       "bytes": 16
     },
     {
-      "path": "verification/f-only-v1.5.4/type-qrep.f",
+      "path": "verification/f-only-v1.5.7/type-qrep.f",
       "sha256": "410c1abd699eb817ebd45861ad84f094d13c7e81dea79fefb19992fc938d7388",
       "bytes": 73
     },
     {
-      "path": "verification/f-only-v1.5.4/type-result.f",
+      "path": "verification/f-only-v1.5.7/type-result.f",
       "sha256": "0328ef929b8ec087d4cd6c38632bb5b0a2b162463dd84cf3a4ead34819910a1c",
       "bytes": 151
     },
     {
-      "path": "verification/f-only-v1.5.4/type-text.f",
+      "path": "verification/f-only-v1.5.7/type-t.f",
+      "sha256": "f8ebc2af136724df82bca4ed0e55e511cd0f4767a161047226f1581148f16497",
+      "bytes": 79
+    },
+    {
+      "path": "verification/f-only-v1.5.7/type-text.f",
       "sha256": "e6a0dad322b711b36ce5b88f3f12e6d3839ee355e01aa77bc1076501006c6415",
       "bytes": 34
     },
     {
-      "path": "verification/f-only-v1.5.4/type-unit.f",
+      "path": "verification/f-only-v1.5.7/type-unit.f",
       "sha256": "917f74be999ef841c91ddede2c6ab5314a4afd7705251cf785c05c20aee6b6a3",
       "bytes": 49
     },
     {
-      "path": "verification/f-only-v1.5.4/type-z.f",
+      "path": "verification/f-only-v1.5.7/type-z.f",
       "sha256": "036ba09a1c52fff04cc42d0836f5321f8a2ec124be5d0d52086e95735f0c93a0",
       "bytes": 13
     },
     {
-      "path": "verification/f-only-v1.5.4/valuation-negative.f",
+      "path": "verification/f-only-v1.5.7/valuation-negative.f",
       "sha256": "f0fba5908b68af4dc22eb25ae7eb2b9219765b5a68f3c0646b95f32a55146b16",
       "bytes": 16
     },
     {
-      "path": "verification/f-only-v1.5.4/zero-classification-nonzero.f",
+      "path": "verification/f-only-v1.5.7/zero-classification-nonzero.f",
       "sha256": "036ba09a1c52fff04cc42d0836f5321f8a2ec124be5d0d52086e95735f0c93a0",
       "bytes": 13
     },
     {
-      "path": "verification/f-only-v1.5.4/zero-classification-unknown.f",
+      "path": "verification/f-only-v1.5.7/zero-classification-unknown.f",
       "sha256": "cc230dd163117703dedca2e65e872d99b75c0f4dedf71beabf1e1bcc43bc62de",
       "bytes": 16
     },
     {
-      "path": "verification/f-only-v1.5.4/zero-classification-zero.f",
+      "path": "verification/f-only-v1.5.7/zero-classification-zero.f",
       "sha256": "d81d5cc8f4d7a3a66da6d9b4669f0178da2fe73a5a867b966ac2e49a9b2906b2",
       "bytes": 10
     },
@@ -2581,8 +3381,13 @@
       "bytes": 18892
     },
     {
+      "path": "verification/translation-en-v1.5.7.json",
+      "sha256": "dee963a104a87ae75f8362e87b1c36900aa330fc4a0dbcaab3e3509323252fc5",
+      "bytes": 1913
+    },
+    {
       "path": "verification/verification-report.json",
-      "sha256": "ad802d1930547aa9f6d606c55001ffc0544718a9f2c3273cc9888573b51b94cb",
+      "sha256": "b506795a2e3718808a9cd5117bae52f563f973ea9c132c5bfd2c7f6aadc84aa2",
       "bytes": 15085
     }
   ]

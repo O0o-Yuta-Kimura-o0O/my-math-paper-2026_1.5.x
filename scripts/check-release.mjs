@@ -17,7 +17,11 @@ if (fs.existsSync(manifestPath)) {
     if (bytes.length !== file.bytes || sha(bytes) !== file.sha256) throw new Error(`Checksum mismatch: ${file.path}`);
   }
 } else {
-  files = ['README.md', 'CHANGELOG.md', release.paper, release.audit, release.applications, release.concepts, release.conceptExamples, release.conceptInventory, release.fOnlyAppendix, release.fOnlyCoverage, release.traceExtensions, release.lambdaArithmetic, 'verification/README.md', 'interpreter/README.md'].filter(Boolean);
+  files = ['README.md', 'CHANGELOG.md', release.paper, release.audit, release.applications, release.concepts, release.conceptExamples, release.conceptInventory, release.fOnlyAppendix, release.fOnlyCoverage, release.traceExtensions, release.lambdaArithmetic, release.extensionExample || `research/extension-example-v${release.paperVersion}.md`, 'verification/README.md', 'interpreter/README.md'].filter(Boolean);
+  for (const edition of Object.values(release.translations || {}))
+    files.push(...[edition.paper, edition.readme, edition.fOnlyAppendix].filter(Boolean));
+  if (release.labelDesign) files.push(release.labelDesign);
+  if (release.authorDecisions) files.push(release.authorDecisions);
 }
 // Paper and interpreter evidence use independent release versions. Compatibility
 // fixtures, such as fixtures/lambda-v8.0.0.json, are deliberately not filtered.
@@ -41,4 +45,6 @@ for (const file of files.filter(f => f.endsWith('.md'))) {
 }
 if (!fs.readFileSync(path.join(root, release.paper), 'utf8').includes(`v${release.paperVersion}`)) throw new Error('Paper version absent');
 if (!fs.readFileSync(path.join(root, release.interpreter), 'utf8').includes(`v${release.interpreterVersion}`)) throw new Error('Interpreter version absent');
+for (const edition of Object.values(release.translations || {}))
+  if (!fs.readFileSync(path.join(root, edition.paper), 'utf8').includes(`v${release.paperVersion}`)) throw new Error('Translation version absent');
 console.log(`Release paths and ${links} local links verified${fs.existsSync(manifestPath) ? `; ${files.length} file checksums match` : ''}.`);

@@ -1,0 +1,2706 @@
+{
+  "format": "single-f-english-verification/1",
+  "paperVersion": "1.5.7",
+  "language": "en",
+  "status": "passed",
+  "structuralCount": 288,
+  "completeProofBundles": 6,
+  "textSections": 14,
+  "programSources": 7,
+  "completeManuscriptRecovered": true,
+  "sourceDeclaredChecks": {
+    "fixedTypeExamples": {
+      "typeTag": 23,
+      "type": "T",
+      "valueExamples": 8,
+      "multiplicationExamples": 2,
+      "rejectedWrongType": true,
+      "rejectedMalformedInput": true,
+      "rejectedWrongProduct": true
+    },
+    "natFormExecution": {
+      "specifiedType": "N",
+      "programExamples": 1,
+      "recordedExamples": 4,
+      "rejectedUnknownInstruction": true
+    },
+    "approximationExamples": {
+      "valueErrorPairs": 2,
+      "methods": [
+        "bracket",
+        "residual"
+      ],
+      "precision": 3
+    },
+    "relationLabelExamples": {
+      "structuralExamples": 19,
+      "generatorRecords": 2,
+      "commonSubsequenceCases": 3,
+      "introductionCases": 4,
+      "labelValues": 3,
+      "additionCases": 1,
+      "orderChains": 1,
+      "nonadditivityCases": 1,
+      "rationalPrecisionCases": 1,
+      "rejectionCases": 3,
+      "retainsExecutionCoefficient": true,
+      "retainsLabelIndex": true
+    },
+    "geometricDecimalExamples": {
+      "structuralExamples": 30,
+      "geometricRecords": 5,
+      "recurrenceTraces": 5,
+      "statesPerTrace": 4,
+      "introductionCases": 5,
+      "decimalRecords": 2,
+      "exactInterpretations": 2,
+      "prefixCases": 3,
+      "prefixDigits": [
+        1,
+        2,
+        3
+      ],
+      "additionCases": 2,
+      "rejectionCases": 6,
+      "retainsRecurrenceParameters": true,
+      "separatesDecimalInterpretation": true
+    }
+  },
+  "checks": [
+    {
+      "id": "nat-0",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "nat-1",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "nat-2",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "nat-3",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "nat-4",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "sign-0",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "sign-1",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "int-minus-2",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "int-minus-1",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "int-0",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "int-1",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "int-2",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "rat-0-1",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "rat-1-1",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "rat-minus-1-1",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "rat-2-1",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "rat-minus-2-1",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "rat-1-2",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "rat-minus-1-3",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "text-a",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "text-lambda",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "pair-nat",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "list-0",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "list-1",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "list-3",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "bool-false",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "bool-true",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "ordering-minus-1",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "ordering-0",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "ordering-1",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "option-none",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "option-some",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "result-success",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "result-failure",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "m-zero",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "m-one",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "m-epsilon",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "m-epsilon-squared",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "m-one-plus-epsilon",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "m-epsilon-half",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "m-general",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "legacy-l",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "f-zero",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "f-one",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "f-minus-one",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "f-epsilon",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "f-inverse-epsilon",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "f-square-ratio",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "poly-degree",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "valuation-negative",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "standard-part",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "complex-zero",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "complex-one",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "complex-i",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "complex-one-plus-i",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "complex-one-minus-i",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "quaternion-one",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "quaternion-i",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "quaternion-j",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "quaternion-k",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "quaternion-all-one",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "type-n",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "type-z",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "type-q",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "type-m",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "type-f",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "type-c",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "type-h",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "type-bool",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "type-text",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "type-arrow",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "type-lambda",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "type-proposition",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "type-proof",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "type-unit",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "type-list",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "type-pair",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "type-option",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "type-function",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "type-ordering",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "type-interval",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "type-generator",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "type-qrep",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "type-result",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "qrep-four-four",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "type-t",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "t-zero",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "t-one",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "t-minus-one",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "t-two",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "t-sigma",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "t-sigma-half",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "t-one-plus-sigma",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "t-one-minus-sigma",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "fixed-t-product-conjugate",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "fixed-t-product-sigma-square",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "natform-program",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "natform-zero",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "natform-successor",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "natform-pair",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "natform-nested-pair",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "lambda-true",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "lambda-false",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "lambda-if",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "lambda-and",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "lambda-or",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "lambda-not",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "lambda-pair",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "lambda-fst",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "lambda-snd",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "lambda-zero",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "lambda-succ",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "lambda-one",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "lambda-two",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "lambda-three",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "lambda-four",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "lambda-add",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "lambda-mul",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "lambda-pred",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "lambda-sub",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "lambda-iszero",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "lambda-leq",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "lambda-eqnat",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "lambda-n0",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "lambda-n1",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "lambda-n2",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "lambda-n3",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "lambda-n4",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "lambda-0",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "lambda-1",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "lambda-2",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "lambda-3",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "lambda-4",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "lambda-resultok",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "lambda-resulterr",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "lambda-resultbind",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "lambda-zmake",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "lambda-zsign",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "lambda-zmagnitude",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "lambda-zzero",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "lambda-zone",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "lambda-ztwo",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "lambda-zminusone",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "lambda-zneg",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "lambda-zadd",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "lambda-zsub",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "lambda-zmul",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "lambda-zeq",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "lambda-zleq",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "lambda-zfromdiff",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "lambda-ztodiff",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "lambda-qrep",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "lambda-qrepnum",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "lambda-qrepden",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "lambda-qrepvalid",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "lambda-qmake",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "lambda-qzero",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "lambda-qone",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "lambda-qhalf",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "lambda-qrepneg",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "lambda-qrepadd",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "lambda-qrepsub",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "lambda-qrepmul",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "lambda-qrepeq",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "lambda-qrepleq",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "lambda-qrepinv",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "lambda-qrepdiv",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "lambda-identity",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "lambda-fixy",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "lambda-application",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "lambda-environment",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "term-variable",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "term-literal",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "term-add-call",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "proposition-equal",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "proposition-less",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "proposition-and",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "proposition-or",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "proposition-implies",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "proposition-false",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "proposition-forall",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "proposition-exists",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "proposition-predicate",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "proposition-not",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "proposition-associativity",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "judgment",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "proof-node-reflexivity",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "proof-induction-data",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "interval-unit",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "interval-sqrt2-initial",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "interval-sqrt2-refined",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "precision-two",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "precision-width",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "approx-value-error-bracket",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "approx-value-error-residual",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "qlim-parameters",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "qlim-call",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "qlim-response",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "relation-g-half",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "relation-g-three-quarters",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "relation-common-1",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "relation-common-2",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "relation-common-3",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "relation-intro-positive-half",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "relation-intro-positive-three-quarters",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "relation-intro-negative",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "relation-intro-zero",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "relation-l-one-step",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "relation-l-two-steps",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "relation-l-four-steps",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "relation-l-addition",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "relation-l-order",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "relation-intro-not-additive",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "relation-rational-error",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "relation-reject-malformed-label",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "relation-reject-false-introduction",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "relation-reject-compressed-sum",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "geometric-h-third-lower",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "geometric-trace-third-lower",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "geometric-intro-third-lower",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "geometric-h-third-upper",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "geometric-trace-third-upper",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "geometric-intro-third-upper",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "geometric-h-third-fixed",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "geometric-trace-third-fixed",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "geometric-intro-third-fixed",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "geometric-h-two-thirds-lower",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "geometric-trace-two-thirds-lower",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "geometric-intro-two-thirds-lower",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "geometric-h-menger-volume",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "geometric-trace-menger-volume",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "geometric-intro-menger-volume",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "decimal-record-third",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "decimal-exact-third",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "decimal-record-two-thirds",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "decimal-exact-two-thirds",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "decimal-prefix-1",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "decimal-prefix-2",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "decimal-prefix-3",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "decimal-lower-sum",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "decimal-mixed-sum",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "geometric-decimal-reject-invalid-ratio",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "geometric-decimal-reject-invalid-digit",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "geometric-decimal-reject-empty-repeat",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "geometric-decimal-reject-false-recurrence",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "geometric-decimal-reject-false-direction",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "geometric-decimal-reject-false-exact-label",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "sqrt2-state",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "leibniz-state",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "label-with-evidence",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "label-pending-division",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "newton-state",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "separation-witness",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "zero-classification-zero",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "zero-classification-nonzero",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "zero-classification-unknown",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "alternating-rule",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "cauchy-modulus",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "cauchy-center-radius",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "translated-label",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "translation-arrow",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "register-state",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "register-program",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "precision-field-epsilon",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "polynomial-derivative",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "polynomial-primitive",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "polynomial-integral",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "beta-step",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "identity-arrow",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "one-step-arrow",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "lambda-position",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "status-normal-form",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "status-step-limit",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "status-stopped",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "status-error",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "json-null",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "json-false",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "json-true",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "json-2",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "json-a",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "json-array",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "json-record",
+      "status": "passed",
+      "checkKind": "shared-syntax-roundtrip"
+    },
+    {
+      "id": "proof-nat-paths",
+      "status": "passed",
+      "checkKind": "shared-syntax-and-proof-kernel",
+      "evidence": {
+        "format": "finite-equational-verification/1",
+        "status": "verified",
+        "kernel": "typed equational logic + structural induction; separate from lambda beta traces",
+        "trustedDefiningRules": [
+          {
+            "id": "add.zero",
+            "variables": {
+              "x": "Nat"
+            },
+            "lhs": "Add(x,Z)",
+            "rhs": "x"
+          },
+          {
+            "id": "add.succ",
+            "variables": {
+              "x": "Nat",
+              "y": "Nat"
+            },
+            "lhs": "Add(x,S(y))",
+            "rhs": "S(Add(x,y))"
+          },
+          {
+            "id": "mul.zero",
+            "variables": {
+              "x": "Nat"
+            },
+            "lhs": "Mul(x,Z)",
+            "rhs": "Z"
+          },
+          {
+            "id": "mul.succ",
+            "variables": {
+              "x": "Nat",
+              "y": "Nat"
+            },
+            "lhs": "Mul(x,S(y))",
+            "rhs": "Add(Mul(x,y),x)"
+          },
+          {
+            "id": "append.nil",
+            "variables": {
+              "u": "Seq"
+            },
+            "lhs": "Append(Nil,u)",
+            "rhs": "u"
+          },
+          {
+            "id": "append.cons",
+            "variables": {
+              "h": "Event",
+              "t": "Seq",
+              "u": "Seq"
+            },
+            "lhs": "Append(Cons(h,t),u)",
+            "rhs": "Cons(h,Append(t,u))"
+          }
+        ],
+        "theoremCount": 16,
+        "rewriteSteps": 79,
+        "theorems": [
+          {
+            "id": "nat.add.leftzero",
+            "variables": {
+              "n": "Nat"
+            },
+            "equation": [
+              "Add(Z,n)",
+              "n"
+            ],
+            "status": "verified",
+            "proofKind": "induction",
+            "rewriteSteps": 3,
+            "trace": [
+              {
+                "rule": "add.zero",
+                "path": [],
+                "direction": "forward",
+                "before": "Add(Z,Z)",
+                "after": "Z"
+              },
+              {
+                "rule": "add.succ",
+                "path": [],
+                "direction": "forward",
+                "before": "Add(Z,S(k))",
+                "after": "S(Add(Z,k))"
+              },
+              {
+                "rule": "IH",
+                "path": [
+                  0
+                ],
+                "direction": "forward",
+                "before": "S(Add(Z,k))",
+                "after": "S(k)"
+              }
+            ]
+          },
+          {
+            "id": "nat.add.leftsucc",
+            "variables": {
+              "x": "Nat",
+              "y": "Nat"
+            },
+            "equation": [
+              "Add(S(x),y)",
+              "S(Add(x,y))"
+            ],
+            "status": "verified",
+            "proofKind": "induction",
+            "rewriteSteps": 5,
+            "trace": [
+              {
+                "rule": "add.zero",
+                "path": [],
+                "direction": "forward",
+                "before": "Add(S(x),Z)",
+                "after": "S(x)"
+              },
+              {
+                "rule": "add.zero",
+                "path": [
+                  0
+                ],
+                "direction": "forward",
+                "before": "S(Add(x,Z))",
+                "after": "S(x)"
+              },
+              {
+                "rule": "add.succ",
+                "path": [],
+                "direction": "forward",
+                "before": "Add(S(x),S(k))",
+                "after": "S(Add(S(x),k))"
+              },
+              {
+                "rule": "IH",
+                "path": [
+                  0
+                ],
+                "direction": "forward",
+                "before": "S(Add(S(x),k))",
+                "after": "S(S(Add(x,k)))"
+              },
+              {
+                "rule": "add.succ",
+                "path": [
+                  0
+                ],
+                "direction": "forward",
+                "before": "S(Add(x,S(k)))",
+                "after": "S(S(Add(x,k)))"
+              }
+            ]
+          },
+          {
+            "id": "nat.add.commutative",
+            "variables": {
+              "x": "Nat",
+              "y": "Nat"
+            },
+            "equation": [
+              "Add(x,y)",
+              "Add(y,x)"
+            ],
+            "status": "verified",
+            "proofKind": "induction",
+            "rewriteSteps": 5,
+            "trace": [
+              {
+                "rule": "add.zero",
+                "path": [],
+                "direction": "forward",
+                "before": "Add(x,Z)",
+                "after": "x"
+              },
+              {
+                "rule": "nat.add.leftzero",
+                "path": [],
+                "direction": "forward",
+                "before": "Add(Z,x)",
+                "after": "x"
+              },
+              {
+                "rule": "add.succ",
+                "path": [],
+                "direction": "forward",
+                "before": "Add(x,S(k))",
+                "after": "S(Add(x,k))"
+              },
+              {
+                "rule": "IH",
+                "path": [
+                  0
+                ],
+                "direction": "forward",
+                "before": "S(Add(x,k))",
+                "after": "S(Add(k,x))"
+              },
+              {
+                "rule": "nat.add.leftsucc",
+                "path": [],
+                "direction": "forward",
+                "before": "Add(S(k),x)",
+                "after": "S(Add(k,x))"
+              }
+            ]
+          },
+          {
+            "id": "nat.add.associative",
+            "variables": {
+              "x": "Nat",
+              "y": "Nat",
+              "z": "Nat"
+            },
+            "equation": [
+              "Add(Add(x,y),z)",
+              "Add(x,Add(y,z))"
+            ],
+            "status": "verified",
+            "proofKind": "induction",
+            "rewriteSteps": 6,
+            "trace": [
+              {
+                "rule": "add.zero",
+                "path": [],
+                "direction": "forward",
+                "before": "Add(Add(x,y),Z)",
+                "after": "Add(x,y)"
+              },
+              {
+                "rule": "add.zero",
+                "path": [
+                  1
+                ],
+                "direction": "forward",
+                "before": "Add(x,Add(y,Z))",
+                "after": "Add(x,y)"
+              },
+              {
+                "rule": "add.succ",
+                "path": [],
+                "direction": "forward",
+                "before": "Add(Add(x,y),S(k))",
+                "after": "S(Add(Add(x,y),k))"
+              },
+              {
+                "rule": "IH",
+                "path": [
+                  0
+                ],
+                "direction": "forward",
+                "before": "S(Add(Add(x,y),k))",
+                "after": "S(Add(x,Add(y,k)))"
+              },
+              {
+                "rule": "add.succ",
+                "path": [
+                  1
+                ],
+                "direction": "forward",
+                "before": "Add(x,Add(y,S(k)))",
+                "after": "Add(x,S(Add(y,k)))"
+              },
+              {
+                "rule": "add.succ",
+                "path": [],
+                "direction": "forward",
+                "before": "Add(x,S(Add(y,k)))",
+                "after": "S(Add(x,Add(y,k)))"
+              }
+            ]
+          },
+          {
+            "id": "nat.add.interchange",
+            "variables": {
+              "a": "Nat",
+              "b": "Nat",
+              "c": "Nat",
+              "d": "Nat"
+            },
+            "equation": [
+              "Add(Add(a,b),Add(c,d))",
+              "Add(Add(a,c),Add(b,d))"
+            ],
+            "status": "verified",
+            "proofKind": "join",
+            "rewriteSteps": 5,
+            "trace": [
+              {
+                "rule": "nat.add.associative",
+                "path": [],
+                "direction": "forward",
+                "before": "Add(Add(a,b),Add(c,d))",
+                "after": "Add(a,Add(b,Add(c,d)))"
+              },
+              {
+                "rule": "nat.add.associative",
+                "path": [
+                  1
+                ],
+                "direction": "backward",
+                "before": "Add(a,Add(b,Add(c,d)))",
+                "after": "Add(a,Add(Add(b,c),d))"
+              },
+              {
+                "rule": "nat.add.commutative",
+                "path": [
+                  1,
+                  0
+                ],
+                "direction": "forward",
+                "before": "Add(a,Add(Add(b,c),d))",
+                "after": "Add(a,Add(Add(c,b),d))"
+              },
+              {
+                "rule": "nat.add.associative",
+                "path": [
+                  1
+                ],
+                "direction": "forward",
+                "before": "Add(a,Add(Add(c,b),d))",
+                "after": "Add(a,Add(c,Add(b,d)))"
+              },
+              {
+                "rule": "nat.add.associative",
+                "path": [],
+                "direction": "backward",
+                "before": "Add(a,Add(c,Add(b,d)))",
+                "after": "Add(Add(a,c),Add(b,d))"
+              }
+            ]
+          },
+          {
+            "id": "nat.mul.leftzero",
+            "variables": {
+              "n": "Nat"
+            },
+            "equation": [
+              "Mul(Z,n)",
+              "Z"
+            ],
+            "status": "verified",
+            "proofKind": "induction",
+            "rewriteSteps": 4,
+            "trace": [
+              {
+                "rule": "mul.zero",
+                "path": [],
+                "direction": "forward",
+                "before": "Mul(Z,Z)",
+                "after": "Z"
+              },
+              {
+                "rule": "mul.succ",
+                "path": [],
+                "direction": "forward",
+                "before": "Mul(Z,S(k))",
+                "after": "Add(Mul(Z,k),Z)"
+              },
+              {
+                "rule": "IH",
+                "path": [
+                  0
+                ],
+                "direction": "forward",
+                "before": "Add(Mul(Z,k),Z)",
+                "after": "Add(Z,Z)"
+              },
+              {
+                "rule": "add.zero",
+                "path": [],
+                "direction": "forward",
+                "before": "Add(Z,Z)",
+                "after": "Z"
+              }
+            ]
+          },
+          {
+            "id": "nat.mul.rightone",
+            "variables": {
+              "x": "Nat"
+            },
+            "equation": [
+              "Mul(x,S(Z))",
+              "x"
+            ],
+            "status": "verified",
+            "proofKind": "join",
+            "rewriteSteps": 3,
+            "trace": [
+              {
+                "rule": "mul.succ",
+                "path": [],
+                "direction": "forward",
+                "before": "Mul(x,S(Z))",
+                "after": "Add(Mul(x,Z),x)"
+              },
+              {
+                "rule": "mul.zero",
+                "path": [
+                  0
+                ],
+                "direction": "forward",
+                "before": "Add(Mul(x,Z),x)",
+                "after": "Add(Z,x)"
+              },
+              {
+                "rule": "nat.add.leftzero",
+                "path": [],
+                "direction": "forward",
+                "before": "Add(Z,x)",
+                "after": "x"
+              }
+            ]
+          },
+          {
+            "id": "nat.mul.leftsucc",
+            "variables": {
+              "x": "Nat",
+              "y": "Nat"
+            },
+            "equation": [
+              "Mul(S(x),y)",
+              "Add(Mul(x,y),y)"
+            ],
+            "status": "verified",
+            "proofKind": "induction",
+            "rewriteSteps": 11,
+            "trace": [
+              {
+                "rule": "mul.zero",
+                "path": [],
+                "direction": "forward",
+                "before": "Mul(S(x),Z)",
+                "after": "Z"
+              },
+              {
+                "rule": "add.zero",
+                "path": [],
+                "direction": "forward",
+                "before": "Add(Mul(x,Z),Z)",
+                "after": "Mul(x,Z)"
+              },
+              {
+                "rule": "mul.zero",
+                "path": [],
+                "direction": "forward",
+                "before": "Mul(x,Z)",
+                "after": "Z"
+              },
+              {
+                "rule": "mul.succ",
+                "path": [],
+                "direction": "forward",
+                "before": "Mul(S(x),S(k))",
+                "after": "Add(Mul(S(x),k),S(x))"
+              },
+              {
+                "rule": "IH",
+                "path": [
+                  0
+                ],
+                "direction": "forward",
+                "before": "Add(Mul(S(x),k),S(x))",
+                "after": "Add(Add(Mul(x,k),k),S(x))"
+              },
+              {
+                "rule": "add.succ",
+                "path": [],
+                "direction": "forward",
+                "before": "Add(Add(Mul(x,k),k),S(x))",
+                "after": "S(Add(Add(Mul(x,k),k),x))"
+              },
+              {
+                "rule": "nat.add.associative",
+                "path": [
+                  0
+                ],
+                "direction": "forward",
+                "before": "S(Add(Add(Mul(x,k),k),x))",
+                "after": "S(Add(Mul(x,k),Add(k,x)))"
+              },
+              {
+                "rule": "nat.add.commutative",
+                "path": [
+                  0,
+                  1
+                ],
+                "direction": "forward",
+                "before": "S(Add(Mul(x,k),Add(k,x)))",
+                "after": "S(Add(Mul(x,k),Add(x,k)))"
+              },
+              {
+                "rule": "nat.add.associative",
+                "path": [
+                  0
+                ],
+                "direction": "backward",
+                "before": "S(Add(Mul(x,k),Add(x,k)))",
+                "after": "S(Add(Add(Mul(x,k),x),k))"
+              },
+              {
+                "rule": "add.succ",
+                "path": [],
+                "direction": "forward",
+                "before": "Add(Mul(x,S(k)),S(k))",
+                "after": "S(Add(Mul(x,S(k)),k))"
+              },
+              {
+                "rule": "mul.succ",
+                "path": [
+                  0,
+                  0
+                ],
+                "direction": "forward",
+                "before": "S(Add(Mul(x,S(k)),k))",
+                "after": "S(Add(Add(Mul(x,k),x),k))"
+              }
+            ]
+          },
+          {
+            "id": "nat.mul.commutative",
+            "variables": {
+              "x": "Nat",
+              "y": "Nat"
+            },
+            "equation": [
+              "Mul(x,y)",
+              "Mul(y,x)"
+            ],
+            "status": "verified",
+            "proofKind": "induction",
+            "rewriteSteps": 5,
+            "trace": [
+              {
+                "rule": "mul.zero",
+                "path": [],
+                "direction": "forward",
+                "before": "Mul(x,Z)",
+                "after": "Z"
+              },
+              {
+                "rule": "nat.mul.leftzero",
+                "path": [],
+                "direction": "forward",
+                "before": "Mul(Z,x)",
+                "after": "Z"
+              },
+              {
+                "rule": "mul.succ",
+                "path": [],
+                "direction": "forward",
+                "before": "Mul(x,S(k))",
+                "after": "Add(Mul(x,k),x)"
+              },
+              {
+                "rule": "IH",
+                "path": [
+                  0
+                ],
+                "direction": "forward",
+                "before": "Add(Mul(x,k),x)",
+                "after": "Add(Mul(k,x),x)"
+              },
+              {
+                "rule": "nat.mul.leftsucc",
+                "path": [],
+                "direction": "forward",
+                "before": "Mul(S(k),x)",
+                "after": "Add(Mul(k,x),x)"
+              }
+            ]
+          },
+          {
+            "id": "nat.mul.leftone",
+            "variables": {
+              "x": "Nat"
+            },
+            "equation": [
+              "Mul(S(Z),x)",
+              "x"
+            ],
+            "status": "verified",
+            "proofKind": "join",
+            "rewriteSteps": 2,
+            "trace": [
+              {
+                "rule": "nat.mul.commutative",
+                "path": [],
+                "direction": "forward",
+                "before": "Mul(S(Z),x)",
+                "after": "Mul(x,S(Z))"
+              },
+              {
+                "rule": "nat.mul.rightone",
+                "path": [],
+                "direction": "forward",
+                "before": "Mul(x,S(Z))",
+                "after": "x"
+              }
+            ]
+          },
+          {
+            "id": "nat.mul.distributive.first",
+            "variables": {
+              "x": "Nat",
+              "y": "Nat",
+              "z": "Nat"
+            },
+            "equation": [
+              "Mul(Add(x,y),z)",
+              "Add(Mul(x,z),Mul(y,z))"
+            ],
+            "status": "verified",
+            "proofKind": "induction",
+            "rewriteSteps": 9,
+            "trace": [
+              {
+                "rule": "mul.zero",
+                "path": [],
+                "direction": "forward",
+                "before": "Mul(Add(x,y),Z)",
+                "after": "Z"
+              },
+              {
+                "rule": "mul.zero",
+                "path": [
+                  0
+                ],
+                "direction": "forward",
+                "before": "Add(Mul(x,Z),Mul(y,Z))",
+                "after": "Add(Z,Mul(y,Z))"
+              },
+              {
+                "rule": "mul.zero",
+                "path": [
+                  1
+                ],
+                "direction": "forward",
+                "before": "Add(Z,Mul(y,Z))",
+                "after": "Add(Z,Z)"
+              },
+              {
+                "rule": "add.zero",
+                "path": [],
+                "direction": "forward",
+                "before": "Add(Z,Z)",
+                "after": "Z"
+              },
+              {
+                "rule": "mul.succ",
+                "path": [],
+                "direction": "forward",
+                "before": "Mul(Add(x,y),S(k))",
+                "after": "Add(Mul(Add(x,y),k),Add(x,y))"
+              },
+              {
+                "rule": "IH",
+                "path": [
+                  0
+                ],
+                "direction": "forward",
+                "before": "Add(Mul(Add(x,y),k),Add(x,y))",
+                "after": "Add(Add(Mul(x,k),Mul(y,k)),Add(x,y))"
+              },
+              {
+                "rule": "nat.add.interchange",
+                "path": [],
+                "direction": "forward",
+                "before": "Add(Add(Mul(x,k),Mul(y,k)),Add(x,y))",
+                "after": "Add(Add(Mul(x,k),x),Add(Mul(y,k),y))"
+              },
+              {
+                "rule": "mul.succ",
+                "path": [
+                  0
+                ],
+                "direction": "forward",
+                "before": "Add(Mul(x,S(k)),Mul(y,S(k)))",
+                "after": "Add(Add(Mul(x,k),x),Mul(y,S(k)))"
+              },
+              {
+                "rule": "mul.succ",
+                "path": [
+                  1
+                ],
+                "direction": "forward",
+                "before": "Add(Add(Mul(x,k),x),Mul(y,S(k)))",
+                "after": "Add(Add(Mul(x,k),x),Add(Mul(y,k),y))"
+              }
+            ]
+          },
+          {
+            "id": "nat.mul.distributive.second",
+            "variables": {
+              "x": "Nat",
+              "y": "Nat",
+              "z": "Nat"
+            },
+            "equation": [
+              "Mul(x,Add(y,z))",
+              "Add(Mul(x,y),Mul(x,z))"
+            ],
+            "status": "verified",
+            "proofKind": "join",
+            "rewriteSteps": 4,
+            "trace": [
+              {
+                "rule": "nat.mul.commutative",
+                "path": [],
+                "direction": "forward",
+                "before": "Mul(x,Add(y,z))",
+                "after": "Mul(Add(y,z),x)"
+              },
+              {
+                "rule": "nat.mul.distributive.first",
+                "path": [],
+                "direction": "forward",
+                "before": "Mul(Add(y,z),x)",
+                "after": "Add(Mul(y,x),Mul(z,x))"
+              },
+              {
+                "rule": "nat.mul.commutative",
+                "path": [
+                  0
+                ],
+                "direction": "forward",
+                "before": "Add(Mul(y,x),Mul(z,x))",
+                "after": "Add(Mul(x,y),Mul(z,x))"
+              },
+              {
+                "rule": "nat.mul.commutative",
+                "path": [
+                  1
+                ],
+                "direction": "forward",
+                "before": "Add(Mul(x,y),Mul(z,x))",
+                "after": "Add(Mul(x,y),Mul(x,z))"
+              }
+            ]
+          },
+          {
+            "id": "nat.mul.associative",
+            "variables": {
+              "x": "Nat",
+              "y": "Nat",
+              "z": "Nat"
+            },
+            "equation": [
+              "Mul(Mul(x,y),z)",
+              "Mul(x,Mul(y,z))"
+            ],
+            "status": "verified",
+            "proofKind": "induction",
+            "rewriteSteps": 7,
+            "trace": [
+              {
+                "rule": "mul.zero",
+                "path": [],
+                "direction": "forward",
+                "before": "Mul(Mul(x,y),Z)",
+                "after": "Z"
+              },
+              {
+                "rule": "mul.zero",
+                "path": [
+                  1
+                ],
+                "direction": "forward",
+                "before": "Mul(x,Mul(y,Z))",
+                "after": "Mul(x,Z)"
+              },
+              {
+                "rule": "mul.zero",
+                "path": [],
+                "direction": "forward",
+                "before": "Mul(x,Z)",
+                "after": "Z"
+              },
+              {
+                "rule": "mul.succ",
+                "path": [],
+                "direction": "forward",
+                "before": "Mul(Mul(x,y),S(k))",
+                "after": "Add(Mul(Mul(x,y),k),Mul(x,y))"
+              },
+              {
+                "rule": "IH",
+                "path": [
+                  0
+                ],
+                "direction": "forward",
+                "before": "Add(Mul(Mul(x,y),k),Mul(x,y))",
+                "after": "Add(Mul(x,Mul(y,k)),Mul(x,y))"
+              },
+              {
+                "rule": "mul.succ",
+                "path": [
+                  1
+                ],
+                "direction": "forward",
+                "before": "Mul(x,Mul(y,S(k)))",
+                "after": "Mul(x,Add(Mul(y,k),y))"
+              },
+              {
+                "rule": "nat.mul.distributive.second",
+                "path": [],
+                "direction": "forward",
+                "before": "Mul(x,Add(Mul(y,k),y))",
+                "after": "Add(Mul(x,Mul(y,k)),Mul(x,y))"
+              }
+            ]
+          },
+          {
+            "id": "path.append.leftunit",
+            "variables": {
+              "u": "Seq"
+            },
+            "equation": [
+              "Append(Nil,u)",
+              "u"
+            ],
+            "status": "verified",
+            "proofKind": "join",
+            "rewriteSteps": 1,
+            "trace": [
+              {
+                "rule": "append.nil",
+                "path": [],
+                "direction": "forward",
+                "before": "Append(Nil,u)",
+                "after": "u"
+              }
+            ]
+          },
+          {
+            "id": "path.append.rightunit",
+            "variables": {
+              "u": "Seq"
+            },
+            "equation": [
+              "Append(u,Nil)",
+              "u"
+            ],
+            "status": "verified",
+            "proofKind": "induction",
+            "rewriteSteps": 3,
+            "trace": [
+              {
+                "rule": "append.nil",
+                "path": [],
+                "direction": "forward",
+                "before": "Append(Nil,Nil)",
+                "after": "Nil"
+              },
+              {
+                "rule": "append.cons",
+                "path": [],
+                "direction": "forward",
+                "before": "Append(Cons(h,t),Nil)",
+                "after": "Cons(h,Append(t,Nil))"
+              },
+              {
+                "rule": "IH",
+                "path": [
+                  1
+                ],
+                "direction": "forward",
+                "before": "Cons(h,Append(t,Nil))",
+                "after": "Cons(h,t)"
+              }
+            ]
+          },
+          {
+            "id": "path.append.associative",
+            "variables": {
+              "u": "Seq",
+              "v": "Seq",
+              "w": "Seq"
+            },
+            "equation": [
+              "Append(Append(u,v),w)",
+              "Append(u,Append(v,w))"
+            ],
+            "status": "verified",
+            "proofKind": "induction",
+            "rewriteSteps": 6,
+            "trace": [
+              {
+                "rule": "append.nil",
+                "path": [
+                  0
+                ],
+                "direction": "forward",
+                "before": "Append(Append(Nil,v),w)",
+                "after": "Append(v,w)"
+              },
+              {
+                "rule": "append.nil",
+                "path": [],
+                "direction": "forward",
+                "before": "Append(Nil,Append(v,w))",
+                "after": "Append(v,w)"
+              },
+              {
+                "rule": "append.cons",
+                "path": [
+                  0
+                ],
+                "direction": "forward",
+                "before": "Append(Append(Cons(h,t),v),w)",
+                "after": "Append(Cons(h,Append(t,v)),w)"
+              },
+              {
+                "rule": "append.cons",
+                "path": [],
+                "direction": "forward",
+                "before": "Append(Cons(h,Append(t,v)),w)",
+                "after": "Cons(h,Append(Append(t,v),w))"
+              },
+              {
+                "rule": "IH",
+                "path": [
+                  1
+                ],
+                "direction": "forward",
+                "before": "Cons(h,Append(Append(t,v),w))",
+                "after": "Cons(h,Append(t,Append(v,w)))"
+              },
+              {
+                "rule": "append.cons",
+                "path": [],
+                "direction": "forward",
+                "before": "Append(Cons(h,t),Append(v,w))",
+                "after": "Cons(h,Append(t,Append(v,w)))"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "proof-lambda",
+      "status": "passed",
+      "checkKind": "shared-syntax-and-proof-kernel",
+      "evidence": {
+        "traces": 4
+      }
+    },
+    {
+      "id": "proof-applications",
+      "status": "passed",
+      "checkKind": "shared-syntax-and-proof-kernel",
+      "evidence": {
+        "certificates": 6
+      }
+    },
+    {
+      "id": "proof-field",
+      "status": "passed",
+      "checkKind": "shared-syntax-and-proof-kernel",
+      "evidence": {
+        "certificates": 5
+      }
+    },
+    {
+      "id": "proof-generators",
+      "status": "passed",
+      "checkKind": "shared-syntax-and-proof-kernel",
+      "evidence": {
+        "ok": true,
+        "format": "generator-extensions-v1.5.4",
+        "scope": "finite-rational-replay",
+        "certificateCount": 14,
+        "certificates": [
+          {
+            "id": "newton-p0",
+            "ok": true,
+            "kind": "newton-sqrt2",
+            "scope": "finite-rational-replay"
+          },
+          {
+            "id": "newton-p8",
+            "ok": true,
+            "kind": "newton-sqrt2",
+            "scope": "finite-rational-replay"
+          },
+          {
+            "id": "alternating-geometric",
+            "ok": true,
+            "kind": "alternating-interval",
+            "scope": "finite-rational-replay"
+          },
+          {
+            "id": "alternating-leibniz",
+            "ok": true,
+            "kind": "alternating-interval",
+            "scope": "finite-rational-replay"
+          },
+          {
+            "id": "alternating-zero",
+            "ok": true,
+            "kind": "alternating-interval",
+            "scope": "finite-rational-replay"
+          },
+          {
+            "id": "cauchy-from-sequence",
+            "ok": true,
+            "kind": "cauchy-interval",
+            "scope": "finite-rational-replay"
+          },
+          {
+            "id": "cauchy-two-moduli",
+            "ok": true,
+            "kind": "cauchy-coherence",
+            "scope": "finite-rational-replay"
+          },
+          {
+            "id": "label-sum",
+            "ok": true,
+            "kind": "label-response",
+            "scope": "finite-rational-replay"
+          },
+          {
+            "id": "label-product",
+            "ok": true,
+            "kind": "label-response",
+            "scope": "finite-rational-replay"
+          },
+          {
+            "id": "label-reciprocal",
+            "ok": true,
+            "kind": "label-response",
+            "scope": "finite-rational-replay"
+          },
+          {
+            "id": "label-negative-reciprocal",
+            "ok": true,
+            "kind": "label-response",
+            "scope": "finite-rational-replay"
+          },
+          {
+            "id": "separation-zero",
+            "ok": true,
+            "kind": "zero-separation",
+            "scope": "finite-rational-replay"
+          },
+          {
+            "id": "separation-unknown",
+            "ok": true,
+            "kind": "zero-separation",
+            "scope": "finite-rational-replay"
+          },
+          {
+            "id": "separation-positive",
+            "ok": true,
+            "kind": "zero-separation",
+            "scope": "finite-rational-replay"
+          }
+        ]
+      }
+    },
+    {
+      "id": "proof-models",
+      "status": "passed",
+      "checkKind": "shared-syntax-and-proof-kernel",
+      "evidence": {
+        "schema": "f-model/extensions-report/1",
+        "ok": true,
+        "registerTraces": [
+          {
+            "id": "register-add-2-3",
+            "ok": true,
+            "transitions": 14,
+            "output": "5"
+          },
+          {
+            "id": "register-add-7-0",
+            "ok": true,
+            "transitions": 2,
+            "output": "7"
+          },
+          {
+            "id": "register-add-large-2",
+            "ok": true,
+            "transitions": 10,
+            "output": "9007199254740995"
+          }
+        ],
+        "symbolicProofs": [
+          {
+            "id": "group-cancellation",
+            "ok": true,
+            "theory": "additive-group",
+            "steps": 3,
+            "premises": [],
+            "scope": "Derivation conditional on the fixed laws of the declared structure and the displayed premises."
+          },
+          {
+            "id": "arrow-inverse-uniqueness",
+            "ok": true,
+            "theory": "arrows",
+            "steps": 5,
+            "premises": [
+              "fh_id",
+              "gf_id"
+            ],
+            "scope": "Derivation conditional on the fixed laws of the declared structure and the displayed premises."
+          }
+        ],
+        "scope": "Finite register traces and two derivations conditional on the stated algebraic laws. No general compiler-correctness theorem is machine-verified."
+      }
+    },
+    {
+      "id": "paper-00",
+      "status": "passed",
+      "checkKind": "lossless-english-text-recovery-not-formal-proof"
+    },
+    {
+      "id": "paper-01",
+      "status": "passed",
+      "checkKind": "lossless-english-text-recovery-not-formal-proof"
+    },
+    {
+      "id": "paper-02",
+      "status": "passed",
+      "checkKind": "lossless-english-text-recovery-not-formal-proof"
+    },
+    {
+      "id": "paper-03",
+      "status": "passed",
+      "checkKind": "lossless-english-text-recovery-not-formal-proof"
+    },
+    {
+      "id": "paper-04",
+      "status": "passed",
+      "checkKind": "lossless-english-text-recovery-not-formal-proof"
+    },
+    {
+      "id": "paper-05",
+      "status": "passed",
+      "checkKind": "lossless-english-text-recovery-not-formal-proof"
+    },
+    {
+      "id": "paper-06",
+      "status": "passed",
+      "checkKind": "lossless-english-text-recovery-not-formal-proof"
+    },
+    {
+      "id": "paper-07",
+      "status": "passed",
+      "checkKind": "lossless-english-text-recovery-not-formal-proof"
+    },
+    {
+      "id": "paper-08",
+      "status": "passed",
+      "checkKind": "lossless-english-text-recovery-not-formal-proof"
+    },
+    {
+      "id": "paper-09",
+      "status": "passed",
+      "checkKind": "lossless-english-text-recovery-not-formal-proof"
+    },
+    {
+      "id": "paper-10",
+      "status": "passed",
+      "checkKind": "lossless-english-text-recovery-not-formal-proof"
+    },
+    {
+      "id": "paper-11",
+      "status": "passed",
+      "checkKind": "lossless-english-text-recovery-not-formal-proof"
+    },
+    {
+      "id": "paper-12",
+      "status": "passed",
+      "checkKind": "lossless-english-text-recovery-not-formal-proof"
+    },
+    {
+      "id": "paper-13",
+      "status": "passed",
+      "checkKind": "lossless-english-text-recovery-not-formal-proof"
+    },
+    {
+      "id": "program-applications",
+      "status": "passed",
+      "checkKind": "lossless-shared-source-recovery-not-lambda-port"
+    },
+    {
+      "id": "program-formal-field",
+      "status": "passed",
+      "checkKind": "lossless-shared-source-recovery-not-lambda-port"
+    },
+    {
+      "id": "program-equational-checker",
+      "status": "passed",
+      "checkKind": "lossless-shared-source-recovery-not-lambda-port"
+    },
+    {
+      "id": "program-lambda-core",
+      "status": "passed",
+      "checkKind": "lossless-shared-source-recovery-not-lambda-port"
+    },
+    {
+      "id": "program-generator-extensions",
+      "status": "passed",
+      "checkKind": "lossless-shared-source-recovery-not-lambda-port"
+    },
+    {
+      "id": "program-model-extensions",
+      "status": "passed",
+      "checkKind": "lossless-shared-source-recovery-not-lambda-port"
+    },
+    {
+      "id": "program-concept-examples",
+      "status": "passed",
+      "checkKind": "lossless-shared-source-recovery-not-lambda-port"
+    }
+  ],
+  "scope": "English prose is losslessly archived. Shared mathematical structures and proof bundles retain their original semantics and proof status. The local G/H-to-L and decimal-interpretation checks declared by the shared source are preserved as records, not rerun as a new general theorem here; written general proofs are not newly formalized by text encoding."
+}

@@ -1,0 +1,829 @@
+{
+  "format": "finite-equational-proof/1",
+  "version": "1.5.0",
+  "description": "Universal equations, with explicit structural-induction cases. No enumeration of numerals is used as a universal proof.",
+  "theorems": [
+    {
+      "id": "nat.add.leftzero",
+      "variables": {
+        "n": "Nat"
+      },
+      "equation": [
+        "Add(Z,n)",
+        "n"
+      ],
+      "proof": {
+        "kind": "induction",
+        "on": "n",
+        "fresh": {
+          "predecessor": "k"
+        },
+        "base": {
+          "kind": "join",
+          "left": [
+            {
+              "rule": "add.zero",
+              "path": []
+            }
+          ],
+          "right": []
+        },
+        "step": {
+          "kind": "join",
+          "left": [
+            {
+              "rule": "add.succ",
+              "path": []
+            },
+            {
+              "rule": "IH",
+              "path": [
+                0
+              ]
+            }
+          ],
+          "right": []
+        }
+      }
+    },
+    {
+      "id": "nat.add.leftsucc",
+      "variables": {
+        "x": "Nat",
+        "y": "Nat"
+      },
+      "equation": [
+        "Add(S(x),y)",
+        "S(Add(x,y))"
+      ],
+      "proof": {
+        "kind": "induction",
+        "on": "y",
+        "fresh": {
+          "predecessor": "k"
+        },
+        "base": {
+          "kind": "join",
+          "left": [
+            {
+              "rule": "add.zero",
+              "path": []
+            }
+          ],
+          "right": [
+            {
+              "rule": "add.zero",
+              "path": [
+                0
+              ]
+            }
+          ]
+        },
+        "step": {
+          "kind": "join",
+          "left": [
+            {
+              "rule": "add.succ",
+              "path": []
+            },
+            {
+              "rule": "IH",
+              "path": [
+                0
+              ]
+            }
+          ],
+          "right": [
+            {
+              "rule": "add.succ",
+              "path": [
+                0
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "nat.add.commutative",
+      "variables": {
+        "x": "Nat",
+        "y": "Nat"
+      },
+      "equation": [
+        "Add(x,y)",
+        "Add(y,x)"
+      ],
+      "proof": {
+        "kind": "induction",
+        "on": "y",
+        "fresh": {
+          "predecessor": "k"
+        },
+        "base": {
+          "kind": "join",
+          "left": [
+            {
+              "rule": "add.zero",
+              "path": []
+            }
+          ],
+          "right": [
+            {
+              "rule": "nat.add.leftzero",
+              "path": []
+            }
+          ]
+        },
+        "step": {
+          "kind": "join",
+          "left": [
+            {
+              "rule": "add.succ",
+              "path": []
+            },
+            {
+              "rule": "IH",
+              "path": [
+                0
+              ]
+            }
+          ],
+          "right": [
+            {
+              "rule": "nat.add.leftsucc",
+              "path": []
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "nat.add.associative",
+      "variables": {
+        "x": "Nat",
+        "y": "Nat",
+        "z": "Nat"
+      },
+      "equation": [
+        "Add(Add(x,y),z)",
+        "Add(x,Add(y,z))"
+      ],
+      "proof": {
+        "kind": "induction",
+        "on": "z",
+        "fresh": {
+          "predecessor": "k"
+        },
+        "base": {
+          "kind": "join",
+          "left": [
+            {
+              "rule": "add.zero",
+              "path": []
+            }
+          ],
+          "right": [
+            {
+              "rule": "add.zero",
+              "path": [
+                1
+              ]
+            }
+          ]
+        },
+        "step": {
+          "kind": "join",
+          "left": [
+            {
+              "rule": "add.succ",
+              "path": []
+            },
+            {
+              "rule": "IH",
+              "path": [
+                0
+              ]
+            }
+          ],
+          "right": [
+            {
+              "rule": "add.succ",
+              "path": [
+                1
+              ]
+            },
+            {
+              "rule": "add.succ",
+              "path": []
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "nat.add.interchange",
+      "variables": {
+        "a": "Nat",
+        "b": "Nat",
+        "c": "Nat",
+        "d": "Nat"
+      },
+      "equation": [
+        "Add(Add(a,b),Add(c,d))",
+        "Add(Add(a,c),Add(b,d))"
+      ],
+      "proof": {
+        "kind": "join",
+        "left": [
+          {
+            "rule": "nat.add.associative",
+            "path": []
+          },
+          {
+            "rule": "nat.add.associative",
+            "path": [
+              1
+            ],
+            "direction": "backward"
+          },
+          {
+            "rule": "nat.add.commutative",
+            "path": [
+              1,
+              0
+            ]
+          },
+          {
+            "rule": "nat.add.associative",
+            "path": [
+              1
+            ]
+          },
+          {
+            "rule": "nat.add.associative",
+            "path": [],
+            "direction": "backward"
+          }
+        ],
+        "right": []
+      }
+    },
+    {
+      "id": "nat.mul.leftzero",
+      "variables": {
+        "n": "Nat"
+      },
+      "equation": [
+        "Mul(Z,n)",
+        "Z"
+      ],
+      "proof": {
+        "kind": "induction",
+        "on": "n",
+        "fresh": {
+          "predecessor": "k"
+        },
+        "base": {
+          "kind": "join",
+          "left": [
+            {
+              "rule": "mul.zero",
+              "path": []
+            }
+          ],
+          "right": []
+        },
+        "step": {
+          "kind": "join",
+          "left": [
+            {
+              "rule": "mul.succ",
+              "path": []
+            },
+            {
+              "rule": "IH",
+              "path": [
+                0
+              ]
+            },
+            {
+              "rule": "add.zero",
+              "path": []
+            }
+          ],
+          "right": []
+        }
+      }
+    },
+    {
+      "id": "nat.mul.rightone",
+      "variables": {
+        "x": "Nat"
+      },
+      "equation": [
+        "Mul(x,S(Z))",
+        "x"
+      ],
+      "proof": {
+        "kind": "join",
+        "left": [
+          {
+            "rule": "mul.succ",
+            "path": []
+          },
+          {
+            "rule": "mul.zero",
+            "path": [
+              0
+            ]
+          },
+          {
+            "rule": "nat.add.leftzero",
+            "path": []
+          }
+        ],
+        "right": []
+      }
+    },
+    {
+      "id": "nat.mul.leftsucc",
+      "variables": {
+        "x": "Nat",
+        "y": "Nat"
+      },
+      "equation": [
+        "Mul(S(x),y)",
+        "Add(Mul(x,y),y)"
+      ],
+      "proof": {
+        "kind": "induction",
+        "on": "y",
+        "fresh": {
+          "predecessor": "k"
+        },
+        "base": {
+          "kind": "join",
+          "left": [
+            {
+              "rule": "mul.zero",
+              "path": []
+            }
+          ],
+          "right": [
+            {
+              "rule": "add.zero",
+              "path": []
+            },
+            {
+              "rule": "mul.zero",
+              "path": []
+            }
+          ]
+        },
+        "step": {
+          "kind": "join",
+          "left": [
+            {
+              "rule": "mul.succ",
+              "path": []
+            },
+            {
+              "rule": "IH",
+              "path": [
+                0
+              ]
+            },
+            {
+              "rule": "add.succ",
+              "path": []
+            },
+            {
+              "rule": "nat.add.associative",
+              "path": [
+                0
+              ]
+            },
+            {
+              "rule": "nat.add.commutative",
+              "path": [
+                0,
+                1
+              ]
+            },
+            {
+              "rule": "nat.add.associative",
+              "path": [
+                0
+              ],
+              "direction": "backward"
+            }
+          ],
+          "right": [
+            {
+              "rule": "add.succ",
+              "path": []
+            },
+            {
+              "rule": "mul.succ",
+              "path": [
+                0,
+                0
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "nat.mul.commutative",
+      "variables": {
+        "x": "Nat",
+        "y": "Nat"
+      },
+      "equation": [
+        "Mul(x,y)",
+        "Mul(y,x)"
+      ],
+      "proof": {
+        "kind": "induction",
+        "on": "y",
+        "fresh": {
+          "predecessor": "k"
+        },
+        "base": {
+          "kind": "join",
+          "left": [
+            {
+              "rule": "mul.zero",
+              "path": []
+            }
+          ],
+          "right": [
+            {
+              "rule": "nat.mul.leftzero",
+              "path": []
+            }
+          ]
+        },
+        "step": {
+          "kind": "join",
+          "left": [
+            {
+              "rule": "mul.succ",
+              "path": []
+            },
+            {
+              "rule": "IH",
+              "path": [
+                0
+              ]
+            }
+          ],
+          "right": [
+            {
+              "rule": "nat.mul.leftsucc",
+              "path": []
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "nat.mul.leftone",
+      "variables": {
+        "x": "Nat"
+      },
+      "equation": [
+        "Mul(S(Z),x)",
+        "x"
+      ],
+      "proof": {
+        "kind": "join",
+        "left": [
+          {
+            "rule": "nat.mul.commutative",
+            "path": []
+          },
+          {
+            "rule": "nat.mul.rightone",
+            "path": []
+          }
+        ],
+        "right": []
+      }
+    },
+    {
+      "id": "nat.mul.distributive.first",
+      "variables": {
+        "x": "Nat",
+        "y": "Nat",
+        "z": "Nat"
+      },
+      "equation": [
+        "Mul(Add(x,y),z)",
+        "Add(Mul(x,z),Mul(y,z))"
+      ],
+      "proof": {
+        "kind": "induction",
+        "on": "z",
+        "fresh": {
+          "predecessor": "k"
+        },
+        "base": {
+          "kind": "join",
+          "left": [
+            {
+              "rule": "mul.zero",
+              "path": []
+            }
+          ],
+          "right": [
+            {
+              "rule": "mul.zero",
+              "path": [
+                0
+              ]
+            },
+            {
+              "rule": "mul.zero",
+              "path": [
+                1
+              ]
+            },
+            {
+              "rule": "add.zero",
+              "path": []
+            }
+          ]
+        },
+        "step": {
+          "kind": "join",
+          "left": [
+            {
+              "rule": "mul.succ",
+              "path": []
+            },
+            {
+              "rule": "IH",
+              "path": [
+                0
+              ]
+            },
+            {
+              "rule": "nat.add.interchange",
+              "path": []
+            }
+          ],
+          "right": [
+            {
+              "rule": "mul.succ",
+              "path": [
+                0
+              ]
+            },
+            {
+              "rule": "mul.succ",
+              "path": [
+                1
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "nat.mul.distributive.second",
+      "variables": {
+        "x": "Nat",
+        "y": "Nat",
+        "z": "Nat"
+      },
+      "equation": [
+        "Mul(x,Add(y,z))",
+        "Add(Mul(x,y),Mul(x,z))"
+      ],
+      "proof": {
+        "kind": "join",
+        "left": [
+          {
+            "rule": "nat.mul.commutative",
+            "path": []
+          },
+          {
+            "rule": "nat.mul.distributive.first",
+            "path": []
+          },
+          {
+            "rule": "nat.mul.commutative",
+            "path": [
+              0
+            ]
+          },
+          {
+            "rule": "nat.mul.commutative",
+            "path": [
+              1
+            ]
+          }
+        ],
+        "right": []
+      }
+    },
+    {
+      "id": "nat.mul.associative",
+      "variables": {
+        "x": "Nat",
+        "y": "Nat",
+        "z": "Nat"
+      },
+      "equation": [
+        "Mul(Mul(x,y),z)",
+        "Mul(x,Mul(y,z))"
+      ],
+      "proof": {
+        "kind": "induction",
+        "on": "z",
+        "fresh": {
+          "predecessor": "k"
+        },
+        "base": {
+          "kind": "join",
+          "left": [
+            {
+              "rule": "mul.zero",
+              "path": []
+            }
+          ],
+          "right": [
+            {
+              "rule": "mul.zero",
+              "path": [
+                1
+              ]
+            },
+            {
+              "rule": "mul.zero",
+              "path": []
+            }
+          ]
+        },
+        "step": {
+          "kind": "join",
+          "left": [
+            {
+              "rule": "mul.succ",
+              "path": []
+            },
+            {
+              "rule": "IH",
+              "path": [
+                0
+              ]
+            }
+          ],
+          "right": [
+            {
+              "rule": "mul.succ",
+              "path": [
+                1
+              ]
+            },
+            {
+              "rule": "nat.mul.distributive.second",
+              "path": []
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "path.append.leftunit",
+      "variables": {
+        "u": "Seq"
+      },
+      "equation": [
+        "Append(Nil,u)",
+        "u"
+      ],
+      "proof": {
+        "kind": "join",
+        "left": [
+          {
+            "rule": "append.nil",
+            "path": []
+          }
+        ],
+        "right": []
+      }
+    },
+    {
+      "id": "path.append.rightunit",
+      "variables": {
+        "u": "Seq"
+      },
+      "equation": [
+        "Append(u,Nil)",
+        "u"
+      ],
+      "proof": {
+        "kind": "induction",
+        "on": "u",
+        "fresh": {
+          "head": "h",
+          "tail": "t"
+        },
+        "base": {
+          "kind": "join",
+          "left": [
+            {
+              "rule": "append.nil",
+              "path": []
+            }
+          ],
+          "right": []
+        },
+        "step": {
+          "kind": "join",
+          "left": [
+            {
+              "rule": "append.cons",
+              "path": []
+            },
+            {
+              "rule": "IH",
+              "path": [
+                1
+              ]
+            }
+          ],
+          "right": []
+        }
+      }
+    },
+    {
+      "id": "path.append.associative",
+      "variables": {
+        "u": "Seq",
+        "v": "Seq",
+        "w": "Seq"
+      },
+      "equation": [
+        "Append(Append(u,v),w)",
+        "Append(u,Append(v,w))"
+      ],
+      "proof": {
+        "kind": "induction",
+        "on": "u",
+        "fresh": {
+          "head": "h",
+          "tail": "t"
+        },
+        "base": {
+          "kind": "join",
+          "left": [
+            {
+              "rule": "append.nil",
+              "path": [
+                0
+              ]
+            }
+          ],
+          "right": [
+            {
+              "rule": "append.nil",
+              "path": []
+            }
+          ]
+        },
+        "step": {
+          "kind": "join",
+          "left": [
+            {
+              "rule": "append.cons",
+              "path": [
+                0
+              ]
+            },
+            {
+              "rule": "append.cons",
+              "path": []
+            },
+            {
+              "rule": "IH",
+              "path": [
+                1
+              ]
+            }
+          ],
+          "right": [
+            {
+              "rule": "append.cons",
+              "path": []
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

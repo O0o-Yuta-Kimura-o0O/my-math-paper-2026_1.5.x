@@ -1,0 +1,3217 @@
+{
+  "format": "generator-extensions-v1.5.4",
+  "scope": "finite-rational-replay",
+  "certificates": [
+    {
+      "id": "newton-p0",
+      "certificate": {
+        "kind": "newton-sqrt2",
+        "request": {
+          "precision": 0
+        },
+        "response": {
+          "stages": [
+            {
+              "index": 0,
+              "interval": {
+                "lower": "1/1",
+                "upper": "2/1"
+              },
+              "product": "2/1",
+              "lowerSquare": "1/1",
+              "upperSquare": "4/1",
+              "width": "1/1"
+            }
+          ],
+          "interval": {
+            "lower": "1/1",
+            "upper": "2/1"
+          },
+          "width": "1/1",
+          "target": "1/1"
+        },
+        "bisection": {
+          "format": "rational-applications-v1.5.0",
+          "kind": "sqrt2",
+          "claim": {
+            "precision": 0,
+            "interval": {
+              "lower": "1/1",
+              "upper": "2/1"
+            }
+          },
+          "roots": {
+            "chain": [
+              "s0",
+              "s1"
+            ],
+            "final": "s2",
+            "width": "s3",
+            "target": "s4",
+            "bound": "s5",
+            "invariant": "s6"
+          },
+          "steps": [
+            {
+              "id": "s0",
+              "rule": "S2.start",
+              "input": [],
+              "output": {
+                "depth": "0",
+                "interval": {
+                  "lower": "0/1",
+                  "upper": "2/1"
+                }
+              },
+              "premises": []
+            },
+            {
+              "id": "s1",
+              "rule": "S2.step",
+              "input": [
+                "s0"
+              ],
+              "output": {
+                "depth": "1",
+                "interval": {
+                  "lower": "1/1",
+                  "upper": "2/1"
+                },
+                "witness": {
+                  "midpoint": "1/1",
+                  "square": "1/1",
+                  "comparison": -1
+                }
+              },
+              "premises": [
+                "s0"
+              ]
+            },
+            {
+              "id": "s2",
+              "rule": "I.fromStage",
+              "input": [
+                "s1"
+              ],
+              "output": {
+                "lower": "1/1",
+                "upper": "2/1"
+              },
+              "premises": [
+                "s1"
+              ]
+            },
+            {
+              "id": "s3",
+              "rule": "I.width",
+              "input": [
+                "s2"
+              ],
+              "output": "1/1",
+              "premises": [
+                "s2"
+              ]
+            },
+            {
+              "id": "s4",
+              "rule": "Q.precision",
+              "input": [
+                0
+              ],
+              "output": "1/1",
+              "premises": []
+            },
+            {
+              "id": "s5",
+              "rule": "Q.le",
+              "input": [
+                "s3",
+                "s4"
+              ],
+              "output": true,
+              "premises": [
+                "s3",
+                "s4"
+              ]
+            },
+            {
+              "id": "s6",
+              "rule": "I.sqrt2",
+              "input": [
+                "s2"
+              ],
+              "output": true,
+              "premises": [
+                "s2"
+              ]
+            }
+          ]
+        },
+        "agreement": {
+          "intersection": {
+            "lower": "1/1",
+            "upper": "2/1"
+          },
+          "newtonLowerSquare": "1/1",
+          "bisectionUpperSquare": "4/1",
+          "bisectionLowerSquare": "1/1",
+          "newtonUpperSquare": "4/1"
+        }
+      }
+    },
+    {
+      "id": "newton-p8",
+      "certificate": {
+        "kind": "newton-sqrt2",
+        "request": {
+          "precision": 8
+        },
+        "response": {
+          "stages": [
+            {
+              "index": 0,
+              "interval": {
+                "lower": "1/1",
+                "upper": "2/1"
+              },
+              "product": "2/1",
+              "lowerSquare": "1/1",
+              "upperSquare": "4/1",
+              "width": "1/1"
+            },
+            {
+              "index": 1,
+              "interval": {
+                "lower": "4/3",
+                "upper": "3/2"
+              },
+              "product": "2/1",
+              "lowerSquare": "16/9",
+              "upperSquare": "9/4",
+              "width": "1/6",
+              "step": {
+                "previousWidth": "1/1",
+                "endpointSum": "3/1",
+                "widthRecurrence": "1/6",
+                "quarterBound": "1/4"
+              }
+            },
+            {
+              "index": 2,
+              "interval": {
+                "lower": "24/17",
+                "upper": "17/12"
+              },
+              "product": "2/1",
+              "lowerSquare": "576/289",
+              "upperSquare": "289/144",
+              "width": "1/204",
+              "step": {
+                "previousWidth": "1/6",
+                "endpointSum": "17/6",
+                "widthRecurrence": "1/204",
+                "quarterBound": "1/24"
+              }
+            },
+            {
+              "index": 3,
+              "interval": {
+                "lower": "816/577",
+                "upper": "577/408"
+              },
+              "product": "2/1",
+              "lowerSquare": "665856/332929",
+              "upperSquare": "332929/166464",
+              "width": "1/235416",
+              "step": {
+                "previousWidth": "1/204",
+                "endpointSum": "577/204",
+                "widthRecurrence": "1/235416",
+                "quarterBound": "1/816"
+              }
+            }
+          ],
+          "interval": {
+            "lower": "816/577",
+            "upper": "577/408"
+          },
+          "width": "1/235416",
+          "target": "1/256"
+        },
+        "bisection": {
+          "format": "rational-applications-v1.5.0",
+          "kind": "sqrt2",
+          "claim": {
+            "precision": 8,
+            "interval": {
+              "lower": "181/128",
+              "upper": "363/256"
+            }
+          },
+          "roots": {
+            "chain": [
+              "s0",
+              "s1",
+              "s2",
+              "s3",
+              "s4",
+              "s5",
+              "s6",
+              "s7",
+              "s8",
+              "s9"
+            ],
+            "final": "s10",
+            "width": "s11",
+            "target": "s12",
+            "bound": "s13",
+            "invariant": "s14"
+          },
+          "steps": [
+            {
+              "id": "s0",
+              "rule": "S2.start",
+              "input": [],
+              "output": {
+                "depth": "0",
+                "interval": {
+                  "lower": "0/1",
+                  "upper": "2/1"
+                }
+              },
+              "premises": []
+            },
+            {
+              "id": "s1",
+              "rule": "S2.step",
+              "input": [
+                "s0"
+              ],
+              "output": {
+                "depth": "1",
+                "interval": {
+                  "lower": "1/1",
+                  "upper": "2/1"
+                },
+                "witness": {
+                  "midpoint": "1/1",
+                  "square": "1/1",
+                  "comparison": -1
+                }
+              },
+              "premises": [
+                "s0"
+              ]
+            },
+            {
+              "id": "s2",
+              "rule": "S2.step",
+              "input": [
+                "s1"
+              ],
+              "output": {
+                "depth": "2",
+                "interval": {
+                  "lower": "1/1",
+                  "upper": "3/2"
+                },
+                "witness": {
+                  "midpoint": "3/2",
+                  "square": "9/4",
+                  "comparison": 1
+                }
+              },
+              "premises": [
+                "s1"
+              ]
+            },
+            {
+              "id": "s3",
+              "rule": "S2.step",
+              "input": [
+                "s2"
+              ],
+              "output": {
+                "depth": "3",
+                "interval": {
+                  "lower": "5/4",
+                  "upper": "3/2"
+                },
+                "witness": {
+                  "midpoint": "5/4",
+                  "square": "25/16",
+                  "comparison": -1
+                }
+              },
+              "premises": [
+                "s2"
+              ]
+            },
+            {
+              "id": "s4",
+              "rule": "S2.step",
+              "input": [
+                "s3"
+              ],
+              "output": {
+                "depth": "4",
+                "interval": {
+                  "lower": "11/8",
+                  "upper": "3/2"
+                },
+                "witness": {
+                  "midpoint": "11/8",
+                  "square": "121/64",
+                  "comparison": -1
+                }
+              },
+              "premises": [
+                "s3"
+              ]
+            },
+            {
+              "id": "s5",
+              "rule": "S2.step",
+              "input": [
+                "s4"
+              ],
+              "output": {
+                "depth": "5",
+                "interval": {
+                  "lower": "11/8",
+                  "upper": "23/16"
+                },
+                "witness": {
+                  "midpoint": "23/16",
+                  "square": "529/256",
+                  "comparison": 1
+                }
+              },
+              "premises": [
+                "s4"
+              ]
+            },
+            {
+              "id": "s6",
+              "rule": "S2.step",
+              "input": [
+                "s5"
+              ],
+              "output": {
+                "depth": "6",
+                "interval": {
+                  "lower": "45/32",
+                  "upper": "23/16"
+                },
+                "witness": {
+                  "midpoint": "45/32",
+                  "square": "2025/1024",
+                  "comparison": -1
+                }
+              },
+              "premises": [
+                "s5"
+              ]
+            },
+            {
+              "id": "s7",
+              "rule": "S2.step",
+              "input": [
+                "s6"
+              ],
+              "output": {
+                "depth": "7",
+                "interval": {
+                  "lower": "45/32",
+                  "upper": "91/64"
+                },
+                "witness": {
+                  "midpoint": "91/64",
+                  "square": "8281/4096",
+                  "comparison": 1
+                }
+              },
+              "premises": [
+                "s6"
+              ]
+            },
+            {
+              "id": "s8",
+              "rule": "S2.step",
+              "input": [
+                "s7"
+              ],
+              "output": {
+                "depth": "8",
+                "interval": {
+                  "lower": "181/128",
+                  "upper": "91/64"
+                },
+                "witness": {
+                  "midpoint": "181/128",
+                  "square": "32761/16384",
+                  "comparison": -1
+                }
+              },
+              "premises": [
+                "s7"
+              ]
+            },
+            {
+              "id": "s9",
+              "rule": "S2.step",
+              "input": [
+                "s8"
+              ],
+              "output": {
+                "depth": "9",
+                "interval": {
+                  "lower": "181/128",
+                  "upper": "363/256"
+                },
+                "witness": {
+                  "midpoint": "363/256",
+                  "square": "131769/65536",
+                  "comparison": 1
+                }
+              },
+              "premises": [
+                "s8"
+              ]
+            },
+            {
+              "id": "s10",
+              "rule": "I.fromStage",
+              "input": [
+                "s9"
+              ],
+              "output": {
+                "lower": "181/128",
+                "upper": "363/256"
+              },
+              "premises": [
+                "s9"
+              ]
+            },
+            {
+              "id": "s11",
+              "rule": "I.width",
+              "input": [
+                "s10"
+              ],
+              "output": "1/256",
+              "premises": [
+                "s10"
+              ]
+            },
+            {
+              "id": "s12",
+              "rule": "Q.precision",
+              "input": [
+                8
+              ],
+              "output": "1/256",
+              "premises": []
+            },
+            {
+              "id": "s13",
+              "rule": "Q.le",
+              "input": [
+                "s11",
+                "s12"
+              ],
+              "output": true,
+              "premises": [
+                "s11",
+                "s12"
+              ]
+            },
+            {
+              "id": "s14",
+              "rule": "I.sqrt2",
+              "input": [
+                "s10"
+              ],
+              "output": true,
+              "premises": [
+                "s10"
+              ]
+            }
+          ]
+        },
+        "agreement": {
+          "intersection": {
+            "lower": "816/577",
+            "upper": "577/408"
+          },
+          "newtonLowerSquare": "665856/332929",
+          "bisectionUpperSquare": "131769/65536",
+          "bisectionLowerSquare": "32761/16384",
+          "newtonUpperSquare": "332929/166464"
+        }
+      }
+    },
+    {
+      "id": "alternating-geometric",
+      "certificate": {
+        "kind": "alternating-interval",
+        "request": {
+          "program": {
+            "family": "geometric",
+            "amplitude": "1/1",
+            "ratio": "1/2"
+          },
+          "precision": 6
+        },
+        "rates": [
+          {
+            "precision": 0,
+            "mu": 0,
+            "runningMaximum": 0,
+            "evenTerm": "1/1",
+            "target": "1/1"
+          },
+          {
+            "precision": 1,
+            "mu": 1,
+            "runningMaximum": 1,
+            "evenTerm": "1/4",
+            "target": "1/2"
+          },
+          {
+            "precision": 2,
+            "mu": 1,
+            "runningMaximum": 2,
+            "evenTerm": "1/4",
+            "target": "1/4"
+          },
+          {
+            "precision": 3,
+            "mu": 2,
+            "runningMaximum": 3,
+            "evenTerm": "1/16",
+            "target": "1/8"
+          },
+          {
+            "precision": 4,
+            "mu": 2,
+            "runningMaximum": 4,
+            "evenTerm": "1/16",
+            "target": "1/16"
+          },
+          {
+            "precision": 5,
+            "mu": 3,
+            "runningMaximum": 5,
+            "evenTerm": "1/64",
+            "target": "1/32"
+          },
+          {
+            "precision": 6,
+            "mu": 3,
+            "runningMaximum": 6,
+            "evenTerm": "1/64",
+            "target": "1/64"
+          }
+        ],
+        "terms": [
+          {
+            "index": 0,
+            "term": "1/1",
+            "partialSum": "1/1"
+          },
+          {
+            "index": 1,
+            "term": "1/2",
+            "partialSum": "1/2"
+          },
+          {
+            "index": 2,
+            "term": "1/4",
+            "partialSum": "3/4"
+          },
+          {
+            "index": 3,
+            "term": "1/8",
+            "partialSum": "5/8"
+          },
+          {
+            "index": 4,
+            "term": "1/16",
+            "partialSum": "11/16"
+          },
+          {
+            "index": 5,
+            "term": "1/32",
+            "partialSum": "21/32"
+          },
+          {
+            "index": 6,
+            "term": "1/64",
+            "partialSum": "43/64"
+          },
+          {
+            "index": 7,
+            "term": "1/128",
+            "partialSum": "85/128"
+          },
+          {
+            "index": 8,
+            "term": "1/256",
+            "partialSum": "171/256"
+          },
+          {
+            "index": 9,
+            "term": "1/512",
+            "partialSum": "341/512"
+          },
+          {
+            "index": 10,
+            "term": "1/1024",
+            "partialSum": "683/1024"
+          },
+          {
+            "index": 11,
+            "term": "1/2048",
+            "partialSum": "1365/2048"
+          },
+          {
+            "index": 12,
+            "term": "1/4096",
+            "partialSum": "2731/4096"
+          },
+          {
+            "index": 13,
+            "term": "1/8192",
+            "partialSum": "5461/8192"
+          }
+        ],
+        "stages": [
+          {
+            "index": 0,
+            "interval": {
+              "lower": "1/2",
+              "upper": "1/1"
+            },
+            "width": "1/2"
+          },
+          {
+            "index": 1,
+            "interval": {
+              "lower": "5/8",
+              "upper": "3/4"
+            },
+            "width": "1/8"
+          },
+          {
+            "index": 2,
+            "interval": {
+              "lower": "21/32",
+              "upper": "11/16"
+            },
+            "width": "1/32"
+          },
+          {
+            "index": 3,
+            "interval": {
+              "lower": "85/128",
+              "upper": "43/64"
+            },
+            "width": "1/128"
+          },
+          {
+            "index": 4,
+            "interval": {
+              "lower": "341/512",
+              "upper": "171/256"
+            },
+            "width": "1/512"
+          },
+          {
+            "index": 5,
+            "interval": {
+              "lower": "1365/2048",
+              "upper": "683/1024"
+            },
+            "width": "1/2048"
+          },
+          {
+            "index": 6,
+            "interval": {
+              "lower": "5461/8192",
+              "upper": "2731/4096"
+            },
+            "width": "1/8192"
+          }
+        ],
+        "claim": {
+          "stage": 6,
+          "interval": {
+            "lower": "5461/8192",
+            "upper": "2731/4096"
+          },
+          "width": "1/8192",
+          "target": "1/64"
+        }
+      }
+    },
+    {
+      "id": "alternating-leibniz",
+      "certificate": {
+        "kind": "alternating-interval",
+        "request": {
+          "program": {
+            "family": "reciprocal-affine",
+            "amplitude": "4/1",
+            "slope": 2,
+            "offset": 1
+          },
+          "precision": 4
+        },
+        "rates": [
+          {
+            "precision": 0,
+            "mu": 1,
+            "runningMaximum": 1,
+            "evenTerm": "4/5",
+            "target": "1/1"
+          },
+          {
+            "precision": 1,
+            "mu": 2,
+            "runningMaximum": 2,
+            "evenTerm": "4/9",
+            "target": "1/2"
+          },
+          {
+            "precision": 2,
+            "mu": 4,
+            "runningMaximum": 4,
+            "evenTerm": "4/17",
+            "target": "1/4"
+          },
+          {
+            "precision": 3,
+            "mu": 8,
+            "runningMaximum": 8,
+            "evenTerm": "4/33",
+            "target": "1/8"
+          },
+          {
+            "precision": 4,
+            "mu": 16,
+            "runningMaximum": 16,
+            "evenTerm": "4/65",
+            "target": "1/16"
+          }
+        ],
+        "terms": [
+          {
+            "index": 0,
+            "term": "4/1",
+            "partialSum": "4/1"
+          },
+          {
+            "index": 1,
+            "term": "4/3",
+            "partialSum": "8/3"
+          },
+          {
+            "index": 2,
+            "term": "4/5",
+            "partialSum": "52/15"
+          },
+          {
+            "index": 3,
+            "term": "4/7",
+            "partialSum": "304/105"
+          },
+          {
+            "index": 4,
+            "term": "4/9",
+            "partialSum": "1052/315"
+          },
+          {
+            "index": 5,
+            "term": "4/11",
+            "partialSum": "10312/3465"
+          },
+          {
+            "index": 6,
+            "term": "4/13",
+            "partialSum": "147916/45045"
+          },
+          {
+            "index": 7,
+            "term": "4/15",
+            "partialSum": "135904/45045"
+          },
+          {
+            "index": 8,
+            "term": "4/17",
+            "partialSum": "2490548/765765"
+          },
+          {
+            "index": 9,
+            "term": "4/19",
+            "partialSum": "44257352/14549535"
+          },
+          {
+            "index": 10,
+            "term": "4/21",
+            "partialSum": "47028692/14549535"
+          },
+          {
+            "index": 11,
+            "term": "4/23",
+            "partialSum": "1023461776/334639305"
+          },
+          {
+            "index": 12,
+            "term": "4/25",
+            "partialSum": "5385020324/1673196525"
+          },
+          {
+            "index": 13,
+            "term": "4/27",
+            "partialSum": "15411418072/5019589575"
+          },
+          {
+            "index": 14,
+            "term": "4/29",
+            "partialSum": "467009482388/145568097675"
+          },
+          {
+            "index": 15,
+            "term": "4/31",
+            "partialSum": "13895021563328/4512611027925"
+          },
+          {
+            "index": 16,
+            "term": "4/33",
+            "partialSum": "14442004718228/4512611027925"
+          },
+          {
+            "index": 17,
+            "term": "4/35",
+            "partialSum": "13926277743608/4512611027925"
+          },
+          {
+            "index": 18,
+            "term": "4/37",
+            "partialSum": "533322720625196/166966608033225"
+          },
+          {
+            "index": 19,
+            "term": "4/39",
+            "partialSum": "516197940314096/166966608033225"
+          },
+          {
+            "index": 20,
+            "term": "4/41",
+            "partialSum": "21831981985010836/6845630929362225"
+          },
+          {
+            "index": 21,
+            "term": "4/43",
+            "partialSum": "911392701638017048/294362129962575675"
+          },
+          {
+            "index": 22,
+            "term": "4/45",
+            "partialSum": "937558224301357108/294362129962575675"
+          },
+          {
+            "index": 23,
+            "term": "4/47",
+            "partialSum": "42887788022313481376/13835020108241056725"
+          },
+          {
+            "index": 24,
+            "term": "4/49",
+            "partialSum": "308120241932332116332/96845140757687397075"
+          },
+          {
+            "index": 25,
+            "term": "4/51",
+            "partialSum": "300524544618003693032/96845140757687397075"
+          },
+          {
+            "index": 26,
+            "term": "4/53",
+            "partialSum": "16315181427784945318996/5132792460157432044975"
+          },
+          {
+            "index": 27,
+            "term": "4/55",
+            "partialSum": "15941887430682586624816/5132792460157432044975"
+          },
+          {
+            "index": 28,
+            "term": "4/57",
+            "partialSum": "16302083392798897645516/5132792460157432044975"
+          },
+          {
+            "index": 29,
+            "term": "4/59",
+            "partialSum": "941291750334505232905544/302834755149288490653525"
+          },
+          {
+            "index": 30,
+            "term": "4/61",
+            "partialSum": "58630135791001973169852284/18472920064106597929865025"
+          },
+          {
+            "index": 31,
+            "term": "4/63",
+            "partialSum": "57457251977407903460019584/18472920064106597929865025"
+          },
+          {
+            "index": 32,
+            "term": "4/65",
+            "partialSum": "4507234389098153984166548/1420993851085122917681925"
+          },
+          {
+            "index": 33,
+            "term": "4/67",
+            "partialSum": "296300728665235825268431016/95206588022703235484688975"
+          }
+        ],
+        "stages": [
+          {
+            "index": 0,
+            "interval": {
+              "lower": "8/3",
+              "upper": "4/1"
+            },
+            "width": "4/3"
+          },
+          {
+            "index": 1,
+            "interval": {
+              "lower": "304/105",
+              "upper": "52/15"
+            },
+            "width": "4/7"
+          },
+          {
+            "index": 2,
+            "interval": {
+              "lower": "10312/3465",
+              "upper": "1052/315"
+            },
+            "width": "4/11"
+          },
+          {
+            "index": 3,
+            "interval": {
+              "lower": "135904/45045",
+              "upper": "147916/45045"
+            },
+            "width": "4/15"
+          },
+          {
+            "index": 4,
+            "interval": {
+              "lower": "44257352/14549535",
+              "upper": "2490548/765765"
+            },
+            "width": "4/19"
+          },
+          {
+            "index": 5,
+            "interval": {
+              "lower": "1023461776/334639305",
+              "upper": "47028692/14549535"
+            },
+            "width": "4/23"
+          },
+          {
+            "index": 6,
+            "interval": {
+              "lower": "15411418072/5019589575",
+              "upper": "5385020324/1673196525"
+            },
+            "width": "4/27"
+          },
+          {
+            "index": 7,
+            "interval": {
+              "lower": "13895021563328/4512611027925",
+              "upper": "467009482388/145568097675"
+            },
+            "width": "4/31"
+          },
+          {
+            "index": 8,
+            "interval": {
+              "lower": "13926277743608/4512611027925",
+              "upper": "14442004718228/4512611027925"
+            },
+            "width": "4/35"
+          },
+          {
+            "index": 9,
+            "interval": {
+              "lower": "516197940314096/166966608033225",
+              "upper": "533322720625196/166966608033225"
+            },
+            "width": "4/39"
+          },
+          {
+            "index": 10,
+            "interval": {
+              "lower": "911392701638017048/294362129962575675",
+              "upper": "21831981985010836/6845630929362225"
+            },
+            "width": "4/43"
+          },
+          {
+            "index": 11,
+            "interval": {
+              "lower": "42887788022313481376/13835020108241056725",
+              "upper": "937558224301357108/294362129962575675"
+            },
+            "width": "4/47"
+          },
+          {
+            "index": 12,
+            "interval": {
+              "lower": "300524544618003693032/96845140757687397075",
+              "upper": "308120241932332116332/96845140757687397075"
+            },
+            "width": "4/51"
+          },
+          {
+            "index": 13,
+            "interval": {
+              "lower": "15941887430682586624816/5132792460157432044975",
+              "upper": "16315181427784945318996/5132792460157432044975"
+            },
+            "width": "4/55"
+          },
+          {
+            "index": 14,
+            "interval": {
+              "lower": "941291750334505232905544/302834755149288490653525",
+              "upper": "16302083392798897645516/5132792460157432044975"
+            },
+            "width": "4/59"
+          },
+          {
+            "index": 15,
+            "interval": {
+              "lower": "57457251977407903460019584/18472920064106597929865025",
+              "upper": "58630135791001973169852284/18472920064106597929865025"
+            },
+            "width": "4/63"
+          },
+          {
+            "index": 16,
+            "interval": {
+              "lower": "296300728665235825268431016/95206588022703235484688975",
+              "upper": "4507234389098153984166548/1420993851085122917681925"
+            },
+            "width": "4/67"
+          }
+        ],
+        "claim": {
+          "stage": 16,
+          "interval": {
+            "lower": "296300728665235825268431016/95206588022703235484688975",
+            "upper": "4507234389098153984166548/1420993851085122917681925"
+          },
+          "width": "4/67",
+          "target": "1/16"
+        }
+      }
+    },
+    {
+      "id": "alternating-zero",
+      "certificate": {
+        "kind": "alternating-interval",
+        "request": {
+          "program": {
+            "family": "geometric",
+            "amplitude": "0/1",
+            "ratio": "1/2"
+          },
+          "precision": 2
+        },
+        "rates": [
+          {
+            "precision": 0,
+            "mu": 0,
+            "runningMaximum": 0,
+            "evenTerm": "0/1",
+            "target": "1/1"
+          },
+          {
+            "precision": 1,
+            "mu": 0,
+            "runningMaximum": 1,
+            "evenTerm": "0/1",
+            "target": "1/2"
+          },
+          {
+            "precision": 2,
+            "mu": 0,
+            "runningMaximum": 2,
+            "evenTerm": "0/1",
+            "target": "1/4"
+          }
+        ],
+        "terms": [
+          {
+            "index": 0,
+            "term": "0/1",
+            "partialSum": "0/1"
+          },
+          {
+            "index": 1,
+            "term": "0/1",
+            "partialSum": "0/1"
+          },
+          {
+            "index": 2,
+            "term": "0/1",
+            "partialSum": "0/1"
+          },
+          {
+            "index": 3,
+            "term": "0/1",
+            "partialSum": "0/1"
+          },
+          {
+            "index": 4,
+            "term": "0/1",
+            "partialSum": "0/1"
+          },
+          {
+            "index": 5,
+            "term": "0/1",
+            "partialSum": "0/1"
+          }
+        ],
+        "stages": [
+          {
+            "index": 0,
+            "interval": {
+              "lower": "0/1",
+              "upper": "0/1"
+            },
+            "width": "0/1"
+          },
+          {
+            "index": 1,
+            "interval": {
+              "lower": "0/1",
+              "upper": "0/1"
+            },
+            "width": "0/1"
+          },
+          {
+            "index": 2,
+            "interval": {
+              "lower": "0/1",
+              "upper": "0/1"
+            },
+            "width": "0/1"
+          }
+        ],
+        "claim": {
+          "stage": 2,
+          "interval": {
+            "lower": "0/1",
+            "upper": "0/1"
+          },
+          "width": "0/1",
+          "target": "1/4"
+        }
+      }
+    },
+    {
+      "id": "cauchy-from-sequence",
+      "certificate": {
+        "kind": "cauchy-interval",
+        "request": {
+          "program": {
+            "family": "geometric-offset",
+            "base": "3/2",
+            "amplitude": "1/1",
+            "ratio": "1/2"
+          },
+          "modulus": {
+            "kind": "shift",
+            "offset": 2
+          },
+          "precision": 6
+        },
+        "commonIndex": 8,
+        "commonPoint": "385/256",
+        "stages": [
+          {
+            "precision": 0,
+            "index": 2,
+            "sample": "7/4",
+            "delta": "1/4",
+            "window": {
+              "lower": "3/2",
+              "upper": "2/1"
+            },
+            "intersection": {
+              "lower": "3/2",
+              "upper": "2/1"
+            },
+            "distanceToCommonPoint": "63/256"
+          },
+          {
+            "precision": 1,
+            "index": 3,
+            "sample": "13/8",
+            "delta": "1/8",
+            "window": {
+              "lower": "3/2",
+              "upper": "7/4"
+            },
+            "intersection": {
+              "lower": "3/2",
+              "upper": "7/4"
+            },
+            "distanceToCommonPoint": "31/256"
+          },
+          {
+            "precision": 2,
+            "index": 4,
+            "sample": "25/16",
+            "delta": "1/16",
+            "window": {
+              "lower": "3/2",
+              "upper": "13/8"
+            },
+            "intersection": {
+              "lower": "3/2",
+              "upper": "13/8"
+            },
+            "distanceToCommonPoint": "15/256"
+          },
+          {
+            "precision": 3,
+            "index": 5,
+            "sample": "49/32",
+            "delta": "1/32",
+            "window": {
+              "lower": "3/2",
+              "upper": "25/16"
+            },
+            "intersection": {
+              "lower": "3/2",
+              "upper": "25/16"
+            },
+            "distanceToCommonPoint": "7/256"
+          },
+          {
+            "precision": 4,
+            "index": 6,
+            "sample": "97/64",
+            "delta": "1/64",
+            "window": {
+              "lower": "3/2",
+              "upper": "49/32"
+            },
+            "intersection": {
+              "lower": "3/2",
+              "upper": "49/32"
+            },
+            "distanceToCommonPoint": "3/256"
+          },
+          {
+            "precision": 5,
+            "index": 7,
+            "sample": "193/128",
+            "delta": "1/128",
+            "window": {
+              "lower": "3/2",
+              "upper": "97/64"
+            },
+            "intersection": {
+              "lower": "3/2",
+              "upper": "97/64"
+            },
+            "distanceToCommonPoint": "1/256"
+          },
+          {
+            "precision": 6,
+            "index": 8,
+            "sample": "385/256",
+            "delta": "1/256",
+            "window": {
+              "lower": "3/2",
+              "upper": "193/128"
+            },
+            "intersection": {
+              "lower": "3/2",
+              "upper": "193/128"
+            },
+            "distanceToCommonPoint": "0/1"
+          }
+        ],
+        "claim": {
+          "interval": {
+            "lower": "3/2",
+            "upper": "193/128"
+          },
+          "width": "1/128",
+          "target": "1/64"
+        }
+      }
+    },
+    {
+      "id": "cauchy-two-moduli",
+      "certificate": {
+        "kind": "cauchy-coherence",
+        "request": {
+          "program": {
+            "family": "geometric-offset",
+            "base": "3/2",
+            "amplitude": "1/1",
+            "ratio": "1/2"
+          },
+          "leftModulus": {
+            "kind": "shift",
+            "offset": 2
+          },
+          "rightModulus": {
+            "kind": "shift",
+            "offset": 3
+          },
+          "leftPrecision": 5,
+          "rightPrecision": 7
+        },
+        "left": {
+          "kind": "cauchy-interval",
+          "request": {
+            "program": {
+              "family": "geometric-offset",
+              "base": "3/2",
+              "amplitude": "1/1",
+              "ratio": "1/2"
+            },
+            "modulus": {
+              "kind": "shift",
+              "offset": 2
+            },
+            "precision": 5
+          },
+          "commonIndex": 7,
+          "commonPoint": "193/128",
+          "stages": [
+            {
+              "precision": 0,
+              "index": 2,
+              "sample": "7/4",
+              "delta": "1/4",
+              "window": {
+                "lower": "3/2",
+                "upper": "2/1"
+              },
+              "intersection": {
+                "lower": "3/2",
+                "upper": "2/1"
+              },
+              "distanceToCommonPoint": "31/128"
+            },
+            {
+              "precision": 1,
+              "index": 3,
+              "sample": "13/8",
+              "delta": "1/8",
+              "window": {
+                "lower": "3/2",
+                "upper": "7/4"
+              },
+              "intersection": {
+                "lower": "3/2",
+                "upper": "7/4"
+              },
+              "distanceToCommonPoint": "15/128"
+            },
+            {
+              "precision": 2,
+              "index": 4,
+              "sample": "25/16",
+              "delta": "1/16",
+              "window": {
+                "lower": "3/2",
+                "upper": "13/8"
+              },
+              "intersection": {
+                "lower": "3/2",
+                "upper": "13/8"
+              },
+              "distanceToCommonPoint": "7/128"
+            },
+            {
+              "precision": 3,
+              "index": 5,
+              "sample": "49/32",
+              "delta": "1/32",
+              "window": {
+                "lower": "3/2",
+                "upper": "25/16"
+              },
+              "intersection": {
+                "lower": "3/2",
+                "upper": "25/16"
+              },
+              "distanceToCommonPoint": "3/128"
+            },
+            {
+              "precision": 4,
+              "index": 6,
+              "sample": "97/64",
+              "delta": "1/64",
+              "window": {
+                "lower": "3/2",
+                "upper": "49/32"
+              },
+              "intersection": {
+                "lower": "3/2",
+                "upper": "49/32"
+              },
+              "distanceToCommonPoint": "1/128"
+            },
+            {
+              "precision": 5,
+              "index": 7,
+              "sample": "193/128",
+              "delta": "1/128",
+              "window": {
+                "lower": "3/2",
+                "upper": "97/64"
+              },
+              "intersection": {
+                "lower": "3/2",
+                "upper": "97/64"
+              },
+              "distanceToCommonPoint": "0/1"
+            }
+          ],
+          "claim": {
+            "interval": {
+              "lower": "3/2",
+              "upper": "97/64"
+            },
+            "width": "1/64",
+            "target": "1/32"
+          }
+        },
+        "right": {
+          "kind": "cauchy-interval",
+          "request": {
+            "program": {
+              "family": "geometric-offset",
+              "base": "3/2",
+              "amplitude": "1/1",
+              "ratio": "1/2"
+            },
+            "modulus": {
+              "kind": "shift",
+              "offset": 3
+            },
+            "precision": 7
+          },
+          "commonIndex": 10,
+          "commonPoint": "1537/1024",
+          "stages": [
+            {
+              "precision": 0,
+              "index": 3,
+              "sample": "13/8",
+              "delta": "1/4",
+              "window": {
+                "lower": "11/8",
+                "upper": "15/8"
+              },
+              "intersection": {
+                "lower": "11/8",
+                "upper": "15/8"
+              },
+              "distanceToCommonPoint": "127/1024"
+            },
+            {
+              "precision": 1,
+              "index": 4,
+              "sample": "25/16",
+              "delta": "1/8",
+              "window": {
+                "lower": "23/16",
+                "upper": "27/16"
+              },
+              "intersection": {
+                "lower": "23/16",
+                "upper": "27/16"
+              },
+              "distanceToCommonPoint": "63/1024"
+            },
+            {
+              "precision": 2,
+              "index": 5,
+              "sample": "49/32",
+              "delta": "1/16",
+              "window": {
+                "lower": "47/32",
+                "upper": "51/32"
+              },
+              "intersection": {
+                "lower": "47/32",
+                "upper": "51/32"
+              },
+              "distanceToCommonPoint": "31/1024"
+            },
+            {
+              "precision": 3,
+              "index": 6,
+              "sample": "97/64",
+              "delta": "1/32",
+              "window": {
+                "lower": "95/64",
+                "upper": "99/64"
+              },
+              "intersection": {
+                "lower": "95/64",
+                "upper": "99/64"
+              },
+              "distanceToCommonPoint": "15/1024"
+            },
+            {
+              "precision": 4,
+              "index": 7,
+              "sample": "193/128",
+              "delta": "1/64",
+              "window": {
+                "lower": "191/128",
+                "upper": "195/128"
+              },
+              "intersection": {
+                "lower": "191/128",
+                "upper": "195/128"
+              },
+              "distanceToCommonPoint": "7/1024"
+            },
+            {
+              "precision": 5,
+              "index": 8,
+              "sample": "385/256",
+              "delta": "1/128",
+              "window": {
+                "lower": "383/256",
+                "upper": "387/256"
+              },
+              "intersection": {
+                "lower": "383/256",
+                "upper": "387/256"
+              },
+              "distanceToCommonPoint": "3/1024"
+            },
+            {
+              "precision": 6,
+              "index": 9,
+              "sample": "769/512",
+              "delta": "1/256",
+              "window": {
+                "lower": "767/512",
+                "upper": "771/512"
+              },
+              "intersection": {
+                "lower": "767/512",
+                "upper": "771/512"
+              },
+              "distanceToCommonPoint": "1/1024"
+            },
+            {
+              "precision": 7,
+              "index": 10,
+              "sample": "1537/1024",
+              "delta": "1/512",
+              "window": {
+                "lower": "1535/1024",
+                "upper": "1539/1024"
+              },
+              "intersection": {
+                "lower": "1535/1024",
+                "upper": "1539/1024"
+              },
+              "distanceToCommonPoint": "0/1"
+            }
+          ],
+          "claim": {
+            "interval": {
+              "lower": "1535/1024",
+              "upper": "1539/1024"
+            },
+            "width": "1/256",
+            "target": "1/128"
+          }
+        },
+        "witness": {
+          "index": 10,
+          "value": "1537/1024",
+          "intersection": {
+            "lower": "3/2",
+            "upper": "1539/1024"
+          }
+        }
+      }
+    },
+    {
+      "id": "label-sum",
+      "certificate": {
+        "kind": "label-response",
+        "request": {
+          "label": {
+            "op": "add",
+            "left": {
+              "op": "sqrt2-newton"
+            },
+            "right": {
+              "op": "rational",
+              "value": "-1/1"
+            }
+          },
+          "precision": 6
+        },
+        "trace": {
+          "rule": "add",
+          "precision": 6,
+          "inputPrecision": 7,
+          "left": {
+            "rule": "sqrt2-newton",
+            "precision": 7,
+            "response": {
+              "stages": [
+                {
+                  "index": 0,
+                  "interval": {
+                    "lower": "1/1",
+                    "upper": "2/1"
+                  },
+                  "product": "2/1",
+                  "lowerSquare": "1/1",
+                  "upperSquare": "4/1",
+                  "width": "1/1"
+                },
+                {
+                  "index": 1,
+                  "interval": {
+                    "lower": "4/3",
+                    "upper": "3/2"
+                  },
+                  "product": "2/1",
+                  "lowerSquare": "16/9",
+                  "upperSquare": "9/4",
+                  "width": "1/6",
+                  "step": {
+                    "previousWidth": "1/1",
+                    "endpointSum": "3/1",
+                    "widthRecurrence": "1/6",
+                    "quarterBound": "1/4"
+                  }
+                },
+                {
+                  "index": 2,
+                  "interval": {
+                    "lower": "24/17",
+                    "upper": "17/12"
+                  },
+                  "product": "2/1",
+                  "lowerSquare": "576/289",
+                  "upperSquare": "289/144",
+                  "width": "1/204",
+                  "step": {
+                    "previousWidth": "1/6",
+                    "endpointSum": "17/6",
+                    "widthRecurrence": "1/204",
+                    "quarterBound": "1/24"
+                  }
+                }
+              ],
+              "interval": {
+                "lower": "24/17",
+                "upper": "17/12"
+              },
+              "width": "1/204",
+              "target": "1/128"
+            },
+            "interval": {
+              "lower": "24/17",
+              "upper": "17/12"
+            },
+            "width": "1/204",
+            "target": "1/128"
+          },
+          "right": {
+            "rule": "rational",
+            "precision": 7,
+            "interval": {
+              "lower": "-1/1",
+              "upper": "-1/1"
+            },
+            "width": "0/1",
+            "target": "1/128"
+          },
+          "interval": {
+            "lower": "7/17",
+            "upper": "5/12"
+          },
+          "width": "1/204",
+          "target": "1/64"
+        },
+        "claim": {
+          "interval": {
+            "lower": "7/17",
+            "upper": "5/12"
+          },
+          "width": "1/204",
+          "target": "1/64"
+        }
+      }
+    },
+    {
+      "id": "label-product",
+      "certificate": {
+        "kind": "label-response",
+        "request": {
+          "label": {
+            "op": "mul",
+            "left": {
+              "op": "sqrt2-newton"
+            },
+            "right": {
+              "op": "sqrt2-bisection"
+            }
+          },
+          "precision": 6
+        },
+        "trace": {
+          "rule": "mul",
+          "precision": 6,
+          "inputPrecision": 9,
+          "coarseLeft": {
+            "rule": "sqrt2-newton",
+            "precision": 0,
+            "response": {
+              "stages": [
+                {
+                  "index": 0,
+                  "interval": {
+                    "lower": "1/1",
+                    "upper": "2/1"
+                  },
+                  "product": "2/1",
+                  "lowerSquare": "1/1",
+                  "upperSquare": "4/1",
+                  "width": "1/1"
+                }
+              ],
+              "interval": {
+                "lower": "1/1",
+                "upper": "2/1"
+              },
+              "width": "1/1",
+              "target": "1/1"
+            },
+            "interval": {
+              "lower": "1/1",
+              "upper": "2/1"
+            },
+            "width": "1/1",
+            "target": "1/1"
+          },
+          "coarseRight": {
+            "rule": "sqrt2-bisection",
+            "precision": 0,
+            "evidence": {
+              "format": "rational-applications-v1.5.0",
+              "kind": "sqrt2",
+              "claim": {
+                "precision": 0,
+                "interval": {
+                  "lower": "1/1",
+                  "upper": "2/1"
+                }
+              },
+              "roots": {
+                "chain": [
+                  "s0",
+                  "s1"
+                ],
+                "final": "s2",
+                "width": "s3",
+                "target": "s4",
+                "bound": "s5",
+                "invariant": "s6"
+              },
+              "steps": [
+                {
+                  "id": "s0",
+                  "rule": "S2.start",
+                  "input": [],
+                  "output": {
+                    "depth": "0",
+                    "interval": {
+                      "lower": "0/1",
+                      "upper": "2/1"
+                    }
+                  },
+                  "premises": []
+                },
+                {
+                  "id": "s1",
+                  "rule": "S2.step",
+                  "input": [
+                    "s0"
+                  ],
+                  "output": {
+                    "depth": "1",
+                    "interval": {
+                      "lower": "1/1",
+                      "upper": "2/1"
+                    },
+                    "witness": {
+                      "midpoint": "1/1",
+                      "square": "1/1",
+                      "comparison": -1
+                    }
+                  },
+                  "premises": [
+                    "s0"
+                  ]
+                },
+                {
+                  "id": "s2",
+                  "rule": "I.fromStage",
+                  "input": [
+                    "s1"
+                  ],
+                  "output": {
+                    "lower": "1/1",
+                    "upper": "2/1"
+                  },
+                  "premises": [
+                    "s1"
+                  ]
+                },
+                {
+                  "id": "s3",
+                  "rule": "I.width",
+                  "input": [
+                    "s2"
+                  ],
+                  "output": "1/1",
+                  "premises": [
+                    "s2"
+                  ]
+                },
+                {
+                  "id": "s4",
+                  "rule": "Q.precision",
+                  "input": [
+                    0
+                  ],
+                  "output": "1/1",
+                  "premises": []
+                },
+                {
+                  "id": "s5",
+                  "rule": "Q.le",
+                  "input": [
+                    "s3",
+                    "s4"
+                  ],
+                  "output": true,
+                  "premises": [
+                    "s3",
+                    "s4"
+                  ]
+                },
+                {
+                  "id": "s6",
+                  "rule": "I.sqrt2",
+                  "input": [
+                    "s2"
+                  ],
+                  "output": true,
+                  "premises": [
+                    "s2"
+                  ]
+                }
+              ]
+            },
+            "interval": {
+              "lower": "1/1",
+              "upper": "2/1"
+            },
+            "width": "1/1",
+            "target": "1/1"
+          },
+          "left": {
+            "rule": "sqrt2-newton",
+            "precision": 9,
+            "response": {
+              "stages": [
+                {
+                  "index": 0,
+                  "interval": {
+                    "lower": "1/1",
+                    "upper": "2/1"
+                  },
+                  "product": "2/1",
+                  "lowerSquare": "1/1",
+                  "upperSquare": "4/1",
+                  "width": "1/1"
+                },
+                {
+                  "index": 1,
+                  "interval": {
+                    "lower": "4/3",
+                    "upper": "3/2"
+                  },
+                  "product": "2/1",
+                  "lowerSquare": "16/9",
+                  "upperSquare": "9/4",
+                  "width": "1/6",
+                  "step": {
+                    "previousWidth": "1/1",
+                    "endpointSum": "3/1",
+                    "widthRecurrence": "1/6",
+                    "quarterBound": "1/4"
+                  }
+                },
+                {
+                  "index": 2,
+                  "interval": {
+                    "lower": "24/17",
+                    "upper": "17/12"
+                  },
+                  "product": "2/1",
+                  "lowerSquare": "576/289",
+                  "upperSquare": "289/144",
+                  "width": "1/204",
+                  "step": {
+                    "previousWidth": "1/6",
+                    "endpointSum": "17/6",
+                    "widthRecurrence": "1/204",
+                    "quarterBound": "1/24"
+                  }
+                },
+                {
+                  "index": 3,
+                  "interval": {
+                    "lower": "816/577",
+                    "upper": "577/408"
+                  },
+                  "product": "2/1",
+                  "lowerSquare": "665856/332929",
+                  "upperSquare": "332929/166464",
+                  "width": "1/235416",
+                  "step": {
+                    "previousWidth": "1/204",
+                    "endpointSum": "577/204",
+                    "widthRecurrence": "1/235416",
+                    "quarterBound": "1/816"
+                  }
+                }
+              ],
+              "interval": {
+                "lower": "816/577",
+                "upper": "577/408"
+              },
+              "width": "1/235416",
+              "target": "1/512"
+            },
+            "interval": {
+              "lower": "816/577",
+              "upper": "577/408"
+            },
+            "width": "1/235416",
+            "target": "1/512"
+          },
+          "right": {
+            "rule": "sqrt2-bisection",
+            "precision": 9,
+            "evidence": {
+              "format": "rational-applications-v1.5.0",
+              "kind": "sqrt2",
+              "claim": {
+                "precision": 9,
+                "interval": {
+                  "lower": "181/128",
+                  "upper": "725/512"
+                }
+              },
+              "roots": {
+                "chain": [
+                  "s0",
+                  "s1",
+                  "s2",
+                  "s3",
+                  "s4",
+                  "s5",
+                  "s6",
+                  "s7",
+                  "s8",
+                  "s9",
+                  "s10"
+                ],
+                "final": "s11",
+                "width": "s12",
+                "target": "s13",
+                "bound": "s14",
+                "invariant": "s15"
+              },
+              "steps": [
+                {
+                  "id": "s0",
+                  "rule": "S2.start",
+                  "input": [],
+                  "output": {
+                    "depth": "0",
+                    "interval": {
+                      "lower": "0/1",
+                      "upper": "2/1"
+                    }
+                  },
+                  "premises": []
+                },
+                {
+                  "id": "s1",
+                  "rule": "S2.step",
+                  "input": [
+                    "s0"
+                  ],
+                  "output": {
+                    "depth": "1",
+                    "interval": {
+                      "lower": "1/1",
+                      "upper": "2/1"
+                    },
+                    "witness": {
+                      "midpoint": "1/1",
+                      "square": "1/1",
+                      "comparison": -1
+                    }
+                  },
+                  "premises": [
+                    "s0"
+                  ]
+                },
+                {
+                  "id": "s2",
+                  "rule": "S2.step",
+                  "input": [
+                    "s1"
+                  ],
+                  "output": {
+                    "depth": "2",
+                    "interval": {
+                      "lower": "1/1",
+                      "upper": "3/2"
+                    },
+                    "witness": {
+                      "midpoint": "3/2",
+                      "square": "9/4",
+                      "comparison": 1
+                    }
+                  },
+                  "premises": [
+                    "s1"
+                  ]
+                },
+                {
+                  "id": "s3",
+                  "rule": "S2.step",
+                  "input": [
+                    "s2"
+                  ],
+                  "output": {
+                    "depth": "3",
+                    "interval": {
+                      "lower": "5/4",
+                      "upper": "3/2"
+                    },
+                    "witness": {
+                      "midpoint": "5/4",
+                      "square": "25/16",
+                      "comparison": -1
+                    }
+                  },
+                  "premises": [
+                    "s2"
+                  ]
+                },
+                {
+                  "id": "s4",
+                  "rule": "S2.step",
+                  "input": [
+                    "s3"
+                  ],
+                  "output": {
+                    "depth": "4",
+                    "interval": {
+                      "lower": "11/8",
+                      "upper": "3/2"
+                    },
+                    "witness": {
+                      "midpoint": "11/8",
+                      "square": "121/64",
+                      "comparison": -1
+                    }
+                  },
+                  "premises": [
+                    "s3"
+                  ]
+                },
+                {
+                  "id": "s5",
+                  "rule": "S2.step",
+                  "input": [
+                    "s4"
+                  ],
+                  "output": {
+                    "depth": "5",
+                    "interval": {
+                      "lower": "11/8",
+                      "upper": "23/16"
+                    },
+                    "witness": {
+                      "midpoint": "23/16",
+                      "square": "529/256",
+                      "comparison": 1
+                    }
+                  },
+                  "premises": [
+                    "s4"
+                  ]
+                },
+                {
+                  "id": "s6",
+                  "rule": "S2.step",
+                  "input": [
+                    "s5"
+                  ],
+                  "output": {
+                    "depth": "6",
+                    "interval": {
+                      "lower": "45/32",
+                      "upper": "23/16"
+                    },
+                    "witness": {
+                      "midpoint": "45/32",
+                      "square": "2025/1024",
+                      "comparison": -1
+                    }
+                  },
+                  "premises": [
+                    "s5"
+                  ]
+                },
+                {
+                  "id": "s7",
+                  "rule": "S2.step",
+                  "input": [
+                    "s6"
+                  ],
+                  "output": {
+                    "depth": "7",
+                    "interval": {
+                      "lower": "45/32",
+                      "upper": "91/64"
+                    },
+                    "witness": {
+                      "midpoint": "91/64",
+                      "square": "8281/4096",
+                      "comparison": 1
+                    }
+                  },
+                  "premises": [
+                    "s6"
+                  ]
+                },
+                {
+                  "id": "s8",
+                  "rule": "S2.step",
+                  "input": [
+                    "s7"
+                  ],
+                  "output": {
+                    "depth": "8",
+                    "interval": {
+                      "lower": "181/128",
+                      "upper": "91/64"
+                    },
+                    "witness": {
+                      "midpoint": "181/128",
+                      "square": "32761/16384",
+                      "comparison": -1
+                    }
+                  },
+                  "premises": [
+                    "s7"
+                  ]
+                },
+                {
+                  "id": "s9",
+                  "rule": "S2.step",
+                  "input": [
+                    "s8"
+                  ],
+                  "output": {
+                    "depth": "9",
+                    "interval": {
+                      "lower": "181/128",
+                      "upper": "363/256"
+                    },
+                    "witness": {
+                      "midpoint": "363/256",
+                      "square": "131769/65536",
+                      "comparison": 1
+                    }
+                  },
+                  "premises": [
+                    "s8"
+                  ]
+                },
+                {
+                  "id": "s10",
+                  "rule": "S2.step",
+                  "input": [
+                    "s9"
+                  ],
+                  "output": {
+                    "depth": "10",
+                    "interval": {
+                      "lower": "181/128",
+                      "upper": "725/512"
+                    },
+                    "witness": {
+                      "midpoint": "725/512",
+                      "square": "525625/262144",
+                      "comparison": 1
+                    }
+                  },
+                  "premises": [
+                    "s9"
+                  ]
+                },
+                {
+                  "id": "s11",
+                  "rule": "I.fromStage",
+                  "input": [
+                    "s10"
+                  ],
+                  "output": {
+                    "lower": "181/128",
+                    "upper": "725/512"
+                  },
+                  "premises": [
+                    "s10"
+                  ]
+                },
+                {
+                  "id": "s12",
+                  "rule": "I.width",
+                  "input": [
+                    "s11"
+                  ],
+                  "output": "1/512",
+                  "premises": [
+                    "s11"
+                  ]
+                },
+                {
+                  "id": "s13",
+                  "rule": "Q.precision",
+                  "input": [
+                    9
+                  ],
+                  "output": "1/512",
+                  "premises": []
+                },
+                {
+                  "id": "s14",
+                  "rule": "Q.le",
+                  "input": [
+                    "s12",
+                    "s13"
+                  ],
+                  "output": true,
+                  "premises": [
+                    "s12",
+                    "s13"
+                  ]
+                },
+                {
+                  "id": "s15",
+                  "rule": "I.sqrt2",
+                  "input": [
+                    "s11"
+                  ],
+                  "output": true,
+                  "premises": [
+                    "s11"
+                  ]
+                }
+              ]
+            },
+            "interval": {
+              "lower": "181/128",
+              "upper": "725/512"
+            },
+            "width": "1/512",
+            "target": "1/512"
+          },
+          "radiusLeft": "2/1",
+          "radiusRight": "2/1",
+          "widthBound": "1/128",
+          "interval": {
+            "lower": "9231/4616",
+            "upper": "418325/208896"
+          },
+          "width": "333653/120532992",
+          "target": "1/64"
+        },
+        "claim": {
+          "interval": {
+            "lower": "9231/4616",
+            "upper": "418325/208896"
+          },
+          "width": "333653/120532992",
+          "target": "1/64"
+        }
+      }
+    },
+    {
+      "id": "label-reciprocal",
+      "certificate": {
+        "kind": "label-response",
+        "request": {
+          "label": {
+            "op": "reciprocal",
+            "source": {
+              "op": "sqrt2-bisection"
+            },
+            "separationPrecision": 0
+          },
+          "precision": 6
+        },
+        "trace": {
+          "rule": "reciprocal",
+          "precision": 6,
+          "separation": {
+            "rule": "sqrt2-bisection",
+            "precision": 0,
+            "evidence": {
+              "format": "rational-applications-v1.5.0",
+              "kind": "sqrt2",
+              "claim": {
+                "precision": 0,
+                "interval": {
+                  "lower": "1/1",
+                  "upper": "2/1"
+                }
+              },
+              "roots": {
+                "chain": [
+                  "s0",
+                  "s1"
+                ],
+                "final": "s2",
+                "width": "s3",
+                "target": "s4",
+                "bound": "s5",
+                "invariant": "s6"
+              },
+              "steps": [
+                {
+                  "id": "s0",
+                  "rule": "S2.start",
+                  "input": [],
+                  "output": {
+                    "depth": "0",
+                    "interval": {
+                      "lower": "0/1",
+                      "upper": "2/1"
+                    }
+                  },
+                  "premises": []
+                },
+                {
+                  "id": "s1",
+                  "rule": "S2.step",
+                  "input": [
+                    "s0"
+                  ],
+                  "output": {
+                    "depth": "1",
+                    "interval": {
+                      "lower": "1/1",
+                      "upper": "2/1"
+                    },
+                    "witness": {
+                      "midpoint": "1/1",
+                      "square": "1/1",
+                      "comparison": -1
+                    }
+                  },
+                  "premises": [
+                    "s0"
+                  ]
+                },
+                {
+                  "id": "s2",
+                  "rule": "I.fromStage",
+                  "input": [
+                    "s1"
+                  ],
+                  "output": {
+                    "lower": "1/1",
+                    "upper": "2/1"
+                  },
+                  "premises": [
+                    "s1"
+                  ]
+                },
+                {
+                  "id": "s3",
+                  "rule": "I.width",
+                  "input": [
+                    "s2"
+                  ],
+                  "output": "1/1",
+                  "premises": [
+                    "s2"
+                  ]
+                },
+                {
+                  "id": "s4",
+                  "rule": "Q.precision",
+                  "input": [
+                    0
+                  ],
+                  "output": "1/1",
+                  "premises": []
+                },
+                {
+                  "id": "s5",
+                  "rule": "Q.le",
+                  "input": [
+                    "s3",
+                    "s4"
+                  ],
+                  "output": true,
+                  "premises": [
+                    "s3",
+                    "s4"
+                  ]
+                },
+                {
+                  "id": "s6",
+                  "rule": "I.sqrt2",
+                  "input": [
+                    "s2"
+                  ],
+                  "output": true,
+                  "premises": [
+                    "s2"
+                  ]
+                }
+              ]
+            },
+            "interval": {
+              "lower": "1/1",
+              "upper": "2/1"
+            },
+            "width": "1/1",
+            "target": "1/1"
+          },
+          "classification": {
+            "status": "separated",
+            "distance": "1/1"
+          },
+          "inputPrecision": 6,
+          "source": {
+            "rule": "sqrt2-bisection",
+            "precision": 6,
+            "evidence": {
+              "format": "rational-applications-v1.5.0",
+              "kind": "sqrt2",
+              "claim": {
+                "precision": 6,
+                "interval": {
+                  "lower": "45/32",
+                  "upper": "91/64"
+                }
+              },
+              "roots": {
+                "chain": [
+                  "s0",
+                  "s1",
+                  "s2",
+                  "s3",
+                  "s4",
+                  "s5",
+                  "s6",
+                  "s7"
+                ],
+                "final": "s8",
+                "width": "s9",
+                "target": "s10",
+                "bound": "s11",
+                "invariant": "s12"
+              },
+              "steps": [
+                {
+                  "id": "s0",
+                  "rule": "S2.start",
+                  "input": [],
+                  "output": {
+                    "depth": "0",
+                    "interval": {
+                      "lower": "0/1",
+                      "upper": "2/1"
+                    }
+                  },
+                  "premises": []
+                },
+                {
+                  "id": "s1",
+                  "rule": "S2.step",
+                  "input": [
+                    "s0"
+                  ],
+                  "output": {
+                    "depth": "1",
+                    "interval": {
+                      "lower": "1/1",
+                      "upper": "2/1"
+                    },
+                    "witness": {
+                      "midpoint": "1/1",
+                      "square": "1/1",
+                      "comparison": -1
+                    }
+                  },
+                  "premises": [
+                    "s0"
+                  ]
+                },
+                {
+                  "id": "s2",
+                  "rule": "S2.step",
+                  "input": [
+                    "s1"
+                  ],
+                  "output": {
+                    "depth": "2",
+                    "interval": {
+                      "lower": "1/1",
+                      "upper": "3/2"
+                    },
+                    "witness": {
+                      "midpoint": "3/2",
+                      "square": "9/4",
+                      "comparison": 1
+                    }
+                  },
+                  "premises": [
+                    "s1"
+                  ]
+                },
+                {
+                  "id": "s3",
+                  "rule": "S2.step",
+                  "input": [
+                    "s2"
+                  ],
+                  "output": {
+                    "depth": "3",
+                    "interval": {
+                      "lower": "5/4",
+                      "upper": "3/2"
+                    },
+                    "witness": {
+                      "midpoint": "5/4",
+                      "square": "25/16",
+                      "comparison": -1
+                    }
+                  },
+                  "premises": [
+                    "s2"
+                  ]
+                },
+                {
+                  "id": "s4",
+                  "rule": "S2.step",
+                  "input": [
+                    "s3"
+                  ],
+                  "output": {
+                    "depth": "4",
+                    "interval": {
+                      "lower": "11/8",
+                      "upper": "3/2"
+                    },
+                    "witness": {
+                      "midpoint": "11/8",
+                      "square": "121/64",
+                      "comparison": -1
+                    }
+                  },
+                  "premises": [
+                    "s3"
+                  ]
+                },
+                {
+                  "id": "s5",
+                  "rule": "S2.step",
+                  "input": [
+                    "s4"
+                  ],
+                  "output": {
+                    "depth": "5",
+                    "interval": {
+                      "lower": "11/8",
+                      "upper": "23/16"
+                    },
+                    "witness": {
+                      "midpoint": "23/16",
+                      "square": "529/256",
+                      "comparison": 1
+                    }
+                  },
+                  "premises": [
+                    "s4"
+                  ]
+                },
+                {
+                  "id": "s6",
+                  "rule": "S2.step",
+                  "input": [
+                    "s5"
+                  ],
+                  "output": {
+                    "depth": "6",
+                    "interval": {
+                      "lower": "45/32",
+                      "upper": "23/16"
+                    },
+                    "witness": {
+                      "midpoint": "45/32",
+                      "square": "2025/1024",
+                      "comparison": -1
+                    }
+                  },
+                  "premises": [
+                    "s5"
+                  ]
+                },
+                {
+                  "id": "s7",
+                  "rule": "S2.step",
+                  "input": [
+                    "s6"
+                  ],
+                  "output": {
+                    "depth": "7",
+                    "interval": {
+                      "lower": "45/32",
+                      "upper": "91/64"
+                    },
+                    "witness": {
+                      "midpoint": "91/64",
+                      "square": "8281/4096",
+                      "comparison": 1
+                    }
+                  },
+                  "premises": [
+                    "s6"
+                  ]
+                },
+                {
+                  "id": "s8",
+                  "rule": "I.fromStage",
+                  "input": [
+                    "s7"
+                  ],
+                  "output": {
+                    "lower": "45/32",
+                    "upper": "91/64"
+                  },
+                  "premises": [
+                    "s7"
+                  ]
+                },
+                {
+                  "id": "s9",
+                  "rule": "I.width",
+                  "input": [
+                    "s8"
+                  ],
+                  "output": "1/64",
+                  "premises": [
+                    "s8"
+                  ]
+                },
+                {
+                  "id": "s10",
+                  "rule": "Q.precision",
+                  "input": [
+                    6
+                  ],
+                  "output": "1/64",
+                  "premises": []
+                },
+                {
+                  "id": "s11",
+                  "rule": "Q.le",
+                  "input": [
+                    "s9",
+                    "s10"
+                  ],
+                  "output": true,
+                  "premises": [
+                    "s9",
+                    "s10"
+                  ]
+                },
+                {
+                  "id": "s12",
+                  "rule": "I.sqrt2",
+                  "input": [
+                    "s8"
+                  ],
+                  "output": true,
+                  "premises": [
+                    "s8"
+                  ]
+                }
+              ]
+            },
+            "interval": {
+              "lower": "45/32",
+              "upper": "91/64"
+            },
+            "width": "1/64",
+            "target": "1/64"
+          },
+          "sensitivity": "1/1",
+          "widthBound": "1/64",
+          "interval": {
+            "lower": "64/91",
+            "upper": "32/45"
+          },
+          "width": "32/4095",
+          "target": "1/64"
+        },
+        "claim": {
+          "interval": {
+            "lower": "64/91",
+            "upper": "32/45"
+          },
+          "width": "32/4095",
+          "target": "1/64"
+        }
+      }
+    },
+    {
+      "id": "label-negative-reciprocal",
+      "certificate": {
+        "kind": "label-response",
+        "request": {
+          "label": {
+            "op": "reciprocal",
+            "source": {
+              "op": "rational",
+              "value": "-2/1"
+            },
+            "separationPrecision": 0
+          },
+          "precision": 6
+        },
+        "trace": {
+          "rule": "reciprocal",
+          "precision": 6,
+          "separation": {
+            "rule": "rational",
+            "precision": 0,
+            "interval": {
+              "lower": "-2/1",
+              "upper": "-2/1"
+            },
+            "width": "0/1",
+            "target": "1/1"
+          },
+          "classification": {
+            "status": "separated",
+            "distance": "2/1"
+          },
+          "inputPrecision": 6,
+          "source": {
+            "rule": "rational",
+            "precision": 6,
+            "interval": {
+              "lower": "-2/1",
+              "upper": "-2/1"
+            },
+            "width": "0/1",
+            "target": "1/64"
+          },
+          "sensitivity": "1/4",
+          "widthBound": "1/256",
+          "interval": {
+            "lower": "-1/2",
+            "upper": "-1/2"
+          },
+          "width": "0/1",
+          "target": "1/64"
+        },
+        "claim": {
+          "interval": {
+            "lower": "-1/2",
+            "upper": "-1/2"
+          },
+          "width": "0/1",
+          "target": "1/64"
+        }
+      }
+    },
+    {
+      "id": "separation-zero",
+      "certificate": {
+        "kind": "zero-separation",
+        "request": {
+          "label": {
+            "op": "rational",
+            "value": "0/1"
+          },
+          "precision": 0
+        },
+        "response": {
+          "kind": "label-response",
+          "request": {
+            "label": {
+              "op": "rational",
+              "value": "0/1"
+            },
+            "precision": 0
+          },
+          "trace": {
+            "rule": "rational",
+            "precision": 0,
+            "interval": {
+              "lower": "0/1",
+              "upper": "0/1"
+            },
+            "width": "0/1",
+            "target": "1/1"
+          },
+          "claim": {
+            "interval": {
+              "lower": "0/1",
+              "upper": "0/1"
+            },
+            "width": "0/1",
+            "target": "1/1"
+          }
+        },
+        "claim": {
+          "status": "zero",
+          "distance": "0/1"
+        }
+      }
+    },
+    {
+      "id": "separation-unknown",
+      "certificate": {
+        "kind": "zero-separation",
+        "request": {
+          "label": {
+            "op": "add",
+            "left": {
+              "op": "sqrt2-bisection"
+            },
+            "right": {
+              "op": "rational",
+              "value": "-3/2"
+            }
+          },
+          "precision": 0
+        },
+        "response": {
+          "kind": "label-response",
+          "request": {
+            "label": {
+              "op": "add",
+              "left": {
+                "op": "sqrt2-bisection"
+              },
+              "right": {
+                "op": "rational",
+                "value": "-3/2"
+              }
+            },
+            "precision": 0
+          },
+          "trace": {
+            "rule": "add",
+            "precision": 0,
+            "inputPrecision": 1,
+            "left": {
+              "rule": "sqrt2-bisection",
+              "precision": 1,
+              "evidence": {
+                "format": "rational-applications-v1.5.0",
+                "kind": "sqrt2",
+                "claim": {
+                  "precision": 1,
+                  "interval": {
+                    "lower": "1/1",
+                    "upper": "3/2"
+                  }
+                },
+                "roots": {
+                  "chain": [
+                    "s0",
+                    "s1",
+                    "s2"
+                  ],
+                  "final": "s3",
+                  "width": "s4",
+                  "target": "s5",
+                  "bound": "s6",
+                  "invariant": "s7"
+                },
+                "steps": [
+                  {
+                    "id": "s0",
+                    "rule": "S2.start",
+                    "input": [],
+                    "output": {
+                      "depth": "0",
+                      "interval": {
+                        "lower": "0/1",
+                        "upper": "2/1"
+                      }
+                    },
+                    "premises": []
+                  },
+                  {
+                    "id": "s1",
+                    "rule": "S2.step",
+                    "input": [
+                      "s0"
+                    ],
+                    "output": {
+                      "depth": "1",
+                      "interval": {
+                        "lower": "1/1",
+                        "upper": "2/1"
+                      },
+                      "witness": {
+                        "midpoint": "1/1",
+                        "square": "1/1",
+                        "comparison": -1
+                      }
+                    },
+                    "premises": [
+                      "s0"
+                    ]
+                  },
+                  {
+                    "id": "s2",
+                    "rule": "S2.step",
+                    "input": [
+                      "s1"
+                    ],
+                    "output": {
+                      "depth": "2",
+                      "interval": {
+                        "lower": "1/1",
+                        "upper": "3/2"
+                      },
+                      "witness": {
+                        "midpoint": "3/2",
+                        "square": "9/4",
+                        "comparison": 1
+                      }
+                    },
+                    "premises": [
+                      "s1"
+                    ]
+                  },
+                  {
+                    "id": "s3",
+                    "rule": "I.fromStage",
+                    "input": [
+                      "s2"
+                    ],
+                    "output": {
+                      "lower": "1/1",
+                      "upper": "3/2"
+                    },
+                    "premises": [
+                      "s2"
+                    ]
+                  },
+                  {
+                    "id": "s4",
+                    "rule": "I.width",
+                    "input": [
+                      "s3"
+                    ],
+                    "output": "1/2",
+                    "premises": [
+                      "s3"
+                    ]
+                  },
+                  {
+                    "id": "s5",
+                    "rule": "Q.precision",
+                    "input": [
+                      1
+                    ],
+                    "output": "1/2",
+                    "premises": []
+                  },
+                  {
+                    "id": "s6",
+                    "rule": "Q.le",
+                    "input": [
+                      "s4",
+                      "s5"
+                    ],
+                    "output": true,
+                    "premises": [
+                      "s4",
+                      "s5"
+                    ]
+                  },
+                  {
+                    "id": "s7",
+                    "rule": "I.sqrt2",
+                    "input": [
+                      "s3"
+                    ],
+                    "output": true,
+                    "premises": [
+                      "s3"
+                    ]
+                  }
+                ]
+              },
+              "interval": {
+                "lower": "1/1",
+                "upper": "3/2"
+              },
+              "width": "1/2",
+              "target": "1/2"
+            },
+            "right": {
+              "rule": "rational",
+              "precision": 1,
+              "interval": {
+                "lower": "-3/2",
+                "upper": "-3/2"
+              },
+              "width": "0/1",
+              "target": "1/2"
+            },
+            "interval": {
+              "lower": "-1/2",
+              "upper": "0/1"
+            },
+            "width": "1/2",
+            "target": "1/1"
+          },
+          "claim": {
+            "interval": {
+              "lower": "-1/2",
+              "upper": "0/1"
+            },
+            "width": "1/2",
+            "target": "1/1"
+          }
+        },
+        "claim": {
+          "status": "unknown",
+          "distance": null
+        }
+      }
+    },
+    {
+      "id": "separation-positive",
+      "certificate": {
+        "kind": "zero-separation",
+        "request": {
+          "label": {
+            "op": "sqrt2-newton"
+          },
+          "precision": 0
+        },
+        "response": {
+          "kind": "label-response",
+          "request": {
+            "label": {
+              "op": "sqrt2-newton"
+            },
+            "precision": 0
+          },
+          "trace": {
+            "rule": "sqrt2-newton",
+            "precision": 0,
+            "response": {
+              "stages": [
+                {
+                  "index": 0,
+                  "interval": {
+                    "lower": "1/1",
+                    "upper": "2/1"
+                  },
+                  "product": "2/1",
+                  "lowerSquare": "1/1",
+                  "upperSquare": "4/1",
+                  "width": "1/1"
+                }
+              ],
+              "interval": {
+                "lower": "1/1",
+                "upper": "2/1"
+              },
+              "width": "1/1",
+              "target": "1/1"
+            },
+            "interval": {
+              "lower": "1/1",
+              "upper": "2/1"
+            },
+            "width": "1/1",
+            "target": "1/1"
+          },
+          "claim": {
+            "interval": {
+              "lower": "1/1",
+              "upper": "2/1"
+            },
+            "width": "1/1",
+            "target": "1/1"
+          }
+        },
+        "claim": {
+          "status": "separated",
+          "distance": "1/1"
+        }
+      }
+    }
+  ]
+}

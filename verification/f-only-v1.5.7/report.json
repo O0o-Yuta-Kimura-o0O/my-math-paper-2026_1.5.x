@@ -1,0 +1,1830 @@
+{
+  "format": "single-f-verification/1",
+  "paperVersion": "1.5.7",
+  "status": "passed",
+  "structuralCount": 288,
+  "completeProofBundles": 6,
+  "textSections": 14,
+  "programSources": 7,
+  "completeManuscriptRecovered": true,
+  "sourceDeclaredChecks": {
+    "fixedTypeExamples": {
+      "typeTag": 23,
+      "type": "T",
+      "valueExamples": 8,
+      "multiplicationExamples": 2,
+      "rejectedWrongType": true,
+      "rejectedMalformedInput": true,
+      "rejectedWrongProduct": true
+    },
+    "natFormExecution": {
+      "specifiedType": "N",
+      "programExamples": 1,
+      "recordedExamples": 4,
+      "rejectedUnknownInstruction": true
+    },
+    "approximationExamples": {
+      "valueErrorPairs": 2,
+      "methods": [
+        "bracket",
+        "residual"
+      ],
+      "precision": 3
+    },
+    "relationLabelExamples": {
+      "structuralExamples": 19,
+      "generatorRecords": 2,
+      "commonSubsequenceCases": 3,
+      "introductionCases": 4,
+      "labelValues": 3,
+      "additionCases": 1,
+      "orderChains": 1,
+      "nonadditivityCases": 1,
+      "rationalPrecisionCases": 1,
+      "rejectionCases": 3,
+      "retainsExecutionCoefficient": true,
+      "retainsLabelIndex": true
+    },
+    "geometricDecimalExamples": {
+      "structuralExamples": 30,
+      "geometricRecords": 5,
+      "recurrenceTraces": 5,
+      "statesPerTrace": 4,
+      "introductionCases": 5,
+      "decimalRecords": 2,
+      "exactInterpretations": 2,
+      "prefixCases": 3,
+      "prefixDigits": [
+        1,
+        2,
+        3
+      ],
+      "additionCases": 2,
+      "rejectionCases": 6,
+      "retainsRecurrenceParameters": true,
+      "separatesDecimalInterpretation": true
+    }
+  },
+  "checks": [
+    {
+      "id": "nat-0",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "nat-1",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "nat-2",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "nat-3",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "nat-4",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "sign-0",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "sign-1",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "int-minus-2",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "int-minus-1",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "int-0",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "int-1",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "int-2",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "rat-0-1",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "rat-1-1",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "rat-minus-1-1",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "rat-2-1",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "rat-minus-2-1",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "rat-1-2",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "rat-minus-1-3",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "text-a",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "text-lambda",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "pair-nat",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "list-0",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "list-1",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "list-3",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "bool-false",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "bool-true",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "ordering-minus-1",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "ordering-0",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "ordering-1",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "option-none",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "option-some",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "result-success",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "result-failure",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "m-zero",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "m-one",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "m-epsilon",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "m-epsilon-squared",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "m-one-plus-epsilon",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "m-epsilon-half",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "m-general",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "legacy-l",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "f-zero",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "f-one",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "f-minus-one",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "f-epsilon",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "f-inverse-epsilon",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "f-square-ratio",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "poly-degree",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "valuation-negative",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "standard-part",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "complex-zero",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "complex-one",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "complex-i",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "complex-one-plus-i",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "complex-one-minus-i",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "quaternion-one",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "quaternion-i",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "quaternion-j",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "quaternion-k",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "quaternion-all-one",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "type-n",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "type-z",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "type-q",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "type-m",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "type-f",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "type-c",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "type-h",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "type-bool",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "type-text",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "type-arrow",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "type-lambda",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "type-proposition",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "type-proof",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "type-unit",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "type-list",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "type-pair",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "type-option",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "type-function",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "type-ordering",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "type-interval",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "type-generator",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "type-qrep",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "type-result",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "qrep-four-four",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "type-t",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "t-zero",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "t-one",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "t-minus-one",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "t-two",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "t-sigma",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "t-sigma-half",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "t-one-plus-sigma",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "t-one-minus-sigma",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "fixed-t-product-conjugate",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "fixed-t-product-sigma-square",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "natform-program",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "natform-zero",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "natform-successor",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "natform-pair",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "natform-nested-pair",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "lambda-true",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "lambda-false",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "lambda-if",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "lambda-and",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "lambda-or",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "lambda-not",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "lambda-pair",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "lambda-fst",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "lambda-snd",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "lambda-zero",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "lambda-succ",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "lambda-one",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "lambda-two",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "lambda-three",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "lambda-four",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "lambda-add",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "lambda-mul",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "lambda-pred",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "lambda-sub",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "lambda-iszero",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "lambda-leq",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "lambda-eqnat",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "lambda-n0",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "lambda-n1",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "lambda-n2",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "lambda-n3",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "lambda-n4",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "lambda-0",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "lambda-1",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "lambda-2",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "lambda-3",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "lambda-4",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "lambda-resultok",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "lambda-resulterr",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "lambda-resultbind",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "lambda-zmake",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "lambda-zsign",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "lambda-zmagnitude",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "lambda-zzero",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "lambda-zone",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "lambda-ztwo",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "lambda-zminusone",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "lambda-zneg",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "lambda-zadd",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "lambda-zsub",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "lambda-zmul",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "lambda-zeq",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "lambda-zleq",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "lambda-zfromdiff",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "lambda-ztodiff",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "lambda-qrep",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "lambda-qrepnum",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "lambda-qrepden",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "lambda-qrepvalid",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "lambda-qmake",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "lambda-qzero",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "lambda-qone",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "lambda-qhalf",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "lambda-qrepneg",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "lambda-qrepadd",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "lambda-qrepsub",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "lambda-qrepmul",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "lambda-qrepeq",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "lambda-qrepleq",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "lambda-qrepinv",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "lambda-qrepdiv",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "lambda-identity",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "lambda-fixy",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "lambda-application",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "lambda-environment",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "term-variable",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "term-literal",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "term-add-call",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "proposition-equal",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "proposition-less",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "proposition-and",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "proposition-or",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "proposition-implies",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "proposition-false",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "proposition-forall",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "proposition-exists",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "proposition-predicate",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "proposition-not",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "proposition-associativity",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "judgment",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "proof-node-reflexivity",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "proof-induction-data",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "interval-unit",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "interval-sqrt2-initial",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "interval-sqrt2-refined",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "precision-two",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "precision-width",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "approx-value-error-bracket",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "approx-value-error-residual",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "qlim-parameters",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "qlim-call",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "qlim-response",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "relation-g-half",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "relation-g-three-quarters",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "relation-common-1",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "relation-common-2",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "relation-common-3",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "relation-intro-positive-half",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "relation-intro-positive-three-quarters",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "relation-intro-negative",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "relation-intro-zero",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "relation-l-one-step",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "relation-l-two-steps",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "relation-l-four-steps",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "relation-l-addition",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "relation-l-order",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "relation-intro-not-additive",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "relation-rational-error",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "relation-reject-malformed-label",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "relation-reject-false-introduction",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "relation-reject-compressed-sum",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "geometric-h-third-lower",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "geometric-trace-third-lower",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "geometric-intro-third-lower",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "geometric-h-third-upper",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "geometric-trace-third-upper",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "geometric-intro-third-upper",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "geometric-h-third-fixed",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "geometric-trace-third-fixed",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "geometric-intro-third-fixed",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "geometric-h-two-thirds-lower",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "geometric-trace-two-thirds-lower",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "geometric-intro-two-thirds-lower",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "geometric-h-menger-volume",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "geometric-trace-menger-volume",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "geometric-intro-menger-volume",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "decimal-record-third",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "decimal-exact-third",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "decimal-record-two-thirds",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "decimal-exact-two-thirds",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "decimal-prefix-1",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "decimal-prefix-2",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "decimal-prefix-3",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "decimal-lower-sum",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "decimal-mixed-sum",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "geometric-decimal-reject-invalid-ratio",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "geometric-decimal-reject-invalid-digit",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "geometric-decimal-reject-empty-repeat",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "geometric-decimal-reject-false-recurrence",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "geometric-decimal-reject-false-direction",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "geometric-decimal-reject-false-exact-label",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "sqrt2-state",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "leibniz-state",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "label-with-evidence",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "label-pending-division",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "newton-state",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "separation-witness",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "zero-classification-zero",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "zero-classification-nonzero",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "zero-classification-unknown",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "alternating-rule",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "cauchy-modulus",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "cauchy-center-radius",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "translated-label",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "translation-arrow",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "register-state",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "register-program",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "precision-field-epsilon",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "polynomial-derivative",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "polynomial-primitive",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "polynomial-integral",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "beta-step",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "identity-arrow",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "one-step-arrow",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "lambda-position",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "status-normal-form",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "status-step-limit",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "status-stopped",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "status-error",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "json-null",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "json-false",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "json-true",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "json-2",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "json-a",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "json-array",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "json-record",
+      "status": "passed",
+      "checkKind": "tree-isomorphism"
+    },
+    {
+      "id": "proof-nat-paths",
+      "status": "passed",
+      "checkKind": "tree-isomorphism-and-original-proof-kernel",
+      "evidence": {
+        "theorems": 16,
+        "rewriteSteps": 79
+      }
+    },
+    {
+      "id": "proof-lambda",
+      "status": "passed",
+      "checkKind": "tree-isomorphism-and-original-proof-kernel",
+      "evidence": {
+        "traces": 4
+      }
+    },
+    {
+      "id": "proof-applications",
+      "status": "passed",
+      "checkKind": "tree-isomorphism-and-original-proof-kernel",
+      "evidence": {
+        "certificates": 6
+      }
+    },
+    {
+      "id": "proof-field",
+      "status": "passed",
+      "checkKind": "tree-isomorphism-and-original-proof-kernel",
+      "evidence": {
+        "certificates": 5
+      }
+    },
+    {
+      "id": "proof-generators",
+      "status": "passed",
+      "checkKind": "tree-isomorphism-and-original-proof-kernel",
+      "evidence": {
+        "ok": true,
+        "format": "generator-extensions-v1.5.4",
+        "scope": "finite-rational-replay",
+        "certificateCount": 14,
+        "certificates": [
+          {
+            "id": "newton-p0",
+            "ok": true,
+            "kind": "newton-sqrt2",
+            "scope": "finite-rational-replay"
+          },
+          {
+            "id": "newton-p8",
+            "ok": true,
+            "kind": "newton-sqrt2",
+            "scope": "finite-rational-replay"
+          },
+          {
+            "id": "alternating-geometric",
+            "ok": true,
+            "kind": "alternating-interval",
+            "scope": "finite-rational-replay"
+          },
+          {
+            "id": "alternating-leibniz",
+            "ok": true,
+            "kind": "alternating-interval",
+            "scope": "finite-rational-replay"
+          },
+          {
+            "id": "alternating-zero",
+            "ok": true,
+            "kind": "alternating-interval",
+            "scope": "finite-rational-replay"
+          },
+          {
+            "id": "cauchy-from-sequence",
+            "ok": true,
+            "kind": "cauchy-interval",
+            "scope": "finite-rational-replay"
+          },
+          {
+            "id": "cauchy-two-moduli",
+            "ok": true,
+            "kind": "cauchy-coherence",
+            "scope": "finite-rational-replay"
+          },
+          {
+            "id": "label-sum",
+            "ok": true,
+            "kind": "label-response",
+            "scope": "finite-rational-replay"
+          },
+          {
+            "id": "label-product",
+            "ok": true,
+            "kind": "label-response",
+            "scope": "finite-rational-replay"
+          },
+          {
+            "id": "label-reciprocal",
+            "ok": true,
+            "kind": "label-response",
+            "scope": "finite-rational-replay"
+          },
+          {
+            "id": "label-negative-reciprocal",
+            "ok": true,
+            "kind": "label-response",
+            "scope": "finite-rational-replay"
+          },
+          {
+            "id": "separation-zero",
+            "ok": true,
+            "kind": "zero-separation",
+            "scope": "finite-rational-replay"
+          },
+          {
+            "id": "separation-unknown",
+            "ok": true,
+            "kind": "zero-separation",
+            "scope": "finite-rational-replay"
+          },
+          {
+            "id": "separation-positive",
+            "ok": true,
+            "kind": "zero-separation",
+            "scope": "finite-rational-replay"
+          }
+        ]
+      }
+    },
+    {
+      "id": "proof-models",
+      "status": "passed",
+      "checkKind": "tree-isomorphism-and-original-proof-kernel",
+      "evidence": {
+        "schema": "f-model/extensions-report/1",
+        "ok": true,
+        "registerTraces": [
+          {
+            "id": "register-add-2-3",
+            "ok": true,
+            "transitions": 14,
+            "output": "5"
+          },
+          {
+            "id": "register-add-7-0",
+            "ok": true,
+            "transitions": 2,
+            "output": "7"
+          },
+          {
+            "id": "register-add-large-2",
+            "ok": true,
+            "transitions": 10,
+            "output": "9007199254740995"
+          }
+        ],
+        "symbolicProofs": [
+          {
+            "id": "group-cancellation",
+            "ok": true,
+            "theory": "additive-group",
+            "steps": 3,
+            "premises": [],
+            "scope": "Derivation conditional on the fixed laws of the declared structure and the displayed premises."
+          },
+          {
+            "id": "arrow-inverse-uniqueness",
+            "ok": true,
+            "theory": "arrows",
+            "steps": 5,
+            "premises": [
+              "fh_id",
+              "gf_id"
+            ],
+            "scope": "Derivation conditional on the fixed laws of the declared structure and the displayed premises."
+          }
+        ],
+        "scope": "Finite register traces and two derivations conditional on the stated algebraic laws. No general compiler-correctness theorem is machine-verified."
+      }
+    },
+    {
+      "id": "paper-00",
+      "status": "passed",
+      "checkKind": "lossless-text-recovery-not-formal-proof",
+      "evidence": {
+        "sourceBytes": 6861
+      }
+    },
+    {
+      "id": "paper-01",
+      "status": "passed",
+      "checkKind": "lossless-text-recovery-not-formal-proof",
+      "evidence": {
+        "sourceBytes": 14621
+      }
+    },
+    {
+      "id": "paper-02",
+      "status": "passed",
+      "checkKind": "lossless-text-recovery-not-formal-proof",
+      "evidence": {
+        "sourceBytes": 23470
+      }
+    },
+    {
+      "id": "paper-03",
+      "status": "passed",
+      "checkKind": "lossless-text-recovery-not-formal-proof",
+      "evidence": {
+        "sourceBytes": 3860
+      }
+    },
+    {
+      "id": "paper-04",
+      "status": "passed",
+      "checkKind": "lossless-text-recovery-not-formal-proof",
+      "evidence": {
+        "sourceBytes": 3821
+      }
+    },
+    {
+      "id": "paper-05",
+      "status": "passed",
+      "checkKind": "lossless-text-recovery-not-formal-proof",
+      "evidence": {
+        "sourceBytes": 5561
+      }
+    },
+    {
+      "id": "paper-06",
+      "status": "passed",
+      "checkKind": "lossless-text-recovery-not-formal-proof",
+      "evidence": {
+        "sourceBytes": 8177
+      }
+    },
+    {
+      "id": "paper-07",
+      "status": "passed",
+      "checkKind": "lossless-text-recovery-not-formal-proof",
+      "evidence": {
+        "sourceBytes": 6300
+      }
+    },
+    {
+      "id": "paper-08",
+      "status": "passed",
+      "checkKind": "lossless-text-recovery-not-formal-proof",
+      "evidence": {
+        "sourceBytes": 25118
+      }
+    },
+    {
+      "id": "paper-09",
+      "status": "passed",
+      "checkKind": "lossless-text-recovery-not-formal-proof",
+      "evidence": {
+        "sourceBytes": 25428
+      }
+    },
+    {
+      "id": "paper-10",
+      "status": "passed",
+      "checkKind": "lossless-text-recovery-not-formal-proof",
+      "evidence": {
+        "sourceBytes": 9482
+      }
+    },
+    {
+      "id": "paper-11",
+      "status": "passed",
+      "checkKind": "lossless-text-recovery-not-formal-proof",
+      "evidence": {
+        "sourceBytes": 2389
+      }
+    },
+    {
+      "id": "paper-12",
+      "status": "passed",
+      "checkKind": "lossless-text-recovery-not-formal-proof",
+      "evidence": {
+        "sourceBytes": 11060
+      }
+    },
+    {
+      "id": "paper-13",
+      "status": "passed",
+      "checkKind": "lossless-text-recovery-not-formal-proof",
+      "evidence": {
+        "sourceBytes": 26160
+      }
+    },
+    {
+      "id": "program-applications",
+      "status": "passed",
+      "checkKind": "lossless-source-recovery-not-pure-lambda-port",
+      "evidence": {
+        "sourceBytes": 24945
+      }
+    },
+    {
+      "id": "program-formal-field",
+      "status": "passed",
+      "checkKind": "lossless-source-recovery-not-pure-lambda-port",
+      "evidence": {
+        "sourceBytes": 14425
+      }
+    },
+    {
+      "id": "program-equational-checker",
+      "status": "passed",
+      "checkKind": "lossless-source-recovery-not-pure-lambda-port",
+      "evidence": {
+        "sourceBytes": 10392
+      }
+    },
+    {
+      "id": "program-lambda-core",
+      "status": "passed",
+      "checkKind": "lossless-source-recovery-not-pure-lambda-port",
+      "evidence": {
+        "sourceBytes": 18059
+      }
+    },
+    {
+      "id": "program-generator-extensions",
+      "status": "passed",
+      "checkKind": "lossless-source-recovery-not-pure-lambda-port",
+      "evidence": {
+        "sourceBytes": 21421
+      }
+    },
+    {
+      "id": "program-model-extensions",
+      "status": "passed",
+      "checkKind": "lossless-source-recovery-not-pure-lambda-port",
+      "evidence": {
+        "sourceBytes": 18892
+      }
+    },
+    {
+      "id": "program-concept-examples",
+      "status": "passed",
+      "checkKind": "lossless-source-recovery-not-pure-lambda-port",
+      "evidence": {
+        "sourceBytes": 52501
+      }
+    }
+  ],
+  "scope": "The constructor mapping is reversible. The exact constructor trees of the source NatForm, fixed-T, approximation/error, and G-to-L, H-to-L, and decimal-interpretation examples are preserved; their declared execution checks run in generate-concepts. Structural proof bundles are rechecked by the original kernels; source text round trips are archival, not formal proof verification."
+}

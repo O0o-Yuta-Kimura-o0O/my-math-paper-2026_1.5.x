@@ -1,0 +1,942 @@
+{
+  "format": "finite-equational-verification/1",
+  "status": "verified",
+  "kernel": "typed equational logic + structural induction; separate from lambda beta traces",
+  "trustedDefiningRules": [
+    {
+      "id": "add.zero",
+      "variables": {
+        "x": "Nat"
+      },
+      "lhs": "Add(x,Z)",
+      "rhs": "x"
+    },
+    {
+      "id": "add.succ",
+      "variables": {
+        "x": "Nat",
+        "y": "Nat"
+      },
+      "lhs": "Add(x,S(y))",
+      "rhs": "S(Add(x,y))"
+    },
+    {
+      "id": "mul.zero",
+      "variables": {
+        "x": "Nat"
+      },
+      "lhs": "Mul(x,Z)",
+      "rhs": "Z"
+    },
+    {
+      "id": "mul.succ",
+      "variables": {
+        "x": "Nat",
+        "y": "Nat"
+      },
+      "lhs": "Mul(x,S(y))",
+      "rhs": "Add(Mul(x,y),x)"
+    },
+    {
+      "id": "append.nil",
+      "variables": {
+        "u": "Seq"
+      },
+      "lhs": "Append(Nil,u)",
+      "rhs": "u"
+    },
+    {
+      "id": "append.cons",
+      "variables": {
+        "h": "Event",
+        "t": "Seq",
+        "u": "Seq"
+      },
+      "lhs": "Append(Cons(h,t),u)",
+      "rhs": "Cons(h,Append(t,u))"
+    }
+  ],
+  "theoremCount": 16,
+  "rewriteSteps": 79,
+  "theorems": [
+    {
+      "id": "nat.add.leftzero",
+      "variables": {
+        "n": "Nat"
+      },
+      "equation": [
+        "Add(Z,n)",
+        "n"
+      ],
+      "status": "verified",
+      "proofKind": "induction",
+      "rewriteSteps": 3,
+      "trace": [
+        {
+          "rule": "add.zero",
+          "path": [],
+          "direction": "forward",
+          "before": "Add(Z,Z)",
+          "after": "Z"
+        },
+        {
+          "rule": "add.succ",
+          "path": [],
+          "direction": "forward",
+          "before": "Add(Z,S(k))",
+          "after": "S(Add(Z,k))"
+        },
+        {
+          "rule": "IH",
+          "path": [
+            0
+          ],
+          "direction": "forward",
+          "before": "S(Add(Z,k))",
+          "after": "S(k)"
+        }
+      ]
+    },
+    {
+      "id": "nat.add.leftsucc",
+      "variables": {
+        "x": "Nat",
+        "y": "Nat"
+      },
+      "equation": [
+        "Add(S(x),y)",
+        "S(Add(x,y))"
+      ],
+      "status": "verified",
+      "proofKind": "induction",
+      "rewriteSteps": 5,
+      "trace": [
+        {
+          "rule": "add.zero",
+          "path": [],
+          "direction": "forward",
+          "before": "Add(S(x),Z)",
+          "after": "S(x)"
+        },
+        {
+          "rule": "add.zero",
+          "path": [
+            0
+          ],
+          "direction": "forward",
+          "before": "S(Add(x,Z))",
+          "after": "S(x)"
+        },
+        {
+          "rule": "add.succ",
+          "path": [],
+          "direction": "forward",
+          "before": "Add(S(x),S(k))",
+          "after": "S(Add(S(x),k))"
+        },
+        {
+          "rule": "IH",
+          "path": [
+            0
+          ],
+          "direction": "forward",
+          "before": "S(Add(S(x),k))",
+          "after": "S(S(Add(x,k)))"
+        },
+        {
+          "rule": "add.succ",
+          "path": [
+            0
+          ],
+          "direction": "forward",
+          "before": "S(Add(x,S(k)))",
+          "after": "S(S(Add(x,k)))"
+        }
+      ]
+    },
+    {
+      "id": "nat.add.commutative",
+      "variables": {
+        "x": "Nat",
+        "y": "Nat"
+      },
+      "equation": [
+        "Add(x,y)",
+        "Add(y,x)"
+      ],
+      "status": "verified",
+      "proofKind": "induction",
+      "rewriteSteps": 5,
+      "trace": [
+        {
+          "rule": "add.zero",
+          "path": [],
+          "direction": "forward",
+          "before": "Add(x,Z)",
+          "after": "x"
+        },
+        {
+          "rule": "nat.add.leftzero",
+          "path": [],
+          "direction": "forward",
+          "before": "Add(Z,x)",
+          "after": "x"
+        },
+        {
+          "rule": "add.succ",
+          "path": [],
+          "direction": "forward",
+          "before": "Add(x,S(k))",
+          "after": "S(Add(x,k))"
+        },
+        {
+          "rule": "IH",
+          "path": [
+            0
+          ],
+          "direction": "forward",
+          "before": "S(Add(x,k))",
+          "after": "S(Add(k,x))"
+        },
+        {
+          "rule": "nat.add.leftsucc",
+          "path": [],
+          "direction": "forward",
+          "before": "Add(S(k),x)",
+          "after": "S(Add(k,x))"
+        }
+      ]
+    },
+    {
+      "id": "nat.add.associative",
+      "variables": {
+        "x": "Nat",
+        "y": "Nat",
+        "z": "Nat"
+      },
+      "equation": [
+        "Add(Add(x,y),z)",
+        "Add(x,Add(y,z))"
+      ],
+      "status": "verified",
+      "proofKind": "induction",
+      "rewriteSteps": 6,
+      "trace": [
+        {
+          "rule": "add.zero",
+          "path": [],
+          "direction": "forward",
+          "before": "Add(Add(x,y),Z)",
+          "after": "Add(x,y)"
+        },
+        {
+          "rule": "add.zero",
+          "path": [
+            1
+          ],
+          "direction": "forward",
+          "before": "Add(x,Add(y,Z))",
+          "after": "Add(x,y)"
+        },
+        {
+          "rule": "add.succ",
+          "path": [],
+          "direction": "forward",
+          "before": "Add(Add(x,y),S(k))",
+          "after": "S(Add(Add(x,y),k))"
+        },
+        {
+          "rule": "IH",
+          "path": [
+            0
+          ],
+          "direction": "forward",
+          "before": "S(Add(Add(x,y),k))",
+          "after": "S(Add(x,Add(y,k)))"
+        },
+        {
+          "rule": "add.succ",
+          "path": [
+            1
+          ],
+          "direction": "forward",
+          "before": "Add(x,Add(y,S(k)))",
+          "after": "Add(x,S(Add(y,k)))"
+        },
+        {
+          "rule": "add.succ",
+          "path": [],
+          "direction": "forward",
+          "before": "Add(x,S(Add(y,k)))",
+          "after": "S(Add(x,Add(y,k)))"
+        }
+      ]
+    },
+    {
+      "id": "nat.add.interchange",
+      "variables": {
+        "a": "Nat",
+        "b": "Nat",
+        "c": "Nat",
+        "d": "Nat"
+      },
+      "equation": [
+        "Add(Add(a,b),Add(c,d))",
+        "Add(Add(a,c),Add(b,d))"
+      ],
+      "status": "verified",
+      "proofKind": "join",
+      "rewriteSteps": 5,
+      "trace": [
+        {
+          "rule": "nat.add.associative",
+          "path": [],
+          "direction": "forward",
+          "before": "Add(Add(a,b),Add(c,d))",
+          "after": "Add(a,Add(b,Add(c,d)))"
+        },
+        {
+          "rule": "nat.add.associative",
+          "path": [
+            1
+          ],
+          "direction": "backward",
+          "before": "Add(a,Add(b,Add(c,d)))",
+          "after": "Add(a,Add(Add(b,c),d))"
+        },
+        {
+          "rule": "nat.add.commutative",
+          "path": [
+            1,
+            0
+          ],
+          "direction": "forward",
+          "before": "Add(a,Add(Add(b,c),d))",
+          "after": "Add(a,Add(Add(c,b),d))"
+        },
+        {
+          "rule": "nat.add.associative",
+          "path": [
+            1
+          ],
+          "direction": "forward",
+          "before": "Add(a,Add(Add(c,b),d))",
+          "after": "Add(a,Add(c,Add(b,d)))"
+        },
+        {
+          "rule": "nat.add.associative",
+          "path": [],
+          "direction": "backward",
+          "before": "Add(a,Add(c,Add(b,d)))",
+          "after": "Add(Add(a,c),Add(b,d))"
+        }
+      ]
+    },
+    {
+      "id": "nat.mul.leftzero",
+      "variables": {
+        "n": "Nat"
+      },
+      "equation": [
+        "Mul(Z,n)",
+        "Z"
+      ],
+      "status": "verified",
+      "proofKind": "induction",
+      "rewriteSteps": 4,
+      "trace": [
+        {
+          "rule": "mul.zero",
+          "path": [],
+          "direction": "forward",
+          "before": "Mul(Z,Z)",
+          "after": "Z"
+        },
+        {
+          "rule": "mul.succ",
+          "path": [],
+          "direction": "forward",
+          "before": "Mul(Z,S(k))",
+          "after": "Add(Mul(Z,k),Z)"
+        },
+        {
+          "rule": "IH",
+          "path": [
+            0
+          ],
+          "direction": "forward",
+          "before": "Add(Mul(Z,k),Z)",
+          "after": "Add(Z,Z)"
+        },
+        {
+          "rule": "add.zero",
+          "path": [],
+          "direction": "forward",
+          "before": "Add(Z,Z)",
+          "after": "Z"
+        }
+      ]
+    },
+    {
+      "id": "nat.mul.rightone",
+      "variables": {
+        "x": "Nat"
+      },
+      "equation": [
+        "Mul(x,S(Z))",
+        "x"
+      ],
+      "status": "verified",
+      "proofKind": "join",
+      "rewriteSteps": 3,
+      "trace": [
+        {
+          "rule": "mul.succ",
+          "path": [],
+          "direction": "forward",
+          "before": "Mul(x,S(Z))",
+          "after": "Add(Mul(x,Z),x)"
+        },
+        {
+          "rule": "mul.zero",
+          "path": [
+            0
+          ],
+          "direction": "forward",
+          "before": "Add(Mul(x,Z),x)",
+          "after": "Add(Z,x)"
+        },
+        {
+          "rule": "nat.add.leftzero",
+          "path": [],
+          "direction": "forward",
+          "before": "Add(Z,x)",
+          "after": "x"
+        }
+      ]
+    },
+    {
+      "id": "nat.mul.leftsucc",
+      "variables": {
+        "x": "Nat",
+        "y": "Nat"
+      },
+      "equation": [
+        "Mul(S(x),y)",
+        "Add(Mul(x,y),y)"
+      ],
+      "status": "verified",
+      "proofKind": "induction",
+      "rewriteSteps": 11,
+      "trace": [
+        {
+          "rule": "mul.zero",
+          "path": [],
+          "direction": "forward",
+          "before": "Mul(S(x),Z)",
+          "after": "Z"
+        },
+        {
+          "rule": "add.zero",
+          "path": [],
+          "direction": "forward",
+          "before": "Add(Mul(x,Z),Z)",
+          "after": "Mul(x,Z)"
+        },
+        {
+          "rule": "mul.zero",
+          "path": [],
+          "direction": "forward",
+          "before": "Mul(x,Z)",
+          "after": "Z"
+        },
+        {
+          "rule": "mul.succ",
+          "path": [],
+          "direction": "forward",
+          "before": "Mul(S(x),S(k))",
+          "after": "Add(Mul(S(x),k),S(x))"
+        },
+        {
+          "rule": "IH",
+          "path": [
+            0
+          ],
+          "direction": "forward",
+          "before": "Add(Mul(S(x),k),S(x))",
+          "after": "Add(Add(Mul(x,k),k),S(x))"
+        },
+        {
+          "rule": "add.succ",
+          "path": [],
+          "direction": "forward",
+          "before": "Add(Add(Mul(x,k),k),S(x))",
+          "after": "S(Add(Add(Mul(x,k),k),x))"
+        },
+        {
+          "rule": "nat.add.associative",
+          "path": [
+            0
+          ],
+          "direction": "forward",
+          "before": "S(Add(Add(Mul(x,k),k),x))",
+          "after": "S(Add(Mul(x,k),Add(k,x)))"
+        },
+        {
+          "rule": "nat.add.commutative",
+          "path": [
+            0,
+            1
+          ],
+          "direction": "forward",
+          "before": "S(Add(Mul(x,k),Add(k,x)))",
+          "after": "S(Add(Mul(x,k),Add(x,k)))"
+        },
+        {
+          "rule": "nat.add.associative",
+          "path": [
+            0
+          ],
+          "direction": "backward",
+          "before": "S(Add(Mul(x,k),Add(x,k)))",
+          "after": "S(Add(Add(Mul(x,k),x),k))"
+        },
+        {
+          "rule": "add.succ",
+          "path": [],
+          "direction": "forward",
+          "before": "Add(Mul(x,S(k)),S(k))",
+          "after": "S(Add(Mul(x,S(k)),k))"
+        },
+        {
+          "rule": "mul.succ",
+          "path": [
+            0,
+            0
+          ],
+          "direction": "forward",
+          "before": "S(Add(Mul(x,S(k)),k))",
+          "after": "S(Add(Add(Mul(x,k),x),k))"
+        }
+      ]
+    },
+    {
+      "id": "nat.mul.commutative",
+      "variables": {
+        "x": "Nat",
+        "y": "Nat"
+      },
+      "equation": [
+        "Mul(x,y)",
+        "Mul(y,x)"
+      ],
+      "status": "verified",
+      "proofKind": "induction",
+      "rewriteSteps": 5,
+      "trace": [
+        {
+          "rule": "mul.zero",
+          "path": [],
+          "direction": "forward",
+          "before": "Mul(x,Z)",
+          "after": "Z"
+        },
+        {
+          "rule": "nat.mul.leftzero",
+          "path": [],
+          "direction": "forward",
+          "before": "Mul(Z,x)",
+          "after": "Z"
+        },
+        {
+          "rule": "mul.succ",
+          "path": [],
+          "direction": "forward",
+          "before": "Mul(x,S(k))",
+          "after": "Add(Mul(x,k),x)"
+        },
+        {
+          "rule": "IH",
+          "path": [
+            0
+          ],
+          "direction": "forward",
+          "before": "Add(Mul(x,k),x)",
+          "after": "Add(Mul(k,x),x)"
+        },
+        {
+          "rule": "nat.mul.leftsucc",
+          "path": [],
+          "direction": "forward",
+          "before": "Mul(S(k),x)",
+          "after": "Add(Mul(k,x),x)"
+        }
+      ]
+    },
+    {
+      "id": "nat.mul.leftone",
+      "variables": {
+        "x": "Nat"
+      },
+      "equation": [
+        "Mul(S(Z),x)",
+        "x"
+      ],
+      "status": "verified",
+      "proofKind": "join",
+      "rewriteSteps": 2,
+      "trace": [
+        {
+          "rule": "nat.mul.commutative",
+          "path": [],
+          "direction": "forward",
+          "before": "Mul(S(Z),x)",
+          "after": "Mul(x,S(Z))"
+        },
+        {
+          "rule": "nat.mul.rightone",
+          "path": [],
+          "direction": "forward",
+          "before": "Mul(x,S(Z))",
+          "after": "x"
+        }
+      ]
+    },
+    {
+      "id": "nat.mul.distributive.first",
+      "variables": {
+        "x": "Nat",
+        "y": "Nat",
+        "z": "Nat"
+      },
+      "equation": [
+        "Mul(Add(x,y),z)",
+        "Add(Mul(x,z),Mul(y,z))"
+      ],
+      "status": "verified",
+      "proofKind": "induction",
+      "rewriteSteps": 9,
+      "trace": [
+        {
+          "rule": "mul.zero",
+          "path": [],
+          "direction": "forward",
+          "before": "Mul(Add(x,y),Z)",
+          "after": "Z"
+        },
+        {
+          "rule": "mul.zero",
+          "path": [
+            0
+          ],
+          "direction": "forward",
+          "before": "Add(Mul(x,Z),Mul(y,Z))",
+          "after": "Add(Z,Mul(y,Z))"
+        },
+        {
+          "rule": "mul.zero",
+          "path": [
+            1
+          ],
+          "direction": "forward",
+          "before": "Add(Z,Mul(y,Z))",
+          "after": "Add(Z,Z)"
+        },
+        {
+          "rule": "add.zero",
+          "path": [],
+          "direction": "forward",
+          "before": "Add(Z,Z)",
+          "after": "Z"
+        },
+        {
+          "rule": "mul.succ",
+          "path": [],
+          "direction": "forward",
+          "before": "Mul(Add(x,y),S(k))",
+          "after": "Add(Mul(Add(x,y),k),Add(x,y))"
+        },
+        {
+          "rule": "IH",
+          "path": [
+            0
+          ],
+          "direction": "forward",
+          "before": "Add(Mul(Add(x,y),k),Add(x,y))",
+          "after": "Add(Add(Mul(x,k),Mul(y,k)),Add(x,y))"
+        },
+        {
+          "rule": "nat.add.interchange",
+          "path": [],
+          "direction": "forward",
+          "before": "Add(Add(Mul(x,k),Mul(y,k)),Add(x,y))",
+          "after": "Add(Add(Mul(x,k),x),Add(Mul(y,k),y))"
+        },
+        {
+          "rule": "mul.succ",
+          "path": [
+            0
+          ],
+          "direction": "forward",
+          "before": "Add(Mul(x,S(k)),Mul(y,S(k)))",
+          "after": "Add(Add(Mul(x,k),x),Mul(y,S(k)))"
+        },
+        {
+          "rule": "mul.succ",
+          "path": [
+            1
+          ],
+          "direction": "forward",
+          "before": "Add(Add(Mul(x,k),x),Mul(y,S(k)))",
+          "after": "Add(Add(Mul(x,k),x),Add(Mul(y,k),y))"
+        }
+      ]
+    },
+    {
+      "id": "nat.mul.distributive.second",
+      "variables": {
+        "x": "Nat",
+        "y": "Nat",
+        "z": "Nat"
+      },
+      "equation": [
+        "Mul(x,Add(y,z))",
+        "Add(Mul(x,y),Mul(x,z))"
+      ],
+      "status": "verified",
+      "proofKind": "join",
+      "rewriteSteps": 4,
+      "trace": [
+        {
+          "rule": "nat.mul.commutative",
+          "path": [],
+          "direction": "forward",
+          "before": "Mul(x,Add(y,z))",
+          "after": "Mul(Add(y,z),x)"
+        },
+        {
+          "rule": "nat.mul.distributive.first",
+          "path": [],
+          "direction": "forward",
+          "before": "Mul(Add(y,z),x)",
+          "after": "Add(Mul(y,x),Mul(z,x))"
+        },
+        {
+          "rule": "nat.mul.commutative",
+          "path": [
+            0
+          ],
+          "direction": "forward",
+          "before": "Add(Mul(y,x),Mul(z,x))",
+          "after": "Add(Mul(x,y),Mul(z,x))"
+        },
+        {
+          "rule": "nat.mul.commutative",
+          "path": [
+            1
+          ],
+          "direction": "forward",
+          "before": "Add(Mul(x,y),Mul(z,x))",
+          "after": "Add(Mul(x,y),Mul(x,z))"
+        }
+      ]
+    },
+    {
+      "id": "nat.mul.associative",
+      "variables": {
+        "x": "Nat",
+        "y": "Nat",
+        "z": "Nat"
+      },
+      "equation": [
+        "Mul(Mul(x,y),z)",
+        "Mul(x,Mul(y,z))"
+      ],
+      "status": "verified",
+      "proofKind": "induction",
+      "rewriteSteps": 7,
+      "trace": [
+        {
+          "rule": "mul.zero",
+          "path": [],
+          "direction": "forward",
+          "before": "Mul(Mul(x,y),Z)",
+          "after": "Z"
+        },
+        {
+          "rule": "mul.zero",
+          "path": [
+            1
+          ],
+          "direction": "forward",
+          "before": "Mul(x,Mul(y,Z))",
+          "after": "Mul(x,Z)"
+        },
+        {
+          "rule": "mul.zero",
+          "path": [],
+          "direction": "forward",
+          "before": "Mul(x,Z)",
+          "after": "Z"
+        },
+        {
+          "rule": "mul.succ",
+          "path": [],
+          "direction": "forward",
+          "before": "Mul(Mul(x,y),S(k))",
+          "after": "Add(Mul(Mul(x,y),k),Mul(x,y))"
+        },
+        {
+          "rule": "IH",
+          "path": [
+            0
+          ],
+          "direction": "forward",
+          "before": "Add(Mul(Mul(x,y),k),Mul(x,y))",
+          "after": "Add(Mul(x,Mul(y,k)),Mul(x,y))"
+        },
+        {
+          "rule": "mul.succ",
+          "path": [
+            1
+          ],
+          "direction": "forward",
+          "before": "Mul(x,Mul(y,S(k)))",
+          "after": "Mul(x,Add(Mul(y,k),y))"
+        },
+        {
+          "rule": "nat.mul.distributive.second",
+          "path": [],
+          "direction": "forward",
+          "before": "Mul(x,Add(Mul(y,k),y))",
+          "after": "Add(Mul(x,Mul(y,k)),Mul(x,y))"
+        }
+      ]
+    },
+    {
+      "id": "path.append.leftunit",
+      "variables": {
+        "u": "Seq"
+      },
+      "equation": [
+        "Append(Nil,u)",
+        "u"
+      ],
+      "status": "verified",
+      "proofKind": "join",
+      "rewriteSteps": 1,
+      "trace": [
+        {
+          "rule": "append.nil",
+          "path": [],
+          "direction": "forward",
+          "before": "Append(Nil,u)",
+          "after": "u"
+        }
+      ]
+    },
+    {
+      "id": "path.append.rightunit",
+      "variables": {
+        "u": "Seq"
+      },
+      "equation": [
+        "Append(u,Nil)",
+        "u"
+      ],
+      "status": "verified",
+      "proofKind": "induction",
+      "rewriteSteps": 3,
+      "trace": [
+        {
+          "rule": "append.nil",
+          "path": [],
+          "direction": "forward",
+          "before": "Append(Nil,Nil)",
+          "after": "Nil"
+        },
+        {
+          "rule": "append.cons",
+          "path": [],
+          "direction": "forward",
+          "before": "Append(Cons(h,t),Nil)",
+          "after": "Cons(h,Append(t,Nil))"
+        },
+        {
+          "rule": "IH",
+          "path": [
+            1
+          ],
+          "direction": "forward",
+          "before": "Cons(h,Append(t,Nil))",
+          "after": "Cons(h,t)"
+        }
+      ]
+    },
+    {
+      "id": "path.append.associative",
+      "variables": {
+        "u": "Seq",
+        "v": "Seq",
+        "w": "Seq"
+      },
+      "equation": [
+        "Append(Append(u,v),w)",
+        "Append(u,Append(v,w))"
+      ],
+      "status": "verified",
+      "proofKind": "induction",
+      "rewriteSteps": 6,
+      "trace": [
+        {
+          "rule": "append.nil",
+          "path": [
+            0
+          ],
+          "direction": "forward",
+          "before": "Append(Append(Nil,v),w)",
+          "after": "Append(v,w)"
+        },
+        {
+          "rule": "append.nil",
+          "path": [],
+          "direction": "forward",
+          "before": "Append(Nil,Append(v,w))",
+          "after": "Append(v,w)"
+        },
+        {
+          "rule": "append.cons",
+          "path": [
+            0
+          ],
+          "direction": "forward",
+          "before": "Append(Append(Cons(h,t),v),w)",
+          "after": "Append(Cons(h,Append(t,v)),w)"
+        },
+        {
+          "rule": "append.cons",
+          "path": [],
+          "direction": "forward",
+          "before": "Append(Cons(h,Append(t,v)),w)",
+          "after": "Cons(h,Append(Append(t,v),w))"
+        },
+        {
+          "rule": "IH",
+          "path": [
+            1
+          ],
+          "direction": "forward",
+          "before": "Cons(h,Append(Append(t,v),w))",
+          "after": "Cons(h,Append(t,Append(v,w)))"
+        },
+        {
+          "rule": "append.cons",
+          "path": [],
+          "direction": "forward",
+          "before": "Append(Cons(h,t),Append(v,w))",
+          "after": "Cons(h,Append(t,Append(v,w)))"
+        }
+      ]
+    }
+  ]
+}

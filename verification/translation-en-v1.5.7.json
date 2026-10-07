@@ -1,0 +1,55 @@
+{
+  "format": "english-translation-check/1",
+  "paperVersion": "1.5.7",
+  "language": "en",
+  "status": "passed",
+  "source": {
+    "path": "manuscripts/A_New_Foundation_of_Mathematics_ja_v1.5.7.md",
+    "sha256": "9307ca0483196baa34cd4098448bee3b2f4cc6e4250bfb9fa1f07c99b74d57e7",
+    "bytes": 172308
+  },
+  "translation": {
+    "path": "manuscripts/A_New_Foundation_of_Mathematics_en_v1.5.7.md",
+    "sha256": "eea826740cbacde75daa2df96f4a150c4dc2e25ae3dd209ed9f73241b66909a4",
+    "bytes": 188212
+  },
+  "checks": {
+    "japaneseSourceMatchesExistingArchive": true,
+    "numberedHeadings": 79,
+    "appendices": [
+      "A"
+    ],
+    "formalStatements": 36,
+    "proofEndings": 36,
+    "displayMathBlocks": 116,
+    "sourceInlineMath": 797,
+    "englishInlineMath": 798,
+    "addedInlineReferents": [
+      "D(a,b)"
+    ],
+    "codeBlocks": 6,
+    "translatedCodeLabels": [
+      "empty list and cons",
+      "integer-two captions"
+    ],
+    "referenceTargetsPreserved": true,
+    "untranslatedJapaneseFound": false
+  },
+  "review": {
+    "scope": "Complete prose translation reviewed section by section against the Japanese manuscript, including assumptions, bounds, proof steps, and proof-status qualifications.",
+    "terminology": {
+      "system": "f-generative system",
+      "polynomials": "M-polynomials",
+      "field": "finite rational-expression numbers",
+      "complex": "generative complex numbers",
+      "quaternions": "generative quaternions",
+      "label": "generative label",
+      "sequence": "sequence-generating label",
+      "interval": "interval-generating label",
+      "trace": "computation trace",
+      "relation": "relation operator",
+      "compatibility": "response compatibility"
+    },
+    "note": "Structural comparisons and editorial review are translation QA. They are not formal verification of semantic translation equivalence or additional mathematical proofs."
+  }
+}

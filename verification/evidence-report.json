@@ -1,0 +1,288 @@
+{
+  "format": "evidence-generation-report/1",
+  "paperVersion": "1.5.7",
+  "interpreterVersion": "8.0.1",
+  "status": "verified",
+  "lambda": [
+    {
+      "source": "Add Two Three",
+      "final": "(λx0.(λx1.(x0 (x0 (x0 (x0 (x0 x1)))))))",
+      "verification": {
+        "valid": true,
+        "status": "normal-form",
+        "steps": 34,
+        "betaSteps": 21,
+        "deltaSteps": 13,
+        "normalForm": true,
+        "note": "各変換と終了条件を検証しました。"
+      }
+    },
+    {
+      "source": "(λy_1.λy.y) y",
+      "final": "(λx0.x0)",
+      "verification": {
+        "valid": true,
+        "status": "normal-form",
+        "steps": 1,
+        "betaSteps": 1,
+        "deltaSteps": 0,
+        "normalForm": true,
+        "note": "各変換と終了条件を検証しました。"
+      }
+    },
+    {
+      "source": "Fst (Pair Two Three)",
+      "final": "(λx0.(λx1.(x0 (x0 x1))))",
+      "verification": {
+        "valid": true,
+        "status": "normal-form",
+        "steps": 19,
+        "betaSteps": 12,
+        "deltaSteps": 7,
+        "normalForm": true,
+        "note": "各変換と終了条件を検証しました。"
+      }
+    },
+    {
+      "source": "ZMake One Zero",
+      "final": "(λx0.((x0 (λx1.(λx2.x2))) (λx1.(λx2.x2))))",
+      "verification": {
+        "valid": true,
+        "status": "normal-form",
+        "steps": 20,
+        "betaSteps": 12,
+        "deltaSteps": 8,
+        "normalForm": true,
+        "note": "各変換と終了条件を検証しました。"
+      }
+    }
+  ],
+  "applications": [
+    {
+      "ok": true,
+      "kind": "qlim",
+      "steps": 5
+    },
+    {
+      "ok": true,
+      "kind": "sqrt2",
+      "steps": 15
+    },
+    {
+      "ok": true,
+      "kind": "leibniz",
+      "steps": 37
+    },
+    {
+      "ok": true,
+      "kind": "interval",
+      "steps": 3
+    },
+    {
+      "ok": true,
+      "kind": "polynomial-continuity",
+      "steps": 6
+    },
+    {
+      "ok": true,
+      "kind": "polynomial-calculus",
+      "steps": 7
+    }
+  ],
+  "formalField": [
+    {
+      "ok": true,
+      "operation": "div",
+      "result": {
+        "numerator": [
+          "1/1"
+        ],
+        "denominator": [
+          "1/1"
+        ]
+      },
+      "steps": 2
+    },
+    {
+      "ok": true,
+      "operation": "mul",
+      "result": {
+        "numerator": [
+          "0/1",
+          "0/1",
+          "1/1"
+        ],
+        "denominator": [
+          "1/1"
+        ]
+      },
+      "steps": 2
+    },
+    {
+      "ok": true,
+      "operation": "normalize",
+      "result": {
+        "numerator": [
+          "1/1",
+          "1/1"
+        ],
+        "denominator": [
+          "1/1"
+        ]
+      },
+      "steps": 2
+    },
+    {
+      "ok": true,
+      "operation": "compare",
+      "result": -1,
+      "steps": 2
+    },
+    {
+      "ok": true,
+      "operation": "standardPart",
+      "result": "1/2",
+      "steps": 2
+    }
+  ],
+  "generatorExtensions": {
+    "ok": true,
+    "format": "generator-extensions-v1.5.4",
+    "scope": "finite-rational-replay",
+    "certificateCount": 14,
+    "certificates": [
+      {
+        "id": "newton-p0",
+        "ok": true,
+        "kind": "newton-sqrt2",
+        "scope": "finite-rational-replay"
+      },
+      {
+        "id": "newton-p8",
+        "ok": true,
+        "kind": "newton-sqrt2",
+        "scope": "finite-rational-replay"
+      },
+      {
+        "id": "alternating-geometric",
+        "ok": true,
+        "kind": "alternating-interval",
+        "scope": "finite-rational-replay"
+      },
+      {
+        "id": "alternating-leibniz",
+        "ok": true,
+        "kind": "alternating-interval",
+        "scope": "finite-rational-replay"
+      },
+      {
+        "id": "alternating-zero",
+        "ok": true,
+        "kind": "alternating-interval",
+        "scope": "finite-rational-replay"
+      },
+      {
+        "id": "cauchy-from-sequence",
+        "ok": true,
+        "kind": "cauchy-interval",
+        "scope": "finite-rational-replay"
+      },
+      {
+        "id": "cauchy-two-moduli",
+        "ok": true,
+        "kind": "cauchy-coherence",
+        "scope": "finite-rational-replay"
+      },
+      {
+        "id": "label-sum",
+        "ok": true,
+        "kind": "label-response",
+        "scope": "finite-rational-replay"
+      },
+      {
+        "id": "label-product",
+        "ok": true,
+        "kind": "label-response",
+        "scope": "finite-rational-replay"
+      },
+      {
+        "id": "label-reciprocal",
+        "ok": true,
+        "kind": "label-response",
+        "scope": "finite-rational-replay"
+      },
+      {
+        "id": "label-negative-reciprocal",
+        "ok": true,
+        "kind": "label-response",
+        "scope": "finite-rational-replay"
+      },
+      {
+        "id": "separation-zero",
+        "ok": true,
+        "kind": "zero-separation",
+        "scope": "finite-rational-replay"
+      },
+      {
+        "id": "separation-unknown",
+        "ok": true,
+        "kind": "zero-separation",
+        "scope": "finite-rational-replay"
+      },
+      {
+        "id": "separation-positive",
+        "ok": true,
+        "kind": "zero-separation",
+        "scope": "finite-rational-replay"
+      }
+    ]
+  },
+  "modelExtensions": {
+    "schema": "f-model/extensions-report/1",
+    "ok": true,
+    "registerTraces": [
+      {
+        "id": "register-add-2-3",
+        "ok": true,
+        "transitions": 14,
+        "output": "5"
+      },
+      {
+        "id": "register-add-7-0",
+        "ok": true,
+        "transitions": 2,
+        "output": "7"
+      },
+      {
+        "id": "register-add-large-2",
+        "ok": true,
+        "transitions": 10,
+        "output": "9007199254740995"
+      }
+    ],
+    "symbolicProofs": [
+      {
+        "id": "group-cancellation",
+        "ok": true,
+        "theory": "additive-group",
+        "steps": 3,
+        "premises": [],
+        "scope": "Derivation conditional on the fixed laws of the declared structure and the displayed premises."
+      },
+      {
+        "id": "arrow-inverse-uniqueness",
+        "ok": true,
+        "theory": "arrows",
+        "steps": 5,
+        "premises": [
+          "gf_id",
+          "fh_id"
+        ],
+        "scope": "Derivation conditional on the fixed laws of the declared structure and the displayed premises."
+      }
+    ],
+    "scope": "Finite register traces and two derivations conditional on the stated algebraic laws. No general compiler-correctness theorem is machine-verified."
+  },
+  "equationalTheorems": 16,
+  "note": "Certificates are the evidence inputs; these reports summarize the checks. General induction theorems are not inferred from numerical examples."
+}

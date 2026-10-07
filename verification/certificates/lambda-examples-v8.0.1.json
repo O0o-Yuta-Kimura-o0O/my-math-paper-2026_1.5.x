@@ -1,0 +1,1768 @@
+{
+  "schema": "lambda-trace-bundle/1",
+  "version": "8.0.1",
+  "traces": [
+    {
+      "schema": "lambda-trace/1",
+      "version": "8.0.1",
+      "strategy": "leftmost-outermost-interleaved",
+      "source": "Add Two Three",
+      "definitions": [
+        {
+          "name": "True",
+          "source": "λt.λf.t"
+        },
+        {
+          "name": "False",
+          "source": "λt.λf.f"
+        },
+        {
+          "name": "If",
+          "source": "λb.λt.λe.b t e"
+        },
+        {
+          "name": "And",
+          "source": "λp.λq.p q p"
+        },
+        {
+          "name": "Or",
+          "source": "λp.λq.p p q"
+        },
+        {
+          "name": "Not",
+          "source": "λb.b False True"
+        },
+        {
+          "name": "Pair",
+          "source": "λa.λb.λf.f a b"
+        },
+        {
+          "name": "Fst",
+          "source": "λp.p (λa.λb.a)"
+        },
+        {
+          "name": "Snd",
+          "source": "λp.p (λa.λb.b)"
+        },
+        {
+          "name": "Zero",
+          "source": "λf.λx.x"
+        },
+        {
+          "name": "Succ",
+          "source": "λn.λf.λx.f (n f x)"
+        },
+        {
+          "name": "One",
+          "source": "Succ Zero"
+        },
+        {
+          "name": "Two",
+          "source": "Succ One"
+        },
+        {
+          "name": "Three",
+          "source": "Succ Two"
+        },
+        {
+          "name": "Four",
+          "source": "Succ Three"
+        },
+        {
+          "name": "Add",
+          "source": "λm.λn.λf.λx.m f (n f x)"
+        },
+        {
+          "name": "Mul",
+          "source": "λm.λn.λf.λx.m (n f) x"
+        },
+        {
+          "name": "Pred",
+          "source": "λn.λf.λx.n (λg.λh.h (g f)) (λu.x) (λu.u)"
+        },
+        {
+          "name": "Sub",
+          "source": "λm.λn.n Pred m"
+        },
+        {
+          "name": "IsZero",
+          "source": "λn.n (λx.False) True"
+        },
+        {
+          "name": "Leq",
+          "source": "λm.λn.IsZero (Sub m n)"
+        },
+        {
+          "name": "EqNat",
+          "source": "λm.λn.And (Leq m n) (Leq n m)"
+        },
+        {
+          "name": "N0",
+          "source": "Zero"
+        },
+        {
+          "name": "N1",
+          "source": "One"
+        },
+        {
+          "name": "N2",
+          "source": "Two"
+        },
+        {
+          "name": "N3",
+          "source": "Three"
+        },
+        {
+          "name": "N4",
+          "source": "Four"
+        },
+        {
+          "name": "0",
+          "source": "Zero"
+        },
+        {
+          "name": "1",
+          "source": "One"
+        },
+        {
+          "name": "2",
+          "source": "Two"
+        },
+        {
+          "name": "3",
+          "source": "Three"
+        },
+        {
+          "name": "4",
+          "source": "Four"
+        },
+        {
+          "name": "ResultOk",
+          "source": "λv.λok.λerr.ok v"
+        },
+        {
+          "name": "ResultErr",
+          "source": "λe.λok.λerr.err e"
+        },
+        {
+          "name": "ResultBind",
+          "source": "λr.λk.r k ResultErr"
+        },
+        {
+          "name": "ZMake",
+          "source": "λs.λn.Pair (If (IsZero n) Zero s) n"
+        },
+        {
+          "name": "ZSign",
+          "source": "Fst"
+        },
+        {
+          "name": "ZMagnitude",
+          "source": "Snd"
+        },
+        {
+          "name": "ZZero",
+          "source": "ZMake Zero Zero"
+        },
+        {
+          "name": "ZOne",
+          "source": "ZMake Zero One"
+        },
+        {
+          "name": "ZTwo",
+          "source": "ZMake Zero Two"
+        },
+        {
+          "name": "ZMinusOne",
+          "source": "ZMake One One"
+        },
+        {
+          "name": "ZNeg",
+          "source": "λz.ZMake (If (IsZero (Fst z)) One Zero) (Snd z)"
+        },
+        {
+          "name": "ZAdd",
+          "source": "λa.λb.If (EqNat (Fst a) (Fst b)) (ZMake (Fst a) (Add (Snd a) (Snd b))) (If (Leq (Snd a) (Snd b)) (ZMake (Fst b) (Sub (Snd b) (Snd a))) (ZMake (Fst a) (Sub (Snd a) (Snd b))))"
+        },
+        {
+          "name": "ZSub",
+          "source": "λa.λb.ZAdd a (ZNeg b)"
+        },
+        {
+          "name": "ZMul",
+          "source": "λa.λb.ZMake (If (EqNat (Fst a) (Fst b)) Zero One) (Mul (Snd a) (Snd b))"
+        },
+        {
+          "name": "ZEq",
+          "source": "λa.λb.And (EqNat (Fst a) (Fst b)) (EqNat (Snd a) (Snd b))"
+        },
+        {
+          "name": "ZLeq",
+          "source": "λa.λb.If (EqNat (Fst a) (Fst b)) (If (IsZero (Fst a)) (Leq (Snd a) (Snd b)) (Leq (Snd b) (Snd a))) (IsZero (Fst b))"
+        },
+        {
+          "name": "ZFromDiff",
+          "source": "λp.λn.If (Leq p n) (ZMake One (Sub n p)) (ZMake Zero (Sub p n))"
+        },
+        {
+          "name": "ZToDiff",
+          "source": "λz.If (IsZero (Fst z)) (Pair (Snd z) Zero) (Pair Zero (Snd z))"
+        },
+        {
+          "name": "QRep",
+          "source": "Pair"
+        },
+        {
+          "name": "QRepNum",
+          "source": "Fst"
+        },
+        {
+          "name": "QRepDen",
+          "source": "Snd"
+        },
+        {
+          "name": "QRepValid",
+          "source": "λr.And (IsZero (Fst (Snd r))) (Not (IsZero (Snd (Snd r))))"
+        },
+        {
+          "name": "QMake",
+          "source": "λn.λd.If (IsZero (Snd d)) (ResultErr Zero) (ResultOk (Pair (If (IsZero (Fst d)) n (ZNeg n)) (ZMake Zero (Snd d))))"
+        },
+        {
+          "name": "QZero",
+          "source": "QRep ZZero ZOne"
+        },
+        {
+          "name": "QOne",
+          "source": "QRep ZOne ZOne"
+        },
+        {
+          "name": "QHalf",
+          "source": "QRep ZOne ZTwo"
+        },
+        {
+          "name": "QRepNeg",
+          "source": "λr.QRep (ZNeg (Fst r)) (Snd r)"
+        },
+        {
+          "name": "QRepAdd",
+          "source": "λa.λb.QRep (ZAdd (ZMul (Fst a) (Snd b)) (ZMul (Fst b) (Snd a))) (ZMul (Snd a) (Snd b))"
+        },
+        {
+          "name": "QRepSub",
+          "source": "λa.λb.QRepAdd a (QRepNeg b)"
+        },
+        {
+          "name": "QRepMul",
+          "source": "λa.λb.QRep (ZMul (Fst a) (Fst b)) (ZMul (Snd a) (Snd b))"
+        },
+        {
+          "name": "QRepEq",
+          "source": "λa.λb.ZEq (ZMul (Fst a) (Snd b)) (ZMul (Fst b) (Snd a))"
+        },
+        {
+          "name": "QRepLeq",
+          "source": "λa.λb.ZLeq (ZMul (Fst a) (Snd b)) (ZMul (Fst b) (Snd a))"
+        },
+        {
+          "name": "QRepInv",
+          "source": "λr.QMake (Snd r) (Fst r)"
+        },
+        {
+          "name": "QRepDiv",
+          "source": "λa.λb.QMake (ZMul (Fst a) (Snd b)) (ZMul (Snd a) (Fst b))"
+        }
+      ],
+      "maxSteps": 5000,
+      "initial": "((Add Two) Three)",
+      "expandedStart": "(λx0.(λx1.(x0 (x0 (x0 (x0 (x0 (((λx2.(λx3.x3)) x0) x1))))))))",
+      "steps": [
+        {
+          "index": 1,
+          "rule": "delta",
+          "path": [
+            "fn",
+            "fn"
+          ],
+          "before": "((Add Two) Three)",
+          "definition": "Add",
+          "after": "(((λx0.(λx1.(λx2.(λx3.((x0 x2) ((x1 x2) x3)))))) Two) Three)"
+        },
+        {
+          "index": 2,
+          "rule": "beta",
+          "path": [
+            "fn"
+          ],
+          "before": "(((λx0.(λx1.(λx2.(λx3.((x0 x2) ((x1 x2) x3)))))) Two) Three)",
+          "after": "((λx0.(λx1.(λx2.((Two x1) ((x0 x1) x2))))) Three)"
+        },
+        {
+          "index": 3,
+          "rule": "beta",
+          "path": [],
+          "before": "((λx0.(λx1.(λx2.((Two x1) ((x0 x1) x2))))) Three)",
+          "after": "(λx0.(λx1.((Two x0) ((Three x0) x1))))"
+        },
+        {
+          "index": 4,
+          "rule": "delta",
+          "path": [
+            "body",
+            "body",
+            "fn",
+            "fn"
+          ],
+          "before": "(λx0.(λx1.((Two x0) ((Three x0) x1))))",
+          "definition": "Two",
+          "after": "(λx0.(λx1.(((Succ One) x0) ((Three x0) x1))))"
+        },
+        {
+          "index": 5,
+          "rule": "delta",
+          "path": [
+            "body",
+            "body",
+            "fn",
+            "fn",
+            "fn"
+          ],
+          "before": "(λx0.(λx1.(((Succ One) x0) ((Three x0) x1))))",
+          "definition": "Succ",
+          "after": "(λx0.(λx1.((((λx2.(λx3.(λx4.(x3 ((x2 x3) x4))))) One) x0) ((Three x0) x1))))"
+        },
+        {
+          "index": 6,
+          "rule": "beta",
+          "path": [
+            "body",
+            "body",
+            "fn",
+            "fn"
+          ],
+          "before": "(λx0.(λx1.((((λx2.(λx3.(λx4.(x3 ((x2 x3) x4))))) One) x0) ((Three x0) x1))))",
+          "after": "(λx0.(λx1.(((λx2.(λx3.(x2 ((One x2) x3)))) x0) ((Three x0) x1))))"
+        },
+        {
+          "index": 7,
+          "rule": "beta",
+          "path": [
+            "body",
+            "body",
+            "fn"
+          ],
+          "before": "(λx0.(λx1.(((λx2.(λx3.(x2 ((One x2) x3)))) x0) ((Three x0) x1))))",
+          "after": "(λx0.(λx1.((λx2.(x0 ((One x0) x2))) ((Three x0) x1))))"
+        },
+        {
+          "index": 8,
+          "rule": "beta",
+          "path": [
+            "body",
+            "body"
+          ],
+          "before": "(λx0.(λx1.((λx2.(x0 ((One x0) x2))) ((Three x0) x1))))",
+          "after": "(λx0.(λx1.(x0 ((One x0) ((Three x0) x1)))))"
+        },
+        {
+          "index": 9,
+          "rule": "delta",
+          "path": [
+            "body",
+            "body",
+            "arg",
+            "fn",
+            "fn"
+          ],
+          "before": "(λx0.(λx1.(x0 ((One x0) ((Three x0) x1)))))",
+          "definition": "One",
+          "after": "(λx0.(λx1.(x0 (((Succ Zero) x0) ((Three x0) x1)))))"
+        },
+        {
+          "index": 10,
+          "rule": "delta",
+          "path": [
+            "body",
+            "body",
+            "arg",
+            "fn",
+            "fn",
+            "fn"
+          ],
+          "before": "(λx0.(λx1.(x0 (((Succ Zero) x0) ((Three x0) x1)))))",
+          "definition": "Succ",
+          "after": "(λx0.(λx1.(x0 ((((λx2.(λx3.(λx4.(x3 ((x2 x3) x4))))) Zero) x0) ((Three x0) x1)))))"
+        },
+        {
+          "index": 11,
+          "rule": "beta",
+          "path": [
+            "body",
+            "body",
+            "arg",
+            "fn",
+            "fn"
+          ],
+          "before": "(λx0.(λx1.(x0 ((((λx2.(λx3.(λx4.(x3 ((x2 x3) x4))))) Zero) x0) ((Three x0) x1)))))",
+          "after": "(λx0.(λx1.(x0 (((λx2.(λx3.(x2 ((Zero x2) x3)))) x0) ((Three x0) x1)))))"
+        },
+        {
+          "index": 12,
+          "rule": "beta",
+          "path": [
+            "body",
+            "body",
+            "arg",
+            "fn"
+          ],
+          "before": "(λx0.(λx1.(x0 (((λx2.(λx3.(x2 ((Zero x2) x3)))) x0) ((Three x0) x1)))))",
+          "after": "(λx0.(λx1.(x0 ((λx2.(x0 ((Zero x0) x2))) ((Three x0) x1)))))"
+        },
+        {
+          "index": 13,
+          "rule": "beta",
+          "path": [
+            "body",
+            "body",
+            "arg"
+          ],
+          "before": "(λx0.(λx1.(x0 ((λx2.(x0 ((Zero x0) x2))) ((Three x0) x1)))))",
+          "after": "(λx0.(λx1.(x0 (x0 ((Zero x0) ((Three x0) x1))))))"
+        },
+        {
+          "index": 14,
+          "rule": "delta",
+          "path": [
+            "body",
+            "body",
+            "arg",
+            "arg",
+            "fn",
+            "fn"
+          ],
+          "before": "(λx0.(λx1.(x0 (x0 ((Zero x0) ((Three x0) x1))))))",
+          "definition": "Zero",
+          "after": "(λx0.(λx1.(x0 (x0 (((λx2.(λx3.x3)) x0) ((Three x0) x1))))))"
+        },
+        {
+          "index": 15,
+          "rule": "beta",
+          "path": [
+            "body",
+            "body",
+            "arg",
+            "arg",
+            "fn"
+          ],
+          "before": "(λx0.(λx1.(x0 (x0 (((λx2.(λx3.x3)) x0) ((Three x0) x1))))))",
+          "after": "(λx0.(λx1.(x0 (x0 ((λx2.x2) ((Three x0) x1))))))"
+        },
+        {
+          "index": 16,
+          "rule": "beta",
+          "path": [
+            "body",
+            "body",
+            "arg",
+            "arg"
+          ],
+          "before": "(λx0.(λx1.(x0 (x0 ((λx2.x2) ((Three x0) x1))))))",
+          "after": "(λx0.(λx1.(x0 (x0 ((Three x0) x1)))))"
+        },
+        {
+          "index": 17,
+          "rule": "delta",
+          "path": [
+            "body",
+            "body",
+            "arg",
+            "arg",
+            "fn",
+            "fn"
+          ],
+          "before": "(λx0.(λx1.(x0 (x0 ((Three x0) x1)))))",
+          "definition": "Three",
+          "after": "(λx0.(λx1.(x0 (x0 (((Succ Two) x0) x1)))))"
+        },
+        {
+          "index": 18,
+          "rule": "delta",
+          "path": [
+            "body",
+            "body",
+            "arg",
+            "arg",
+            "fn",
+            "fn",
+            "fn"
+          ],
+          "before": "(λx0.(λx1.(x0 (x0 (((Succ Two) x0) x1)))))",
+          "definition": "Succ",
+          "after": "(λx0.(λx1.(x0 (x0 ((((λx2.(λx3.(λx4.(x3 ((x2 x3) x4))))) Two) x0) x1)))))"
+        },
+        {
+          "index": 19,
+          "rule": "beta",
+          "path": [
+            "body",
+            "body",
+            "arg",
+            "arg",
+            "fn",
+            "fn"
+          ],
+          "before": "(λx0.(λx1.(x0 (x0 ((((λx2.(λx3.(λx4.(x3 ((x2 x3) x4))))) Two) x0) x1)))))",
+          "after": "(λx0.(λx1.(x0 (x0 (((λx2.(λx3.(x2 ((Two x2) x3)))) x0) x1)))))"
+        },
+        {
+          "index": 20,
+          "rule": "beta",
+          "path": [
+            "body",
+            "body",
+            "arg",
+            "arg",
+            "fn"
+          ],
+          "before": "(λx0.(λx1.(x0 (x0 (((λx2.(λx3.(x2 ((Two x2) x3)))) x0) x1)))))",
+          "after": "(λx0.(λx1.(x0 (x0 ((λx2.(x0 ((Two x0) x2))) x1)))))"
+        },
+        {
+          "index": 21,
+          "rule": "beta",
+          "path": [
+            "body",
+            "body",
+            "arg",
+            "arg"
+          ],
+          "before": "(λx0.(λx1.(x0 (x0 ((λx2.(x0 ((Two x0) x2))) x1)))))",
+          "after": "(λx0.(λx1.(x0 (x0 (x0 ((Two x0) x1))))))"
+        },
+        {
+          "index": 22,
+          "rule": "delta",
+          "path": [
+            "body",
+            "body",
+            "arg",
+            "arg",
+            "arg",
+            "fn",
+            "fn"
+          ],
+          "before": "(λx0.(λx1.(x0 (x0 (x0 ((Two x0) x1))))))",
+          "definition": "Two",
+          "after": "(λx0.(λx1.(x0 (x0 (x0 (((Succ One) x0) x1))))))"
+        },
+        {
+          "index": 23,
+          "rule": "delta",
+          "path": [
+            "body",
+            "body",
+            "arg",
+            "arg",
+            "arg",
+            "fn",
+            "fn",
+            "fn"
+          ],
+          "before": "(λx0.(λx1.(x0 (x0 (x0 (((Succ One) x0) x1))))))",
+          "definition": "Succ",
+          "after": "(λx0.(λx1.(x0 (x0 (x0 ((((λx2.(λx3.(λx4.(x3 ((x2 x3) x4))))) One) x0) x1))))))"
+        },
+        {
+          "index": 24,
+          "rule": "beta",
+          "path": [
+            "body",
+            "body",
+            "arg",
+            "arg",
+            "arg",
+            "fn",
+            "fn"
+          ],
+          "before": "(λx0.(λx1.(x0 (x0 (x0 ((((λx2.(λx3.(λx4.(x3 ((x2 x3) x4))))) One) x0) x1))))))",
+          "after": "(λx0.(λx1.(x0 (x0 (x0 (((λx2.(λx3.(x2 ((One x2) x3)))) x0) x1))))))"
+        },
+        {
+          "index": 25,
+          "rule": "beta",
+          "path": [
+            "body",
+            "body",
+            "arg",
+            "arg",
+            "arg",
+            "fn"
+          ],
+          "before": "(λx0.(λx1.(x0 (x0 (x0 (((λx2.(λx3.(x2 ((One x2) x3)))) x0) x1))))))",
+          "after": "(λx0.(λx1.(x0 (x0 (x0 ((λx2.(x0 ((One x0) x2))) x1))))))"
+        },
+        {
+          "index": 26,
+          "rule": "beta",
+          "path": [
+            "body",
+            "body",
+            "arg",
+            "arg",
+            "arg"
+          ],
+          "before": "(λx0.(λx1.(x0 (x0 (x0 ((λx2.(x0 ((One x0) x2))) x1))))))",
+          "after": "(λx0.(λx1.(x0 (x0 (x0 (x0 ((One x0) x1)))))))"
+        },
+        {
+          "index": 27,
+          "rule": "delta",
+          "path": [
+            "body",
+            "body",
+            "arg",
+            "arg",
+            "arg",
+            "arg",
+            "fn",
+            "fn"
+          ],
+          "before": "(λx0.(λx1.(x0 (x0 (x0 (x0 ((One x0) x1)))))))",
+          "definition": "One",
+          "after": "(λx0.(λx1.(x0 (x0 (x0 (x0 (((Succ Zero) x0) x1)))))))"
+        },
+        {
+          "index": 28,
+          "rule": "delta",
+          "path": [
+            "body",
+            "body",
+            "arg",
+            "arg",
+            "arg",
+            "arg",
+            "fn",
+            "fn",
+            "fn"
+          ],
+          "before": "(λx0.(λx1.(x0 (x0 (x0 (x0 (((Succ Zero) x0) x1)))))))",
+          "definition": "Succ",
+          "after": "(λx0.(λx1.(x0 (x0 (x0 (x0 ((((λx2.(λx3.(λx4.(x3 ((x2 x3) x4))))) Zero) x0) x1)))))))"
+        },
+        {
+          "index": 29,
+          "rule": "beta",
+          "path": [
+            "body",
+            "body",
+            "arg",
+            "arg",
+            "arg",
+            "arg",
+            "fn",
+            "fn"
+          ],
+          "before": "(λx0.(λx1.(x0 (x0 (x0 (x0 ((((λx2.(λx3.(λx4.(x3 ((x2 x3) x4))))) Zero) x0) x1)))))))",
+          "after": "(λx0.(λx1.(x0 (x0 (x0 (x0 (((λx2.(λx3.(x2 ((Zero x2) x3)))) x0) x1)))))))"
+        },
+        {
+          "index": 30,
+          "rule": "beta",
+          "path": [
+            "body",
+            "body",
+            "arg",
+            "arg",
+            "arg",
+            "arg",
+            "fn"
+          ],
+          "before": "(λx0.(λx1.(x0 (x0 (x0 (x0 (((λx2.(λx3.(x2 ((Zero x2) x3)))) x0) x1)))))))",
+          "after": "(λx0.(λx1.(x0 (x0 (x0 (x0 ((λx2.(x0 ((Zero x0) x2))) x1)))))))"
+        },
+        {
+          "index": 31,
+          "rule": "beta",
+          "path": [
+            "body",
+            "body",
+            "arg",
+            "arg",
+            "arg",
+            "arg"
+          ],
+          "before": "(λx0.(λx1.(x0 (x0 (x0 (x0 ((λx2.(x0 ((Zero x0) x2))) x1)))))))",
+          "after": "(λx0.(λx1.(x0 (x0 (x0 (x0 (x0 ((Zero x0) x1))))))))"
+        },
+        {
+          "index": 32,
+          "rule": "delta",
+          "path": [
+            "body",
+            "body",
+            "arg",
+            "arg",
+            "arg",
+            "arg",
+            "arg",
+            "fn",
+            "fn"
+          ],
+          "before": "(λx0.(λx1.(x0 (x0 (x0 (x0 (x0 ((Zero x0) x1))))))))",
+          "definition": "Zero",
+          "after": "(λx0.(λx1.(x0 (x0 (x0 (x0 (x0 (((λx2.(λx3.x3)) x0) x1))))))))"
+        },
+        {
+          "index": 33,
+          "rule": "beta",
+          "path": [
+            "body",
+            "body",
+            "arg",
+            "arg",
+            "arg",
+            "arg",
+            "arg",
+            "fn"
+          ],
+          "before": "(λx0.(λx1.(x0 (x0 (x0 (x0 (x0 (((λx2.(λx3.x3)) x0) x1))))))))",
+          "after": "(λx0.(λx1.(x0 (x0 (x0 (x0 (x0 ((λx2.x2) x1))))))))"
+        },
+        {
+          "index": 34,
+          "rule": "beta",
+          "path": [
+            "body",
+            "body",
+            "arg",
+            "arg",
+            "arg",
+            "arg",
+            "arg"
+          ],
+          "before": "(λx0.(λx1.(x0 (x0 (x0 (x0 (x0 ((λx2.x2) x1))))))))",
+          "after": "(λx0.(λx1.(x0 (x0 (x0 (x0 (x0 x1)))))))"
+        }
+      ],
+      "final": "(λx0.(λx1.(x0 (x0 (x0 (x0 (x0 x1)))))))",
+      "status": "normal-form"
+    },
+    {
+      "schema": "lambda-trace/1",
+      "version": "8.0.1",
+      "strategy": "leftmost-outermost-interleaved",
+      "source": "(λy_1.λy.y) y",
+      "definitions": [],
+      "maxSteps": 5000,
+      "initial": "((λx0.(λx1.x1)) y)",
+      "expandedStart": "((λx0.(λx1.x1)) y)",
+      "steps": [
+        {
+          "index": 1,
+          "rule": "beta",
+          "path": [],
+          "before": "((λx0.(λx1.x1)) y)",
+          "after": "(λx0.x0)"
+        }
+      ],
+      "final": "(λx0.x0)",
+      "status": "normal-form"
+    },
+    {
+      "schema": "lambda-trace/1",
+      "version": "8.0.1",
+      "strategy": "leftmost-outermost-interleaved",
+      "source": "Fst (Pair Two Three)",
+      "definitions": [
+        {
+          "name": "True",
+          "source": "λt.λf.t"
+        },
+        {
+          "name": "False",
+          "source": "λt.λf.f"
+        },
+        {
+          "name": "If",
+          "source": "λb.λt.λe.b t e"
+        },
+        {
+          "name": "And",
+          "source": "λp.λq.p q p"
+        },
+        {
+          "name": "Or",
+          "source": "λp.λq.p p q"
+        },
+        {
+          "name": "Not",
+          "source": "λb.b False True"
+        },
+        {
+          "name": "Pair",
+          "source": "λa.λb.λf.f a b"
+        },
+        {
+          "name": "Fst",
+          "source": "λp.p (λa.λb.a)"
+        },
+        {
+          "name": "Snd",
+          "source": "λp.p (λa.λb.b)"
+        },
+        {
+          "name": "Zero",
+          "source": "λf.λx.x"
+        },
+        {
+          "name": "Succ",
+          "source": "λn.λf.λx.f (n f x)"
+        },
+        {
+          "name": "One",
+          "source": "Succ Zero"
+        },
+        {
+          "name": "Two",
+          "source": "Succ One"
+        },
+        {
+          "name": "Three",
+          "source": "Succ Two"
+        },
+        {
+          "name": "Four",
+          "source": "Succ Three"
+        },
+        {
+          "name": "Add",
+          "source": "λm.λn.λf.λx.m f (n f x)"
+        },
+        {
+          "name": "Mul",
+          "source": "λm.λn.λf.λx.m (n f) x"
+        },
+        {
+          "name": "Pred",
+          "source": "λn.λf.λx.n (λg.λh.h (g f)) (λu.x) (λu.u)"
+        },
+        {
+          "name": "Sub",
+          "source": "λm.λn.n Pred m"
+        },
+        {
+          "name": "IsZero",
+          "source": "λn.n (λx.False) True"
+        },
+        {
+          "name": "Leq",
+          "source": "λm.λn.IsZero (Sub m n)"
+        },
+        {
+          "name": "EqNat",
+          "source": "λm.λn.And (Leq m n) (Leq n m)"
+        },
+        {
+          "name": "N0",
+          "source": "Zero"
+        },
+        {
+          "name": "N1",
+          "source": "One"
+        },
+        {
+          "name": "N2",
+          "source": "Two"
+        },
+        {
+          "name": "N3",
+          "source": "Three"
+        },
+        {
+          "name": "N4",
+          "source": "Four"
+        },
+        {
+          "name": "0",
+          "source": "Zero"
+        },
+        {
+          "name": "1",
+          "source": "One"
+        },
+        {
+          "name": "2",
+          "source": "Two"
+        },
+        {
+          "name": "3",
+          "source": "Three"
+        },
+        {
+          "name": "4",
+          "source": "Four"
+        },
+        {
+          "name": "ResultOk",
+          "source": "λv.λok.λerr.ok v"
+        },
+        {
+          "name": "ResultErr",
+          "source": "λe.λok.λerr.err e"
+        },
+        {
+          "name": "ResultBind",
+          "source": "λr.λk.r k ResultErr"
+        },
+        {
+          "name": "ZMake",
+          "source": "λs.λn.Pair (If (IsZero n) Zero s) n"
+        },
+        {
+          "name": "ZSign",
+          "source": "Fst"
+        },
+        {
+          "name": "ZMagnitude",
+          "source": "Snd"
+        },
+        {
+          "name": "ZZero",
+          "source": "ZMake Zero Zero"
+        },
+        {
+          "name": "ZOne",
+          "source": "ZMake Zero One"
+        },
+        {
+          "name": "ZTwo",
+          "source": "ZMake Zero Two"
+        },
+        {
+          "name": "ZMinusOne",
+          "source": "ZMake One One"
+        },
+        {
+          "name": "ZNeg",
+          "source": "λz.ZMake (If (IsZero (Fst z)) One Zero) (Snd z)"
+        },
+        {
+          "name": "ZAdd",
+          "source": "λa.λb.If (EqNat (Fst a) (Fst b)) (ZMake (Fst a) (Add (Snd a) (Snd b))) (If (Leq (Snd a) (Snd b)) (ZMake (Fst b) (Sub (Snd b) (Snd a))) (ZMake (Fst a) (Sub (Snd a) (Snd b))))"
+        },
+        {
+          "name": "ZSub",
+          "source": "λa.λb.ZAdd a (ZNeg b)"
+        },
+        {
+          "name": "ZMul",
+          "source": "λa.λb.ZMake (If (EqNat (Fst a) (Fst b)) Zero One) (Mul (Snd a) (Snd b))"
+        },
+        {
+          "name": "ZEq",
+          "source": "λa.λb.And (EqNat (Fst a) (Fst b)) (EqNat (Snd a) (Snd b))"
+        },
+        {
+          "name": "ZLeq",
+          "source": "λa.λb.If (EqNat (Fst a) (Fst b)) (If (IsZero (Fst a)) (Leq (Snd a) (Snd b)) (Leq (Snd b) (Snd a))) (IsZero (Fst b))"
+        },
+        {
+          "name": "ZFromDiff",
+          "source": "λp.λn.If (Leq p n) (ZMake One (Sub n p)) (ZMake Zero (Sub p n))"
+        },
+        {
+          "name": "ZToDiff",
+          "source": "λz.If (IsZero (Fst z)) (Pair (Snd z) Zero) (Pair Zero (Snd z))"
+        },
+        {
+          "name": "QRep",
+          "source": "Pair"
+        },
+        {
+          "name": "QRepNum",
+          "source": "Fst"
+        },
+        {
+          "name": "QRepDen",
+          "source": "Snd"
+        },
+        {
+          "name": "QRepValid",
+          "source": "λr.And (IsZero (Fst (Snd r))) (Not (IsZero (Snd (Snd r))))"
+        },
+        {
+          "name": "QMake",
+          "source": "λn.λd.If (IsZero (Snd d)) (ResultErr Zero) (ResultOk (Pair (If (IsZero (Fst d)) n (ZNeg n)) (ZMake Zero (Snd d))))"
+        },
+        {
+          "name": "QZero",
+          "source": "QRep ZZero ZOne"
+        },
+        {
+          "name": "QOne",
+          "source": "QRep ZOne ZOne"
+        },
+        {
+          "name": "QHalf",
+          "source": "QRep ZOne ZTwo"
+        },
+        {
+          "name": "QRepNeg",
+          "source": "λr.QRep (ZNeg (Fst r)) (Snd r)"
+        },
+        {
+          "name": "QRepAdd",
+          "source": "λa.λb.QRep (ZAdd (ZMul (Fst a) (Snd b)) (ZMul (Fst b) (Snd a))) (ZMul (Snd a) (Snd b))"
+        },
+        {
+          "name": "QRepSub",
+          "source": "λa.λb.QRepAdd a (QRepNeg b)"
+        },
+        {
+          "name": "QRepMul",
+          "source": "λa.λb.QRep (ZMul (Fst a) (Fst b)) (ZMul (Snd a) (Snd b))"
+        },
+        {
+          "name": "QRepEq",
+          "source": "λa.λb.ZEq (ZMul (Fst a) (Snd b)) (ZMul (Fst b) (Snd a))"
+        },
+        {
+          "name": "QRepLeq",
+          "source": "λa.λb.ZLeq (ZMul (Fst a) (Snd b)) (ZMul (Fst b) (Snd a))"
+        },
+        {
+          "name": "QRepInv",
+          "source": "λr.QMake (Snd r) (Fst r)"
+        },
+        {
+          "name": "QRepDiv",
+          "source": "λa.λb.QMake (ZMul (Fst a) (Snd b)) (ZMul (Snd a) (Fst b))"
+        }
+      ],
+      "maxSteps": 5000,
+      "initial": "(Fst ((Pair Two) Three))",
+      "expandedStart": "(λx0.(λx1.(x0 (x0 (((λx2.(λx3.x3)) x0) x1)))))",
+      "steps": [
+        {
+          "index": 1,
+          "rule": "delta",
+          "path": [
+            "fn"
+          ],
+          "before": "(Fst ((Pair Two) Three))",
+          "definition": "Fst",
+          "after": "((λx0.(x0 (λx1.(λx2.x1)))) ((Pair Two) Three))"
+        },
+        {
+          "index": 2,
+          "rule": "beta",
+          "path": [],
+          "before": "((λx0.(x0 (λx1.(λx2.x1)))) ((Pair Two) Three))",
+          "after": "(((Pair Two) Three) (λx0.(λx1.x0)))"
+        },
+        {
+          "index": 3,
+          "rule": "delta",
+          "path": [
+            "fn",
+            "fn",
+            "fn"
+          ],
+          "before": "(((Pair Two) Three) (λx0.(λx1.x0)))",
+          "definition": "Pair",
+          "after": "((((λx0.(λx1.(λx2.((x2 x0) x1)))) Two) Three) (λx0.(λx1.x0)))"
+        },
+        {
+          "index": 4,
+          "rule": "beta",
+          "path": [
+            "fn",
+            "fn"
+          ],
+          "before": "((((λx0.(λx1.(λx2.((x2 x0) x1)))) Two) Three) (λx0.(λx1.x0)))",
+          "after": "(((λx0.(λx1.((x1 Two) x0))) Three) (λx0.(λx1.x0)))"
+        },
+        {
+          "index": 5,
+          "rule": "beta",
+          "path": [
+            "fn"
+          ],
+          "before": "(((λx0.(λx1.((x1 Two) x0))) Three) (λx0.(λx1.x0)))",
+          "after": "((λx0.((x0 Two) Three)) (λx0.(λx1.x0)))"
+        },
+        {
+          "index": 6,
+          "rule": "beta",
+          "path": [],
+          "before": "((λx0.((x0 Two) Three)) (λx0.(λx1.x0)))",
+          "after": "(((λx0.(λx1.x0)) Two) Three)"
+        },
+        {
+          "index": 7,
+          "rule": "beta",
+          "path": [
+            "fn"
+          ],
+          "before": "(((λx0.(λx1.x0)) Two) Three)",
+          "after": "((λx0.Two) Three)"
+        },
+        {
+          "index": 8,
+          "rule": "beta",
+          "path": [],
+          "before": "((λx0.Two) Three)",
+          "after": "Two"
+        },
+        {
+          "index": 9,
+          "rule": "delta",
+          "path": [],
+          "before": "Two",
+          "definition": "Two",
+          "after": "(Succ One)"
+        },
+        {
+          "index": 10,
+          "rule": "delta",
+          "path": [
+            "fn"
+          ],
+          "before": "(Succ One)",
+          "definition": "Succ",
+          "after": "((λx0.(λx1.(λx2.(x1 ((x0 x1) x2))))) One)"
+        },
+        {
+          "index": 11,
+          "rule": "beta",
+          "path": [],
+          "before": "((λx0.(λx1.(λx2.(x1 ((x0 x1) x2))))) One)",
+          "after": "(λx0.(λx1.(x0 ((One x0) x1))))"
+        },
+        {
+          "index": 12,
+          "rule": "delta",
+          "path": [
+            "body",
+            "body",
+            "arg",
+            "fn",
+            "fn"
+          ],
+          "before": "(λx0.(λx1.(x0 ((One x0) x1))))",
+          "definition": "One",
+          "after": "(λx0.(λx1.(x0 (((Succ Zero) x0) x1))))"
+        },
+        {
+          "index": 13,
+          "rule": "delta",
+          "path": [
+            "body",
+            "body",
+            "arg",
+            "fn",
+            "fn",
+            "fn"
+          ],
+          "before": "(λx0.(λx1.(x0 (((Succ Zero) x0) x1))))",
+          "definition": "Succ",
+          "after": "(λx0.(λx1.(x0 ((((λx2.(λx3.(λx4.(x3 ((x2 x3) x4))))) Zero) x0) x1))))"
+        },
+        {
+          "index": 14,
+          "rule": "beta",
+          "path": [
+            "body",
+            "body",
+            "arg",
+            "fn",
+            "fn"
+          ],
+          "before": "(λx0.(λx1.(x0 ((((λx2.(λx3.(λx4.(x3 ((x2 x3) x4))))) Zero) x0) x1))))",
+          "after": "(λx0.(λx1.(x0 (((λx2.(λx3.(x2 ((Zero x2) x3)))) x0) x1))))"
+        },
+        {
+          "index": 15,
+          "rule": "beta",
+          "path": [
+            "body",
+            "body",
+            "arg",
+            "fn"
+          ],
+          "before": "(λx0.(λx1.(x0 (((λx2.(λx3.(x2 ((Zero x2) x3)))) x0) x1))))",
+          "after": "(λx0.(λx1.(x0 ((λx2.(x0 ((Zero x0) x2))) x1))))"
+        },
+        {
+          "index": 16,
+          "rule": "beta",
+          "path": [
+            "body",
+            "body",
+            "arg"
+          ],
+          "before": "(λx0.(λx1.(x0 ((λx2.(x0 ((Zero x0) x2))) x1))))",
+          "after": "(λx0.(λx1.(x0 (x0 ((Zero x0) x1)))))"
+        },
+        {
+          "index": 17,
+          "rule": "delta",
+          "path": [
+            "body",
+            "body",
+            "arg",
+            "arg",
+            "fn",
+            "fn"
+          ],
+          "before": "(λx0.(λx1.(x0 (x0 ((Zero x0) x1)))))",
+          "definition": "Zero",
+          "after": "(λx0.(λx1.(x0 (x0 (((λx2.(λx3.x3)) x0) x1)))))"
+        },
+        {
+          "index": 18,
+          "rule": "beta",
+          "path": [
+            "body",
+            "body",
+            "arg",
+            "arg",
+            "fn"
+          ],
+          "before": "(λx0.(λx1.(x0 (x0 (((λx2.(λx3.x3)) x0) x1)))))",
+          "after": "(λx0.(λx1.(x0 (x0 ((λx2.x2) x1)))))"
+        },
+        {
+          "index": 19,
+          "rule": "beta",
+          "path": [
+            "body",
+            "body",
+            "arg",
+            "arg"
+          ],
+          "before": "(λx0.(λx1.(x0 (x0 ((λx2.x2) x1)))))",
+          "after": "(λx0.(λx1.(x0 (x0 x1))))"
+        }
+      ],
+      "final": "(λx0.(λx1.(x0 (x0 x1))))",
+      "status": "normal-form"
+    },
+    {
+      "schema": "lambda-trace/1",
+      "version": "8.0.1",
+      "strategy": "leftmost-outermost-interleaved",
+      "source": "ZMake One Zero",
+      "definitions": [
+        {
+          "name": "True",
+          "source": "λt.λf.t"
+        },
+        {
+          "name": "False",
+          "source": "λt.λf.f"
+        },
+        {
+          "name": "If",
+          "source": "λb.λt.λe.b t e"
+        },
+        {
+          "name": "And",
+          "source": "λp.λq.p q p"
+        },
+        {
+          "name": "Or",
+          "source": "λp.λq.p p q"
+        },
+        {
+          "name": "Not",
+          "source": "λb.b False True"
+        },
+        {
+          "name": "Pair",
+          "source": "λa.λb.λf.f a b"
+        },
+        {
+          "name": "Fst",
+          "source": "λp.p (λa.λb.a)"
+        },
+        {
+          "name": "Snd",
+          "source": "λp.p (λa.λb.b)"
+        },
+        {
+          "name": "Zero",
+          "source": "λf.λx.x"
+        },
+        {
+          "name": "Succ",
+          "source": "λn.λf.λx.f (n f x)"
+        },
+        {
+          "name": "One",
+          "source": "Succ Zero"
+        },
+        {
+          "name": "Two",
+          "source": "Succ One"
+        },
+        {
+          "name": "Three",
+          "source": "Succ Two"
+        },
+        {
+          "name": "Four",
+          "source": "Succ Three"
+        },
+        {
+          "name": "Add",
+          "source": "λm.λn.λf.λx.m f (n f x)"
+        },
+        {
+          "name": "Mul",
+          "source": "λm.λn.λf.λx.m (n f) x"
+        },
+        {
+          "name": "Pred",
+          "source": "λn.λf.λx.n (λg.λh.h (g f)) (λu.x) (λu.u)"
+        },
+        {
+          "name": "Sub",
+          "source": "λm.λn.n Pred m"
+        },
+        {
+          "name": "IsZero",
+          "source": "λn.n (λx.False) True"
+        },
+        {
+          "name": "Leq",
+          "source": "λm.λn.IsZero (Sub m n)"
+        },
+        {
+          "name": "EqNat",
+          "source": "λm.λn.And (Leq m n) (Leq n m)"
+        },
+        {
+          "name": "N0",
+          "source": "Zero"
+        },
+        {
+          "name": "N1",
+          "source": "One"
+        },
+        {
+          "name": "N2",
+          "source": "Two"
+        },
+        {
+          "name": "N3",
+          "source": "Three"
+        },
+        {
+          "name": "N4",
+          "source": "Four"
+        },
+        {
+          "name": "0",
+          "source": "Zero"
+        },
+        {
+          "name": "1",
+          "source": "One"
+        },
+        {
+          "name": "2",
+          "source": "Two"
+        },
+        {
+          "name": "3",
+          "source": "Three"
+        },
+        {
+          "name": "4",
+          "source": "Four"
+        },
+        {
+          "name": "ResultOk",
+          "source": "λv.λok.λerr.ok v"
+        },
+        {
+          "name": "ResultErr",
+          "source": "λe.λok.λerr.err e"
+        },
+        {
+          "name": "ResultBind",
+          "source": "λr.λk.r k ResultErr"
+        },
+        {
+          "name": "ZMake",
+          "source": "λs.λn.Pair (If (IsZero n) Zero s) n"
+        },
+        {
+          "name": "ZSign",
+          "source": "Fst"
+        },
+        {
+          "name": "ZMagnitude",
+          "source": "Snd"
+        },
+        {
+          "name": "ZZero",
+          "source": "ZMake Zero Zero"
+        },
+        {
+          "name": "ZOne",
+          "source": "ZMake Zero One"
+        },
+        {
+          "name": "ZTwo",
+          "source": "ZMake Zero Two"
+        },
+        {
+          "name": "ZMinusOne",
+          "source": "ZMake One One"
+        },
+        {
+          "name": "ZNeg",
+          "source": "λz.ZMake (If (IsZero (Fst z)) One Zero) (Snd z)"
+        },
+        {
+          "name": "ZAdd",
+          "source": "λa.λb.If (EqNat (Fst a) (Fst b)) (ZMake (Fst a) (Add (Snd a) (Snd b))) (If (Leq (Snd a) (Snd b)) (ZMake (Fst b) (Sub (Snd b) (Snd a))) (ZMake (Fst a) (Sub (Snd a) (Snd b))))"
+        },
+        {
+          "name": "ZSub",
+          "source": "λa.λb.ZAdd a (ZNeg b)"
+        },
+        {
+          "name": "ZMul",
+          "source": "λa.λb.ZMake (If (EqNat (Fst a) (Fst b)) Zero One) (Mul (Snd a) (Snd b))"
+        },
+        {
+          "name": "ZEq",
+          "source": "λa.λb.And (EqNat (Fst a) (Fst b)) (EqNat (Snd a) (Snd b))"
+        },
+        {
+          "name": "ZLeq",
+          "source": "λa.λb.If (EqNat (Fst a) (Fst b)) (If (IsZero (Fst a)) (Leq (Snd a) (Snd b)) (Leq (Snd b) (Snd a))) (IsZero (Fst b))"
+        },
+        {
+          "name": "ZFromDiff",
+          "source": "λp.λn.If (Leq p n) (ZMake One (Sub n p)) (ZMake Zero (Sub p n))"
+        },
+        {
+          "name": "ZToDiff",
+          "source": "λz.If (IsZero (Fst z)) (Pair (Snd z) Zero) (Pair Zero (Snd z))"
+        },
+        {
+          "name": "QRep",
+          "source": "Pair"
+        },
+        {
+          "name": "QRepNum",
+          "source": "Fst"
+        },
+        {
+          "name": "QRepDen",
+          "source": "Snd"
+        },
+        {
+          "name": "QRepValid",
+          "source": "λr.And (IsZero (Fst (Snd r))) (Not (IsZero (Snd (Snd r))))"
+        },
+        {
+          "name": "QMake",
+          "source": "λn.λd.If (IsZero (Snd d)) (ResultErr Zero) (ResultOk (Pair (If (IsZero (Fst d)) n (ZNeg n)) (ZMake Zero (Snd d))))"
+        },
+        {
+          "name": "QZero",
+          "source": "QRep ZZero ZOne"
+        },
+        {
+          "name": "QOne",
+          "source": "QRep ZOne ZOne"
+        },
+        {
+          "name": "QHalf",
+          "source": "QRep ZOne ZTwo"
+        },
+        {
+          "name": "QRepNeg",
+          "source": "λr.QRep (ZNeg (Fst r)) (Snd r)"
+        },
+        {
+          "name": "QRepAdd",
+          "source": "λa.λb.QRep (ZAdd (ZMul (Fst a) (Snd b)) (ZMul (Fst b) (Snd a))) (ZMul (Snd a) (Snd b))"
+        },
+        {
+          "name": "QRepSub",
+          "source": "λa.λb.QRepAdd a (QRepNeg b)"
+        },
+        {
+          "name": "QRepMul",
+          "source": "λa.λb.QRep (ZMul (Fst a) (Fst b)) (ZMul (Snd a) (Snd b))"
+        },
+        {
+          "name": "QRepEq",
+          "source": "λa.λb.ZEq (ZMul (Fst a) (Snd b)) (ZMul (Fst b) (Snd a))"
+        },
+        {
+          "name": "QRepLeq",
+          "source": "λa.λb.ZLeq (ZMul (Fst a) (Snd b)) (ZMul (Fst b) (Snd a))"
+        },
+        {
+          "name": "QRepInv",
+          "source": "λr.QMake (Snd r) (Fst r)"
+        },
+        {
+          "name": "QRepDiv",
+          "source": "λa.λb.QMake (ZMul (Fst a) (Snd b)) (ZMul (Snd a) (Fst b))"
+        }
+      ],
+      "maxSteps": 5000,
+      "initial": "((ZMake One) Zero)",
+      "expandedStart": "(λx0.((x0 (λx1.(λx2.x2))) (λx1.(λx2.x2))))",
+      "steps": [
+        {
+          "index": 1,
+          "rule": "delta",
+          "path": [
+            "fn",
+            "fn"
+          ],
+          "before": "((ZMake One) Zero)",
+          "definition": "ZMake",
+          "after": "(((λx0.(λx1.((Pair (((If (IsZero x1)) Zero) x0)) x1))) One) Zero)"
+        },
+        {
+          "index": 2,
+          "rule": "beta",
+          "path": [
+            "fn"
+          ],
+          "before": "(((λx0.(λx1.((Pair (((If (IsZero x1)) Zero) x0)) x1))) One) Zero)",
+          "after": "((λx0.((Pair (((If (IsZero x0)) Zero) One)) x0)) Zero)"
+        },
+        {
+          "index": 3,
+          "rule": "beta",
+          "path": [],
+          "before": "((λx0.((Pair (((If (IsZero x0)) Zero) One)) x0)) Zero)",
+          "after": "((Pair (((If (IsZero Zero)) Zero) One)) Zero)"
+        },
+        {
+          "index": 4,
+          "rule": "delta",
+          "path": [
+            "fn",
+            "fn"
+          ],
+          "before": "((Pair (((If (IsZero Zero)) Zero) One)) Zero)",
+          "definition": "Pair",
+          "after": "(((λx0.(λx1.(λx2.((x2 x0) x1)))) (((If (IsZero Zero)) Zero) One)) Zero)"
+        },
+        {
+          "index": 5,
+          "rule": "beta",
+          "path": [
+            "fn"
+          ],
+          "before": "(((λx0.(λx1.(λx2.((x2 x0) x1)))) (((If (IsZero Zero)) Zero) One)) Zero)",
+          "after": "((λx0.(λx1.((x1 (((If (IsZero Zero)) Zero) One)) x0))) Zero)"
+        },
+        {
+          "index": 6,
+          "rule": "beta",
+          "path": [],
+          "before": "((λx0.(λx1.((x1 (((If (IsZero Zero)) Zero) One)) x0))) Zero)",
+          "after": "(λx0.((x0 (((If (IsZero Zero)) Zero) One)) Zero))"
+        },
+        {
+          "index": 7,
+          "rule": "delta",
+          "path": [
+            "body",
+            "fn",
+            "arg",
+            "fn",
+            "fn",
+            "fn"
+          ],
+          "before": "(λx0.((x0 (((If (IsZero Zero)) Zero) One)) Zero))",
+          "definition": "If",
+          "after": "(λx0.((x0 ((((λx1.(λx2.(λx3.((x1 x2) x3)))) (IsZero Zero)) Zero) One)) Zero))"
+        },
+        {
+          "index": 8,
+          "rule": "beta",
+          "path": [
+            "body",
+            "fn",
+            "arg",
+            "fn",
+            "fn"
+          ],
+          "before": "(λx0.((x0 ((((λx1.(λx2.(λx3.((x1 x2) x3)))) (IsZero Zero)) Zero) One)) Zero))",
+          "after": "(λx0.((x0 (((λx1.(λx2.(((IsZero Zero) x1) x2))) Zero) One)) Zero))"
+        },
+        {
+          "index": 9,
+          "rule": "beta",
+          "path": [
+            "body",
+            "fn",
+            "arg",
+            "fn"
+          ],
+          "before": "(λx0.((x0 (((λx1.(λx2.(((IsZero Zero) x1) x2))) Zero) One)) Zero))",
+          "after": "(λx0.((x0 ((λx1.(((IsZero Zero) Zero) x1)) One)) Zero))"
+        },
+        {
+          "index": 10,
+          "rule": "beta",
+          "path": [
+            "body",
+            "fn",
+            "arg"
+          ],
+          "before": "(λx0.((x0 ((λx1.(((IsZero Zero) Zero) x1)) One)) Zero))",
+          "after": "(λx0.((x0 (((IsZero Zero) Zero) One)) Zero))"
+        },
+        {
+          "index": 11,
+          "rule": "delta",
+          "path": [
+            "body",
+            "fn",
+            "arg",
+            "fn",
+            "fn",
+            "fn"
+          ],
+          "before": "(λx0.((x0 (((IsZero Zero) Zero) One)) Zero))",
+          "definition": "IsZero",
+          "after": "(λx0.((x0 ((((λx1.((x1 (λx2.False)) True)) Zero) Zero) One)) Zero))"
+        },
+        {
+          "index": 12,
+          "rule": "beta",
+          "path": [
+            "body",
+            "fn",
+            "arg",
+            "fn",
+            "fn"
+          ],
+          "before": "(λx0.((x0 ((((λx1.((x1 (λx2.False)) True)) Zero) Zero) One)) Zero))",
+          "after": "(λx0.((x0 ((((Zero (λx1.False)) True) Zero) One)) Zero))"
+        },
+        {
+          "index": 13,
+          "rule": "delta",
+          "path": [
+            "body",
+            "fn",
+            "arg",
+            "fn",
+            "fn",
+            "fn",
+            "fn"
+          ],
+          "before": "(λx0.((x0 ((((Zero (λx1.False)) True) Zero) One)) Zero))",
+          "definition": "Zero",
+          "after": "(λx0.((x0 (((((λx1.(λx2.x2)) (λx1.False)) True) Zero) One)) Zero))"
+        },
+        {
+          "index": 14,
+          "rule": "beta",
+          "path": [
+            "body",
+            "fn",
+            "arg",
+            "fn",
+            "fn",
+            "fn"
+          ],
+          "before": "(λx0.((x0 (((((λx1.(λx2.x2)) (λx1.False)) True) Zero) One)) Zero))",
+          "after": "(λx0.((x0 ((((λx1.x1) True) Zero) One)) Zero))"
+        },
+        {
+          "index": 15,
+          "rule": "beta",
+          "path": [
+            "body",
+            "fn",
+            "arg",
+            "fn",
+            "fn"
+          ],
+          "before": "(λx0.((x0 ((((λx1.x1) True) Zero) One)) Zero))",
+          "after": "(λx0.((x0 ((True Zero) One)) Zero))"
+        },
+        {
+          "index": 16,
+          "rule": "delta",
+          "path": [
+            "body",
+            "fn",
+            "arg",
+            "fn",
+            "fn"
+          ],
+          "before": "(λx0.((x0 ((True Zero) One)) Zero))",
+          "definition": "True",
+          "after": "(λx0.((x0 (((λx1.(λx2.x1)) Zero) One)) Zero))"
+        },
+        {
+          "index": 17,
+          "rule": "beta",
+          "path": [
+            "body",
+            "fn",
+            "arg",
+            "fn"
+          ],
+          "before": "(λx0.((x0 (((λx1.(λx2.x1)) Zero) One)) Zero))",
+          "after": "(λx0.((x0 ((λx1.Zero) One)) Zero))"
+        },
+        {
+          "index": 18,
+          "rule": "beta",
+          "path": [
+            "body",
+            "fn",
+            "arg"
+          ],
+          "before": "(λx0.((x0 ((λx1.Zero) One)) Zero))",
+          "after": "(λx0.((x0 Zero) Zero))"
+        },
+        {
+          "index": 19,
+          "rule": "delta",
+          "path": [
+            "body",
+            "fn",
+            "arg"
+          ],
+          "before": "(λx0.((x0 Zero) Zero))",
+          "definition": "Zero",
+          "after": "(λx0.((x0 (λx1.(λx2.x2))) Zero))"
+        },
+        {
+          "index": 20,
+          "rule": "delta",
+          "path": [
+            "body",
+            "arg"
+          ],
+          "before": "(λx0.((x0 (λx1.(λx2.x2))) Zero))",
+          "definition": "Zero",
+          "after": "(λx0.((x0 (λx1.(λx2.x2))) (λx1.(λx2.x2))))"
+        }
+      ],
+      "final": "(λx0.((x0 (λx1.(λx2.x2))) (λx1.(λx2.x2))))",
+      "status": "normal-form"
+    }
+  ],
+  "failures": []
+}

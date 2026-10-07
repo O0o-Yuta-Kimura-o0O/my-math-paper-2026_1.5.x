@@ -1,0 +1,806 @@
+{
+  "schema": "f-model/extensions/1",
+  "registerTraces": [
+    {
+      "id": "register-add-2-3",
+      "certificate": {
+        "schema": "f-model/register-trace/1",
+        "program": [
+          {
+            "op": "zero",
+            "register": 2
+          },
+          {
+            "op": "jeq",
+            "left": 2,
+            "right": 1,
+            "target": 5
+          },
+          {
+            "op": "succ",
+            "register": 0
+          },
+          {
+            "op": "succ",
+            "register": 2
+          },
+          {
+            "op": "jeq",
+            "left": 2,
+            "right": 2,
+            "target": 1
+          },
+          {
+            "op": "halt"
+          }
+        ],
+        "initial": [
+          "2",
+          "3",
+          "0"
+        ],
+        "outputRegister": 0,
+        "states": [
+          {
+            "pc": 0,
+            "registers": [
+              "2",
+              "3",
+              "0"
+            ]
+          },
+          {
+            "pc": 1,
+            "registers": [
+              "2",
+              "3",
+              "0"
+            ]
+          },
+          {
+            "pc": 2,
+            "registers": [
+              "2",
+              "3",
+              "0"
+            ]
+          },
+          {
+            "pc": 3,
+            "registers": [
+              "3",
+              "3",
+              "0"
+            ]
+          },
+          {
+            "pc": 4,
+            "registers": [
+              "3",
+              "3",
+              "1"
+            ]
+          },
+          {
+            "pc": 1,
+            "registers": [
+              "3",
+              "3",
+              "1"
+            ]
+          },
+          {
+            "pc": 2,
+            "registers": [
+              "3",
+              "3",
+              "1"
+            ]
+          },
+          {
+            "pc": 3,
+            "registers": [
+              "4",
+              "3",
+              "1"
+            ]
+          },
+          {
+            "pc": 4,
+            "registers": [
+              "4",
+              "3",
+              "2"
+            ]
+          },
+          {
+            "pc": 1,
+            "registers": [
+              "4",
+              "3",
+              "2"
+            ]
+          },
+          {
+            "pc": 2,
+            "registers": [
+              "4",
+              "3",
+              "2"
+            ]
+          },
+          {
+            "pc": 3,
+            "registers": [
+              "5",
+              "3",
+              "2"
+            ]
+          },
+          {
+            "pc": 4,
+            "registers": [
+              "5",
+              "3",
+              "3"
+            ]
+          },
+          {
+            "pc": 1,
+            "registers": [
+              "5",
+              "3",
+              "3"
+            ]
+          },
+          {
+            "pc": 5,
+            "registers": [
+              "5",
+              "3",
+              "3"
+            ]
+          }
+        ],
+        "status": "halted",
+        "output": "5"
+      }
+    },
+    {
+      "id": "register-add-7-0",
+      "certificate": {
+        "schema": "f-model/register-trace/1",
+        "program": [
+          {
+            "op": "zero",
+            "register": 2
+          },
+          {
+            "op": "jeq",
+            "left": 2,
+            "right": 1,
+            "target": 5
+          },
+          {
+            "op": "succ",
+            "register": 0
+          },
+          {
+            "op": "succ",
+            "register": 2
+          },
+          {
+            "op": "jeq",
+            "left": 2,
+            "right": 2,
+            "target": 1
+          },
+          {
+            "op": "halt"
+          }
+        ],
+        "initial": [
+          "7",
+          "0",
+          "91"
+        ],
+        "outputRegister": 0,
+        "states": [
+          {
+            "pc": 0,
+            "registers": [
+              "7",
+              "0",
+              "91"
+            ]
+          },
+          {
+            "pc": 1,
+            "registers": [
+              "7",
+              "0",
+              "0"
+            ]
+          },
+          {
+            "pc": 5,
+            "registers": [
+              "7",
+              "0",
+              "0"
+            ]
+          }
+        ],
+        "status": "halted",
+        "output": "7"
+      }
+    },
+    {
+      "id": "register-add-large-2",
+      "certificate": {
+        "schema": "f-model/register-trace/1",
+        "program": [
+          {
+            "op": "zero",
+            "register": 2
+          },
+          {
+            "op": "jeq",
+            "left": 2,
+            "right": 1,
+            "target": 5
+          },
+          {
+            "op": "succ",
+            "register": 0
+          },
+          {
+            "op": "succ",
+            "register": 2
+          },
+          {
+            "op": "jeq",
+            "left": 2,
+            "right": 2,
+            "target": 1
+          },
+          {
+            "op": "halt"
+          }
+        ],
+        "initial": [
+          "9007199254740993",
+          "2",
+          "0"
+        ],
+        "outputRegister": 0,
+        "states": [
+          {
+            "pc": 0,
+            "registers": [
+              "9007199254740993",
+              "2",
+              "0"
+            ]
+          },
+          {
+            "pc": 1,
+            "registers": [
+              "9007199254740993",
+              "2",
+              "0"
+            ]
+          },
+          {
+            "pc": 2,
+            "registers": [
+              "9007199254740993",
+              "2",
+              "0"
+            ]
+          },
+          {
+            "pc": 3,
+            "registers": [
+              "9007199254740994",
+              "2",
+              "0"
+            ]
+          },
+          {
+            "pc": 4,
+            "registers": [
+              "9007199254740994",
+              "2",
+              "1"
+            ]
+          },
+          {
+            "pc": 1,
+            "registers": [
+              "9007199254740994",
+              "2",
+              "1"
+            ]
+          },
+          {
+            "pc": 2,
+            "registers": [
+              "9007199254740994",
+              "2",
+              "1"
+            ]
+          },
+          {
+            "pc": 3,
+            "registers": [
+              "9007199254740995",
+              "2",
+              "1"
+            ]
+          },
+          {
+            "pc": 4,
+            "registers": [
+              "9007199254740995",
+              "2",
+              "2"
+            ]
+          },
+          {
+            "pc": 1,
+            "registers": [
+              "9007199254740995",
+              "2",
+              "2"
+            ]
+          },
+          {
+            "pc": 5,
+            "registers": [
+              "9007199254740995",
+              "2",
+              "2"
+            ]
+          }
+        ],
+        "status": "halted",
+        "output": "9007199254740995"
+      }
+    }
+  ],
+  "symbolicProofs": [
+    {
+      "id": "group-cancellation",
+      "certificate": {
+        "schema": "f-model/equational-trace/1",
+        "theory": "additive-group",
+        "context": {
+          "atoms": [
+            "c",
+            "u"
+          ]
+        },
+        "assumptions": {},
+        "claim": {
+          "lhs": [
+            "add",
+            [
+              "add",
+              [
+                "atom",
+                "c"
+              ],
+              [
+                "atom",
+                "u"
+              ]
+            ],
+            [
+              "neg",
+              [
+                "atom",
+                "u"
+              ]
+            ]
+          ],
+          "rhs": [
+            "atom",
+            "c"
+          ]
+        },
+        "steps": [
+          {
+            "rule": "add_assoc",
+            "substitution": {
+              "a": [
+                "atom",
+                "c"
+              ],
+              "b": [
+                "atom",
+                "u"
+              ],
+              "c": [
+                "neg",
+                [
+                  "atom",
+                  "u"
+                ]
+              ]
+            },
+            "direction": "forward",
+            "position": [],
+            "before": [
+              "add",
+              [
+                "add",
+                [
+                  "atom",
+                  "c"
+                ],
+                [
+                  "atom",
+                  "u"
+                ]
+              ],
+              [
+                "neg",
+                [
+                  "atom",
+                  "u"
+                ]
+              ]
+            ],
+            "after": [
+              "add",
+              [
+                "atom",
+                "c"
+              ],
+              [
+                "add",
+                [
+                  "atom",
+                  "u"
+                ],
+                [
+                  "neg",
+                  [
+                    "atom",
+                    "u"
+                  ]
+                ]
+              ]
+            ]
+          },
+          {
+            "rule": "add_inverse",
+            "substitution": {
+              "a": [
+                "atom",
+                "u"
+              ]
+            },
+            "direction": "forward",
+            "position": [
+              1
+            ],
+            "before": [
+              "add",
+              [
+                "atom",
+                "c"
+              ],
+              [
+                "add",
+                [
+                  "atom",
+                  "u"
+                ],
+                [
+                  "neg",
+                  [
+                    "atom",
+                    "u"
+                  ]
+                ]
+              ]
+            ],
+            "after": [
+              "add",
+              [
+                "atom",
+                "c"
+              ],
+              [
+                "zero"
+              ]
+            ]
+          },
+          {
+            "rule": "add_zero",
+            "substitution": {
+              "a": [
+                "atom",
+                "c"
+              ]
+            },
+            "direction": "forward",
+            "position": [],
+            "before": [
+              "add",
+              [
+                "atom",
+                "c"
+              ],
+              [
+                "zero"
+              ]
+            ],
+            "after": [
+              "atom",
+              "c"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "arrow-inverse-uniqueness",
+      "certificate": {
+        "schema": "f-model/equational-trace/1",
+        "theory": "arrows",
+        "context": {
+          "identities": [
+            "eA",
+            "eB"
+          ],
+          "arrows": {
+            "f": {
+              "source": "eA",
+              "target": "eB"
+            },
+            "g": {
+              "source": "eB",
+              "target": "eA"
+            },
+            "h": {
+              "source": "eB",
+              "target": "eA"
+            }
+          }
+        },
+        "assumptions": {
+          "gf_id": {
+            "lhs": [
+              "compose",
+              [
+                "arrow",
+                "g"
+              ],
+              [
+                "arrow",
+                "f"
+              ]
+            ],
+            "rhs": [
+              "id",
+              "eA"
+            ]
+          },
+          "fh_id": {
+            "lhs": [
+              "compose",
+              [
+                "arrow",
+                "f"
+              ],
+              [
+                "arrow",
+                "h"
+              ]
+            ],
+            "rhs": [
+              "id",
+              "eB"
+            ]
+          }
+        },
+        "claim": {
+          "lhs": [
+            "arrow",
+            "g"
+          ],
+          "rhs": [
+            "arrow",
+            "h"
+          ]
+        },
+        "steps": [
+          {
+            "rule": "right_unit",
+            "substitution": {
+              "a": [
+                "arrow",
+                "g"
+              ]
+            },
+            "direction": "backward",
+            "position": [],
+            "before": [
+              "arrow",
+              "g"
+            ],
+            "after": [
+              "compose",
+              [
+                "arrow",
+                "g"
+              ],
+              [
+                "id",
+                "eB"
+              ]
+            ]
+          },
+          {
+            "rule": "assumption:fh_id",
+            "substitution": {},
+            "direction": "backward",
+            "position": [
+              1
+            ],
+            "before": [
+              "compose",
+              [
+                "arrow",
+                "g"
+              ],
+              [
+                "id",
+                "eB"
+              ]
+            ],
+            "after": [
+              "compose",
+              [
+                "arrow",
+                "g"
+              ],
+              [
+                "compose",
+                [
+                  "arrow",
+                  "f"
+                ],
+                [
+                  "arrow",
+                  "h"
+                ]
+              ]
+            ]
+          },
+          {
+            "rule": "comp_assoc",
+            "substitution": {
+              "a": [
+                "arrow",
+                "g"
+              ],
+              "b": [
+                "arrow",
+                "f"
+              ],
+              "c": [
+                "arrow",
+                "h"
+              ]
+            },
+            "direction": "backward",
+            "position": [],
+            "before": [
+              "compose",
+              [
+                "arrow",
+                "g"
+              ],
+              [
+                "compose",
+                [
+                  "arrow",
+                  "f"
+                ],
+                [
+                  "arrow",
+                  "h"
+                ]
+              ]
+            ],
+            "after": [
+              "compose",
+              [
+                "compose",
+                [
+                  "arrow",
+                  "g"
+                ],
+                [
+                  "arrow",
+                  "f"
+                ]
+              ],
+              [
+                "arrow",
+                "h"
+              ]
+            ]
+          },
+          {
+            "rule": "assumption:gf_id",
+            "substitution": {},
+            "direction": "forward",
+            "position": [
+              0
+            ],
+            "before": [
+              "compose",
+              [
+                "compose",
+                [
+                  "arrow",
+                  "g"
+                ],
+                [
+                  "arrow",
+                  "f"
+                ]
+              ],
+              [
+                "arrow",
+                "h"
+              ]
+            ],
+            "after": [
+              "compose",
+              [
+                "id",
+                "eA"
+              ],
+              [
+                "arrow",
+                "h"
+              ]
+            ]
+          },
+          {
+            "rule": "left_unit",
+            "substitution": {
+              "a": [
+                "arrow",
+                "h"
+              ]
+            },
+            "direction": "forward",
+            "position": [],
+            "before": [
+              "compose",
+              [
+                "id",
+                "eA"
+              ],
+              [
+                "arrow",
+                "h"
+              ]
+            ],
+            "after": [
+              "arrow",
+              "h"
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

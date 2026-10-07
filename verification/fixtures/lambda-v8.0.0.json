@@ -1,0 +1,564 @@
+{
+  "schema": "lambda-trace/1",
+  "version": "8.0.0",
+  "strategy": "leftmost-outermost",
+  "source": "Add Two Three",
+  "definitions": [
+    {
+      "name": "True",
+      "source": "λt.λf.t"
+    },
+    {
+      "name": "False",
+      "source": "λt.λf.f"
+    },
+    {
+      "name": "If",
+      "source": "λb.λt.λe.b t e"
+    },
+    {
+      "name": "And",
+      "source": "λp.λq.p q p"
+    },
+    {
+      "name": "Or",
+      "source": "λp.λq.p p q"
+    },
+    {
+      "name": "Not",
+      "source": "λb.b False True"
+    },
+    {
+      "name": "Pair",
+      "source": "λa.λb.λf.f a b"
+    },
+    {
+      "name": "Fst",
+      "source": "λp.p (λa.λb.a)"
+    },
+    {
+      "name": "Snd",
+      "source": "λp.p (λa.λb.b)"
+    },
+    {
+      "name": "Zero",
+      "source": "λf.λx.x"
+    },
+    {
+      "name": "Succ",
+      "source": "λn.λf.λx.f (n f x)"
+    },
+    {
+      "name": "One",
+      "source": "Succ Zero"
+    },
+    {
+      "name": "Two",
+      "source": "Succ One"
+    },
+    {
+      "name": "Three",
+      "source": "Succ Two"
+    },
+    {
+      "name": "Four",
+      "source": "Succ Three"
+    },
+    {
+      "name": "Add",
+      "source": "λm.λn.λf.λx.m f (n f x)"
+    },
+    {
+      "name": "Mul",
+      "source": "λm.λn.λf.λx.m (n f) x"
+    },
+    {
+      "name": "Pred",
+      "source": "λn.λf.λx.n (λg.λh.h (g f)) (λu.x) (λu.u)"
+    },
+    {
+      "name": "Sub",
+      "source": "λm.λn.n Pred m"
+    },
+    {
+      "name": "IsZero",
+      "source": "λn.n (λx.False) True"
+    },
+    {
+      "name": "Leq",
+      "source": "λm.λn.IsZero (Sub m n)"
+    },
+    {
+      "name": "EqNat",
+      "source": "λm.λn.And (Leq m n) (Leq n m)"
+    },
+    {
+      "name": "N0",
+      "source": "Zero"
+    },
+    {
+      "name": "N1",
+      "source": "One"
+    },
+    {
+      "name": "N2",
+      "source": "Two"
+    },
+    {
+      "name": "N3",
+      "source": "Three"
+    },
+    {
+      "name": "N4",
+      "source": "Four"
+    },
+    {
+      "name": "0",
+      "source": "Zero"
+    },
+    {
+      "name": "1",
+      "source": "One"
+    },
+    {
+      "name": "2",
+      "source": "Two"
+    },
+    {
+      "name": "3",
+      "source": "Three"
+    },
+    {
+      "name": "4",
+      "source": "Four"
+    }
+  ],
+  "maxSteps": 5000,
+  "initial": "((Add Two) Three)",
+  "expandedStart": "(((λx0.(λx1.(λx2.(λx3.((x0 x2) ((x1 x2) x3)))))) ((λx0.(λx1.(λx2.(x1 ((x0 x1) x2))))) ((λx0.(λx1.(λx2.(x1 ((x0 x1) x2))))) (λx0.(λx1.x1))))) ((λx0.(λx1.(λx2.(x1 ((x0 x1) x2))))) ((λx0.(λx1.(λx2.(x1 ((x0 x1) x2))))) ((λx0.(λx1.(λx2.(x1 ((x0 x1) x2))))) (λx0.(λx1.x1))))))",
+  "steps": [
+    {
+      "index": 1,
+      "rule": "delta",
+      "path": [
+        "fn",
+        "fn"
+      ],
+      "before": "((Add Two) Three)",
+      "definition": "Add",
+      "after": "(((λx0.(λx1.(λx2.(λx3.((x0 x2) ((x1 x2) x3)))))) Two) Three)"
+    },
+    {
+      "index": 2,
+      "rule": "delta",
+      "path": [
+        "fn",
+        "arg"
+      ],
+      "before": "(((λx0.(λx1.(λx2.(λx3.((x0 x2) ((x1 x2) x3)))))) Two) Three)",
+      "definition": "Two",
+      "after": "(((λx0.(λx1.(λx2.(λx3.((x0 x2) ((x1 x2) x3)))))) (Succ One)) Three)"
+    },
+    {
+      "index": 3,
+      "rule": "delta",
+      "path": [
+        "fn",
+        "arg",
+        "fn"
+      ],
+      "before": "(((λx0.(λx1.(λx2.(λx3.((x0 x2) ((x1 x2) x3)))))) (Succ One)) Three)",
+      "definition": "Succ",
+      "after": "(((λx0.(λx1.(λx2.(λx3.((x0 x2) ((x1 x2) x3)))))) ((λx0.(λx1.(λx2.(x1 ((x0 x1) x2))))) One)) Three)"
+    },
+    {
+      "index": 4,
+      "rule": "delta",
+      "path": [
+        "fn",
+        "arg",
+        "arg"
+      ],
+      "before": "(((λx0.(λx1.(λx2.(λx3.((x0 x2) ((x1 x2) x3)))))) ((λx0.(λx1.(λx2.(x1 ((x0 x1) x2))))) One)) Three)",
+      "definition": "One",
+      "after": "(((λx0.(λx1.(λx2.(λx3.((x0 x2) ((x1 x2) x3)))))) ((λx0.(λx1.(λx2.(x1 ((x0 x1) x2))))) (Succ Zero))) Three)"
+    },
+    {
+      "index": 5,
+      "rule": "delta",
+      "path": [
+        "fn",
+        "arg",
+        "arg",
+        "fn"
+      ],
+      "before": "(((λx0.(λx1.(λx2.(λx3.((x0 x2) ((x1 x2) x3)))))) ((λx0.(λx1.(λx2.(x1 ((x0 x1) x2))))) (Succ Zero))) Three)",
+      "definition": "Succ",
+      "after": "(((λx0.(λx1.(λx2.(λx3.((x0 x2) ((x1 x2) x3)))))) ((λx0.(λx1.(λx2.(x1 ((x0 x1) x2))))) ((λx0.(λx1.(λx2.(x1 ((x0 x1) x2))))) Zero))) Three)"
+    },
+    {
+      "index": 6,
+      "rule": "delta",
+      "path": [
+        "fn",
+        "arg",
+        "arg",
+        "arg"
+      ],
+      "before": "(((λx0.(λx1.(λx2.(λx3.((x0 x2) ((x1 x2) x3)))))) ((λx0.(λx1.(λx2.(x1 ((x0 x1) x2))))) ((λx0.(λx1.(λx2.(x1 ((x0 x1) x2))))) Zero))) Three)",
+      "definition": "Zero",
+      "after": "(((λx0.(λx1.(λx2.(λx3.((x0 x2) ((x1 x2) x3)))))) ((λx0.(λx1.(λx2.(x1 ((x0 x1) x2))))) ((λx0.(λx1.(λx2.(x1 ((x0 x1) x2))))) (λx0.(λx1.x1))))) Three)"
+    },
+    {
+      "index": 7,
+      "rule": "delta",
+      "path": [
+        "arg"
+      ],
+      "before": "(((λx0.(λx1.(λx2.(λx3.((x0 x2) ((x1 x2) x3)))))) ((λx0.(λx1.(λx2.(x1 ((x0 x1) x2))))) ((λx0.(λx1.(λx2.(x1 ((x0 x1) x2))))) (λx0.(λx1.x1))))) Three)",
+      "definition": "Three",
+      "after": "(((λx0.(λx1.(λx2.(λx3.((x0 x2) ((x1 x2) x3)))))) ((λx0.(λx1.(λx2.(x1 ((x0 x1) x2))))) ((λx0.(λx1.(λx2.(x1 ((x0 x1) x2))))) (λx0.(λx1.x1))))) (Succ Two))"
+    },
+    {
+      "index": 8,
+      "rule": "delta",
+      "path": [
+        "arg",
+        "fn"
+      ],
+      "before": "(((λx0.(λx1.(λx2.(λx3.((x0 x2) ((x1 x2) x3)))))) ((λx0.(λx1.(λx2.(x1 ((x0 x1) x2))))) ((λx0.(λx1.(λx2.(x1 ((x0 x1) x2))))) (λx0.(λx1.x1))))) (Succ Two))",
+      "definition": "Succ",
+      "after": "(((λx0.(λx1.(λx2.(λx3.((x0 x2) ((x1 x2) x3)))))) ((λx0.(λx1.(λx2.(x1 ((x0 x1) x2))))) ((λx0.(λx1.(λx2.(x1 ((x0 x1) x2))))) (λx0.(λx1.x1))))) ((λx0.(λx1.(λx2.(x1 ((x0 x1) x2))))) Two))"
+    },
+    {
+      "index": 9,
+      "rule": "delta",
+      "path": [
+        "arg",
+        "arg"
+      ],
+      "before": "(((λx0.(λx1.(λx2.(λx3.((x0 x2) ((x1 x2) x3)))))) ((λx0.(λx1.(λx2.(x1 ((x0 x1) x2))))) ((λx0.(λx1.(λx2.(x1 ((x0 x1) x2))))) (λx0.(λx1.x1))))) ((λx0.(λx1.(λx2.(x1 ((x0 x1) x2))))) Two))",
+      "definition": "Two",
+      "after": "(((λx0.(λx1.(λx2.(λx3.((x0 x2) ((x1 x2) x3)))))) ((λx0.(λx1.(λx2.(x1 ((x0 x1) x2))))) ((λx0.(λx1.(λx2.(x1 ((x0 x1) x2))))) (λx0.(λx1.x1))))) ((λx0.(λx1.(λx2.(x1 ((x0 x1) x2))))) (Succ One)))"
+    },
+    {
+      "index": 10,
+      "rule": "delta",
+      "path": [
+        "arg",
+        "arg",
+        "fn"
+      ],
+      "before": "(((λx0.(λx1.(λx2.(λx3.((x0 x2) ((x1 x2) x3)))))) ((λx0.(λx1.(λx2.(x1 ((x0 x1) x2))))) ((λx0.(λx1.(λx2.(x1 ((x0 x1) x2))))) (λx0.(λx1.x1))))) ((λx0.(λx1.(λx2.(x1 ((x0 x1) x2))))) (Succ One)))",
+      "definition": "Succ",
+      "after": "(((λx0.(λx1.(λx2.(λx3.((x0 x2) ((x1 x2) x3)))))) ((λx0.(λx1.(λx2.(x1 ((x0 x1) x2))))) ((λx0.(λx1.(λx2.(x1 ((x0 x1) x2))))) (λx0.(λx1.x1))))) ((λx0.(λx1.(λx2.(x1 ((x0 x1) x2))))) ((λx0.(λx1.(λx2.(x1 ((x0 x1) x2))))) One)))"
+    },
+    {
+      "index": 11,
+      "rule": "delta",
+      "path": [
+        "arg",
+        "arg",
+        "arg"
+      ],
+      "before": "(((λx0.(λx1.(λx2.(λx3.((x0 x2) ((x1 x2) x3)))))) ((λx0.(λx1.(λx2.(x1 ((x0 x1) x2))))) ((λx0.(λx1.(λx2.(x1 ((x0 x1) x2))))) (λx0.(λx1.x1))))) ((λx0.(λx1.(λx2.(x1 ((x0 x1) x2))))) ((λx0.(λx1.(λx2.(x1 ((x0 x1) x2))))) One)))",
+      "definition": "One",
+      "after": "(((λx0.(λx1.(λx2.(λx3.((x0 x2) ((x1 x2) x3)))))) ((λx0.(λx1.(λx2.(x1 ((x0 x1) x2))))) ((λx0.(λx1.(λx2.(x1 ((x0 x1) x2))))) (λx0.(λx1.x1))))) ((λx0.(λx1.(λx2.(x1 ((x0 x1) x2))))) ((λx0.(λx1.(λx2.(x1 ((x0 x1) x2))))) (Succ Zero))))"
+    },
+    {
+      "index": 12,
+      "rule": "delta",
+      "path": [
+        "arg",
+        "arg",
+        "arg",
+        "fn"
+      ],
+      "before": "(((λx0.(λx1.(λx2.(λx3.((x0 x2) ((x1 x2) x3)))))) ((λx0.(λx1.(λx2.(x1 ((x0 x1) x2))))) ((λx0.(λx1.(λx2.(x1 ((x0 x1) x2))))) (λx0.(λx1.x1))))) ((λx0.(λx1.(λx2.(x1 ((x0 x1) x2))))) ((λx0.(λx1.(λx2.(x1 ((x0 x1) x2))))) (Succ Zero))))",
+      "definition": "Succ",
+      "after": "(((λx0.(λx1.(λx2.(λx3.((x0 x2) ((x1 x2) x3)))))) ((λx0.(λx1.(λx2.(x1 ((x0 x1) x2))))) ((λx0.(λx1.(λx2.(x1 ((x0 x1) x2))))) (λx0.(λx1.x1))))) ((λx0.(λx1.(λx2.(x1 ((x0 x1) x2))))) ((λx0.(λx1.(λx2.(x1 ((x0 x1) x2))))) ((λx0.(λx1.(λx2.(x1 ((x0 x1) x2))))) Zero))))"
+    },
+    {
+      "index": 13,
+      "rule": "delta",
+      "path": [
+        "arg",
+        "arg",
+        "arg",
+        "arg"
+      ],
+      "before": "(((λx0.(λx1.(λx2.(λx3.((x0 x2) ((x1 x2) x3)))))) ((λx0.(λx1.(λx2.(x1 ((x0 x1) x2))))) ((λx0.(λx1.(λx2.(x1 ((x0 x1) x2))))) (λx0.(λx1.x1))))) ((λx0.(λx1.(λx2.(x1 ((x0 x1) x2))))) ((λx0.(λx1.(λx2.(x1 ((x0 x1) x2))))) ((λx0.(λx1.(λx2.(x1 ((x0 x1) x2))))) Zero))))",
+      "definition": "Zero",
+      "after": "(((λx0.(λx1.(λx2.(λx3.((x0 x2) ((x1 x2) x3)))))) ((λx0.(λx1.(λx2.(x1 ((x0 x1) x2))))) ((λx0.(λx1.(λx2.(x1 ((x0 x1) x2))))) (λx0.(λx1.x1))))) ((λx0.(λx1.(λx2.(x1 ((x0 x1) x2))))) ((λx0.(λx1.(λx2.(x1 ((x0 x1) x2))))) ((λx0.(λx1.(λx2.(x1 ((x0 x1) x2))))) (λx0.(λx1.x1))))))"
+    },
+    {
+      "index": 14,
+      "rule": "beta",
+      "path": [
+        "fn"
+      ],
+      "before": "(((λx0.(λx1.(λx2.(λx3.((x0 x2) ((x1 x2) x3)))))) ((λx0.(λx1.(λx2.(x1 ((x0 x1) x2))))) ((λx0.(λx1.(λx2.(x1 ((x0 x1) x2))))) (λx0.(λx1.x1))))) ((λx0.(λx1.(λx2.(x1 ((x0 x1) x2))))) ((λx0.(λx1.(λx2.(x1 ((x0 x1) x2))))) ((λx0.(λx1.(λx2.(x1 ((x0 x1) x2))))) (λx0.(λx1.x1))))))",
+      "after": "((λx0.(λx1.(λx2.((((λx3.(λx4.(λx5.(x4 ((x3 x4) x5))))) ((λx3.(λx4.(λx5.(x4 ((x3 x4) x5))))) (λx3.(λx4.x4)))) x1) ((x0 x1) x2))))) ((λx0.(λx1.(λx2.(x1 ((x0 x1) x2))))) ((λx0.(λx1.(λx2.(x1 ((x0 x1) x2))))) ((λx0.(λx1.(λx2.(x1 ((x0 x1) x2))))) (λx0.(λx1.x1))))))"
+    },
+    {
+      "index": 15,
+      "rule": "beta",
+      "path": [],
+      "before": "((λx0.(λx1.(λx2.((((λx3.(λx4.(λx5.(x4 ((x3 x4) x5))))) ((λx3.(λx4.(λx5.(x4 ((x3 x4) x5))))) (λx3.(λx4.x4)))) x1) ((x0 x1) x2))))) ((λx0.(λx1.(λx2.(x1 ((x0 x1) x2))))) ((λx0.(λx1.(λx2.(x1 ((x0 x1) x2))))) ((λx0.(λx1.(λx2.(x1 ((x0 x1) x2))))) (λx0.(λx1.x1))))))",
+      "after": "(λx0.(λx1.((((λx2.(λx3.(λx4.(x3 ((x2 x3) x4))))) ((λx2.(λx3.(λx4.(x3 ((x2 x3) x4))))) (λx2.(λx3.x3)))) x0) ((((λx2.(λx3.(λx4.(x3 ((x2 x3) x4))))) ((λx2.(λx3.(λx4.(x3 ((x2 x3) x4))))) ((λx2.(λx3.(λx4.(x3 ((x2 x3) x4))))) (λx2.(λx3.x3))))) x0) x1))))"
+    },
+    {
+      "index": 16,
+      "rule": "beta",
+      "path": [
+        "body",
+        "body",
+        "fn",
+        "fn"
+      ],
+      "before": "(λx0.(λx1.((((λx2.(λx3.(λx4.(x3 ((x2 x3) x4))))) ((λx2.(λx3.(λx4.(x3 ((x2 x3) x4))))) (λx2.(λx3.x3)))) x0) ((((λx2.(λx3.(λx4.(x3 ((x2 x3) x4))))) ((λx2.(λx3.(λx4.(x3 ((x2 x3) x4))))) ((λx2.(λx3.(λx4.(x3 ((x2 x3) x4))))) (λx2.(λx3.x3))))) x0) x1))))",
+      "after": "(λx0.(λx1.(((λx2.(λx3.(x2 ((((λx4.(λx5.(λx6.(x5 ((x4 x5) x6))))) (λx4.(λx5.x5))) x2) x3)))) x0) ((((λx2.(λx3.(λx4.(x3 ((x2 x3) x4))))) ((λx2.(λx3.(λx4.(x3 ((x2 x3) x4))))) ((λx2.(λx3.(λx4.(x3 ((x2 x3) x4))))) (λx2.(λx3.x3))))) x0) x1))))"
+    },
+    {
+      "index": 17,
+      "rule": "beta",
+      "path": [
+        "body",
+        "body",
+        "fn"
+      ],
+      "before": "(λx0.(λx1.(((λx2.(λx3.(x2 ((((λx4.(λx5.(λx6.(x5 ((x4 x5) x6))))) (λx4.(λx5.x5))) x2) x3)))) x0) ((((λx2.(λx3.(λx4.(x3 ((x2 x3) x4))))) ((λx2.(λx3.(λx4.(x3 ((x2 x3) x4))))) ((λx2.(λx3.(λx4.(x3 ((x2 x3) x4))))) (λx2.(λx3.x3))))) x0) x1))))",
+      "after": "(λx0.(λx1.((λx2.(x0 ((((λx3.(λx4.(λx5.(x4 ((x3 x4) x5))))) (λx3.(λx4.x4))) x0) x2))) ((((λx2.(λx3.(λx4.(x3 ((x2 x3) x4))))) ((λx2.(λx3.(λx4.(x3 ((x2 x3) x4))))) ((λx2.(λx3.(λx4.(x3 ((x2 x3) x4))))) (λx2.(λx3.x3))))) x0) x1))))"
+    },
+    {
+      "index": 18,
+      "rule": "beta",
+      "path": [
+        "body",
+        "body"
+      ],
+      "before": "(λx0.(λx1.((λx2.(x0 ((((λx3.(λx4.(λx5.(x4 ((x3 x4) x5))))) (λx3.(λx4.x4))) x0) x2))) ((((λx2.(λx3.(λx4.(x3 ((x2 x3) x4))))) ((λx2.(λx3.(λx4.(x3 ((x2 x3) x4))))) ((λx2.(λx3.(λx4.(x3 ((x2 x3) x4))))) (λx2.(λx3.x3))))) x0) x1))))",
+      "after": "(λx0.(λx1.(x0 ((((λx2.(λx3.(λx4.(x3 ((x2 x3) x4))))) (λx2.(λx3.x3))) x0) ((((λx2.(λx3.(λx4.(x3 ((x2 x3) x4))))) ((λx2.(λx3.(λx4.(x3 ((x2 x3) x4))))) ((λx2.(λx3.(λx4.(x3 ((x2 x3) x4))))) (λx2.(λx3.x3))))) x0) x1)))))"
+    },
+    {
+      "index": 19,
+      "rule": "beta",
+      "path": [
+        "body",
+        "body",
+        "arg",
+        "fn",
+        "fn"
+      ],
+      "before": "(λx0.(λx1.(x0 ((((λx2.(λx3.(λx4.(x3 ((x2 x3) x4))))) (λx2.(λx3.x3))) x0) ((((λx2.(λx3.(λx4.(x3 ((x2 x3) x4))))) ((λx2.(λx3.(λx4.(x3 ((x2 x3) x4))))) ((λx2.(λx3.(λx4.(x3 ((x2 x3) x4))))) (λx2.(λx3.x3))))) x0) x1)))))",
+      "after": "(λx0.(λx1.(x0 (((λx2.(λx3.(x2 (((λx4.(λx5.x5)) x2) x3)))) x0) ((((λx2.(λx3.(λx4.(x3 ((x2 x3) x4))))) ((λx2.(λx3.(λx4.(x3 ((x2 x3) x4))))) ((λx2.(λx3.(λx4.(x3 ((x2 x3) x4))))) (λx2.(λx3.x3))))) x0) x1)))))"
+    },
+    {
+      "index": 20,
+      "rule": "beta",
+      "path": [
+        "body",
+        "body",
+        "arg",
+        "fn"
+      ],
+      "before": "(λx0.(λx1.(x0 (((λx2.(λx3.(x2 (((λx4.(λx5.x5)) x2) x3)))) x0) ((((λx2.(λx3.(λx4.(x3 ((x2 x3) x4))))) ((λx2.(λx3.(λx4.(x3 ((x2 x3) x4))))) ((λx2.(λx3.(λx4.(x3 ((x2 x3) x4))))) (λx2.(λx3.x3))))) x0) x1)))))",
+      "after": "(λx0.(λx1.(x0 ((λx2.(x0 (((λx3.(λx4.x4)) x0) x2))) ((((λx2.(λx3.(λx4.(x3 ((x2 x3) x4))))) ((λx2.(λx3.(λx4.(x3 ((x2 x3) x4))))) ((λx2.(λx3.(λx4.(x3 ((x2 x3) x4))))) (λx2.(λx3.x3))))) x0) x1)))))"
+    },
+    {
+      "index": 21,
+      "rule": "beta",
+      "path": [
+        "body",
+        "body",
+        "arg"
+      ],
+      "before": "(λx0.(λx1.(x0 ((λx2.(x0 (((λx3.(λx4.x4)) x0) x2))) ((((λx2.(λx3.(λx4.(x3 ((x2 x3) x4))))) ((λx2.(λx3.(λx4.(x3 ((x2 x3) x4))))) ((λx2.(λx3.(λx4.(x3 ((x2 x3) x4))))) (λx2.(λx3.x3))))) x0) x1)))))",
+      "after": "(λx0.(λx1.(x0 (x0 (((λx2.(λx3.x3)) x0) ((((λx2.(λx3.(λx4.(x3 ((x2 x3) x4))))) ((λx2.(λx3.(λx4.(x3 ((x2 x3) x4))))) ((λx2.(λx3.(λx4.(x3 ((x2 x3) x4))))) (λx2.(λx3.x3))))) x0) x1))))))"
+    },
+    {
+      "index": 22,
+      "rule": "beta",
+      "path": [
+        "body",
+        "body",
+        "arg",
+        "arg",
+        "fn"
+      ],
+      "before": "(λx0.(λx1.(x0 (x0 (((λx2.(λx3.x3)) x0) ((((λx2.(λx3.(λx4.(x3 ((x2 x3) x4))))) ((λx2.(λx3.(λx4.(x3 ((x2 x3) x4))))) ((λx2.(λx3.(λx4.(x3 ((x2 x3) x4))))) (λx2.(λx3.x3))))) x0) x1))))))",
+      "after": "(λx0.(λx1.(x0 (x0 ((λx2.x2) ((((λx2.(λx3.(λx4.(x3 ((x2 x3) x4))))) ((λx2.(λx3.(λx4.(x3 ((x2 x3) x4))))) ((λx2.(λx3.(λx4.(x3 ((x2 x3) x4))))) (λx2.(λx3.x3))))) x0) x1))))))"
+    },
+    {
+      "index": 23,
+      "rule": "beta",
+      "path": [
+        "body",
+        "body",
+        "arg",
+        "arg"
+      ],
+      "before": "(λx0.(λx1.(x0 (x0 ((λx2.x2) ((((λx2.(λx3.(λx4.(x3 ((x2 x3) x4))))) ((λx2.(λx3.(λx4.(x3 ((x2 x3) x4))))) ((λx2.(λx3.(λx4.(x3 ((x2 x3) x4))))) (λx2.(λx3.x3))))) x0) x1))))))",
+      "after": "(λx0.(λx1.(x0 (x0 ((((λx2.(λx3.(λx4.(x3 ((x2 x3) x4))))) ((λx2.(λx3.(λx4.(x3 ((x2 x3) x4))))) ((λx2.(λx3.(λx4.(x3 ((x2 x3) x4))))) (λx2.(λx3.x3))))) x0) x1)))))"
+    },
+    {
+      "index": 24,
+      "rule": "beta",
+      "path": [
+        "body",
+        "body",
+        "arg",
+        "arg",
+        "fn",
+        "fn"
+      ],
+      "before": "(λx0.(λx1.(x0 (x0 ((((λx2.(λx3.(λx4.(x3 ((x2 x3) x4))))) ((λx2.(λx3.(λx4.(x3 ((x2 x3) x4))))) ((λx2.(λx3.(λx4.(x3 ((x2 x3) x4))))) (λx2.(λx3.x3))))) x0) x1)))))",
+      "after": "(λx0.(λx1.(x0 (x0 (((λx2.(λx3.(x2 ((((λx4.(λx5.(λx6.(x5 ((x4 x5) x6))))) ((λx4.(λx5.(λx6.(x5 ((x4 x5) x6))))) (λx4.(λx5.x5)))) x2) x3)))) x0) x1)))))"
+    },
+    {
+      "index": 25,
+      "rule": "beta",
+      "path": [
+        "body",
+        "body",
+        "arg",
+        "arg",
+        "fn"
+      ],
+      "before": "(λx0.(λx1.(x0 (x0 (((λx2.(λx3.(x2 ((((λx4.(λx5.(λx6.(x5 ((x4 x5) x6))))) ((λx4.(λx5.(λx6.(x5 ((x4 x5) x6))))) (λx4.(λx5.x5)))) x2) x3)))) x0) x1)))))",
+      "after": "(λx0.(λx1.(x0 (x0 ((λx2.(x0 ((((λx3.(λx4.(λx5.(x4 ((x3 x4) x5))))) ((λx3.(λx4.(λx5.(x4 ((x3 x4) x5))))) (λx3.(λx4.x4)))) x0) x2))) x1)))))"
+    },
+    {
+      "index": 26,
+      "rule": "beta",
+      "path": [
+        "body",
+        "body",
+        "arg",
+        "arg"
+      ],
+      "before": "(λx0.(λx1.(x0 (x0 ((λx2.(x0 ((((λx3.(λx4.(λx5.(x4 ((x3 x4) x5))))) ((λx3.(λx4.(λx5.(x4 ((x3 x4) x5))))) (λx3.(λx4.x4)))) x0) x2))) x1)))))",
+      "after": "(λx0.(λx1.(x0 (x0 (x0 ((((λx2.(λx3.(λx4.(x3 ((x2 x3) x4))))) ((λx2.(λx3.(λx4.(x3 ((x2 x3) x4))))) (λx2.(λx3.x3)))) x0) x1))))))"
+    },
+    {
+      "index": 27,
+      "rule": "beta",
+      "path": [
+        "body",
+        "body",
+        "arg",
+        "arg",
+        "arg",
+        "fn",
+        "fn"
+      ],
+      "before": "(λx0.(λx1.(x0 (x0 (x0 ((((λx2.(λx3.(λx4.(x3 ((x2 x3) x4))))) ((λx2.(λx3.(λx4.(x3 ((x2 x3) x4))))) (λx2.(λx3.x3)))) x0) x1))))))",
+      "after": "(λx0.(λx1.(x0 (x0 (x0 (((λx2.(λx3.(x2 ((((λx4.(λx5.(λx6.(x5 ((x4 x5) x6))))) (λx4.(λx5.x5))) x2) x3)))) x0) x1))))))"
+    },
+    {
+      "index": 28,
+      "rule": "beta",
+      "path": [
+        "body",
+        "body",
+        "arg",
+        "arg",
+        "arg",
+        "fn"
+      ],
+      "before": "(λx0.(λx1.(x0 (x0 (x0 (((λx2.(λx3.(x2 ((((λx4.(λx5.(λx6.(x5 ((x4 x5) x6))))) (λx4.(λx5.x5))) x2) x3)))) x0) x1))))))",
+      "after": "(λx0.(λx1.(x0 (x0 (x0 ((λx2.(x0 ((((λx3.(λx4.(λx5.(x4 ((x3 x4) x5))))) (λx3.(λx4.x4))) x0) x2))) x1))))))"
+    },
+    {
+      "index": 29,
+      "rule": "beta",
+      "path": [
+        "body",
+        "body",
+        "arg",
+        "arg",
+        "arg"
+      ],
+      "before": "(λx0.(λx1.(x0 (x0 (x0 ((λx2.(x0 ((((λx3.(λx4.(λx5.(x4 ((x3 x4) x5))))) (λx3.(λx4.x4))) x0) x2))) x1))))))",
+      "after": "(λx0.(λx1.(x0 (x0 (x0 (x0 ((((λx2.(λx3.(λx4.(x3 ((x2 x3) x4))))) (λx2.(λx3.x3))) x0) x1)))))))"
+    },
+    {
+      "index": 30,
+      "rule": "beta",
+      "path": [
+        "body",
+        "body",
+        "arg",
+        "arg",
+        "arg",
+        "arg",
+        "fn",
+        "fn"
+      ],
+      "before": "(λx0.(λx1.(x0 (x0 (x0 (x0 ((((λx2.(λx3.(λx4.(x3 ((x2 x3) x4))))) (λx2.(λx3.x3))) x0) x1)))))))",
+      "after": "(λx0.(λx1.(x0 (x0 (x0 (x0 (((λx2.(λx3.(x2 (((λx4.(λx5.x5)) x2) x3)))) x0) x1)))))))"
+    },
+    {
+      "index": 31,
+      "rule": "beta",
+      "path": [
+        "body",
+        "body",
+        "arg",
+        "arg",
+        "arg",
+        "arg",
+        "fn"
+      ],
+      "before": "(λx0.(λx1.(x0 (x0 (x0 (x0 (((λx2.(λx3.(x2 (((λx4.(λx5.x5)) x2) x3)))) x0) x1)))))))",
+      "after": "(λx0.(λx1.(x0 (x0 (x0 (x0 ((λx2.(x0 (((λx3.(λx4.x4)) x0) x2))) x1)))))))"
+    },
+    {
+      "index": 32,
+      "rule": "beta",
+      "path": [
+        "body",
+        "body",
+        "arg",
+        "arg",
+        "arg",
+        "arg"
+      ],
+      "before": "(λx0.(λx1.(x0 (x0 (x0 (x0 ((λx2.(x0 (((λx3.(λx4.x4)) x0) x2))) x1)))))))",
+      "after": "(λx0.(λx1.(x0 (x0 (x0 (x0 (x0 (((λx2.(λx3.x3)) x0) x1))))))))"
+    },
+    {
+      "index": 33,
+      "rule": "beta",
+      "path": [
+        "body",
+        "body",
+        "arg",
+        "arg",
+        "arg",
+        "arg",
+        "arg",
+        "fn"
+      ],
+      "before": "(λx0.(λx1.(x0 (x0 (x0 (x0 (x0 (((λx2.(λx3.x3)) x0) x1))))))))",
+      "after": "(λx0.(λx1.(x0 (x0 (x0 (x0 (x0 ((λx2.x2) x1))))))))"
+    },
+    {
+      "index": 34,
+      "rule": "beta",
+      "path": [
+        "body",
+        "body",
+        "arg",
+        "arg",
+        "arg",
+        "arg",
+        "arg"
+      ],
+      "before": "(λx0.(λx1.(x0 (x0 (x0 (x0 (x0 ((λx2.x2) x1))))))))",
+      "after": "(λx0.(λx1.(x0 (x0 (x0 (x0 (x0 x1)))))))"
+    }
+  ],
+  "final": "(λx0.(λx1.(x0 (x0 (x0 (x0 (x0 x1)))))))",
+  "status": "normal-form"
+}
