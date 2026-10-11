@@ -20,6 +20,7 @@ if (fs.existsSync(manifestPath)) {
   files = ['README.md', 'CHANGELOG.md', release.paper, release.audit, release.applications, release.concepts, release.conceptExamples, release.conceptInventory, release.fOnlyAppendix, release.fOnlyCoverage, release.traceExtensions, release.lambdaArithmetic, release.extensionExample || `research/extension-example-v${release.paperVersion}.md`, 'verification/README.md', 'interpreter/README.md'].filter(Boolean);
   for (const edition of Object.values(release.translations || {}))
     files.push(...[edition.paper, edition.readme, edition.fOnlyAppendix].filter(Boolean));
+  files.push(...(release.site?.files || []));
   if (release.labelDesign) files.push(release.labelDesign);
   if (release.authorDecisions) files.push(release.authorDecisions);
 }

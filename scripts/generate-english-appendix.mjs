@@ -76,7 +76,7 @@ for(let i=0;i<pieces.length;i++){
   const id=`paper-${String(section.number).padStart(2,'0')}`,file=`${edition.fOnlyDataDirectory}/${id}.f`;
   const symbols=printFOnly(E.encodeText(text))+'\n';assert(/^[f()\s]+$/.test(symbols));output(file,symbols);
   const decoded=E.decodeText(parseFOnly(read(file)));assert.equal(decoded,text);recovered.push(decoded);
-  const record={id,kind:'english-manuscript-text',title:section.title,path:file,bytes:Buffer.byteLength(symbols),sha256:sha(symbols),source:edition.paper,sourceStart:section.start,sourceEnd:section.start+text.length,sourceBytes:Buffer.byteLength(text),sourceSha256:sha(text),...(section.number===13?{endmatterIncluded:['Appendix A','Related work','References']}:{} )};
+  const record={id,kind:'english-manuscript-text',title:section.title,path:file,bytes:Buffer.byteLength(symbols),sha256:sha(symbols),source:edition.paper,sourceStart:section.start,sourceEnd:section.start+text.length,sourceBytes:Buffer.byteLength(text),sourceSha256:sha(text),...(section.number===13?{endmatterIncluded:['Appendix A','Appendix B','Related work','References']}:{} )};
   files.push(record);textRows.push(record);checks.push({id,status:'passed',checkKind:'lossless-english-text-recovery-not-formal-proof'});
 }
 assert.equal(recovered.join(''),paper);
@@ -87,7 +87,7 @@ const programTitles={
   'program-lambda-core':'Lambda kernel and computation-trace replay',
   'program-generator-extensions':'Interval-label extensions and finite-response checking',
   'program-model-extensions':'Register machine and conditional equational proofs',
-  'program-concept-examples':'Structural examples, NatForm, fixed-type T products, G/H introductions, and finite decimal-interpretation checks',
+  'program-concept-examples':'Structural examples, NatForm, fixed-type T products, G/H introductions, decimal interpretations, and finite pi evidence checks',
 };
 const programs=sourceManifest.files.filter(x=>x.kind==='program-source-text');
 assert.deepEqual(programs.map(x=>x.id).sort(),Object.keys(programTitles).sort());
@@ -103,7 +103,7 @@ function chapterOf(id){
   if(/^(int-|sign-|lambda-z)/.test(id))return 4;
   if(/^(rat-|qrep-|lambda-q)/.test(id))return 5;
   if(id.startsWith('geometric-'))return 6;
-  if(id.startsWith('decimal-'))return 9;
+  if(id.startsWith('decimal-')||id.startsWith('pi-'))return 9;
   if(id.startsWith('qlim-')||id==='label-with-evidence'||/^relation-(g-|common-|intro-(positive-|negative$|zero$))/.test(id))return 6;
   if(id==='relation-rational-error')return 9;
   if(id.startsWith('relation-'))return 7;
@@ -122,11 +122,11 @@ const notes={
   6:'G(q,b) is a generation record retaining the coefficient b for execution. Check finite samples of the common subsequence when b/c=r/s, then use the separate introduction rule Φ(G(q,b))=(2sgn(b),q) to obtain a relation label. Positive b gives q##. Distinguish the recursion count n from the integer relation-operator index k retained in the label. Appendix A adds finite H(q,b,r) recurrence responses and the separate introduction rule Psi.',
   7:'Keep componentwise addition and order on relation labels L(k,q). The equation 0##+0##=0#### retains k=4 instead of compressing it to its sign. Pointwise addition of generation records differs from label addition: Φ(u+u) and Φ(u)+Φ(u) are unequal. The current M consists of all finite polynomials described in the next section.',
   8:'Construct M-polynomials as rational coefficient lists, their ratios F, generative complex numbers as matrices, and generative quaternions as pairs of generative complex numbers. Then define multiplication with σ²=2 on pairs of F values in type T, and show products whose inputs and results all have the specified type T.',
-  9:'Intervals, precision requests, generator states, and finite traces are represented by numbers and their combinations. Approximation is a separate operation requested when needed. A concrete example checks that the exact difference 2ε for q## lies below a rational error bound; agreement in approximation is not exact equality, and numbers need not carry a unified label combining them with a generator. Appendix A separates a repeating-decimal record from exact, lower, and upper interpretations; shared finite prefix bounds do not identify their distinct exact values.',
+  9:'Intervals, precision requests, generator states, and finite traces are represented by numbers and their combinations. Approximation is a separate operation requested when needed. A concrete example checks that the exact difference 2ε for q## lies below a rational error bound; agreement in approximation is not exact equality, and numbers need not carry a unified label combining them with a generator. Appendix A separates a repeating-decimal record from exact, lower, and upper interpretations; shared finite prefix bounds do not identify their distinct exact values. For pi in Appendix B, rule references, finite recurrence, membership witnesses, interval responses, and locatedness examples use the same f-only syntax.',
   10:'Distinguish proposition syntax from proof data. All stored proof bundles are included without omissions and rechecked using their corresponding kernels.',
   11:'The complete text in Part II retains the distinction between refuted claims and unresolved questions.',
   12:'Distinguish syntax recovery, proof replay by the applicable checker, and the status of written general proofs.',
-  13:'The complete text in Part II retains the remaining research tasks. A uniform notation does not resolve those tasks by itself.',
+  13:'The complete text in Part II retains the remaining research tasks and Appendix B on surreal numbers and the exact pi specification. A uniform notation does not resolve those tasks by itself.',
 };
 const lines=[`# Appendix: Following This Manuscript Using f Alone — v${version} (English)\n\n`,
   `First look at the symbol strings. They all use the same nested f form. The [English manuscript](../${edition.paper}) explains their construction, numerical interpretation, computation, and proofs one step at a time.\n\n`,
@@ -147,12 +147,12 @@ for(const section of chapters){
     else lines.push(`The linked file contains the complete string (${item.bytes-1} characters), without ellipses or abbreviations.\n\n`);
   }
 }
-lines.push('\n## II. Complete English manuscript archive\n\nEach file encodes the UTF-8 bytes of the corresponding text as a list of unary natural numbers, then uses the common f notation. Decode and concatenate the pieces in order to recover the entire English file, from its title and translation note through Appendix A, related work, and references after Chapter 13. This is reversible text storage, distinct from structural mathematical data and proof checking.\n\n| Manuscript part | Complete f-only file |\n|---|---|\n');
-for(const item of textRows)lines.push(`| ${item.title}${item.id==='paper-13'?', Appendix A, related work, and references':''} | [${item.id}.f](../${item.path}) |\n`);
+lines.push('\n## II. Complete English manuscript archive\n\nEach file encodes the UTF-8 bytes of the corresponding text as a list of unary natural numbers, then uses the common f notation. Decode and concatenate the pieces in order to recover the entire English file, from its title and translation note through Appendices A and B, related work, and references after Chapter 13. This is reversible text storage, distinct from structural mathematical data and proof checking.\n\n| Manuscript part | Complete f-only file |\n|---|---|\n');
+for(const item of textRows)lines.push(`| ${item.title}${item.id==='paper-13'?', Appendices A and B, related work, and references':''} | [${item.id}.f](../${item.path}) |\n`);
 lines.push('\n## III. Complete implementation-source archives\n\nThese shared files recover the original implementation sources. Existing comments and metadata are preserved. Source recovery does not turn JavaScript arithmetic into pure lambda reduction.\n\n| Implementation | Complete f-only file |\n|---|---|\n');
 for(const item of programs)lines.push(`| ${programTitles[item.id]} | [${item.id}.f](../${item.path}) |\n`);
 lines.push(`\nValidation: [file manifest](../${edition.fOnlyDataDirectory}/manifest.json), [recovery and proof-replay report](../${edition.fOnlyDataDirectory}/report.json).\n`);
 output(edition.fOnlyAppendix,lines.join(''));
 output(`${edition.fOnlyDataDirectory}/manifest.json`,json({format:'single-f-english-appendix/1',paperVersion:version,language:'en',manuscript:edition.paper,manuscriptSha256:sha(paper),manuscriptBytes:Buffer.byteLength(paper),sharedSourceManifest:`${release.fOnlyDataDirectory}/manifest.json`,labelsSha256:sha(read(edition.labels)),files}));
-output(`${edition.fOnlyDataDirectory}/report.json`,json({format:'single-f-english-verification/1',paperVersion:version,language:'en',status:'passed',structuralCount:structures.length,completeProofBundles:proofs.size,textSections:textRows.length,programSources:programs.length,completeManuscriptRecovered:true,sourceDeclaredChecks:sourceReport.sourceDeclaredChecks,checks,scope:'English prose is losslessly archived. Shared mathematical structures and proof bundles retain their original semantics and proof status. The local G/H-to-L and decimal-interpretation checks declared by the shared source are preserved as records, not rerun as a new general theorem here; written general proofs are not newly formalized by text encoding.'}));
+output(`${edition.fOnlyDataDirectory}/report.json`,json({format:'single-f-english-verification/1',paperVersion:version,language:'en',status:'passed',structuralCount:structures.length,completeProofBundles:proofs.size,textSections:textRows.length,programSources:programs.length,completeManuscriptRecovered:true,sourceDeclaredChecks:sourceReport.sourceDeclaredChecks,checks,scope:'English prose is losslessly archived. Shared mathematical structures and proof bundles retain their original semantics and proof status. The local G/H-to-L, decimal-interpretation, and finite pi witness/bracket checks declared by the shared source are preserved as records, not rerun as a new general theorem here; written general proofs are not newly formalized by text encoding.'}));
 console.log(`${checking?'Verified':'Generated and verified'} English appendix: ${structures.length} shared structures, ${proofs.size} rechecked proof bundles, ${textRows.length} English text sections, ${programs.length} shared program sources.`);

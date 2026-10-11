@@ -1,0 +1,3038 @@
+{
+  "format": "concept-symbol-examples/1",
+  "paperVersion": "1.5.8",
+  "alphabet": "f ( ) , and whitespace",
+  "grammar": "S := f() | f(S) | (S,S)",
+  "examples": [
+    {
+      "id": "nat-0",
+      "group": "基底と数",
+      "title": "自然数 0",
+      "path": "verification/concept-symbols-v1.5.8/nat-0.f",
+      "bytes": 4,
+      "sha256": "07d6b0de1af2f0e71ad001630d6c94a599cde970023233b8a440e9e8faddc530",
+      "explanation": "型を外側で指定した直接表示。",
+      "validation": "型付きの復号結果を、指定した正規値と照合。"
+    },
+    {
+      "id": "nat-1",
+      "group": "基底と数",
+      "title": "自然数 1",
+      "path": "verification/concept-symbols-v1.5.8/nat-1.f",
+      "bytes": 7,
+      "sha256": "d5bb654fb7396f18931c15b2a874974963dfcb2c5348356f6baad05fcf5748c0",
+      "explanation": "型を外側で指定した直接表示。",
+      "validation": "型付きの復号結果を、指定した正規値と照合。"
+    },
+    {
+      "id": "nat-2",
+      "group": "基底と数",
+      "title": "自然数 2",
+      "path": "verification/concept-symbols-v1.5.8/nat-2.f",
+      "bytes": 10,
+      "sha256": "dbd34bca5e825e8b8508174c5a4d592820c781bd84c199b03d2ce0fd618836ca",
+      "explanation": "型を外側で指定した直接表示。",
+      "validation": "型付きの復号結果を、指定した正規値と照合。"
+    },
+    {
+      "id": "nat-3",
+      "group": "基底と数",
+      "title": "自然数 3",
+      "path": "verification/concept-symbols-v1.5.8/nat-3.f",
+      "bytes": 13,
+      "sha256": "3cc8421d89fd55465f9685ef8e0d656359be0050922a908a45c11aaf8c29661c",
+      "explanation": "型を外側で指定した直接表示。",
+      "validation": "型付きの復号結果を、指定した正規値と照合。"
+    },
+    {
+      "id": "nat-4",
+      "group": "基底と数",
+      "title": "自然数 4",
+      "path": "verification/concept-symbols-v1.5.8/nat-4.f",
+      "bytes": 16,
+      "sha256": "824202512946f3c550a64b83df3b876e36773b9ae126779813cbace810dce117",
+      "explanation": "型を外側で指定した直接表示。",
+      "validation": "型付きの復号結果を、指定した正規値と照合。"
+    },
+    {
+      "id": "sign-0",
+      "group": "基底と数",
+      "title": "非負の符号",
+      "path": "verification/concept-symbols-v1.5.8/sign-0.f",
+      "bytes": 4,
+      "sha256": "07d6b0de1af2f0e71ad001630d6c94a599cde970023233b8a440e9e8faddc530",
+      "explanation": "型を外側で指定した直接表示。",
+      "validation": "型付きの復号結果を、指定した正規値と照合。"
+    },
+    {
+      "id": "sign-1",
+      "group": "基底と数",
+      "title": "負の符号",
+      "path": "verification/concept-symbols-v1.5.8/sign-1.f",
+      "bytes": 7,
+      "sha256": "d5bb654fb7396f18931c15b2a874974963dfcb2c5348356f6baad05fcf5748c0",
+      "explanation": "型を外側で指定した直接表示。",
+      "validation": "型付きの復号結果を、指定した正規値と照合。"
+    },
+    {
+      "id": "int-minus-2",
+      "group": "基底と数",
+      "title": "整数 -2",
+      "path": "verification/concept-symbols-v1.5.8/int-minus-2.f",
+      "bytes": 19,
+      "sha256": "10ed98260583a8ddf9de03436d4dc347ecf3ae924c5ea17d1142c080df7c8ec7",
+      "explanation": "型を外側で指定した直接表示。",
+      "validation": "型付きの復号結果を、指定した正規値と照合。"
+    },
+    {
+      "id": "int-minus-1",
+      "group": "基底と数",
+      "title": "整数 -1",
+      "path": "verification/concept-symbols-v1.5.8/int-minus-1.f",
+      "bytes": 16,
+      "sha256": "e20865ac89f27fb28adf14a7c940377c4f638931d201cc67a2a2096a46b53f2c",
+      "explanation": "型を外側で指定した直接表示。",
+      "validation": "型付きの復号結果を、指定した正規値と照合。"
+    },
+    {
+      "id": "int-0",
+      "group": "基底と数",
+      "title": "整数 0",
+      "path": "verification/concept-symbols-v1.5.8/int-0.f",
+      "bytes": 10,
+      "sha256": "e4c59dd5d0476cf3a242936768568bb1aca97257bf1aab98600f670cd0cd4033",
+      "explanation": "型を外側で指定した直接表示。",
+      "validation": "型付きの復号結果を、指定した正規値と照合。"
+    },
+    {
+      "id": "int-1",
+      "group": "基底と数",
+      "title": "整数 1",
+      "path": "verification/concept-symbols-v1.5.8/int-1.f",
+      "bytes": 13,
+      "sha256": "c307aeda9e7b007a8ae5b64450554f000f6f02415223cb0b488d805fe879023e",
+      "explanation": "型を外側で指定した直接表示。",
+      "validation": "型付きの復号結果を、指定した正規値と照合。"
+    },
+    {
+      "id": "int-2",
+      "group": "基底と数",
+      "title": "整数 2",
+      "path": "verification/concept-symbols-v1.5.8/int-2.f",
+      "bytes": 16,
+      "sha256": "52ad92afb5f81926d4640bf6600be1083766720cec629639e5af1f89a66a2387",
+      "explanation": "型を外側で指定した直接表示。",
+      "validation": "型付きの復号結果を、指定した正規値と照合。"
+    },
+    {
+      "id": "rat-0-1",
+      "group": "基底と数",
+      "title": "有理数 0/1",
+      "path": "verification/concept-symbols-v1.5.8/rat-0-1.f",
+      "bytes": 25,
+      "sha256": "102e8988927543a96a231c7083a56899f7704a50f73fa16100b96c5e82688830",
+      "explanation": "型を外側で指定した直接表示。",
+      "validation": "型付きの復号結果を、指定した正規値と照合。"
+    },
+    {
+      "id": "rat-1-1",
+      "group": "基底と数",
+      "title": "有理数 1/1",
+      "path": "verification/concept-symbols-v1.5.8/rat-1-1.f",
+      "bytes": 28,
+      "sha256": "74be10b70e2a330f390f8a598a08deada3fe72d42f41644a063843d269c8380e",
+      "explanation": "型を外側で指定した直接表示。",
+      "validation": "型付きの復号結果を、指定した正規値と照合。"
+    },
+    {
+      "id": "rat-minus-1-1",
+      "group": "基底と数",
+      "title": "有理数 -1/1",
+      "path": "verification/concept-symbols-v1.5.8/rat-minus-1-1.f",
+      "bytes": 31,
+      "sha256": "8c4929a2b6b19772776a3030b72fb1748b521f97b519be7a648b2e64716b5983",
+      "explanation": "型を外側で指定した直接表示。",
+      "validation": "型付きの復号結果を、指定した正規値と照合。"
+    },
+    {
+      "id": "rat-2-1",
+      "group": "基底と数",
+      "title": "有理数 2/1",
+      "path": "verification/concept-symbols-v1.5.8/rat-2-1.f",
+      "bytes": 31,
+      "sha256": "f86443a2ed53bd2150ec13693bfb59b65ac593df13c569762ea3c03431213204",
+      "explanation": "型を外側で指定した直接表示。",
+      "validation": "型付きの復号結果を、指定した正規値と照合。"
+    },
+    {
+      "id": "rat-minus-2-1",
+      "group": "基底と数",
+      "title": "有理数 -2/1",
+      "path": "verification/concept-symbols-v1.5.8/rat-minus-2-1.f",
+      "bytes": 34,
+      "sha256": "96df8127b8e3c20e45cd0ad196aed664e540a5e6043eb3e9637a5044481ef201",
+      "explanation": "型を外側で指定した直接表示。",
+      "validation": "型付きの復号結果を、指定した正規値と照合。"
+    },
+    {
+      "id": "rat-1-2",
+      "group": "基底と数",
+      "title": "有理数 1/2",
+      "path": "verification/concept-symbols-v1.5.8/rat-1-2.f",
+      "bytes": 31,
+      "sha256": "4c0b8cad911be240fe6df42fb55bd71313ee5c38381491e245054006444514f5",
+      "explanation": "型を外側で指定した直接表示。",
+      "validation": "型付きの復号結果を、指定した正規値と照合。"
+    },
+    {
+      "id": "rat-minus-1-3",
+      "group": "基底と数",
+      "title": "有理数 -1/3",
+      "path": "verification/concept-symbols-v1.5.8/rat-minus-1-3.f",
+      "bytes": 37,
+      "sha256": "be42de176c223dbe61204177d8e19c22dd27c487dfd37ac7dfd74b8ab5924712",
+      "explanation": "型を外側で指定した直接表示。",
+      "validation": "型付きの復号結果を、指定した正規値と照合。"
+    },
+    {
+      "id": "text-a",
+      "group": "列・補助値",
+      "title": "文字列 a",
+      "path": "verification/concept-symbols-v1.5.8/text-a.f",
+      "bytes": 301,
+      "sha256": "a84a196c35a08f82ecaf5738a08ff0135467e0c96a316ebaefe2d84d4998ac0a",
+      "explanation": "UTF-8の97を自然数で表し、一要素列にする。",
+      "validation": "型付きの復号結果を、指定した正規値と照合。"
+    },
+    {
+      "id": "text-lambda",
+      "group": "列・補助値",
+      "title": "文字列 λ",
+      "path": "verification/concept-symbols-v1.5.8/text-lambda.f",
+      "bytes": 1195,
+      "sha256": "9c990fd6468caf56a1af812a8bc01bf5a8c309dd23fcefa6e2da524dd6d1a366",
+      "explanation": "UTF-8の二つのバイトを自然数の列として保持する。",
+      "validation": "型付きの復号結果を、指定した正規値と照合。"
+    },
+    {
+      "id": "pair-nat",
+      "group": "列・補助値",
+      "title": "自然数1と2の固定対",
+      "path": "verification/concept-symbols-v1.5.8/pair-nat.f",
+      "bytes": 19,
+      "sha256": "10ed98260583a8ddf9de03436d4dc347ecf3ae924c5ea17d1142c080df7c8ec7",
+      "explanation": "(N(1),N(2))",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。"
+    },
+    {
+      "id": "list-0",
+      "group": "列・補助値",
+      "title": "自然数の0要素列",
+      "path": "verification/concept-symbols-v1.5.8/list-0.f",
+      "bytes": 4,
+      "sha256": "07d6b0de1af2f0e71ad001630d6c94a599cde970023233b8a440e9e8faddc530",
+      "explanation": "[]",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。"
+    },
+    {
+      "id": "list-1",
+      "group": "列・補助値",
+      "title": "自然数の1要素列",
+      "path": "verification/concept-symbols-v1.5.8/list-1.f",
+      "bytes": 10,
+      "sha256": "e4c59dd5d0476cf3a242936768568bb1aca97257bf1aab98600f670cd0cd4033",
+      "explanation": "[0]",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。"
+    },
+    {
+      "id": "list-3",
+      "group": "列・補助値",
+      "title": "自然数の3要素列",
+      "path": "verification/concept-symbols-v1.5.8/list-3.f",
+      "bytes": 31,
+      "sha256": "c0f432c6a03e7f28c8f050e2df7dc11ce80c34e658aa58dceb5387513c9df7a7",
+      "explanation": "[0,1,2]",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。"
+    },
+    {
+      "id": "bool-false",
+      "group": "列・補助値",
+      "title": "真偽データ false",
+      "path": "verification/concept-symbols-v1.5.8/bool-false.f",
+      "bytes": 4,
+      "sha256": "07d6b0de1af2f0e71ad001630d6c94a599cde970023233b8a440e9e8faddc530",
+      "explanation": "型を外側で指定した直接表示。",
+      "validation": "型付きの復号結果を、指定した正規値と照合。"
+    },
+    {
+      "id": "bool-true",
+      "group": "列・補助値",
+      "title": "真偽データ true",
+      "path": "verification/concept-symbols-v1.5.8/bool-true.f",
+      "bytes": 7,
+      "sha256": "d5bb654fb7396f18931c15b2a874974963dfcb2c5348356f6baad05fcf5748c0",
+      "explanation": "型を外側で指定した直接表示。",
+      "validation": "型付きの復号結果を、指定した正規値と照合。"
+    },
+    {
+      "id": "ordering-minus-1",
+      "group": "列・補助値",
+      "title": "比較結果 -1",
+      "path": "verification/concept-symbols-v1.5.8/ordering-minus-1.f",
+      "bytes": 16,
+      "sha256": "e20865ac89f27fb28adf14a7c940377c4f638931d201cc67a2a2096a46b53f2c",
+      "explanation": "型を外側で指定した直接表示。",
+      "validation": "型付きの復号結果を、指定した正規値と照合。"
+    },
+    {
+      "id": "ordering-0",
+      "group": "列・補助値",
+      "title": "比較結果 0",
+      "path": "verification/concept-symbols-v1.5.8/ordering-0.f",
+      "bytes": 10,
+      "sha256": "e4c59dd5d0476cf3a242936768568bb1aca97257bf1aab98600f670cd0cd4033",
+      "explanation": "型を外側で指定した直接表示。",
+      "validation": "型付きの復号結果を、指定した正規値と照合。"
+    },
+    {
+      "id": "ordering-1",
+      "group": "列・補助値",
+      "title": "比較結果 1",
+      "path": "verification/concept-symbols-v1.5.8/ordering-1.f",
+      "bytes": 13,
+      "sha256": "c307aeda9e7b007a8ae5b64450554f000f6f02415223cb0b488d805fe879023e",
+      "explanation": "型を外側で指定した直接表示。",
+      "validation": "型付きの復号結果を、指定した正規値と照合。"
+    },
+    {
+      "id": "option-none",
+      "group": "列・補助値",
+      "title": "値なし",
+      "path": "verification/concept-symbols-v1.5.8/option-none.f",
+      "bytes": 10,
+      "sha256": "e4c59dd5d0476cf3a242936768568bb1aca97257bf1aab98600f670cd0cd4033",
+      "explanation": "Node(0;)",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。"
+    },
+    {
+      "id": "option-some",
+      "group": "列・補助値",
+      "title": "自然数2の値あり",
+      "path": "verification/concept-symbols-v1.5.8/option-some.f",
+      "bytes": 25,
+      "sha256": "0cced9f2440379afeeef14c848442f40afa2c41c96651f4929c50f22ef8b7bb5",
+      "explanation": "Node(1;N(2))",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。"
+    },
+    {
+      "id": "result-success",
+      "group": "列・補助値",
+      "title": "演算成功",
+      "path": "verification/concept-symbols-v1.5.8/result-success.f",
+      "bytes": 43,
+      "sha256": "d0e638c5962ecf24f503f3fcca1bd05fdd54e281d5154c4a6fe6e8c022edcfd2",
+      "explanation": "Node(0;Q(1/2))",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。"
+    },
+    {
+      "id": "result-failure",
+      "group": "列・補助値",
+      "title": "演算失敗",
+      "path": "verification/concept-symbols-v1.5.8/result-failure.f",
+      "bytes": 1387,
+      "sha256": "f7c537f3129908a5d25be12739f0aabc7ff16b946aaaff3289ab7f88d6b44224",
+      "explanation": "Node(1;Text(\"zero\"))。理由を保持し、零の値にしない。",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。"
+    },
+    {
+      "id": "m-zero",
+      "group": "MとF",
+      "title": "M多項式：0",
+      "path": "verification/concept-symbols-v1.5.8/m-zero.f",
+      "bytes": 4,
+      "sha256": "07d6b0de1af2f0e71ad001630d6c94a599cde970023233b8a440e9e8faddc530",
+      "explanation": "定数項からの有理係数列。Mはこの全有限列の型。",
+      "validation": "型付きの復号結果を、指定した正規値と照合。"
+    },
+    {
+      "id": "m-one",
+      "group": "MとF",
+      "title": "M多項式：1",
+      "path": "verification/concept-symbols-v1.5.8/m-one.f",
+      "bytes": 34,
+      "sha256": "00cb9d0d5a2dc78d712bf3a1cde8ef87c52793ae7994671da1561f45f77435a0",
+      "explanation": "定数項からの有理係数列。Mはこの全有限列の型。",
+      "validation": "型付きの復号結果を、指定した正規値と照合。"
+    },
+    {
+      "id": "m-epsilon",
+      "group": "MとF",
+      "title": "M多項式：ε",
+      "path": "verification/concept-symbols-v1.5.8/m-epsilon.f",
+      "bytes": 61,
+      "sha256": "64f81aa2c594679604f03a79f2fe1ba3d4ea16ad852997c57bee09bb155b159c",
+      "explanation": "定数項からの有理係数列。Mはこの全有限列の型。",
+      "validation": "型付きの復号結果を、指定した正規値と照合。"
+    },
+    {
+      "id": "m-epsilon-squared",
+      "group": "MとF",
+      "title": "M多項式：ε²",
+      "path": "verification/concept-symbols-v1.5.8/m-epsilon-squared.f",
+      "bytes": 88,
+      "sha256": "6710612f118641c940c9ffc42cbf5a50f59385002aa502cbdc89e4d8921bc181",
+      "explanation": "定数項からの有理係数列。Mはこの全有限列の型。",
+      "validation": "型付きの復号結果を、指定した正規値と照合。"
+    },
+    {
+      "id": "m-one-plus-epsilon",
+      "group": "MとF",
+      "title": "M多項式：1+ε",
+      "path": "verification/concept-symbols-v1.5.8/m-one-plus-epsilon.f",
+      "bytes": 64,
+      "sha256": "b01638f787debea5e8f75bc65a6f4de15a62f6d55252edcdad19cf15a67e9ffa",
+      "explanation": "定数項からの有理係数列。Mはこの全有限列の型。",
+      "validation": "型付きの復号結果を、指定した正規値と照合。"
+    },
+    {
+      "id": "m-epsilon-half",
+      "group": "MとF",
+      "title": "M多項式：ε/2",
+      "path": "verification/concept-symbols-v1.5.8/m-epsilon-half.f",
+      "bytes": 64,
+      "sha256": "f18be534cd88ffc83f0141862fccbcdc4ca45180c7061af7d4c97dd168c986e2",
+      "explanation": "定数項からの有理係数列。Mはこの全有限列の型。",
+      "validation": "型付きの復号結果を、指定した正規値と照合。"
+    },
+    {
+      "id": "m-general",
+      "group": "MとF",
+      "title": "M多項式：1−2ε+(1/2)ε²",
+      "path": "verification/concept-symbols-v1.5.8/m-general.f",
+      "bytes": 103,
+      "sha256": "727b3756c6cb81c335e3315b771eff3ae6852c3713083e2a54c6302229bdcb36",
+      "explanation": "定数項からの有理係数列。Mはこの全有限列の型。",
+      "validation": "型付きの復号結果を、指定した正規値と照合。"
+    },
+    {
+      "id": "legacy-l",
+      "group": "MとF",
+      "title": "補助関係子ラベル L：0#",
+      "path": "verification/concept-symbols-v1.5.8/legacy-l.f",
+      "bytes": 40,
+      "sha256": "1ddefd67bf82ae74e0fed7790366079200ccb461a8e590ba2617899e2752da1b",
+      "explanation": "(k,q)=(1,0)。Mとしては係数列[0,1]へ移す。整数kは関係子の個数であり、近似添字nではない。",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。"
+    },
+    {
+      "id": "f-zero",
+      "group": "MとF",
+      "title": "F：zero",
+      "path": "verification/concept-symbols-v1.5.8/f-zero.f",
+      "bytes": 40,
+      "sha256": "b93a6cad87f8b74ecaf4c96b85f67203b58e46112a352db54ef7220923b0b0ed",
+      "explanation": "正規化された多項式比 {\"numerator\":[],\"denominator\":[\"1/1\"]}",
+      "validation": "型付きの復号結果を、指定した正規値と照合。"
+    },
+    {
+      "id": "f-one",
+      "group": "MとF",
+      "title": "F：one",
+      "path": "verification/concept-symbols-v1.5.8/f-one.f",
+      "bytes": 70,
+      "sha256": "310090207368e899d5762ea93de116ccf68b4a05b56b63bacd80f7d126755504",
+      "explanation": "正規化された多項式比 {\"numerator\":[\"1/1\"],\"denominator\":[\"1/1\"]}",
+      "validation": "型付きの復号結果を、指定した正規値と照合。"
+    },
+    {
+      "id": "f-minus-one",
+      "group": "MとF",
+      "title": "F：minus-one",
+      "path": "verification/concept-symbols-v1.5.8/f-minus-one.f",
+      "bytes": 73,
+      "sha256": "4f2ec64ebf4be98dd4b7539b2f9200adcc5c7d3dadf1432da136db00bcb9e9ff",
+      "explanation": "正規化された多項式比 {\"numerator\":[\"-1/1\"],\"denominator\":[\"1/1\"]}",
+      "validation": "型付きの復号結果を、指定した正規値と照合。"
+    },
+    {
+      "id": "f-epsilon",
+      "group": "MとF",
+      "title": "F：epsilon",
+      "path": "verification/concept-symbols-v1.5.8/f-epsilon.f",
+      "bytes": 97,
+      "sha256": "c2ab14277570ea1fb22442ca70a6db60a0da96eb5fa2ab8bc296df405087865a",
+      "explanation": "正規化された多項式比 {\"numerator\":[\"0/1\",\"1/1\"],\"denominator\":[\"1/1\"]}",
+      "validation": "型付きの復号結果を、指定した正規値と照合。"
+    },
+    {
+      "id": "f-inverse-epsilon",
+      "group": "MとF",
+      "title": "F：inverse-epsilon",
+      "path": "verification/concept-symbols-v1.5.8/f-inverse-epsilon.f",
+      "bytes": 97,
+      "sha256": "f6ea0dbe409e70f1d534d0f08739f988513a0fe4474be5a84300b45376520857",
+      "explanation": "正規化された多項式比 {\"numerator\":[\"1/1\"],\"denominator\":[\"0/1\",\"1/1\"]}",
+      "validation": "型付きの復号結果を、指定した正規値と照合。"
+    },
+    {
+      "id": "f-square-ratio",
+      "group": "MとF",
+      "title": "F：square-ratio",
+      "path": "verification/concept-symbols-v1.5.8/f-square-ratio.f",
+      "bytes": 154,
+      "sha256": "eb8d615b13dcb83f7b24be34ed39ec5d8158cc87d05a176cc61e96f077088252",
+      "explanation": "正規化された多項式比 {\"numerator\":[\"0/1\",\"0/1\",\"1/1\"],\"denominator\":[\"1/1\",\"1/1\"]}",
+      "validation": "型付きの復号結果を、指定した正規値と照合。"
+    },
+    {
+      "id": "poly-degree",
+      "group": "MとF",
+      "title": "ε²の次数",
+      "path": "verification/concept-symbols-v1.5.8/poly-degree.f",
+      "bytes": 10,
+      "sha256": "dbd34bca5e825e8b8508174c5a4d592820c781bd84c199b03d2ce0fd618836ca",
+      "explanation": "型を外側で指定した直接表示。",
+      "validation": "型付きの復号結果を、指定した正規値と照合。"
+    },
+    {
+      "id": "valuation-negative",
+      "group": "MとF",
+      "title": "1/εの次数差",
+      "path": "verification/concept-symbols-v1.5.8/valuation-negative.f",
+      "bytes": 16,
+      "sha256": "e20865ac89f27fb28adf14a7c940377c4f638931d201cc67a2a2096a46b53f2c",
+      "explanation": "型を外側で指定した直接表示。",
+      "validation": "型付きの復号結果を、指定した正規値と照合。"
+    },
+    {
+      "id": "standard-part",
+      "group": "MとF",
+      "title": "st((1+ε)/(2−ε))",
+      "path": "verification/concept-symbols-v1.5.8/standard-part.f",
+      "bytes": 31,
+      "sha256": "4c0b8cad911be240fe6df42fb55bd71313ee5c38381491e245054006444514f5",
+      "explanation": "標準部の出力値。定義域条件と計算証拠は別に検査する。",
+      "validation": "型付きの復号結果を、指定した正規値と照合。"
+    },
+    {
+      "id": "complex-zero",
+      "group": "生成複素数と生成四元数",
+      "title": "生成複素数 zero",
+      "path": "verification/concept-symbols-v1.5.8/complex-zero.f",
+      "bytes": 166,
+      "sha256": "a40b6a8ff572944be8c1c7c26d1b6abe1828a8a423ffe4a9dc8b675692a39dcc",
+      "explanation": "原案の行列 ((a,−b),(b,a))。全成分はF。",
+      "validation": "型付きの復号結果を、指定した正規値と照合。"
+    },
+    {
+      "id": "complex-one",
+      "group": "生成複素数と生成四元数",
+      "title": "生成複素数 one",
+      "path": "verification/concept-symbols-v1.5.8/complex-one.f",
+      "bytes": 226,
+      "sha256": "f294eb4c0298647522c4c459f50a548b51864cc8a19eab91b49738b5cda18782",
+      "explanation": "原案の行列 ((a,−b),(b,a))。全成分はF。",
+      "validation": "型付きの復号結果を、指定した正規値と照合。"
+    },
+    {
+      "id": "complex-i",
+      "group": "生成複素数と生成四元数",
+      "title": "生成複素数 i",
+      "path": "verification/concept-symbols-v1.5.8/complex-i.f",
+      "bytes": 229,
+      "sha256": "8c9b344023c3dd3898eea79ab10814aa99c1fbe689f9832b5cad476e75c2e657",
+      "explanation": "原案の行列 ((a,−b),(b,a))。全成分はF。",
+      "validation": "型付きの復号結果を、指定した正規値と照合。"
+    },
+    {
+      "id": "complex-one-plus-i",
+      "group": "生成複素数と生成四元数",
+      "title": "生成複素数 one-plus-i",
+      "path": "verification/concept-symbols-v1.5.8/complex-one-plus-i.f",
+      "bytes": 289,
+      "sha256": "48f7905e9f9bf801b99a9795d6640d8d46121789382550741e973c3253a3c8ac",
+      "explanation": "原案の行列 ((a,−b),(b,a))。全成分はF。",
+      "validation": "型付きの復号結果を、指定した正規値と照合。"
+    },
+    {
+      "id": "complex-one-minus-i",
+      "group": "生成複素数と生成四元数",
+      "title": "生成複素数 one-minus-i",
+      "path": "verification/concept-symbols-v1.5.8/complex-one-minus-i.f",
+      "bytes": 289,
+      "sha256": "30d684cfdf3a78d6c34e97044f9c9d72c69e4086a90d318213fa13fed74e862d",
+      "explanation": "原案の行列 ((a,−b),(b,a))。全成分はF。",
+      "validation": "型付きの復号結果を、指定した正規値と照合。"
+    },
+    {
+      "id": "quaternion-one",
+      "group": "生成複素数と生成四元数",
+      "title": "生成四元数 one",
+      "path": "verification/concept-symbols-v1.5.8/quaternion-one.f",
+      "bytes": 394,
+      "sha256": "c8608ff783aa8546cb3fa984f0da6aa9156336e9bd68415ae824cbfc780f6268",
+      "explanation": "((a+bi),(c+di)) を z+w j と読む。各複素数は原案の行列表示。",
+      "validation": "型付きの復号結果を、指定した正規値と照合。"
+    },
+    {
+      "id": "quaternion-i",
+      "group": "生成複素数と生成四元数",
+      "title": "生成四元数 i",
+      "path": "verification/concept-symbols-v1.5.8/quaternion-i.f",
+      "bytes": 397,
+      "sha256": "cccf892bcb01d0752425a2b54da8210da97b47d0af39ed92bfbd12fbe4625ba8",
+      "explanation": "((a+bi),(c+di)) を z+w j と読む。各複素数は原案の行列表示。",
+      "validation": "型付きの復号結果を、指定した正規値と照合。"
+    },
+    {
+      "id": "quaternion-j",
+      "group": "生成複素数と生成四元数",
+      "title": "生成四元数 j",
+      "path": "verification/concept-symbols-v1.5.8/quaternion-j.f",
+      "bytes": 394,
+      "sha256": "b8dfc74360a23544fdf1deff566bbab43dacae6352dc06b3f3c6d0ec6f5df76f",
+      "explanation": "((a+bi),(c+di)) を z+w j と読む。各複素数は原案の行列表示。",
+      "validation": "型付きの復号結果を、指定した正規値と照合。"
+    },
+    {
+      "id": "quaternion-k",
+      "group": "生成複素数と生成四元数",
+      "title": "生成四元数 k",
+      "path": "verification/concept-symbols-v1.5.8/quaternion-k.f",
+      "bytes": 397,
+      "sha256": "156cd30a0d85c62fd6c57b1a0e63d09c169c4273fe392adc02e5011dc226bf4d",
+      "explanation": "((a+bi),(c+di)) を z+w j と読む。各複素数は原案の行列表示。",
+      "validation": "型付きの復号結果を、指定した正規値と照合。"
+    },
+    {
+      "id": "quaternion-all-one",
+      "group": "生成複素数と生成四元数",
+      "title": "生成四元数 all-one",
+      "path": "verification/concept-symbols-v1.5.8/quaternion-all-one.f",
+      "bytes": 580,
+      "sha256": "796f57ff8c0576a28da722baa76e50727a6f34955633e8385d9c3c2a01a0a6e8",
+      "explanation": "((a+bi),(c+di)) を z+w j と読む。各複素数は原案の行列表示。",
+      "validation": "型付きの復号結果を、指定した正規値と照合。"
+    },
+    {
+      "id": "type-n",
+      "group": "型とλ構文",
+      "title": "型 N",
+      "path": "verification/concept-symbols-v1.5.8/type-n.f",
+      "bytes": 10,
+      "sha256": "e4c59dd5d0476cf3a242936768568bb1aca97257bf1aab98600f670cd0cd4033",
+      "explanation": "Node(0;)",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。"
+    },
+    {
+      "id": "type-z",
+      "group": "型とλ構文",
+      "title": "型 Z",
+      "path": "verification/concept-symbols-v1.5.8/type-z.f",
+      "bytes": 13,
+      "sha256": "c13e3baeee9ead6301820e34dd85d6e2a2a1594bcebe037ef29af9a5e16bce7b",
+      "explanation": "Node(1;)",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。"
+    },
+    {
+      "id": "type-q",
+      "group": "型とλ構文",
+      "title": "型 Q",
+      "path": "verification/concept-symbols-v1.5.8/type-q.f",
+      "bytes": 16,
+      "sha256": "109c09c37c50b4e5de65d9ac4eaba538ce54bbdb92d2f4a363d2f2049ceb9e9a",
+      "explanation": "Node(2;)",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。"
+    },
+    {
+      "id": "type-m",
+      "group": "型とλ構文",
+      "title": "型 M",
+      "path": "verification/concept-symbols-v1.5.8/type-m.f",
+      "bytes": 19,
+      "sha256": "801260a13132a162ce599ca42e1e41712dd9c4f4344b5e09fed8537ce41e1f6e",
+      "explanation": "Node(3;)",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。"
+    },
+    {
+      "id": "type-f",
+      "group": "型とλ構文",
+      "title": "型 F",
+      "path": "verification/concept-symbols-v1.5.8/type-f.f",
+      "bytes": 22,
+      "sha256": "5abc762d95c5bc1f9170aa9f6aa871f711fbc1747cf99e0e770d7a69e50937ad",
+      "explanation": "Node(4;)",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。"
+    },
+    {
+      "id": "type-c",
+      "group": "型とλ構文",
+      "title": "型 C",
+      "path": "verification/concept-symbols-v1.5.8/type-c.f",
+      "bytes": 25,
+      "sha256": "e21c9b942f5762b692d42e1c37020434db9376a3a31047155165c173cd43bc7b",
+      "explanation": "Node(5;)",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。"
+    },
+    {
+      "id": "type-h",
+      "group": "型とλ構文",
+      "title": "型 H",
+      "path": "verification/concept-symbols-v1.5.8/type-h.f",
+      "bytes": 28,
+      "sha256": "6a7414421e7dfd8adfd9fe6a916791a820013331b6ad3bfdcb991a737defdd44",
+      "explanation": "Node(6;)",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。"
+    },
+    {
+      "id": "type-bool",
+      "group": "型とλ構文",
+      "title": "型 Bool",
+      "path": "verification/concept-symbols-v1.5.8/type-bool.f",
+      "bytes": 31,
+      "sha256": "86eccd3d1b74da912f47754e262d2f40d55930a751717a6daf77bcc46e30a414",
+      "explanation": "Node(7;)",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。"
+    },
+    {
+      "id": "type-text",
+      "group": "型とλ構文",
+      "title": "型 Text",
+      "path": "verification/concept-symbols-v1.5.8/type-text.f",
+      "bytes": 34,
+      "sha256": "a8904f1ce47d16bb542f2c480735d26ee4c4897aab2430acde67345fcb879486",
+      "explanation": "Node(8;)",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。"
+    },
+    {
+      "id": "type-arrow",
+      "group": "型とλ構文",
+      "title": "型 Arrow",
+      "path": "verification/concept-symbols-v1.5.8/type-arrow.f",
+      "bytes": 37,
+      "sha256": "ad4cef965de1f56dde73ab5ee10a573a7ac2f3e176a34354b27174e9470fa9e4",
+      "explanation": "Node(9;)",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。"
+    },
+    {
+      "id": "type-lambda",
+      "group": "型とλ構文",
+      "title": "型 Lambda",
+      "path": "verification/concept-symbols-v1.5.8/type-lambda.f",
+      "bytes": 40,
+      "sha256": "3a684f46365d03222119068190c436c55f884cf45b2c471ba2bff14a230ff92f",
+      "explanation": "Node(10;)",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。"
+    },
+    {
+      "id": "type-proposition",
+      "group": "型とλ構文",
+      "title": "型 Proposition",
+      "path": "verification/concept-symbols-v1.5.8/type-proposition.f",
+      "bytes": 43,
+      "sha256": "758808a46fc1fb9942328b404ed5d8588001305e4b8c0f0cdc688bad9b6a5387",
+      "explanation": "Node(11;)",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。"
+    },
+    {
+      "id": "type-proof",
+      "group": "型とλ構文",
+      "title": "型 Proof",
+      "path": "verification/concept-symbols-v1.5.8/type-proof.f",
+      "bytes": 46,
+      "sha256": "e5e0d0d8d128acfe71e80a554c82578f3c82e2efa0fe1ca0669ed1ae931d9ac7",
+      "explanation": "Node(12;)",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。"
+    },
+    {
+      "id": "type-unit",
+      "group": "型とλ構文",
+      "title": "型 Unit",
+      "path": "verification/concept-symbols-v1.5.8/type-unit.f",
+      "bytes": 49,
+      "sha256": "9a196e6f49b5558305a36b460bb696158e531ac0e814cef97eabfd755127e8e3",
+      "explanation": "Node(13;)",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。"
+    },
+    {
+      "id": "type-list",
+      "group": "型とλ構文",
+      "title": "型 List(Q)",
+      "path": "verification/concept-symbols-v1.5.8/type-list.f",
+      "bytes": 70,
+      "sha256": "26f61d600e8939a06a32d68292016e4232f8fe34b10b09aba26a4536e72ee5ca",
+      "explanation": "List(Q)",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。"
+    },
+    {
+      "id": "type-pair",
+      "group": "型とλ構文",
+      "title": "型 Pair(N,Q)",
+      "path": "verification/concept-symbols-v1.5.8/type-pair.f",
+      "bytes": 85,
+      "sha256": "5220616298ccd7c32afea1aed4928ebe19bc00de0887802ecfc388e043e8acbc",
+      "explanation": "Pair(N,Q)",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。"
+    },
+    {
+      "id": "type-option",
+      "group": "型とλ構文",
+      "title": "型 Option(N)",
+      "path": "verification/concept-symbols-v1.5.8/type-option.f",
+      "bytes": 70,
+      "sha256": "52dbc756d91497ba6e1b641074c5cc89c92cfd7e2abea83814cb5820d21e21e6",
+      "explanation": "Option(N)",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。"
+    },
+    {
+      "id": "type-function",
+      "group": "型とλ構文",
+      "title": "型 Function(Q,Q)",
+      "path": "verification/concept-symbols-v1.5.8/type-function.f",
+      "bytes": 97,
+      "sha256": "8c3ffe779220a2c2bc13ceab124d2b09de25f9b9e9b322a48fbc6d85d1fa2b8a",
+      "explanation": "Function(Q,Q)",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。"
+    },
+    {
+      "id": "type-ordering",
+      "group": "型とλ構文",
+      "title": "型 Ordering",
+      "path": "verification/concept-symbols-v1.5.8/type-ordering.f",
+      "bytes": 64,
+      "sha256": "45bad8f30b619fd22fbedc18a281c36d852f2f266f5dba5e7d50852cdfa717bf",
+      "explanation": "Ordering",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。"
+    },
+    {
+      "id": "type-interval",
+      "group": "型とλ構文",
+      "title": "型 Interval",
+      "path": "verification/concept-symbols-v1.5.8/type-interval.f",
+      "bytes": 67,
+      "sha256": "765bd98761b08d059d018aed6010df978bf31e6e61ef31eb6dae9f359ff40d40",
+      "explanation": "Interval",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。"
+    },
+    {
+      "id": "type-generator",
+      "group": "型とλ構文",
+      "title": "型 Generator(N,Interval)",
+      "path": "verification/concept-symbols-v1.5.8/type-generator.f",
+      "bytes": 151,
+      "sha256": "fb0e90b4c4fa98cbb7ef25d2a04dcfe6eb8f4b15b4420d28a4d70d90e612730e",
+      "explanation": "Generator(N,Interval)",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。"
+    },
+    {
+      "id": "type-qrep",
+      "group": "型とλ構文",
+      "title": "補助型 QRep",
+      "path": "verification/concept-symbols-v1.5.8/type-qrep.f",
+      "bytes": 73,
+      "sha256": "a9073f382bde54c26b66ec9bda11959d3f24c54df69468641c24b7b72552f843",
+      "explanation": "Node(21;)。分母が正かつ非零の整数対。未約分を許し、正規有理数Qと区別。",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。"
+    },
+    {
+      "id": "type-result",
+      "group": "型とλ構文",
+      "title": "型 Result(QRep)",
+      "path": "verification/concept-symbols-v1.5.8/type-result.f",
+      "bytes": 151,
+      "sha256": "3abd2ca92abb9946644fa51404f74adcf88cbc6c8e0261930d82aa1c0810279e",
+      "explanation": "Node(22;Type(QRep))。成功値と演算エラーを区別する。",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。"
+    },
+    {
+      "id": "qrep-four-four",
+      "group": "基底と数",
+      "title": "未約分の分数表示 4/4",
+      "path": "verification/concept-symbols-v1.5.8/qrep-four-four.f",
+      "bytes": 46,
+      "sha256": "806a7679ffe98e8d5355d59193cf59e8b65a689ce6c71e7b4d78350f62c98912",
+      "explanation": "整数二つの対。QRepAdd QHalf QHalfの正規λ出力を復号した表示に対応する。Qの正規表示1/1とは別。",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。"
+    },
+    {
+      "id": "type-t",
+      "group": "固定型と有限対T",
+      "title": "型 T",
+      "path": "verification/concept-symbols-v1.5.8/type-t.f",
+      "bytes": 79,
+      "sha256": "af67ef1f836bcc809052627ee92af702169cf1b5c88e87f6ed0e0dd1b3c1ccd8",
+      "explanation": "Node(23;)。Fの対(a,b)にσ²=2の乗法を定める独立した型。",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。"
+    },
+    {
+      "id": "t-zero",
+      "group": "固定型と有限対T",
+      "title": "Tの値 0",
+      "path": "verification/concept-symbols-v1.5.8/t-zero.f",
+      "bytes": 82,
+      "sha256": "af2ae6f085b34097824307414a262ed68c604562c0bf420963df5b967a84c0ad",
+      "explanation": "F二つの固定対(a,b)。型Tを計算前に指定し、数列・区間生成器との統合は要求しない。",
+      "validation": "型付きの復号結果を、指定した正規値と照合。"
+    },
+    {
+      "id": "t-one",
+      "group": "固定型と有限対T",
+      "title": "Tの値 1",
+      "path": "verification/concept-symbols-v1.5.8/t-one.f",
+      "bytes": 112,
+      "sha256": "3f074367bc45d483ccfdbc7092cce55c6d9b74afadb3fad540d05c9ea4e5a74a",
+      "explanation": "F二つの固定対(a,b)。型Tを計算前に指定し、数列・区間生成器との統合は要求しない。",
+      "validation": "型付きの復号結果を、指定した正規値と照合。"
+    },
+    {
+      "id": "t-minus-one",
+      "group": "固定型と有限対T",
+      "title": "Tの値 −1",
+      "path": "verification/concept-symbols-v1.5.8/t-minus-one.f",
+      "bytes": 115,
+      "sha256": "0a669e1c4d3c45e6281b8c660d532b6e6f5830fbac5ce9ac289b12915901da17",
+      "explanation": "F二つの固定対(a,b)。型Tを計算前に指定し、数列・区間生成器との統合は要求しない。",
+      "validation": "型付きの復号結果を、指定した正規値と照合。"
+    },
+    {
+      "id": "t-two",
+      "group": "固定型と有限対T",
+      "title": "Tの値 2",
+      "path": "verification/concept-symbols-v1.5.8/t-two.f",
+      "bytes": 115,
+      "sha256": "2cbd4d81d311c0a0ad2fbcd33726e4f87fe503dd136ecc30ca53b1165f99594c",
+      "explanation": "F二つの固定対(a,b)。型Tを計算前に指定し、数列・区間生成器との統合は要求しない。",
+      "validation": "型付きの復号結果を、指定した正規値と照合。"
+    },
+    {
+      "id": "t-sigma",
+      "group": "固定型と有限対T",
+      "title": "Tの値 σ",
+      "path": "verification/concept-symbols-v1.5.8/t-sigma.f",
+      "bytes": 112,
+      "sha256": "63c8a5a2f8d32f22d06111de5f22028fff6f39764b08fb7d4c07249cfe1fc7b0",
+      "explanation": "F二つの固定対(a,b)。型Tを計算前に指定し、数列・区間生成器との統合は要求しない。",
+      "validation": "型付きの復号結果を、指定した正規値と照合。"
+    },
+    {
+      "id": "t-sigma-half",
+      "group": "固定型と有限対T",
+      "title": "Tの値 σ/2",
+      "path": "verification/concept-symbols-v1.5.8/t-sigma-half.f",
+      "bytes": 115,
+      "sha256": "b2c82b879c243015b32bd2dc7b9d5d80c39393d7a700eb87671aa741f9cafccd",
+      "explanation": "F二つの固定対(a,b)。型Tを計算前に指定し、数列・区間生成器との統合は要求しない。",
+      "validation": "型付きの復号結果を、指定した正規値と照合。"
+    },
+    {
+      "id": "t-one-plus-sigma",
+      "group": "固定型と有限対T",
+      "title": "Tの値 1+σ",
+      "path": "verification/concept-symbols-v1.5.8/t-one-plus-sigma.f",
+      "bytes": 142,
+      "sha256": "d5df8b30418407047a0f13a511e832203f4c3a3425c0a72ef8b0dee840b6dec8",
+      "explanation": "F二つの固定対(a,b)。型Tを計算前に指定し、数列・区間生成器との統合は要求しない。",
+      "validation": "型付きの復号結果を、指定した正規値と照合。"
+    },
+    {
+      "id": "t-one-minus-sigma",
+      "group": "固定型と有限対T",
+      "title": "Tの値 1−σ",
+      "path": "verification/concept-symbols-v1.5.8/t-one-minus-sigma.f",
+      "bytes": 145,
+      "sha256": "8a95256c1d44ba26996ce68f4e7a3b62da16f3e264e5964cb1d79f138cfc9173",
+      "explanation": "F二つの固定対(a,b)。型Tを計算前に指定し、数列・区間生成器との統合は要求しない。",
+      "validation": "型付きの復号結果を、指定した正規値と照合。"
+    },
+    {
+      "id": "fixed-t-product-conjugate",
+      "group": "固定型と有限対T",
+      "title": "型Tで固定した積 (1,1)(1,−1)=(−1,0)",
+      "path": "verification/concept-symbols-v1.5.8/fixed-t-product-conjugate.f",
+      "bytes": 1429,
+      "sha256": "08ee41b95c9819ccaaac6fec73bb221304001611760d1f6643e52bee6d330a99",
+      "explanation": "List(型T,演算名Mul,入力二個のList,結果T)。全成分をFとして復号し、(ac+2bd,ad+bc)を再計算する。",
+      "validation": "計算開始前の指定型Tを確認し、全入力・結果のT形成条件と、F算術による積の二成分を検査。"
+    },
+    {
+      "id": "fixed-t-product-sigma-square",
+      "group": "固定型と有限対T",
+      "title": "型Tで固定した積 σ²=(2,0)",
+      "path": "verification/concept-symbols-v1.5.8/fixed-t-product-sigma-square.f",
+      "bytes": 1366,
+      "sha256": "9b5a1050ed5d0f729bbf0517bafbf93df674d147cdb1bc5cf541505fd079ee4c",
+      "explanation": "List(型T,演算名Mul,入力二個のList,結果T)。全成分をFとして復号し、(ac+2bd,ad+bc)を再計算する。",
+      "validation": "計算開始前の指定型Tを確認し、全入力・結果のT形成条件と、F算術による積の二成分を検査。"
+    },
+    {
+      "id": "natform-program",
+      "group": "固定型と有限対T",
+      "title": "指定型Nの形成検査 NatForm の有限プログラム",
+      "path": "verification/concept-symbols-v1.5.8/natform-program.f",
+      "bytes": 70,
+      "sha256": "ec9dcc1d76123195dc8c928923c6d921ae870eecf6d3b948b2ca72df04d479c8",
+      "explanation": "Node(2;Node(0;真),Node(1;),Node(0;偽))。0=真偽値を返す、1=唯一の子へ同じ処理を再帰、2=子の個数0/1/2で三分岐。",
+      "validation": "復号したプログラム木を小実行器で解釈し、基底・一子・二子・一子内の二子を実際に判定。万能な型判別ではない。"
+    },
+    {
+      "id": "natform-zero",
+      "group": "固定型と有限対T",
+      "title": "NatForm(f())=真",
+      "path": "verification/concept-symbols-v1.5.8/natform-zero.f",
+      "bytes": 103,
+      "sha256": "3b1c5fe9d97888171173efdbe66368d1ce0ced97beaa0677cd8c87bbbf717a6a",
+      "explanation": "List(指定型N,NatFormプログラム,検査入力,真偽結果)。fのみ表記で二子を持つ形は自然数として拒否する。",
+      "validation": "指定Nの形成条件を有限木上で再帰実行し、記録した真偽結果と照合。"
+    },
+    {
+      "id": "natform-successor",
+      "group": "固定型と有限対T",
+      "title": "NatForm(f(f()))=真",
+      "path": "verification/concept-symbols-v1.5.8/natform-successor.f",
+      "bytes": 106,
+      "sha256": "c27cf534b1e227579ce312b425940fa5c863f3aa0dfa22e5cf12ef637b862c53",
+      "explanation": "List(指定型N,NatFormプログラム,検査入力,真偽結果)。fのみ表記で二子を持つ形は自然数として拒否する。",
+      "validation": "指定Nの形成条件を有限木上で再帰実行し、記録した真偽結果と照合。"
+    },
+    {
+      "id": "natform-pair",
+      "group": "固定型と有限対T",
+      "title": "NatForm(f(f()f()))=偽",
+      "path": "verification/concept-symbols-v1.5.8/natform-pair.f",
+      "bytes": 106,
+      "sha256": "8b9aa756f21d3bbe88240fb113d3cee929423beddc4b0be73494b584df27b09c",
+      "explanation": "List(指定型N,NatFormプログラム,検査入力,真偽結果)。fのみ表記で二子を持つ形は自然数として拒否する。",
+      "validation": "指定Nの形成条件を有限木上で再帰実行し、記録した真偽結果と照合。"
+    },
+    {
+      "id": "natform-nested-pair",
+      "group": "固定型と有限対T",
+      "title": "NatForm(f(f(f()f())))=偽",
+      "path": "verification/concept-symbols-v1.5.8/natform-nested-pair.f",
+      "bytes": 109,
+      "sha256": "9530c7fb53fc23255ae331df9cee7af812382326d8361d64a030b8fdba9bd2e0",
+      "explanation": "List(指定型N,NatFormプログラム,検査入力,真偽結果)。fのみ表記で二子を持つ形は自然数として拒否する。",
+      "validation": "指定Nの形成条件を有限木上で再帰実行し、記録した真偽結果と照合。"
+    },
+    {
+      "id": "lambda-true",
+      "group": "型とλ構文",
+      "title": "λ定義 True",
+      "path": "verification/concept-symbols-v1.5.8/lambda-true.f",
+      "bytes": 61,
+      "sha256": "62f82a4a6117519b9895796f09d5f022836ca4dcf6244b0494dafe1618938bbe",
+      "explanation": "λt.λf.t",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。"
+    },
+    {
+      "id": "lambda-false",
+      "group": "型とλ構文",
+      "title": "λ定義 False",
+      "path": "verification/concept-symbols-v1.5.8/lambda-false.f",
+      "bytes": 58,
+      "sha256": "b1e47087d69340330307296ab771fc1dcdfd033e7bcbc3c2b70086d2bfc7a53d",
+      "explanation": "λt.λf.f",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。"
+    },
+    {
+      "id": "lambda-if",
+      "group": "型とλ構文",
+      "title": "λ定義 If",
+      "path": "verification/concept-symbols-v1.5.8/lambda-if.f",
+      "bytes": 160,
+      "sha256": "c14279bc390d01ba7b561f02731c1d3e58297911300a328f285f7f21e581ee98",
+      "explanation": "λb.λt.λe.b t e",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。"
+    },
+    {
+      "id": "lambda-and",
+      "group": "型とλ構文",
+      "title": "λ定義 And",
+      "path": "verification/concept-symbols-v1.5.8/lambda-and.f",
+      "bytes": 136,
+      "sha256": "42d0646c1db0e725359057338e65f0c1613116eb951242e9c5efb8f103a74062",
+      "explanation": "λp.λq.p q p",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。"
+    },
+    {
+      "id": "lambda-or",
+      "group": "型とλ構文",
+      "title": "λ定義 Or",
+      "path": "verification/concept-symbols-v1.5.8/lambda-or.f",
+      "bytes": 136,
+      "sha256": "72a42f41cb2017c4d47c67a594808482c69f4d9c2d2dc49344a4ee6d0b345802",
+      "explanation": "λp.λq.p p q",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。"
+    },
+    {
+      "id": "lambda-not",
+      "group": "型とλ構文",
+      "title": "λ定義 Not",
+      "path": "verification/concept-symbols-v1.5.8/lambda-not.f",
+      "bytes": 2890,
+      "sha256": "b8d430ff7300df09dd244597b2064bb8dcbc38e0ab504e787efd311c97b79b2d",
+      "explanation": "λb.b False True",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。"
+    },
+    {
+      "id": "lambda-pair",
+      "group": "型とλ構文",
+      "title": "λ定義 Pair",
+      "path": "verification/concept-symbols-v1.5.8/lambda-pair.f",
+      "bytes": 160,
+      "sha256": "7e37afb7bd8b55d603b6da609a898cb10d42c7036d51e5b3e57eb01bdc9e7c8b",
+      "explanation": "λa.λb.λf.f a b",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。"
+    },
+    {
+      "id": "lambda-fst",
+      "group": "型とλ構文",
+      "title": "λ定義 Fst",
+      "path": "verification/concept-symbols-v1.5.8/lambda-fst.f",
+      "bytes": 118,
+      "sha256": "bd11867c766b88ec09a4cfcc33b8e70b4e127b11a2f32c554d1797413db5ff2a",
+      "explanation": "λp.p (λa.λb.a)",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。"
+    },
+    {
+      "id": "lambda-snd",
+      "group": "型とλ構文",
+      "title": "λ定義 Snd",
+      "path": "verification/concept-symbols-v1.5.8/lambda-snd.f",
+      "bytes": 115,
+      "sha256": "21ee532eaa44c07d99e8120670a8366743cce931136f4ec96f5c2806de2eae46",
+      "explanation": "λp.p (λa.λb.b)",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。"
+    },
+    {
+      "id": "lambda-zero",
+      "group": "型とλ構文",
+      "title": "λ定義 Zero",
+      "path": "verification/concept-symbols-v1.5.8/lambda-zero.f",
+      "bytes": 58,
+      "sha256": "b1e47087d69340330307296ab771fc1dcdfd033e7bcbc3c2b70086d2bfc7a53d",
+      "explanation": "λf.λx.x",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。"
+    },
+    {
+      "id": "lambda-succ",
+      "group": "型とλ構文",
+      "title": "λ定義 Succ",
+      "path": "verification/concept-symbols-v1.5.8/lambda-succ.f",
+      "bytes": 199,
+      "sha256": "79306d476acc4b2661aab9eab8e10cd430b30e5d3a3960316ca622f92481155a",
+      "explanation": "λn.λf.λx.f (n f x)",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。"
+    },
+    {
+      "id": "lambda-one",
+      "group": "型とλ構文",
+      "title": "λ定義 One",
+      "path": "verification/concept-symbols-v1.5.8/lambda-one.f",
+      "bytes": 2548,
+      "sha256": "4a969cee6036d43233ae198abd46d722c062dcacf52f3882eac8d9cdd296a77e",
+      "explanation": "Succ Zero",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。"
+    },
+    {
+      "id": "lambda-two",
+      "group": "型とλ構文",
+      "title": "λ定義 Two",
+      "path": "verification/concept-symbols-v1.5.8/lambda-two.f",
+      "bytes": 2164,
+      "sha256": "1ded91b02d03a7b19ca6cab673fa988f3273c01f761c9bd8d8a53959e60ff807",
+      "explanation": "Succ One",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。"
+    },
+    {
+      "id": "lambda-three",
+      "group": "型とλ構文",
+      "title": "λ定義 Three",
+      "path": "verification/concept-symbols-v1.5.8/lambda-three.f",
+      "bytes": 2236,
+      "sha256": "38d997e15aed896bca216b3ccf4cdb98083b78ae7c2b9e03a075e38665967057",
+      "explanation": "Succ Two",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。"
+    },
+    {
+      "id": "lambda-four",
+      "group": "型とλ構文",
+      "title": "λ定義 Four",
+      "path": "verification/concept-symbols-v1.5.8/lambda-four.f",
+      "bytes": 2818,
+      "sha256": "26f8cc831b1c874dda554307b652166a04c20a2a6fb56c7a16f90f923fb9f790",
+      "explanation": "Succ Three",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。"
+    },
+    {
+      "id": "lambda-add",
+      "group": "型とλ構文",
+      "title": "λ定義 Add",
+      "path": "verification/concept-symbols-v1.5.8/lambda-add.f",
+      "bytes": 265,
+      "sha256": "0421bcdfb3de8f38f45829cdda1379d25554b8b258dbc6ac09371967aa0c96cb",
+      "explanation": "λm.λn.λf.λx.m f (n f x)",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。"
+    },
+    {
+      "id": "lambda-mul",
+      "group": "型とλ構文",
+      "title": "λ定義 Mul",
+      "path": "verification/concept-symbols-v1.5.8/lambda-mul.f",
+      "bytes": 226,
+      "sha256": "e4fa8d6b0683d3cca61d5bee63469852bd04092b3312a61c727c0059db021024",
+      "explanation": "λm.λn.λf.λx.m (n f) x",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。"
+    },
+    {
+      "id": "lambda-pred",
+      "group": "型とλ構文",
+      "title": "λ定義 Pred",
+      "path": "verification/concept-symbols-v1.5.8/lambda-pred.f",
+      "bytes": 364,
+      "sha256": "d5c809595584fa87f43b05e87b85b736f5b4358d4c3c3cb4df8e7228255b4bb6",
+      "explanation": "λn.λf.λx.n (λg.λh.h (g f)) (λu.x) (λu.u)",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。"
+    },
+    {
+      "id": "lambda-sub",
+      "group": "型とλ構文",
+      "title": "λ定義 Sub",
+      "path": "verification/concept-symbols-v1.5.8/lambda-sub.f",
+      "bytes": 1345,
+      "sha256": "fda5fa8d2855ee0913b4723c8e392514eb6813f0a9f73e414a3aa37fabdd0226",
+      "explanation": "λm.λn.n Pred m",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。"
+    },
+    {
+      "id": "lambda-iszero",
+      "group": "型とλ構文",
+      "title": "λ定義 IsZero",
+      "path": "verification/concept-symbols-v1.5.8/lambda-iszero.f",
+      "bytes": 2911,
+      "sha256": "1e49b28b56a38293f9d98c62ef09f697ae446383788df6a4ba5cda704561fcc4",
+      "explanation": "λn.n (λx.False) True",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。"
+    },
+    {
+      "id": "lambda-leq",
+      "group": "型とλ構文",
+      "title": "λ定義 Leq",
+      "path": "verification/concept-symbols-v1.5.8/lambda-leq.f",
+      "bytes": 2935,
+      "sha256": "e857e229b382e63635b90a9d199c1545c24648f8c35aa1480fcba424e0a66334",
+      "explanation": "λm.λn.IsZero (Sub m n)",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。"
+    },
+    {
+      "id": "lambda-eqnat",
+      "group": "型とλ構文",
+      "title": "λ定義 EqNat",
+      "path": "verification/concept-symbols-v1.5.8/lambda-eqnat.f",
+      "bytes": 2908,
+      "sha256": "1312c9586748629901d14636200a44b5df6bc417b1fee34d450cfe3e4b2b246f",
+      "explanation": "λm.λn.And (Leq m n) (Leq n m)",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。"
+    },
+    {
+      "id": "lambda-n0",
+      "group": "型とλ構文",
+      "title": "λ定義 N0",
+      "path": "verification/concept-symbols-v1.5.8/lambda-n0.f",
+      "bytes": 1291,
+      "sha256": "5cf2d48f19af09d84da453ac37f1de524a1da931acf35e039b3799605b0c1914",
+      "explanation": "Zero",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。"
+    },
+    {
+      "id": "lambda-n1",
+      "group": "型とλ構文",
+      "title": "λ定義 N1",
+      "path": "verification/concept-symbols-v1.5.8/lambda-n1.f",
+      "bytes": 907,
+      "sha256": "a59faabbde892391668c51c906dcdf2793de08380fd8fe84f2c7e87383a7b026",
+      "explanation": "One",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。"
+    },
+    {
+      "id": "lambda-n2",
+      "group": "型とλ構文",
+      "title": "λ定義 N2",
+      "path": "verification/concept-symbols-v1.5.8/lambda-n2.f",
+      "bytes": 979,
+      "sha256": "04f669753cf62e1e13cff32c17e9131a6dfd99c260c397c8652c2951c2b1f193",
+      "explanation": "Two",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。"
+    },
+    {
+      "id": "lambda-n3",
+      "group": "型とλ構文",
+      "title": "λ定義 N3",
+      "path": "verification/concept-symbols-v1.5.8/lambda-n3.f",
+      "bytes": 1561,
+      "sha256": "fd6b14b6d16be52eec4c1463f726823d57c4df6bef2a7bab44b8e662d220c8af",
+      "explanation": "Three",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。"
+    },
+    {
+      "id": "lambda-n4",
+      "group": "型とλ構文",
+      "title": "λ定義 N4",
+      "path": "verification/concept-symbols-v1.5.8/lambda-n4.f",
+      "bytes": 1279,
+      "sha256": "438d4f800e0ecf0943756f73e070a6cc4288b0525fb1c4ebdc6d5cabf4882a7f",
+      "explanation": "Four",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。"
+    },
+    {
+      "id": "lambda-0",
+      "group": "型とλ構文",
+      "title": "λ定義 0",
+      "path": "verification/concept-symbols-v1.5.8/lambda-0.f",
+      "bytes": 1291,
+      "sha256": "5cf2d48f19af09d84da453ac37f1de524a1da931acf35e039b3799605b0c1914",
+      "explanation": "Zero",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。"
+    },
+    {
+      "id": "lambda-1",
+      "group": "型とλ構文",
+      "title": "λ定義 1",
+      "path": "verification/concept-symbols-v1.5.8/lambda-1.f",
+      "bytes": 907,
+      "sha256": "a59faabbde892391668c51c906dcdf2793de08380fd8fe84f2c7e87383a7b026",
+      "explanation": "One",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。"
+    },
+    {
+      "id": "lambda-2",
+      "group": "型とλ構文",
+      "title": "λ定義 2",
+      "path": "verification/concept-symbols-v1.5.8/lambda-2.f",
+      "bytes": 979,
+      "sha256": "04f669753cf62e1e13cff32c17e9131a6dfd99c260c397c8652c2951c2b1f193",
+      "explanation": "Two",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。"
+    },
+    {
+      "id": "lambda-3",
+      "group": "型とλ構文",
+      "title": "λ定義 3",
+      "path": "verification/concept-symbols-v1.5.8/lambda-3.f",
+      "bytes": 1561,
+      "sha256": "fd6b14b6d16be52eec4c1463f726823d57c4df6bef2a7bab44b8e662d220c8af",
+      "explanation": "Three",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。"
+    },
+    {
+      "id": "lambda-4",
+      "group": "型とλ構文",
+      "title": "λ定義 4",
+      "path": "verification/concept-symbols-v1.5.8/lambda-4.f",
+      "bytes": 1279,
+      "sha256": "438d4f800e0ecf0943756f73e070a6cc4288b0525fb1c4ebdc6d5cabf4882a7f",
+      "explanation": "Four",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。"
+    },
+    {
+      "id": "lambda-resultok",
+      "group": "型とλ構文",
+      "title": "λ定義 ResultOk",
+      "path": "verification/concept-symbols-v1.5.8/lambda-resultok.f",
+      "bytes": 124,
+      "sha256": "a340a6b4cedcef30ed8218588bb9eb426ec9d2be9055f5ed5ee06a75b33cff50",
+      "explanation": "λv.λok.λerr.ok v",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。"
+    },
+    {
+      "id": "lambda-resulterr",
+      "group": "型とλ構文",
+      "title": "λ定義 ResultErr",
+      "path": "verification/concept-symbols-v1.5.8/lambda-resulterr.f",
+      "bytes": 121,
+      "sha256": "14614a945b0f7a274cab2bdb05de372e42d7121e1ef4cb8fd97ec9cff412a060",
+      "explanation": "λe.λok.λerr.err e",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。"
+    },
+    {
+      "id": "lambda-resultbind",
+      "group": "型とλ構文",
+      "title": "λ定義 ResultBind",
+      "path": "verification/concept-symbols-v1.5.8/lambda-resultbind.f",
+      "bytes": 2998,
+      "sha256": "9a0f60a77dedd4a5708cf358cb2c3b10e753f46cc3df1ed7fadf34e5c3ac44d1",
+      "explanation": "λr.λk.r k ResultErr",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。"
+    },
+    {
+      "id": "lambda-zmake",
+      "group": "型とλ構文",
+      "title": "λ定義 ZMake",
+      "path": "verification/concept-symbols-v1.5.8/lambda-zmake.f",
+      "bytes": 5158,
+      "sha256": "bf2a89369d74fe20ef42e7033ba27df73439ff00c666a949fb6b3b05bce982f3",
+      "explanation": "λs.λn.Pair (If (IsZero n) Zero s) n",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。"
+    },
+    {
+      "id": "lambda-zsign",
+      "group": "型とλ構文",
+      "title": "λ定義 ZSign",
+      "path": "verification/concept-symbols-v1.5.8/lambda-zsign.f",
+      "bytes": 940,
+      "sha256": "38749e8724132c4ee090b91f30c71670dae2ad773238bbe9227420d11001ee78",
+      "explanation": "Fst",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。"
+    },
+    {
+      "id": "lambda-zmagnitude",
+      "group": "型とλ構文",
+      "title": "λ定義 ZMagnitude",
+      "path": "verification/concept-symbols-v1.5.8/lambda-zmagnitude.f",
+      "bytes": 916,
+      "sha256": "084507ec09b2b10531c520f6784ca3ef9a658a6c7e2b2d5f477dce8a9429914d",
+      "explanation": "Snd",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。"
+    },
+    {
+      "id": "lambda-zzero",
+      "group": "型とλ構文",
+      "title": "λ定義 ZZero",
+      "path": "verification/concept-symbols-v1.5.8/lambda-zzero.f",
+      "bytes": 4087,
+      "sha256": "2725d31445f7a5b686cef3d6a2f3c030188a1e91a853673584dd0e09eac6c984",
+      "explanation": "ZMake Zero Zero",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。"
+    },
+    {
+      "id": "lambda-zone",
+      "group": "型とλ構文",
+      "title": "λ定義 ZOne",
+      "path": "verification/concept-symbols-v1.5.8/lambda-zone.f",
+      "bytes": 3703,
+      "sha256": "409450f0f969c3f8ea016abbfdb82bcb55e7a8bee4ff717f181df0a7abea2414",
+      "explanation": "ZMake Zero One",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。"
+    },
+    {
+      "id": "lambda-ztwo",
+      "group": "型とλ構文",
+      "title": "λ定義 ZTwo",
+      "path": "verification/concept-symbols-v1.5.8/lambda-ztwo.f",
+      "bytes": 3775,
+      "sha256": "a25e52de2a9f607736a4b2ddc42bcb983311e276e6b9c882575b0079013ea5dd",
+      "explanation": "ZMake Zero Two",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。"
+    },
+    {
+      "id": "lambda-zminusone",
+      "group": "型とλ構文",
+      "title": "λ定義 ZMinusOne",
+      "path": "verification/concept-symbols-v1.5.8/lambda-zminusone.f",
+      "bytes": 3319,
+      "sha256": "fb9f30b599277ee7c0b524d442f8dd7b5d446f701a190157adb4cef7a309db8c",
+      "explanation": "ZMake One One",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。"
+    },
+    {
+      "id": "lambda-zneg",
+      "group": "型とλ構文",
+      "title": "λ定義 ZNeg",
+      "path": "verification/concept-symbols-v1.5.8/lambda-zneg.f",
+      "bytes": 8155,
+      "sha256": "35b613ac76a34b18ad3ceb962a7664f0f70ac3db1a3c07150b6d827ef86610b4",
+      "explanation": "λz.ZMake (If (IsZero (Fst z)) One Zero) (Snd z)",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。"
+    },
+    {
+      "id": "lambda-zadd",
+      "group": "型とλ構文",
+      "title": "λ定義 ZAdd",
+      "path": "verification/concept-symbols-v1.5.8/lambda-zadd.f",
+      "bytes": 23575,
+      "sha256": "5c6eefe79e6816cf5f664a3c86f86bdadef024b9598a91d6a026f4a07f1ce017",
+      "explanation": "λa.λb.If (EqNat (Fst a) (Fst b)) (ZMake (Fst a) (Add (Snd a) (Snd b))) (If (Leq (Snd a) (Snd b)) (ZMake (Fst b) (Sub (Snd b) (Snd a))) (ZMake (Fst a) (Sub (Snd a) (Snd b))))",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。"
+    },
+    {
+      "id": "lambda-zsub",
+      "group": "型とλ構文",
+      "title": "λ定義 ZSub",
+      "path": "verification/concept-symbols-v1.5.8/lambda-zsub.f",
+      "bytes": 2404,
+      "sha256": "235cd3c7a40f0c5b77d101fb46ae81ad6aec374db2d3ddfca93226a5ba52fc84",
+      "explanation": "λa.λb.ZAdd a (ZNeg b)",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。"
+    },
+    {
+      "id": "lambda-zmul",
+      "group": "型とλ構文",
+      "title": "λ定義 ZMul",
+      "path": "verification/concept-symbols-v1.5.8/lambda-zmul.f",
+      "bytes": 10714,
+      "sha256": "8bbf3ae23d06446ce47a0d7a456ebc999f9190eabeeeb7007e91443fd93d6232",
+      "explanation": "λa.λb.ZMake (If (EqNat (Fst a) (Fst b)) Zero One) (Mul (Snd a) (Snd b))",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。"
+    },
+    {
+      "id": "lambda-zeq",
+      "group": "型とλ構文",
+      "title": "λ定義 ZEq",
+      "path": "verification/concept-symbols-v1.5.8/lambda-zeq.f",
+      "bytes": 7822,
+      "sha256": "cba9b9fffb838a1a3f3792da5aeeafeb6ac2b74fd4b35fc368a6e8247b17dd79",
+      "explanation": "λa.λb.And (EqNat (Fst a) (Fst b)) (EqNat (Snd a) (Snd b))",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。"
+    },
+    {
+      "id": "lambda-zleq",
+      "group": "型とλ構文",
+      "title": "λ定義 ZLeq",
+      "path": "verification/concept-symbols-v1.5.8/lambda-zleq.f",
+      "bytes": 16174,
+      "sha256": "fcd0bb7a2eba37ce705d94077543469914fe030fccfbf098951c0571b47c91d7",
+      "explanation": "λa.λb.If (EqNat (Fst a) (Fst b)) (If (IsZero (Fst a)) (Leq (Snd a) (Snd b)) (Leq (Snd b) (Snd a))) (IsZero (Fst b))",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。"
+    },
+    {
+      "id": "lambda-zfromdiff",
+      "group": "型とλ構文",
+      "title": "λ定義 ZFromDiff",
+      "path": "verification/concept-symbols-v1.5.8/lambda-zfromdiff.f",
+      "bytes": 8860,
+      "sha256": "449b80a75644faf78a3086feb7b30f733a60edc4e3fbab051eb2a52d4ffc69b0",
+      "explanation": "λp.λn.If (Leq p n) (ZMake One (Sub n p)) (ZMake Zero (Sub p n))",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。"
+    },
+    {
+      "id": "lambda-ztodiff",
+      "group": "型とλ構文",
+      "title": "λ定義 ZToDiff",
+      "path": "verification/concept-symbols-v1.5.8/lambda-ztodiff.f",
+      "bytes": 10528,
+      "sha256": "cb99eac606d988b062a2fd3b27d40af6ad58f93e763a1ff4ed525f3e4c3fda74",
+      "explanation": "λz.If (IsZero (Fst z)) (Pair (Snd z) Zero) (Pair Zero (Snd z))",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。"
+    },
+    {
+      "id": "lambda-qrep",
+      "group": "型とλ構文",
+      "title": "λ定義 QRep",
+      "path": "verification/concept-symbols-v1.5.8/lambda-qrep.f",
+      "bytes": 1231,
+      "sha256": "a2c87cb98b629a25402354417ef4db745a745069b038d33752aa946f782815f2",
+      "explanation": "Pair",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。"
+    },
+    {
+      "id": "lambda-qrepnum",
+      "group": "型とλ構文",
+      "title": "λ定義 QRepNum",
+      "path": "verification/concept-symbols-v1.5.8/lambda-qrepnum.f",
+      "bytes": 940,
+      "sha256": "38749e8724132c4ee090b91f30c71670dae2ad773238bbe9227420d11001ee78",
+      "explanation": "Fst",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。"
+    },
+    {
+      "id": "lambda-qrepden",
+      "group": "型とλ構文",
+      "title": "λ定義 QRepDen",
+      "path": "verification/concept-symbols-v1.5.8/lambda-qrepden.f",
+      "bytes": 916,
+      "sha256": "084507ec09b2b10531c520f6784ca3ef9a658a6c7e2b2d5f477dce8a9429914d",
+      "explanation": "Snd",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。"
+    },
+    {
+      "id": "lambda-qrepvalid",
+      "group": "型とλ構文",
+      "title": "λ定義 QRepValid",
+      "path": "verification/concept-symbols-v1.5.8/lambda-qrepvalid.f",
+      "bytes": 9469,
+      "sha256": "b9aab4d6383f1552eb17bb96f78cc32f00176dcb32197aaa6dfd413b2d30b029",
+      "explanation": "λr.And (IsZero (Fst (Snd r))) (Not (IsZero (Snd (Snd r))))",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。"
+    },
+    {
+      "id": "lambda-qmake",
+      "group": "型とλ構文",
+      "title": "λ定義 QMake",
+      "path": "verification/concept-symbols-v1.5.8/lambda-qmake.f",
+      "bytes": 19966,
+      "sha256": "802588bda018405d943f609be0d6d192f57264f15a7122c97885cdf7414623da",
+      "explanation": "λn.λd.If (IsZero (Snd d)) (ResultErr Zero) (ResultOk (Pair (If (IsZero (Fst d)) n (ZNeg n)) (ZMake Zero (Snd d))))",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。"
+    },
+    {
+      "id": "lambda-qzero",
+      "group": "型とλ構文",
+      "title": "λ定義 QZero",
+      "path": "verification/concept-symbols-v1.5.8/lambda-qzero.f",
+      "bytes": 3961,
+      "sha256": "382ef1604c8fc1f49f3bb204f968dc677fd71adf811c8089706673ee55d45a73",
+      "explanation": "QRep ZZero ZOne",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。"
+    },
+    {
+      "id": "lambda-qone",
+      "group": "型とλ構文",
+      "title": "λ定義 QOne",
+      "path": "verification/concept-symbols-v1.5.8/lambda-qone.f",
+      "bytes": 3577,
+      "sha256": "a664ffa55b0b7230472351a0bdcbe8b0f18b0125b097a5aea6c09cf5d9f8dfe6",
+      "explanation": "QRep ZOne ZOne",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。"
+    },
+    {
+      "id": "lambda-qhalf",
+      "group": "型とλ構文",
+      "title": "λ定義 QHalf",
+      "path": "verification/concept-symbols-v1.5.8/lambda-qhalf.f",
+      "bytes": 3649,
+      "sha256": "54708bb918e42b8efe5e620e2b46e4f86e9eb94dced1c6154d5b130136ffbabe",
+      "explanation": "QRep ZOne ZTwo",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。"
+    },
+    {
+      "id": "lambda-qrepneg",
+      "group": "型とλ構文",
+      "title": "λ定義 QRepNeg",
+      "path": "verification/concept-symbols-v1.5.8/lambda-qrepneg.f",
+      "bytes": 4339,
+      "sha256": "c05226d1ae329ad7f3a8f0826c84c39f8e6e44599c705a7600edd111f6957ed7",
+      "explanation": "λr.QRep (ZNeg (Fst r)) (Snd r)",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。"
+    },
+    {
+      "id": "lambda-qrepadd",
+      "group": "型とλ構文",
+      "title": "λ定義 QRepAdd",
+      "path": "verification/concept-symbols-v1.5.8/lambda-qrepadd.f",
+      "bytes": 11947,
+      "sha256": "35c9916b3272347da6e6bf58fd55270cb143854b0a523339252a7182d3be8395",
+      "explanation": "λa.λb.QRep (ZAdd (ZMul (Fst a) (Snd b)) (ZMul (Fst b) (Snd a))) (ZMul (Snd a) (Snd b))",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。"
+    },
+    {
+      "id": "lambda-qrepsub",
+      "group": "型とλ構文",
+      "title": "λ定義 QRepSub",
+      "path": "verification/concept-symbols-v1.5.8/lambda-qrepsub.f",
+      "bytes": 4156,
+      "sha256": "cb2543668d514a4de31d7012664b541f666ad860539757d384be1069f7c9ab6d",
+      "explanation": "λa.λb.QRepAdd a (QRepNeg b)",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。"
+    },
+    {
+      "id": "lambda-qrepmul",
+      "group": "型とλ構文",
+      "title": "λ定義 QRepMul",
+      "path": "verification/concept-symbols-v1.5.8/lambda-qrepmul.f",
+      "bytes": 7633,
+      "sha256": "10ba998f8ffb724c8595eef3a679fa74e35442966bf15a28424857c18cc89c58",
+      "explanation": "λa.λb.QRep (ZMul (Fst a) (Fst b)) (ZMul (Snd a) (Snd b))",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。"
+    },
+    {
+      "id": "lambda-qrepeq",
+      "group": "型とλ構文",
+      "title": "λ定義 QRepEq",
+      "path": "verification/concept-symbols-v1.5.8/lambda-qrepeq.f",
+      "bytes": 7315,
+      "sha256": "3fc5f4154a604097b56ad9c7e4de57d1d8127457fd9eb3f9f22648c5de3e8f81",
+      "explanation": "λa.λb.ZEq (ZMul (Fst a) (Snd b)) (ZMul (Fst b) (Snd a))",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。"
+    },
+    {
+      "id": "lambda-qrepleq",
+      "group": "型とλ構文",
+      "title": "λ定義 QRepLeq",
+      "path": "verification/concept-symbols-v1.5.8/lambda-qrepleq.f",
+      "bytes": 7645,
+      "sha256": "0277ddb75119497722b327762455e9b4b1585e877304b99d2e1bad9b507b857e",
+      "explanation": "λa.λb.ZLeq (ZMul (Fst a) (Snd b)) (ZMul (Fst b) (Snd a))",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。"
+    },
+    {
+      "id": "lambda-qrepinv",
+      "group": "型とλ構文",
+      "title": "λ定義 QRepInv",
+      "path": "verification/concept-symbols-v1.5.8/lambda-qrepinv.f",
+      "bytes": 3427,
+      "sha256": "4ab199384cd4ffafc3f5f20cf809652703fa9a58d4dd88c0c7821ec9be3e695d",
+      "explanation": "λr.QMake (Snd r) (Fst r)",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。"
+    },
+    {
+      "id": "lambda-qrepdiv",
+      "group": "型とλ構文",
+      "title": "λ定義 QRepDiv",
+      "path": "verification/concept-symbols-v1.5.8/lambda-qrepdiv.f",
+      "bytes": 7900,
+      "sha256": "2d82ced2efd741a9e0ebdfd083f2f798bdd48910fc43a11e682ee1f5d3d96acd",
+      "explanation": "λa.λb.QMake (ZMul (Fst a) (Snd b)) (ZMul (Snd a) (Fst b))",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。"
+    },
+    {
+      "id": "lambda-identity",
+      "group": "型とλ構文",
+      "title": "λ定義 Identity",
+      "path": "verification/concept-symbols-v1.5.8/lambda-identity.f",
+      "bytes": 37,
+      "sha256": "5146ab13db2cbd7860f40ad4c4d40e3f276dab7b642b7f524190074999838c86",
+      "explanation": "λx.x",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。"
+    },
+    {
+      "id": "lambda-fixy",
+      "group": "型とλ構文",
+      "title": "λ定義 FixY",
+      "path": "verification/concept-symbols-v1.5.8/lambda-fixy.f",
+      "bytes": 265,
+      "sha256": "5e3e1fa667a8e9ef3a135949884a1c09d340105e79fd929e023e69210a41a20d",
+      "explanation": "λg.(λx.g (x x)) (λx.g (x x))",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。"
+    },
+    {
+      "id": "lambda-application",
+      "group": "型とλ構文",
+      "title": "λ定義 Application",
+      "path": "verification/concept-symbols-v1.5.8/lambda-application.f",
+      "bytes": 94,
+      "sha256": "9e321276a59382ab1efa82d50d0d9b3142456a1de8f71561ae4012e448039812",
+      "explanation": "(λx.x) (λy.y)",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。"
+    },
+    {
+      "id": "lambda-environment",
+      "group": "型とλ構文",
+      "title": "全内蔵定義環境",
+      "path": "verification/concept-symbols-v1.5.8/lambda-environment.f",
+      "bytes": 337444,
+      "sha256": "f2ffa025afd1178ece026c031cd4f5df100bc4b99e3dab0d2516390dc885161f",
+      "explanation": "List((Text(名前), λ本体))。全内蔵語彙を省略なく収録。",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。"
+    },
+    {
+      "id": "term-variable",
+      "group": "命題と証明",
+      "title": "項の束縛変数零",
+      "path": "verification/concept-symbols-v1.5.8/term-variable.f",
+      "bytes": 16,
+      "sha256": "88a12c9ba0ebf623ad09c3ec73a9375e2bdbbe7bff1c5706eca723fbce41bd6f",
+      "explanation": "Node(0;N(0))。型と束縛は外側の文脈に依存。",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。"
+    },
+    {
+      "id": "term-literal",
+      "group": "命題と証明",
+      "title": "自然数一の定数項",
+      "path": "verification/concept-symbols-v1.5.8/term-literal.f",
+      "bytes": 34,
+      "sha256": "651348d1dfd024f18c0daf03cf7cc238d191e2f019dcf8b31da22ed11e047169",
+      "explanation": "Node(1;Type(N),N(1))",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。"
+    },
+    {
+      "id": "term-add-call",
+      "group": "命題と証明",
+      "title": "加算の呼出式",
+      "path": "verification/concept-symbols-v1.5.8/term-add-call.f",
+      "bytes": 913,
+      "sha256": "b26c548f4daea0e8daa7df971c702937ea6545a2ae7dec81afe7dda8cf9d86d0",
+      "explanation": "Node(2;Text(Add),List(1,1))。定義表を伴う。",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。"
+    },
+    {
+      "id": "proposition-equal",
+      "group": "命題と証明",
+      "title": "等式 1=1",
+      "path": "verification/concept-symbols-v1.5.8/proposition-equal.f",
+      "bytes": 94,
+      "sha256": "2bb7cc45895c2dad217070a2f441173ead661d5871b55f6e6184fcedb749d5f4",
+      "explanation": "命題構文の例。構文を保存することと真であることは別。",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。"
+    },
+    {
+      "id": "proposition-less",
+      "group": "命題と証明",
+      "title": "順序 0<1",
+      "path": "verification/concept-symbols-v1.5.8/proposition-less.f",
+      "bytes": 94,
+      "sha256": "2d0ab379090eb2ed8e0fbeaaad94c886dd2df8f09db6665496ca69eef5926331",
+      "explanation": "命題構文の例。構文を保存することと真であることは別。",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。"
+    },
+    {
+      "id": "proposition-and",
+      "group": "命題と証明",
+      "title": "かつ",
+      "path": "verification/concept-symbols-v1.5.8/proposition-and.f",
+      "bytes": 208,
+      "sha256": "9e2d33d6caebac6c6477f7940ba4e6163de2b991472b4fbf0b6ac18bb20c9861",
+      "explanation": "命題構文の例。構文を保存することと真であることは別。",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。"
+    },
+    {
+      "id": "proposition-or",
+      "group": "命題と証明",
+      "title": "または",
+      "path": "verification/concept-symbols-v1.5.8/proposition-or.f",
+      "bytes": 211,
+      "sha256": "223be9bf6b5ae1c79970ab50287c20c0c646b9bc56555be7fac6d596819c79da",
+      "explanation": "命題構文の例。構文を保存することと真であることは別。",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。"
+    },
+    {
+      "id": "proposition-implies",
+      "group": "命題と証明",
+      "title": "ならば",
+      "path": "verification/concept-symbols-v1.5.8/proposition-implies.f",
+      "bytes": 214,
+      "sha256": "adef1f6d869337fc1d9e53ba06b9c6c682dfa00ac25c2dcf4f3039d5ce67420a",
+      "explanation": "命題構文の例。構文を保存することと真であることは別。",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。"
+    },
+    {
+      "id": "proposition-false",
+      "group": "命題と証明",
+      "title": "偽",
+      "path": "verification/concept-symbols-v1.5.8/proposition-false.f",
+      "bytes": 25,
+      "sha256": "e21c9b942f5762b692d42e1c37020434db9376a3a31047155165c173cd43bc7b",
+      "explanation": "命題構文の例。構文を保存することと真であることは別。",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。"
+    },
+    {
+      "id": "proposition-forall",
+      "group": "命題と証明",
+      "title": "任意のnについて n=n",
+      "path": "verification/concept-symbols-v1.5.8/proposition-forall.f",
+      "bytes": 100,
+      "sha256": "aeab8b51c4548d522c92073b11d7d384634ecd1f4ca920e64438c6edc5c6b43c",
+      "explanation": "命題構文の例。構文を保存することと真であることは別。",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。"
+    },
+    {
+      "id": "proposition-exists",
+      "group": "命題と証明",
+      "title": "あるnについて n=0",
+      "path": "verification/concept-symbols-v1.5.8/proposition-exists.f",
+      "bytes": 118,
+      "sha256": "8ba7c78bd6f503dd32ec02dbe7ddd3ac87fc4b1e9719536fe1322606b9e470bd",
+      "explanation": "命題構文の例。構文を保存することと真であることは別。",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。"
+    },
+    {
+      "id": "proposition-predicate",
+      "group": "命題と証明",
+      "title": "名前付き述語 nonzero(1)",
+      "path": "verification/concept-symbols-v1.5.8/proposition-predicate.f",
+      "bytes": 2461,
+      "sha256": "c774e7f4fbe74eb30d6b97c7a74e2c38886beb6990fa845fd3edd2120460061c",
+      "explanation": "命題構文の例。構文を保存することと真であることは別。",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。"
+    },
+    {
+      "id": "proposition-not",
+      "group": "命題と証明",
+      "title": "否定：1=1 ならば偽",
+      "path": "verification/concept-symbols-v1.5.8/proposition-not.f",
+      "bytes": 145,
+      "sha256": "c02a4d19d974d8d1122318b9faa3d9102ff871e9840b69d2de96f3ad67be8104",
+      "explanation": "命題構文の例。構文を保存することと真であることは別。",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。"
+    },
+    {
+      "id": "proposition-associativity",
+      "group": "命題と証明",
+      "title": "加法結合律の全称命題",
+      "path": "verification/concept-symbols-v1.5.8/proposition-associativity.f",
+      "bytes": 3646,
+      "sha256": "42ac1e1de04af580d30a62a0cb005add923926c9344fcc29722eec37df68e493",
+      "explanation": "∀l:N.∀m:N.∀n:N. Add(Add(l,m),n)=Add(l,Add(m,n))",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。"
+    },
+    {
+      "id": "judgment",
+      "group": "命題と証明",
+      "title": "空の仮定から1=1を述べる判断",
+      "path": "verification/concept-symbols-v1.5.8/judgment.f",
+      "bytes": 100,
+      "sha256": "749185804ccae0dfc605217efd98116e61edb6b485e776092b6a18e1d044411f",
+      "explanation": "(仮定List,命題)",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。"
+    },
+    {
+      "id": "proof-node-reflexivity",
+      "group": "命題と証明",
+      "title": "反射規則の証明節点・表示案",
+      "path": "verification/concept-symbols-v1.5.8/proof-node-reflexivity.f",
+      "bytes": 169,
+      "sha256": "b5583aaa22dbf5f7a7d4dfadd72c10eccad206b679044e98065b22a7cf4b9721",
+      "explanation": "List(規則1,判断,規則データ,前提List)。この表示案の汎用検査器は未実装。",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。"
+    },
+    {
+      "id": "proof-induction-data",
+      "group": "命題と証明",
+      "title": "自然数帰納の規則固有データ・仕様例",
+      "path": "verification/concept-symbols-v1.5.8/proof-induction-data.f",
+      "bytes": 31,
+      "sha256": "c0f432c6a03e7f28c8f050e2df7dc11ce80c34e658aa58dceb5387513c9df7a7",
+      "explanation": "帰納変数番号、基底証明への参照番号、段階証明への参照番号。参照先と新鮮性検査を伴わない単独例は証明ではない。",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。"
+    },
+    {
+      "id": "interval-unit",
+      "group": "生成ラベル・解析・計算証跡",
+      "title": "区間 0/1 ～ 1/1",
+      "path": "verification/concept-symbols-v1.5.8/interval-unit.f",
+      "bytes": 55,
+      "sha256": "1b7e9a7affb396930c3e87ef6d849d58868579327b4f0fb8c6b8241e20601e55",
+      "explanation": "(下端Q,上端Q)。順序条件を別に確認。",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。"
+    },
+    {
+      "id": "interval-sqrt2-initial",
+      "group": "生成ラベル・解析・計算証跡",
+      "title": "区間 0/1 ～ 2/1",
+      "path": "verification/concept-symbols-v1.5.8/interval-sqrt2-initial.f",
+      "bytes": 58,
+      "sha256": "81c0d4a31c3a6b663fb25308e6635663a5e4bc6e30aa1edb9ea1ec7b52e284bd",
+      "explanation": "(下端Q,上端Q)。順序条件を別に確認。",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。"
+    },
+    {
+      "id": "interval-sqrt2-refined",
+      "group": "生成ラベル・解析・計算証跡",
+      "title": "区間 1/1 ～ 3/2",
+      "path": "verification/concept-symbols-v1.5.8/interval-sqrt2-refined.f",
+      "bytes": 67,
+      "sha256": "2d4daa8ee28486151685a375da39bce8e3167d73a8a5a95d9d2e5cf41224e674",
+      "explanation": "(下端Q,上端Q)。順序条件を別に確認。",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。"
+    },
+    {
+      "id": "precision-two",
+      "group": "生成ラベル・解析・計算証跡",
+      "title": "精度要求p=2",
+      "path": "verification/concept-symbols-v1.5.8/precision-two.f",
+      "bytes": 10,
+      "sha256": "dbd34bca5e825e8b8508174c5a4d592820c781bd84c199b03d2ce0fd618836ca",
+      "explanation": "型を外側で指定した直接表示。",
+      "validation": "型付きの復号結果を、指定した正規値と照合。"
+    },
+    {
+      "id": "precision-width",
+      "group": "生成ラベル・解析・計算証跡",
+      "title": "p=2の許容誤差1/4",
+      "path": "verification/concept-symbols-v1.5.8/precision-width.f",
+      "bytes": 37,
+      "sha256": "60d56462cb59587e868ec3205cd361160ed45b373ad8337fb99f989331989f63",
+      "explanation": "型を外側で指定した直接表示。",
+      "validation": "型付きの復号結果を、指定した正規値と照合。"
+    },
+    {
+      "id": "approx-value-error-bracket",
+      "group": "生成ラベル・解析・計算証跡",
+      "title": "近似値・誤差上界の対：上下端による保証",
+      "path": "verification/concept-symbols-v1.5.8/approx-value-error-bracket.f",
+      "bytes": 763,
+      "sha256": "c31b296dc59b0b31d1d33020714640d1a5eb6682b286e0e37562a5459499f936",
+      "explanation": "(要求Nの3,(近似値Qの17/12,誤差上界Qの1/204))。型Tの値とは別に要求する有理応答。",
+      "validation": "有理上下端の平方挟み込み・正確な幅1/204・要求1/8以下を再計算。型Tとの一般対応は本文の手書き証明。"
+    },
+    {
+      "id": "approx-value-error-residual",
+      "group": "生成ラベル・解析・計算証跡",
+      "title": "近似値・誤差上界の対：残差による保証",
+      "path": "verification/concept-symbols-v1.5.8/approx-value-error-residual.f",
+      "bytes": 1015,
+      "sha256": "52808042d0c71dadd0baab23e1123c8aa3718d05adf40b6a025d1f5bf0685fb6",
+      "explanation": "(要求Nの3,(近似値Qの17/12,誤差上界Qの1/288))。型Tの値とは別に要求する有理応答。",
+      "validation": "q≥1と正確な残差から上界1/288・要求1/8以下を再計算。型Tとの一般対応は本文の手書き証明。"
+    },
+    {
+      "id": "qlim-parameters",
+      "group": "生成ラベル・解析・計算証跡",
+      "title": "数列生成ラベル qlim(0,1) のパラメータ",
+      "path": "verification/concept-symbols-v1.5.8/qlim-parameters.f",
+      "bytes": 55,
+      "sha256": "1b7e9a7affb396930c3e87ef6d849d58868579327b4f0fb8c6b8241e20601e55",
+      "explanation": "(Q(0),Q(1))。本体はG(q,b)(n)=q+b/(n+1)という有限処理。bを保持する実行記録であり、Φで導入する関係子ラベルと区別。",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。"
+    },
+    {
+      "id": "qlim-call",
+      "group": "生成ラベル・解析・計算証跡",
+      "title": "qlim(0,1)への入力n=1",
+      "path": "verification/concept-symbols-v1.5.8/qlim-call.f",
+      "bytes": 1516,
+      "sha256": "7b69d2b80f00a51246de3315cf1eb595d7568df30317ac26b7653f96c4782db3",
+      "explanation": "操作呼出し。応答値は1/2。",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。"
+    },
+    {
+      "id": "qlim-response",
+      "group": "生成ラベル・解析・計算証跡",
+      "title": "qlim(0,1)(1)の応答",
+      "path": "verification/concept-symbols-v1.5.8/qlim-response.f",
+      "bytes": 31,
+      "sha256": "4c0b8cad911be240fe6df42fb55bd71313ee5c38381491e245054006444514f5",
+      "explanation": "型を外側で指定した直接表示。",
+      "validation": "型付きの復号結果を、指定した正規値と照合。"
+    },
+    {
+      "id": "relation-g-half",
+      "group": "生成記録から関係子ラベルへ",
+      "title": "bを保持する生成記録 G(0,1/2)",
+      "path": "verification/concept-symbols-v1.5.8/relation-g-half.f",
+      "bytes": 58,
+      "sha256": "fc270773ff7d5771daba3247bb4a0f9c3d3190e07a383c4fa4da8647c9ad4d59",
+      "explanation": "(基準値Q,係数Q)。G(q,b)(n)=q+b/(n+1)を実行するため、bを保存する。Φの出力とは別の型。",
+      "validation": "型付きの復号結果を、指定した正規値と照合。"
+    },
+    {
+      "id": "relation-g-three-quarters",
+      "group": "生成記録から関係子ラベルへ",
+      "title": "bを保持する生成記録 G(0,3/4)",
+      "path": "verification/concept-symbols-v1.5.8/relation-g-three-quarters.f",
+      "bytes": 70,
+      "sha256": "767ccc5bdcd6406883d7fd1761cf0f1673c965c3d5886c130d1f3664070ab1d9",
+      "explanation": "(基準値Q,係数Q)。G(q,b)(n)=q+b/(n+1)を実行するため、bを保存する。Φの出力とは別の型。",
+      "validation": "型付きの復号結果を、指定した正規値と照合。"
+    },
+    {
+      "id": "relation-common-1",
+      "group": "生成記録から関係子ラベルへ",
+      "title": "共通部分列 t=1：添字1と2で1/4",
+      "path": "verification/concept-symbols-v1.5.8/relation-common-1.f",
+      "bytes": 232,
+      "sha256": "d677d33007be7ed7f4d9a02d9e634692e67a37d124f236dff510b2437fb764e3",
+      "explanation": "List(G(0,1/2),G(0,3/4),r=2,s=3,t,n=2t−1,m=3t−1,共通値Q)。b/c=r/sと両出力を再計算。",
+      "validation": "記録した有限添字で比・添字対応・有理出力を検査。任意tの共通部分列定理は本文命題6.2の手書き証明。"
+    },
+    {
+      "id": "relation-common-2",
+      "group": "生成記録から関係子ラベルへ",
+      "title": "共通部分列 t=2：添字3と5で1/8",
+      "path": "verification/concept-symbols-v1.5.8/relation-common-2.f",
+      "bytes": 262,
+      "sha256": "6443b58f9539eb59b444c225ef85a82d613496caaaf9514070b2282c77b49427",
+      "explanation": "List(G(0,1/2),G(0,3/4),r=2,s=3,t,n=2t−1,m=3t−1,共通値Q)。b/c=r/sと両出力を再計算。",
+      "validation": "記録した有限添字で比・添字対応・有理出力を検査。任意tの共通部分列定理は本文命題6.2の手書き証明。"
+    },
+    {
+      "id": "relation-common-3",
+      "group": "生成記録から関係子ラベルへ",
+      "title": "共通部分列 t=3：添字5と8で1/12",
+      "path": "verification/concept-symbols-v1.5.8/relation-common-3.f",
+      "bytes": 292,
+      "sha256": "066ce044542eb59d1031e0f39446c43cbaf8e20c2cf492db5276dcc236ea03ef",
+      "explanation": "List(G(0,1/2),G(0,3/4),r=2,s=3,t,n=2t−1,m=3t−1,共通値Q)。b/c=r/sと両出力を再計算。",
+      "validation": "記録した有限添字で比・添字対応・有理出力を検査。任意tの共通部分列定理は本文命題6.2の手書き証明。"
+    },
+    {
+      "id": "relation-intro-positive-half",
+      "group": "生成記録から関係子ラベルへ",
+      "title": "Φ(G(0,1/2))=0##",
+      "path": "verification/concept-symbols-v1.5.8/relation-intro-positive-half.f",
+      "bytes": 109,
+      "sha256": "71f344739a1848b1a1b2400dc918f0a89b13c8708b20fb24fe5773975b82ba96",
+      "explanation": "List(生成記録G,導入先L)。Φ(G(q,b))=(2sgn(b),q)を指定規則として適用し、出力ではbを捨てて整数kを保持する。",
+      "validation": "復号したbの符号からk=2sgn(b)を再計算。これは明示した導入規則の個別検査であり、点ごとの加法の保存を主張しない。"
+    },
+    {
+      "id": "relation-intro-positive-three-quarters",
+      "group": "生成記録から関係子ラベルへ",
+      "title": "Φ(G(0,3/4))=0##",
+      "path": "verification/concept-symbols-v1.5.8/relation-intro-positive-three-quarters.f",
+      "bytes": 121,
+      "sha256": "407f59cc304f3d77282a0efa1d594d2f15b1fd32916e000c7aec786263d7b1f4",
+      "explanation": "List(生成記録G,導入先L)。Φ(G(q,b))=(2sgn(b),q)を指定規則として適用し、出力ではbを捨てて整数kを保持する。",
+      "validation": "復号したbの符号からk=2sgn(b)を再計算。これは明示した導入規則の個別検査であり、点ごとの加法の保存を主張しない。"
+    },
+    {
+      "id": "relation-intro-negative",
+      "group": "生成記録から関係子ラベルへ",
+      "title": "Φ(G(0,−1/2))=0♭♭",
+      "path": "verification/concept-symbols-v1.5.8/relation-intro-negative.f",
+      "bytes": 115,
+      "sha256": "ee43c78eb1a04b0111d753235e183bd864d02e17c7c57d7e7bc92a7fe0263fa6",
+      "explanation": "List(生成記録G,導入先L)。Φ(G(q,b))=(2sgn(b),q)を指定規則として適用し、出力ではbを捨てて整数kを保持する。",
+      "validation": "復号したbの符号からk=2sgn(b)を再計算。これは明示した導入規則の個別検査であり、点ごとの加法の保存を主張しない。"
+    },
+    {
+      "id": "relation-intro-zero",
+      "group": "生成記録から関係子ラベルへ",
+      "title": "Φ(G(2,0))=2",
+      "path": "verification/concept-symbols-v1.5.8/relation-intro-zero.f",
+      "bytes": 109,
+      "sha256": "a00aa984916aa9dbb107715e5a4ab4adf35742a35436eb6dd7f8edca768ef688",
+      "explanation": "List(生成記録G,導入先L)。Φ(G(q,b))=(2sgn(b),q)を指定規則として適用し、出力ではbを捨てて整数kを保持する。",
+      "validation": "復号したbの符号からk=2sgn(b)を再計算。これは明示した導入規則の個別検査であり、点ごとの加法の保存を主張しない。"
+    },
+    {
+      "id": "relation-l-one-step",
+      "group": "生成記録から関係子ラベルへ",
+      "title": "関係子ラベル (k,q)=(1,0)",
+      "path": "verification/concept-symbols-v1.5.8/relation-l-one-step.f",
+      "bytes": 40,
+      "sha256": "1ddefd67bf82ae74e0fed7790366079200ccb461a8e590ba2617899e2752da1b",
+      "explanation": "整数kは関係子の個数を保つ。近似を要求する自然数nとは別の欄であり、演算後も符号だけへ圧縮しない。",
+      "validation": "型付きの復号結果を、指定した正規値と照合。"
+    },
+    {
+      "id": "relation-l-two-steps",
+      "group": "生成記録から関係子ラベルへ",
+      "title": "関係子ラベル (k,q)=(2,0)",
+      "path": "verification/concept-symbols-v1.5.8/relation-l-two-steps.f",
+      "bytes": 43,
+      "sha256": "7cf9056bf4d2568ec530c44018448dbc2840218d31b6a8d35cb5b95631734de7",
+      "explanation": "整数kは関係子の個数を保つ。近似を要求する自然数nとは別の欄であり、演算後も符号だけへ圧縮しない。",
+      "validation": "型付きの復号結果を、指定した正規値と照合。"
+    },
+    {
+      "id": "relation-l-four-steps",
+      "group": "生成記録から関係子ラベルへ",
+      "title": "関係子ラベル (k,q)=(4,0)",
+      "path": "verification/concept-symbols-v1.5.8/relation-l-four-steps.f",
+      "bytes": 49,
+      "sha256": "7f425f251ede4f551356edd6d0d9aeb079f274501b571455adb6377d9e4b1f0e",
+      "explanation": "整数kは関係子の個数を保つ。近似を要求する自然数nとは別の欄であり、演算後も符号だけへ圧縮しない。",
+      "validation": "型付きの復号結果を、指定した正規値と照合。"
+    },
+    {
+      "id": "relation-l-addition",
+      "group": "生成記録から関係子ラベルへ",
+      "title": "関係子の加算 0##+0##=0####",
+      "path": "verification/concept-symbols-v1.5.8/relation-l-addition.f",
+      "bytes": 145,
+      "sha256": "d3f3f08838c84bf0b96058ca0f39b0cf96d581c14ec75f5fdef3c58378346d22",
+      "explanation": "List(L(2,0),L(2,0),L(4,0))。成分加法とFへの埋込みで照合する。加算結果k=4を保持する。",
+      "validation": "整数・有理成分の和と既存F算術を別々に再計算。一般の加法群法則は本文定理7.1の手書き証明。"
+    },
+    {
+      "id": "relation-l-order",
+      "group": "生成記録から関係子ラベルへ",
+      "title": "順序 0<0#<0##<0####",
+      "path": "verification/concept-symbols-v1.5.8/relation-l-order.f",
+      "bytes": 181,
+      "sha256": "44908c2e0041d465ce0dca30cef078451cc5898d26c0efcbec41a281df1508b6",
+      "explanation": "List(L(0,0),L(1,0),L(2,0),L(4,0))。基準値が同じとき、整数kの順序がF内でも保たれる。",
+      "validation": "既存F比較で三つの厳密不等式を検査。順序保存の全称命題とは区別。"
+    },
+    {
+      "id": "relation-intro-not-additive",
+      "group": "生成記録から関係子ラベルへ",
+      "title": "Φ(u+u)とΦ(u)+Φ(u)は異なる",
+      "path": "verification/concept-symbols-v1.5.8/relation-intro-not-additive.f",
+      "bytes": 217,
+      "sha256": "99e4b197a194ee902b2c8310d6de4ecaeddca14d11cfb748fdd53a4365ae764a",
+      "explanation": "List(u=G(0,1/2),点ごとの和G(0,1),再導入L(2,0),ラベルの和L(4,0))。異なる二つの経路を保持する。",
+      "validation": "一つの反例を成分算術とF比較で再計算。Φを加法準同型、または逐点加算を継承する商写像とする誤った同定を検出する。"
+    },
+    {
+      "id": "relation-rational-error",
+      "group": "生成記録から関係子ラベルへ",
+      "title": "(3/2)##の有理近似：p=3で出力3/2",
+      "path": "verification/concept-symbols-v1.5.8/relation-rational-error.f",
+      "bytes": 166,
+      "sha256": "f48474f34c6a09e2936784bed64784916f087cd8f1f0a09a65c2b0f3d0f46cc8",
+      "explanation": "List(L(2,3/2),近似値Qの3/2,要求Nの3,有理上界Qの1/8)。厳密な差2εを零にせず、有理誤差と比較する。",
+      "validation": "p=3の誤差だけを既存F算術で検査。全pの保証は本文命題9.6の手書き証明であり、近似の一致を厳密等値にしない。"
+    },
+    {
+      "id": "relation-reject-malformed-label",
+      "group": "生成記録から関係子ラベルへ",
+      "title": "整数欄が自然数だけの不正Lを拒否",
+      "path": "verification/concept-symbols-v1.5.8/relation-reject-malformed-label.f",
+      "bytes": 2065,
+      "sha256": "08c142a208c6867572674d4a606ee5ae21d70005e6962257ad8daa61648e0d91",
+      "explanation": "List(指定検査名,検査対象,受理しないという真偽値0)。不正な候補を成功値として扱わず、実際の局所検査で拒否を確認する。",
+      "validation": "保存した候補を復号し、指定した局所検査が例外で拒否することを実行確認。任意のプログラムに対する万能検査ではない。"
+    },
+    {
+      "id": "relation-reject-false-introduction",
+      "group": "生成記録から関係子ラベルへ",
+      "title": "Φの虚偽結果L(4,0)を拒否",
+      "path": "verification/concept-symbols-v1.5.8/relation-reject-false-introduction.f",
+      "bytes": 1018,
+      "sha256": "641734aea73626923bd754b4254ecd450baee2dfd1ddabead871669e5a8748f9",
+      "explanation": "List(指定検査名,検査対象,受理しないという真偽値0)。不正な候補を成功値として扱わず、実際の局所検査で拒否を確認する。",
+      "validation": "保存した候補を復号し、指定した局所検査が例外で拒否することを実行確認。任意のプログラムに対する万能検査ではない。"
+    },
+    {
+      "id": "relation-reject-compressed-sum",
+      "group": "生成記録から関係子ラベルへ",
+      "title": "加算後にkを2へ圧縮した虚偽結果を拒否",
+      "path": "verification/concept-symbols-v1.5.8/relation-reject-compressed-sum.f",
+      "bytes": 1204,
+      "sha256": "9ae4a51c6216695786b744a0f8b684ff45a939761ee0c2a5675dc80acaa794a5",
+      "explanation": "List(指定検査名,検査対象,受理しないという真偽値0)。不正な候補を成功値として扱わず、実際の局所検査で拒否を確認する。",
+      "validation": "保存した候補を復号し、指定した局所検査が例外で拒否することを実行確認。任意のプログラムに対する万能検査ではない。"
+    },
+    {
+      "id": "geometric-h-third-lower",
+      "group": "等比生成記録と循環小数の読み分け",
+      "title": "1/3への下側手続き",
+      "path": "verification/concept-symbols-v1.5.8/geometric-h-third-lower.f",
+      "bytes": 130,
+      "sha256": "5fb3a9d86f3792659f70aede3497723a09de4e9b1b1a6b1339ab392ece5380b3",
+      "explanation": "(Q(q),(Q(b),Q(r)))。H(q,b,r)はx_0=q+b、x_{n+1}=q+r(x_n−q)を実行する記録。0<r<1を検査する。",
+      "validation": "型付きの復号結果を、指定した正規値と照合。"
+    },
+    {
+      "id": "geometric-trace-third-lower",
+      "group": "等比生成記録と循環小数の読み分け",
+      "title": "1/3への下側手続き：n=0,1,2,3の応答",
+      "path": "verification/concept-symbols-v1.5.8/geometric-trace-third-lower.f",
+      "bytes": 4744,
+      "sha256": "aa892b68ec135aab0d99a804d32fd3c6dd953bf2aa1fce1a1ba6c9972765a71a",
+      "explanation": "List(H,各段のList(N(n),Q(value)))。保存した四段階を、q+br^nと一段の再帰式の両方で再計算する。",
+      "validation": "四つの有理出力を二つの式で検査。任意nの式・停止・方向の一般保証は本文付録Aの手書き証明。"
+    },
+    {
+      "id": "geometric-intro-third-lower",
+      "group": "等比生成記録と循環小数の読み分け",
+      "title": "1/3への下側手続きからΨでLへ導入",
+      "path": "verification/concept-symbols-v1.5.8/geometric-intro-third-lower.f",
+      "bytes": 193,
+      "sha256": "88a38b3126ceb3bfde799fc217cc504878a918727a606ffb33f4326718926cd2",
+      "explanation": "List(H,L)。Ψ(H(q,b,r))=(2sgn(b),q)という指定した導入規則を適用する。実行回数nや縮小率rをkへ移さない。",
+      "validation": "復号したHの形成条件とbの符号を調べ、導入先の整数kと有理成分qを照合。逐点加法を継承する写像ではない。"
+    },
+    {
+      "id": "geometric-h-third-upper",
+      "group": "等比生成記録と循環小数の読み分け",
+      "title": "1/3への上側手続き",
+      "path": "verification/concept-symbols-v1.5.8/geometric-h-third-upper.f",
+      "bytes": 130,
+      "sha256": "d8a3e64b3b11921d3072d7beafdbc2d5fe934bcd82a15095bbcb32f0581c1c94",
+      "explanation": "(Q(q),(Q(b),Q(r)))。H(q,b,r)はx_0=q+b、x_{n+1}=q+r(x_n−q)を実行する記録。0<r<1を検査する。",
+      "validation": "型付きの復号結果を、指定した正規値と照合。"
+    },
+    {
+      "id": "geometric-trace-third-upper",
+      "group": "等比生成記録と循環小数の読み分け",
+      "title": "1/3への上側手続き：n=0,1,2,3の応答",
+      "path": "verification/concept-symbols-v1.5.8/geometric-trace-third-upper.f",
+      "bytes": 2533,
+      "sha256": "bb4ee3d02b68270f3ff0730fe675ddd6afc75668b9b6327431a82ec350f52dcc",
+      "explanation": "List(H,各段のList(N(n),Q(value)))。保存した四段階を、q+br^nと一段の再帰式の両方で再計算する。",
+      "validation": "四つの有理出力を二つの式で検査。任意nの式・停止・方向の一般保証は本文付録Aの手書き証明。"
+    },
+    {
+      "id": "geometric-intro-third-upper",
+      "group": "等比生成記録と循環小数の読み分け",
+      "title": "1/3への上側手続きからΨでLへ導入",
+      "path": "verification/concept-symbols-v1.5.8/geometric-intro-third-upper.f",
+      "bytes": 190,
+      "sha256": "a54d101ea31f2e88cb183538c7c56991ff081c96d606e89599060f196c78215b",
+      "explanation": "List(H,L)。Ψ(H(q,b,r))=(2sgn(b),q)という指定した導入規則を適用する。実行回数nや縮小率rをkへ移さない。",
+      "validation": "復号したHの形成条件とbの符号を調べ、導入先の整数kと有理成分qを照合。逐点加法を継承する写像ではない。"
+    },
+    {
+      "id": "geometric-h-third-fixed",
+      "group": "等比生成記録と循環小数の読み分け",
+      "title": "厳密な有理数1/3を返す定数手続き",
+      "path": "verification/concept-symbols-v1.5.8/geometric-h-third-fixed.f",
+      "bytes": 118,
+      "sha256": "0b5160bb3c449e284223adc925195e25109fd0157644f9c47cdcf76bcbb4e5ce",
+      "explanation": "(Q(q),(Q(b),Q(r)))。H(q,b,r)はx_0=q+b、x_{n+1}=q+r(x_n−q)を実行する記録。0<r<1を検査する。",
+      "validation": "型付きの復号結果を、指定した正規値と照合。"
+    },
+    {
+      "id": "geometric-trace-third-fixed",
+      "group": "等比生成記録と循環小数の読み分け",
+      "title": "厳密な有理数1/3を返す定数手続き：n=0,1,2,3の応答",
+      "path": "verification/concept-symbols-v1.5.8/geometric-trace-third-fixed.f",
+      "bytes": 340,
+      "sha256": "a18e7e24024f6837121f182114ad8e279253e38c58fb847ce6765e535ecbdd51",
+      "explanation": "List(H,各段のList(N(n),Q(value)))。保存した四段階を、q+br^nと一段の再帰式の両方で再計算する。",
+      "validation": "四つの有理出力を二つの式で検査。任意nの式・停止・方向の一般保証は本文付録Aの手書き証明。"
+    },
+    {
+      "id": "geometric-intro-third-fixed",
+      "group": "等比生成記録と循環小数の読み分け",
+      "title": "厳密な有理数1/3を返す定数手続きからΨでLへ導入",
+      "path": "verification/concept-symbols-v1.5.8/geometric-intro-third-fixed.f",
+      "bytes": 172,
+      "sha256": "2d4096710df904d51a30bc5fee7579555aeadabcd36f70166d387091680403c3",
+      "explanation": "List(H,L)。Ψ(H(q,b,r))=(2sgn(b),q)という指定した導入規則を適用する。実行回数nや縮小率rをkへ移さない。",
+      "validation": "復号したHの形成条件とbの符号を調べ、導入先の整数kと有理成分qを照合。逐点加法を継承する写像ではない。"
+    },
+    {
+      "id": "geometric-h-two-thirds-lower",
+      "group": "等比生成記録と循環小数の読み分け",
+      "title": "2/3への下側手続き",
+      "path": "verification/concept-symbols-v1.5.8/geometric-h-two-thirds-lower.f",
+      "bytes": 136,
+      "sha256": "8bfdfc0e70c6e2af9d1a2fa1b4e4b29f3ec740321223470ac88a1360c5255dba",
+      "explanation": "(Q(q),(Q(b),Q(r)))。H(q,b,r)はx_0=q+b、x_{n+1}=q+r(x_n−q)を実行する記録。0<r<1を検査する。",
+      "validation": "型付きの復号結果を、指定した正規値と照合。"
+    },
+    {
+      "id": "geometric-trace-two-thirds-lower",
+      "group": "等比生成記録と循環小数の読み分け",
+      "title": "2/3への下側手続き：n=0,1,2,3の応答",
+      "path": "verification/concept-symbols-v1.5.8/geometric-trace-two-thirds-lower.f",
+      "bytes": 3085,
+      "sha256": "8e6f3917247182ac29d0ea08dfd3ac47706c9d968cf680affbabd5178cd2f497",
+      "explanation": "List(H,各段のList(N(n),Q(value)))。保存した四段階を、q+br^nと一段の再帰式の両方で再計算する。",
+      "validation": "四つの有理出力を二つの式で検査。任意nの式・停止・方向の一般保証は本文付録Aの手書き証明。"
+    },
+    {
+      "id": "geometric-intro-two-thirds-lower",
+      "group": "等比生成記録と循環小数の読み分け",
+      "title": "2/3への下側手続きからΨでLへ導入",
+      "path": "verification/concept-symbols-v1.5.8/geometric-intro-two-thirds-lower.f",
+      "bytes": 202,
+      "sha256": "0924c0c0e79eb30e21fca07bae3173c96df7cdee5c12fcd810eb8c498fc25b52",
+      "explanation": "List(H,L)。Ψ(H(q,b,r))=(2sgn(b),q)という指定した導入規則を適用する。実行回数nや縮小率rをkへ移さない。",
+      "validation": "復号したHの形成条件とbの符号を調べ、導入先の整数kと有理成分qを照合。逐点加法を継承する写像ではない。"
+    },
+    {
+      "id": "geometric-h-menger-volume",
+      "group": "等比生成記録と循環小数の読み分け",
+      "title": "メンガースポンジの有限段階体積",
+      "path": "verification/concept-symbols-v1.5.8/geometric-h-menger-volume.f",
+      "bytes": 220,
+      "sha256": "8c7683772ea51690bceabe0887120870ff7bf7168a29e5f544c845f5a15bde66",
+      "explanation": "(Q(q),(Q(b),Q(r)))。H(q,b,r)はx_0=q+b、x_{n+1}=q+r(x_n−q)を実行する記録。0<r<1を検査する。",
+      "validation": "型付きの復号結果を、指定した正規値と照合。"
+    },
+    {
+      "id": "geometric-trace-menger-volume",
+      "group": "等比生成記録と循環小数の読み分け",
+      "title": "メンガースポンジの有限段階体積：n=0,1,2,3の応答",
+      "path": "verification/concept-symbols-v1.5.8/geometric-trace-menger-volume.f",
+      "bytes": 86977,
+      "sha256": "bf34f071828f800f4e9fd066593f862c37b751a5a3a6521c7893b2dac833dfbe",
+      "explanation": "List(H,各段のList(N(n),Q(value)))。保存した四段階を、q+br^nと一段の再帰式の両方で再計算する。",
+      "validation": "四つの有理出力を二つの式で検査。任意nの式・停止・方向の一般保証は本文付録Aの手書き証明。"
+    },
+    {
+      "id": "geometric-intro-menger-volume",
+      "group": "等比生成記録と循環小数の読み分け",
+      "title": "メンガースポンジの有限段階体積からΨでLへ導入",
+      "path": "verification/concept-symbols-v1.5.8/geometric-intro-menger-volume.f",
+      "bytes": 271,
+      "sha256": "75b2984359c29dd30dcfe46e0a15c42a671aaeb807fccf94a8db6dfe267cd50c",
+      "explanation": "List(H,L)。Ψ(H(q,b,r))=(2sgn(b),q)という指定した導入規則を適用する。実行回数nや縮小率rをkへ移さない。",
+      "validation": "復号したHの形成条件とbの符号を調べ、導入先の整数kと有理成分qを照合。逐点加法を継承する写像ではない。"
+    },
+    {
+      "id": "decimal-record-third",
+      "group": "等比生成記録と循環小数の読み分け",
+      "title": "循環小数の記録 0._3",
+      "path": "verification/concept-symbols-v1.5.8/decimal-record-third.f",
+      "bytes": 37,
+      "sha256": "7bf89df16bc338cc44b5874f21d7ef0d11d38b9ccc9027f5e386a759b03fa2b5",
+      "explanation": "List(非負整数部N,有限非循環桁のList,非空循環桁のList)。_以降の桁を循環部とする表記規約だけを保持し、下側・上側・厳密値の読みは別に指定する。",
+      "validation": "型付きの復号結果を、指定した正規値と照合。"
+    },
+    {
+      "id": "decimal-exact-third",
+      "group": "等比生成記録と循環小数の読み分け",
+      "title": "0._3の厳密な有理数としての読み",
+      "path": "verification/concept-symbols-v1.5.8/decimal-exact-third.f",
+      "bytes": 127,
+      "sha256": "26a00c7cc3088e328a20f127bea52b44b47ff600ba413412449adadcc3328bcc",
+      "explanation": "List(循環小数記録,厳密有理値Q,L(0,厳密有理値))。循環部に対する有限の有理式で評価し、関係子の個数は零とする。",
+      "validation": "有限の桁から有理式を再計算。循環小数記録それ自体を下側ラベルや上側ラベルとは同一視しない。"
+    },
+    {
+      "id": "decimal-record-two-thirds",
+      "group": "等比生成記録と循環小数の読み分け",
+      "title": "循環小数の記録 0._6",
+      "path": "verification/concept-symbols-v1.5.8/decimal-record-two-thirds.f",
+      "bytes": 46,
+      "sha256": "a4720ee39e11a0f71df4b4d628548e346d07d4a91079618b55e67873061e17e5",
+      "explanation": "List(非負整数部N,有限非循環桁のList,非空循環桁のList)。_以降の桁を循環部とする表記規約だけを保持し、下側・上側・厳密値の読みは別に指定する。",
+      "validation": "型付きの復号結果を、指定した正規値と照合。"
+    },
+    {
+      "id": "decimal-exact-two-thirds",
+      "group": "等比生成記録と循環小数の読み分け",
+      "title": "0._6の厳密な有理数としての読み",
+      "path": "verification/concept-symbols-v1.5.8/decimal-exact-two-thirds.f",
+      "bytes": 142,
+      "sha256": "58b2e6f42a76a517dad440c8ee386ac640e03ac8dada982bbcf610f403fcfb1a",
+      "explanation": "List(循環小数記録,厳密有理値Q,L(0,厳密有理値))。循環部に対する有限の有理式で評価し、関係子の個数は零とする。",
+      "validation": "有限の桁から有理式を再計算。循環小数記録それ自体を下側ラベルや上側ラベルとは同一視しない。"
+    },
+    {
+      "id": "decimal-prefix-1",
+      "group": "等比生成記録と循環小数の読み分け",
+      "title": "同じ小数1桁と異なるラベル：1/3",
+      "path": "verification/concept-symbols-v1.5.8/decimal-prefix-1.f",
+      "bytes": 376,
+      "sha256": "420e84539d7cc5a616dec11a8cbf05ea1a4561a6476b6a571f5f10fe5d9934d4",
+      "explanation": "List(0._3の記録,n,下端d_n,上端u_n,接頭桁の整数,List(L(−2,1/3),L(0,1/3),L(2,1/3)),厳密値1/3)。三元が同じ有理小数区間の内側にあっても等しくはない。",
+      "validation": "切捨て桁・上下H応答を有理算術で再計算し、三つの異なるL表示に対する六つの厳密比較を既存F算術で検査。全桁の保証は付録Aの手書き証明。"
+    },
+    {
+      "id": "decimal-prefix-2",
+      "group": "等比生成記録と循環小数の読み分け",
+      "title": "同じ小数2桁と異なるラベル：1/3",
+      "path": "verification/concept-symbols-v1.5.8/decimal-prefix-2.f",
+      "bytes": 1009,
+      "sha256": "4cfc3114b941ed35a9de9d624c3a0f1338f7729d72bc9d5e5a47f6668d8e8d7f",
+      "explanation": "List(0._3の記録,n,下端d_n,上端u_n,接頭桁の整数,List(L(−2,1/3),L(0,1/3),L(2,1/3)),厳密値1/3)。三元が同じ有理小数区間の内側にあっても等しくはない。",
+      "validation": "切捨て桁・上下H応答を有理算術で再計算し、三つの異なるL表示に対する六つの厳密比較を既存F算術で検査。全桁の保証は付録Aの手書き証明。"
+    },
+    {
+      "id": "decimal-prefix-3",
+      "group": "等比生成記録と循環小数の読み分け",
+      "title": "同じ小数3桁と異なるラベル：1/3",
+      "path": "verification/concept-symbols-v1.5.8/decimal-prefix-3.f",
+      "bytes": 7312,
+      "sha256": "dc3284dc3264da623babe1e0b0bf7bd72642933e9169749e5d21988fa500d52a",
+      "explanation": "List(0._3の記録,n,下端d_n,上端u_n,接頭桁の整数,List(L(−2,1/3),L(0,1/3),L(2,1/3)),厳密値1/3)。三元が同じ有理小数区間の内側にあっても等しくはない。",
+      "validation": "切捨て桁・上下H応答を有理算術で再計算し、三つの異なるL表示に対する六つの厳密比較を既存F算術で検査。全桁の保証は付録Aの手書き証明。"
+    },
+    {
+      "id": "decimal-lower-sum",
+      "group": "等比生成記録と循環小数の読み分け",
+      "title": "1/3下側＋2/3下側：L(−4,1)",
+      "path": "verification/concept-symbols-v1.5.8/decimal-lower-sum.f",
+      "bytes": 178,
+      "sha256": "6d8377b0a08bf56995025fe746e8ea5722d0ad4417363527305af4e1cba27203",
+      "explanation": "List(L左,L右,L結果)。小数の桁の見かけを使わず、指定型Lの整数・有理成分を加える。",
+      "validation": "成分加法とFへの埋込みを照合。下側同士ではk=−4を保持し、上側と下側ではk=0となる。"
+    },
+    {
+      "id": "decimal-mixed-sum",
+      "group": "等比生成記録と循環小数の読み分け",
+      "title": "1/3上側＋2/3下側：厳密な1",
+      "path": "verification/concept-symbols-v1.5.8/decimal-mixed-sum.f",
+      "bytes": 160,
+      "sha256": "9a8ec66f9a2b871df132ca1e8404ec6d6f57d127409ec3277d30c001fdb35d34",
+      "explanation": "List(L左,L右,L結果)。小数の桁の見かけを使わず、指定型Lの整数・有理成分を加える。",
+      "validation": "成分加法とFへの埋込みを照合。下側同士ではk=−4を保持し、上側と下側ではk=0となる。"
+    },
+    {
+      "id": "geometric-decimal-reject-invalid-ratio",
+      "group": "等比生成記録と循環小数の読み分け",
+      "title": "縮小率r=1のHを拒否",
+      "path": "verification/concept-symbols-v1.5.8/geometric-decimal-reject-invalid-ratio.f",
+      "bytes": 2101,
+      "sha256": "39362ad2229f48aae3af5abb5b8e6f43669466222ae2bdb96cd427511dfc5c0c",
+      "explanation": "List(指定検査名,検査対象,拒否予定N(0))。保存した候補を局所検査へ渡し、実際の拒否を確認する。",
+      "validation": "形成条件または主張に反する具体的候補を拒否。未知の再帰処理の意味や停止を判定する検査ではない。"
+    },
+    {
+      "id": "geometric-decimal-reject-invalid-digit",
+      "group": "等比生成記録と循環小数の読み分け",
+      "title": "桁10を含む循環記録を拒否",
+      "path": "verification/concept-symbols-v1.5.8/geometric-decimal-reject-invalid-digit.f",
+      "bytes": 3955,
+      "sha256": "e5667531ba60b5220344978afd2e408a46139d1cfaf5b428786ec0b0b7febb91",
+      "explanation": "List(指定検査名,検査対象,拒否予定N(0))。保存した候補を局所検査へ渡し、実際の拒否を確認する。",
+      "validation": "形成条件または主張に反する具体的候補を拒否。未知の再帰処理の意味や停止を判定する検査ではない。"
+    },
+    {
+      "id": "geometric-decimal-reject-empty-repeat",
+      "group": "等比生成記録と循環小数の読み分け",
+      "title": "空の循環部を拒否",
+      "path": "verification/concept-symbols-v1.5.8/geometric-decimal-reject-empty-repeat.f",
+      "bytes": 3919,
+      "sha256": "35b22889cc3fe0e74f262f0d6ef25dd7f4ac2cca7c330c099f46ca0ee068d024",
+      "explanation": "List(指定検査名,検査対象,拒否予定N(0))。保存した候補を局所検査へ渡し、実際の拒否を確認する。",
+      "validation": "形成条件または主張に反する具体的候補を拒否。未知の再帰処理の意味や停止を判定する検査ではない。"
+    },
+    {
+      "id": "geometric-decimal-reject-false-recurrence",
+      "group": "等比生成記録と循環小数の読み分け",
+      "title": "下側手続きの虚偽出力1/3を拒否",
+      "path": "verification/concept-symbols-v1.5.8/geometric-decimal-reject-false-recurrence.f",
+      "bytes": 1987,
+      "sha256": "107434b7e03742f8cc71d258bb8378d4a3e9ef5608dc08c80fd8ade1426f2fdc",
+      "explanation": "List(指定検査名,検査対象,拒否予定N(0))。保存した候補を局所検査へ渡し、実際の拒否を確認する。",
+      "validation": "形成条件または主張に反する具体的候補を拒否。未知の再帰処理の意味や停止を判定する検査ではない。"
+    },
+    {
+      "id": "geometric-decimal-reject-false-direction",
+      "group": "等比生成記録と循環小数の読み分け",
+      "title": "下側Hを正方向k=2へ導入した虚偽結果を拒否",
+      "path": "verification/concept-symbols-v1.5.8/geometric-decimal-reject-false-direction.f",
+      "bytes": 1126,
+      "sha256": "05bb8a08dfd9cd62715038bc665df980f2551b79d732d6bd4c3c51af11c019df",
+      "explanation": "List(指定検査名,検査対象,拒否予定N(0))。保存した候補を局所検査へ渡し、実際の拒否を確認する。",
+      "validation": "形成条件または主張に反する具体的候補を拒否。未知の再帰処理の意味や停止を判定する検査ではない。"
+    },
+    {
+      "id": "geometric-decimal-reject-false-exact-label",
+      "group": "等比生成記録と循環小数の読み分け",
+      "title": "厳密な1/3へk=−2を付した虚偽同定を拒否",
+      "path": "verification/concept-symbols-v1.5.8/geometric-decimal-reject-false-exact-label.f",
+      "bytes": 3790,
+      "sha256": "22999aba04b370cbc9805cc856b83600184df0936a5c3e2eb889dc7ec25ff5cd",
+      "explanation": "List(指定検査名,検査対象,拒否予定N(0))。保存した候補を局所検査へ渡し、実際の拒否を確認する。",
+      "validation": "形成条件または主張に反する具体的候補を拒否。未知の再帰処理の意味や停止を判定する検査ではない。"
+    },
+    {
+      "id": "pi-rule",
+      "group": "円周率の指定規則と有限の所属証拠",
+      "title": "円周率の指定規則：局所番号0・仕様版1",
+      "path": "verification/concept-symbols-v1.5.8/pi-rule.f",
+      "bytes": 13,
+      "sha256": "c307aeda9e7b007a8ae5b64450554f000f6f02415223cb0b488d805fe879023e",
+      "explanation": "(規則Nの0,仕様版Nの1)。指定型の下でLeibniz有理上下端と左右の所属条件を指す有限レコード。規則全体の数学的根拠は本文付録Bに記す。",
+      "validation": "規則識別子・版の有限照合。これだけで切断の一般法則や通常の円周率との対応を機械証明したとはしない。"
+    },
+    {
+      "id": "pi-recurrence-two-steps",
+      "group": "円周率の指定規則と有限の所属証拠",
+      "title": "有限再帰S：1、2/3、13/15",
+      "path": "verification/concept-symbols-v1.5.8/pi-recurrence-two-steps.f",
+      "bytes": 1780,
+      "sha256": "0018d267a35b2812ff004045b976a3b203bf997921a6b506b61ded5ac0307dac",
+      "explanation": "List(規則版,List(List(n,正規有理文字列)))。S0=1から二段進み、別に記した三つの期待値も照合する。",
+      "validation": "復号した有限状態列の添字・二段の再帰・明示期待値を有理演算で検査。全段階の帰納証明とは区別。"
+    },
+    {
+      "id": "pi-lower-witness",
+      "group": "円周率の指定規則と有限の所属証拠",
+      "title": "左側への所属証拠：3<B3",
+      "path": "verification/concept-symbols-v1.5.8/pi-lower-witness.f",
+      "bytes": 76,
+      "sha256": "01b4b56a936dc9e7ac0af18a5b95c560795b6dc29a3b7fd37d0741c48a160757",
+      "explanation": "List(規則版,側N：左0／右1,有理数Q,証人m)。q<BmまたはAm<qを有限有理算術で直接確認する。",
+      "validation": "一つの有理数・証人添字の厳密不等式を検査。左右全体の無限列挙や任意元の等値判定は実行しない。"
+    },
+    {
+      "id": "pi-upper-witness",
+      "group": "円周率の指定規則と有限の所属証拠",
+      "title": "右側への所属証拠：A1<7/2",
+      "path": "verification/concept-symbols-v1.5.8/pi-upper-witness.f",
+      "bytes": 88,
+      "sha256": "b29024aa993d9e361617c973db001ccfeea9637d457667222d3840be11ffde33",
+      "explanation": "List(規則版,側N：左0／右1,有理数Q,証人m)。q<BmまたはAm<qを有限有理算術で直接確認する。",
+      "validation": "一つの有理数・証人添字の厳密不等式を検査。左右全体の無限列挙や任意元の等値判定は実行しない。"
+    },
+    {
+      "id": "pi-bracket-0",
+      "group": "円周率の指定規則と有限の所属証拠",
+      "title": "円周率の有限区間応答 p=0",
+      "path": "verification/concept-symbols-v1.5.8/pi-bracket-0.f",
+      "bytes": 1918,
+      "sha256": "680b86da24da2d5b1deb4c1e1618d121c861afd4e2ee2f166ade9a19653c001d",
+      "explanation": "List(規則版,要求p,添字m=2^p,下端の正規有理文字列,上端の正規有理文字列)。分母の大きい端点は有限の証拠文字列として保存し、直接の単項Q表示とは区別する。",
+      "validation": "独立に記した端点を有理再帰で再計算し、幅4/(4m+3)<2^(−p)を検査。任意精度の保証は本文の手書き証明。"
+    },
+    {
+      "id": "pi-bracket-1",
+      "group": "円周率の指定規則と有限の所属証拠",
+      "title": "円周率の有限区間応答 p=1",
+      "path": "verification/concept-symbols-v1.5.8/pi-bracket-1.f",
+      "bytes": 2872,
+      "sha256": "41af577aee956b14114f5ce35474566ec32ca4dcb0fdc58b139d3f503dc99951",
+      "explanation": "List(規則版,要求p,添字m=2^p,下端の正規有理文字列,上端の正規有理文字列)。分母の大きい端点は有限の証拠文字列として保存し、直接の単項Q表示とは区別する。",
+      "validation": "独立に記した端点を有理再帰で再計算し、幅4/(4m+3)<2^(−p)を検査。任意精度の保証は本文の手書き証明。"
+    },
+    {
+      "id": "pi-bracket-2",
+      "group": "円周率の指定規則と有限の所属証拠",
+      "title": "円周率の有限区間応答 p=2",
+      "path": "verification/concept-symbols-v1.5.8/pi-bracket-2.f",
+      "bytes": 5113,
+      "sha256": "c5e6efff61dd42a08ca0b20fc03d6fca903a630412219847e617296b5ef8700b",
+      "explanation": "List(規則版,要求p,添字m=2^p,下端の正規有理文字列,上端の正規有理文字列)。分母の大きい端点は有限の証拠文字列として保存し、直接の単項Q表示とは区別する。",
+      "validation": "独立に記した端点を有理再帰で再計算し、幅4/(4m+3)<2^(−p)を検査。任意精度の保証は本文の手書き証明。"
+    },
+    {
+      "id": "pi-bracket-3",
+      "group": "円周率の指定規則と有限の所属証拠",
+      "title": "円周率の有限区間応答 p=3",
+      "path": "verification/concept-symbols-v1.5.8/pi-bracket-3.f",
+      "bytes": 9076,
+      "sha256": "1f079732901e09a3fc39d667d2d3b386580381eb39a5f5b4733452ee907e1cab",
+      "explanation": "List(規則版,要求p,添字m=2^p,下端の正規有理文字列,上端の正規有理文字列)。分母の大きい端点は有限の証拠文字列として保存し、直接の単項Q表示とは区別する。",
+      "validation": "独立に記した端点を有理再帰で再計算し、幅4/(4m+3)<2^(−p)を検査。任意精度の保証は本文の手書き証明。"
+    },
+    {
+      "id": "pi-located-left",
+      "group": "円周率の指定規則と有限の所属証拠",
+      "title": "有理数の隙間に対する有限選択：2/1<3/1",
+      "path": "verification/concept-symbols-v1.5.8/pi-located-left.f",
+      "bytes": 106,
+      "sha256": "82494d84def08dac8780b49f21d19b17ad5fafdca66a958473dee6a0f9e04692",
+      "explanation": "List(規則版,q,r,m=ceil(2/(r−q)),選択した側)。幅<(r−q)/2を確認し、q<Bmなら左、そうでなければAm<rという右の証拠を返す。",
+      "validation": "指定した二つの入力で両分岐を実行し、得た所属証拠も再検査。任意の有理q<rについての所在性は手書き一般証明。"
+    },
+    {
+      "id": "pi-located-right",
+      "group": "円周率の指定規則と有限の所属証拠",
+      "title": "有理数の隙間に対する有限選択：3/1<4/1",
+      "path": "verification/concept-symbols-v1.5.8/pi-located-right.f",
+      "bytes": 115,
+      "sha256": "11bf7b85ecbf71a91020971953406b79c3be7dd309a962edd2bbd7288e621374",
+      "explanation": "List(規則版,q,r,m=ceil(2/(r−q)),選択した側)。幅<(r−q)/2を確認し、q<Bmなら左、そうでなければAm<rという右の証拠を返す。",
+      "validation": "指定した二つの入力で両分岐を実行し、得た所属証拠も再検査。任意の有理q<rについての所在性は手書き一般証明。"
+    },
+    {
+      "id": "pi-reject-lower-boundary",
+      "group": "円周率の指定規則と有限の所属証拠",
+      "title": "q=B0に対する左証人m=0を拒否",
+      "path": "verification/concept-symbols-v1.5.8/pi-reject-lower-boundary.f",
+      "bytes": 2962,
+      "sha256": "b2c8f244e734c08208fdaf9037cf844c1c05993ac67ed4a9cdbadf9ee6617979",
+      "explanation": "List(検査名,候補,拒否予定Nの0)。境界の等号、証人・再帰値・仕様版の改変を有限検査で拒否する。",
+      "validation": "保存候補を実際に局所検査へ渡して拒否を確認。厳密円周率の一般等値判定器ではない。"
+    },
+    {
+      "id": "pi-reject-upper-boundary",
+      "group": "円周率の指定規則と有限の所属証拠",
+      "title": "q=A0に対する右証人m=0を拒否",
+      "path": "verification/concept-symbols-v1.5.8/pi-reject-upper-boundary.f",
+      "bytes": 2947,
+      "sha256": "0aed6bf493124305b67a92c0003c4a414e5f74858a8848cf01735cea33e5528c",
+      "explanation": "List(検査名,候補,拒否予定Nの0)。境界の等号、証人・再帰値・仕様版の改変を有限検査で拒否する。",
+      "validation": "保存候補を実際に局所検査へ渡して拒否を確認。厳密円周率の一般等値判定器ではない。"
+    },
+    {
+      "id": "pi-reject-changed-witness",
+      "group": "円周率の指定規則と有限の所属証拠",
+      "title": "q=3の左証人をm=0へ改変した候補を拒否",
+      "path": "verification/concept-symbols-v1.5.8/pi-reject-changed-witness.f",
+      "bytes": 2941,
+      "sha256": "e6aa081deef5e954e73cf21377011d0b5bb3cbe651a7e2b24f35ab35e7603c62",
+      "explanation": "List(検査名,候補,拒否予定Nの0)。境界の等号、証人・再帰値・仕様版の改変を有限検査で拒否する。",
+      "validation": "保存候補を実際に局所検査へ渡して拒否を確認。厳密円周率の一般等値判定器ではない。"
+    },
+    {
+      "id": "pi-reject-false-recurrence",
+      "group": "円周率の指定規則と有限の所属証拠",
+      "title": "S2=1という虚偽状態を拒否",
+      "path": "verification/concept-symbols-v1.5.8/pi-reject-false-recurrence.f",
+      "bytes": 3556,
+      "sha256": "d6ce5b4ce62fa98ae7013130a45c1886fe7a9bfb1040b48e5038cefd7d4403ff",
+      "explanation": "List(検査名,候補,拒否予定Nの0)。境界の等号、証人・再帰値・仕様版の改変を有限検査で拒否する。",
+      "validation": "保存候補を実際に局所検査へ渡して拒否を確認。厳密円周率の一般等値判定器ではない。"
+    },
+    {
+      "id": "pi-reject-unknown-version",
+      "group": "円周率の指定規則と有限の所属証拠",
+      "title": "未定義の仕様版2を拒否",
+      "path": "verification/concept-symbols-v1.5.8/pi-reject-unknown-version.f",
+      "bytes": 1849,
+      "sha256": "12bb8bf4f836f45e1b4d502d16c01d722f5e41e94a44e8b484ce5c48b9014659",
+      "explanation": "List(検査名,候補,拒否予定Nの0)。境界の等号、証人・再帰値・仕様版の改変を有限検査で拒否する。",
+      "validation": "保存候補を実際に局所検査へ渡して拒否を確認。厳密円周率の一般等値判定器ではない。"
+    },
+    {
+      "id": "sqrt2-state",
+      "group": "生成ラベル・解析・計算証跡",
+      "title": "√2の区間生成ラベルが指定する生成器の状態",
+      "path": "verification/concept-symbols-v1.5.8/sqrt2-state.f",
+      "bytes": 85,
+      "sha256": "3fb2eedf56bbee6e92d323f2c1347ecae2af496ffdea8ed071112d19b4b82525",
+      "explanation": "List(段数2,下端1,上端3/2)",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。"
+    },
+    {
+      "id": "leibniz-state",
+      "group": "生成ラベル・解析・計算証跡",
+      "title": "Leibniz区間生成ラベルが指定する生成器の初期状態",
+      "path": "verification/concept-symbols-v1.5.8/leibniz-state.f",
+      "bytes": 106,
+      "sha256": "af4c22cf705cc3533624920c00997b54860c34bf48b9d4a4771cc0a4b5d9af42",
+      "explanation": "List(段数0,下端8/3,上端4)",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。"
+    },
+    {
+      "id": "label-with-evidence",
+      "group": "生成ラベル・解析・計算証跡",
+      "title": "qlimの規則・引数・仕様・証拠を保持する記録",
+      "path": "verification/concept-symbols-v1.5.8/label-with-evidence.f",
+      "bytes": 25222,
+      "sha256": "36abe0779db217fc9e8e7b2cd66e823c7cb23db22bc8d01c27fa0347f6fe219d",
+      "explanation": "List(規則参照,引数,仕様,証拠)。qlimの応答を検査するための記録例であり、全ての数やTに要求する統合ラベルではない。証拠欄は本文命題6.1への手書き証明参照。",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。"
+    },
+    {
+      "id": "label-pending-division",
+      "group": "生成ラベル・解析・計算証跡",
+      "title": "分離証拠を待つ除算の構文",
+      "path": "verification/concept-symbols-v1.5.8/label-pending-division.f",
+      "bytes": 10420,
+      "sha256": "80f9e4d18e087afd605cca4da6fde73cf494678d43def64d7c042b44e966fb38",
+      "explanation": "DivLabel(P,Q)という呼出式。非零分離の条件が未充足なので、契約を満たすラベルとして実行する証拠ではない。",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。"
+    },
+    {
+      "id": "newton-state",
+      "group": "生成ラベル・解析・計算証跡",
+      "title": "Newton法の一更新後の状態",
+      "path": "verification/concept-symbols-v1.5.8/newton-state.f",
+      "bytes": 97,
+      "sha256": "ed73979adbcb11018f0bf224be548249154f394c370c9e793a46117010485c85",
+      "explanation": "List(段数1,下端4/3,上端3/2)。上下端の積は2。",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。"
+    },
+    {
+      "id": "separation-witness",
+      "group": "生成ラベル・解析・計算証跡",
+      "title": "零から離れた回答の証拠データ",
+      "path": "verification/concept-symbols-v1.5.8/separation-witness.f",
+      "bytes": 67,
+      "sha256": "109f7549aa9991d3cd91b2a335a81f12c2c79fdf927668484fd4aeeb22a4c4ec",
+      "explanation": "(要求0,区間[1,2])。端点の非零分離だけを検査し、対応する生成ラベルの全称契約は別に必要。",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。"
+    },
+    {
+      "id": "zero-classification-zero",
+      "group": "生成ラベル・解析・計算証跡",
+      "title": "零の分類 zero",
+      "path": "verification/concept-symbols-v1.5.8/zero-classification-zero.f",
+      "bytes": 10,
+      "sha256": "e4c59dd5d0476cf3a242936768568bb1aca97257bf1aab98600f670cd0cd4033",
+      "explanation": "Node(0;)。零・非零・未確定を区別する。具体的な分類の計算証拠はproof-generatorsに収録。",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。"
+    },
+    {
+      "id": "zero-classification-nonzero",
+      "group": "生成ラベル・解析・計算証跡",
+      "title": "零の分類 nonzero",
+      "path": "verification/concept-symbols-v1.5.8/zero-classification-nonzero.f",
+      "bytes": 13,
+      "sha256": "c13e3baeee9ead6301820e34dd85d6e2a2a1594bcebe037ef29af9a5e16bce7b",
+      "explanation": "Node(1;)。零・非零・未確定を区別する。具体的な分類の計算証拠はproof-generatorsに収録。",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。"
+    },
+    {
+      "id": "zero-classification-unknown",
+      "group": "生成ラベル・解析・計算証跡",
+      "title": "零の分類 unknown",
+      "path": "verification/concept-symbols-v1.5.8/zero-classification-unknown.f",
+      "bytes": 16,
+      "sha256": "109c09c37c50b4e5de65d9ac4eaba538ce54bbdb92d2f4a363d2f2049ceb9e9a",
+      "explanation": "Node(2;)。零・非零・未確定を区別する。具体的な分類の計算証拠はproof-generatorsに収録。",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。"
+    },
+    {
+      "id": "alternating-rule",
+      "group": "生成ラベル・解析・計算証跡",
+      "title": "交代和の有限規則データ",
+      "path": "verification/concept-symbols-v1.5.8/alternating-rule.f",
+      "bytes": 10528,
+      "sha256": "e79419cc16eea9a10df78ee15698efec936b3531d3ae6ba20973d5e3dbff2195",
+      "explanation": "既知familyを選ぶ有限レコード。一般契約の証明と各精度の検査は別途添付。",
+      "validation": "型付きの復号結果を、指定した正規値と照合。"
+    },
+    {
+      "id": "cauchy-modulus",
+      "group": "生成ラベル・解析・計算証跡",
+      "title": "誤差率 μ(k)=k+2 の構文",
+      "path": "verification/concept-symbols-v1.5.8/cauchy-modulus.f",
+      "bytes": 898,
+      "sha256": "7fddc0657e1448868b8844e4d75dbee1eb31b2783a828fbc0c27c6d1e3c32c64",
+      "explanation": "自然数の加算呼出式。誤差率として有効かは対象の列との関係で証明する。",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。"
+    },
+    {
+      "id": "cauchy-center-radius",
+      "group": "生成ラベル・解析・計算証跡",
+      "title": "有限区間化の中心と半径",
+      "path": "verification/concept-symbols-v1.5.8/cauchy-center-radius.f",
+      "bytes": 76,
+      "sha256": "a56cbd9ee90c5553178620a899dd2a4b4b64c0eaf8ed515bcda4c3a667199974",
+      "explanation": "(中心1/4,半径1/4)。幾何列s_n=2^(-n)、μ(0)=2によるJ_0=[0,1/2]の材料。",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。"
+    },
+    {
+      "id": "translated-label",
+      "group": "生成ラベル・解析・計算証跡",
+      "title": "整数平行移動を保持するラベル",
+      "path": "verification/concept-symbols-v1.5.8/translated-label.f",
+      "bytes": 271,
+      "sha256": "b6d07a405ccab616aff07ea2af04e78558fe07276de665fca9c9215b40c8d359",
+      "explanation": "(基本ラベル参照P,整数−2)。出力の値を平行移動する。",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。"
+    },
+    {
+      "id": "translation-arrow",
+      "group": "生成ラベル・解析・計算証跡",
+      "title": "平行移動の射 τ(P,2;−1)",
+      "path": "verification/concept-symbols-v1.5.8/translation-arrow.f",
+      "bytes": 292,
+      "sha256": "bdf931c2e905a0aadf2d7bb690dbe690569244480549407e91c61bd0c8d2a2b2",
+      "explanation": "List(基本ラベル参照P,始点の整数2,移動量−1)。終点の整数は1。",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。"
+    },
+    {
+      "id": "register-state",
+      "group": "生成ラベル・解析・計算証跡",
+      "title": "三レジスタ機械の初期状態",
+      "path": "verification/concept-symbols-v1.5.8/register-state.f",
+      "bytes": 43,
+      "sha256": "e46d8c228e6c038b5fbf70883b7733147c4db8cd26ee4d705712b3295850b144",
+      "explanation": "(命令位置0,List(2,3,0))。入力2+3の初期状態。",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。"
+    },
+    {
+      "id": "register-program",
+      "group": "生成ラベル・解析・計算証跡",
+      "title": "三レジスタ加算の全命令列",
+      "path": "verification/concept-symbols-v1.5.8/register-program.f",
+      "bytes": 31207,
+      "sha256": "831e6aac8777fdc3e3fd5353cc26cb75ea9b212cb6cbe4ef455c5e3d6f24a4b3",
+      "explanation": "zero,succ,copy,jeq,haltからなる命令規約のうち四命令種を使う六命令の加算プログラム。実行履歴と検査はproof-modelsに収録。",
+      "validation": "型付きの復号結果を、指定した正規値と照合。"
+    },
+    {
+      "id": "precision-field-epsilon",
+      "group": "生成ラベル・解析・計算証跡",
+      "title": "F全精度の要求値 ε",
+      "path": "verification/concept-symbols-v1.5.8/precision-field-epsilon.f",
+      "bytes": 97,
+      "sha256": "c2ab14277570ea1fb22442ca70a6db60a0da96eb5fa2ab8bc296df405087865a",
+      "explanation": "正のF元を誤差要求として保持する。有理数2^(-p)による要求と区別。",
+      "validation": "型付きの復号結果を、指定した正規値と照合。"
+    },
+    {
+      "id": "polynomial-derivative",
+      "group": "生成ラベル・解析・計算証跡",
+      "title": "1+x²の形式微分結果2x",
+      "path": "verification/concept-symbols-v1.5.8/polynomial-derivative.f",
+      "bytes": 64,
+      "sha256": "259a323191ee13f087322e373eaa087d85cd2bb9f0fad9b489cae422ed7570eb",
+      "explanation": "型を外側で指定した直接表示。",
+      "validation": "型付きの復号結果を、指定した正規値と照合。"
+    },
+    {
+      "id": "polynomial-primitive",
+      "group": "生成ラベル・解析・計算証跡",
+      "title": "1+x²の零定数原始関数x+x³/3",
+      "path": "verification/concept-symbols-v1.5.8/polynomial-primitive.f",
+      "bytes": 124,
+      "sha256": "9fccd042d434775d0e2860fd4fe39079bf2046ffa24d3453c9cb3e1226471449",
+      "explanation": "型を外側で指定した直接表示。",
+      "validation": "型付きの復号結果を、指定した正規値と照合。"
+    },
+    {
+      "id": "polynomial-integral",
+      "group": "生成ラベル・解析・計算証跡",
+      "title": "1+x²の端点0,1での形式積分4/3",
+      "path": "verification/concept-symbols-v1.5.8/polynomial-integral.f",
+      "bytes": 43,
+      "sha256": "e611ff5b578ba99d628650a1f4cabb88fdf68f244a0d9b2370306e29f65c880c",
+      "explanation": "型を外側で指定した直接表示。",
+      "validation": "型付きの復号結果を、指定した正規値と照合。"
+    },
+    {
+      "id": "beta-step",
+      "group": "生成ラベル・解析・計算証跡",
+      "title": "β一段の変換レコード",
+      "path": "verification/concept-symbols-v1.5.8/beta-step.f",
+      "bytes": 157,
+      "sha256": "300f3e6ac61abd843025783c979c7844e7deed9f93c1d0f5c1d292c573bcc525",
+      "explanation": "List(β規則0,根の位置,変換前λ項,変換後λ項,補助証拠空列)",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。"
+    },
+    {
+      "id": "identity-arrow",
+      "group": "生成ラベル・解析・計算証跡",
+      "title": "恒等射",
+      "path": "verification/concept-symbols-v1.5.8/identity-arrow.f",
+      "bytes": 43,
+      "sha256": "0181c5bd8ac82891ccde65ae462b62c0def45c109cd4bddd09d8cc91c19dddf9",
+      "explanation": "(状態λx.x,空履歴)",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。"
+    },
+    {
+      "id": "one-step-arrow",
+      "group": "生成ラベル・解析・計算証跡",
+      "title": "β一段の射",
+      "path": "verification/concept-symbols-v1.5.8/one-step-arrow.f",
+      "bytes": 259,
+      "sha256": "888158baf4ef803f2f89acb1ed8c35aff2cf37033ed22956c48eb021d6a6dde5",
+      "explanation": "(初期状態,List(変換段))。一般の状態型とは外側で区別。",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。"
+    },
+    {
+      "id": "lambda-position",
+      "group": "生成ラベル・解析・計算証跡",
+      "title": "λ本体・関数側・引数側という位置",
+      "path": "verification/concept-symbols-v1.5.8/lambda-position.f",
+      "bytes": 31,
+      "sha256": "c0f432c6a03e7f28c8f050e2df7dc11ce80c34e658aa58dceb5387513c9df7a7",
+      "explanation": "List(N(0),N(1),N(2))。特定項での有効位置かは別に検査。",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。"
+    },
+    {
+      "id": "status-normal-form",
+      "group": "生成ラベル・解析・計算証跡",
+      "title": "終了状態 normal-form",
+      "path": "verification/concept-symbols-v1.5.8/status-normal-form.f",
+      "bytes": 10,
+      "sha256": "e4c59dd5d0476cf3a242936768568bb1aca97257bf1aab98600f670cd0cd4033",
+      "explanation": "Node(0;) の識別部分。実履歴では付加データも保持。",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。"
+    },
+    {
+      "id": "status-step-limit",
+      "group": "生成ラベル・解析・計算証跡",
+      "title": "終了状態 step-limit",
+      "path": "verification/concept-symbols-v1.5.8/status-step-limit.f",
+      "bytes": 13,
+      "sha256": "c13e3baeee9ead6301820e34dd85d6e2a2a1594bcebe037ef29af9a5e16bce7b",
+      "explanation": "Node(1;) の識別部分。実履歴では付加データも保持。",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。"
+    },
+    {
+      "id": "status-stopped",
+      "group": "生成ラベル・解析・計算証跡",
+      "title": "終了状態 stopped",
+      "path": "verification/concept-symbols-v1.5.8/status-stopped.f",
+      "bytes": 16,
+      "sha256": "109c09c37c50b4e5de65d9ac4eaba538ce54bbdb92d2f4a363d2f2049ceb9e9a",
+      "explanation": "Node(2;) の識別部分。実履歴では付加データも保持。",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。"
+    },
+    {
+      "id": "status-error",
+      "group": "生成ラベル・解析・計算証跡",
+      "title": "終了状態 error",
+      "path": "verification/concept-symbols-v1.5.8/status-error.f",
+      "bytes": 19,
+      "sha256": "801260a13132a162ce599ca42e1e41712dd9c4f4344b5e09fed8537ce41e1f6e",
+      "explanation": "Node(3;) の識別部分。実履歴では付加データも保持。",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。"
+    },
+    {
+      "id": "json-null",
+      "group": "汎用レコード",
+      "title": "JSON null",
+      "path": "verification/concept-symbols-v1.5.8/json-null.f",
+      "bytes": 10,
+      "sha256": "e4c59dd5d0476cf3a242936768568bb1aca97257bf1aab98600f670cd0cd4033",
+      "explanation": "タグとpayloadを用いた相互変換形式。直接の数表示とは別。",
+      "validation": "型付きの復号結果を、指定した正規値と照合。"
+    },
+    {
+      "id": "json-false",
+      "group": "汎用レコード",
+      "title": "JSON false",
+      "path": "verification/concept-symbols-v1.5.8/json-false.f",
+      "bytes": 13,
+      "sha256": "c13e3baeee9ead6301820e34dd85d6e2a2a1594bcebe037ef29af9a5e16bce7b",
+      "explanation": "タグとpayloadを用いた相互変換形式。直接の数表示とは別。",
+      "validation": "型付きの復号結果を、指定した正規値と照合。"
+    },
+    {
+      "id": "json-true",
+      "group": "汎用レコード",
+      "title": "JSON true",
+      "path": "verification/concept-symbols-v1.5.8/json-true.f",
+      "bytes": 16,
+      "sha256": "109c09c37c50b4e5de65d9ac4eaba538ce54bbdb92d2f4a363d2f2049ceb9e9a",
+      "explanation": "タグとpayloadを用いた相互変換形式。直接の数表示とは別。",
+      "validation": "型付きの復号結果を、指定した正規値と照合。"
+    },
+    {
+      "id": "json-2",
+      "group": "汎用レコード",
+      "title": "JSON 2",
+      "path": "verification/concept-symbols-v1.5.8/json-2.f",
+      "bytes": 175,
+      "sha256": "7c3159072794f82d2691b887b1dbcecd5975e45acdaa9192f7c1e473ee6ba1ee",
+      "explanation": "タグとpayloadを用いた相互変換形式。直接の数表示とは別。",
+      "validation": "型付きの復号結果を、指定した正規値と照合。"
+    },
+    {
+      "id": "json-a",
+      "group": "汎用レコード",
+      "title": "JSON \"a\"",
+      "path": "verification/concept-symbols-v1.5.8/json-a.f",
+      "bytes": 319,
+      "sha256": "6b693518d27cc7d723fc54531cdcac568d2b2f2eb103a4b1c986bff5ded17a29",
+      "explanation": "タグとpayloadを用いた相互変換形式。直接の数表示とは別。",
+      "validation": "型付きの復号結果を、指定した正規値と照合。"
+    },
+    {
+      "id": "json-array",
+      "group": "汎用レコード",
+      "title": "JSON [1,2]",
+      "path": "verification/concept-symbols-v1.5.8/json-array.f",
+      "bytes": 376,
+      "sha256": "baf17945ff1a6de245313605d8f9a4ba243289fc7d951c8f0f7bbb22995a8f75",
+      "explanation": "タグとpayloadを用いた相互変換形式。直接の数表示とは別。",
+      "validation": "型付きの復号結果を、指定した正規値と照合。"
+    },
+    {
+      "id": "json-record",
+      "group": "汎用レコード",
+      "title": "JSON {\"a\":1}",
+      "path": "verification/concept-symbols-v1.5.8/json-record.f",
+      "bytes": 505,
+      "sha256": "9c42692e7ee6327b8d92335e3ae2e02f949a407ef9725a263ffe84dbfe1c9a40",
+      "explanation": "タグとpayloadを用いた相互変換形式。直接の数表示とは別。",
+      "validation": "型付きの復号結果を、指定した正規値と照合。"
+    },
+    {
+      "id": "proof-nat-paths",
+      "group": "既存証拠の全文",
+      "title": "全16命題の一般証明",
+      "path": "verification/concept-symbols-v1.5.8/proof-nat-paths.f",
+      "bytes": 1200829,
+      "sha256": "976536c64a15ba531e75c78ee60b12f56a82a2c507d69a1ff98f60b922426d7d",
+      "explanation": "元ファイル verification/certificates/nat-and-paths.json の全キーと全値。基本記号ファイルに省略なし。",
+      "validation": "JSON値の損失のない復号後、元の意味検査器で証拠を再検査。"
+    },
+    {
+      "id": "proof-lambda",
+      "group": "既存証拠の全文",
+      "title": "保存済みλ計算証跡全件",
+      "path": "verification/concept-symbols-v1.5.8/proof-lambda.f",
+      "bytes": 5707771,
+      "sha256": "ad8e5cb76be076b07212ff7049f63be969a32625cc0010ae653713739fe2c718",
+      "explanation": "元ファイル verification/certificates/lambda-examples-v8.0.1.json の全キーと全値。基本記号ファイルに省略なし。",
+      "validation": "JSON値の損失のない復号後、元の意味検査器で証拠を再検査。"
+    },
+    {
+      "id": "proof-applications",
+      "group": "既存証拠の全文",
+      "title": "保存済み応用証拠全件",
+      "path": "verification/concept-symbols-v1.5.8/proof-applications.f",
+      "bytes": 2930581,
+      "sha256": "627da72f81b40d9001b95139aa683dba4c41cf9da82345ed332209e368ecaafb",
+      "explanation": "元ファイル verification/certificates/application-examples-v1.5.8.json の全キーと全値。基本記号ファイルに省略なし。",
+      "validation": "JSON値の損失のない復号後、元の意味検査器で証拠を再検査。"
+    },
+    {
+      "id": "proof-field",
+      "group": "既存証拠の全文",
+      "title": "保存済みF算術証拠全件",
+      "path": "verification/concept-symbols-v1.5.8/proof-field.f",
+      "bytes": 745408,
+      "sha256": "4aefe2c2b4537e8ddf207e9a300a7bea605396e734228831688038b514225a52",
+      "explanation": "元ファイル verification/certificates/formal-field-examples-v1.5.8.json の全キーと全値。基本記号ファイルに省略なし。",
+      "validation": "JSON値の損失のない復号後、元の意味検査器で証拠を再検査。"
+    },
+    {
+      "id": "proof-generators",
+      "group": "既存証拠の全文",
+      "title": "生成ラベル拡張の全有限証跡",
+      "path": "verification/concept-symbols-v1.5.8/proof-generators.f",
+      "bytes": 6110440,
+      "sha256": "f887fe8fcb6d62b6e358890db7aa44091228b8c06415e57a4eee8e9bdcb19195",
+      "explanation": "元ファイル verification/certificates/generator-extensions-v1.5.8.json の全キーと全値。基本記号ファイルに省略なし。",
+      "validation": "JSON値の損失のない復号後、元の意味検査器で証拠を再検査。"
+    },
+    {
+      "id": "proof-models",
+      "group": "既存証拠の全文",
+      "title": "レジスタ計算・条件付き等式証跡の全件",
+      "path": "verification/concept-symbols-v1.5.8/proof-models.f",
+      "bytes": 812239,
+      "sha256": "57d4d64d14d6d40c2636ded5bd82e87a0bb90a90051ae95c94f231aaa295a05c",
+      "explanation": "元ファイル verification/certificates/model-extensions-v1.5.8.json の全キーと全値。基本記号ファイルに省略なし。",
+      "validation": "JSON値の損失のない復号後、元の意味検査器で証拠を再検査。"
+    }
+  ]
+}

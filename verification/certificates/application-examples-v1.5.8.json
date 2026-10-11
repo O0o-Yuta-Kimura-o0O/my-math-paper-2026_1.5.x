@@ -1,0 +1,1530 @@
+{
+  "format": "application-examples/1",
+  "version": "1.5.8",
+  "certificates": [
+    {
+      "format": "rational-applications-v1.5.0",
+      "kind": "qlim",
+      "claim": {
+        "base": "5/1",
+        "offset": "1/1",
+        "index": 9,
+        "value": "51/10"
+      },
+      "roots": {
+        "base": "s0",
+        "offset": "s1",
+        "denominator": "s2",
+        "correction": "s3",
+        "result": "s4"
+      },
+      "steps": [
+        {
+          "id": "s0",
+          "rule": "Q.literal",
+          "input": [
+            "5/1"
+          ],
+          "output": "5/1",
+          "premises": []
+        },
+        {
+          "id": "s1",
+          "rule": "Q.literal",
+          "input": [
+            "1/1"
+          ],
+          "output": "1/1",
+          "premises": []
+        },
+        {
+          "id": "s2",
+          "rule": "Q.literal",
+          "input": [
+            "10/1"
+          ],
+          "output": "10/1",
+          "premises": []
+        },
+        {
+          "id": "s3",
+          "rule": "Q.div",
+          "input": [
+            "s1",
+            "s2"
+          ],
+          "output": "1/10",
+          "premises": [
+            "s1",
+            "s2"
+          ]
+        },
+        {
+          "id": "s4",
+          "rule": "Q.add",
+          "input": [
+            "s0",
+            "s3"
+          ],
+          "output": "51/10",
+          "premises": [
+            "s0",
+            "s3"
+          ]
+        }
+      ]
+    },
+    {
+      "format": "rational-applications-v1.5.0",
+      "kind": "sqrt2",
+      "claim": {
+        "precision": 8,
+        "interval": {
+          "lower": "181/128",
+          "upper": "363/256"
+        }
+      },
+      "roots": {
+        "chain": [
+          "s0",
+          "s1",
+          "s2",
+          "s3",
+          "s4",
+          "s5",
+          "s6",
+          "s7",
+          "s8",
+          "s9"
+        ],
+        "final": "s10",
+        "width": "s11",
+        "target": "s12",
+        "bound": "s13",
+        "invariant": "s14"
+      },
+      "steps": [
+        {
+          "id": "s0",
+          "rule": "S2.start",
+          "input": [],
+          "output": {
+            "depth": "0",
+            "interval": {
+              "lower": "0/1",
+              "upper": "2/1"
+            }
+          },
+          "premises": []
+        },
+        {
+          "id": "s1",
+          "rule": "S2.step",
+          "input": [
+            "s0"
+          ],
+          "output": {
+            "depth": "1",
+            "interval": {
+              "lower": "1/1",
+              "upper": "2/1"
+            },
+            "witness": {
+              "midpoint": "1/1",
+              "square": "1/1",
+              "comparison": -1
+            }
+          },
+          "premises": [
+            "s0"
+          ]
+        },
+        {
+          "id": "s2",
+          "rule": "S2.step",
+          "input": [
+            "s1"
+          ],
+          "output": {
+            "depth": "2",
+            "interval": {
+              "lower": "1/1",
+              "upper": "3/2"
+            },
+            "witness": {
+              "midpoint": "3/2",
+              "square": "9/4",
+              "comparison": 1
+            }
+          },
+          "premises": [
+            "s1"
+          ]
+        },
+        {
+          "id": "s3",
+          "rule": "S2.step",
+          "input": [
+            "s2"
+          ],
+          "output": {
+            "depth": "3",
+            "interval": {
+              "lower": "5/4",
+              "upper": "3/2"
+            },
+            "witness": {
+              "midpoint": "5/4",
+              "square": "25/16",
+              "comparison": -1
+            }
+          },
+          "premises": [
+            "s2"
+          ]
+        },
+        {
+          "id": "s4",
+          "rule": "S2.step",
+          "input": [
+            "s3"
+          ],
+          "output": {
+            "depth": "4",
+            "interval": {
+              "lower": "11/8",
+              "upper": "3/2"
+            },
+            "witness": {
+              "midpoint": "11/8",
+              "square": "121/64",
+              "comparison": -1
+            }
+          },
+          "premises": [
+            "s3"
+          ]
+        },
+        {
+          "id": "s5",
+          "rule": "S2.step",
+          "input": [
+            "s4"
+          ],
+          "output": {
+            "depth": "5",
+            "interval": {
+              "lower": "11/8",
+              "upper": "23/16"
+            },
+            "witness": {
+              "midpoint": "23/16",
+              "square": "529/256",
+              "comparison": 1
+            }
+          },
+          "premises": [
+            "s4"
+          ]
+        },
+        {
+          "id": "s6",
+          "rule": "S2.step",
+          "input": [
+            "s5"
+          ],
+          "output": {
+            "depth": "6",
+            "interval": {
+              "lower": "45/32",
+              "upper": "23/16"
+            },
+            "witness": {
+              "midpoint": "45/32",
+              "square": "2025/1024",
+              "comparison": -1
+            }
+          },
+          "premises": [
+            "s5"
+          ]
+        },
+        {
+          "id": "s7",
+          "rule": "S2.step",
+          "input": [
+            "s6"
+          ],
+          "output": {
+            "depth": "7",
+            "interval": {
+              "lower": "45/32",
+              "upper": "91/64"
+            },
+            "witness": {
+              "midpoint": "91/64",
+              "square": "8281/4096",
+              "comparison": 1
+            }
+          },
+          "premises": [
+            "s6"
+          ]
+        },
+        {
+          "id": "s8",
+          "rule": "S2.step",
+          "input": [
+            "s7"
+          ],
+          "output": {
+            "depth": "8",
+            "interval": {
+              "lower": "181/128",
+              "upper": "91/64"
+            },
+            "witness": {
+              "midpoint": "181/128",
+              "square": "32761/16384",
+              "comparison": -1
+            }
+          },
+          "premises": [
+            "s7"
+          ]
+        },
+        {
+          "id": "s9",
+          "rule": "S2.step",
+          "input": [
+            "s8"
+          ],
+          "output": {
+            "depth": "9",
+            "interval": {
+              "lower": "181/128",
+              "upper": "363/256"
+            },
+            "witness": {
+              "midpoint": "363/256",
+              "square": "131769/65536",
+              "comparison": 1
+            }
+          },
+          "premises": [
+            "s8"
+          ]
+        },
+        {
+          "id": "s10",
+          "rule": "I.fromStage",
+          "input": [
+            "s9"
+          ],
+          "output": {
+            "lower": "181/128",
+            "upper": "363/256"
+          },
+          "premises": [
+            "s9"
+          ]
+        },
+        {
+          "id": "s11",
+          "rule": "I.width",
+          "input": [
+            "s10"
+          ],
+          "output": "1/256",
+          "premises": [
+            "s10"
+          ]
+        },
+        {
+          "id": "s12",
+          "rule": "Q.precision",
+          "input": [
+            8
+          ],
+          "output": "1/256",
+          "premises": []
+        },
+        {
+          "id": "s13",
+          "rule": "Q.le",
+          "input": [
+            "s11",
+            "s12"
+          ],
+          "output": true,
+          "premises": [
+            "s11",
+            "s12"
+          ]
+        },
+        {
+          "id": "s14",
+          "rule": "I.sqrt2",
+          "input": [
+            "s10"
+          ],
+          "output": true,
+          "premises": [
+            "s10"
+          ]
+        }
+      ]
+    },
+    {
+      "format": "rational-applications-v1.5.0",
+      "kind": "leibniz",
+      "claim": {
+        "precision": 5,
+        "interval": {
+          "lower": "42728253629460678092648278872580992742373692500752315768/13666734749380163413296024576419304586504627516675222125",
+          "upper": "329355408452704940492401878131448474307847574597357628/104326219460917277964091790659689347988584942875383375"
+        }
+      },
+      "roots": {
+        "chain": [
+          "s0",
+          "s1",
+          "s2",
+          "s3",
+          "s4",
+          "s5",
+          "s6",
+          "s7",
+          "s8",
+          "s9",
+          "s10",
+          "s11",
+          "s12",
+          "s13",
+          "s14",
+          "s15",
+          "s16",
+          "s17",
+          "s18",
+          "s19",
+          "s20",
+          "s21",
+          "s22",
+          "s23",
+          "s24",
+          "s25",
+          "s26",
+          "s27",
+          "s28",
+          "s29",
+          "s30",
+          "s31",
+          "s32"
+        ],
+        "final": "s33",
+        "width": "s34",
+        "target": "s35",
+        "bound": "s36"
+      },
+      "steps": [
+        {
+          "id": "s0",
+          "rule": "LZ.start",
+          "input": [],
+          "output": {
+            "m": "0",
+            "interval": {
+              "lower": "8/3",
+              "upper": "4/1"
+            }
+          },
+          "premises": []
+        },
+        {
+          "id": "s1",
+          "rule": "LZ.step",
+          "input": [
+            "s0"
+          ],
+          "output": {
+            "m": "1",
+            "interval": {
+              "lower": "304/105",
+              "upper": "52/15"
+            },
+            "witness": {
+              "upperChange": "-8/15",
+              "lowerChange": "8/35",
+              "gap": "4/7"
+            }
+          },
+          "premises": [
+            "s0"
+          ]
+        },
+        {
+          "id": "s2",
+          "rule": "LZ.step",
+          "input": [
+            "s1"
+          ],
+          "output": {
+            "m": "2",
+            "interval": {
+              "lower": "10312/3465",
+              "upper": "1052/315"
+            },
+            "witness": {
+              "upperChange": "-8/63",
+              "lowerChange": "8/99",
+              "gap": "4/11"
+            }
+          },
+          "premises": [
+            "s1"
+          ]
+        },
+        {
+          "id": "s3",
+          "rule": "LZ.step",
+          "input": [
+            "s2"
+          ],
+          "output": {
+            "m": "3",
+            "interval": {
+              "lower": "135904/45045",
+              "upper": "147916/45045"
+            },
+            "witness": {
+              "upperChange": "-8/143",
+              "lowerChange": "8/195",
+              "gap": "4/15"
+            }
+          },
+          "premises": [
+            "s2"
+          ]
+        },
+        {
+          "id": "s4",
+          "rule": "LZ.step",
+          "input": [
+            "s3"
+          ],
+          "output": {
+            "m": "4",
+            "interval": {
+              "lower": "44257352/14549535",
+              "upper": "2490548/765765"
+            },
+            "witness": {
+              "upperChange": "-8/255",
+              "lowerChange": "8/323",
+              "gap": "4/19"
+            }
+          },
+          "premises": [
+            "s3"
+          ]
+        },
+        {
+          "id": "s5",
+          "rule": "LZ.step",
+          "input": [
+            "s4"
+          ],
+          "output": {
+            "m": "5",
+            "interval": {
+              "lower": "1023461776/334639305",
+              "upper": "47028692/14549535"
+            },
+            "witness": {
+              "upperChange": "-8/399",
+              "lowerChange": "8/483",
+              "gap": "4/23"
+            }
+          },
+          "premises": [
+            "s4"
+          ]
+        },
+        {
+          "id": "s6",
+          "rule": "LZ.step",
+          "input": [
+            "s5"
+          ],
+          "output": {
+            "m": "6",
+            "interval": {
+              "lower": "15411418072/5019589575",
+              "upper": "5385020324/1673196525"
+            },
+            "witness": {
+              "upperChange": "-8/575",
+              "lowerChange": "8/675",
+              "gap": "4/27"
+            }
+          },
+          "premises": [
+            "s5"
+          ]
+        },
+        {
+          "id": "s7",
+          "rule": "LZ.step",
+          "input": [
+            "s6"
+          ],
+          "output": {
+            "m": "7",
+            "interval": {
+              "lower": "13895021563328/4512611027925",
+              "upper": "467009482388/145568097675"
+            },
+            "witness": {
+              "upperChange": "-8/783",
+              "lowerChange": "8/899",
+              "gap": "4/31"
+            }
+          },
+          "premises": [
+            "s6"
+          ]
+        },
+        {
+          "id": "s8",
+          "rule": "LZ.step",
+          "input": [
+            "s7"
+          ],
+          "output": {
+            "m": "8",
+            "interval": {
+              "lower": "13926277743608/4512611027925",
+              "upper": "14442004718228/4512611027925"
+            },
+            "witness": {
+              "upperChange": "-8/1023",
+              "lowerChange": "8/1155",
+              "gap": "4/35"
+            }
+          },
+          "premises": [
+            "s7"
+          ]
+        },
+        {
+          "id": "s9",
+          "rule": "LZ.step",
+          "input": [
+            "s8"
+          ],
+          "output": {
+            "m": "9",
+            "interval": {
+              "lower": "516197940314096/166966608033225",
+              "upper": "533322720625196/166966608033225"
+            },
+            "witness": {
+              "upperChange": "-8/1295",
+              "lowerChange": "8/1443",
+              "gap": "4/39"
+            }
+          },
+          "premises": [
+            "s8"
+          ]
+        },
+        {
+          "id": "s10",
+          "rule": "LZ.step",
+          "input": [
+            "s9"
+          ],
+          "output": {
+            "m": "10",
+            "interval": {
+              "lower": "911392701638017048/294362129962575675",
+              "upper": "21831981985010836/6845630929362225"
+            },
+            "witness": {
+              "upperChange": "-8/1599",
+              "lowerChange": "8/1763",
+              "gap": "4/43"
+            }
+          },
+          "premises": [
+            "s9"
+          ]
+        },
+        {
+          "id": "s11",
+          "rule": "LZ.step",
+          "input": [
+            "s10"
+          ],
+          "output": {
+            "m": "11",
+            "interval": {
+              "lower": "42887788022313481376/13835020108241056725",
+              "upper": "937558224301357108/294362129962575675"
+            },
+            "witness": {
+              "upperChange": "-8/1935",
+              "lowerChange": "8/2115",
+              "gap": "4/47"
+            }
+          },
+          "premises": [
+            "s10"
+          ]
+        },
+        {
+          "id": "s12",
+          "rule": "LZ.step",
+          "input": [
+            "s11"
+          ],
+          "output": {
+            "m": "12",
+            "interval": {
+              "lower": "300524544618003693032/96845140757687397075",
+              "upper": "308120241932332116332/96845140757687397075"
+            },
+            "witness": {
+              "upperChange": "-8/2303",
+              "lowerChange": "8/2499",
+              "gap": "4/51"
+            }
+          },
+          "premises": [
+            "s11"
+          ]
+        },
+        {
+          "id": "s13",
+          "rule": "LZ.step",
+          "input": [
+            "s12"
+          ],
+          "output": {
+            "m": "13",
+            "interval": {
+              "lower": "15941887430682586624816/5132792460157432044975",
+              "upper": "16315181427784945318996/5132792460157432044975"
+            },
+            "witness": {
+              "upperChange": "-8/2703",
+              "lowerChange": "8/2915",
+              "gap": "4/55"
+            }
+          },
+          "premises": [
+            "s12"
+          ]
+        },
+        {
+          "id": "s14",
+          "rule": "LZ.step",
+          "input": [
+            "s13"
+          ],
+          "output": {
+            "m": "14",
+            "interval": {
+              "lower": "941291750334505232905544/302834755149288490653525",
+              "upper": "16302083392798897645516/5132792460157432044975"
+            },
+            "witness": {
+              "upperChange": "-8/3135",
+              "lowerChange": "8/3363",
+              "gap": "4/59"
+            }
+          },
+          "premises": [
+            "s13"
+          ]
+        },
+        {
+          "id": "s15",
+          "rule": "LZ.step",
+          "input": [
+            "s14"
+          ],
+          "output": {
+            "m": "15",
+            "interval": {
+              "lower": "57457251977407903460019584/18472920064106597929865025",
+              "upper": "58630135791001973169852284/18472920064106597929865025"
+            },
+            "witness": {
+              "upperChange": "-8/3599",
+              "lowerChange": "8/3843",
+              "gap": "4/63"
+            }
+          },
+          "premises": [
+            "s14"
+          ]
+        },
+        {
+          "id": "s16",
+          "rule": "LZ.step",
+          "input": [
+            "s15"
+          ],
+          "output": {
+            "m": "16",
+            "interval": {
+              "lower": "296300728665235825268431016/95206588022703235484688975",
+              "upper": "4507234389098153984166548/1420993851085122917681925"
+            },
+            "witness": {
+              "upperChange": "-8/4095",
+              "lowerChange": "8/4355",
+              "gap": "4/67"
+            }
+          },
+          "premises": [
+            "s15"
+          ]
+        },
+        {
+          "id": "s17",
+          "rule": "LZ.step",
+          "input": [
+            "s16"
+          ],
+          "output": {
+            "m": "17",
+            "interval": {
+              "lower": "21048390180219883099622044336/6759667749611929719412917225",
+              "upper": "301819951159305578050152116/95206588022703235484688975"
+            },
+            "witness": {
+              "upperChange": "-8/4623",
+              "lowerChange": "8/4899",
+              "gap": "4/71"
+            }
+          },
+          "premises": [
+            "s16"
+          ]
+        },
+        {
+          "id": "s18",
+          "rule": "LZ.step",
+          "input": [
+            "s17"
+          ],
+          "output": {
+            "m": "18",
+            "interval": {
+              "lower": "1537253514382676738775813281032/493455745721670869517142957425",
+              "upper": "1563571154154499185150060905428/493455745721670869517142957425"
+            },
+            "witness": {
+              "upperChange": "-8/5183",
+              "lowerChange": "8/5475",
+              "gap": "4/75"
+            }
+          },
+          "premises": [
+            "s17"
+          ]
+        },
+        {
+          "id": "s19",
+          "rule": "LZ.step",
+          "input": [
+            "s18"
+          ],
+          "output": {
+            "m": "19",
+            "interval": {
+              "lower": "121494295765657090505576744573728/38983003912011998691854293636575",
+              "upper": "1562887579095490809919560967132/493455745721670869517142957425"
+            },
+            "witness": {
+              "upperChange": "-8/5775",
+              "lowerChange": "8/6083",
+              "gap": "4/79"
+            }
+          },
+          "premises": [
+            "s18"
+          ]
+        },
+        {
+          "id": "s20",
+          "rule": "LZ.step",
+          "input": [
+            "s19"
+          ],
+          "output": {
+            "m": "20",
+            "interval": {
+              "lower": "30263630165326248720686195856232072/9706767974090987674271719115507175",
+              "upper": "370258147135787863915523462408084/116949011736035996075562880909725"
+            },
+            "witness": {
+              "upperChange": "-8/6399",
+              "lowerChange": "8/6723",
+              "gap": "4/83"
+            }
+          },
+          "premises": [
+            "s19"
+          ]
+        },
+        {
+          "id": "s21",
+          "rule": "LZ.step",
+          "input": [
+            "s20"
+          ],
+          "output": {
+            "m": "21",
+            "interval": {
+              "lower": "30274131063743115238792236931678192/9706767974090987674271719115507175",
+              "upper": "30720419246459942258298982638138292/9706767974090987674271719115507175"
+            },
+            "witness": {
+              "upperChange": "-8/7055",
+              "lowerChange": "8/7395",
+              "gap": "4/87"
+            }
+          },
+          "premises": [
+            "s20"
+          ]
+        },
+        {
+          "id": "s22",
+          "rule": "LZ.step",
+          "input": [
+            "s21"
+          ],
+          "output": {
+            "m": "22",
+            "interval": {
+              "lower": "35038263089864031174338928666083676344/11230730546023272739132379016641801475",
+              "upper": "2733224736569501206949595963381387788/863902349694097903010183001280138575"
+            },
+            "witness": {
+              "upperChange": "-8/7743",
+              "lowerChange": "8/8099",
+              "gap": "4/91"
+            }
+          },
+          "premises": [
+            "s21"
+          ]
+        },
+        {
+          "id": "s23",
+          "rule": "LZ.step",
+          "input": [
+            "s22"
+          ],
+          "output": {
+            "m": "23",
+            "interval": {
+              "lower": "35048432398790820781799376773851999424/11230730546023272739132379016641801475",
+              "upper": "35521305263886537528710213785079022644/11230730546023272739132379016641801475"
+            },
+            "witness": {
+              "upperChange": "-8/8463",
+              "lowerChange": "8/8835",
+              "gap": "4/95"
+            }
+          },
+          "premises": [
+            "s22"
+          ]
+        },
+        {
+          "id": "s24",
+          "rule": "LZ.step",
+          "input": [
+            "s23"
+          ],
+          "output": {
+            "m": "24",
+            "interval": {
+              "lower": "3400605476464206445954873476681150352328/1089380862964257455695840764614254743075",
+              "upper": "3444620864866802706791069063130211150028/1089380862964257455695840764614254743075"
+            },
+            "witness": {
+              "upperChange": "-8/9215",
+              "lowerChange": "8/9603",
+              "gap": "4/99"
+            }
+          },
+          "premises": [
+            "s23"
+          ]
+        },
+        {
+          "id": "s25",
+          "rule": "LZ.step",
+          "input": [
+            "s24"
+          ],
+          "output": {
+            "m": "25",
+            "interval": {
+              "lower": "35385213818560853716914115504030921153212784/11332829117417170311603831474282092092209225",
+              "upper": "347818676574741880864225584203253204557428/110027467159390003025279917226039729050575"
+            },
+            "witness": {
+              "upperChange": "-8/9999",
+              "lowerChange": "8/10403",
+              "gap": "4/103"
+            }
+          },
+          "premises": [
+            "s24"
+          ]
+        },
+        {
+          "id": "s26",
+          "rule": "LZ.step",
+          "input": [
+            "s25"
+          ],
+          "output": {
+            "m": "26",
+            "interval": {
+              "lower": "3787081332233052655924027793710301484696031448/1212612715563637223341609967748183853866387075",
+              "upper": "35816940642081507824022832893527381804344564/11332829117417170311603831474282092092209225"
+            },
+            "witness": {
+              "upperChange": "-8/10815",
+              "lowerChange": "8/11235",
+              "gap": "4/107"
+            }
+          },
+          "premises": [
+            "s25"
+          ]
+        },
+        {
+          "id": "s27",
+          "rule": "LZ.step",
+          "input": [
+            "s26"
+          ],
+          "output": {
+            "m": "27",
+            "interval": {
+              "lower": "412879260724434352989293199602188496704218158432/132174785996436457344235486484552040071436191175",
+              "upper": "417642316075657288389085469385415597247332976132/132174785996436457344235486484552040071436191175"
+            },
+            "witness": {
+              "upperChange": "-8/11663",
+              "lowerChange": "8/12099",
+              "gap": "4/111"
+            }
+          },
+          "premises": [
+            "s26"
+          ]
+        },
+        {
+          "id": "s28",
+          "rule": "LZ.step",
+          "input": [
+            "s27"
+          ],
+          "output": {
+            "m": "28",
+            "interval": {
+              "lower": "46664551229582573119605382719324486356451186594376/14935750817597319679898609972754380528072289602775",
+              "upper": "47184055605846827717167073500985508287862396667516/14935750817597319679898609972754380528072289602775"
+            },
+            "witness": {
+              "upperChange": "-8/12543",
+              "lowerChange": "8/12995",
+              "gap": "4/115"
+            }
+          },
+          "premises": [
+            "s27"
+          ]
+        },
+        {
+          "id": "s29",
+          "rule": "LZ.step",
+          "input": [
+            "s28"
+          ],
+          "output": {
+            "m": "29",
+            "interval": {
+              "lower": "46673133144869564325339720784381014047625831305776/14935750817597319679898609972754380528072289602775",
+              "upper": "47175175189158549860798497590187883981342546922676/14935750817597319679898609972754380528072289602775"
+            },
+            "witness": {
+              "upperChange": "-8/13455",
+              "lowerChange": "8/13923",
+              "gap": "4/119"
+            }
+          },
+          "premises": [
+            "s28"
+          ]
+        },
+        {
+          "id": "s30",
+          "rule": "LZ.step",
+          "input": [
+            "s29"
+          ],
+          "output": {
+            "m": "30",
+            "interval": {
+              "lower": "513492776497882117081648376432908105776082650140936/164293258993570516478884709700298185808795185630525",
+              "upper": "518835646709055142007790968618283656534092249673636/164293258993570516478884709700298185808795185630525"
+            },
+            "witness": {
+              "upperChange": "-8/14399",
+              "lowerChange": "8/14883",
+              "gap": "4/123"
+            }
+          },
+          "premises": [
+            "s29"
+          ]
+        },
+        {
+          "id": "s31",
+          "rule": "LZ.step",
+          "input": [
+            "s30"
+          ],
+          "output": {
+            "m": "31",
+            "interval": {
+              "lower": "326120486919033086912119962142000742587271297298896128/104326219460917277964091790659689347988584942875383375",
+              "upper": "2593750803928381868044863435716588238609820480405564/821466294967852582394423548501490929043975928152625"
+            },
+            "witness": {
+              "upperChange": "-8/15375",
+              "lowerChange": "8/15875",
+              "gap": "4/127"
+            }
+          },
+          "premises": [
+            "s30"
+          ]
+        },
+        {
+          "id": "s32",
+          "rule": "LZ.step",
+          "input": [
+            "s31"
+          ],
+          "output": {
+            "m": "32",
+            "interval": {
+              "lower": "42728253629460678092648278872580992742373692500752315768/13666734749380163413296024576419304586504627516675222125",
+              "upper": "329355408452704940492401878131448474307847574597357628/104326219460917277964091790659689347988584942875383375"
+            },
+            "witness": {
+              "upperChange": "-8/16383",
+              "lowerChange": "8/16899",
+              "gap": "4/131"
+            }
+          },
+          "premises": [
+            "s31"
+          ]
+        },
+        {
+          "id": "s33",
+          "rule": "I.fromStage",
+          "input": [
+            "s32"
+          ],
+          "output": {
+            "lower": "42728253629460678092648278872580992742373692500752315768/13666734749380163413296024576419304586504627516675222125",
+            "upper": "329355408452704940492401878131448474307847574597357628/104326219460917277964091790659689347988584942875383375"
+          },
+          "premises": [
+            "s32"
+          ]
+        },
+        {
+          "id": "s34",
+          "rule": "I.width",
+          "input": [
+            "s33"
+          ],
+          "output": "4/131",
+          "premises": [
+            "s33"
+          ]
+        },
+        {
+          "id": "s35",
+          "rule": "Q.precision",
+          "input": [
+            5
+          ],
+          "output": "1/32",
+          "premises": []
+        },
+        {
+          "id": "s36",
+          "rule": "Q.le",
+          "input": [
+            "s34",
+            "s35"
+          ],
+          "output": true,
+          "premises": [
+            "s34",
+            "s35"
+          ]
+        }
+      ]
+    },
+    {
+      "format": "rational-applications-v1.5.0",
+      "kind": "interval",
+      "claim": {
+        "operation": "div",
+        "left": {
+          "lower": "1/1",
+          "upper": "2/1"
+        },
+        "right": {
+          "lower": "2/1",
+          "upper": "4/1"
+        },
+        "result": {
+          "lower": "1/4",
+          "upper": "1/1"
+        }
+      },
+      "roots": {
+        "left": "s0",
+        "right": "s1",
+        "result": "s2"
+      },
+      "steps": [
+        {
+          "id": "s0",
+          "rule": "I.literal",
+          "input": [
+            {
+              "lower": "1/1",
+              "upper": "2/1"
+            }
+          ],
+          "output": {
+            "lower": "1/1",
+            "upper": "2/1"
+          },
+          "premises": []
+        },
+        {
+          "id": "s1",
+          "rule": "I.literal",
+          "input": [
+            {
+              "lower": "2/1",
+              "upper": "4/1"
+            }
+          ],
+          "output": {
+            "lower": "2/1",
+            "upper": "4/1"
+          },
+          "premises": []
+        },
+        {
+          "id": "s2",
+          "rule": "I.div",
+          "input": [
+            "s0",
+            "s1"
+          ],
+          "output": {
+            "lower": "1/4",
+            "upper": "1/1"
+          },
+          "premises": [
+            "s0",
+            "s1"
+          ]
+        }
+      ]
+    },
+    {
+      "format": "rational-applications-v1.5.0",
+      "kind": "polynomial-continuity",
+      "claim": {
+        "precision": 4,
+        "coefficients": [
+          "1/1",
+          "2/1",
+          "3/1"
+        ],
+        "radius": "2/1",
+        "x": "1/1",
+        "y": "4097/4096",
+        "epsilon": "1/16",
+        "lipschitz": "14/1",
+        "delta": "1/240",
+        "distance": "1/4096",
+        "imageDifference": "32771/16777216",
+        "errorBound": "7/2048"
+      },
+      "roots": {
+        "result": "s5",
+        "epsilon": "s2"
+      },
+      "steps": [
+        {
+          "id": "s0",
+          "rule": "P.literal",
+          "input": [
+            [
+              "1/1",
+              "2/1",
+              "3/1"
+            ]
+          ],
+          "output": [
+            "1/1",
+            "2/1",
+            "3/1"
+          ],
+          "premises": []
+        },
+        {
+          "id": "s1",
+          "rule": "Q.literal",
+          "input": [
+            "2/1"
+          ],
+          "output": "2/1",
+          "premises": []
+        },
+        {
+          "id": "s2",
+          "rule": "Q.precision",
+          "input": [
+            4
+          ],
+          "output": "1/16",
+          "premises": []
+        },
+        {
+          "id": "s3",
+          "rule": "Q.literal",
+          "input": [
+            "1/1"
+          ],
+          "output": "1/1",
+          "premises": []
+        },
+        {
+          "id": "s4",
+          "rule": "Q.literal",
+          "input": [
+            "4097/4096"
+          ],
+          "output": "4097/4096",
+          "premises": []
+        },
+        {
+          "id": "s5",
+          "rule": "P.continuity",
+          "input": [
+            "s0",
+            "s1",
+            "s2",
+            "s3",
+            "s4"
+          ],
+          "output": {
+            "coefficients": [
+              "1/1",
+              "2/1",
+              "3/1"
+            ],
+            "radius": "2/1",
+            "x": "1/1",
+            "y": "4097/4096",
+            "epsilon": "1/16",
+            "lipschitz": "14/1",
+            "delta": "1/240",
+            "distance": "1/4096",
+            "imageDifference": "32771/16777216",
+            "errorBound": "7/2048"
+          },
+          "premises": [
+            "s0",
+            "s1",
+            "s2",
+            "s3",
+            "s4"
+          ]
+        }
+      ]
+    },
+    {
+      "format": "rational-applications-v1.5.0",
+      "kind": "polynomial-calculus",
+      "claim": {
+        "coefficients": [
+          "1/1",
+          "0/1",
+          "1/1"
+        ],
+        "radius": "2/1",
+        "x": "1/1",
+        "h": "1/16",
+        "a": "0/1",
+        "b": "1/1",
+        "derivative": [
+          "0/1",
+          "2/1"
+        ],
+        "antiderivative": [
+          "0/1",
+          "1/1",
+          "0/1",
+          "1/3"
+        ],
+        "quotient": "33/16",
+        "derivativeValue": "2/1",
+        "error": "1/16",
+        "errorCoefficient": "1/1",
+        "errorBound": "1/16",
+        "formalIntegral": "4/3"
+      },
+      "roots": {
+        "result": "s6"
+      },
+      "steps": [
+        {
+          "id": "s0",
+          "rule": "P.literal",
+          "input": [
+            [
+              "1/1",
+              "0/1",
+              "1/1"
+            ]
+          ],
+          "output": [
+            "1/1",
+            "0/1",
+            "1/1"
+          ],
+          "premises": []
+        },
+        {
+          "id": "s1",
+          "rule": "Q.literal",
+          "input": [
+            "2/1"
+          ],
+          "output": "2/1",
+          "premises": []
+        },
+        {
+          "id": "s2",
+          "rule": "Q.literal",
+          "input": [
+            "1/1"
+          ],
+          "output": "1/1",
+          "premises": []
+        },
+        {
+          "id": "s3",
+          "rule": "Q.literal",
+          "input": [
+            "1/16"
+          ],
+          "output": "1/16",
+          "premises": []
+        },
+        {
+          "id": "s4",
+          "rule": "Q.literal",
+          "input": [
+            "0/1"
+          ],
+          "output": "0/1",
+          "premises": []
+        },
+        {
+          "id": "s5",
+          "rule": "Q.literal",
+          "input": [
+            "1/1"
+          ],
+          "output": "1/1",
+          "premises": []
+        },
+        {
+          "id": "s6",
+          "rule": "P.calculus",
+          "input": [
+            "s0",
+            "s1",
+            "s2",
+            "s3",
+            "s4",
+            "s5"
+          ],
+          "output": {
+            "coefficients": [
+              "1/1",
+              "0/1",
+              "1/1"
+            ],
+            "radius": "2/1",
+            "x": "1/1",
+            "h": "1/16",
+            "a": "0/1",
+            "b": "1/1",
+            "derivative": [
+              "0/1",
+              "2/1"
+            ],
+            "antiderivative": [
+              "0/1",
+              "1/1",
+              "0/1",
+              "1/3"
+            ],
+            "quotient": "33/16",
+            "derivativeValue": "2/1",
+            "error": "1/16",
+            "errorCoefficient": "1/1",
+            "errorBound": "1/16",
+            "formalIntegral": "4/3"
+          },
+          "premises": [
+            "s0",
+            "s1",
+            "s2",
+            "s3",
+            "s4",
+            "s5"
+          ]
+        }
+      ]
+    }
+  ]
+}

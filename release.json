@@ -1,33 +1,45 @@
 {
-  "paperVersion": "1.5.7",
+  "paperVersion": "1.5.8",
   "interpreterVersion": "8.0.1",
-  "paper": "manuscripts/A_New_Foundation_of_Mathematics_ja_v1.5.7.md",
+  "paper": "manuscripts/A_New_Foundation_of_Mathematics_ja_v1.5.8.md",
   "interpreter": "interpreter/lambda_interpreter_v8.0.1.html",
-  "audit": "research/source-audit-v1.5.7.md",
-  "applications": "research/applications-v1.5.7.md",
-  "concepts": "research/concept-symbols-v1.5.7.md",
-  "conceptExamples": "research/concept-examples-v1.5.7.md",
-  "conceptInventory": "research/concept-inventory-v1.5.7.md",
-  "releaseDate": "2026-09-27",
+  "audit": "research/source-audit-v1.5.8.md",
+  "applications": "research/applications-v1.5.8.md",
+  "concepts": "research/concept-symbols-v1.5.8.md",
+  "conceptExamples": "research/concept-examples-v1.5.8.md",
+  "conceptInventory": "research/concept-inventory-v1.5.8.md",
+  "releaseDate": "2026-10-11",
   "outputDirectory": "output",
-  "conceptDataDirectory": "verification/concept-symbols-v1.5.7",
-  "fOnlyAppendix": "appendices/A_New_Foundation_of_Mathematics_ja_v1.5.7_f_only.md",
-  "fOnlyCoverage": "research/f-only-coverage-v1.5.7.md",
-  "fOnlyDataDirectory": "verification/f-only-v1.5.7",
-  "traceExtensions": "research/trace-extensions-v1.5.7.md",
-  "lambdaArithmetic": "research/lambda-arithmetic-v1.5.7.md",
-  "extensionExample": "research/extension-example-v1.5.7.md",
+  "conceptDataDirectory": "verification/concept-symbols-v1.5.8",
+  "fOnlyAppendix": "appendices/A_New_Foundation_of_Mathematics_ja_v1.5.8_f_only.md",
+  "fOnlyCoverage": "research/f-only-coverage-v1.5.8.md",
+  "fOnlyDataDirectory": "verification/f-only-v1.5.8",
+  "traceExtensions": "research/trace-extensions-v1.5.8.md",
+  "lambdaArithmetic": "research/lambda-arithmetic-v1.5.8.md",
+  "extensionExample": "research/extension-example-v1.5.8.md",
   "translations": {
     "en": {
-      "paper": "manuscripts/A_New_Foundation_of_Mathematics_en_v1.5.7.md",
+      "paper": "manuscripts/A_New_Foundation_of_Mathematics_en_v1.5.8.md",
       "readme": "README.en.md",
-      "fOnlyAppendix": "appendices/A_New_Foundation_of_Mathematics_en_v1.5.7_f_only.md",
-      "labels": "research/f-only-labels-en-v1.5.7.json",
-      "fOnlyDataDirectory": "verification/f-only-en-v1.5.7",
-      "translationReport": "verification/translation-en-v1.5.7.json",
-      "translationDate": "2026-09-27"
+      "fOnlyAppendix": "appendices/A_New_Foundation_of_Mathematics_en_v1.5.8_f_only.md",
+      "labels": "research/f-only-labels-en-v1.5.8.json",
+      "fOnlyDataDirectory": "verification/f-only-en-v1.5.8",
+      "translationReport": "verification/translation-en-v1.5.8.json",
+      "translationDate": "2026-10-11"
     }
   },
-  "labelDesign": "research/label-design-v1.5.7.md",
-  "authorDecisions": "research/author-design-decisions-v1.5.7.md"
+  "labelDesign": "research/label-design-v1.5.8.md",
+  "authorDecisions": "research/author-design-decisions-v1.5.8.md",
+  "site": {
+    "visualizerVersion": "1.5.8.4",
+    "url": "https://o0o-yuta-kimura-o0o.github.io/my-math-paper-2026_1.5.x/",
+    "branch": "main",
+    "directory": "docs",
+    "files": [
+      "PAGES.md",
+      "docs/.nojekyll",
+      "docs/index.html",
+      "docs/f-generative-atlas-v1.5.8.4.html"
+    ]
+  }
 }

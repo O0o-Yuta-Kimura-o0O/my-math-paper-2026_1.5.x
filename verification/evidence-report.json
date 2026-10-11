@@ -1,6 +1,6 @@
 {
   "format": "evidence-generation-report/1",
-  "paperVersion": "1.5.7",
+  "paperVersion": "1.5.8",
   "interpreterVersion": "8.0.1",
   "status": "verified",
   "lambda": [

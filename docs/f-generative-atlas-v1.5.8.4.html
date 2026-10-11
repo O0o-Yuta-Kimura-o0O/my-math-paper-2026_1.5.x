@@ -1,0 +1,414 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<!-- v1.5.8.4. Future revisions increment the last component and preserve previous files. -->
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="light dark"><meta name="description" content="An interactive, offline atlas of the f-generative constructions in v1.5.8. Finite mathematical samples, higher-dimensional projections and symbolic infinitesimal lenses.">
+<title>The f-Generative Atlas · v1.5.8.4</title>
+<style>
+:root{--bg:#f3f1eb;--panel:#faf9f5;--ink:#263630;--muted:#69746e;--line:#d5d9cf;--accent:#326c60;--other:#a56c47;--soft:#e4ebe2;--canvas:#f3f1eb;--point:#316d61;--grid:#9baea1;--shadow:none}
+:root[data-theme=dark]{--bg:#141c1a;--panel:#192320;--ink:#e4e9de;--muted:#9baaa1;--line:#35433c;--accent:#9dc5b2;--other:#d3a079;--soft:#243930;--canvas:#141c1a;--point:#a5cbbb;--grid:#668477}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:13px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;transition:background .2s,color .2s}button,select,input{font:inherit;color:inherit}button,select{background:transparent;border:1px solid var(--line);border-radius:5px}button{cursor:pointer}button:hover{background:var(--soft)}button:focus-visible,select:focus-visible,input:focus-visible{outline:2px solid var(--accent);outline-offset:3px}button[aria-pressed=true]{background:var(--soft);border-color:var(--accent);color:var(--accent)}button:disabled{opacity:.4;cursor:default}select{padding:7px 24px 7px 9px;background:var(--panel)}.serif{font-family:Georgia,"Times New Roman",serif}.mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace}header{padding:22px 32px 18px;display:flex;justify-content:space-between;align-items:center;gap:20px;border-bottom:1px solid var(--line)}.brand{display:flex;align-items:center;gap:17px}.mark{font:italic 45px/1 Georgia,serif;border-right:1px solid var(--line);padding-right:19px}.eyebrow{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}h1{font:normal 26px/1.2 Georgia,serif;margin:4px 0 0;letter-spacing:-.025em}.header-actions{display:flex;align-items:center;gap:8px}.header-actions button{padding:7px 12px}.version{font-size:10px;color:var(--muted);margin-right:8px}.stages{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));border-bottom:1px solid var(--line);padding:0 24px}.stage{position:relative;text-align:left;padding:14px 10px 15px;border:0;border-radius:0;border-bottom:2px solid transparent;min-height:101px}.stage[aria-pressed=true]{background:transparent;border-color:var(--accent)}.stage[aria-pressed=true]:before{content:"";position:absolute;inset:8px 3px 7px;background:var(--soft);z-index:-1;border-radius:3px}.stage .number{font-size:9px;color:var(--muted);margin-right:8px}.stage .symbol{font:25px Georgia,serif}.stage .name{display:block;margin-top:6px;font-size:10px;line-height:1.3;color:var(--muted)}.stage[aria-pressed=true] .name{color:var(--accent)}main{display:grid;grid-template-columns:minmax(0,1fr) 308px;min-height:460px;height:calc(100svh - 249px)}.viewport{position:relative;overflow:hidden;min-height:460px}.canvas-caption{position:absolute;top:23px;left:32px;pointer-events:none;max-width:65%}.canvas-caption .large{font:normal 25px/1.3 Georgia,serif;margin-top:5px}.canvas-caption .small{font-size:10px;color:var(--muted);margin-top:7px}.canvas-top-right{position:absolute;top:22px;right:22px;display:flex;gap:5px}.canvas-top-right button{padding:7px 10px;background:var(--bg)}canvas{display:block;width:100%;height:100%;touch-action:none;cursor:grab}canvas.dragging{cursor:grabbing}.compass{position:absolute;left:32px;bottom:24px;pointer-events:none;max-width:70%}.compass .formula{font:19px/1.5 Georgia,serif}.compass .legend{font-size:10px;color:var(--muted);margin-top:4px}.scale-meter{position:absolute;right:24px;bottom:24px;text-align:right;max-width:38%;pointer-events:none}.scale-meter .value{font:22px Georgia,serif}.scale-meter .label{color:var(--muted);font-size:9px;letter-spacing:.1em;text-transform:uppercase}.right-panel{border-left:1px solid var(--line);padding:25px 23px 20px;overflow:auto;background:var(--panel)}.section-tag{font-size:10px;color:var(--accent);letter-spacing:.14em;text-transform:uppercase}h2{font:normal 30px/1.12 Georgia,serif;letter-spacing:-.025em;margin:10px 0 14px}.equation{font:18px/1.7 Georgia,serif;padding:13px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow-wrap:anywhere}.description{font-size:12px;line-height:1.75;margin:16px 0;color:var(--muted)}.control{margin:18px 0}.control label,.row-label{display:block;font-size:10px;letter-spacing:.05em;color:var(--muted);margin-bottom:7px}.control select{width:100%}.range-row{display:flex;align-items:center;gap:11px}.range-row input{width:100%;accent-color:var(--accent)}.range-row output{font-size:11px;min-width:25px;text-align:right}.inline-controls{display:flex;gap:7px;flex-wrap:wrap}.inline-controls button{padding:6px 10px;font-size:11px}.details-trigger{border:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);border-radius:0;padding:11px 0;width:100%;text-align:left;font-size:11px;display:flex;justify-content:space-between}.details-content{font-size:11px;line-height:1.7;color:var(--muted);padding:8px 0}.details-content p{margin:8px 0}.node-count{color:var(--accent)}.constants{margin-top:18px}.constants .inline-controls button{font:19px Georgia,serif;min-width:47px}.constants .row-label{margin-bottom:9px}.source{font-size:9px;color:var(--muted);margin-top:16px}.bottom{display:flex;justify-content:space-between;align-items:center;padding:13px 32px;gap:16px;border-top:1px solid var(--line);min-height:58px}.gestures{font-size:10px;color:var(--muted)}.bottom-controls{display:flex;gap:7px;align-items:center}.bottom button{font-size:11px;padding:7px 10px}.bottom input{accent-color:var(--accent);margin:0}.check-label{font-size:10px;display:flex;gap:6px;align-items:center;white-space:nowrap}.notice{position:fixed;bottom:75px;left:50%;transform:translateX(-50%);background:var(--panel);border:1px solid var(--line);padding:9px 17px;border-radius:4px;z-index:5;font-size:12px}.hidden,[hidden]{display:none!important}.tree-strip{margin-top:13px;background:var(--bg);padding:10px;border:1px solid var(--line);max-height:150px;overflow:auto;font:9px/1.65 ui-monospace,monospace;overflow-wrap:anywhere}.constant-info{font-size:11px;color:var(--muted);line-height:1.8}.constant-info .bound{display:block;font:10px/1.5 ui-monospace,monospace;overflow-wrap:anywhere;margin:8px 0;max-height:70px;overflow:auto}.key{display:inline-block;width:14px;height:1px;background:var(--accent);vertical-align:middle;margin-right:5px}dialog{color:var(--ink);background:var(--panel);border:1px solid var(--line);border-radius:7px;max-width:680px;width:calc(100% - 30px);padding:30px;max-height:85svh;overflow:auto}dialog::backdrop{background:rgb(10 18 15 / .5)}dialog h2{font-size:28px}dialog p{font-size:12px;line-height:1.8;color:var(--muted)}dialog button{padding:7px 15px;float:right}dialog .equation{font-size:16px}a{color:var(--accent)}.sr-only{position:absolute;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@media(min-width:1600px){main{grid-template-columns:minmax(0,1fr) 350px}.right-panel{padding:30px}.stage .name{font-size:12px}}
+@media(max-width:950px){header{padding:16px 20px}h1{font-size:22px}.version{display:none}.stages{padding:0 10px}.stage{padding:12px 7px;min-height:95px}.stage .name{font-size:9px}main{grid-template-columns:minmax(0,1fr) 265px}.right-panel{padding:20px 17px}h2{font-size:26px}.canvas-caption{left:20px}.canvas-caption .large{font-size:20px}.bottom{padding:12px 20px}.gestures{max-width:50%}.compass{left:20px}}
+@media(max-width:680px){header{align-items:flex-start;padding:16px}.mark{font-size:34px;padding-right:12px}.brand{gap:11px}.eyebrow{font-size:8px}h1{font-size:20px}.header-actions{gap:5px}.header-actions select{max-width:90px;font-size:10px;padding:6px}.header-actions button{font-size:11px;padding:5px 8px}.header-actions .about-btn{display:none}.stages{grid-template-columns:repeat(8,92px);overflow-x:auto;scrollbar-width:thin;padding:0 8px}.stage{min-height:85px}.stage .symbol{font-size:23px}main{display:flex;flex-direction:column;height:auto;min-height:0}.viewport{height:64svh;min-height:420px}.right-panel{border-left:0;border-top:1px solid var(--line);display:grid;grid-template-columns:1fr 1fr;gap:0 20px;padding:22px 20px;overflow:visible}.right-panel .intro{grid-column:1/-1}.right-panel h2{font-size:26px;margin-bottom:10px}.equation{padding:9px 0}.description{margin:12px 0}.control{margin:9px 0 15px}.details-wrap{grid-column:1/-1}.source{grid-column:1/-1}.constants{margin:9px 0 15px}.bottom{flex-direction:column;align-items:stretch;padding:12px 20px;gap:10px}.gestures{max-width:none;line-height:1.8}.bottom-controls{justify-content:space-between}.canvas-caption{top:18px;max-width:66%}.canvas-caption .large{font-size:19px}.canvas-caption .small{font-size:9px}.canvas-top-right{top:17px;right:15px}.canvas-top-right button{font-size:10px;padding:5px 8px}.compass{bottom:20px;max-width:62%}.compass .formula{font-size:15px}.compass .legend{font-size:9px}.scale-meter{right:16px;bottom:20px}.scale-meter .value{font-size:19px}.constant-control{grid-column:1/-1}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+
+/* HTML menus keep the entire interaction inside the document. */
+.select-trigger{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:36px;padding:7px 10px;background:var(--panel);text-align:left;white-space:nowrap}
+.select-trigger::after{content:"";width:6px;height:6px;border-right:1px solid currentColor;border-bottom:1px solid currentColor;transform:rotate(45deg) translateY(-2px);flex:none}
+.control .select-trigger{width:100%}.select-trigger[aria-expanded=true]{border-color:var(--accent);background:var(--soft)}
+.select-menu{position:fixed;z-index:30;padding:4px;background:var(--panel);color:var(--ink);border:1px solid var(--line);border-radius:5px;overflow-y:auto;overscroll-behavior:contain;touch-action:pan-y}
+.select-option{padding:8px 10px;border-radius:3px;cursor:pointer;user-select:none;font-size:12px;line-height:1.5}
+.select-option[aria-selected=true]{color:var(--accent)}.select-option[data-active=true]{background:var(--soft)}
+canvas{user-select:none;-webkit-user-select:none}#canvas,#canvas:focus,#canvas:focus-visible{outline:none;box-shadow:none}
+@media(max-width:680px){.header-actions .select-trigger{max-width:90px;min-height:29px;font-size:10px;padding:6px;gap:8px}}
+</style>
+</head>
+<body>
+<header><div class="brand"><div class="mark" aria-hidden="true">f</div><div><div class="eyebrow" data-i18n="eyebrow"></div><h1 data-i18n="title"></h1></div></div><div class="header-actions"><span class="version mono">v1.5.8.4</span><select id="language" aria-label="Language"><option value="en">English</option><option value="ja">日本語</option><option value="fr">Français</option><option value="zh">中文</option></select><button id="theme" type="button"></button><button class="about-btn" id="about" data-i18n="about"></button></div></header>
+<nav class="stages" id="stages" aria-label="Constructions"></nav>
+<main><section class="viewport" id="viewport"><canvas id="canvas" tabindex="0" role="img" aria-label="Interactive mathematical projection"></canvas><div class="canvas-caption"><div class="eyebrow" id="canvas-tag"></div><div class="large" id="canvas-title"></div><div class="small" id="canvas-subtitle"></div></div><div class="canvas-top-right"><button id="reset" data-i18n="reset"></button><button id="fullscreen" aria-label="Fullscreen">⛶</button></div><div class="compass"><div class="formula" id="canvas-formula"></div><div class="legend" id="canvas-legend"></div></div><div class="scale-meter"><div class="label" id="scale-label"></div><div class="value" id="scale-value"></div></div></section>
+<aside class="right-panel"><div class="intro"><div class="section-tag" id="section-ref"></div><h2 id="stage-title"></h2><div class="equation" id="equation"></div><p class="description" id="description"></p></div>
+<div class="control scene-control"><label for="shape" data-i18n="representation"></label><select id="shape"></select></div>
+<div class="control scene-control"><label for="dimension" data-i18n="projection"></label><select id="dimension"><option value="2">2D</option><option value="3">3D</option><option value="4" selected>4D</option><option value="6">6D</option><option value="8">8D</option></select></div>
+<div class="control scene-control"><label for="density" data-i18n="density"></label><div class="range-row"><input id="density" type="range" min="1" max="4" value="2"><output id="density-value">2</output></div></div>
+<div class="control scene-control"><label for="higher" data-i18n="higher"></label><div class="range-row"><input id="higher" type="range" min="-180" max="180" value="28"><output id="higher-value">28°</output></div></div>
+<div class="control constant-control" hidden><label for="precision" data-i18n="precision"></label><div class="range-row"><input id="precision" type="range" min="0" max="8" value="3"><output id="precision-value">3</output></div><div id="constant-info" class="constant-info"></div></div>
+<div class="control"><span class="row-label" data-i18n="motion"></span><div class="inline-controls"><button id="rotate" aria-pressed="false" data-i18n="rotate"></button><button id="zoom-out" aria-label="Zoom out">−</button><button id="zoom-in" aria-label="Zoom in">+</button></div></div>
+<div class="constants"><span class="row-label" data-i18n="constants"></span><div class="inline-controls"><button data-constant="sqrt" aria-pressed="false">√2</button><button data-constant="pi" aria-pressed="false">π</button><button data-constant="e" aria-pressed="false">e</button></div></div>
+<div class="details-wrap"><button class="details-trigger" id="details" aria-expanded="false"><span data-i18n="reading"></span><span id="details-sign">+</span></button><div class="details-content" id="details-content" hidden><p id="sampling-note"></p><p data-i18n="projectionNote"></p><p id="lens-note"></p><p><span data-i18n="example"></span> <span id="tree-example" class="mono"></span> · <span id="node-count" class="node-count"></span></p><div class="tree-strip" id="f-string"></div></div></div>
+<div class="source" data-i18n="source"></div></aside></main>
+<footer class="bottom"><div class="gestures" data-i18n="gestures"></div><div class="bottom-controls"><label class="check-label"><input type="checkbox" id="edges" checked><span data-i18n="edges"></span></label><label class="check-label"><input type="checkbox" id="axes" checked><span data-i18n="axes"></span></label><button id="export" data-i18n="export"></button><button id="info-bottom" data-i18n="about"></button></div></footer>
+<div class="notice" id="notice" role="status" hidden></div>
+<dialog id="dialog"><form method="dialog"><button data-i18n="close"></button></form><div class="eyebrow">v1.5.8.4</div><h2 data-i18n="aboutTitle"></h2><p data-i18n="aboutBody"></p><div class="equation">N → Z → Q → M → Fε → Cε → Hε<br>Q → L → M &nbsp; · &nbsp; Fε → T ∋ σ &nbsp; · &nbsp; π ∈ CutQ</div><p data-i18n="aboutTypes"></p><p data-i18n="aboutLens"></p><p data-i18n="aboutConstants"></p><p data-i18n="aboutSources"></p><p class="mono">f() &nbsp; f(U) &nbsp; f(UU)</p><p data-i18n="aboutFinite"></p></dialog>
+<script>
+'use strict';
+// Self-contained; no remote assets, libraries, tracking or network requests.
+const COPY={
+en:{eyebrow:'Finite construction / infinite directions',title:'The f-Generative Atlas',about:'Notes',light:'Light',dark:'Dark',reset:'Reset view',representation:'Representation',projection:'Projection frame',density:'Sampling density',higher:'Higher-plane rotation',precision:'Precision request · p',motion:'Explore',rotate:'Auto-rotate',constants:'Locate a constant',reading:'Reading this view',example:'Encoded example:',source:'Based on the manuscript and f-only appendix · v1.5.8',gestures:'Drag to rotate · Shift / two fingers to pan · Wheel / pinch to zoom · Alt-drag for higher planes',edges:'Lines',axes:'Axes',export:'Save image',close:'Close',grid:'Coefficient window',norm:'Unit-norm section',tree:'f construction',construction:'Construction',sample:'finite sample',frame:'projection frame',depth:'Formal lens',rationalScale:'Rational scale',spatial:'Spatial magnification',treeDepth:'Construction depth',nodes:'nodes',projectionNote:'Coordinates are projected numerically. Lines connect sampled vertices; they do not assert that every point of a real segment belongs to the type. Projection dimension is distinct from algebraic dimension.',lensQ:'Zoom refines a rational grid by powers of 10 about zero. Finite samples are regenerated; no completed continuum is rendered.',lensN:'The origin is the focus. These discrete types have no finer nonzero point near zero; deep zoom therefore becomes empty.',lensL:'The second coordinate separates the integer counts in L. This spacing is schematic, not an order-preserving Euclidean metric. L has no ε² direction.',lensE:'Adjacent formal windows εᵏ and εᵏ⁺¹ fade in and out continuously with zoom. ε is not assigned a real magnitude. Each window is a new finite coefficient sample; depth has no preset cap.',lensTree:'Every node is an actual f constructor with zero, one or two children. Layout coordinates are schematic; zoom does not create new nodes.',aboutTitle:'The beauty is in the construction.',aboutBody:'This atlas uses the finite representations of v1.5.8 as its subject. There are no luminous lines, decorative particles or arbitrary motion. Rotate a coefficient window, inspect a rational norm-one family, or unfold a value into its f tree.',aboutTypes:'L embeds additively and in order into M; it is not a field. M is Q[ε], and Fε corresponds to Q(ε). Cε has two coefficient slots over Fε; Hε has four. Neither is the complete classical system over R. Higher windows show additional ε coefficients, rather than a new number algebra.',aboutLens:'An infinitesimal cannot be faithfully drawn at a fixed real pixel distance. The formal lens therefore changes the chosen power of ε as you zoom. A label states the exact formal scale; Euclidean spacing within that window is a drawing convention. Natural numbers and integers stay discrete, and rational zoom stays rational.',aboutConstants:'√2 is σ=(0,1) in the independent extension T, not in Fε. π is the separate rational-cut description of Appendix B. e is an additional interval illustration, absent from the manuscript. The shared number line is an external comparison chart; it does not define mixed arithmetic between these types.',aboutSources:'Sources: A_New_Foundation_of_Mathematics_en_v1.5.8.md, §§2.6, 3–8, 8.10, 9.4 and Appendix B; and the entrance examples of A_New_Foundation_of_Mathematics_en_v1.5.8_f_only.md. This visualization is an interpretation, not machine verification of the manuscript.',aboutFinite:'Only finite samples and finite computations are shown. All constant bounds are computed with exact BigInt rational arithmetic. Displayed decimals and screen coordinates are approximations. Save this HTML and open it offline in a modern browser.',saved:'Image saved',noFull:'Fullscreen is unavailable here',count:'vertices',actual:'Exact rational bounds',lower:'Lower',upper:'Upper',width:'Width',bound:'≤ 2⁻ᵖ',external:'External comparison · distinct exact types',intervals:'Nested rational intervals',sqrtDesc:'The positive σ in T satisfies σ²=2. Rational bisection bounds its location. Its exact finite-pair representation does not change as precision increases.',piDesc:'πcut is specified by two rational membership rules in Appendix B. The finite Leibniz recurrence encloses it; no finite endpoint is the exact π.',eDesc:'Additional illustration, outside v1.5.8: sum 1/k! through n. For n≥1, the positive remainder is at most 1/(n·n!). These intervals enclose conventional e in external analysis.',sqrtSampling:'Exact bisection starting at [1,2], retaining endpoints with l²≤2≤u².',piSampling:'A₀=4, B₀=8/3; Aₘ₊₁=Aₘ−8/((4m+3)(4m+5)), Bₘ₊₁=Bₘ+8/((4m+5)(4m+7)). Stage m=2ᵖ.',eSampling:'Sₙ=Σₖ₌₀ⁿ1/k!; interval [Sₙ,Sₙ+1/(n·n!)], n≥1. Increase n until width≤2⁻ᵖ. This is not an adopted construction in v1.5.8.',sqrtTitle:'Adjoining √2',piTitle:'A cut for π',eTitle:'An interval for e',rationalLine:'Rational comparison line',intervalLens:'Interval magnification',comparisonNote:'The plotted constant label uses an external decimal approximation. The bracket endpoints are exact rationals.',empty:'Only the origin remains at this scale',coefficient:'coefficient slots',torus:'Rational torus section',circle:'Rational unit circle',noRoot:'No √2 in Fε',window:'finite coefficient window',normNote:'N(h)=1; radii 3/5 and 4/5. A rational torus family inside the four-dimensional norm-one locus, not the whole locus.',circleNote:'Rational parametrization ((1−t²)/(1+t²), 2t/(1+t²)), including the missing point (−1,0).',gridNote:'Finite rational coefficient samples. M shows polynomials; Fε shows a Laurent-polynomial subfamily, not all polynomial ratios.',treeNote:'Exact f-only encoding of the selected finite value, with the matrix representation retained for generative complex coefficients.',stages:[['Natural numbers','A base, then one more constructor. The nonnegative integer points preserve their discrete spacing.','Finite N sample, embedded along a single axis.'],['Signed integers','A sign paired with a magnitude. Zero has its normalized positive sign.','Finite Z sample, embedded along a single axis.'],['Rational numbers','Normalized pairs of integers. Refining denominators reveals further rational positions.','Reduced fractions with bounded denominators. Tick height records denominator, not a second number coordinate.'],['Relation labels','A rational component and an integer relation count. Under the embedding, (k,a) becomes a+kε.','Finite (k,a) sample. The two axes separate the components of lexicographic order.'],['M-polynomials','Finite rational coefficient lists. Their positions encode successive powers of ε.','A finite coefficient lattice in Q[ε]; the window degree is chosen for this view.'],['Finite rational expressions','Ratios of M-polynomials with nonzero denominators. ε⁻¹ adds a direction larger than every positive rational.','A Laurent-polynomial coefficient window inside Q(ε). The full field also contains other polynomial ratios.'],['Generative complex numbers','J(a,b) retains the two-by-two matrix construction, with a,b in Fε and i²=−1.','Two coefficient slots over Fε. Higher windows include further powers of ε in each slot.'],['Generative quaternions','Pairs of generative complex numbers. Four coefficients; multiplication remembers its order: ij=k, ji=−k.','Four coefficient slots over Fε. The displayed finite rational family is embedded in these slots.']]},
+ja:{eyebrow:'有限の構成 / 無限の方向',title:'fによる生成のアトラス',about:'この図について',light:'ライト',dark:'ダーク',reset:'表示を戻す',representation:'表現',projection:'投影フレーム',density:'標本の密度',higher:'高次平面の回転',precision:'精度の要求 · p',motion:'操作',rotate:'自動回転',constants:'定数の位置を見る',reading:'この表示の読み方',example:'符号化した例：',source:'本文とfのみの付録に基づく · v1.5.8',gestures:'ドラッグで回転 · Shift／2本指で移動 · ホイール／ピンチでズーム · Alt＋ドラッグで高次回転',edges:'線',axes:'軸',export:'画像を保存',close:'閉じる',grid:'係数の窓',norm:'ノルム1の断面',tree:'fの構成木',construction:'構成',sample:'有限標本',frame:'投影フレーム',depth:'形式的なレンズ',rationalScale:'有理数の縮尺',spatial:'空間の拡大率',treeDepth:'構成の深さ',nodes:'節点',projectionNote:'座標は数値的に投影しています。線は標本点を結ぶもので、線分上の全実数点がこの型に属するという主張ではありません。投影の次元と代数的な次元は別です。',lensQ:'原点を中心として10の冪で有理数の格子を細分します。有限標本を生成し直しており、完成した連続体を描画するものではありません。',lensN:'原点が焦点です。離散的な型では原点の近くに新たな非零点がないため、深く拡大すると原点以外は見えなくなります。',lensL:'第2の座標はLの整数の関係数を分離する模式表示です。この間隔は順序を保つユークリッド距離ではありません。Lにはε²方向はありません。',lensE:'ズームに連動して、隣接する形式的な窓εᵏとεᵏ⁺¹が連続的にフェードイン・アウトします。εに実数の大きさは割り当てません。窓ごとに有限の係数標本を作り、深さに既定の上限は設けません。',lensTree:'各節点は子を0・1・2個持つ実際のf構成子です。配置座標は模式的であり、拡大しても節点は増えません。',aboutTitle:'美しさは、構成の中に。',aboutBody:'v1.5.8の有限表現そのものを題材にしたアトラスです。発光する線、装飾的な粒子、恣意的な動きは加えていません。係数の窓を回転し、有理係数のノルム1の族を眺め、値をfの木に展開できます。',aboutTypes:'LからMへの埋め込みは加法と順序を保ちますが、Lは体ではありません。MはQ[ε]、FεはQ(ε)に対応します。CεはFε上の係数2個、Hεは4個を持ち、古典的な実数係数の全体系とは区別されます。高次の窓はεの係数を増やして表示するもので、新たな数の代数を導入しません。',aboutLens:'無限小を固定された実数の画素距離で忠実に描くことはできません。このため拡大に応じて選ぶεの冪を変更します。形式的な縮尺は明記し、窓の内部の間隔は描画上の約束とします。自然数・整数は離散的に、有理数のズームは有理数のまま扱います。',aboutConstants:'√2は独立な拡大Tのσ=(0,1)で、Fεには属しません。πは付録Bの独立な有理切断です。eは本文にない追加の区間表示例です。共通の数直線は外部的な比較図であり、これらの型の混合演算を定めるものではありません。',aboutSources:'出典：英語本文v1.5.8の§§2.6、3–8、8.10、9.4、付録Bと、英語fのみの付録の入口の例。可視化としての解釈であり、本文の機械検証ではありません。',aboutFinite:'表示するのは有限標本と有限計算です。定数の区間端点はBigIntによる厳密な有理数計算で求めます。小数と画面座標は近似です。このHTMLは保存して現代的なブラウザでオフラインで開けます。',saved:'画像を保存しました',noFull:'ここでは全画面表示を使用できません',count:'頂点',actual:'厳密な有理数の区間',lower:'下端',upper:'上端',width:'幅',bound:'≤ 2⁻ᵖ',external:'外部的な比較 · 厳密な型はそれぞれ異なる',intervals:'入れ子の有理区間',sqrtDesc:'Tの正の元σはσ²=2を満たします。有理数の二分法でその位置を囲みます。精度を増しても厳密な有限対の表現は変わりません。',piDesc:'πcutは付録Bの2つの有理数の所属規則で指定されます。有限のライプニッツ漸化式で囲みますが、有限段階の端点は厳密なπではありません。',eDesc:'v1.5.8の範囲外の追加例：1/k!をnまで加えます。n≥1で正の剰余は1/(n·n!)以下です。外部の解析における通常のeを囲みます。',sqrtSampling:'[1,2]から始める厳密な二分法で、l²≤2≤u²を満たす端点を保ちます。',piSampling:'A₀=4、B₀=8/3。Aₘ₊₁=Aₘ−8/((4m+3)(4m+5))、Bₘ₊₁=Bₘ+8/((4m+5)(4m+7))。段階m=2ᵖ。',eSampling:'Sₙ=Σₖ₌₀ⁿ1/k!、区間[Sₙ,Sₙ+1/(n·n!)]（n≥1）。幅≤2⁻ᵖまでnを増やします。v1.5.8で採用された構成ではありません。',sqrtTitle:'√2を添加する',piTitle:'πの切断',eTitle:'eの区間',rationalLine:'有理数による比較の数直線',intervalLens:'区間の拡大率',comparisonNote:'定数のラベル位置は外部的な小数近似です。括弧の端点は厳密な有理数です。',empty:'この縮尺では原点のみ',coefficient:'係数の座標',torus:'有理係数のトーラス断面',circle:'有理係数の単位円',noRoot:'Fεには√2はない',window:'有限の係数の窓',normNote:'N(h)=1、半径は3/5と4/5。4次元のノルム1の軌跡に含まれる有理係数のトーラス族であり、軌跡全体ではありません。',circleNote:'有理パラメータ表示((1−t²)/(1+t²), 2t/(1+t²))に、欠ける点(−1,0)を追加します。',gridNote:'有限の有理係数の標本です。Mは多項式、Fεはローラン多項式の部分族であり、あらゆる多項式の比を尽くしません。',treeNote:'生成複素数の行列表現を保ち、選んだ有限の値を厳密にfのみへ符号化しています。',stages:[['自然数','基底から構成子を1つずつ加えます。非負整数の点は離散的な間隔を保ちます。','単一の軸に配置したNの有限標本。'],['符号付き整数','符号と大きさの対。ゼロの符号は正側に正規化されます。','単一の軸に配置したZの有限標本。'],['有理数','正規化された整数の対。分母を細分すると、さらに有理数の位置が現れます。','分母を有限に制限した既約分数。目盛りの高さは分母を示し、第2の数の座標ではありません。'],['関係ラベル','有理成分と整数の関係数。(k,a)は埋め込みでa+kεとなります。','有限の(k,a)標本。辞書式順序の2つの成分を別の軸で表示します。'],['M多項式','有理係数の有限列。列の位置がεの各冪を符号化します。','Q[ε]の有限の係数格子。表示に応じて窓の次数を選びます。'],['有限有理式数','非零の分母を持つM多項式の比。ε⁻¹はあらゆる正の有理数より大きな方向を加えます。','Q(ε)に含まれるローラン多項式の係数窓。体全体には他の多項式の比も含まれます。'],['生成複素数','J(a,b)は2×2の行列構成を保ち、a,bはFεの元、i²=−1です。','Fε上の係数2個。高次の窓では各係数に含まれるεの冪をさらに表示します。'],['生成四元数','生成複素数の対。4つの係数と、順序を区別する積：ij=k、ji=−k。','Fε上の係数4個。表示する有限の有理係数の族は、その座標への埋め込みです。']]},
+fr:{eyebrow:'Construction finie / directions infinies',title:'L’atlas f-génératif',about:'Notes',light:'Clair',dark:'Sombre',reset:'Réinitialiser',representation:'Représentation',projection:'Cadre de projection',density:'Densité',higher:'Rotation dans un plan supérieur',precision:'Précision demandée · p',motion:'Explorer',rotate:'Rotation auto',constants:'Situer une constante',reading:'Lire cette vue',example:'Exemple encodé :',source:'D’après le manuscrit et l’annexe en f seul · v1.5.8',gestures:'Glisser : rotation · Maj / deux doigts : déplacement · Molette / pincement : zoom · Alt-glisser : plans supérieurs',edges:'Lignes',axes:'Axes',export:'Enregistrer l’image',close:'Fermer',grid:'Fenêtre de coefficients',norm:'Section de norme unité',tree:'Construction en f',construction:'Construction',sample:'échantillon fini',frame:'cadre de projection',depth:'Lentille formelle',rationalScale:'Échelle rationnelle',spatial:'Grossissement spatial',treeDepth:'Profondeur',nodes:'nœuds',projectionNote:'Projection numérique des coordonnées. Les lignes relient des sommets échantillonnés ; elles ne supposent pas que tout segment réel appartient au type. Dimension de projection et dimension algébrique sont distinctes.',lensQ:'Le zoom affine une grille rationnelle autour de zéro par puissances de 10. Les échantillons sont régénérés ; aucun continuum achevé n’est affiché.',lensN:'L’origine est le centre. Ces types discrets n’ont aucun nouveau point non nul plus proche de zéro ; le zoom profond devient vide.',lensL:'Le second axe sépare les comptes entiers de L. Cet espacement est schématique, sans métrique euclidienne préservant l’ordre. L n’a pas de direction ε².',lensE:'Les fenêtres formelles voisines εᵏ et εᵏ⁺¹ apparaissent et disparaissent progressivement avec le zoom. Aucune grandeur réelle n’est attribuée à ε. Chaque fenêtre est un nouvel échantillon fini, sans limite de profondeur prédéfinie.',lensTree:'Chaque nœud est un constructeur f avec zéro, un ou deux enfants. La disposition est schématique ; le zoom ne crée aucun nœud.',aboutTitle:'La beauté est dans la construction.',aboutBody:'Cet atlas explore les représentations finies de v1.5.8. Ni lignes lumineuses, ni particules décoratives, ni mouvement arbitraire. Faites tourner une fenêtre de coefficients, observez une famille rationnelle de norme unité ou dépliez une valeur en arbre f.',aboutTypes:'L s’injecte dans M en préservant l’addition et l’ordre ; L n’est pas un corps. M correspond à Q[ε] et Fε à Q(ε). Cε possède deux coefficients sur Fε et Hε quatre. Ce ne sont pas les systèmes classiques complets sur R. Les fenêtres supérieures montrent davantage de coefficients en ε, sans créer une nouvelle algèbre.',aboutLens:'Un infinitésimal ne peut pas être fidèlement représenté à une distance réelle fixe en pixels. La lentille change donc la puissance de ε observée. L’échelle formelle est explicite ; l’espacement euclidien est une convention. Les entiers restent discrets ; le zoom rationnel reste rationnel.',aboutConstants:'√2 est σ=(0,1) dans l’extension indépendante T, pas dans Fε. π est la coupure rationnelle de l’annexe B. e est une illustration ajoutée, absente du manuscrit. La droite commune sert de comparaison externe et ne définit pas d’arithmétique mixte.',aboutSources:'Sources : manuscrit anglais v1.5.8, §§2.6, 3–8, 8.10, 9.4, annexe B ; exemples d’entrée de l’annexe anglaise en f seul. Cette visualisation est une interprétation, pas une vérification machine du manuscrit.',aboutFinite:'Seuls des échantillons et calculs finis sont affichés. Les bornes sont calculées exactement avec des rationnels BigInt. Décimales et coordonnées à l’écran sont approchées. Ce HTML fonctionne hors ligne dans un navigateur moderne.',saved:'Image enregistrée',noFull:'Plein écran indisponible ici',count:'sommets',actual:'Bornes rationnelles exactes',lower:'Borne inférieure',upper:'Borne supérieure',width:'Largeur',bound:'≤ 2⁻ᵖ',external:'Comparaison externe · types exacts distincts',intervals:'Intervalles rationnels emboîtés',sqrtDesc:'Le σ positif de T vérifie σ²=2. La dichotomie rationnelle encadre sa position. La représentation exacte par paire ne change pas avec la précision.',piDesc:'πcut est décrit par deux règles d’appartenance rationnelle dans l’annexe B. La récurrence finie de Leibniz l’encadre ; aucune borne finie n’est π exactement.',eDesc:'Illustration ajoutée hors v1.5.8 : somme de 1/k! jusqu’à n. Pour n≥1, le reste positif est au plus 1/(n·n!). Ces intervalles encadrent le e usuel en analyse externe.',sqrtSampling:'Dichotomie exacte depuis [1,2], conservant l²≤2≤u².',piSampling:'A₀=4, B₀=8/3 ; Aₘ₊₁=Aₘ−8/((4m+3)(4m+5)), Bₘ₊₁=Bₘ+8/((4m+5)(4m+7)). Étape m=2ᵖ.',eSampling:'Sₙ=Σₖ₌₀ⁿ1/k! ; [Sₙ,Sₙ+1/(n·n!)], n≥1. Augmenter n jusqu’à largeur≤2⁻ᵖ. Construction non adoptée dans v1.5.8.',sqrtTitle:'Adjoindre √2',piTitle:'Une coupure pour π',eTitle:'Un intervalle pour e',rationalLine:'Droite de comparaison rationnelle',intervalLens:'Grossissement des intervalles',comparisonNote:'La position de l’étiquette utilise une approximation décimale externe. Les bornes sont des rationnels exacts.',empty:'Seule l’origine reste à cette échelle',coefficient:'positions de coefficients',torus:'Section torique rationnelle',circle:'Cercle unité rationnel',noRoot:'Pas de √2 dans Fε',window:'fenêtre finie de coefficients',normNote:'N(h)=1 ; rayons 3/5 et 4/5. Famille torique rationnelle dans le lieu de norme unité en quatre dimensions, et non le lieu entier.',circleNote:'Paramétrage rationnel ((1−t²)/(1+t²), 2t/(1+t²)), avec le point manquant (−1,0).',gridNote:'Échantillons finis de coefficients rationnels. M montre des polynômes ; Fε une sous-famille de polynômes de Laurent, pas toutes les fractions.',treeNote:'Encodage exact en f seul d’une valeur finie ; la représentation matricielle des complexes génératifs est conservée.',stages:[['Nombres naturels','Une base, puis un constructeur de plus. Les entiers non négatifs restent discrets.','Échantillon fini de N sur un axe.'],['Entiers signés','Un signe associé à une grandeur. Le zéro est normalisé du côté positif.','Échantillon fini de Z sur un axe.'],['Nombres rationnels','Paires normalisées d’entiers. Des dénominateurs plus fins révèlent d’autres positions.','Fractions réduites à dénominateurs bornés. La hauteur du trait indique le dénominateur, pas une seconde coordonnée.'],['Étiquettes de relation','Une composante rationnelle et un compte entier. (k,a) s’injecte comme a+kε.','Échantillon fini (k,a) séparant les composantes de l’ordre lexicographique.'],['M-polynômes','Listes finies de coefficients rationnels ; leur position encode les puissances de ε.','Grille finie dans Q[ε] ; le degré de la fenêtre dépend de la vue.'],['Expressions rationnelles finies','Fractions de M-polynômes à dénominateur non nul. ε⁻¹ dépasse tout rationnel positif.','Fenêtre de polynômes de Laurent dans Q(ε), sans épuiser le corps.'],['Complexes génératifs','J(a,b) conserve la construction matricielle 2×2, avec a,b dans Fε et i²=−1.','Deux coefficients sur Fε ; les fenêtres supérieures ajoutent des puissances de ε.'],['Quaternions génératifs','Paires de complexes génératifs. Quatre coefficients ; ij=k et ji=−k.','Quatre coefficients sur Fε, contenant la famille rationnelle finie affichée.']]},
+zh:{eyebrow:'有限构造 / 无限方向',title:'f生成图谱',about:'说明',light:'浅色',dark:'深色',reset:'重置视图',representation:'表示方式',projection:'投影框架',density:'采样密度',higher:'高维平面旋转',precision:'精度请求 · p',motion:'探索',rotate:'自动旋转',constants:'定位常数',reading:'如何阅读此图',example:'编码示例：',source:'依据正文与仅用f的附录 · v1.5.8',gestures:'拖动旋转 · Shift／双指平移 · 滚轮／捏合缩放 · Alt拖动进行高维旋转',edges:'线',axes:'坐标轴',export:'保存图像',close:'关闭',grid:'系数窗口',norm:'单位范数截面',tree:'f构造树',construction:'构造',sample:'有限样本',frame:'投影框架',depth:'形式透镜',rationalScale:'有理数尺度',spatial:'空间放大倍率',treeDepth:'构造深度',nodes:'节点',projectionNote:'坐标以数值方式投影。线仅连接采样顶点，并不声称实线段上的每个点都属于该类型。投影维数与代数维数不同。',lensQ:'以零为中心，用10的幂细化有理数网格。重新生成有限样本，并不绘制已完成的连续体。',lensN:'原点为焦点。离散类型在零附近没有更小的非零点，因此深度放大后只剩原点。',lensL:'第二坐标分离L中的整数关系计数。此间距为示意，不是保持顺序的欧氏距离。L没有ε²方向。',lensE:'相邻的形式窗口εᵏ与εᵏ⁺¹随缩放连续淡入淡出。不给ε赋予实数大小。每个窗口是新的有限系数样本，深度无预设上限。',lensTree:'每个节点是具有零、一或两个子节点的真实f构造子。布局是示意；缩放不会生成新节点。',aboutTitle:'美存在于构造之中。',aboutBody:'此图谱以v1.5.8的有限表示为主题。不添加发光线条、装饰粒子或任意运动。旋转系数窗口，观察有理系数的单位范数族，或将一个值展开成f树。',aboutTypes:'L保持加法与顺序地嵌入M，但L不是域。M对应Q[ε]，Fε对应Q(ε)。Cε在Fε上有两个系数位置，Hε有四个。它们不是以R为系数的完整经典体系。高维窗口显示更多ε系数，而不引入新的数代数。',aboutLens:'无穷小无法忠实地表示为固定的实数像素距离。因此透镜随缩放改变所观察的ε幂。形式尺度明确标示，窗口内欧氏间距仅为绘图约定。自然数与整数保持离散，有理数缩放仍为有理数。',aboutConstants:'√2是独立扩张T中的σ=(0,1)，不属于Fε。π是附录B中独立的有理切割。e是正文未定义的附加区间示例。共同数轴仅作外部比较，不定义这些类型的混合运算。',aboutSources:'来源：英文正文v1.5.8的§§2.6、3–8、8.10、9.4与附录B，以及英文仅用f附录的入口示例。此可视化是解释，并非正文的机器验证。',aboutFinite:'仅显示有限样本与有限计算。常数边界由BigInt精确有理运算计算。小数与屏幕坐标是近似值。保存此HTML即可在现代浏览器中离线打开。',saved:'图像已保存',noFull:'此处无法使用全屏',count:'顶点',actual:'精确有理数边界',lower:'下界',upper:'上界',width:'宽度',bound:'≤ 2⁻ᵖ',external:'外部比较 · 精确类型各不相同',intervals:'嵌套有理区间',sqrtDesc:'T中的正元σ满足σ²=2。有理二分法围住它的位置。提高精度不会改变精确的有限对表示。',piDesc:'πcut由附录B的两个有理成员规则指定。有限的莱布尼茨递推围住它，任何有限端点都不是精确的π。',eDesc:'v1.5.8之外的附加示例：将1/k!求和至n。n≥1时正余项不超过1/(n·n!)。这些区间在外部分析中围住通常的e。',sqrtSampling:'从[1,2]开始精确二分，保持l²≤2≤u²。',piSampling:'A₀=4，B₀=8/3；Aₘ₊₁=Aₘ−8/((4m+3)(4m+5))，Bₘ₊₁=Bₘ+8/((4m+5)(4m+7))。阶段m=2ᵖ。',eSampling:'Sₙ=Σₖ₌₀ⁿ1/k!；区间[Sₙ,Sₙ+1/(n·n!)]，n≥1。增加n至宽度≤2⁻ᵖ。不是v1.5.8采用的构造。',sqrtTitle:'添加√2',piTitle:'π的切割',eTitle:'e的区间',rationalLine:'有理数比较轴',intervalLens:'区间放大倍率',comparisonNote:'常数标签位置使用外部小数近似。区间端点为精确有理数。',empty:'此尺度仅剩原点',coefficient:'系数位置',torus:'有理系数环面截面',circle:'有理单位圆',noRoot:'Fε中没有√2',window:'有限系数窗口',normNote:'N(h)=1，半径3/5与4/5。这是四维单位范数轨迹中的有理环面族，并非完整轨迹。',circleNote:'有理参数式((1−t²)/(1+t²), 2t/(1+t²))，加上缺失点(−1,0)。',gridNote:'有限有理系数样本。M显示多项式，Fε显示洛朗多项式子族，不穷尽所有多项式的比。',treeNote:'对选定有限值进行精确的仅用f编码，并保留生成复数的矩阵表示。',stages:[['自然数','从基底逐个增加构造子。非负整数点保持离散间隔。','在单轴上表示N的有限样本。'],['带符号整数','符号与大小组成一对。零的符号规范为正。','在单轴上表示Z的有限样本。'],['有理数','规范化的整数对。细化分母会显现更多有理位置。','分母有界的既约分数。刻度高度表示分母，而非第二个数值坐标。'],['关系标签','有理分量与整数关系计数。(k,a)嵌入为a+kε。','有限(k,a)样本，以两个轴分离字典序分量。'],['M多项式','有限有理系数列。位置编码ε的各次幂。','Q[ε]中的有限系数格，窗口次数由视图选择。'],['有限有理式数','分母非零的M多项式之比。ε⁻¹大于所有正有理数。','Q(ε)中的洛朗多项式系数窗口，不穷尽整个域。'],['生成复数','J(a,b)保留2×2矩阵构造，a,b属于Fε，i²=−1。','Fε上的两个系数位置。高维窗口增加各位置中的ε幂。'],['生成四元数','生成复数对。四个系数，乘法区分顺序：ij=k，ji=−k。','Fε上的四个系数位置，包含所显示的有限有理系数族。']]}
+};
+const $=id=>document.getElementById(id),canvas=$('canvas'),ctx=canvas.getContext('2d');
+const SYMBOLS=['N','Z','Q','L','M','Fε','Cε','Hε'];
+const REFS=['§3','§4','§5','§§6–7','§8.1','§§8.2–8.6','§8.7','§8.8'];
+const EQ=['0 := f()   ·   S(n) := f(n)','(sign, magnitude)   ·   −0 = +0','p/q   ·   q > 0   ·   gcd(p,q)=1','(k,a) ↦ a + kε','Σ aⱼ εʲ   ·   aⱼ ∈ Q','p(ε)/q(ε)   ·   q ≠ 0','J(a,b) = [ a  −b ; b  a ]','h = a + bi + cj + dk'];
+const S={lang:'en',stage:7,dim:4,shape:'norm',density:2,rx:-.38,ry:.58,rz:-.12,higher:28*Math.PI/180,zoom:0,panX:0,panY:0,auto:false,constant:null,precision:3,edges:true,axes:true};
+let scene={points:[],edges:[],dim:4},W=1,H=1,DPR=1,dirty=true,lastTime=0,palette={},treeZoom=0,constantZoom=0,viewZoom=0,viewTreeZoom=0,viewConstantZoom=0,layerOpacity=1,noticeTimer;
+const lodCache=new Map();
+const ZOOM_RESPONSE_MS=80;
+const smoothstep=(lo,hi,x)=>{const t=Math.max(0,Math.min(1,(x-lo)/(hi-lo)));return t*t*(3-2*t);};
+function settleZoom(){viewZoom=S.zoom;viewTreeZoom=treeZoom;viewConstantZoom=constantZoom;}
+const tr=k=>COPY[S.lang][k];
+const setText=(id,v)=>$(id).textContent=v;
+function toast(key){setText('notice',tr(key));$('notice').hidden=false;clearTimeout(noticeTimer);noticeTimer=setTimeout(()=>$('notice').hidden=true,2400);}
+function gcd(a,b){a=a<0n?-a:a;b=b<0n?-b:b;while(b){const t=a%b;a=b;b=t;}return a;}
+function rat(n,d=1n){n=BigInt(n);d=BigInt(d);if(!d)throw Error('Zero denominator');if(d<0n){n=-n;d=-d;}const g=gcd(n,d);return {n:n/g,d:d/g};}
+const add=(a,b)=>rat(a.n*b.d+b.n*a.d,a.d*b.d),sub=(a,b)=>rat(a.n*b.d-b.n*a.d,a.d*b.d),mul=(a,b)=>rat(a.n*b.n,a.d*b.d),div=(a,b)=>rat(a.n*b.d,a.d*b.n),cmp=(a,b)=>{const v=a.n*b.d-b.n*a.d;return v<0n?-1:v>0n?1:0;};
+const rstr=a=>a.d===1n?''+a.n:a.n+'/'+a.d;
+function rnum(a){ // Leading-digit quotient avoids Infinity/Infinity for long exact fractions.
+ const ns=(a.n<0n?-a.n:a.n).toString(),ds=a.d.toString();return (a.n<0n?-1:1)*Number(ns.slice(0,15))/Number(ds.slice(0,15))*10**(ns.length-ds.length-(Math.min(15,ns.length)-Math.min(15,ds.length)));
+}
+const constantCache=new Map();
+function interval(kind,p){
+ const key=kind+':'+p;if(constantCache.has(key))return constantCache.get(key);
+ const target=rat(1n,2n**BigInt(p));let lo,hi,steps;
+ if(kind==='sqrt'){lo=rat(1);hi=rat(2);steps=0;while(cmp(sub(hi,lo),target)>0){const mid=div(add(lo,hi),rat(2));if(cmp(mul(mid,mid),rat(2))<=0)lo=mid;else hi=mid;steps++;}}
+ else if(kind==='pi'){lo=rat(8,3);hi=rat(4);steps=2**p;for(let m=0;m<steps;m++){const k=BigInt(4*m);hi=sub(hi,rat(8n,(k+3n)*(k+5n)));lo=add(lo,rat(8n,(k+5n)*(k+7n)));}}
+ else{let n=1n,f=1n,sum=rat(2);while(true){lo=sum;hi=add(sum,rat(1n,n*f));if(cmp(sub(hi,lo),target)<=0){steps=Number(n);break;}n++;f*=n;sum=add(sum,rat(1n,f));}}
+ const out={lo,hi,width:sub(hi,lo),steps};constantCache.set(key,out);return out;
+}
+// The constructor grammar is precisely U ::= f() | f(U) | f(UU).
+const base=()=>[],pair=(a,b)=>[a,b];
+function nat(n){let x=base();for(let i=0;i<n;i++)x=[x];return x;}
+const integer=n=>pair(n<0?nat(1):nat(0),nat(Math.abs(n)));
+function rational(n,d=1){const q=rat(n,d);return pair(integer(Number(q.n)),integer(Number(q.d)));}
+function list(xs){return xs.reduceRight((tail,x)=>pair(x,tail),base());}
+function polynomial(xs){xs=xs.slice();while(xs.length&&xs[xs.length-1]===0)xs.pop();return list(xs.map(x=>rational(x)));}
+const field=(xs,ys=[1])=>pair(polynomial(xs),polynomial(ys));
+const fieldConst=x=>field([x]);
+const complex=(a,b)=>pair(pair(fieldConst(a),fieldConst(-b)),pair(fieldConst(b),fieldConst(a)));
+const EXAMPLES=[{label:'2',tree:nat(2)},{label:'2',tree:integer(2)},{label:'1/2',tree:rational(1,2)},{label:'(2, 1/2)',tree:pair(integer(2),rational(1,2))},{label:'ε²',tree:polynomial([0,0,1])},{label:'ε² / (1+ε)',tree:field([0,0,1],[1,1])},{label:'J(1,1)',tree:complex(1,1)},{label:'1+i+j+k',tree:pair(complex(1,1),complex(1,1))}];
+function encode(t){return 'f('+t.map(encode).join('')+')';}
+function countTree(t){return 1+t.reduce((s,c)=>s+countTree(c),0);}
+// Each LOD owns a fixed scale origin. Both its opacity and its position remain
+// continuous across band boundaries; a floor change never resets geometry.
+function zoomLayers(stage,shape,zoom){
+ if(shape==='tree'||stage<2)return [{level:0,scale:Math.exp(Math.min(700,zoom)),opacity:1}];
+ const unit=stage===2?Math.LN10:Math.log(5);
+ if((stage===3||stage===4)&&zoom<=0)return [{level:0,scale:Math.exp(zoom),opacity:1}];
+ const position=zoom/unit,level=Math.floor(position),mix=smoothstep(0,1,position-level);
+ return [
+  {level,scale:Math.exp(zoom-level*unit),opacity:1-mix},
+  {level:level+1,scale:Math.exp(zoom-(level+1)*unit),opacity:mix}
+ ];
+}
+function visibleLayers(){return zoomLayers(S.stage,S.shape,S.shape==='tree'?viewTreeZoom:viewZoom);}
+function lens(){
+ const layers=visibleLayers(),dominant=layers.reduce((a,b)=>b.opacity>a.opacity?b:a);
+ return {level:dominant.level,scale:dominant.scale,band:dominant.level,layers};
+}
+
+function fillNav(){
+ $('stages').replaceChildren();SYMBOLS.forEach((sym,i)=>{const b=document.createElement('button');b.type='button';b.className='stage';b.dataset.stage=i;b.setAttribute('aria-pressed',String(S.stage===i&&!S.constant));b.innerHTML='<span class="number mono">0'+(i+1)+'</span><span class="symbol">'+sym+'</span><span class="name"></span>';b.querySelector('.name').textContent=tr('stages')[i][0];b.onclick=()=>selectStage(i);$('stages').append(b);});
+ $('stages').setAttribute('aria-label',tr('construction'));const active=$('stages').querySelector('[aria-pressed=true]');if(active)$('stages').scrollLeft=active.offsetLeft-$('stages').offsetLeft-($('stages').clientWidth-active.offsetWidth)/2;
+}
+function shapeOptions(){
+ const old=S.shape,opts=['grid'];if(S.stage>=6)opts.push('norm');opts.push('tree');if(!opts.includes(old))S.shape='grid';$('shape').replaceChildren(...opts.map(k=>{const o=document.createElement('option');o.value=k;o.textContent=tr(k);return o;}));$('shape').value=S.shape;
+}
+function updateUI(){
+ document.documentElement.lang=S.lang;document.querySelectorAll('[data-i18n]').forEach(el=>el.textContent=tr(el.dataset.i18n));$('theme').textContent=tr(document.documentElement.dataset.theme==='dark'?'light':'dark');$('theme').setAttribute('aria-label',$('theme').textContent);$('reset').title=tr('reset');$('fullscreen').setAttribute('aria-label',S.lang==='ja'?'全画面':S.lang==='fr'?'Plein écran':S.lang==='zh'?'全屏':'Fullscreen');$('zoom-in').setAttribute('aria-label',S.lang==='ja'?'拡大':S.lang==='fr'?'Agrandir':S.lang==='zh'?'放大':'Zoom in');$('zoom-out').setAttribute('aria-label',S.lang==='ja'?'縮小':S.lang==='fr'?'Réduire':S.lang==='zh'?'缩小':'Zoom out');fillNav();shapeOptions();
+ const constMode=!!S.constant;
+ document.querySelectorAll('.scene-control').forEach(e=>e.hidden=constMode);document.querySelector('.constant-control').hidden=!constMode;$('rotate').disabled=constMode||S.shape==='tree';$('dimension').disabled=S.shape==='tree';$('density').disabled=S.shape==='tree';$('higher').disabled=S.shape==='tree'||Math.max(scene.dim,S.dim)<4;
+ document.querySelectorAll('[data-constant]').forEach(b=>{b.setAttribute('aria-pressed',String(b.dataset.constant===S.constant));b.title=tr(b.dataset.constant+'Title');});
+ if(constMode){const k=S.constant;setText('stage-title',tr(k+'Title'));setText('section-ref',k==='sqrt'?'T · §8.10':k==='pi'?'CutQ · Appendix B':'e · '+tr('external'));setText('equation',k==='sqrt'?'σ=(0,1) ∈ T   ·   σ²=2':k==='pi'?'Lπ(q) ⇔ ∃m. q<Bₘ':'Sₙ=Σₖ₌₀ⁿ 1/k!');setText('description',tr(k+'Desc'));setText('sampling-note',tr(k+'Sampling'));setText('canvas-tag',tr('external'));setText('canvas-title',tr('intervals'));setText('canvas-subtitle',tr('comparisonNote'));setText('canvas-formula',k==='sqrt'?'σ ∈ T':k==='pi'?'πcut ∈ CutQ':'e · '+tr('external'));setText('canvas-legend',tr('rationalLine'));setText('lens-note',tr('comparisonNote'));updateIntervalInfo();}
+ else{setText('stage-title',tr('stages')[S.stage][0]);setText('section-ref',REFS[S.stage]+' · '+SYMBOLS[S.stage]);setText('equation',EQ[S.stage]);setText('description',tr('stages')[S.stage][1]);setText('sampling-note',tr('stages')[S.stage][2]+' '+(S.shape==='norm'?tr(S.stage===7?'normNote':'circleNote'):S.shape==='tree'?tr('treeNote'):S.stage>=4?tr('gridNote'):''));setText('canvas-tag',tr('construction')+' 0'+(S.stage+1)+' / 08');setText('canvas-title',S.shape==='tree'?'f() · f(U) · f(UU)':S.shape==='norm'?tr(S.stage===7?'torus':'circle'):tr('window'));setText('lens-note',tr(S.shape==='tree'?'lensTree':S.stage<2?'lensN':S.stage===2?'lensQ':S.stage===3?'lensL':'lensE'));updateSceneText();}
+ const ex=S.constant==='sqrt'?{label:'σ=(0,1) ∈ T',tree:pair(fieldConst(0),fieldConst(1))}:S.constant==='pi'?{label:'π: (id 0, v1)',tree:pair(nat(0),nat(1))}:S.constant==='e'?{label:'p='+S.precision+' ∈ N',tree:nat(S.precision)}:EXAMPLES[S.stage];setText('tree-example',ex.label);setText('node-count',countTree(ex.tree)+' '+tr('nodes'));setText('f-string',encode(ex.tree));setText('density-value',S.density);setText('higher-value',Math.round(S.higher*180/Math.PI)+'°');$('higher').value=Math.round(S.higher*180/Math.PI);$('dimension').value=S.dim;$('density').value=S.density;$('rotate').setAttribute('aria-pressed',String(S.auto));$('canvas').setAttribute('aria-label',(S.constant?tr(S.constant+'Title'):tr('stages')[S.stage][0])+' · '+tr('gestures'));syncSelectControls();dirty=true;
+}
+function updateIntervalInfo(){const {lo,hi,width,steps}=interval(S.constant,S.precision);setText('precision-value',S.precision);$('constant-info').replaceChildren();const title=document.createElement('p');title.textContent=tr('actual')+' · '+(S.constant==='pi'?'m=':S.constant==='e'?'n=':'n=')+steps;$('constant-info').append(title);for(const [k,v] of [['lower',lo],['upper',hi],['width',width]]){const b=document.createElement('div');b.textContent=tr(k);const span=document.createElement('span');span.className='bound';span.textContent=rstr(v);b.append(span);$('constant-info').append(b);}const bound=document.createElement('div');bound.textContent=tr('width')+' '+tr('bound');$('constant-info').append(bound);dirty=true;}
+function updateSceneText(){
+ const L=lens(),layers=L.layers.filter(l=>l.opacity>1e-6),d=scene.dim;
+ const total=layers.reduce((n,l)=>n+lodScene(l.level).points.length,0);
+ setText('canvas-subtitle',S.shape==='tree'?EXAMPLES[S.stage].label+' · '+scene.points.length+' '+tr('nodes'):total+' '+tr('count')+' · '+d+' '+tr('coefficient')+' · '+S.dim+'D '+tr('frame'));
+ const powers=layers.map(l=>l.level===0?'1':'ε^'+(2*l.level));
+ let f=EQ[S.stage];if(S.shape==='norm')f=(S.stage===7?'a²+b²+c²+d² ':'a²+b² ')+(powers.length===1?'= '+powers[0]:'∈ { '+powers.join(', ')+' }');else if(S.shape==='tree')f=EXAMPLES[S.stage].label;else if(S.stage>=4)f=S.stage===7?'(a₀+b₀i+c₀j+d₀k)εᵏ + …':S.stage===6?'(a₀+b₀i)εᵏ + …':S.stage===5?'Σ aⱼ εᵏ⁺ʲ   ·   j ∈ Z':'Σ aⱼ εᵏ⁺ʲ   ·   j ≥ 0';
+ const levelText=layers.map(l=>'ε^'+l.level).join(' ↔ ');
+ setText('canvas-formula',f);setText('canvas-legend',S.shape==='norm'?levelText+' · '+tr('sample'):S.shape==='tree'?tr('treeNote'):S.stage<2&&viewZoom>9?tr('empty'):S.stage===3?tr('lensL'):S.stage>=4?'k = '+layers.map(l=>l.level).join(' ↔ ')+' · '+tr('sample'):tr('sample'));
+ setText('scale-label',tr(S.shape==='tree'?'spatial':S.stage<2?'spatial':S.stage===2?'rationalScale':'depth'));
+ setText('scale-value',S.shape==='tree'?'× '+Math.exp(viewTreeZoom).toFixed(2):S.stage<2?'× 10^'+(viewZoom/Math.LN10).toFixed(1):S.stage===2?layers.map(l=>'10^'+(-l.level)).join(' ↔ '):S.stage===3?L.level===0?'a + kε':L.level===1?'kε':'{0}':levelText);
+}
+
+function selectStage(i){S.stage=i;S.constant=null;S.zoom=0;treeZoom=0;S.panX=S.panY=0;S.dim=i>=7?4:i===6?2:i>=4?4:i===3?2:2;S.shape=i>=6?'norm':'grid';S.rx=i<4?0:-.38;S.ry=i<4?0:.58;S.rz=i<4?0:-.12;constantZoom=0;settleZoom();rebuild();updateUI();requestDraw();}
+function makePoint(v,group=0,label=''){const i=scene.points.length;scene.points.push({v,group,label});return i;}
+function edge(a,b,group=0){scene.edges.push([a,b,group]);}
+function rationalCircle(n){const out=[];for(let i=0;i<n;i++){if(i*2===n){out.push([-1,0]);continue;}const p=Math.round(Math.tan(Math.PI*i/n)*256),q=256,den=p*p+q*q;out.push([(q*q-p*p)/den,2*p*q/den]);}return out;}
+function buildNorm(){
+ const n=24+S.density*16,c=rationalCircle(n),d=S.stage===7?4:2;scene.dim=d;
+ if(S.stage===6){c.forEach(([a,b],i)=>makePoint([a,b,...Array(d-2).fill(0)],i%8===0?1:0));c.forEach((_,i)=>edge(i,(i+1)%n)); }else{const slices=10+S.density*6;for(let j=0;j<slices;j++){const [c0,d0]=rationalCircle(slices)[j];for(let i=0;i<n;i++){const [a,b]=c[i];let v=Array(d).fill(0);v[0]=.6*a;v[1]=.6*b;v[2]=.8*c0;v[3]=.8*d0;makePoint(v,j%3===0?1:0);}}
+  for(let j=0;j<slices;j++)for(let i=0;i<n;i++){const a=j*n+i;edge(a,j*n+(i+1)%n,j%3===0?1:0);if(i%4===0)edge(a,((j+1)%slices)*n+i,2);}
+
+ }
+}
+function buildGrid(level=0){
+ const s=S.stage,d=s===7?Math.max(4,S.dim):s===6?Math.max(2,S.dim):s>=4?S.dim:s===3?2:1;scene.dim=d;
+ if(s<2){for(let i=s===0?0:-24;i<=24;i++)makePoint([i/4],i===0?1:0,''+i);return;}
+ if(s===2){const den=5+S.density*5,seen=new Set();for(let q=1;q<=den;q++)for(let p=-3*q;p<=3*q;p++){const g=Number(gcd(BigInt(p),BigInt(q))),key=p/g+'/'+q/g;if(!seen.has(key)){seen.add(key);const id=makePoint([p/q],p===0?1:0,q<=3?key:'');scene.points[id].den=q;}}return;}
+ if(s===3){if(level>1){makePoint([0,0],1);return;}if(level===1){for(let k=-12;k<=12;k++){const i=makePoint([k/4,0],k===0?1:0);scene.points[i].label=''+k+'ε';}return;}for(let a=-6;a<=6;a++)for(let k=-5;k<=5;k++){const id=makePoint([a/3,k/5],k===0?1:0);if(k>-5)edge(id-1,id,0);}return;}
+ const levels=S.density>=3?[-1,0,1]:[-1,1],idx=new Map(),vs=[];
+ // Tensor lattice of rational coefficient samples. Limit selected multi-level grids to 6D.
+ const vals=d>6?[-1,1]:levels;
+ function rec(v){if(v.length===d){idx.set(v.join(','),vs.length);vs.push(v);return;}for(const x of vals)rec([...v,x]);}rec([]);
+ vs.forEach(v=>makePoint(v.map(x=>x*.67),v.every(x=>x>=0)?1:0));
+ vs.forEach((v,i)=>v.forEach((x,j)=>{const k=vals.indexOf(x);if(k<vals.length-1){const next=v.slice();next[j]=vals[k+1];edge(i,idx.get(next.join(',')),j%3===0?1:0);}}));
+ if(S.density>1&&d<=4){const offset=scene.points.length;vs.forEach(v=>makePoint(v.map(x=>x*.335),2));vs.forEach((v,i)=>v.forEach((x,j)=>{const k=vals.indexOf(x);if(k<vals.length-1){const next=v.slice();next[j]=vals[k+1];edge(offset+i,offset+idx.get(next.join(',')),2);}}));}
+ makePoint(Array(d).fill(0),1);
+}
+function buildTree(){
+ scene.dim=2;let leaf=0,maxDepth=0;const nodes=[];
+ function walk(t,depth,parent){const i=nodes.length;nodes.push({t,depth,x:0,parent});maxDepth=Math.max(maxDepth,depth);if(!t.length)nodes[i].x=leaf++;else{const kids=t.map(c=>walk(c,depth+1,i));nodes[i].x=kids.reduce((sum,k)=>sum+nodes[k].x,0)/kids.length;}return i;}
+ walk(EXAMPLES[S.stage].tree,0,-1);scene.leafCount=leaf;const width=Math.max(1,leaf-1);
+ nodes.forEach((n,i)=>{makePoint([leaf===1?0:(n.x/width-.5)*3,(.5-n.depth/Math.max(1,maxDepth))*2.1],n.t.length===2?1:0,'f');if(n.parent>=0)edge(n.parent,i,n.t.length===2?1:0);});
+}
+function assembleScene(level){
+ const previous=scene;scene={points:[],edges:[],dim:Math.max(2,S.dim)};
+ if(S.shape==='tree')buildTree();else if(S.shape==='norm'&&S.stage>=6)buildNorm();else buildGrid(level);
+ const built=scene;scene=previous;return built;
+}
+function lodScene(level){
+ // Except for L, a level changes formal coefficient powers, not the finite
+ // coefficient template. Sharing that template bounds memory at any depth.
+ if(S.stage!==3||S.shape==='tree')return scene;
+ const key=Math.max(0,Math.min(2,level));
+ if(!lodCache.has(key))lodCache.set(key,assembleScene(key));
+ return lodCache.get(key);
+}
+function rebuild(){scene=assembleScene(0);lodCache.clear();lodCache.set(0,scene);dirty=true;if(!S.constant)updateSceneText();}
+
+function rotatePair(v,a,b,angle){if(a>=v.length||b>=v.length)return;const c=Math.cos(angle),s=Math.sin(angle),x=v[a],y=v[b];v[a]=c*x-s*y;v[b]=s*x+c*y;}
+function transformed(v){
+ v=v.slice();while(v.length<Math.max(3,S.dim))v.push(0);
+ if(S.shape==='tree')return [v[0],v[1],0];
+ if(v.length>3){rotatePair(v,0,3,S.higher);rotatePair(v,1,3,S.higher*.53);}
+ for(let j=4;j<v.length;j++){rotatePair(v,j%3,j,S.higher*(.64+j*.13)+.22*j);}
+ rotatePair(v,1,2,S.rx);rotatePair(v,0,2,S.ry);rotatePair(v,0,1,S.rz);
+ if(S.dim===2)return [v[0],v[1],v[2]||0];
+ const perspective=4.5/(4.5-v[2]*.45);return [v[0]*perspective,v[1]*perspective,v[2]];
+}
+function project(v,scale=1){const t=transformed(v),base=Math.min(W*.32,H*.34);return {x:W*.5+t[0]*base*scale+S.panX,y:H*.51-t[1]*base*scale+S.panY,z:t[2]};}
+function readPalette(){const css=getComputedStyle(document.documentElement);for(const k of ['bg','ink','muted','accent','other','point','grid'])palette[k]=css.getPropertyValue('--'+k).trim();dirty=true;}
+function line(x1,y1,x2,y2,color,alpha=1,width=1){ctx.globalAlpha=alpha*layerOpacity;ctx.strokeStyle=color;ctx.lineWidth=width;ctx.beginPath();ctx.moveTo(x1,y1);ctx.lineTo(x2,y2);ctx.stroke();ctx.globalAlpha=1;}
+function dot(x,y,r,color,alpha=1){ctx.globalAlpha=alpha*layerOpacity;ctx.fillStyle=color;ctx.beginPath();ctx.arc(x,y,r,0,Math.PI*2);ctx.fill();ctx.globalAlpha=1;}
+function textAt(t,x,y,size=11,color=palette.muted,align='left',serif=false,alpha=1){ctx.globalAlpha=layerOpacity*alpha;ctx.fillStyle=color;ctx.font=(serif?size+'px Georgia':size+'px -apple-system,BlinkMacSystemFont,Segoe UI,sans-serif');ctx.textAlign=align;ctx.fillText(t,x,y);ctx.globalAlpha=1;}
+function drawAxes(data,level,scale){
+ const d=Math.min(data.dim,8),labels=S.stage<3?['x']:S.stage===3&&level===0?['a','kε']:S.stage===3?['kε']:S.stage===7?['1','i','j','k','ε','iε','jε','kε']:S.stage===6?['1','i','ε','iε','ε²','iε²','ε³','iε³']:Array.from({length:d},(_,i)=>'ε^'+(level+i-(S.stage===5?Math.floor(d/2):0)));
+ if(S.stage===3&&level>1)return;
+ const zero=project(Array(data.dim).fill(0),scale);if(!Number.isFinite(zero.x))return;
+ for(let i=0;i<d;i++){const v=Array(data.dim).fill(0);v[i]=1.32;const p=project(v,scale);v[i]=-1.32;const m=project(v,scale);if([p.x,p.y,m.x,m.y].every(Number.isFinite)){line(m.x,m.y,p.x,p.y,palette.grid,.26,1);if(p.x>10&&p.x<W-10&&p.y>100&&p.y<H-70)textAt(labels[i]||'ε^'+i,p.x+5,p.y-5,11,palette.muted);}}
+}
+function renderLayer(data,level,scale,opacity){
+ layerOpacity=opacity;
+ if(S.axes&&S.shape!=='tree')drawAxes(data,level,scale);
+ const pts=data.points.map(p=>project(p.v,scale));
+ if(S.edges||S.shape==='tree')for(const [a,b,g] of data.edges){const p=pts[a],q=pts[b];if(!p||!q||![p.x,p.y,q.x,q.y].every(Number.isFinite))continue;if((p.x<0&&q.x<0)||(p.x>W&&q.x>W)||(p.y<0&&q.y<0)||(p.y>H&&q.y>H))continue;const alpha=S.shape==='tree'?.45:Math.max(.12,Math.min(.60,.32+(p.z+q.z)*.07));line(p.x,p.y,q.x,q.y,g===1?palette.other:palette.accent,alpha,g===1?1:.7);}
+ const order=pts.map((p,i)=>({p,i})).sort((a,b)=>a.p.z-b.p.z);
+ const base=Math.min(W*.32,H*.34),leafCount=data.leafCount||1;
+ const treeLabels=S.shape==='tree'?smoothstep(12,27,base*3*scale/Math.max(1,leafCount-1)):0;
+ const numericLabels=S.stage<2?smoothstep(12,28,base*.25*scale):S.stage===2&&level===0?1:0;
+ for(const {p,i} of order){if(!Number.isFinite(p.x)||p.x<-10||p.x>W+10||p.y<-10||p.y>H+10)continue;const point=data.points[i],r=S.shape==='tree'?2.2:S.stage<2?3:S.stage===2?1.5:S.stage===3?2:1.15,alpha=Math.max(.28,Math.min(.94,.72+p.z*.1));
+  // The common origin is drawn once after the LOD passes, so it cannot pulse
+  // from duplicated alpha blending when two coefficient windows overlap.
+  const origin=S.shape!=='tree'&&point.v.every(x=>x===0);
+  if(S.stage===2&&S.shape!=='tree'){const len=14/(point.den||1);if(!origin)line(p.x,p.y-len,p.x,p.y+len,palette.accent,.45,1);}
+  if(!origin)dot(p.x,p.y,r,point.group===1?palette.other:palette.point,alpha);
+  if(treeLabels>0)textAt('f',p.x+5,p.y-5,10,palette.muted,'left',false,treeLabels);
+  if(numericLabels>0&&point.label&&(S.stage!==2||i%9===0))textAt(point.label,p.x,p.y+22,10,palette.muted,'center',false,numericLabels);
+ }
+ layerOpacity=1;
+}
+function renderScene(){
+ ctx.globalAlpha=1;ctx.fillStyle=palette.bg;ctx.fillRect(0,0,W,H);
+ const layers=visibleLayers();let hasOrigin=false;
+ for(const layer of layers){if(layer.opacity<=0)continue;const data=lodScene(layer.level);hasOrigin ||= S.shape!=='tree'&&data.points.some(p=>p.v.every(x=>x===0));renderLayer(data,layer.level,layer.scale,layer.opacity);}
+ if(hasOrigin){const p=project(Array(scene.dim).fill(0));if(p.x>=-10&&p.x<=W+10&&p.y>=-10&&p.y<=H+10)dot(p.x,p.y,S.stage<2?3:S.stage===2?1.5:S.stage===3?2:1.15,palette.other,.72);}
+}
+
+function renderConstants(){
+ ctx.fillStyle=palette.bg;ctx.fillRect(0,0,W,H);const kind=S.constant,actual=kind==='sqrt'?Math.SQRT2:kind==='pi'?Math.PI:Math.E;
+ const fullL=40,fullR=W-40,axisY=H*.32,map=x=>fullL+x/4*(fullR-fullL);
+ line(fullL,axisY,fullR,axisY,palette.grid,.65);for(let i=0;i<=4;i++){line(map(i),axisY-5,map(i),axisY+5,palette.grid,.8);textAt(''+i,map(i),axisY+24,11,palette.muted,'center');}
+ for(const [k,val,sym] of [['sqrt',Math.SQRT2,'√2'],['e',Math.E,'e'],['pi',Math.PI,'π']]){dot(map(val),axisY,3.5,k===kind?palette.other:palette.accent,k===kind?1:.4);textAt(sym,map(val),axisY-17,k===kind?23:17,k===kind?palette.other:palette.muted,'center',true);}
+ textAt(tr('rationalLine'),fullL,axisY-57,11);
+ const rows=S.precision+1,start=H*.46+S.panY,available=H*.39,rowGap=Math.min(37,available/Math.max(1,rows)),focus=interval(kind,S.precision),range=Math.max(.04,rnum(sub(focus.hi,focus.lo))*3.2),magnify=Math.exp(Math.min(10,viewConstantZoom)),half=range/(2*magnify),cx=W*.5+S.panX,span=W*.65;
+ const zoomMap=x=>cx+(x-actual)/(2*half)*span;
+ textAt(tr('intervals'),40,start-27,11);ctx.save();ctx.beginPath();ctx.rect(25,start-10,W-50,available+35);ctx.clip();
+ line(cx,start-8,cx,start+available,palette.grid,.45,1);
+ for(let p=0;p<rows;p++){const I=interval(kind,p),y=start+p*rowGap,a=zoomMap(rnum(I.lo)),b=zoomMap(rnum(I.hi));line(a,y,b,y,p===S.precision?palette.other:palette.accent,p===S.precision?1:.5,p===S.precision?2:1);line(a,y-5,a,y+5,palette.accent,.8);line(b,y-5,b,y+5,palette.accent,.8);dot(Math.max(25,Math.min(W-25,a)),y,1.5,palette.accent,.5);textAt('p='+p,32,y+4,10,palette.muted);}
+ ctx.restore();textAt(kind==='sqrt'?'σ':kind==='pi'?'πcut':'e',cx,start+available+22,17,palette.other,'center',true);
+ setText('scale-label',tr('intervalLens'));setText('scale-value','× '+((4/range)*magnify).toFixed(1));
+}
+function resize(){const r=$('viewport').getBoundingClientRect();W=Math.max(1,r.width);H=Math.max(1,r.height);DPR=Math.min(2.5,window.devicePixelRatio||1);canvas.width=Math.round(W*DPR);canvas.height=Math.round(H*DPR);ctx.setTransform(DPR,0,0,DPR,0,0);dirty=true;}
+let activeLoop=false;
+function requestDraw(){dirty=true;if(!activeLoop){activeLoop=true;requestAnimationFrame(tick);}}
+function advanceZoom(current,target,dt){
+ const next=current+(target-current)*(-Math.expm1(-dt/ZOOM_RESPONSE_MS));
+ return Math.abs(target-next)<1e-5?target:next;
+}
+function tick(time){
+ const dt=Math.min(50,time-lastTime||16);lastTime=time;
+ const before=[viewZoom,viewTreeZoom,viewConstantZoom];
+ viewZoom=advanceZoom(viewZoom,S.zoom,dt);viewTreeZoom=advanceZoom(viewTreeZoom,treeZoom,dt);viewConstantZoom=advanceZoom(viewConstantZoom,constantZoom,dt);
+ const moved=before[0]!==viewZoom||before[1]!==viewTreeZoom||before[2]!==viewConstantZoom;
+ const settling=viewZoom!==S.zoom||viewTreeZoom!==treeZoom||viewConstantZoom!==constantZoom;
+ if(moved){dirty=true;if(!S.constant)updateSceneText();}
+ if(S.auto&&!S.constant&&S.shape!=='tree'&&!document.hidden){S.ry+=dt*.00012;S.higher+=dt*.000035;dirty=true;}
+ if(dirty){if(S.constant)renderConstants();else renderScene();dirty=false;}
+ if((S.auto||settling)&&!document.hidden)requestAnimationFrame(tick);else activeLoop=false;
+}
+function zoomBy(delta){
+ if(S.constant){constantZoom=Math.max(-4,Math.min(10,constantZoom+delta));}
+ else if(S.shape==='tree'){treeZoom=Math.max(-5,Math.min(40,treeZoom+delta));}
+ else{S.zoom+=delta;if(S.stage<2)S.zoom=Math.max(-10,S.zoom);}
+ requestDraw();
+}
+
+const pointers=new Map();let previousPinch=null;
+const selectControls=new Map();
+let pointerInput=true;
+document.addEventListener('pointerdown',()=>{pointerInput=true;},true);
+document.addEventListener('keydown',()=>{pointerInput=false;},true);
+// Return pointer-edited sliders to the canvas after the gesture commits.
+// Keyboard edits retain focus for arrow keys and tabbing.
+function finishControlEdit(e){
+ const control=e.currentTarget;
+ if(!pointerInput||document.activeElement!==control)return;
+ requestAnimationFrame(()=>{
+  if(pointerInput&&document.activeElement===control){control.blur();canvas.focus({preventScroll:true});}
+ });
+}
+document.querySelectorAll('input[type="range"]').forEach(control=>control.addEventListener('change',finishControlEdit));
+canvas.addEventListener('dragstart',e=>e.preventDefault());
+canvas.addEventListener('pointerdown',e=>{
+ if(e.pointerType==='mouse'&&e.button!==0)return;
+ // Own the initial gesture, including its focus transition. Prevent the
+ // browser's default mouse/focus handling from consuming this first drag.
+ if(e.cancelable)e.preventDefault();
+ pointers.set(e.pointerId,{x:e.clientX,y:e.clientY});
+ previousPinch=null;
+ const focused=document.activeElement;
+ if(focused&&focused!==canvas&&typeof focused.blur==='function')focused.blur();
+ canvas.focus({preventScroll:true});
+ canvas.setPointerCapture(e.pointerId);
+ canvas.classList.add('dragging');
+},{capture:true,passive:false});
+canvas.addEventListener('pointermove',e=>{if(!pointers.has(e.pointerId))return;const old=pointers.get(e.pointerId),dx=e.clientX-old.x,dy=e.clientY-old.y;pointers.set(e.pointerId,{x:e.clientX,y:e.clientY});
+ if(pointers.size>=2){const [a,b]=[...pointers.values()],distance=Math.hypot(a.x-b.x,a.y-b.y),mid={x:(a.x+b.x)/2,y:(a.y+b.y)/2};if(previousPinch){zoomBy(Math.log(distance/Math.max(1,previousPinch.distance)));S.panX+=mid.x-previousPinch.mid.x;S.panY+=mid.y-previousPinch.mid.y;}previousPinch={distance,mid};}
+ else if(e.shiftKey||S.shape==='tree'){S.panX+=dx;S.panY+=dy;}
+ else if(!S.constant){if(e.altKey){S.higher+=dx*.008;S.rz+=dy*.005;$('higher').value=Math.round(S.higher*180/Math.PI)%180;setText('higher-value',Math.round(S.higher*180/Math.PI)+'°');}else{S.ry+=dx*.006;S.rx+=dy*.006;}}
+ requestDraw();});
+function release(e){pointers.delete(e.pointerId);previousPinch=null;if(!pointers.size)canvas.classList.remove('dragging');}
+canvas.addEventListener('pointerup',release);canvas.addEventListener('pointercancel',release);canvas.addEventListener('lostpointercapture',release);
+canvas.addEventListener('wheel',e=>{e.preventDefault();zoomBy(-Math.max(-180,Math.min(180,e.deltaY))*(e.deltaMode===1?.03:.003));},{passive:false});
+canvas.addEventListener('keydown',e=>{let handled=true;switch(e.key){case '+':case '=':zoomBy(.28);break;case '-':zoomBy(-.28);break;case 'ArrowLeft':S.ry-=.1;break;case 'ArrowRight':S.ry+=.1;break;case 'ArrowUp':S.rx-=.1;break;case 'ArrowDown':S.rx+=.1;break;case '0':reset();break;default:handled=false;}if(handled){e.preventDefault();requestDraw();}});
+function reset(){S.zoom=0;treeZoom=constantZoom=0;S.panX=S.panY=0;S.rx=S.stage<4?0:-.38;S.ry=S.stage<4?0:.58;S.rz=S.stage<4?0:-.12;S.higher=28*Math.PI/180;S.auto=false;settleZoom();rebuild();updateUI();requestDraw();}
+$('language').onchange=e=>{S.lang=e.target.value;updateUI();requestDraw();};
+$('theme').onclick=()=>{document.documentElement.dataset.theme=document.documentElement.dataset.theme==='light'?'dark':'light';readPalette();updateUI();requestDraw();};
+$('shape').onchange=e=>{S.shape=e.target.value;S.panX=S.panY=0;treeZoom=0;S.zoom=0;settleZoom();rebuild();updateUI();requestDraw();};
+$('dimension').onchange=e=>{S.dim=+e.target.value;rebuild();updateUI();requestDraw();};
+$('density').oninput=e=>{S.density=+e.target.value;rebuild();updateUI();requestDraw();};
+$('higher').oninput=e=>{S.higher=+e.target.value*Math.PI/180;setText('higher-value',e.target.value+'°');requestDraw();};
+$('precision').oninput=e=>{S.precision=+e.target.value;constantZoom=0;viewConstantZoom=0;updateUI();requestDraw();};
+$('rotate').onclick=()=>{S.auto=!S.auto;$('rotate').setAttribute('aria-pressed',String(S.auto));requestDraw();};
+$('zoom-in').onclick=()=>zoomBy(.5);$('zoom-out').onclick=()=>zoomBy(-.5);$('reset').onclick=reset;
+$('edges').onchange=e=>{S.edges=e.target.checked;requestDraw();};$('axes').onchange=e=>{S.axes=e.target.checked;requestDraw();};
+$('details').onclick=()=>{const visible=$('details-content').hidden;$('details-content').hidden=!visible;$('details').setAttribute('aria-expanded',String(visible));setText('details-sign',visible?'−':'+');};
+document.querySelectorAll('[data-constant]').forEach(b=>b.onclick=()=>{if(S.constant===b.dataset.constant)S.constant=null;else{S.constant=b.dataset.constant;S.auto=false;constantZoom=viewConstantZoom=0;S.panX=S.panY=0;}updateUI();requestDraw();});
+for(const id of ['about','info-bottom'])$(id).onclick=()=>$('dialog').showModal();
+$('fullscreen').onclick=async()=>{try{if(document.fullscreenElement)await document.exitFullscreen();else await $('viewport').requestFullscreen();}catch{toast('noFull');}};
+$('export').onclick=()=>{ // Preserve captions in the exported mathematical plate.
+ const out=document.createElement('canvas');out.width=canvas.width;out.height=canvas.height;const c=out.getContext('2d');c.drawImage(canvas,0,0);c.scale(DPR,DPR);c.fillStyle=palette.ink;c.font='22px Georgia';c.fillText($('stage-title').textContent,28,38);c.font='11px -apple-system,sans-serif';c.fillStyle=palette.muted;c.fillText('f-generative atlas · v1.5.8.4',28,59);c.fillText($('canvas-formula').textContent,28,H-36);c.fillText($('scale-label').textContent+' · '+$('scale-value').textContent,28,H-18);out.toBlob(blob=>{if(!blob)return;const url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='f-generative-atlas-v1.5.8.4-'+(S.constant||SYMBOLS[S.stage])+'.png';a.click();setTimeout(()=>URL.revokeObjectURL(url),3000);toast('saved');});};
+
+// Native OS select popups can keep mouse tracking outside the page after a
+// choice. Use document-owned listboxes instead of relying on blur timing.
+function syncSelectControls(){for(const control of selectControls.values())control.sync();}
+function enhanceSelects(){
+ let opened=null;
+ function closeMenu(){if(!opened)return;opened.close();opened=null;}
+ for(const select of document.querySelectorAll('select')){
+  const trigger=document.createElement('button'),menu=document.createElement('div');
+  trigger.type='button';trigger.id=select.id+'-trigger';trigger.className='select-trigger';
+  trigger.setAttribute('role','combobox');trigger.setAttribute('aria-haspopup','listbox');trigger.setAttribute('aria-expanded','false');
+  menu.id=select.id+'-listbox';menu.className='select-menu';menu.setAttribute('role','listbox');menu.hidden=true;
+  trigger.setAttribute('aria-controls',menu.id);
+  const label=document.querySelector('label[for="'+select.id+'"]');
+  if(label){label.id=select.id+'-label';label.htmlFor=trigger.id;trigger.setAttribute('aria-labelledby',label.id);menu.setAttribute('aria-labelledby',label.id);}
+  else{const name=select.getAttribute('aria-label');trigger.setAttribute('aria-label',name);menu.setAttribute('aria-label',name);}
+  select.hidden=true;select.tabIndex=-1;select.insertAdjacentElement('afterend',trigger);document.body.append(menu);
+  let active=0,options=[],search='',searchTime=0;
+  const control={
+   close(){menu.hidden=true;trigger.setAttribute('aria-expanded','false');trigger.removeAttribute('aria-activedescendant');},
+   sync(){
+    trigger.disabled=select.disabled;trigger.textContent=select.selectedOptions[0]?.textContent||'';
+    if(!menu.hidden){closeMenu();}
+   }
+  };
+  selectControls.set(select.id,control);
+  function highlight(index){
+   active=Math.max(0,Math.min(options.length-1,index));
+   [...menu.children].forEach((el,i)=>el.dataset.active=String(i===active));
+   const item=menu.children[active];if(item){trigger.setAttribute('aria-activedescendant',item.id);item.scrollIntoView({block:'nearest'});}
+  }
+  function openMenu(){
+   closeMenu();options=[...select.options];
+   menu.replaceChildren(...options.map((option,i)=>{
+    const item=document.createElement('div');item.id=menu.id+'-'+i;item.className='select-option';item.setAttribute('role','option');
+    item.setAttribute('aria-selected',String(option.selected));item.textContent=option.textContent;
+    item.addEventListener('pointerdown',e=>{if(e.button===0)e.preventDefault();});
+    item.addEventListener('pointermove',e=>{if(e.pointerType==='mouse')highlight(i);});
+    item.addEventListener('click',e=>commit(i,e.detail===0));return item;
+   }));
+   const r=trigger.getBoundingClientRect(),width=Math.min(Math.max(r.width,96),window.innerWidth-16);
+   const height=Math.min(240,options.length*34+10,window.innerHeight-16);
+   menu.style.width=width+'px';menu.style.maxHeight=height+'px';
+   menu.style.left=Math.max(8,Math.min(r.left,window.innerWidth-width-8))+'px';
+   menu.style.top=Math.max(8,r.bottom+height+4>window.innerHeight?r.top-height-4:r.bottom+4)+'px';
+   menu.hidden=false;opened=control;trigger.setAttribute('aria-expanded','true');search='';
+   highlight(select.selectedIndex);
+  }
+  function commit(index,keyboard){
+   if(!options[index]||options[index].disabled)return;
+   const value=options[index].value;closeMenu();
+   if(select.value!==value){select.value=value;select.dispatchEvent(new Event('change',{bubbles:true}));}
+   control.sync();
+   if(keyboard)trigger.focus({preventScroll:true});else canvas.focus({preventScroll:true});
+  }
+  trigger.addEventListener('click',()=>{if(menu.hidden)openMenu();else closeMenu();});
+  trigger.addEventListener('keydown',e=>{
+   if(e.key==='Tab'){closeMenu();return;}
+   if(e.key==='Escape'){closeMenu();e.preventDefault();return;}
+   if(['ArrowDown','ArrowUp','Home','End'].includes(e.key)){
+    e.preventDefault();const wasClosed=menu.hidden;if(wasClosed)openMenu();
+    if(e.key==='Home')highlight(0);else if(e.key==='End')highlight(options.length-1);else if(!wasClosed)highlight(active+(e.key==='ArrowDown'?1:-1));return;
+   }
+   if(e.key==='Enter'||e.key===' '){e.preventDefault();if(menu.hidden)openMenu();else commit(active,true);return;}
+   if(e.key.length===1&&!e.ctrlKey&&!e.altKey&&!e.metaKey){
+    e.preventDefault();if(menu.hidden)openMenu();const now=performance.now();search=now-searchTime<700?search+e.key:e.key;searchTime=now;
+    const index=options.findIndex(o=>o.textContent.toLocaleLowerCase().startsWith(search.toLocaleLowerCase()));if(index>=0)highlight(index);
+   }
+  });
+  trigger.addEventListener('blur',()=>{if(opened===control)closeMenu();});control.sync();
+ }
+ document.addEventListener('pointerdown',e=>{if(opened&&!e.target.closest('.select-trigger,.select-menu'))closeMenu();},true);
+ document.addEventListener('scroll',e=>{if(opened&&!e.target.closest?.('.select-menu'))closeMenu();},true);
+ window.addEventListener('resize',closeMenu);window.addEventListener('blur',closeMenu);
+}
+enhanceSelects();
+
+new ResizeObserver(()=>{resize();requestDraw();}).observe($('viewport'));document.addEventListener('visibilitychange',()=>{if(!document.hidden)requestDraw();});
+rebuild();updateUI();readPalette();resize();requestDraw();
+// Pure mathematical functions are exposed only for offline verification.
+window.AtlasMath=Object.freeze({rat,add,sub,mul,div,cmp,rstr,rnum,interval,encode,countTree,EXAMPLES,rationalCircle,zoomLayers,advanceZoom});
+</script>
+</body>
+</html>

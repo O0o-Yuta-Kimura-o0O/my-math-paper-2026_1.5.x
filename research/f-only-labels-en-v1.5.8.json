@@ -1,0 +1,1218 @@
+{
+  "format": "single-f-english-labels/1",
+  "paperVersion": "1.5.8",
+  "labels": {
+    "nat-0": {
+      "title": "Natural number 0",
+      "explanation": "Direct representation with the type specified externally."
+    },
+    "nat-1": {
+      "title": "Natural number 1",
+      "explanation": "Direct representation with the type specified externally."
+    },
+    "nat-2": {
+      "title": "Natural number 2",
+      "explanation": "Direct representation with the type specified externally."
+    },
+    "nat-3": {
+      "title": "Natural number 3",
+      "explanation": "Direct representation with the type specified externally."
+    },
+    "nat-4": {
+      "title": "Natural number 4",
+      "explanation": "Direct representation with the type specified externally."
+    },
+    "sign-0": {
+      "title": "Nonnegative sign",
+      "explanation": "Direct representation with the type specified externally."
+    },
+    "sign-1": {
+      "title": "Negative sign",
+      "explanation": "Direct representation with the type specified externally."
+    },
+    "int-minus-2": {
+      "title": "Integer -2",
+      "explanation": "Direct representation with the type specified externally."
+    },
+    "int-minus-1": {
+      "title": "Integer -1",
+      "explanation": "Direct representation with the type specified externally."
+    },
+    "int-0": {
+      "title": "Integer 0",
+      "explanation": "Direct representation with the type specified externally."
+    },
+    "int-1": {
+      "title": "Integer 1",
+      "explanation": "Direct representation with the type specified externally."
+    },
+    "int-2": {
+      "title": "Integer 2",
+      "explanation": "Direct representation with the type specified externally."
+    },
+    "rat-0-1": {
+      "title": "Rational number 0/1",
+      "explanation": "Direct representation with the type specified externally."
+    },
+    "rat-1-1": {
+      "title": "Rational number 1/1",
+      "explanation": "Direct representation with the type specified externally."
+    },
+    "rat-minus-1-1": {
+      "title": "Rational number -1/1",
+      "explanation": "Direct representation with the type specified externally."
+    },
+    "rat-2-1": {
+      "title": "Rational number 2/1",
+      "explanation": "Direct representation with the type specified externally."
+    },
+    "rat-minus-2-1": {
+      "title": "Rational number -2/1",
+      "explanation": "Direct representation with the type specified externally."
+    },
+    "rat-1-2": {
+      "title": "Rational number 1/2",
+      "explanation": "Direct representation with the type specified externally."
+    },
+    "rat-minus-1-3": {
+      "title": "Rational number -1/3",
+      "explanation": "Direct representation with the type specified externally."
+    },
+    "text-a": {
+      "title": "String a",
+      "explanation": "Represent the UTF-8 byte 97 as a natural number and place it in a singleton sequence."
+    },
+    "text-lambda": {
+      "title": "String λ",
+      "explanation": "Retain the two UTF-8 bytes as a sequence of natural numbers."
+    },
+    "pair-nat": {
+      "title": "Fixed pair of natural numbers 1 and 2",
+      "explanation": "(N(1),N(2))"
+    },
+    "list-0": {
+      "title": "Natural-number sequence of length 0",
+      "explanation": "[]"
+    },
+    "list-1": {
+      "title": "Natural-number sequence of length 1",
+      "explanation": "[0]"
+    },
+    "list-3": {
+      "title": "Natural-number sequence of length 3",
+      "explanation": "[0,1,2]"
+    },
+    "bool-false": {
+      "title": "Boolean data false",
+      "explanation": "Direct representation with the type specified externally."
+    },
+    "bool-true": {
+      "title": "Boolean data true",
+      "explanation": "Direct representation with the type specified externally."
+    },
+    "ordering-minus-1": {
+      "title": "Comparison result -1",
+      "explanation": "Direct representation with the type specified externally."
+    },
+    "ordering-0": {
+      "title": "Comparison result 0",
+      "explanation": "Direct representation with the type specified externally."
+    },
+    "ordering-1": {
+      "title": "Comparison result 1",
+      "explanation": "Direct representation with the type specified externally."
+    },
+    "option-none": {
+      "title": "No value",
+      "explanation": "Node(0;)"
+    },
+    "option-some": {
+      "title": "Present value: natural number 2",
+      "explanation": "Node(1;N(2))"
+    },
+    "result-success": {
+      "title": "Operation success",
+      "explanation": "Node(0;Q(1/2))"
+    },
+    "result-failure": {
+      "title": "Operation failure",
+      "explanation": "Node(1;Text(\"zero\")). Retain the reason rather than treating it as the value zero."
+    },
+    "m-zero": {
+      "title": "M-polynomial: 0",
+      "explanation": "A sequence of rational coefficients beginning with the constant term. M is the type of all such finite sequences."
+    },
+    "m-one": {
+      "title": "M-polynomial: 1",
+      "explanation": "A sequence of rational coefficients beginning with the constant term. M is the type of all such finite sequences."
+    },
+    "m-epsilon": {
+      "title": "M-polynomial: ε",
+      "explanation": "A sequence of rational coefficients beginning with the constant term. M is the type of all such finite sequences."
+    },
+    "m-epsilon-squared": {
+      "title": "M-polynomial: ε²",
+      "explanation": "A sequence of rational coefficients beginning with the constant term. M is the type of all such finite sequences."
+    },
+    "m-one-plus-epsilon": {
+      "title": "M-polynomial: 1+ε",
+      "explanation": "A sequence of rational coefficients beginning with the constant term. M is the type of all such finite sequences."
+    },
+    "m-epsilon-half": {
+      "title": "M-polynomial: ε/2",
+      "explanation": "A sequence of rational coefficients beginning with the constant term. M is the type of all such finite sequences."
+    },
+    "m-general": {
+      "title": "M-polynomial: 1−2ε+(1/2)ε²",
+      "explanation": "A sequence of rational coefficients beginning with the constant term. M is the type of all such finite sequences."
+    },
+    "legacy-l": {
+      "title": "Auxiliary relation label L: 0#",
+      "explanation": "The pair (k,q)=(1,0). Its embedding into M is the coefficient list [0,1]. The integer k counts relation operators; it is not an recursion count n."
+    },
+    "f-zero": {
+      "title": "F: zero",
+      "explanation": "Normalized polynomial ratio {\"numerator\":[],\"denominator\":[\"1/1\"]}"
+    },
+    "f-one": {
+      "title": "F: one",
+      "explanation": "Normalized polynomial ratio {\"numerator\":[\"1/1\"],\"denominator\":[\"1/1\"]}"
+    },
+    "f-minus-one": {
+      "title": "F: minus-one",
+      "explanation": "Normalized polynomial ratio {\"numerator\":[\"-1/1\"],\"denominator\":[\"1/1\"]}"
+    },
+    "f-epsilon": {
+      "title": "F: epsilon",
+      "explanation": "Normalized polynomial ratio {\"numerator\":[\"0/1\",\"1/1\"],\"denominator\":[\"1/1\"]}"
+    },
+    "f-inverse-epsilon": {
+      "title": "F: inverse-epsilon",
+      "explanation": "Normalized polynomial ratio {\"numerator\":[\"1/1\"],\"denominator\":[\"0/1\",\"1/1\"]}"
+    },
+    "f-square-ratio": {
+      "title": "F: square-ratio",
+      "explanation": "Normalized polynomial ratio {\"numerator\":[\"0/1\",\"0/1\",\"1/1\"],\"denominator\":[\"1/1\",\"1/1\"]}"
+    },
+    "poly-degree": {
+      "title": "Degree of ε²",
+      "explanation": "Direct representation with the type specified externally."
+    },
+    "valuation-negative": {
+      "title": "Degree difference for 1/ε",
+      "explanation": "Direct representation with the type specified externally."
+    },
+    "standard-part": {
+      "title": "st((1+ε)/(2−ε))",
+      "explanation": "The output value of the standard part. Its domain condition and computation evidence are checked separately."
+    },
+    "complex-zero": {
+      "title": "Generative complex number zero",
+      "explanation": "The matrix ((a,−b),(b,a)) from the original proposal. All entries belong to F."
+    },
+    "complex-one": {
+      "title": "Generative complex number one",
+      "explanation": "The matrix ((a,−b),(b,a)) from the original proposal. All entries belong to F."
+    },
+    "complex-i": {
+      "title": "Generative complex number i",
+      "explanation": "The matrix ((a,−b),(b,a)) from the original proposal. All entries belong to F."
+    },
+    "complex-one-plus-i": {
+      "title": "Generative complex number one-plus-i",
+      "explanation": "The matrix ((a,−b),(b,a)) from the original proposal. All entries belong to F."
+    },
+    "complex-one-minus-i": {
+      "title": "Generative complex number one-minus-i",
+      "explanation": "The matrix ((a,−b),(b,a)) from the original proposal. All entries belong to F."
+    },
+    "quaternion-one": {
+      "title": "Generative quaternion one",
+      "explanation": "Read ((a+bi),(c+di)) as z+w j. Each complex number uses the matrix representation of the original proposal."
+    },
+    "quaternion-i": {
+      "title": "Generative quaternion i",
+      "explanation": "Read ((a+bi),(c+di)) as z+w j. Each complex number uses the matrix representation of the original proposal."
+    },
+    "quaternion-j": {
+      "title": "Generative quaternion j",
+      "explanation": "Read ((a+bi),(c+di)) as z+w j. Each complex number uses the matrix representation of the original proposal."
+    },
+    "quaternion-k": {
+      "title": "Generative quaternion k",
+      "explanation": "Read ((a+bi),(c+di)) as z+w j. Each complex number uses the matrix representation of the original proposal."
+    },
+    "quaternion-all-one": {
+      "title": "Generative quaternion all-one",
+      "explanation": "Read ((a+bi),(c+di)) as z+w j. Each complex number uses the matrix representation of the original proposal."
+    },
+    "type-n": {
+      "title": "Type N",
+      "explanation": "Node(0;)"
+    },
+    "type-z": {
+      "title": "Type Z",
+      "explanation": "Node(1;)"
+    },
+    "type-q": {
+      "title": "Type Q",
+      "explanation": "Node(2;)"
+    },
+    "type-m": {
+      "title": "Type M",
+      "explanation": "Node(3;)"
+    },
+    "type-f": {
+      "title": "Type F",
+      "explanation": "Node(4;)"
+    },
+    "type-c": {
+      "title": "Type C",
+      "explanation": "Node(5;)"
+    },
+    "type-h": {
+      "title": "Type H",
+      "explanation": "Node(6;)"
+    },
+    "type-bool": {
+      "title": "Type Bool",
+      "explanation": "Node(7;)"
+    },
+    "type-text": {
+      "title": "Type Text",
+      "explanation": "Node(8;)"
+    },
+    "type-arrow": {
+      "title": "Type Arrow",
+      "explanation": "Node(9;)"
+    },
+    "type-lambda": {
+      "title": "Type Lambda",
+      "explanation": "Node(10;)"
+    },
+    "type-proposition": {
+      "title": "Type Proposition",
+      "explanation": "Node(11;)"
+    },
+    "type-proof": {
+      "title": "Type Proof",
+      "explanation": "Node(12;)"
+    },
+    "type-unit": {
+      "title": "Type Unit",
+      "explanation": "Node(13;)"
+    },
+    "type-list": {
+      "title": "Type List(Q)",
+      "explanation": "List(Q)"
+    },
+    "type-pair": {
+      "title": "Type Pair(N,Q)",
+      "explanation": "Pair(N,Q)"
+    },
+    "type-option": {
+      "title": "Type Option(N)",
+      "explanation": "Option(N)"
+    },
+    "type-function": {
+      "title": "Type Function(Q,Q)",
+      "explanation": "Function(Q,Q)"
+    },
+    "type-ordering": {
+      "title": "Type Ordering",
+      "explanation": "Ordering"
+    },
+    "type-interval": {
+      "title": "Type Interval",
+      "explanation": "Interval"
+    },
+    "type-generator": {
+      "title": "Type Generator(N,Interval)",
+      "explanation": "Generator(N,Interval)"
+    },
+    "type-qrep": {
+      "title": "Auxiliary type QRep",
+      "explanation": "Node(21;). A pair of integers with a positive, nonzero denominator. Unreduced representations are permitted and distinguished from canonical rational numbers Q."
+    },
+    "type-result": {
+      "title": "Type Result(QRep)",
+      "explanation": "Node(22;Type(QRep)). Distinguish successful values from operation errors."
+    },
+    "qrep-four-four": {
+      "title": "Unreduced fraction representation 4/4",
+      "explanation": "A pair of integers. It corresponds to the decoded representation of the λ-normal-form output of QRepAdd QHalf QHalf. It is distinct from the canonical Q representation 1/1."
+    },
+    "lambda-true": {
+      "title": "λ-definition True",
+      "explanation": "λt.λf.t"
+    },
+    "lambda-false": {
+      "title": "λ-definition False",
+      "explanation": "λt.λf.f"
+    },
+    "lambda-if": {
+      "title": "λ-definition If",
+      "explanation": "λb.λt.λe.b t e"
+    },
+    "lambda-and": {
+      "title": "λ-definition And",
+      "explanation": "λp.λq.p q p"
+    },
+    "lambda-or": {
+      "title": "λ-definition Or",
+      "explanation": "λp.λq.p p q"
+    },
+    "lambda-not": {
+      "title": "λ-definition Not",
+      "explanation": "λb.b False True"
+    },
+    "lambda-pair": {
+      "title": "λ-definition Pair",
+      "explanation": "λa.λb.λf.f a b"
+    },
+    "lambda-fst": {
+      "title": "λ-definition Fst",
+      "explanation": "λp.p (λa.λb.a)"
+    },
+    "lambda-snd": {
+      "title": "λ-definition Snd",
+      "explanation": "λp.p (λa.λb.b)"
+    },
+    "lambda-zero": {
+      "title": "λ-definition Zero",
+      "explanation": "λf.λx.x"
+    },
+    "lambda-succ": {
+      "title": "λ-definition Succ",
+      "explanation": "λn.λf.λx.f (n f x)"
+    },
+    "lambda-one": {
+      "title": "λ-definition One",
+      "explanation": "Succ Zero"
+    },
+    "lambda-two": {
+      "title": "λ-definition Two",
+      "explanation": "Succ One"
+    },
+    "lambda-three": {
+      "title": "λ-definition Three",
+      "explanation": "Succ Two"
+    },
+    "lambda-four": {
+      "title": "λ-definition Four",
+      "explanation": "Succ Three"
+    },
+    "lambda-add": {
+      "title": "λ-definition Add",
+      "explanation": "λm.λn.λf.λx.m f (n f x)"
+    },
+    "lambda-mul": {
+      "title": "λ-definition Mul",
+      "explanation": "λm.λn.λf.λx.m (n f) x"
+    },
+    "lambda-pred": {
+      "title": "λ-definition Pred",
+      "explanation": "λn.λf.λx.n (λg.λh.h (g f)) (λu.x) (λu.u)"
+    },
+    "lambda-sub": {
+      "title": "λ-definition Sub",
+      "explanation": "λm.λn.n Pred m"
+    },
+    "lambda-iszero": {
+      "title": "λ-definition IsZero",
+      "explanation": "λn.n (λx.False) True"
+    },
+    "lambda-leq": {
+      "title": "λ-definition Leq",
+      "explanation": "λm.λn.IsZero (Sub m n)"
+    },
+    "lambda-eqnat": {
+      "title": "λ-definition EqNat",
+      "explanation": "λm.λn.And (Leq m n) (Leq n m)"
+    },
+    "lambda-n0": {
+      "title": "λ-definition N0",
+      "explanation": "Zero"
+    },
+    "lambda-n1": {
+      "title": "λ-definition N1",
+      "explanation": "One"
+    },
+    "lambda-n2": {
+      "title": "λ-definition N2",
+      "explanation": "Two"
+    },
+    "lambda-n3": {
+      "title": "λ-definition N3",
+      "explanation": "Three"
+    },
+    "lambda-n4": {
+      "title": "λ-definition N4",
+      "explanation": "Four"
+    },
+    "lambda-0": {
+      "title": "λ-definition 0",
+      "explanation": "Zero"
+    },
+    "lambda-1": {
+      "title": "λ-definition 1",
+      "explanation": "One"
+    },
+    "lambda-2": {
+      "title": "λ-definition 2",
+      "explanation": "Two"
+    },
+    "lambda-3": {
+      "title": "λ-definition 3",
+      "explanation": "Three"
+    },
+    "lambda-4": {
+      "title": "λ-definition 4",
+      "explanation": "Four"
+    },
+    "lambda-resultok": {
+      "title": "λ-definition ResultOk",
+      "explanation": "λv.λok.λerr.ok v"
+    },
+    "lambda-resulterr": {
+      "title": "λ-definition ResultErr",
+      "explanation": "λe.λok.λerr.err e"
+    },
+    "lambda-resultbind": {
+      "title": "λ-definition ResultBind",
+      "explanation": "λr.λk.r k ResultErr"
+    },
+    "lambda-zmake": {
+      "title": "λ-definition ZMake",
+      "explanation": "λs.λn.Pair (If (IsZero n) Zero s) n"
+    },
+    "lambda-zsign": {
+      "title": "λ-definition ZSign",
+      "explanation": "Fst"
+    },
+    "lambda-zmagnitude": {
+      "title": "λ-definition ZMagnitude",
+      "explanation": "Snd"
+    },
+    "lambda-zzero": {
+      "title": "λ-definition ZZero",
+      "explanation": "ZMake Zero Zero"
+    },
+    "lambda-zone": {
+      "title": "λ-definition ZOne",
+      "explanation": "ZMake Zero One"
+    },
+    "lambda-ztwo": {
+      "title": "λ-definition ZTwo",
+      "explanation": "ZMake Zero Two"
+    },
+    "lambda-zminusone": {
+      "title": "λ-definition ZMinusOne",
+      "explanation": "ZMake One One"
+    },
+    "lambda-zneg": {
+      "title": "λ-definition ZNeg",
+      "explanation": "λz.ZMake (If (IsZero (Fst z)) One Zero) (Snd z)"
+    },
+    "lambda-zadd": {
+      "title": "λ-definition ZAdd",
+      "explanation": "λa.λb.If (EqNat (Fst a) (Fst b)) (ZMake (Fst a) (Add (Snd a) (Snd b))) (If (Leq (Snd a) (Snd b)) (ZMake (Fst b) (Sub (Snd b) (Snd a))) (ZMake (Fst a) (Sub (Snd a) (Snd b))))"
+    },
+    "lambda-zsub": {
+      "title": "λ-definition ZSub",
+      "explanation": "λa.λb.ZAdd a (ZNeg b)"
+    },
+    "lambda-zmul": {
+      "title": "λ-definition ZMul",
+      "explanation": "λa.λb.ZMake (If (EqNat (Fst a) (Fst b)) Zero One) (Mul (Snd a) (Snd b))"
+    },
+    "lambda-zeq": {
+      "title": "λ-definition ZEq",
+      "explanation": "λa.λb.And (EqNat (Fst a) (Fst b)) (EqNat (Snd a) (Snd b))"
+    },
+    "lambda-zleq": {
+      "title": "λ-definition ZLeq",
+      "explanation": "λa.λb.If (EqNat (Fst a) (Fst b)) (If (IsZero (Fst a)) (Leq (Snd a) (Snd b)) (Leq (Snd b) (Snd a))) (IsZero (Fst b))"
+    },
+    "lambda-zfromdiff": {
+      "title": "λ-definition ZFromDiff",
+      "explanation": "λp.λn.If (Leq p n) (ZMake One (Sub n p)) (ZMake Zero (Sub p n))"
+    },
+    "lambda-ztodiff": {
+      "title": "λ-definition ZToDiff",
+      "explanation": "λz.If (IsZero (Fst z)) (Pair (Snd z) Zero) (Pair Zero (Snd z))"
+    },
+    "lambda-qrep": {
+      "title": "λ-definition QRep",
+      "explanation": "Pair"
+    },
+    "lambda-qrepnum": {
+      "title": "λ-definition QRepNum",
+      "explanation": "Fst"
+    },
+    "lambda-qrepden": {
+      "title": "λ-definition QRepDen",
+      "explanation": "Snd"
+    },
+    "lambda-qrepvalid": {
+      "title": "λ-definition QRepValid",
+      "explanation": "λr.And (IsZero (Fst (Snd r))) (Not (IsZero (Snd (Snd r))))"
+    },
+    "lambda-qmake": {
+      "title": "λ-definition QMake",
+      "explanation": "λn.λd.If (IsZero (Snd d)) (ResultErr Zero) (ResultOk (Pair (If (IsZero (Fst d)) n (ZNeg n)) (ZMake Zero (Snd d))))"
+    },
+    "lambda-qzero": {
+      "title": "λ-definition QZero",
+      "explanation": "QRep ZZero ZOne"
+    },
+    "lambda-qone": {
+      "title": "λ-definition QOne",
+      "explanation": "QRep ZOne ZOne"
+    },
+    "lambda-qhalf": {
+      "title": "λ-definition QHalf",
+      "explanation": "QRep ZOne ZTwo"
+    },
+    "lambda-qrepneg": {
+      "title": "λ-definition QRepNeg",
+      "explanation": "λr.QRep (ZNeg (Fst r)) (Snd r)"
+    },
+    "lambda-qrepadd": {
+      "title": "λ-definition QRepAdd",
+      "explanation": "λa.λb.QRep (ZAdd (ZMul (Fst a) (Snd b)) (ZMul (Fst b) (Snd a))) (ZMul (Snd a) (Snd b))"
+    },
+    "lambda-qrepsub": {
+      "title": "λ-definition QRepSub",
+      "explanation": "λa.λb.QRepAdd a (QRepNeg b)"
+    },
+    "lambda-qrepmul": {
+      "title": "λ-definition QRepMul",
+      "explanation": "λa.λb.QRep (ZMul (Fst a) (Fst b)) (ZMul (Snd a) (Snd b))"
+    },
+    "lambda-qrepeq": {
+      "title": "λ-definition QRepEq",
+      "explanation": "λa.λb.ZEq (ZMul (Fst a) (Snd b)) (ZMul (Fst b) (Snd a))"
+    },
+    "lambda-qrepleq": {
+      "title": "λ-definition QRepLeq",
+      "explanation": "λa.λb.ZLeq (ZMul (Fst a) (Snd b)) (ZMul (Fst b) (Snd a))"
+    },
+    "lambda-qrepinv": {
+      "title": "λ-definition QRepInv",
+      "explanation": "λr.QMake (Snd r) (Fst r)"
+    },
+    "lambda-qrepdiv": {
+      "title": "λ-definition QRepDiv",
+      "explanation": "λa.λb.QMake (ZMul (Fst a) (Snd b)) (ZMul (Snd a) (Fst b))"
+    },
+    "lambda-identity": {
+      "title": "λ-definition Identity",
+      "explanation": "λx.x"
+    },
+    "lambda-fixy": {
+      "title": "λ-definition FixY",
+      "explanation": "λg.(λx.g (x x)) (λx.g (x x))"
+    },
+    "lambda-application": {
+      "title": "λ-definition Application",
+      "explanation": "(λx.x) (λy.y)"
+    },
+    "lambda-environment": {
+      "title": "Environment of all built-in definitions",
+      "explanation": "List((Text(name), λ-body)). Include the entire built-in vocabulary without omission."
+    },
+    "term-variable": {
+      "title": "Bound-variable index zero in a term",
+      "explanation": "Node(0;N(0)). Type and binding depend on the surrounding context."
+    },
+    "term-literal": {
+      "title": "Constant term for natural number one",
+      "explanation": "Node(1;Type(N),N(1))"
+    },
+    "term-add-call": {
+      "title": "Addition call expression",
+      "explanation": "Node(2;Text(Add),List(1,1)). Accompanied by a definition table."
+    },
+    "proposition-equal": {
+      "title": "Equality 1=1",
+      "explanation": "An example of proposition syntax. Preserving its syntax is distinct from its being true."
+    },
+    "proposition-less": {
+      "title": "Order 0<1",
+      "explanation": "An example of proposition syntax. Preserving its syntax is distinct from its being true."
+    },
+    "proposition-and": {
+      "title": "Conjunction",
+      "explanation": "An example of proposition syntax. Preserving its syntax is distinct from its being true."
+    },
+    "proposition-or": {
+      "title": "Disjunction",
+      "explanation": "An example of proposition syntax. Preserving its syntax is distinct from its being true."
+    },
+    "proposition-implies": {
+      "title": "Implication",
+      "explanation": "An example of proposition syntax. Preserving its syntax is distinct from its being true."
+    },
+    "proposition-false": {
+      "title": "Falsity",
+      "explanation": "An example of proposition syntax. Preserving its syntax is distinct from its being true."
+    },
+    "proposition-forall": {
+      "title": "For every n, n=n",
+      "explanation": "An example of proposition syntax. Preserving its syntax is distinct from its being true."
+    },
+    "proposition-exists": {
+      "title": "For some n, n=0",
+      "explanation": "An example of proposition syntax. Preserving its syntax is distinct from its being true."
+    },
+    "proposition-predicate": {
+      "title": "Named predicate nonzero(1)",
+      "explanation": "An example of proposition syntax. Preserving its syntax is distinct from its being true."
+    },
+    "proposition-not": {
+      "title": "Negation: 1=1 implies falsity",
+      "explanation": "An example of proposition syntax. Preserving its syntax is distinct from its being true."
+    },
+    "proposition-associativity": {
+      "title": "Universally quantified proposition for associativity of addition",
+      "explanation": "∀l:N.∀m:N.∀n:N. Add(Add(l,m),n)=Add(l,Add(m,n))"
+    },
+    "judgment": {
+      "title": "Judgment asserting 1=1 from no assumptions",
+      "explanation": "(assumption List,proposition)"
+    },
+    "proof-node-reflexivity": {
+      "title": "Proof node for the reflexivity rule: proposed representation",
+      "explanation": "List(rule 1,judgment,rule data,premise List). A general-purpose checker for this proposed representation has not been implemented."
+    },
+    "proof-induction-data": {
+      "title": "Rule-specific data for natural-number induction: specification example",
+      "explanation": "The induction-variable index, a reference index for the base-case proof, and a reference index for the induction-step proof. This isolated example is not a proof without the referenced records and freshness checks."
+    },
+    "interval-unit": {
+      "title": "Interval from 0/1 to 1/1",
+      "explanation": "(lower endpoint Q,upper endpoint Q). Check the order condition separately."
+    },
+    "interval-sqrt2-initial": {
+      "title": "Interval from 0/1 to 2/1",
+      "explanation": "(lower endpoint Q,upper endpoint Q). Check the order condition separately."
+    },
+    "interval-sqrt2-refined": {
+      "title": "Interval from 1/1 to 3/2",
+      "explanation": "(lower endpoint Q,upper endpoint Q). Check the order condition separately."
+    },
+    "precision-two": {
+      "title": "Precision request p=2",
+      "explanation": "Direct representation with the type specified externally."
+    },
+    "precision-width": {
+      "title": "Error tolerance 1/4 for p=2",
+      "explanation": "Direct representation with the type specified externally."
+    },
+    "qlim-parameters": {
+      "title": "Parameters of the sequence-generating label qlim(0,1)",
+      "explanation": "(Q(0),Q(1)). The finite procedure is G(q,b)(n)=q+b/(n+1). This generation record retains b for execution and is distinct from the relation label introduced by Φ."
+    },
+    "qlim-call": {
+      "title": "Input n=1 to qlim(0,1)",
+      "explanation": "An operation call. Its response value is 1/2."
+    },
+    "qlim-response": {
+      "title": "Response of qlim(0,1)(1)",
+      "explanation": "Direct representation with the type specified externally."
+    },
+    "relation-g-half": {
+      "title": "Generation record retaining b: G(0,1/2)",
+      "explanation": "(base Q, coefficient Q). Retain b in order to execute G(q,b)(n)=q+b/(n+1). This record has a different type from the output of Φ."
+    },
+    "relation-g-three-quarters": {
+      "title": "Generation record retaining b: G(0,3/4)",
+      "explanation": "(base Q, coefficient Q). Retain b in order to execute G(q,b)(n)=q+b/(n+1). This record has a different type from the output of Φ."
+    },
+    "relation-common-1": {
+      "title": "Common subsequence at t=1: indices 1 and 2 give 1/4",
+      "explanation": "List(G(0,1/2),G(0,3/4),r=2,s=3,t,n=2t−1,m=3t−1,common rational value). Recompute b/c=r/s, both index transformations, and both outputs at the recorded finite indices. The theorem for every t remains the written proof of Proposition 6.2."
+    },
+    "relation-common-2": {
+      "title": "Common subsequence at t=2: indices 3 and 5 give 1/8",
+      "explanation": "List(G(0,1/2),G(0,3/4),r=2,s=3,t,n=2t−1,m=3t−1,common rational value). Recompute b/c=r/s, both index transformations, and both outputs at the recorded finite indices. The theorem for every t remains the written proof of Proposition 6.2."
+    },
+    "relation-common-3": {
+      "title": "Common subsequence at t=3: indices 5 and 8 give 1/12",
+      "explanation": "List(G(0,1/2),G(0,3/4),r=2,s=3,t,n=2t−1,m=3t−1,common rational value). Recompute b/c=r/s, both index transformations, and both outputs at the recorded finite indices. The theorem for every t remains the written proof of Proposition 6.2."
+    },
+    "relation-intro-positive-half": {
+      "title": "Φ(G(0,1/2))=0##",
+      "explanation": "List(generation record G, target label L). Apply the specified introduction rule Φ(G(q,b))=(2sgn(b),q), discarding b from the output while retaining the integer k. Recompute k from the decoded sign of b. This individual rule check does not assert preservation of pointwise addition."
+    },
+    "relation-intro-positive-three-quarters": {
+      "title": "Φ(G(0,3/4))=0##",
+      "explanation": "List(generation record G, target label L). Apply the specified introduction rule Φ(G(q,b))=(2sgn(b),q), discarding b from the output while retaining the integer k. Recompute k from the decoded sign of b. This individual rule check does not assert preservation of pointwise addition."
+    },
+    "relation-intro-negative": {
+      "title": "Φ(G(0,−1/2))=0♭♭",
+      "explanation": "List(generation record G, target label L). Apply the specified introduction rule Φ(G(q,b))=(2sgn(b),q), discarding b from the output while retaining the integer k. Recompute k from the decoded sign of b. This individual rule check does not assert preservation of pointwise addition."
+    },
+    "relation-intro-zero": {
+      "title": "Φ(G(2,0))=2",
+      "explanation": "List(generation record G, target label L). Apply the specified introduction rule Φ(G(q,b))=(2sgn(b),q), discarding b from the output while retaining the integer k. Recompute k from the decoded sign of b. This individual rule check does not assert preservation of pointwise addition."
+    },
+    "relation-l-one-step": {
+      "title": "Relation label (k,q)=(1,0)",
+      "explanation": "The integer k retains the count of relation operators. It is a different field from the natural-number recursion count n and is not compressed to its sign after an operation."
+    },
+    "relation-l-two-steps": {
+      "title": "Relation label (k,q)=(2,0)",
+      "explanation": "The integer k retains the count of relation operators. It is a different field from the natural-number recursion count n and is not compressed to its sign after an operation."
+    },
+    "relation-l-four-steps": {
+      "title": "Relation label (k,q)=(4,0)",
+      "explanation": "The integer k retains the count of relation operators. It is a different field from the natural-number recursion count n and is not compressed to its sign after an operation."
+    },
+    "relation-l-addition": {
+      "title": "Addition of relation labels: 0##+0##=0####",
+      "explanation": "List(L(2,0),L(2,0),L(4,0)). Check componentwise addition and the embedding into F independently, retaining k=4 in the result. The general additive-group laws remain the written proof of Theorem 7.1."
+    },
+    "relation-l-order": {
+      "title": "Order: 0<0#<0##<0####",
+      "explanation": "List(L(0,0),L(1,0),L(2,0),L(4,0)). At the same base value, the order of the integer k is preserved in F. Check the three strict inequalities using the existing F comparison; this is distinct from machine checking a universal order-preservation theorem."
+    },
+    "relation-intro-not-additive": {
+      "title": "Φ(u+u) differs from Φ(u)+Φ(u)",
+      "explanation": "List(u=G(0,1/2),pointwise sum G(0,1),reintroduced label L(2,0),sum of labels L(4,0)). Retain and recompute the two distinct routes by component arithmetic and comparison in F. This counterexample rules out treating Φ as an additive homomorphism or an additive quotient map."
+    },
+    "relation-rational-error": {
+      "title": "Rational approximation to (3/2)##: return 3/2 at p=3",
+      "explanation": "List(L(2,3/2),rational approximation 3/2,natural-number request 3,rational bound 1/8). Check that the exact difference is 2ε, is positive, and lies below 1/8. Only this request is checked here; the guarantee for every p remains the written proof of Proposition 9.6. Agreement in approximation is not exact equality."
+    },
+    "relation-reject-malformed-label": {
+      "title": "Reject malformed L with a natural-number-only integer field",
+      "explanation": "List(specified check name,candidate to check,Boolean 0 for nonacceptance). Decode the stored candidate and execute the designated local check, confirming that it rejects the candidate by raising an exception. This is an explicit rejection example, not a universal checker for arbitrary programs."
+    },
+    "relation-reject-false-introduction": {
+      "title": "Reject the false output L(4,0) for Φ",
+      "explanation": "List(specified check name,candidate to check,Boolean 0 for nonacceptance). Decode the stored candidate and execute the designated local check, confirming that it rejects the candidate by raising an exception. This is an explicit rejection example, not a universal checker for arbitrary programs."
+    },
+    "relation-reject-compressed-sum": {
+      "title": "Reject a false sum that compresses k back to 2",
+      "explanation": "List(specified check name,candidate to check,Boolean 0 for nonacceptance). Decode the stored candidate and execute the designated local check, confirming that it rejects the candidate by raising an exception. This is an explicit rejection example, not a universal checker for arbitrary programs."
+    },
+    "geometric-h-third-lower": {
+      "title": "Lower procedure approaching 1/3",
+      "explanation": "(Q(q),(Q(b),Q(r))). H(q,b,r) records the recurrence x_0=q+b and x_(n+1)=q+r(x_n−q). Decode its rational parameters and check 0<r<1. This execution record is distinct from the relation label introduced by Psi."
+    },
+    "geometric-trace-third-lower": {
+      "title": "Lower procedure approaching 1/3: responses at n=0,1,2,3",
+      "explanation": "List(H,list of states List(N(n),Q(value))). Recompute the four saved rational outputs both by q+br^n and by the one-step recurrence. General formulas, termination, and direction are established by the written proofs in Appendix A, not by these four samples."
+    },
+    "geometric-intro-third-lower": {
+      "title": "Introduce an L label from lower procedure approaching 1/3 using Psi",
+      "explanation": "List(H,L). Check the stated rule Psi(H(q,b,r))=(2sgn(b),q) after decoding the parameters. The output retains the integer k and the rational base, rather than converting the iteration count n or contraction ratio r into k. Pointwise addition is not transported by this rule."
+    },
+    "geometric-h-third-upper": {
+      "title": "Upper procedure approaching 1/3",
+      "explanation": "(Q(q),(Q(b),Q(r))). H(q,b,r) records the recurrence x_0=q+b and x_(n+1)=q+r(x_n−q). Decode its rational parameters and check 0<r<1. This execution record is distinct from the relation label introduced by Psi."
+    },
+    "geometric-trace-third-upper": {
+      "title": "Upper procedure approaching 1/3: responses at n=0,1,2,3",
+      "explanation": "List(H,list of states List(N(n),Q(value))). Recompute the four saved rational outputs both by q+br^n and by the one-step recurrence. General formulas, termination, and direction are established by the written proofs in Appendix A, not by these four samples."
+    },
+    "geometric-intro-third-upper": {
+      "title": "Introduce an L label from upper procedure approaching 1/3 using Psi",
+      "explanation": "List(H,L). Check the stated rule Psi(H(q,b,r))=(2sgn(b),q) after decoding the parameters. The output retains the integer k and the rational base, rather than converting the iteration count n or contraction ratio r into k. Pointwise addition is not transported by this rule."
+    },
+    "geometric-h-third-fixed": {
+      "title": "Constant procedure returning the exact rational number 1/3",
+      "explanation": "(Q(q),(Q(b),Q(r))). H(q,b,r) records the recurrence x_0=q+b and x_(n+1)=q+r(x_n−q). Decode its rational parameters and check 0<r<1. This execution record is distinct from the relation label introduced by Psi."
+    },
+    "geometric-trace-third-fixed": {
+      "title": "Constant procedure returning the exact rational number 1/3: responses at n=0,1,2,3",
+      "explanation": "List(H,list of states List(N(n),Q(value))). Recompute the four saved rational outputs both by q+br^n and by the one-step recurrence. General formulas, termination, and direction are established by the written proofs in Appendix A, not by these four samples."
+    },
+    "geometric-intro-third-fixed": {
+      "title": "Introduce an L label from constant procedure returning the exact rational number 1/3 using Psi",
+      "explanation": "List(H,L). Check the stated rule Psi(H(q,b,r))=(2sgn(b),q) after decoding the parameters. The output retains the integer k and the rational base, rather than converting the iteration count n or contraction ratio r into k. Pointwise addition is not transported by this rule."
+    },
+    "geometric-h-two-thirds-lower": {
+      "title": "Lower procedure approaching 2/3",
+      "explanation": "(Q(q),(Q(b),Q(r))). H(q,b,r) records the recurrence x_0=q+b and x_(n+1)=q+r(x_n−q). Decode its rational parameters and check 0<r<1. This execution record is distinct from the relation label introduced by Psi."
+    },
+    "geometric-trace-two-thirds-lower": {
+      "title": "Lower procedure approaching 2/3: responses at n=0,1,2,3",
+      "explanation": "List(H,list of states List(N(n),Q(value))). Recompute the four saved rational outputs both by q+br^n and by the one-step recurrence. General formulas, termination, and direction are established by the written proofs in Appendix A, not by these four samples."
+    },
+    "geometric-intro-two-thirds-lower": {
+      "title": "Introduce an L label from lower procedure approaching 2/3 using Psi",
+      "explanation": "List(H,L). Check the stated rule Psi(H(q,b,r))=(2sgn(b),q) after decoding the parameters. The output retains the integer k and the rational base, rather than converting the iteration count n or contraction ratio r into k. Pointwise addition is not transported by this rule."
+    },
+    "geometric-h-menger-volume": {
+      "title": "Finite-stage volume of the Menger sponge",
+      "explanation": "(Q(q),(Q(b),Q(r))). H(q,b,r) records the recurrence x_0=q+b and x_(n+1)=q+r(x_n−q). Decode its rational parameters and check 0<r<1. This execution record is distinct from the relation label introduced by Psi."
+    },
+    "geometric-trace-menger-volume": {
+      "title": "Finite-stage volume of the Menger sponge: responses at n=0,1,2,3",
+      "explanation": "List(H,list of states List(N(n),Q(value))). Recompute the four saved rational outputs both by q+br^n and by the one-step recurrence. General formulas, termination, and direction are established by the written proofs in Appendix A, not by these four samples."
+    },
+    "geometric-intro-menger-volume": {
+      "title": "Introduce an L label from finite-stage volume of the menger sponge using Psi",
+      "explanation": "List(H,L). Check the stated rule Psi(H(q,b,r))=(2sgn(b),q) after decoding the parameters. The output retains the integer k and the rational base, rather than converting the iteration count n or contraction ratio r into k. Pointwise addition is not transported by this rule."
+    },
+    "decimal-record-third": {
+      "title": "Repeating-decimal record 0._3",
+      "explanation": "List(nonnegative integer part N,list of finite nonrepeating digits,nonempty list of repeating digits). The underscore marks the start of the repeating block in the display convention. Exact, lower, and upper interpretations are specified separately; direction is not encoded by the repeating digit itself."
+    },
+    "decimal-exact-third": {
+      "title": "Exact rational interpretation of 0._3",
+      "explanation": "List(decimal record,exact rational value Q,L(0,exact value)). Compute the value by a finite rational formula for the repeating block and retain relation index zero. The decimal record itself is not identified with a lower or upper relation label."
+    },
+    "decimal-record-two-thirds": {
+      "title": "Repeating-decimal record 0._6",
+      "explanation": "List(nonnegative integer part N,list of finite nonrepeating digits,nonempty list of repeating digits). The underscore marks the start of the repeating block in the display convention. Exact, lower, and upper interpretations are specified separately; direction is not encoded by the repeating digit itself."
+    },
+    "decimal-exact-two-thirds": {
+      "title": "Exact rational interpretation of 0._6",
+      "explanation": "List(decimal record,exact rational value Q,L(0,exact value)). Compute the value by a finite rational formula for the repeating block and retain relation index zero. The decimal record itself is not identified with a lower or upper relation label."
+    },
+    "decimal-prefix-1": {
+      "title": "The same first 1 decimal digits with distinct labels for 1/3",
+      "explanation": "List(record for 0._3,n,lower endpoint d_n,upper endpoint u_n,integer representing the prefix,List(L(−2,1/3),L(0,1/3),L(2,1/3)),exact value 1/3). Recompute the truncated prefix and both H responses by rational arithmetic, then check six strict bounds for the three labels using existing F arithmetic. Shared finite prefix bounds do not make the labels equal. The all-digit statement remains a written proof."
+    },
+    "decimal-prefix-2": {
+      "title": "The same first 2 decimal digits with distinct labels for 1/3",
+      "explanation": "List(record for 0._3,n,lower endpoint d_n,upper endpoint u_n,integer representing the prefix,List(L(−2,1/3),L(0,1/3),L(2,1/3)),exact value 1/3). Recompute the truncated prefix and both H responses by rational arithmetic, then check six strict bounds for the three labels using existing F arithmetic. Shared finite prefix bounds do not make the labels equal. The all-digit statement remains a written proof."
+    },
+    "decimal-prefix-3": {
+      "title": "The same first 3 decimal digits with distinct labels for 1/3",
+      "explanation": "List(record for 0._3,n,lower endpoint d_n,upper endpoint u_n,integer representing the prefix,List(L(−2,1/3),L(0,1/3),L(2,1/3)),exact value 1/3). Recompute the truncated prefix and both H responses by rational arithmetic, then check six strict bounds for the three labels using existing F arithmetic. Shared finite prefix bounds do not make the labels equal. The all-digit statement remains a written proof."
+    },
+    "decimal-lower-sum": {
+      "title": "Lower 1/3 plus lower 2/3: L(−4,1)",
+      "explanation": "List(left L,right L,result L). Add the integer and rational components in the specified type and check the embedding in F. Retain k=−4; the result is not the exact rational number 1."
+    },
+    "decimal-mixed-sum": {
+      "title": "Upper 1/3 plus lower 2/3: the exact number 1",
+      "explanation": "List(left L,right L,result L). Componentwise addition and its embedding in F give k=0 and rational base 1. This result follows from the declared interpretations and operations, not from the appearance of decimal digits."
+    },
+    "geometric-decimal-reject-invalid-ratio": {
+      "title": "Reject an H record with contraction ratio r=1",
+      "explanation": "List(selected check name,candidate data,expected rejection N(0)). Decode the saved candidate and actually invoke the local checker, confirming that it rejects the violated formation condition or false claim. This is not a decision procedure for the meaning or termination of arbitrary programs."
+    },
+    "geometric-decimal-reject-invalid-digit": {
+      "title": "Reject a repeating-decimal record containing digit 10",
+      "explanation": "List(selected check name,candidate data,expected rejection N(0)). Decode the saved candidate and actually invoke the local checker, confirming that it rejects the violated formation condition or false claim. This is not a decision procedure for the meaning or termination of arbitrary programs."
+    },
+    "geometric-decimal-reject-empty-repeat": {
+      "title": "Reject an empty repeating block",
+      "explanation": "List(selected check name,candidate data,expected rejection N(0)). Decode the saved candidate and actually invoke the local checker, confirming that it rejects the violated formation condition or false claim. This is not a decision procedure for the meaning or termination of arbitrary programs."
+    },
+    "geometric-decimal-reject-false-recurrence": {
+      "title": "Reject a false lower-procedure response equal to 1/3",
+      "explanation": "List(selected check name,candidate data,expected rejection N(0)). Decode the saved candidate and actually invoke the local checker, confirming that it rejects the violated formation condition or false claim. This is not a decision procedure for the meaning or termination of arbitrary programs."
+    },
+    "geometric-decimal-reject-false-direction": {
+      "title": "Reject introduction of a lower H procedure with positive index k=2",
+      "explanation": "List(selected check name,candidate data,expected rejection N(0)). Decode the saved candidate and actually invoke the local checker, confirming that it rejects the violated formation condition or false claim. This is not a decision procedure for the meaning or termination of arbitrary programs."
+    },
+    "geometric-decimal-reject-false-exact-label": {
+      "title": "Reject identification of exact 1/3 with a label having k=−2",
+      "explanation": "List(selected check name,candidate data,expected rejection N(0)). Decode the saved candidate and actually invoke the local checker, confirming that it rejects the violated formation condition or false claim. This is not a decision procedure for the meaning or termination of arbitrary programs."
+    },
+    "sqrt2-state": {
+      "title": "State of the generator specified by the interval-generating label for √2",
+      "explanation": "List(stage index 2,lower endpoint 1,upper endpoint 3/2)"
+    },
+    "leibniz-state": {
+      "title": "Initial state of the generator specified by the Leibniz interval-generating label",
+      "explanation": "List(stage index 0,lower endpoint 8/3,upper endpoint 4)"
+    },
+    "label-with-evidence": {
+      "title": "Record retaining the qlim rule, arguments, specification, and evidence",
+      "explanation": "List(rule reference,arguments,specification,evidence). This record describes checks of qlim responses; it is not a unified label required of every number or of T. Its evidence field refers to the written proof of Proposition 6.1 in the paper; this structural example is not claimed to have passed general proof checking."
+    },
+    "label-pending-division": {
+      "title": "Syntax of division awaiting evidence of separation",
+      "explanation": "The call expression DivLabel(P,Q). Since the condition of separation from zero has not been satisfied, this is not evidence permitting execution as a label that satisfies the contract."
+    },
+    "newton-state": {
+      "title": "State after one Newton update",
+      "explanation": "List(stage index 1,lower endpoint 4/3,upper endpoint 3/2). The product of the endpoints is 2."
+    },
+    "separation-witness": {
+      "title": "Evidence data for a response separated from zero",
+      "explanation": "(request 0,interval [1,2]). Only separation from zero at the endpoints is checked; the universal contract for the corresponding generative label is required separately."
+    },
+    "zero-classification-zero": {
+      "title": "Zero classification: zero",
+      "explanation": "Node(0;). Distinguish zero, nonzero, and unknown. Computation evidence for specific classifications is included in proof-generators."
+    },
+    "zero-classification-nonzero": {
+      "title": "Zero classification: nonzero",
+      "explanation": "Node(1;). Distinguish zero, nonzero, and unknown. Computation evidence for specific classifications is included in proof-generators."
+    },
+    "zero-classification-unknown": {
+      "title": "Zero classification: unknown",
+      "explanation": "Node(2;). Distinguish zero, nonzero, and unknown. Computation evidence for specific classifications is included in proof-generators."
+    },
+    "alternating-rule": {
+      "title": "Finite rule data for an alternating sum",
+      "explanation": "A finite record selecting a known family. A proof of the general contract and checks at each precision are attached separately."
+    },
+    "cauchy-modulus": {
+      "title": "Syntax of the error modulus μ(k)=k+2",
+      "explanation": "A call expression for natural-number addition. Its validity as an error modulus is proved in relation to the sequence concerned."
+    },
+    "cauchy-center-radius": {
+      "title": "Center and radius for finite interval construction",
+      "explanation": "(center 1/4,radius 1/4). Data for J_0=[0,1/2], obtained from the geometric sequence s_n=2^(-n) and μ(0)=2."
+    },
+    "translated-label": {
+      "title": "Label retaining an integer translation",
+      "explanation": "(base-label reference P,integer −2). Translate the output value."
+    },
+    "translation-arrow": {
+      "title": "Translation arrow τ(P,2;−1)",
+      "explanation": "List(base-label reference P,source integer 2,translation amount −1). The target integer is 1."
+    },
+    "register-state": {
+      "title": "Initial state of the three-register machine",
+      "explanation": "(instruction position 0,List(2,3,0)). Initial state for the input 2+3."
+    },
+    "register-program": {
+      "title": "Complete instruction sequence for three-register addition",
+      "explanation": "A six-instruction addition program using four instruction types from the instruction convention zero,succ,copy,jeq,halt. Its execution traces and checks are included in proof-models."
+    },
+    "precision-field-epsilon": {
+      "title": "Full F precision request ε",
+      "explanation": "Retain a positive element of F as an error request, distinguished from a request using the rational number 2^(-p)."
+    },
+    "polynomial-derivative": {
+      "title": "Formal derivative 2x of 1+x²",
+      "explanation": "Direct representation with the type specified externally."
+    },
+    "polynomial-primitive": {
+      "title": "Antiderivative x+x³/3 of 1+x² with zero constant term",
+      "explanation": "Direct representation with the type specified externally."
+    },
+    "polynomial-integral": {
+      "title": "Formal integral 4/3 of 1+x² between endpoints 0 and 1",
+      "explanation": "Direct representation with the type specified externally."
+    },
+    "beta-step": {
+      "title": "Record of one β-reduction step",
+      "explanation": "List(β-rule 0,root position,λ-term before reduction,λ-term after reduction,empty sequence of auxiliary evidence)"
+    },
+    "identity-arrow": {
+      "title": "Identity arrow",
+      "explanation": "(state λx.x,empty trace)"
+    },
+    "one-step-arrow": {
+      "title": "Arrow for one β-reduction step",
+      "explanation": "(initial state,List(reduction step)). Distinguished externally from a general state type."
+    },
+    "lambda-position": {
+      "title": "Positions for the λ-body, function side, and argument side",
+      "explanation": "List(N(0),N(1),N(2)). Whether a position is valid in a particular term is checked separately."
+    },
+    "status-normal-form": {
+      "title": "Termination status normal-form",
+      "explanation": "The discriminant part Node(0;). Actual traces also retain additional data."
+    },
+    "status-step-limit": {
+      "title": "Termination status step-limit",
+      "explanation": "The discriminant part Node(1;). Actual traces also retain additional data."
+    },
+    "status-stopped": {
+      "title": "Termination status stopped",
+      "explanation": "The discriminant part Node(2;). Actual traces also retain additional data."
+    },
+    "status-error": {
+      "title": "Termination status error",
+      "explanation": "The discriminant part Node(3;). Actual traces also retain additional data."
+    },
+    "json-null": {
+      "title": "JSON null",
+      "explanation": "A format for conversion in both directions using tags and payloads. It is distinct from a direct number representation."
+    },
+    "json-false": {
+      "title": "JSON false",
+      "explanation": "A format for conversion in both directions using tags and payloads. It is distinct from a direct number representation."
+    },
+    "json-true": {
+      "title": "JSON true",
+      "explanation": "A format for conversion in both directions using tags and payloads. It is distinct from a direct number representation."
+    },
+    "json-2": {
+      "title": "JSON 2",
+      "explanation": "A format for conversion in both directions using tags and payloads. It is distinct from a direct number representation."
+    },
+    "json-a": {
+      "title": "JSON \"a\"",
+      "explanation": "A format for conversion in both directions using tags and payloads. It is distinct from a direct number representation."
+    },
+    "json-array": {
+      "title": "JSON [1,2]",
+      "explanation": "A format for conversion in both directions using tags and payloads. It is distinct from a direct number representation."
+    },
+    "json-record": {
+      "title": "JSON {\"a\":1}",
+      "explanation": "A format for conversion in both directions using tags and payloads. It is distinct from a direct number representation."
+    },
+    "proof-nat-paths": {
+      "title": "General proofs of all 16 propositions",
+      "explanation": "Every key and value of the source file verification/certificates/nat-and-paths.json. Nothing is omitted from the basic-symbol file."
+    },
+    "proof-lambda": {
+      "title": "All saved λ-calculus computation traces",
+      "explanation": "Every key and value of the source file verification/certificates/lambda-examples-v8.0.1.json. Nothing is omitted from the basic-symbol file."
+    },
+    "proof-applications": {
+      "title": "All saved application evidence",
+      "explanation": "Every key and value of the source file verification/certificates/application-examples-v1.5.8.json. Nothing is omitted from the basic-symbol file."
+    },
+    "proof-field": {
+      "title": "All saved F-arithmetic evidence",
+      "explanation": "Every key and value of the source file verification/certificates/formal-field-examples-v1.5.8.json. Nothing is omitted from the basic-symbol file."
+    },
+    "proof-generators": {
+      "title": "All finite traces for the generative-label extensions",
+      "explanation": "Every key and value of the source file verification/certificates/generator-extensions-v1.5.8.json. Nothing is omitted from the basic-symbol file."
+    },
+    "proof-models": {
+      "title": "All register-computation and conditional-equational traces",
+      "explanation": "Every key and value of the source file verification/certificates/model-extensions-v1.5.8.json. Nothing is omitted from the basic-symbol file."
+    },
+    "type-t": {
+      "title": "Type T",
+      "explanation": "Node(23;). An independent type of pairs (a,b) of F values, with multiplication corresponding to σ²=2."
+    },
+    "t-zero": {
+      "title": "T value 0",
+      "explanation": "A pair (a,b) of two F values. Specify type T before calculation; integration with a sequence or interval generator is not required."
+    },
+    "t-one": {
+      "title": "T value 1",
+      "explanation": "A pair (a,b) of two F values. Specify type T before calculation; integration with a sequence or interval generator is not required."
+    },
+    "t-minus-one": {
+      "title": "T value −1",
+      "explanation": "A pair (a,b) of two F values. Specify type T before calculation; integration with a sequence or interval generator is not required."
+    },
+    "t-two": {
+      "title": "T value 2",
+      "explanation": "A pair (a,b) of two F values. Specify type T before calculation; integration with a sequence or interval generator is not required."
+    },
+    "t-sigma": {
+      "title": "T value σ",
+      "explanation": "A pair (a,b) of two F values. Specify type T before calculation; integration with a sequence or interval generator is not required."
+    },
+    "t-sigma-half": {
+      "title": "T value σ/2",
+      "explanation": "A pair (a,b) of two F values. Specify type T before calculation; integration with a sequence or interval generator is not required."
+    },
+    "t-one-plus-sigma": {
+      "title": "T value 1+σ",
+      "explanation": "A pair (a,b) of two F values. Specify type T before calculation; integration with a sequence or interval generator is not required."
+    },
+    "t-one-minus-sigma": {
+      "title": "T value 1−σ",
+      "explanation": "A pair (a,b) of two F values. Specify type T before calculation; integration with a sequence or interval generator is not required."
+    },
+    "fixed-t-product-conjugate": {
+      "title": "Product with type fixed to T: (1,1)(1,−1)=(−1,0)",
+      "explanation": "List(type T, operation name Mul, list of two inputs, result in T). Decode all components as F values and recompute (ac+2bd,ad+bc). Check the previously declared type and the formation conditions for all inputs and the result."
+    },
+    "fixed-t-product-sigma-square": {
+      "title": "Product with type fixed to T: σ²=(2,0)",
+      "explanation": "List(type T, operation name Mul, list of two inputs, result in T). Decode all components as F values and recompute (ac+2bd,ad+bc). Check the previously declared type and the formation conditions for all inputs and the result."
+    },
+    "natform-program": {
+      "title": "Finite NatForm program checking the formation conditions for the specified type N",
+      "explanation": "Node(2;Node(0;true),Node(1;),Node(0;false)). Instruction 0 returns a Boolean; instruction 1 repeats the program on the only child; instruction 2 branches on zero, one, or two children. A small evaluator reads the decoded program tree and executes the examples. This is not a universal type classifier."
+    },
+    "natform-zero": {
+      "title": "NatForm(f())=true",
+      "explanation": "List(specified type N, NatForm program, input to check, Boolean result). Run the recursive formation check on the finite tree and compare its output with the recorded Boolean. A two-child shape in f-only notation is rejected as a natural-number representation."
+    },
+    "natform-successor": {
+      "title": "NatForm(f(f()))=true",
+      "explanation": "List(specified type N, NatForm program, input to check, Boolean result). Run the recursive formation check on the finite tree and compare its output with the recorded Boolean. A two-child shape in f-only notation is rejected as a natural-number representation."
+    },
+    "natform-pair": {
+      "title": "NatForm(f(f()f()))=false",
+      "explanation": "List(specified type N, NatForm program, input to check, Boolean result). Run the recursive formation check on the finite tree and compare its output with the recorded Boolean. A two-child shape in f-only notation is rejected as a natural-number representation."
+    },
+    "natform-nested-pair": {
+      "title": "NatForm(f(f(f()f())))=false",
+      "explanation": "List(specified type N, NatForm program, input to check, Boolean result). Run the recursive formation check on the finite tree and compare its output with the recorded Boolean. A two-child shape in f-only notation is rejected as a natural-number representation."
+    },
+    "approx-value-error-bracket": {
+      "title": "Approximate value and error bound: bounds from interval endpoints",
+      "explanation": "(precision request 3 in N, (approximate value 17/12 in Q, error bound 1/204 in Q)). This is a rational response requested separately from a value of type T. The endpoints 24/17 and 17/12 bracket σ; their width is 1/204 and is at most 2⁻³."
+    },
+    "approx-value-error-residual": {
+      "title": "Approximate value and error bound: bound from the residual",
+      "explanation": "(precision request 3 in N, (approximate value 17/12 in Q, error bound 1/288 in Q)). This is a rational response requested separately from a value of type T. For q=17/12≥1, the rational residual bound |q²−2|/2 is 1/288 and is at most 2⁻³."
+    },
+    "pi-rule": {
+      "title": "Pi rule: local identifier 0, specification version 1",
+      "explanation": "(Natural rule identifier 0, natural specification version 1), read in its specified type. It names the Leibniz rational bounds and the two strict membership conditions. General cut laws and the correspondence with ordinary pi remain written proofs in Appendix B."
+    },
+    "pi-recurrence-two-steps": {
+      "title": "Two finite recurrence steps: 1, 2/3, 13/15",
+      "explanation": "List(rule version, List(List(n, canonical rational text))). Recompute two recurrence steps from S0=1 and compare with the three independently stated expected values. This is not an induction proof for all stages."
+    },
+    "pi-lower-witness": {
+      "title": "A left-membership witness: 3 < B3",
+      "explanation": "List(rule version, side: left 0 or right 1, rational q, natural witness m). Recompute the strict rational inequality q < Bm or Am < q. No infinite enumeration or arbitrary exact-equality decision is performed."
+    },
+    "pi-upper-witness": {
+      "title": "A right-membership witness: A1 < 7/2",
+      "explanation": "List(rule version, side: left 0 or right 1, rational q, natural witness m). Recompute the strict rational inequality q < Bm or Am < q. No infinite enumeration or arbitrary exact-equality decision is performed."
+    },
+    "pi-bracket-0": {
+      "title": "A finite pi interval response at precision p=0",
+      "explanation": "List(rule version, request p, index m=2^p, lower canonical rational text, upper canonical rational text). Recompute the separately stated endpoints and width 4/(4m+3) < 2^(-p). Large endpoints are finite certificate strings, distinct from direct unary Q syntax. The all-precision theorem remains a written proof."
+    },
+    "pi-bracket-1": {
+      "title": "A finite pi interval response at precision p=1",
+      "explanation": "List(rule version, request p, index m=2^p, lower canonical rational text, upper canonical rational text). Recompute the separately stated endpoints and width 4/(4m+3) < 2^(-p). Large endpoints are finite certificate strings, distinct from direct unary Q syntax. The all-precision theorem remains a written proof."
+    },
+    "pi-bracket-2": {
+      "title": "A finite pi interval response at precision p=2",
+      "explanation": "List(rule version, request p, index m=2^p, lower canonical rational text, upper canonical rational text). Recompute the separately stated endpoints and width 4/(4m+3) < 2^(-p). Large endpoints are finite certificate strings, distinct from direct unary Q syntax. The all-precision theorem remains a written proof."
+    },
+    "pi-bracket-3": {
+      "title": "A finite pi interval response at precision p=3",
+      "explanation": "List(rule version, request p, index m=2^p, lower canonical rational text, upper canonical rational text). Recompute the separately stated endpoints and width 4/(4m+3) < 2^(-p). Large endpoints are finite certificate strings, distinct from direct unary Q syntax. The all-precision theorem remains a written proof."
+    },
+    "pi-located-left": {
+      "title": "Finite locatedness choice: left branch",
+      "explanation": "List(rule version, q, r, m=ceil(2/(r-q)), selected side). Check width < (r-q)/2, then choose a left witness if q < Bm, and otherwise a right witness Am < r. Recheck that membership witness. These two inputs exercise both branches, not the general theorem."
+    },
+    "pi-located-right": {
+      "title": "Finite locatedness choice: right branch",
+      "explanation": "List(rule version, q, r, m=ceil(2/(r-q)), selected side). Check width < (r-q)/2, then choose a left witness if q < Bm, and otherwise a right witness Am < r. Recheck that membership witness. These two inputs exercise both branches, not the general theorem."
+    },
+    "pi-reject-lower-boundary": {
+      "title": "Reject stage m=0 as a left witness for q=B0",
+      "explanation": "List(check name, candidate, expected rejection 0). Execute the local checker and confirm rejection of the recorded boundary, witness, recurrence, or version error. This is not a decision procedure for general exact-pi equality."
+    },
+    "pi-reject-upper-boundary": {
+      "title": "Reject stage m=0 as a right witness for q=A0",
+      "explanation": "List(check name, candidate, expected rejection 0). Execute the local checker and confirm rejection of the recorded boundary, witness, recurrence, or version error. This is not a decision procedure for general exact-pi equality."
+    },
+    "pi-reject-changed-witness": {
+      "title": "Reject changing the left witness for q=3 to m=0",
+      "explanation": "List(check name, candidate, expected rejection 0). Execute the local checker and confirm rejection of the recorded boundary, witness, recurrence, or version error. This is not a decision procedure for general exact-pi equality."
+    },
+    "pi-reject-false-recurrence": {
+      "title": "Reject the false recurrence value S2=1",
+      "explanation": "List(check name, candidate, expected rejection 0). Execute the local checker and confirm rejection of the recorded boundary, witness, recurrence, or version error. This is not a decision procedure for general exact-pi equality."
+    },
+    "pi-reject-unknown-version": {
+      "title": "Reject undefined specification version 2",
+      "explanation": "List(check name, candidate, expected rejection 0). Execute the local checker and confirm rejection of the recorded boundary, witness, recurrence, or version error. This is not a decision procedure for general exact-pi equality."
+    }
+  }
+}

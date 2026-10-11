@@ -92,7 +92,7 @@ for(let i=0;i<pieces.length;i++){
   const id=`paper-${String(section.number).padStart(2,'0')}`;
   const item=writeTree(id,E.encodeText(text),{
     kind:'manuscript-text',title:section.title,source:config.paper,sourceStart:section.start,
-    ...(section.number===13?{endmatterIncluded:['付録A','関連研究','参考文献']}:{}),
+    ...(section.number===13?{endmatterIncluded:['付録A','付録B','関連研究','参考文献']}:{}),
     sourceEnd:section.start+text.length,sourceBytes:Buffer.byteLength(text),sourceSha256:sha(text),
     encoding:'UTF-8 bytes as unary natural list, then the single-f constructor',
     checkKind:'lossless-text-recovery-not-formal-proof',
@@ -108,7 +108,7 @@ const programs=[
   ['program-lambda-core','λ計算核と計算証跡の再検査',config.interpreter,lambdaSource],
   ['program-generator-extensions','区間生成ラベルの拡張と有限応答検査','verification/generator-extensions.mjs',null],
   ['program-model-extensions','レジスタ機械と条件付き等式証跡の検査','verification/model-extensions.mjs',null],
-  ['program-concept-examples','構造例・NatForm・型Tの積・G/Hの導入・循環小数解釈の有限検査','scripts/generate-concepts.mjs',null],
+  ['program-concept-examples','構造例・NatForm・型Tの積・G/Hの導入・小数解釈・円周率証拠の有限検査','scripts/generate-concepts.mjs',null],
 ];
 const programRows=[];
 for(const [id,title,source,extracted] of programs){
@@ -141,7 +141,7 @@ function chapterOf(e){
   if(id.startsWith('int-')||id.startsWith('sign-')||id.startsWith('lambda-z'))return 4;
   if(id.startsWith('rat-')||id.startsWith('qrep-')||id.startsWith('lambda-q'))return 5;
   if(id.startsWith('geometric-'))return 6;
-  if(id.startsWith('decimal-'))return 9;
+  if(id.startsWith('decimal-')||id.startsWith('pi-'))return 9;
   if(id.startsWith('qlim-')||id==='label-with-evidence'||/^relation-(g-|common-|intro-(positive-|negative$|zero$))/.test(id))return 6;
   if(id==='relation-rational-error')return 9;
   if(id.startsWith('relation-'))return 7;
@@ -161,11 +161,11 @@ const shortNotes={
   6:'G(q,b)は係数bを保持する実行記録である。b/c=r/sのときの共通部分列を有限添字で照合し、別の導入規則Φ(G(q,b))=(2sgn(b),q)で関係子ラベルを得る。b>0の導入先はq##。近似の添字nと、導入先で保持する関係子の整数kを区別する。付録AのH(q,b,r)についても、有限の再帰応答と別の導入規則Ψを照合する。',
   7:'関係子ラベルL(k,q)の成分加法と順序を保つ。0##+0##=0####であり、結果のk=4を符号だけへ圧縮しない。生成記録の点ごとの加法とラベルの加法は別で、Φ(u+u)とΦ(u)+Φ(u)は異なる。現在のMは次章の全有限多項式である。',
   8:'有理係数の列としてのM多項式、その分数F、生成複素数の行列、生成複素数二つの対としての生成四元数を構成する。さらにF二つの対Tへσ²=2の乗法を定め、Tに固定した積の入力と結果を示す。',
-  9:'区間・精度・状態・有限履歴も、数とその組み合わせで表す。近似は必要なときの別操作である。q##の厳密な差2εが有理誤差内に入る具体例を検査するが、近似の一致を厳密な等値とせず、全ての数に生成器との統合ラベルを要求しない。付録Aの循環小数は記録と読みを分け、厳密値・下側・上側に同じ有限接頭桁があっても等値とはしない。',
+  9:'区間・精度・状態・有限履歴も、数とその組み合わせで表す。近似は必要なときの別操作である。q##の厳密な差2εが有理誤差内に入る具体例を検査するが、近似の一致を厳密な等値とせず、全ての数に生成器との統合ラベルを要求しない。付録Aの循環小数は記録と読みを分け、厳密値・下側・上側に同じ有限接頭桁があっても等値とはしない。付録Bの円周率では、規則参照・有限再帰・所属証拠・区間応答・所在性の具体例を同じfの記号列に収める。',
   10:'命題の形と証明の形を分ける。全16命題と保存済みの各証拠束も省略せず収録する。',
   11:'確定反例と未確定事項の区別は本文に記し、その全文をIIに保持する。',
   12:'個別の構文往復、元の検査器による証拠再検査、手書き証明の状態を区別する。',
-  13:'残る課題を含む本文の全文はIIで復元できる。記号を統一しても、課題を解決済みに変更しない。',
+  13:'残る課題を含む本文の全文と付録Bの超現実数比較・円周率の指定規則はIIで復元できる。記号を統一しても、課題を解決済みに変更しない。',
 };
 for(const section of chapterStarts){
   lines.push(`\n### ${section.number}. ${section.title}\n\n${shortNotes[section.number]}\n\n`);
@@ -181,9 +181,9 @@ for(const section of chapterStarts){
   }
 }
 lines.push('\n## II. 本文全文の保存\n\n',
-  '各ファイルは、本文の該当部分をUTF-8のバイト列として自然数の列へ戻し、さらに同じfの形にしたものである。第13章後の付録A・関連研究・参考文献も含め、表紙から最後までを保持し、順番に復号して連結すると本文ファイルの全内容に一致する。これは文章の可逆保存であり、Iの数学的なデータ構造や証拠形式とは区別する。\n\n',
+  '各ファイルは、本文の該当部分をUTF-8のバイト列として自然数の列へ戻し、さらに同じfの形にしたものである。第13章後の付録A・付録B・関連研究・参考文献も含め、表紙から最後までを保持し、順番に復号して連結すると本文ファイルの全内容に一致する。これは文章の可逆保存であり、Iの数学的なデータ構造や証拠形式とは区別する。\n\n',
   '| 本文の範囲 | fだけの全文 |\n|---|---|\n');
-for(const item of textRows)lines.push(`| ${item.number?`${item.number}. `:''}${item.title}${item.number===13?'、付録A、関連研究、参考文献':''} | [${item.record.id}.f](../${item.record.path}) |\n`);
+for(const item of textRows)lines.push(`| ${item.number?`${item.number}. `:''}${item.title}${item.number===13?'、付録A、付録B、関連研究、参考文献':''} | [${item.record.id}.f](../${item.record.path}) |\n`);
 lines.push('\n## III. 実行定義の全文保存\n\n',
   '数や証拠の操作名が参照する既存の実行定義も、同じ文字列保存の規約で収録する。復号後は元の言語のプログラムである。JavaScriptの算術を純粋なλ簡約へ移植した、という意味ではない。\n\n',
   '| 実行定義 | fだけの全文 |\n|---|---|\n');
@@ -191,5 +191,5 @@ for(const item of programRows)lines.push(`| ${item.title} | [${item.record.id}.f
 lines.push(`\n検査記録：[全ファイルと保存範囲](../${folder}/manifest.json)、[復号・証拠再検査](../${folder}/report.json)。\n`);
 output(config.fOnlyAppendix,lines.join(''));
 output(`${folder}/manifest.json`,json({format:'single-f-appendix/1',paperVersion:version,alphabet:'f ( ) and whitespace; no comma or standalone pair parentheses',grammar:'U := f() | f(U) | f(UU)',structuralCount:allExamples.length,manuscript:config.paper,manuscriptSha256:sha(paper),manuscriptBytes:Buffer.byteLength(paper),files:manifest}));
-output(`${folder}/report.json`,json({format:'single-f-verification/1',paperVersion:version,status:'passed',structuralCount:allExamples.length,completeProofBundles:verifiedProofIds.size,textSections:textRows.length,programSources:programRows.length,completeManuscriptRecovered:true,sourceDeclaredChecks:{fixedTypeExamples:sourceReport.fixedTypeExamples,natFormExecution:sourceReport.natFormExecution,approximationExamples:sourceReport.approximationExamples,relationLabelExamples:sourceReport.relationLabelExamples,geometricDecimalExamples:sourceReport.geometricDecimalExamples},checks:results,scope:'The constructor mapping is reversible. The exact constructor trees of the source NatForm, fixed-T, approximation/error, and G-to-L, H-to-L, and decimal-interpretation examples are preserved; their declared execution checks run in generate-concepts. Structural proof bundles are rechecked by the original kernels; source text round trips are archival, not formal proof verification.'}));
+output(`${folder}/report.json`,json({format:'single-f-verification/1',paperVersion:version,status:'passed',structuralCount:allExamples.length,completeProofBundles:verifiedProofIds.size,textSections:textRows.length,programSources:programRows.length,completeManuscriptRecovered:true,sourceDeclaredChecks:{fixedTypeExamples:sourceReport.fixedTypeExamples,natFormExecution:sourceReport.natFormExecution,approximationExamples:sourceReport.approximationExamples,relationLabelExamples:sourceReport.relationLabelExamples,geometricDecimalExamples:sourceReport.geometricDecimalExamples,exactPiExamples:sourceReport.exactPiExamples},checks:results,scope:'The constructor mapping is reversible. The exact constructor trees of the source NatForm, fixed-T, approximation/error, and G-to-L, H-to-L, and decimal-interpretation examples are preserved; their declared execution checks run in generate-concepts. Appendix B pi witness and bracket checks are also preserved with their stated finite scope; exact-cut general laws are not machine-verified. Structural proof bundles are rechecked by the original kernels; source text round trips are archival, not formal proof verification.'}));
 console.log(`${check?'Verified':'Generated and verified'} single-f appendix: ${allExamples.length} structures, ${verifiedProofIds.size} proof bundles, ${textRows.length} complete manuscript sections, ${programRows.length} program sources.`);

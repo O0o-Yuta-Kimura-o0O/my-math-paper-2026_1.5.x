@@ -1,0 +1,2430 @@
+{
+  "format": "concept-symbol-verification/1",
+  "paperVersion": "1.5.8",
+  "status": "passed",
+  "exampleCount": 303,
+  "builtinDefinitionCount": 66,
+  "certificateBundles": 6,
+  "fixedTypeExamples": {
+    "typeTag": 23,
+    "type": "T",
+    "valueExamples": 8,
+    "multiplicationExamples": 2,
+    "rejectedWrongType": true,
+    "rejectedMalformedInput": true,
+    "rejectedWrongProduct": true
+  },
+  "natFormExecution": {
+    "specifiedType": "N",
+    "programExamples": 1,
+    "recordedExamples": 4,
+    "rejectedUnknownInstruction": true
+  },
+  "approximationExamples": {
+    "valueErrorPairs": 2,
+    "methods": [
+      "bracket",
+      "residual"
+    ],
+    "precision": 3
+  },
+  "relationLabelExamples": {
+    "structuralExamples": 19,
+    "generatorRecords": 2,
+    "commonSubsequenceCases": 3,
+    "introductionCases": 4,
+    "labelValues": 3,
+    "additionCases": 1,
+    "orderChains": 1,
+    "nonadditivityCases": 1,
+    "rationalPrecisionCases": 1,
+    "rejectionCases": 3,
+    "retainsExecutionCoefficient": true,
+    "retainsLabelIndex": true
+  },
+  "geometricDecimalExamples": {
+    "structuralExamples": 30,
+    "geometricRecords": 5,
+    "recurrenceTraces": 5,
+    "statesPerTrace": 4,
+    "introductionCases": 5,
+    "decimalRecords": 2,
+    "exactInterpretations": 2,
+    "prefixCases": 3,
+    "prefixDigits": [
+      1,
+      2,
+      3
+    ],
+    "additionCases": 2,
+    "rejectionCases": 6,
+    "retainsRecurrenceParameters": true,
+    "separatesDecimalInterpretation": true
+  },
+  "exactPiExamples": {
+    "structuralExamples": 15,
+    "ruleRecords": 1,
+    "specificationVersion": 1,
+    "recurrenceTraces": 1,
+    "recurrenceSteps": 2,
+    "membershipWitnesses": 2,
+    "bracketResponses": 4,
+    "precisions": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "locatedBranches": 2,
+    "rejectionCases": 5,
+    "endpointEncoding": "canonical-rational-text",
+    "generalCutLawsMachineVerified": false,
+    "arbitraryExactEqualityImplemented": false
+  },
+  "checks": [
+    {
+      "id": "nat-0",
+      "status": "passed",
+      "validation": "型付きの復号結果を、指定した正規値と照合。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "nat-1",
+      "status": "passed",
+      "validation": "型付きの復号結果を、指定した正規値と照合。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "nat-2",
+      "status": "passed",
+      "validation": "型付きの復号結果を、指定した正規値と照合。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "nat-3",
+      "status": "passed",
+      "validation": "型付きの復号結果を、指定した正規値と照合。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "nat-4",
+      "status": "passed",
+      "validation": "型付きの復号結果を、指定した正規値と照合。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "sign-0",
+      "status": "passed",
+      "validation": "型付きの復号結果を、指定した正規値と照合。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "sign-1",
+      "status": "passed",
+      "validation": "型付きの復号結果を、指定した正規値と照合。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "int-minus-2",
+      "status": "passed",
+      "validation": "型付きの復号結果を、指定した正規値と照合。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "int-minus-1",
+      "status": "passed",
+      "validation": "型付きの復号結果を、指定した正規値と照合。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "int-0",
+      "status": "passed",
+      "validation": "型付きの復号結果を、指定した正規値と照合。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "int-1",
+      "status": "passed",
+      "validation": "型付きの復号結果を、指定した正規値と照合。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "int-2",
+      "status": "passed",
+      "validation": "型付きの復号結果を、指定した正規値と照合。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "rat-0-1",
+      "status": "passed",
+      "validation": "型付きの復号結果を、指定した正規値と照合。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "rat-1-1",
+      "status": "passed",
+      "validation": "型付きの復号結果を、指定した正規値と照合。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "rat-minus-1-1",
+      "status": "passed",
+      "validation": "型付きの復号結果を、指定した正規値と照合。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "rat-2-1",
+      "status": "passed",
+      "validation": "型付きの復号結果を、指定した正規値と照合。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "rat-minus-2-1",
+      "status": "passed",
+      "validation": "型付きの復号結果を、指定した正規値と照合。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "rat-1-2",
+      "status": "passed",
+      "validation": "型付きの復号結果を、指定した正規値と照合。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "rat-minus-1-3",
+      "status": "passed",
+      "validation": "型付きの復号結果を、指定した正規値と照合。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "text-a",
+      "status": "passed",
+      "validation": "型付きの復号結果を、指定した正規値と照合。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "text-lambda",
+      "status": "passed",
+      "validation": "型付きの復号結果を、指定した正規値と照合。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "pair-nat",
+      "status": "passed",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "list-0",
+      "status": "passed",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "list-1",
+      "status": "passed",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "list-3",
+      "status": "passed",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "bool-false",
+      "status": "passed",
+      "validation": "型付きの復号結果を、指定した正規値と照合。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "bool-true",
+      "status": "passed",
+      "validation": "型付きの復号結果を、指定した正規値と照合。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "ordering-minus-1",
+      "status": "passed",
+      "validation": "型付きの復号結果を、指定した正規値と照合。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "ordering-0",
+      "status": "passed",
+      "validation": "型付きの復号結果を、指定した正規値と照合。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "ordering-1",
+      "status": "passed",
+      "validation": "型付きの復号結果を、指定した正規値と照合。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "option-none",
+      "status": "passed",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。",
+      "checkKind": "syntax-roundtrip-only"
+    },
+    {
+      "id": "option-some",
+      "status": "passed",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。",
+      "checkKind": "syntax-roundtrip-only"
+    },
+    {
+      "id": "result-success",
+      "status": "passed",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。",
+      "checkKind": "syntax-roundtrip-only"
+    },
+    {
+      "id": "result-failure",
+      "status": "passed",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。",
+      "checkKind": "syntax-roundtrip-only"
+    },
+    {
+      "id": "m-zero",
+      "status": "passed",
+      "validation": "型付きの復号結果を、指定した正規値と照合。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "m-one",
+      "status": "passed",
+      "validation": "型付きの復号結果を、指定した正規値と照合。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "m-epsilon",
+      "status": "passed",
+      "validation": "型付きの復号結果を、指定した正規値と照合。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "m-epsilon-squared",
+      "status": "passed",
+      "validation": "型付きの復号結果を、指定した正規値と照合。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "m-one-plus-epsilon",
+      "status": "passed",
+      "validation": "型付きの復号結果を、指定した正規値と照合。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "m-epsilon-half",
+      "status": "passed",
+      "validation": "型付きの復号結果を、指定した正規値と照合。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "m-general",
+      "status": "passed",
+      "validation": "型付きの復号結果を、指定した正規値と照合。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "legacy-l",
+      "status": "passed",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "f-zero",
+      "status": "passed",
+      "validation": "型付きの復号結果を、指定した正規値と照合。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "f-one",
+      "status": "passed",
+      "validation": "型付きの復号結果を、指定した正規値と照合。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "f-minus-one",
+      "status": "passed",
+      "validation": "型付きの復号結果を、指定した正規値と照合。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "f-epsilon",
+      "status": "passed",
+      "validation": "型付きの復号結果を、指定した正規値と照合。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "f-inverse-epsilon",
+      "status": "passed",
+      "validation": "型付きの復号結果を、指定した正規値と照合。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "f-square-ratio",
+      "status": "passed",
+      "validation": "型付きの復号結果を、指定した正規値と照合。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "poly-degree",
+      "status": "passed",
+      "validation": "型付きの復号結果を、指定した正規値と照合。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "valuation-negative",
+      "status": "passed",
+      "validation": "型付きの復号結果を、指定した正規値と照合。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "standard-part",
+      "status": "passed",
+      "validation": "型付きの復号結果を、指定した正規値と照合。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "complex-zero",
+      "status": "passed",
+      "validation": "型付きの復号結果を、指定した正規値と照合。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "complex-one",
+      "status": "passed",
+      "validation": "型付きの復号結果を、指定した正規値と照合。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "complex-i",
+      "status": "passed",
+      "validation": "型付きの復号結果を、指定した正規値と照合。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "complex-one-plus-i",
+      "status": "passed",
+      "validation": "型付きの復号結果を、指定した正規値と照合。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "complex-one-minus-i",
+      "status": "passed",
+      "validation": "型付きの復号結果を、指定した正規値と照合。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "quaternion-one",
+      "status": "passed",
+      "validation": "型付きの復号結果を、指定した正規値と照合。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "quaternion-i",
+      "status": "passed",
+      "validation": "型付きの復号結果を、指定した正規値と照合。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "quaternion-j",
+      "status": "passed",
+      "validation": "型付きの復号結果を、指定した正規値と照合。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "quaternion-k",
+      "status": "passed",
+      "validation": "型付きの復号結果を、指定した正規値と照合。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "quaternion-all-one",
+      "status": "passed",
+      "validation": "型付きの復号結果を、指定した正規値と照合。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "type-n",
+      "status": "passed",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。",
+      "checkKind": "syntax-roundtrip-only"
+    },
+    {
+      "id": "type-z",
+      "status": "passed",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。",
+      "checkKind": "syntax-roundtrip-only"
+    },
+    {
+      "id": "type-q",
+      "status": "passed",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。",
+      "checkKind": "syntax-roundtrip-only"
+    },
+    {
+      "id": "type-m",
+      "status": "passed",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。",
+      "checkKind": "syntax-roundtrip-only"
+    },
+    {
+      "id": "type-f",
+      "status": "passed",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。",
+      "checkKind": "syntax-roundtrip-only"
+    },
+    {
+      "id": "type-c",
+      "status": "passed",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。",
+      "checkKind": "syntax-roundtrip-only"
+    },
+    {
+      "id": "type-h",
+      "status": "passed",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。",
+      "checkKind": "syntax-roundtrip-only"
+    },
+    {
+      "id": "type-bool",
+      "status": "passed",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。",
+      "checkKind": "syntax-roundtrip-only"
+    },
+    {
+      "id": "type-text",
+      "status": "passed",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。",
+      "checkKind": "syntax-roundtrip-only"
+    },
+    {
+      "id": "type-arrow",
+      "status": "passed",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。",
+      "checkKind": "syntax-roundtrip-only"
+    },
+    {
+      "id": "type-lambda",
+      "status": "passed",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。",
+      "checkKind": "syntax-roundtrip-only"
+    },
+    {
+      "id": "type-proposition",
+      "status": "passed",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。",
+      "checkKind": "syntax-roundtrip-only"
+    },
+    {
+      "id": "type-proof",
+      "status": "passed",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。",
+      "checkKind": "syntax-roundtrip-only"
+    },
+    {
+      "id": "type-unit",
+      "status": "passed",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。",
+      "checkKind": "syntax-roundtrip-only"
+    },
+    {
+      "id": "type-list",
+      "status": "passed",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。",
+      "checkKind": "syntax-roundtrip-only"
+    },
+    {
+      "id": "type-pair",
+      "status": "passed",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。",
+      "checkKind": "syntax-roundtrip-only"
+    },
+    {
+      "id": "type-option",
+      "status": "passed",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。",
+      "checkKind": "syntax-roundtrip-only"
+    },
+    {
+      "id": "type-function",
+      "status": "passed",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。",
+      "checkKind": "syntax-roundtrip-only"
+    },
+    {
+      "id": "type-ordering",
+      "status": "passed",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。",
+      "checkKind": "syntax-roundtrip-only"
+    },
+    {
+      "id": "type-interval",
+      "status": "passed",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。",
+      "checkKind": "syntax-roundtrip-only"
+    },
+    {
+      "id": "type-generator",
+      "status": "passed",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。",
+      "checkKind": "syntax-roundtrip-only"
+    },
+    {
+      "id": "type-qrep",
+      "status": "passed",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。",
+      "checkKind": "syntax-roundtrip-only"
+    },
+    {
+      "id": "type-result",
+      "status": "passed",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。",
+      "checkKind": "syntax-roundtrip-only"
+    },
+    {
+      "id": "qrep-four-four",
+      "status": "passed",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "type-t",
+      "status": "passed",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。",
+      "checkKind": "syntax-roundtrip-only"
+    },
+    {
+      "id": "t-zero",
+      "status": "passed",
+      "validation": "型付きの復号結果を、指定した正規値と照合。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "t-one",
+      "status": "passed",
+      "validation": "型付きの復号結果を、指定した正規値と照合。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "t-minus-one",
+      "status": "passed",
+      "validation": "型付きの復号結果を、指定した正規値と照合。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "t-two",
+      "status": "passed",
+      "validation": "型付きの復号結果を、指定した正規値と照合。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "t-sigma",
+      "status": "passed",
+      "validation": "型付きの復号結果を、指定した正規値と照合。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "t-sigma-half",
+      "status": "passed",
+      "validation": "型付きの復号結果を、指定した正規値と照合。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "t-one-plus-sigma",
+      "status": "passed",
+      "validation": "型付きの復号結果を、指定した正規値と照合。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "t-one-minus-sigma",
+      "status": "passed",
+      "validation": "型付きの復号結果を、指定した正規値と照合。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "fixed-t-product-conjugate",
+      "status": "passed",
+      "validation": "計算開始前の指定型Tを確認し、全入力・結果のT形成条件と、F算術による積の二成分を検査。",
+      "checkKind": "syntax-and-declared-content",
+      "evidence": {
+        "declaredType": "T",
+        "inputs": 2,
+        "resultType": "T",
+        "operation": "Mul",
+        "recomputed": true
+      }
+    },
+    {
+      "id": "fixed-t-product-sigma-square",
+      "status": "passed",
+      "validation": "計算開始前の指定型Tを確認し、全入力・結果のT形成条件と、F算術による積の二成分を検査。",
+      "checkKind": "syntax-and-declared-content",
+      "evidence": {
+        "declaredType": "T",
+        "inputs": 2,
+        "resultType": "T",
+        "operation": "Mul",
+        "recomputed": true
+      }
+    },
+    {
+      "id": "natform-program",
+      "status": "passed",
+      "validation": "復号したプログラム木を小実行器で解釈し、基底・一子・二子・一子内の二子を実際に判定。万能な型判別ではない。",
+      "checkKind": "syntax-and-declared-content",
+      "evidence": {
+        "specifiedType": "N",
+        "executedCases": 4
+      }
+    },
+    {
+      "id": "natform-zero",
+      "status": "passed",
+      "validation": "指定Nの形成条件を有限木上で再帰実行し、記録した真偽結果と照合。",
+      "checkKind": "syntax-and-declared-content",
+      "evidence": {
+        "specifiedType": "N",
+        "accepted": true
+      }
+    },
+    {
+      "id": "natform-successor",
+      "status": "passed",
+      "validation": "指定Nの形成条件を有限木上で再帰実行し、記録した真偽結果と照合。",
+      "checkKind": "syntax-and-declared-content",
+      "evidence": {
+        "specifiedType": "N",
+        "accepted": true
+      }
+    },
+    {
+      "id": "natform-pair",
+      "status": "passed",
+      "validation": "指定Nの形成条件を有限木上で再帰実行し、記録した真偽結果と照合。",
+      "checkKind": "syntax-and-declared-content",
+      "evidence": {
+        "specifiedType": "N",
+        "accepted": false
+      }
+    },
+    {
+      "id": "natform-nested-pair",
+      "status": "passed",
+      "validation": "指定Nの形成条件を有限木上で再帰実行し、記録した真偽結果と照合。",
+      "checkKind": "syntax-and-declared-content",
+      "evidence": {
+        "specifiedType": "N",
+        "accepted": false
+      }
+    },
+    {
+      "id": "lambda-true",
+      "status": "passed",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "lambda-false",
+      "status": "passed",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "lambda-if",
+      "status": "passed",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "lambda-and",
+      "status": "passed",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "lambda-or",
+      "status": "passed",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "lambda-not",
+      "status": "passed",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "lambda-pair",
+      "status": "passed",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "lambda-fst",
+      "status": "passed",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "lambda-snd",
+      "status": "passed",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "lambda-zero",
+      "status": "passed",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "lambda-succ",
+      "status": "passed",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "lambda-one",
+      "status": "passed",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "lambda-two",
+      "status": "passed",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "lambda-three",
+      "status": "passed",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "lambda-four",
+      "status": "passed",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "lambda-add",
+      "status": "passed",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "lambda-mul",
+      "status": "passed",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "lambda-pred",
+      "status": "passed",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "lambda-sub",
+      "status": "passed",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "lambda-iszero",
+      "status": "passed",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "lambda-leq",
+      "status": "passed",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "lambda-eqnat",
+      "status": "passed",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "lambda-n0",
+      "status": "passed",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "lambda-n1",
+      "status": "passed",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "lambda-n2",
+      "status": "passed",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "lambda-n3",
+      "status": "passed",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "lambda-n4",
+      "status": "passed",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "lambda-0",
+      "status": "passed",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "lambda-1",
+      "status": "passed",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "lambda-2",
+      "status": "passed",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "lambda-3",
+      "status": "passed",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "lambda-4",
+      "status": "passed",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "lambda-resultok",
+      "status": "passed",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "lambda-resulterr",
+      "status": "passed",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "lambda-resultbind",
+      "status": "passed",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "lambda-zmake",
+      "status": "passed",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "lambda-zsign",
+      "status": "passed",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "lambda-zmagnitude",
+      "status": "passed",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "lambda-zzero",
+      "status": "passed",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "lambda-zone",
+      "status": "passed",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "lambda-ztwo",
+      "status": "passed",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "lambda-zminusone",
+      "status": "passed",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "lambda-zneg",
+      "status": "passed",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "lambda-zadd",
+      "status": "passed",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "lambda-zsub",
+      "status": "passed",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "lambda-zmul",
+      "status": "passed",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "lambda-zeq",
+      "status": "passed",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "lambda-zleq",
+      "status": "passed",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "lambda-zfromdiff",
+      "status": "passed",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "lambda-ztodiff",
+      "status": "passed",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "lambda-qrep",
+      "status": "passed",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "lambda-qrepnum",
+      "status": "passed",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "lambda-qrepden",
+      "status": "passed",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "lambda-qrepvalid",
+      "status": "passed",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "lambda-qmake",
+      "status": "passed",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "lambda-qzero",
+      "status": "passed",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "lambda-qone",
+      "status": "passed",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "lambda-qhalf",
+      "status": "passed",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "lambda-qrepneg",
+      "status": "passed",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "lambda-qrepadd",
+      "status": "passed",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "lambda-qrepsub",
+      "status": "passed",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "lambda-qrepmul",
+      "status": "passed",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "lambda-qrepeq",
+      "status": "passed",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "lambda-qrepleq",
+      "status": "passed",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "lambda-qrepinv",
+      "status": "passed",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "lambda-qrepdiv",
+      "status": "passed",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "lambda-identity",
+      "status": "passed",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "lambda-fixy",
+      "status": "passed",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "lambda-application",
+      "status": "passed",
+      "validation": "復号したλ項と元の項のα同値を検査。参照名の定義表は別途同梱。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "lambda-environment",
+      "status": "passed",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "term-variable",
+      "status": "passed",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。",
+      "checkKind": "syntax-roundtrip-only"
+    },
+    {
+      "id": "term-literal",
+      "status": "passed",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。",
+      "checkKind": "syntax-roundtrip-only"
+    },
+    {
+      "id": "term-add-call",
+      "status": "passed",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。",
+      "checkKind": "syntax-roundtrip-only"
+    },
+    {
+      "id": "proposition-equal",
+      "status": "passed",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。",
+      "checkKind": "syntax-roundtrip-only"
+    },
+    {
+      "id": "proposition-less",
+      "status": "passed",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。",
+      "checkKind": "syntax-roundtrip-only"
+    },
+    {
+      "id": "proposition-and",
+      "status": "passed",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。",
+      "checkKind": "syntax-roundtrip-only"
+    },
+    {
+      "id": "proposition-or",
+      "status": "passed",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。",
+      "checkKind": "syntax-roundtrip-only"
+    },
+    {
+      "id": "proposition-implies",
+      "status": "passed",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。",
+      "checkKind": "syntax-roundtrip-only"
+    },
+    {
+      "id": "proposition-false",
+      "status": "passed",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。",
+      "checkKind": "syntax-roundtrip-only"
+    },
+    {
+      "id": "proposition-forall",
+      "status": "passed",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。",
+      "checkKind": "syntax-roundtrip-only"
+    },
+    {
+      "id": "proposition-exists",
+      "status": "passed",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。",
+      "checkKind": "syntax-roundtrip-only"
+    },
+    {
+      "id": "proposition-predicate",
+      "status": "passed",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。",
+      "checkKind": "syntax-roundtrip-only"
+    },
+    {
+      "id": "proposition-not",
+      "status": "passed",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。",
+      "checkKind": "syntax-roundtrip-only"
+    },
+    {
+      "id": "proposition-associativity",
+      "status": "passed",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。",
+      "checkKind": "syntax-roundtrip-only"
+    },
+    {
+      "id": "judgment",
+      "status": "passed",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。",
+      "checkKind": "syntax-roundtrip-only"
+    },
+    {
+      "id": "proof-node-reflexivity",
+      "status": "passed",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。",
+      "checkKind": "syntax-roundtrip-only"
+    },
+    {
+      "id": "proof-induction-data",
+      "status": "passed",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。",
+      "checkKind": "syntax-roundtrip-only"
+    },
+    {
+      "id": "interval-unit",
+      "status": "passed",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "interval-sqrt2-initial",
+      "status": "passed",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "interval-sqrt2-refined",
+      "status": "passed",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "precision-two",
+      "status": "passed",
+      "validation": "型付きの復号結果を、指定した正規値と照合。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "precision-width",
+      "status": "passed",
+      "validation": "型付きの復号結果を、指定した正規値と照合。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "approx-value-error-bracket",
+      "status": "passed",
+      "validation": "有理上下端の平方挟み込み・正確な幅1/204・要求1/8以下を再計算。型Tとの一般対応は本文の手書き証明。",
+      "checkKind": "syntax-and-declared-content",
+      "evidence": {
+        "precision": 3,
+        "response": "approximation-and-error",
+        "method": "bracket",
+        "value": "17/12",
+        "error": "1/204",
+        "recomputed": true
+      }
+    },
+    {
+      "id": "approx-value-error-residual",
+      "status": "passed",
+      "validation": "q≥1と正確な残差から上界1/288・要求1/8以下を再計算。型Tとの一般対応は本文の手書き証明。",
+      "checkKind": "syntax-and-declared-content",
+      "evidence": {
+        "precision": 3,
+        "response": "approximation-and-error",
+        "method": "residual",
+        "value": "17/12",
+        "error": "1/288",
+        "recomputed": true
+      }
+    },
+    {
+      "id": "qlim-parameters",
+      "status": "passed",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。",
+      "checkKind": "syntax-roundtrip-only"
+    },
+    {
+      "id": "qlim-call",
+      "status": "passed",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。",
+      "checkKind": "syntax-roundtrip-only"
+    },
+    {
+      "id": "qlim-response",
+      "status": "passed",
+      "validation": "型付きの復号結果を、指定した正規値と照合。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "relation-g-half",
+      "status": "passed",
+      "validation": "型付きの復号結果を、指定した正規値と照合。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "relation-g-three-quarters",
+      "status": "passed",
+      "validation": "型付きの復号結果を、指定した正規値と照合。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "relation-common-1",
+      "status": "passed",
+      "validation": "記録した有限添字で比・添字対応・有理出力を検査。任意tの共通部分列定理は本文命題6.2の手書き証明。",
+      "checkKind": "syntax-and-declared-content",
+      "evidence": {
+        "indices": [
+          "1",
+          "2"
+        ],
+        "parameter": "1",
+        "commonValue": "1/4",
+        "recomputed": true
+      }
+    },
+    {
+      "id": "relation-common-2",
+      "status": "passed",
+      "validation": "記録した有限添字で比・添字対応・有理出力を検査。任意tの共通部分列定理は本文命題6.2の手書き証明。",
+      "checkKind": "syntax-and-declared-content",
+      "evidence": {
+        "indices": [
+          "3",
+          "5"
+        ],
+        "parameter": "2",
+        "commonValue": "1/8",
+        "recomputed": true
+      }
+    },
+    {
+      "id": "relation-common-3",
+      "status": "passed",
+      "validation": "記録した有限添字で比・添字対応・有理出力を検査。任意tの共通部分列定理は本文命題6.2の手書き証明。",
+      "checkKind": "syntax-and-declared-content",
+      "evidence": {
+        "indices": [
+          "5",
+          "8"
+        ],
+        "parameter": "3",
+        "commonValue": "1/12",
+        "recomputed": true
+      }
+    },
+    {
+      "id": "relation-intro-positive-half",
+      "status": "passed",
+      "validation": "復号したbの符号からk=2sgn(b)を再計算。これは明示した導入規則の個別検査であり、点ごとの加法の保存を主張しない。",
+      "checkKind": "syntax-and-declared-content",
+      "evidence": {
+        "offset": "1/2",
+        "retainedIndex": "2",
+        "base": "0/1",
+        "recomputed": true
+      }
+    },
+    {
+      "id": "relation-intro-positive-three-quarters",
+      "status": "passed",
+      "validation": "復号したbの符号からk=2sgn(b)を再計算。これは明示した導入規則の個別検査であり、点ごとの加法の保存を主張しない。",
+      "checkKind": "syntax-and-declared-content",
+      "evidence": {
+        "offset": "3/4",
+        "retainedIndex": "2",
+        "base": "0/1",
+        "recomputed": true
+      }
+    },
+    {
+      "id": "relation-intro-negative",
+      "status": "passed",
+      "validation": "復号したbの符号からk=2sgn(b)を再計算。これは明示した導入規則の個別検査であり、点ごとの加法の保存を主張しない。",
+      "checkKind": "syntax-and-declared-content",
+      "evidence": {
+        "offset": "-1/2",
+        "retainedIndex": "-2",
+        "base": "0/1",
+        "recomputed": true
+      }
+    },
+    {
+      "id": "relation-intro-zero",
+      "status": "passed",
+      "validation": "復号したbの符号からk=2sgn(b)を再計算。これは明示した導入規則の個別検査であり、点ごとの加法の保存を主張しない。",
+      "checkKind": "syntax-and-declared-content",
+      "evidence": {
+        "offset": "0/1",
+        "retainedIndex": "0",
+        "base": "2/1",
+        "recomputed": true
+      }
+    },
+    {
+      "id": "relation-l-one-step",
+      "status": "passed",
+      "validation": "型付きの復号結果を、指定した正規値と照合。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "relation-l-two-steps",
+      "status": "passed",
+      "validation": "型付きの復号結果を、指定した正規値と照合。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "relation-l-four-steps",
+      "status": "passed",
+      "validation": "型付きの復号結果を、指定した正規値と照合。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "relation-l-addition",
+      "status": "passed",
+      "validation": "整数・有理成分の和と既存F算術を別々に再計算。一般の加法群法則は本文定理7.1の手書き証明。",
+      "checkKind": "syntax-and-declared-content",
+      "evidence": {
+        "retainedIndex": "4",
+        "embeddedArithmeticChecked": true
+      }
+    },
+    {
+      "id": "relation-l-order",
+      "status": "passed",
+      "validation": "既存F比較で三つの厳密不等式を検査。順序保存の全称命題とは区別。",
+      "checkKind": "syntax-and-declared-content",
+      "evidence": {
+        "strictComparisons": 3,
+        "nonzeroLabelChecked": true
+      }
+    },
+    {
+      "id": "relation-intro-not-additive",
+      "status": "passed",
+      "validation": "一つの反例を成分算術とF比較で再計算。Φを加法準同型、または逐点加算を継承する商写像とする誤った同定を検出する。",
+      "checkKind": "syntax-and-declared-content",
+      "evidence": {
+        "reintroducedIndex": "2",
+        "addedIndex": "4",
+        "unequal": true
+      }
+    },
+    {
+      "id": "relation-rational-error",
+      "status": "passed",
+      "validation": "p=3の誤差だけを既存F算術で検査。全pの保証は本文命題9.6の手書き証明であり、近似の一致を厳密等値にしない。",
+      "checkKind": "syntax-and-declared-content",
+      "evidence": {
+        "precision": "3",
+        "exactDifference": "2epsilon",
+        "strictlyPositive": true,
+        "belowRationalBound": true
+      }
+    },
+    {
+      "id": "relation-reject-malformed-label",
+      "status": "passed",
+      "validation": "保存した候補を復号し、指定した局所検査が例外で拒否することを実行確認。任意のプログラムに対する万能検査ではない。",
+      "checkKind": "syntax-and-declared-content",
+      "evidence": {
+        "operation": "DecodeL",
+        "expectedRejection": true,
+        "rejectionObserved": true
+      }
+    },
+    {
+      "id": "relation-reject-false-introduction",
+      "status": "passed",
+      "validation": "保存した候補を復号し、指定した局所検査が例外で拒否することを実行確認。任意のプログラムに対する万能検査ではない。",
+      "checkKind": "syntax-and-declared-content",
+      "evidence": {
+        "operation": "Phi",
+        "expectedRejection": true,
+        "rejectionObserved": true
+      }
+    },
+    {
+      "id": "relation-reject-compressed-sum",
+      "status": "passed",
+      "validation": "保存した候補を復号し、指定した局所検査が例外で拒否することを実行確認。任意のプログラムに対する万能検査ではない。",
+      "checkKind": "syntax-and-declared-content",
+      "evidence": {
+        "operation": "AddL",
+        "expectedRejection": true,
+        "rejectionObserved": true
+      }
+    },
+    {
+      "id": "geometric-h-third-lower",
+      "status": "passed",
+      "validation": "型付きの復号結果を、指定した正規値と照合。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "geometric-trace-third-lower",
+      "status": "passed",
+      "validation": "四つの有理出力を二つの式で検査。任意nの式・停止・方向の一般保証は本文付録Aの手書き証明。",
+      "checkKind": "syntax-and-declared-content",
+      "evidence": {
+        "states": 4,
+        "closedFormulaChecked": true,
+        "recurrenceChecked": true
+      }
+    },
+    {
+      "id": "geometric-intro-third-lower",
+      "status": "passed",
+      "validation": "復号したHの形成条件とbの符号を調べ、導入先の整数kと有理成分qを照合。逐点加法を継承する写像ではない。",
+      "checkKind": "syntax-and-declared-content",
+      "evidence": {
+        "retainedIndex": "-2",
+        "base": "1/3",
+        "specifiedRule": "Psi",
+        "recomputed": true
+      }
+    },
+    {
+      "id": "geometric-h-third-upper",
+      "status": "passed",
+      "validation": "型付きの復号結果を、指定した正規値と照合。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "geometric-trace-third-upper",
+      "status": "passed",
+      "validation": "四つの有理出力を二つの式で検査。任意nの式・停止・方向の一般保証は本文付録Aの手書き証明。",
+      "checkKind": "syntax-and-declared-content",
+      "evidence": {
+        "states": 4,
+        "closedFormulaChecked": true,
+        "recurrenceChecked": true
+      }
+    },
+    {
+      "id": "geometric-intro-third-upper",
+      "status": "passed",
+      "validation": "復号したHの形成条件とbの符号を調べ、導入先の整数kと有理成分qを照合。逐点加法を継承する写像ではない。",
+      "checkKind": "syntax-and-declared-content",
+      "evidence": {
+        "retainedIndex": "2",
+        "base": "1/3",
+        "specifiedRule": "Psi",
+        "recomputed": true
+      }
+    },
+    {
+      "id": "geometric-h-third-fixed",
+      "status": "passed",
+      "validation": "型付きの復号結果を、指定した正規値と照合。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "geometric-trace-third-fixed",
+      "status": "passed",
+      "validation": "四つの有理出力を二つの式で検査。任意nの式・停止・方向の一般保証は本文付録Aの手書き証明。",
+      "checkKind": "syntax-and-declared-content",
+      "evidence": {
+        "states": 4,
+        "closedFormulaChecked": true,
+        "recurrenceChecked": true
+      }
+    },
+    {
+      "id": "geometric-intro-third-fixed",
+      "status": "passed",
+      "validation": "復号したHの形成条件とbの符号を調べ、導入先の整数kと有理成分qを照合。逐点加法を継承する写像ではない。",
+      "checkKind": "syntax-and-declared-content",
+      "evidence": {
+        "retainedIndex": "0",
+        "base": "1/3",
+        "specifiedRule": "Psi",
+        "recomputed": true
+      }
+    },
+    {
+      "id": "geometric-h-two-thirds-lower",
+      "status": "passed",
+      "validation": "型付きの復号結果を、指定した正規値と照合。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "geometric-trace-two-thirds-lower",
+      "status": "passed",
+      "validation": "四つの有理出力を二つの式で検査。任意nの式・停止・方向の一般保証は本文付録Aの手書き証明。",
+      "checkKind": "syntax-and-declared-content",
+      "evidence": {
+        "states": 4,
+        "closedFormulaChecked": true,
+        "recurrenceChecked": true
+      }
+    },
+    {
+      "id": "geometric-intro-two-thirds-lower",
+      "status": "passed",
+      "validation": "復号したHの形成条件とbの符号を調べ、導入先の整数kと有理成分qを照合。逐点加法を継承する写像ではない。",
+      "checkKind": "syntax-and-declared-content",
+      "evidence": {
+        "retainedIndex": "-2",
+        "base": "2/3",
+        "specifiedRule": "Psi",
+        "recomputed": true
+      }
+    },
+    {
+      "id": "geometric-h-menger-volume",
+      "status": "passed",
+      "validation": "型付きの復号結果を、指定した正規値と照合。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "geometric-trace-menger-volume",
+      "status": "passed",
+      "validation": "四つの有理出力を二つの式で検査。任意nの式・停止・方向の一般保証は本文付録Aの手書き証明。",
+      "checkKind": "syntax-and-declared-content",
+      "evidence": {
+        "states": 4,
+        "closedFormulaChecked": true,
+        "recurrenceChecked": true
+      }
+    },
+    {
+      "id": "geometric-intro-menger-volume",
+      "status": "passed",
+      "validation": "復号したHの形成条件とbの符号を調べ、導入先の整数kと有理成分qを照合。逐点加法を継承する写像ではない。",
+      "checkKind": "syntax-and-declared-content",
+      "evidence": {
+        "retainedIndex": "2",
+        "base": "0/1",
+        "specifiedRule": "Psi",
+        "recomputed": true
+      }
+    },
+    {
+      "id": "decimal-record-third",
+      "status": "passed",
+      "validation": "型付きの復号結果を、指定した正規値と照合。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "decimal-exact-third",
+      "status": "passed",
+      "validation": "有限の桁から有理式を再計算。循環小数記録それ自体を下側ラベルや上側ラベルとは同一視しない。",
+      "checkKind": "syntax-and-declared-content",
+      "evidence": {
+        "exactValue": "1/3",
+        "relationIndex": "0",
+        "finiteRationalFormulaChecked": true
+      }
+    },
+    {
+      "id": "decimal-record-two-thirds",
+      "status": "passed",
+      "validation": "型付きの復号結果を、指定した正規値と照合。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "decimal-exact-two-thirds",
+      "status": "passed",
+      "validation": "有限の桁から有理式を再計算。循環小数記録それ自体を下側ラベルや上側ラベルとは同一視しない。",
+      "checkKind": "syntax-and-declared-content",
+      "evidence": {
+        "exactValue": "2/3",
+        "relationIndex": "0",
+        "finiteRationalFormulaChecked": true
+      }
+    },
+    {
+      "id": "decimal-prefix-1",
+      "status": "passed",
+      "validation": "切捨て桁・上下H応答を有理算術で再計算し、三つの異なるL表示に対する六つの厳密比較を既存F算術で検査。全桁の保証は付録Aの手書き証明。",
+      "checkKind": "syntax-and-declared-content",
+      "evidence": {
+        "digits": "1",
+        "prefix": "3",
+        "exactValue": "1/3",
+        "distinctIndices": [
+          "-2",
+          "0",
+          "2"
+        ],
+        "strictBoundsChecked": 6
+      }
+    },
+    {
+      "id": "decimal-prefix-2",
+      "status": "passed",
+      "validation": "切捨て桁・上下H応答を有理算術で再計算し、三つの異なるL表示に対する六つの厳密比較を既存F算術で検査。全桁の保証は付録Aの手書き証明。",
+      "checkKind": "syntax-and-declared-content",
+      "evidence": {
+        "digits": "2",
+        "prefix": "33",
+        "exactValue": "1/3",
+        "distinctIndices": [
+          "-2",
+          "0",
+          "2"
+        ],
+        "strictBoundsChecked": 6
+      }
+    },
+    {
+      "id": "decimal-prefix-3",
+      "status": "passed",
+      "validation": "切捨て桁・上下H応答を有理算術で再計算し、三つの異なるL表示に対する六つの厳密比較を既存F算術で検査。全桁の保証は付録Aの手書き証明。",
+      "checkKind": "syntax-and-declared-content",
+      "evidence": {
+        "digits": "3",
+        "prefix": "333",
+        "exactValue": "1/3",
+        "distinctIndices": [
+          "-2",
+          "0",
+          "2"
+        ],
+        "strictBoundsChecked": 6
+      }
+    },
+    {
+      "id": "decimal-lower-sum",
+      "status": "passed",
+      "validation": "成分加法とFへの埋込みを照合。下側同士ではk=−4を保持し、上側と下側ではk=0となる。",
+      "checkKind": "syntax-and-declared-content",
+      "evidence": {
+        "retainedIndex": "-4",
+        "embeddedArithmeticChecked": true
+      }
+    },
+    {
+      "id": "decimal-mixed-sum",
+      "status": "passed",
+      "validation": "成分加法とFへの埋込みを照合。下側同士ではk=−4を保持し、上側と下側ではk=0となる。",
+      "checkKind": "syntax-and-declared-content",
+      "evidence": {
+        "retainedIndex": "0",
+        "embeddedArithmeticChecked": true
+      }
+    },
+    {
+      "id": "geometric-decimal-reject-invalid-ratio",
+      "status": "passed",
+      "validation": "形成条件または主張に反する具体的候補を拒否。未知の再帰処理の意味や停止を判定する検査ではない。",
+      "checkKind": "syntax-and-declared-content",
+      "evidence": {
+        "operation": "DecodeH",
+        "expectedRejection": true,
+        "rejectionObserved": true
+      }
+    },
+    {
+      "id": "geometric-decimal-reject-invalid-digit",
+      "status": "passed",
+      "validation": "形成条件または主張に反する具体的候補を拒否。未知の再帰処理の意味や停止を判定する検査ではない。",
+      "checkKind": "syntax-and-declared-content",
+      "evidence": {
+        "operation": "DecodeDecimal",
+        "expectedRejection": true,
+        "rejectionObserved": true
+      }
+    },
+    {
+      "id": "geometric-decimal-reject-empty-repeat",
+      "status": "passed",
+      "validation": "形成条件または主張に反する具体的候補を拒否。未知の再帰処理の意味や停止を判定する検査ではない。",
+      "checkKind": "syntax-and-declared-content",
+      "evidence": {
+        "operation": "DecodeDecimal",
+        "expectedRejection": true,
+        "rejectionObserved": true
+      }
+    },
+    {
+      "id": "geometric-decimal-reject-false-recurrence",
+      "status": "passed",
+      "validation": "形成条件または主張に反する具体的候補を拒否。未知の再帰処理の意味や停止を判定する検査ではない。",
+      "checkKind": "syntax-and-declared-content",
+      "evidence": {
+        "operation": "HTrace",
+        "expectedRejection": true,
+        "rejectionObserved": true
+      }
+    },
+    {
+      "id": "geometric-decimal-reject-false-direction",
+      "status": "passed",
+      "validation": "形成条件または主張に反する具体的候補を拒否。未知の再帰処理の意味や停止を判定する検査ではない。",
+      "checkKind": "syntax-and-declared-content",
+      "evidence": {
+        "operation": "Psi",
+        "expectedRejection": true,
+        "rejectionObserved": true
+      }
+    },
+    {
+      "id": "geometric-decimal-reject-false-exact-label",
+      "status": "passed",
+      "validation": "形成条件または主張に反する具体的候補を拒否。未知の再帰処理の意味や停止を判定する検査ではない。",
+      "checkKind": "syntax-and-declared-content",
+      "evidence": {
+        "operation": "DecimalExact",
+        "expectedRejection": true,
+        "rejectionObserved": true
+      }
+    },
+    {
+      "id": "pi-rule",
+      "status": "passed",
+      "validation": "規則識別子・版の有限照合。これだけで切断の一般法則や通常の円周率との対応を機械証明したとはしない。",
+      "checkKind": "syntax-and-declared-content",
+      "evidence": {
+        "rule": "leibniz-pi-cut",
+        "specificationVersion": 1
+      }
+    },
+    {
+      "id": "pi-recurrence-two-steps",
+      "status": "passed",
+      "validation": "復号した有限状態列の添字・二段の再帰・明示期待値を有理演算で検査。全段階の帰納証明とは区別。",
+      "checkKind": "syntax-and-declared-content",
+      "evidence": {
+        "states": 3,
+        "recurrenceSteps": 2,
+        "independentExpectedValues": [
+          "1/1",
+          "2/3",
+          "13/15"
+        ],
+        "recomputed": true
+      }
+    },
+    {
+      "id": "pi-lower-witness",
+      "status": "passed",
+      "validation": "一つの有理数・証人添字の厳密不等式を検査。左右全体の無限列挙や任意元の等値判定は実行しない。",
+      "checkKind": "syntax-and-declared-content",
+      "evidence": {
+        "side": "left",
+        "rational": "3/1",
+        "witness": "3",
+        "endpoint": "135904/45045",
+        "recomputed": true
+      }
+    },
+    {
+      "id": "pi-upper-witness",
+      "status": "passed",
+      "validation": "一つの有理数・証人添字の厳密不等式を検査。左右全体の無限列挙や任意元の等値判定は実行しない。",
+      "checkKind": "syntax-and-declared-content",
+      "evidence": {
+        "side": "right",
+        "rational": "7/2",
+        "witness": "1",
+        "endpoint": "52/15",
+        "recomputed": true
+      }
+    },
+    {
+      "id": "pi-bracket-0",
+      "status": "passed",
+      "validation": "独立に記した端点を有理再帰で再計算し、幅4/(4m+3)<2^(−p)を検査。任意精度の保証は本文の手書き証明。",
+      "checkKind": "syntax-and-declared-content",
+      "evidence": {
+        "precision": "0",
+        "witness": "1",
+        "lower": "304/105",
+        "upper": "52/15",
+        "width": "4/7",
+        "endpointEncoding": "canonical-rational-text",
+        "recomputed": true
+      }
+    },
+    {
+      "id": "pi-bracket-1",
+      "status": "passed",
+      "validation": "独立に記した端点を有理再帰で再計算し、幅4/(4m+3)<2^(−p)を検査。任意精度の保証は本文の手書き証明。",
+      "checkKind": "syntax-and-declared-content",
+      "evidence": {
+        "precision": "1",
+        "witness": "2",
+        "lower": "10312/3465",
+        "upper": "1052/315",
+        "width": "4/11",
+        "endpointEncoding": "canonical-rational-text",
+        "recomputed": true
+      }
+    },
+    {
+      "id": "pi-bracket-2",
+      "status": "passed",
+      "validation": "独立に記した端点を有理再帰で再計算し、幅4/(4m+3)<2^(−p)を検査。任意精度の保証は本文の手書き証明。",
+      "checkKind": "syntax-and-declared-content",
+      "evidence": {
+        "precision": "2",
+        "witness": "4",
+        "lower": "44257352/14549535",
+        "upper": "2490548/765765",
+        "width": "4/19",
+        "endpointEncoding": "canonical-rational-text",
+        "recomputed": true
+      }
+    },
+    {
+      "id": "pi-bracket-3",
+      "status": "passed",
+      "validation": "独立に記した端点を有理再帰で再計算し、幅4/(4m+3)<2^(−p)を検査。任意精度の保証は本文の手書き証明。",
+      "checkKind": "syntax-and-declared-content",
+      "evidence": {
+        "precision": "3",
+        "witness": "8",
+        "lower": "13926277743608/4512611027925",
+        "upper": "14442004718228/4512611027925",
+        "width": "4/35",
+        "endpointEncoding": "canonical-rational-text",
+        "recomputed": true
+      }
+    },
+    {
+      "id": "pi-located-left",
+      "status": "passed",
+      "validation": "指定した二つの入力で両分岐を実行し、得た所属証拠も再検査。任意の有理q<rについての所在性は手書き一般証明。",
+      "checkKind": "syntax-and-declared-content",
+      "evidence": {
+        "gap": "1/1",
+        "witness": "2",
+        "branch": "q-in-left",
+        "strictWidthChecked": true,
+        "recomputed": true
+      }
+    },
+    {
+      "id": "pi-located-right",
+      "status": "passed",
+      "validation": "指定した二つの入力で両分岐を実行し、得た所属証拠も再検査。任意の有理q<rについての所在性は手書き一般証明。",
+      "checkKind": "syntax-and-declared-content",
+      "evidence": {
+        "gap": "1/1",
+        "witness": "2",
+        "branch": "r-in-right",
+        "strictWidthChecked": true,
+        "recomputed": true
+      }
+    },
+    {
+      "id": "pi-reject-lower-boundary",
+      "status": "passed",
+      "validation": "保存候補を実際に局所検査へ渡して拒否を確認。厳密円周率の一般等値判定器ではない。",
+      "checkKind": "syntax-and-declared-content",
+      "evidence": {
+        "operation": "PiWitness",
+        "expectedRejection": true,
+        "rejectionObserved": true
+      }
+    },
+    {
+      "id": "pi-reject-upper-boundary",
+      "status": "passed",
+      "validation": "保存候補を実際に局所検査へ渡して拒否を確認。厳密円周率の一般等値判定器ではない。",
+      "checkKind": "syntax-and-declared-content",
+      "evidence": {
+        "operation": "PiWitness",
+        "expectedRejection": true,
+        "rejectionObserved": true
+      }
+    },
+    {
+      "id": "pi-reject-changed-witness",
+      "status": "passed",
+      "validation": "保存候補を実際に局所検査へ渡して拒否を確認。厳密円周率の一般等値判定器ではない。",
+      "checkKind": "syntax-and-declared-content",
+      "evidence": {
+        "operation": "PiWitness",
+        "expectedRejection": true,
+        "rejectionObserved": true
+      }
+    },
+    {
+      "id": "pi-reject-false-recurrence",
+      "status": "passed",
+      "validation": "保存候補を実際に局所検査へ渡して拒否を確認。厳密円周率の一般等値判定器ではない。",
+      "checkKind": "syntax-and-declared-content",
+      "evidence": {
+        "operation": "PiTrace",
+        "expectedRejection": true,
+        "rejectionObserved": true
+      }
+    },
+    {
+      "id": "pi-reject-unknown-version",
+      "status": "passed",
+      "validation": "保存候補を実際に局所検査へ渡して拒否を確認。厳密円周率の一般等値判定器ではない。",
+      "checkKind": "syntax-and-declared-content",
+      "evidence": {
+        "operation": "PiRule",
+        "expectedRejection": true,
+        "rejectionObserved": true
+      }
+    },
+    {
+      "id": "sqrt2-state",
+      "status": "passed",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。",
+      "checkKind": "syntax-roundtrip-only"
+    },
+    {
+      "id": "leibniz-state",
+      "status": "passed",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。",
+      "checkKind": "syntax-roundtrip-only"
+    },
+    {
+      "id": "label-with-evidence",
+      "status": "passed",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。",
+      "checkKind": "syntax-roundtrip-only"
+    },
+    {
+      "id": "label-pending-division",
+      "status": "passed",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。",
+      "checkKind": "syntax-roundtrip-only"
+    },
+    {
+      "id": "newton-state",
+      "status": "passed",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "separation-witness",
+      "status": "passed",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "zero-classification-zero",
+      "status": "passed",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。",
+      "checkKind": "syntax-roundtrip-only"
+    },
+    {
+      "id": "zero-classification-nonzero",
+      "status": "passed",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。",
+      "checkKind": "syntax-roundtrip-only"
+    },
+    {
+      "id": "zero-classification-unknown",
+      "status": "passed",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。",
+      "checkKind": "syntax-roundtrip-only"
+    },
+    {
+      "id": "alternating-rule",
+      "status": "passed",
+      "validation": "型付きの復号結果を、指定した正規値と照合。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "cauchy-modulus",
+      "status": "passed",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。",
+      "checkKind": "syntax-roundtrip-only"
+    },
+    {
+      "id": "cauchy-center-radius",
+      "status": "passed",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。",
+      "checkKind": "syntax-roundtrip-only"
+    },
+    {
+      "id": "translated-label",
+      "status": "passed",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。",
+      "checkKind": "syntax-roundtrip-only"
+    },
+    {
+      "id": "translation-arrow",
+      "status": "passed",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。",
+      "checkKind": "syntax-roundtrip-only"
+    },
+    {
+      "id": "register-state",
+      "status": "passed",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "register-program",
+      "status": "passed",
+      "validation": "型付きの復号結果を、指定した正規値と照合。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "precision-field-epsilon",
+      "status": "passed",
+      "validation": "型付きの復号結果を、指定した正規値と照合。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "polynomial-derivative",
+      "status": "passed",
+      "validation": "型付きの復号結果を、指定した正規値と照合。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "polynomial-primitive",
+      "status": "passed",
+      "validation": "型付きの復号結果を、指定した正規値と照合。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "polynomial-integral",
+      "status": "passed",
+      "validation": "型付きの復号結果を、指定した正規値と照合。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "beta-step",
+      "status": "passed",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。",
+      "checkKind": "syntax-roundtrip-only"
+    },
+    {
+      "id": "identity-arrow",
+      "status": "passed",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。",
+      "checkKind": "syntax-roundtrip-only"
+    },
+    {
+      "id": "one-step-arrow",
+      "status": "passed",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。",
+      "checkKind": "syntax-roundtrip-only"
+    },
+    {
+      "id": "lambda-position",
+      "status": "passed",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。",
+      "checkKind": "syntax-roundtrip-only"
+    },
+    {
+      "id": "status-normal-form",
+      "status": "passed",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。",
+      "checkKind": "syntax-roundtrip-only"
+    },
+    {
+      "id": "status-step-limit",
+      "status": "passed",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。",
+      "checkKind": "syntax-roundtrip-only"
+    },
+    {
+      "id": "status-stopped",
+      "status": "passed",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。",
+      "checkKind": "syntax-roundtrip-only"
+    },
+    {
+      "id": "status-error",
+      "status": "passed",
+      "validation": "表示構文の復号・照合。意味や一般法則の証明とは別。",
+      "checkKind": "syntax-roundtrip-only"
+    },
+    {
+      "id": "json-null",
+      "status": "passed",
+      "validation": "型付きの復号結果を、指定した正規値と照合。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "json-false",
+      "status": "passed",
+      "validation": "型付きの復号結果を、指定した正規値と照合。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "json-true",
+      "status": "passed",
+      "validation": "型付きの復号結果を、指定した正規値と照合。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "json-2",
+      "status": "passed",
+      "validation": "型付きの復号結果を、指定した正規値と照合。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "json-a",
+      "status": "passed",
+      "validation": "型付きの復号結果を、指定した正規値と照合。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "json-array",
+      "status": "passed",
+      "validation": "型付きの復号結果を、指定した正規値と照合。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "json-record",
+      "status": "passed",
+      "validation": "型付きの復号結果を、指定した正規値と照合。",
+      "checkKind": "syntax-and-declared-content"
+    },
+    {
+      "id": "proof-nat-paths",
+      "status": "passed",
+      "validation": "JSON値の損失のない復号後、元の意味検査器で証拠を再検査。",
+      "checkKind": "syntax-and-declared-content",
+      "evidence": {
+        "theorems": 16,
+        "rewriteSteps": 79
+      }
+    },
+    {
+      "id": "proof-lambda",
+      "status": "passed",
+      "validation": "JSON値の損失のない復号後、元の意味検査器で証拠を再検査。",
+      "checkKind": "syntax-and-declared-content",
+      "evidence": {
+        "traces": 4
+      }
+    },
+    {
+      "id": "proof-applications",
+      "status": "passed",
+      "validation": "JSON値の損失のない復号後、元の意味検査器で証拠を再検査。",
+      "checkKind": "syntax-and-declared-content",
+      "evidence": {
+        "certificates": 6
+      }
+    },
+    {
+      "id": "proof-field",
+      "status": "passed",
+      "validation": "JSON値の損失のない復号後、元の意味検査器で証拠を再検査。",
+      "checkKind": "syntax-and-declared-content",
+      "evidence": {
+        "certificates": 5
+      }
+    },
+    {
+      "id": "proof-generators",
+      "status": "passed",
+      "validation": "JSON値の損失のない復号後、元の意味検査器で証拠を再検査。",
+      "checkKind": "syntax-and-declared-content",
+      "evidence": {
+        "ok": true,
+        "format": "generator-extensions-v1.5.4",
+        "scope": "finite-rational-replay",
+        "certificateCount": 14,
+        "certificates": [
+          {
+            "id": "newton-p0",
+            "ok": true,
+            "kind": "newton-sqrt2",
+            "scope": "finite-rational-replay"
+          },
+          {
+            "id": "newton-p8",
+            "ok": true,
+            "kind": "newton-sqrt2",
+            "scope": "finite-rational-replay"
+          },
+          {
+            "id": "alternating-geometric",
+            "ok": true,
+            "kind": "alternating-interval",
+            "scope": "finite-rational-replay"
+          },
+          {
+            "id": "alternating-leibniz",
+            "ok": true,
+            "kind": "alternating-interval",
+            "scope": "finite-rational-replay"
+          },
+          {
+            "id": "alternating-zero",
+            "ok": true,
+            "kind": "alternating-interval",
+            "scope": "finite-rational-replay"
+          },
+          {
+            "id": "cauchy-from-sequence",
+            "ok": true,
+            "kind": "cauchy-interval",
+            "scope": "finite-rational-replay"
+          },
+          {
+            "id": "cauchy-two-moduli",
+            "ok": true,
+            "kind": "cauchy-coherence",
+            "scope": "finite-rational-replay"
+          },
+          {
+            "id": "label-sum",
+            "ok": true,
+            "kind": "label-response",
+            "scope": "finite-rational-replay"
+          },
+          {
+            "id": "label-product",
+            "ok": true,
+            "kind": "label-response",
+            "scope": "finite-rational-replay"
+          },
+          {
+            "id": "label-reciprocal",
+            "ok": true,
+            "kind": "label-response",
+            "scope": "finite-rational-replay"
+          },
+          {
+            "id": "label-negative-reciprocal",
+            "ok": true,
+            "kind": "label-response",
+            "scope": "finite-rational-replay"
+          },
+          {
+            "id": "separation-zero",
+            "ok": true,
+            "kind": "zero-separation",
+            "scope": "finite-rational-replay"
+          },
+          {
+            "id": "separation-unknown",
+            "ok": true,
+            "kind": "zero-separation",
+            "scope": "finite-rational-replay"
+          },
+          {
+            "id": "separation-positive",
+            "ok": true,
+            "kind": "zero-separation",
+            "scope": "finite-rational-replay"
+          }
+        ]
+      }
+    },
+    {
+      "id": "proof-models",
+      "status": "passed",
+      "validation": "JSON値の損失のない復号後、元の意味検査器で証拠を再検査。",
+      "checkKind": "syntax-and-declared-content",
+      "evidence": {
+        "schema": "f-model/extensions-report/1",
+        "ok": true,
+        "registerTraces": [
+          {
+            "id": "register-add-2-3",
+            "ok": true,
+            "transitions": 14,
+            "output": "5"
+          },
+          {
+            "id": "register-add-7-0",
+            "ok": true,
+            "transitions": 2,
+            "output": "7"
+          },
+          {
+            "id": "register-add-large-2",
+            "ok": true,
+            "transitions": 10,
+            "output": "9007199254740995"
+          }
+        ],
+        "symbolicProofs": [
+          {
+            "id": "group-cancellation",
+            "ok": true,
+            "theory": "additive-group",
+            "steps": 3,
+            "premises": [],
+            "scope": "Derivation conditional on the fixed laws of the declared structure and the displayed premises."
+          },
+          {
+            "id": "arrow-inverse-uniqueness",
+            "ok": true,
+            "theory": "arrows",
+            "steps": 5,
+            "premises": [
+              "fh_id",
+              "gf_id"
+            ],
+            "scope": "Derivation conditional on the fixed laws of the declared structure and the displayed premises."
+          }
+        ],
+        "scope": "Finite register traces and two derivations conditional on the stated algebraic laws. No general compiler-correctness theorem is machine-verified."
+      }
+    }
+  ],
+  "scope": "All examples pass syntax round trips. Type-specific or semantic checks run only where individually declared; schematic type/logical data is syntax-only. The finite NatForm program is executed on its recorded examples, explicitly T-typed products are recomputed without promotion, and two rational approximation/error pairs are checked by endpoint or residual arithmetic. The G-to-L introduction examples check finite rational common-subsequence samples, sign branches, retained label indices, nonadditivity, one rational precision request, and explicit rejections; their general theorems remain written proofs. The H/decimal examples separately check finite recurrence traces against closed formulas, the specified Psi rule, exact repeating-decimal rational values, common finite decimal-prefix bounds for distinct labels, and concrete malformed or false claims. The pi examples check the named rule and version, two recurrence steps, finite strict membership witnesses, four prescribed rational brackets, both locatedness branches, and five malformed claims. Large endpoints use canonical rational-text certificate fields. The general exact-cut laws, correspondence with ordinary pi, and arbitrary exact equality are not machine-verified. No infinite geometric intersection or general volume theorem is machine-verified here. Decoded existing proof bundles are rechecked in their original kernels."
+}

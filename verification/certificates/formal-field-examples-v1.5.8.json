@@ -1,0 +1,545 @@
+{
+  "format": "formal-field-examples/1",
+  "version": "1.5.8",
+  "certificates": [
+    {
+      "format": "formal-field-certificate-v1.5.0",
+      "operation": "div",
+      "steps": [
+        {
+          "id": "s0",
+          "rule": "F.input",
+          "input": [
+            {
+              "numerator": [
+                "0/1",
+                "1/1"
+              ],
+              "denominator": [
+                "1/1"
+              ]
+            },
+            {
+              "numerator": [
+                "0/1",
+                "1/1"
+              ],
+              "denominator": [
+                "1/1"
+              ]
+            }
+          ],
+          "output": [
+            {
+              "numerator": [
+                "0/1",
+                "1/1"
+              ],
+              "denominator": [
+                "1/1"
+              ]
+            },
+            {
+              "numerator": [
+                "0/1",
+                "1/1"
+              ],
+              "denominator": [
+                "1/1"
+              ]
+            }
+          ],
+          "premises": []
+        },
+        {
+          "id": "s1",
+          "rule": "F.div",
+          "input": [
+            "s0"
+          ],
+          "output": {
+            "result": {
+              "numerator": [
+                "1/1"
+              ],
+              "denominator": [
+                "1/1"
+              ]
+            },
+            "witness": {
+              "beforeNormalization": {
+                "numerator": [
+                  "0/1",
+                  "1/1"
+                ],
+                "denominator": [
+                  "0/1",
+                  "1/1"
+                ]
+              },
+              "normalization": {
+                "gcd": [
+                  "0/1",
+                  "1/1"
+                ],
+                "euclideanDivisions": [
+                  {
+                    "dividend": [
+                      "0/1",
+                      "1/1"
+                    ],
+                    "divisor": [
+                      "0/1",
+                      "1/1"
+                    ],
+                    "quotient": [
+                      "1/1"
+                    ],
+                    "remainder": []
+                  }
+                ],
+                "numeratorQuotient": [
+                  "1/1"
+                ],
+                "denominatorQuotient": [
+                  "1/1"
+                ],
+                "leadingDenominator": "1/1",
+                "scale": "1/1"
+              }
+            }
+          },
+          "premises": [
+            "s0"
+          ]
+        }
+      ],
+      "claim": {
+        "value": {
+          "numerator": [
+            "1/1"
+          ],
+          "denominator": [
+            "1/1"
+          ]
+        },
+        "proof": "s1"
+      }
+    },
+    {
+      "format": "formal-field-certificate-v1.5.0",
+      "operation": "mul",
+      "steps": [
+        {
+          "id": "s0",
+          "rule": "F.input",
+          "input": [
+            {
+              "numerator": [
+                "0/1",
+                "1/1"
+              ],
+              "denominator": [
+                "1/1"
+              ]
+            },
+            {
+              "numerator": [
+                "0/1",
+                "1/1"
+              ],
+              "denominator": [
+                "1/1"
+              ]
+            }
+          ],
+          "output": [
+            {
+              "numerator": [
+                "0/1",
+                "1/1"
+              ],
+              "denominator": [
+                "1/1"
+              ]
+            },
+            {
+              "numerator": [
+                "0/1",
+                "1/1"
+              ],
+              "denominator": [
+                "1/1"
+              ]
+            }
+          ],
+          "premises": []
+        },
+        {
+          "id": "s1",
+          "rule": "F.mul",
+          "input": [
+            "s0"
+          ],
+          "output": {
+            "result": {
+              "numerator": [
+                "0/1",
+                "0/1",
+                "1/1"
+              ],
+              "denominator": [
+                "1/1"
+              ]
+            },
+            "witness": {
+              "beforeNormalization": {
+                "numerator": [
+                  "0/1",
+                  "0/1",
+                  "1/1"
+                ],
+                "denominator": [
+                  "1/1"
+                ]
+              },
+              "normalization": {
+                "gcd": [
+                  "1/1"
+                ],
+                "euclideanDivisions": [
+                  {
+                    "dividend": [
+                      "0/1",
+                      "0/1",
+                      "1/1"
+                    ],
+                    "divisor": [
+                      "1/1"
+                    ],
+                    "quotient": [
+                      "0/1",
+                      "0/1",
+                      "1/1"
+                    ],
+                    "remainder": []
+                  }
+                ],
+                "numeratorQuotient": [
+                  "0/1",
+                  "0/1",
+                  "1/1"
+                ],
+                "denominatorQuotient": [
+                  "1/1"
+                ],
+                "leadingDenominator": "1/1",
+                "scale": "1/1"
+              }
+            }
+          },
+          "premises": [
+            "s0"
+          ]
+        }
+      ],
+      "claim": {
+        "value": {
+          "numerator": [
+            "0/1",
+            "0/1",
+            "1/1"
+          ],
+          "denominator": [
+            "1/1"
+          ]
+        },
+        "proof": "s1"
+      }
+    },
+    {
+      "format": "formal-field-certificate-v1.5.0",
+      "operation": "normalize",
+      "steps": [
+        {
+          "id": "s0",
+          "rule": "F.input",
+          "input": {
+            "numerator": [
+              "1/1",
+              "2/1",
+              "1/1"
+            ],
+            "denominator": [
+              "1/1",
+              "1/1"
+            ]
+          },
+          "output": {
+            "numerator": [
+              "1/1",
+              "2/1",
+              "1/1"
+            ],
+            "denominator": [
+              "1/1",
+              "1/1"
+            ]
+          },
+          "premises": []
+        },
+        {
+          "id": "s1",
+          "rule": "F.normalize",
+          "input": [
+            "s0"
+          ],
+          "output": {
+            "result": {
+              "numerator": [
+                "1/1",
+                "1/1"
+              ],
+              "denominator": [
+                "1/1"
+              ]
+            },
+            "witness": {
+              "gcd": [
+                "1/1",
+                "1/1"
+              ],
+              "euclideanDivisions": [
+                {
+                  "dividend": [
+                    "1/1",
+                    "2/1",
+                    "1/1"
+                  ],
+                  "divisor": [
+                    "1/1",
+                    "1/1"
+                  ],
+                  "quotient": [
+                    "1/1",
+                    "1/1"
+                  ],
+                  "remainder": []
+                }
+              ],
+              "numeratorQuotient": [
+                "1/1",
+                "1/1"
+              ],
+              "denominatorQuotient": [
+                "1/1"
+              ],
+              "leadingDenominator": "1/1",
+              "scale": "1/1"
+            }
+          },
+          "premises": [
+            "s0"
+          ]
+        }
+      ],
+      "claim": {
+        "value": {
+          "numerator": [
+            "1/1",
+            "1/1"
+          ],
+          "denominator": [
+            "1/1"
+          ]
+        },
+        "proof": "s1"
+      }
+    },
+    {
+      "format": "formal-field-certificate-v1.5.0",
+      "operation": "compare",
+      "steps": [
+        {
+          "id": "s0",
+          "rule": "F.input",
+          "input": [
+            {
+              "numerator": [
+                "1/1"
+              ],
+              "denominator": [
+                "-1/1",
+                "1/1"
+              ]
+            },
+            {
+              "numerator": [],
+              "denominator": [
+                "1/1"
+              ]
+            }
+          ],
+          "output": [
+            {
+              "numerator": [
+                "1/1"
+              ],
+              "denominator": [
+                "-1/1",
+                "1/1"
+              ]
+            },
+            {
+              "numerator": [],
+              "denominator": [
+                "1/1"
+              ]
+            }
+          ],
+          "premises": []
+        },
+        {
+          "id": "s1",
+          "rule": "F.compare",
+          "input": [
+            "s0"
+          ],
+          "output": {
+            "result": -1,
+            "witness": {
+              "difference": {
+                "numerator": [
+                  "1/1"
+                ],
+                "denominator": [
+                  "-1/1",
+                  "1/1"
+                ]
+              },
+              "normalization": {
+                "gcd": [
+                  "1/1"
+                ],
+                "euclideanDivisions": [
+                  {
+                    "dividend": [
+                      "1/1"
+                    ],
+                    "divisor": [
+                      "-1/1",
+                      "1/1"
+                    ],
+                    "quotient": [],
+                    "remainder": [
+                      "1/1"
+                    ]
+                  },
+                  {
+                    "dividend": [
+                      "-1/1",
+                      "1/1"
+                    ],
+                    "divisor": [
+                      "1/1"
+                    ],
+                    "quotient": [
+                      "-1/1",
+                      "1/1"
+                    ],
+                    "remainder": []
+                  }
+                ],
+                "numeratorQuotient": [
+                  "1/1"
+                ],
+                "denominatorQuotient": [
+                  "-1/1",
+                  "1/1"
+                ],
+                "leadingDenominator": "1/1",
+                "scale": "1/1"
+              },
+              "sign": {
+                "numeratorOrder": 0,
+                "denominatorOrder": 0,
+                "order": 0,
+                "numeratorCoefficient": "1/1",
+                "denominatorCoefficient": "-1/1"
+              }
+            }
+          },
+          "premises": [
+            "s0"
+          ]
+        }
+      ],
+      "claim": {
+        "value": -1,
+        "proof": "s1"
+      }
+    },
+    {
+      "format": "formal-field-certificate-v1.5.0",
+      "operation": "standardPart",
+      "steps": [
+        {
+          "id": "s0",
+          "rule": "F.input",
+          "input": {
+            "numerator": [
+              "-1/1",
+              "-1/1"
+            ],
+            "denominator": [
+              "-2/1",
+              "1/1"
+            ]
+          },
+          "output": {
+            "numerator": [
+              "-1/1",
+              "-1/1"
+            ],
+            "denominator": [
+              "-2/1",
+              "1/1"
+            ]
+          },
+          "premises": []
+        },
+        {
+          "id": "s1",
+          "rule": "F.standardPart",
+          "input": [
+            "s0"
+          ],
+          "output": {
+            "result": "1/2",
+            "witness": {
+              "normalized": {
+                "numerator": [
+                  "-1/1",
+                  "-1/1"
+                ],
+                "denominator": [
+                  "-2/1",
+                  "1/1"
+                ]
+              },
+              "numeratorOrder": 0,
+              "denominatorOrder": 0
+            }
+          },
+          "premises": [
+            "s0"
+          ]
+        }
+      ],
+      "claim": {
+        "value": "1/2",
+        "proof": "s1"
+      }
+    }
+  ]
+}

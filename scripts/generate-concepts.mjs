@@ -486,6 +486,98 @@ for(const [id,title,operation,payload,verify]of geometricDecimalRejections)
       assert.throws(()=>verify(xs[1]));return {operation,expectedRejection:true,rejectionObserved:true};
     },'形成条件または主張に反する具体的候補を拒否。未知の再帰処理の意味や停止を判定する検査ではない。');
 
+// Appendix B: one finite rule names the exact pi specification. These local
+// certificate checks verify finite witnesses, not equality of arbitrary cuts.
+const piGroup='円周率の指定規則と有限の所属証拠';
+const piRule=()=>pair(N(0),N(1)); // Local rule 0, specification version 1.
+function verifyPiRule(tree){
+  assert.equal(tree.kind,'pair');assert.equal(E.decodeNat(tree.left),0n);assert.equal(E.decodeNat(tree.right),1n);
+  return {rule:'leibniz-pi-cut',specificationVersion:1};
+}
+function piFields(tree,count){
+  const xs=E.decodeList(tree);assert.equal(xs.length,count);verifyPiRule(xs[0]);return xs;
+}
+// Endpoints can have large denominators. Their certificate fields are canonical
+// rational text, re-parsed exactly; they are not direct unary Q representations.
+const piRat=x=>T(A.qstr(x)),readPiRat=t=>A.qparse(E.decodeText(t));
+function piPartial(n){
+  assert(n>=0n);let s=qc(1);
+  for(let j=0n;j<n;j++)s=A.qadd(s,qc(j%2n===0n?-1n:1n,2n*j+3n));
+  return s;
+}
+const piBounds=m=>{assert(m>=0n);return {lower:A.qmul(qc(4),piPartial(2n*m+1n)),upper:A.qmul(qc(4),piPartial(2n*m))};};
+add('pi-rule',piGroup,'円周率の指定規則：局所番号0・仕様版1',
+  '(規則Nの0,仕様版Nの1)。指定型の下でLeibniz有理上下端と左右の所属条件を指す有限レコード。規則全体の数学的根拠は本文付録Bに記す。',piRule(),verifyPiRule,
+  '規則識別子・版の有限照合。これだけで切断の一般法則や通常の円周率との対応を機械証明したとはしない。');
+function verifyPiTrace(tree){
+  const xs=piFields(tree,2),states=E.decodeList(xs[1]);assert.equal(states.length,3);
+  const expected=[qc(1),qc(2,3),qc(13,15)];let previous;
+  states.forEach((state,i)=>{
+    const fields=E.decodeList(state);assert.equal(fields.length,2);
+    const n=E.decodeNat(fields[0]),value=readPiRat(fields[1]);assert.equal(n,BigInt(i));
+    equal(value,expected[i]);equal(value,piPartial(n));
+    equal(value,i===0?qc(1):A.qadd(previous,qc(i%2===0?1:-1,2*i+1)));previous=value;
+  });
+  return {states:3,recurrenceSteps:2,independentExpectedValues:expected.map(A.qstr),recomputed:true};
+}
+add('pi-recurrence-two-steps',piGroup,'有限再帰S：1、2/3、13/15',
+  'List(規則版,List(List(n,正規有理文字列)))。S0=1から二段進み、別に記した三つの期待値も照合する。',
+  L([piRule(),L([qc(1),qc(2,3),qc(13,15)].map((x,n)=>L([N(n),piRat(x)])))]),verifyPiTrace,
+  '復号した有限状態列の添字・二段の再帰・明示期待値を有理演算で検査。全段階の帰納証明とは区別。');
+function verifyPiWitness(tree){
+  const xs=piFields(tree,4),side=E.decodeNat(xs[1]),q=E.decodeRat(xs[2]),m=E.decodeNat(xs[3]);
+  assert(side===0n||side===1n);const b=piBounds(m);
+  assert(side===0n?A.qcmp(q,b.lower)<0:A.qcmp(b.upper,q)<0,'strict pi membership witness failed');
+  return {side:side===0n?'left':'right',rational:A.qstr(q),witness:m.toString(),endpoint:A.qstr(side===0n?b.lower:b.upper),recomputed:true};
+}
+const piWitness=(side,q,m)=>L([piRule(),N(side),Q(q),N(m)]);
+for(const [id,title,side,q,m]of [
+  ['lower-witness','左側への所属証拠：3<B3',0,qc(3),3],
+  ['upper-witness','右側への所属証拠：A1<7/2',1,qc(7,2),1],
+])add(`pi-${id}`,piGroup,title,'List(規則版,側N：左0／右1,有理数Q,証人m)。q<BmまたはAm<qを有限有理算術で直接確認する。',
+  piWitness(side,q,m),verifyPiWitness,'一つの有理数・証人添字の厳密不等式を検査。左右全体の無限列挙や任意元の等値判定は実行しない。');
+function verifyPiBracket(tree){
+  const xs=piFields(tree,5),p=E.decodeNat(xs[1]),m=E.decodeNat(xs[2]);assert.equal(m,2n**p);
+  const lower=readPiRat(xs[3]),upper=readPiRat(xs[4]),b=piBounds(m);equal(lower,b.lower);equal(upper,b.upper);
+  const width=A.qsub(upper,lower);equal(width,qc(4n,4n*m+3n));assert(A.qcmp(width,qc(1n,2n**p))<0);
+  return {precision:p.toString(),witness:m.toString(),lower:A.qstr(lower),upper:A.qstr(upper),width:A.qstr(width),endpointEncoding:'canonical-rational-text',recomputed:true};
+}
+const piBracketExpected=[
+  ['304/105','52/15'],['10312/3465','1052/315'],
+  ['44257352/14549535','2490548/765765'],
+  ['13926277743608/4512611027925','14442004718228/4512611027925'],
+];
+for(const [p,[lower,upper]]of piBracketExpected.entries())add(`pi-bracket-${p}`,piGroup,`円周率の有限区間応答 p=${p}`,
+  'List(規則版,要求p,添字m=2^p,下端の正規有理文字列,上端の正規有理文字列)。分母の大きい端点は有限の証拠文字列として保存し、直接の単項Q表示とは区別する。',
+  L([piRule(),N(p),N(2**p),T(lower),T(upper)]),verifyPiBracket,
+  '独立に記した端点を有理再帰で再計算し、幅4/(4m+3)<2^(−p)を検査。任意精度の保証は本文の手書き証明。');
+function verifyPiLocated(tree){
+  const xs=piFields(tree,5),q=E.decodeRat(xs[1]),r=E.decodeRat(xs[2]),m=E.decodeNat(xs[3]),side=E.decodeNat(xs[4]);
+  const gap=A.qsub(r,q);assert(A.qcmp(gap,qc(0))>0);
+  const quotient=A.qdiv(qc(2),gap),expectedM=(quotient.n+quotient.d-1n)/quotient.d;assert.equal(m,expectedM);
+  const b=piBounds(m),width=A.qsub(b.upper,b.lower);assert(A.qcmp(width,A.qdiv(gap,qc(2)))<0);
+  const actual=A.qcmp(q,b.lower)<0?0n:1n;assert.equal(side,actual);
+  verifyPiWitness(piWitness(side,side===0n?q:r,m));
+  return {gap:A.qstr(gap),witness:m.toString(),branch:side===0n?'q-in-left':'r-in-right',strictWidthChecked:true,recomputed:true};
+}
+for(const [id,q,r,side]of [['left',qc(2),qc(3),0],['right',qc(3),qc(4),1]])add(`pi-located-${id}`,piGroup,`有理数の隙間に対する有限選択：${A.qstr(q)}<${A.qstr(r)}`,
+  'List(規則版,q,r,m=ceil(2/(r−q)),選択した側)。幅<(r−q)/2を確認し、q<Bmなら左、そうでなければAm<rという右の証拠を返す。',
+  L([piRule(),Q(q),Q(r),N(2),N(side)]),verifyPiLocated,
+  '指定した二つの入力で両分岐を実行し、得た所属証拠も再検査。任意の有理q<rについての所在性は手書き一般証明。');
+const piRejections=[
+  ['lower-boundary','q=B0に対する左証人m=0を拒否','PiWitness',piWitness(0,qc(8,3),0),verifyPiWitness],
+  ['upper-boundary','q=A0に対する右証人m=0を拒否','PiWitness',piWitness(1,qc(4),0),verifyPiWitness],
+  ['changed-witness','q=3の左証人をm=0へ改変した候補を拒否','PiWitness',piWitness(0,qc(3),0),verifyPiWitness],
+  ['false-recurrence','S2=1という虚偽状態を拒否','PiTrace',L([piRule(),L([qc(1),qc(2,3),qc(1)].map((x,n)=>L([N(n),piRat(x)])))]),verifyPiTrace],
+  ['unknown-version','未定義の仕様版2を拒否','PiRule',pair(N(0),N(2)),verifyPiRule],
+];
+for(const [id,title,operation,payload,verify]of piRejections)add(`pi-reject-${id}`,piGroup,title,
+  'List(検査名,候補,拒否予定Nの0)。境界の等号、証人・再帰値・仕様版の改変を有限検査で拒否する。',L([T(operation),payload,N(0)]),tree=>{
+    const xs=E.decodeList(tree);assert.equal(xs.length,3);assert.equal(E.decodeText(xs[0]),operation);assert.equal(E.decodeNat(xs[2]),0n);
+    assert.throws(()=>verify(xs[1]));return {operation,expectedRejection:true,rejectionObserved:true};
+  },'保存候補を実際に局所検査へ渡して拒否を確認。厳密円周率の一般等値判定器ではない。');
+const exactPiExamples={structuralExamples:15,ruleRecords:1,specificationVersion:1,recurrenceTraces:1,recurrenceSteps:2,membershipWitnesses:2,bracketResponses:4,precisions:[0,1,2,3],locatedBranches:2,rejectionCases:5,endpointEncoding:'canonical-rational-text',generalCutLawsMachineVerified:false,arbitraryExactEqualityImplemented:false};
+
 add('sqrt2-state','生成ラベル・解析・計算証跡','√2の区間生成ラベルが指定する生成器の状態','List(段数2,下端1,上端3/2)',L([N(2),Q(qc(1)),Q(qc(3,2))]));
 add('leibniz-state','生成ラベル・解析・計算証跡','Leibniz区間生成ラベルが指定する生成器の初期状態','List(段数0,下端8/3,上端4)',L([N(0),Q(qc(8,3)),Q(qc(4))]));
 add('label-with-evidence','生成ラベル・解析・計算証跡','qlimの規則・引数・仕様・証拠を保持する記録','List(規則参照,引数,仕様,証拠)。qlimの応答を検査するための記録例であり、全ての数やTに要求する統合ラベルではない。証拠欄は本文命題6.1への手書き証明参照。',L([T(`qlim@paper-v${version}`),pair(Q(qc(0)),Q(qc(1))),T('Nat -> Q; response 1/(n+1); rational error contract'),node(0,T(`paper-v${version} proposition 6.1`))]));
@@ -562,5 +654,5 @@ for(const entry of entries) {
 }
 output(`research/concept-examples-v${version}.md`,markdown.join(''));
 output(`${folder}/manifest.json`,json({format:'concept-symbol-examples/1',paperVersion:version,alphabet:'f ( ) , and whitespace',grammar:'S := f() | f(S) | (S,S)',examples:manifest}));
-output(`${folder}/report.json`,json({format:'concept-symbol-verification/1',paperVersion:version,status:'passed',exampleCount:entries.length,builtinDefinitionCount:C.BUILTINS.length,certificateBundles:certificateCases.length,fixedTypeExamples:{typeTag:23,type:'T',valueExamples:8,multiplicationExamples:2,rejectedWrongType:true,rejectedMalformedInput:true,rejectedWrongProduct:true},natFormExecution:{specifiedType:'N',programExamples:1,recordedExamples:4,rejectedUnknownInstruction:true},approximationExamples:{valueErrorPairs:2,methods:['bracket','residual'],precision:3},relationLabelExamples:{structuralExamples:19,generatorRecords:2,commonSubsequenceCases:3,introductionCases:4,labelValues:3,additionCases:1,orderChains:1,nonadditivityCases:1,rationalPrecisionCases:1,rejectionCases:3,retainsExecutionCoefficient:true,retainsLabelIndex:true},geometricDecimalExamples:{structuralExamples:30,geometricRecords:5,recurrenceTraces:5,statesPerTrace:4,introductionCases:5,decimalRecords:2,exactInterpretations:2,prefixCases:3,prefixDigits:[1,2,3],additionCases:2,rejectionCases:6,retainsRecurrenceParameters:true,separatesDecimalInterpretation:true},checks:results,scope:'All examples pass syntax round trips. Type-specific or semantic checks run only where individually declared; schematic type/logical data is syntax-only. The finite NatForm program is executed on its recorded examples, explicitly T-typed products are recomputed without promotion, and two rational approximation/error pairs are checked by endpoint or residual arithmetic. The G-to-L introduction examples check finite rational common-subsequence samples, sign branches, retained label indices, nonadditivity, one rational precision request, and explicit rejections; their general theorems remain written proofs. The H/decimal examples separately check finite recurrence traces against closed formulas, the specified Psi rule, exact repeating-decimal rational values, common finite decimal-prefix bounds for distinct labels, and concrete malformed or false claims. No infinite geometric intersection or general volume theorem is machine-verified here. Decoded existing proof bundles are rechecked in their original kernels.'}));
+output(`${folder}/report.json`,json({format:'concept-symbol-verification/1',paperVersion:version,status:'passed',exampleCount:entries.length,builtinDefinitionCount:C.BUILTINS.length,certificateBundles:certificateCases.length,fixedTypeExamples:{typeTag:23,type:'T',valueExamples:8,multiplicationExamples:2,rejectedWrongType:true,rejectedMalformedInput:true,rejectedWrongProduct:true},natFormExecution:{specifiedType:'N',programExamples:1,recordedExamples:4,rejectedUnknownInstruction:true},approximationExamples:{valueErrorPairs:2,methods:['bracket','residual'],precision:3},relationLabelExamples:{structuralExamples:19,generatorRecords:2,commonSubsequenceCases:3,introductionCases:4,labelValues:3,additionCases:1,orderChains:1,nonadditivityCases:1,rationalPrecisionCases:1,rejectionCases:3,retainsExecutionCoefficient:true,retainsLabelIndex:true},geometricDecimalExamples:{structuralExamples:30,geometricRecords:5,recurrenceTraces:5,statesPerTrace:4,introductionCases:5,decimalRecords:2,exactInterpretations:2,prefixCases:3,prefixDigits:[1,2,3],additionCases:2,rejectionCases:6,retainsRecurrenceParameters:true,separatesDecimalInterpretation:true},exactPiExamples,checks:results,scope:'All examples pass syntax round trips. Type-specific or semantic checks run only where individually declared; schematic type/logical data is syntax-only. The finite NatForm program is executed on its recorded examples, explicitly T-typed products are recomputed without promotion, and two rational approximation/error pairs are checked by endpoint or residual arithmetic. The G-to-L introduction examples check finite rational common-subsequence samples, sign branches, retained label indices, nonadditivity, one rational precision request, and explicit rejections; their general theorems remain written proofs. The H/decimal examples separately check finite recurrence traces against closed formulas, the specified Psi rule, exact repeating-decimal rational values, common finite decimal-prefix bounds for distinct labels, and concrete malformed or false claims. The pi examples check the named rule and version, two recurrence steps, finite strict membership witnesses, four prescribed rational brackets, both locatedness branches, and five malformed claims. Large endpoints use canonical rational-text certificate fields. The general exact-cut laws, correspondence with ordinary pi, and arbitrary exact equality are not machine-verified. No infinite geometric intersection or general volume theorem is machine-verified here. Decoded existing proof bundles are rechecked in their original kernels.'}));
 console.log(`${checking?'Verified':'Generated and verified'} ${entries.length} complete symbol examples, ${C.BUILTINS.length} built-in lambda definitions, and ${certificateCases.length} decoded certificate bundles.`);

@@ -4,9 +4,11 @@
 
 [English](README.en.md)
 
-現在の版は **論文日本語版・英語版 v1.5.7 / λ計算インタプリタ v8.0.1** です。Mを有理係数有限多項式、FεをM同士の分数として定め、必要な数と演算を、共通の有限構文・型別規則・証拠によって追加していきます。
+現在の版は **論文日本語版・英語版 v1.5.8 / λ計算インタプリタ v8.0.1** です。Mを有理係数有限多項式、FεをM同士の分数として定め、必要な数と演算を、共通の有限構文・型別規則・証拠によって追加していきます。
 
-v1.5.7では、本文末の付録Aに小数とメンガーのスポンジの比較例を追加しました。`0._3` は循環桁の指定であり、それだけでラベルを決めません。有理数1/3を厳密に保ち、有理評価・下側生成・上側生成を区別します。等比生成族Hの有限契約と導入を定め、スポンジの体積生成処理からの関係子ラベルを `0##` とします。直観主義の推論方針、Church表示との対応、関連研究を補強しました。バナッハ＝タルスキーは著者の希望により保留し、研究の動機と決定事項を[記録](research/author-design-decisions-v1.5.7.md)しています。
+v1.5.8では、付録Bに超現実数との比較と円周率の厳密な構成例を追加しました。有限記述・計算・証拠検査の利点を具体化し、表現範囲や一般の等号判定の限界も明示します。円周率は有理切断記述という別の型で構成し、既存の無限小を含む数の等号や演算を変更しません。通常の円周率との対応は、外部の解析学を用いる比較定理として分けて証明します。
+
+v1.5.7では、本文末の付録Aに小数とメンガーのスポンジの比較例を追加しました。`0._3` は循環桁の指定であり、それだけでラベルを決めません。有理数1/3を厳密に保ち、有理評価・下側生成・上側生成を区別します。等比生成族Hの有限契約と導入を定め、スポンジの体積生成処理からの関係子ラベルを `0##` とします。直観主義の推論方針、Church表示との対応、関連研究を補強しました。バナッハ＝タルスキーは著者の希望により保留し、研究の動機と決定事項を[記録](research/author-design-decisions-v1.5.8.md)しています。
 
 v1.5.6では、正の有理数bを使う `q+b/(n+1)` の生成記録から、bの大きさを捨てて共通の `q##` を導入します。生成記録は実行のためにbを保持し、導入先のLは有理成分と#の個数を保持します。再帰回数n、#の個数k、要求精度pを区別します。導入は逐点加算を保存せず、ラベルの演算では `0## + 0## = 0####` となるため、非零性と加法消去を両立できます。
 
@@ -20,24 +22,27 @@ v1.5.4では、別稿 `Generative_Reals_ja_v1.4.1.md` から有限構成と証�
 
 ## 読む・使う
 
-最初に[付録「fだけでたどる本論文」](appendices/A_New_Foundation_of_Mathematics_ja_v1.5.7_f_only.md)を眺めてください。本文は、その同じ再帰形から数・演算・証拠を組み立てる過程を、一段ずつ噛み砕いて説明します。
+- [ビジュアライザーのオンライン版（Pages有効化後）](https://o0o-yuta-kimura-o0o.github.io/my-math-paper-2026_1.5.x/) — f-Generative Atlas v1.5.8.4。
+- [HTMLを保存して使う](docs/f-generative-atlas-v1.5.8.4.html) · [GitHub Pagesの公開手順](PAGES.md)
 
-- [本稿の全概念を基本記号で表す：構成規則と読み方](research/concept-symbols-v1.5.7.md)
-- [自然数から四元数・λ項・命題・証明・解析までの完全展開例](research/concept-examples-v1.5.7.md)
-- [本文全節と実装の概念対応表](research/concept-inventory-v1.5.7.md)
-- [論文日本語版 v1.5.7](manuscripts/A_New_Foundation_of_Mathematics_ja_v1.5.7.md)
-- [論文英語版 v1.5.7](manuscripts/A_New_Foundation_of_Mathematics_en_v1.5.7.md) · [英語版fのみ付録](appendices/A_New_Foundation_of_Mathematics_en_v1.5.7_f_only.md)
+最初に[付録「fだけでたどる本論文」](appendices/A_New_Foundation_of_Mathematics_ja_v1.5.8_f_only.md)を眺めてください。本文は、その同じ再帰形から数・演算・証拠を組み立てる過程を、一段ずつ噛み砕いて説明します。
+
+- [本稿の全概念を基本記号で表す：構成規則と読み方](research/concept-symbols-v1.5.8.md)
+- [自然数から四元数・λ項・命題・証明・解析までの完全展開例](research/concept-examples-v1.5.8.md)
+- [本文全節と実装の概念対応表](research/concept-inventory-v1.5.8.md)
+- [論文日本語版 v1.5.8](manuscripts/A_New_Foundation_of_Mathematics_ja_v1.5.8.md)
+- [論文英語版 v1.5.8](manuscripts/A_New_Foundation_of_Mathematics_en_v1.5.8.md) · [英語版fのみ付録](appendices/A_New_Foundation_of_Mathematics_en_v1.5.8_f_only.md)
 - [λ計算インタプリタ v8.0.1](interpreter/lambda_interpreter_v8.0.1.html) — ダウンロードしてブラウザで開くと、ネット接続なしで使用できます。
-- [関係子ラベルの導入と近似への接続](research/label-design-v1.5.7.md)
-- [有限対による型Tの拡張例](research/extension-example-v1.5.7.md)
-- [原資料の監査と修正根拠](research/source-audit-v1.5.7.md)
-- [射のみの圏・有限精度の解析への応用](research/applications-v1.5.7.md)
-- [生成ラベル・短い代数と圏の証跡・レジスタ計算](research/trace-extensions-v1.5.7.md)
-- [符号と大きさを保つλ整数・分数算術](research/lambda-arithmetic-v1.5.7.md)
+- [関係子ラベルの導入と近似への接続](research/label-design-v1.5.8.md)
+- [有限対による型Tの拡張例](research/extension-example-v1.5.8.md)
+- [原資料の監査と修正根拠](research/source-audit-v1.5.8.md)
+- [射のみの圏・有限精度の解析への応用](research/applications-v1.5.8.md)
+- [生成ラベル・短い代数と圏の証跡・レジスタ計算](research/trace-extensions-v1.5.8.md)
+- [符号と大きさを保つλ整数・分数算術](research/lambda-arithmetic-v1.5.8.md)
 - [証拠の形式と再検証手順](verification/README.md)
 - [変更履歴](CHANGELOG.md)
 
-GitHub の通常のファイル画面では HTML ソースが表示されます。使用するには HTML ファイルを保存してローカルで開きます。この配布物は GitHub Pages の公開設定を行いません。
+GitHub の通常のファイル画面では HTML ソースが表示されます。使用するには HTML ファイルを保存してローカルで開きます。ビジュアライザーはGitHub Pagesでも公開できます。初回の設定は[公開手順](PAGES.md)を参照してください。
 
 ## この版で確認できること
 
@@ -63,7 +68,9 @@ v1.5.2では対も `f(左右の内容)` に統一しました。その版の付�
 
 現在の付録では、数・式・演算・証拠の構造例を同じfの構文へ戻します。本文全文と実装ソースも可逆に保存し、収録した証拠束は復号後に対応する検査器へ渡します。NatFormとTの追加例を含む件数・保存元・検査結果は、版別のmanifestとreportを参照してください。構造の直接表示と、文章・コードの文字列保存を区別しています。
 
-英語版v1.5.7は日本語版と同じ数学的内容を持つ全訳です。固定型での計算、NatForm、有限対Tと近似の接続を含め、定義・証明・番号・参照・証明状態を保持します。[英訳の照合記録](verification/translation-en-v1.5.7.json)と[英語本文のfのみ保存・復号記録](verification/f-only-en-v1.5.7/report.json)を同梱します。過去版の論文は作業フォルダに保持します。
+英語版v1.5.8は日本語版と同じ数学的内容を持つ全訳です。固定型での計算、NatForm、有限対Tと近似の接続を含め、定義・証明・番号・参照・証明状態を保持します。[英訳の照合記録](verification/translation-en-v1.5.8.json)と[英語本文のfのみ保存・復号記録](verification/f-only-en-v1.5.8/report.json)を同梱します。過去版の論文は作業フォルダに保持します。
+
+v1.5.8の円周率に関する15件の有限例を加え、構造例は計303件です。再帰・所属証拠・精度応答・不正候補の拒否を検査し、切断の一般法則や通常の円周率との同定の手書き証明とは区別します。
 
 ## 検証を実行する
 
@@ -84,7 +91,7 @@ node scripts/generate-english-appendix.mjs --check
 
 ## ファイルとバージョンの運用
 
-論文は `A_New_Foundation_of_Mathematics_ja_v1.5.0.md` から開始し、改訂ごとに `v1.5.1`、`v1.5.2`、`v1.5.3`、`v1.5.4`、`v1.5.5`、`v1.5.6`、`v1.5.7` のように増やします。インタプリタは `lambda_interpreter_v8.0.0.html` から開始し、独立に版を管理します。確定した過去版は保存し、現在の対象を `release.json` に記録します。v1.5.0 の作成中の修正は初版の校正に含めます。
+論文は `A_New_Foundation_of_Mathematics_ja_v1.5.0.md` から開始し、改訂ごとに `v1.5.1`、`v1.5.2`、`v1.5.3`、`v1.5.4`、`v1.5.5`、`v1.5.6`、`v1.5.7`、`v1.5.8` のように増やします。インタプリタは `lambda_interpreter_v8.0.0.html` から開始し、独立に版を管理します。確定した過去版は保存し、現在の対象を `release.json` に記録します。v1.5.0 の作成中の修正は初版の校正に含めます。
 
 作業フォルダでは原資料を `origin/` に保持しています。GitHub にアップロードするための複製は `output/` にあり、最新の論文・インタプリタ・監査・応用・検証資料を、相対リンクが保たれるフォルダ構成でまとめます。原資料の過去版は配布用の複製に混在させません。
 

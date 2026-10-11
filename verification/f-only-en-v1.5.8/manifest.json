@@ -1,0 +1,2709 @@
+{
+  "format": "single-f-english-appendix/1",
+  "paperVersion": "1.5.8",
+  "language": "en",
+  "manuscript": "manuscripts/A_New_Foundation_of_Mathematics_en_v1.5.8.md",
+  "manuscriptSha256": "5d13fdc05d00e4bb0454064554bae22b06bfe38d3d082040e7c8d1647c13b775",
+  "manuscriptBytes": 214474,
+  "sharedSourceManifest": "verification/f-only-v1.5.8/manifest.json",
+  "labelsSha256": "5e173472381dcf8e5f7bfffa5d6afd61dbfe06041c2364f6c8559d5a7245a253",
+  "files": [
+    {
+      "id": "nat-0",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/nat-0.f",
+      "bytes": 4,
+      "sha256": "07d6b0de1af2f0e71ad001630d6c94a599cde970023233b8a440e9e8faddc530",
+      "title": "Natural number 0"
+    },
+    {
+      "id": "nat-1",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/nat-1.f",
+      "bytes": 7,
+      "sha256": "d5bb654fb7396f18931c15b2a874974963dfcb2c5348356f6baad05fcf5748c0",
+      "title": "Natural number 1"
+    },
+    {
+      "id": "nat-2",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/nat-2.f",
+      "bytes": 10,
+      "sha256": "dbd34bca5e825e8b8508174c5a4d592820c781bd84c199b03d2ce0fd618836ca",
+      "title": "Natural number 2"
+    },
+    {
+      "id": "nat-3",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/nat-3.f",
+      "bytes": 13,
+      "sha256": "3cc8421d89fd55465f9685ef8e0d656359be0050922a908a45c11aaf8c29661c",
+      "title": "Natural number 3"
+    },
+    {
+      "id": "nat-4",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/nat-4.f",
+      "bytes": 16,
+      "sha256": "824202512946f3c550a64b83df3b876e36773b9ae126779813cbace810dce117",
+      "title": "Natural number 4"
+    },
+    {
+      "id": "sign-0",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/sign-0.f",
+      "bytes": 4,
+      "sha256": "07d6b0de1af2f0e71ad001630d6c94a599cde970023233b8a440e9e8faddc530",
+      "title": "Nonnegative sign"
+    },
+    {
+      "id": "sign-1",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/sign-1.f",
+      "bytes": 7,
+      "sha256": "d5bb654fb7396f18931c15b2a874974963dfcb2c5348356f6baad05fcf5748c0",
+      "title": "Negative sign"
+    },
+    {
+      "id": "int-minus-2",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/int-minus-2.f",
+      "bytes": 19,
+      "sha256": "96da41332fdfa5864547ce6d2678bf354be0a608f6af3f69b004d866f6af1df0",
+      "title": "Integer -2"
+    },
+    {
+      "id": "int-minus-1",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/int-minus-1.f",
+      "bytes": 16,
+      "sha256": "f0fba5908b68af4dc22eb25ae7eb2b9219765b5a68f3c0646b95f32a55146b16",
+      "title": "Integer -1"
+    },
+    {
+      "id": "int-0",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/int-0.f",
+      "bytes": 10,
+      "sha256": "d81d5cc8f4d7a3a66da6d9b4669f0178da2fe73a5a867b966ac2e49a9b2906b2",
+      "title": "Integer 0"
+    },
+    {
+      "id": "int-1",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/int-1.f",
+      "bytes": 13,
+      "sha256": "77d5f08b6cc75efc8569ae6ee51150b1b1d24a8337f42744610f39a6fe1c8f53",
+      "title": "Integer 1"
+    },
+    {
+      "id": "int-2",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/int-2.f",
+      "bytes": 16,
+      "sha256": "a2c632e79db9212e9443f6a98de2d4aa8ec9c816500075c7d85755b9b90ce844",
+      "title": "Integer 2"
+    },
+    {
+      "id": "rat-0-1",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/rat-0-1.f",
+      "bytes": 25,
+      "sha256": "2de69184ab97ffb9f7e34a40caf833116e29b2478984d0cc0df877a67074f5ea",
+      "title": "Rational number 0/1"
+    },
+    {
+      "id": "rat-1-1",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/rat-1-1.f",
+      "bytes": 28,
+      "sha256": "39436593c9f3f8d0b9bf22635824c6b735d61ecbcea4fda771019a3369eb5152",
+      "title": "Rational number 1/1"
+    },
+    {
+      "id": "rat-minus-1-1",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/rat-minus-1-1.f",
+      "bytes": 31,
+      "sha256": "7834b3b00ddceca744ed4bb698953a2b2eeb8ae51e06e98c4a9f88afaa76804d",
+      "title": "Rational number -1/1"
+    },
+    {
+      "id": "rat-2-1",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/rat-2-1.f",
+      "bytes": 31,
+      "sha256": "122533868ee93ec4bb8a82448eb7074b7ba03a0d8bc61b7df1a54be184b00bfd",
+      "title": "Rational number 2/1"
+    },
+    {
+      "id": "rat-minus-2-1",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/rat-minus-2-1.f",
+      "bytes": 34,
+      "sha256": "7e3ab0d046c95805c0a674dc3bee5c08b2e6c5a8a17b83910becf24799bed522",
+      "title": "Rational number -2/1"
+    },
+    {
+      "id": "rat-1-2",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/rat-1-2.f",
+      "bytes": 31,
+      "sha256": "7c3d5f0d56c4e3619d44fcf050142338cb903f13e3bc8651804c247700083be0",
+      "title": "Rational number 1/2"
+    },
+    {
+      "id": "rat-minus-1-3",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/rat-minus-1-3.f",
+      "bytes": 37,
+      "sha256": "929ba7897488a6e49baff02734dcfde21bfba7e1529443fbb7e90fd50f48c553",
+      "title": "Rational number -1/3"
+    },
+    {
+      "id": "text-a",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/text-a.f",
+      "bytes": 301,
+      "sha256": "aa39fe556b5e72d3623052ab7774b764df17245bc84e52014b08c3f3780fc57d",
+      "title": "String a"
+    },
+    {
+      "id": "text-lambda",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/text-lambda.f",
+      "bytes": 1195,
+      "sha256": "b4fe5135d0f5301c8116e8e28bed403dc33eb3392651ae133fb021e375ce3ec1",
+      "title": "String λ"
+    },
+    {
+      "id": "pair-nat",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/pair-nat.f",
+      "bytes": 19,
+      "sha256": "96da41332fdfa5864547ce6d2678bf354be0a608f6af3f69b004d866f6af1df0",
+      "title": "Fixed pair of natural numbers 1 and 2"
+    },
+    {
+      "id": "list-0",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/list-0.f",
+      "bytes": 4,
+      "sha256": "07d6b0de1af2f0e71ad001630d6c94a599cde970023233b8a440e9e8faddc530",
+      "title": "Natural-number sequence of length 0"
+    },
+    {
+      "id": "list-1",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/list-1.f",
+      "bytes": 10,
+      "sha256": "d81d5cc8f4d7a3a66da6d9b4669f0178da2fe73a5a867b966ac2e49a9b2906b2",
+      "title": "Natural-number sequence of length 1"
+    },
+    {
+      "id": "list-3",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/list-3.f",
+      "bytes": 31,
+      "sha256": "3db4a75ae63505449eabe656d54cc1ddb69e8dd62d64d3b18eb9461bd64a51d2",
+      "title": "Natural-number sequence of length 3"
+    },
+    {
+      "id": "bool-false",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/bool-false.f",
+      "bytes": 4,
+      "sha256": "07d6b0de1af2f0e71ad001630d6c94a599cde970023233b8a440e9e8faddc530",
+      "title": "Boolean data false"
+    },
+    {
+      "id": "bool-true",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/bool-true.f",
+      "bytes": 7,
+      "sha256": "d5bb654fb7396f18931c15b2a874974963dfcb2c5348356f6baad05fcf5748c0",
+      "title": "Boolean data true"
+    },
+    {
+      "id": "ordering-minus-1",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/ordering-minus-1.f",
+      "bytes": 16,
+      "sha256": "f0fba5908b68af4dc22eb25ae7eb2b9219765b5a68f3c0646b95f32a55146b16",
+      "title": "Comparison result -1"
+    },
+    {
+      "id": "ordering-0",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/ordering-0.f",
+      "bytes": 10,
+      "sha256": "d81d5cc8f4d7a3a66da6d9b4669f0178da2fe73a5a867b966ac2e49a9b2906b2",
+      "title": "Comparison result 0"
+    },
+    {
+      "id": "ordering-1",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/ordering-1.f",
+      "bytes": 13,
+      "sha256": "77d5f08b6cc75efc8569ae6ee51150b1b1d24a8337f42744610f39a6fe1c8f53",
+      "title": "Comparison result 1"
+    },
+    {
+      "id": "option-none",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/option-none.f",
+      "bytes": 10,
+      "sha256": "d81d5cc8f4d7a3a66da6d9b4669f0178da2fe73a5a867b966ac2e49a9b2906b2",
+      "title": "No value"
+    },
+    {
+      "id": "option-some",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/option-some.f",
+      "bytes": 25,
+      "sha256": "fbd9e5d4ee572b4f33b9f5ea531e286f579591b582b53a69e2226c0d9b3293ff",
+      "title": "Present value: natural number 2"
+    },
+    {
+      "id": "result-success",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/result-success.f",
+      "bytes": 43,
+      "sha256": "ebfc70583103b8959b40da8233f9dc7cc2ba79c07cc01c1e9abf1eeb8fc280c8",
+      "title": "Operation success"
+    },
+    {
+      "id": "result-failure",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/result-failure.f",
+      "bytes": 1387,
+      "sha256": "189f9d1be4e69a1490c543c0c765d73760533084a95cdcae5ab3ceeb52f30787",
+      "title": "Operation failure"
+    },
+    {
+      "id": "m-zero",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/m-zero.f",
+      "bytes": 4,
+      "sha256": "07d6b0de1af2f0e71ad001630d6c94a599cde970023233b8a440e9e8faddc530",
+      "title": "M-polynomial: 0"
+    },
+    {
+      "id": "m-one",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/m-one.f",
+      "bytes": 34,
+      "sha256": "71601c4ac293e8e1237c18764825bb8feb7fb106c5cd975791156747d0d82d20",
+      "title": "M-polynomial: 1"
+    },
+    {
+      "id": "m-epsilon",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/m-epsilon.f",
+      "bytes": 61,
+      "sha256": "c675465b8c814c67d4a59bb9954e787b97789c30e72ca67123c67e19d175c3ea",
+      "title": "M-polynomial: ε"
+    },
+    {
+      "id": "m-epsilon-squared",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/m-epsilon-squared.f",
+      "bytes": 88,
+      "sha256": "eec9f19e98fbf551ebfde131db3fd2c447b288bcefb47164080dea4f7ae94d33",
+      "title": "M-polynomial: ε²"
+    },
+    {
+      "id": "m-one-plus-epsilon",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/m-one-plus-epsilon.f",
+      "bytes": 64,
+      "sha256": "6f9cc182ca4c8ef79528673f7b92e0491fceda9f024c7ca8723cea29c6ffd93b",
+      "title": "M-polynomial: 1+ε"
+    },
+    {
+      "id": "m-epsilon-half",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/m-epsilon-half.f",
+      "bytes": 64,
+      "sha256": "a8a36b302fb8367c077f727a0ab6afd642ec781cfffc2041ad0c6606a7d7741a",
+      "title": "M-polynomial: ε/2"
+    },
+    {
+      "id": "m-general",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/m-general.f",
+      "bytes": 103,
+      "sha256": "5424269a00112c8addd9b3edd17fb0a727311bc95c73899a68fac594e61c729c",
+      "title": "M-polynomial: 1−2ε+(1/2)ε²"
+    },
+    {
+      "id": "legacy-l",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/legacy-l.f",
+      "bytes": 40,
+      "sha256": "41e03bf71ba88cd26ec432428b825e5699c7d5be5ea4962e04212faf790d2a82",
+      "title": "Auxiliary relation label L: 0#"
+    },
+    {
+      "id": "f-zero",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/f-zero.f",
+      "bytes": 40,
+      "sha256": "3cf99db80860e1b74fbf63eb1c75e146d4280b80f463d2ab9ccc12a055b5fbea",
+      "title": "F: zero"
+    },
+    {
+      "id": "f-one",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/f-one.f",
+      "bytes": 70,
+      "sha256": "17808a5fa10d5b898bd805c16a54a88c404a604d13f8a016d89ae3e63d70d27b",
+      "title": "F: one"
+    },
+    {
+      "id": "f-minus-one",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/f-minus-one.f",
+      "bytes": 73,
+      "sha256": "6ee3f4b31688c3af855576d26220258c2fcb75f2046e8d107aec7fd2143f4fc6",
+      "title": "F: minus-one"
+    },
+    {
+      "id": "f-epsilon",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/f-epsilon.f",
+      "bytes": 97,
+      "sha256": "598dadd3b2b0c797dc2a45c426d5ef4513f30856d221e8494d45fe84a9e1bed0",
+      "title": "F: epsilon"
+    },
+    {
+      "id": "f-inverse-epsilon",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/f-inverse-epsilon.f",
+      "bytes": 97,
+      "sha256": "9a55b630435a6f3e73c113adb72e39708f4c670d70312845429f544f159128be",
+      "title": "F: inverse-epsilon"
+    },
+    {
+      "id": "f-square-ratio",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/f-square-ratio.f",
+      "bytes": 154,
+      "sha256": "c094abf4b2be9089e254143a3245e1b9e1c26d55db817823ce19de7a68a121ad",
+      "title": "F: square-ratio"
+    },
+    {
+      "id": "poly-degree",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/poly-degree.f",
+      "bytes": 10,
+      "sha256": "dbd34bca5e825e8b8508174c5a4d592820c781bd84c199b03d2ce0fd618836ca",
+      "title": "Degree of ε²"
+    },
+    {
+      "id": "valuation-negative",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/valuation-negative.f",
+      "bytes": 16,
+      "sha256": "f0fba5908b68af4dc22eb25ae7eb2b9219765b5a68f3c0646b95f32a55146b16",
+      "title": "Degree difference for 1/ε"
+    },
+    {
+      "id": "standard-part",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/standard-part.f",
+      "bytes": 31,
+      "sha256": "7c3d5f0d56c4e3619d44fcf050142338cb903f13e3bc8651804c247700083be0",
+      "title": "st((1+ε)/(2−ε))"
+    },
+    {
+      "id": "complex-zero",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/complex-zero.f",
+      "bytes": 166,
+      "sha256": "405b6dc358003d44eb0b4942fb143e7802521b1874905b46486d947c26d3c7d7",
+      "title": "Generative complex number zero"
+    },
+    {
+      "id": "complex-one",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/complex-one.f",
+      "bytes": 226,
+      "sha256": "f0f1cb01dc8d25e73f6f57ded355648d0a9cc55f6f5bb6956ac481b290ab2465",
+      "title": "Generative complex number one"
+    },
+    {
+      "id": "complex-i",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/complex-i.f",
+      "bytes": 229,
+      "sha256": "2c02303f791f22529bb5a7de60d2e3016588451747250b0bca9a28f596a41b3b",
+      "title": "Generative complex number i"
+    },
+    {
+      "id": "complex-one-plus-i",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/complex-one-plus-i.f",
+      "bytes": 289,
+      "sha256": "e638115c741fc748f65e14e8c57c23f1ae8c3250fc4b7368f4073978bf25bcd4",
+      "title": "Generative complex number one-plus-i"
+    },
+    {
+      "id": "complex-one-minus-i",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/complex-one-minus-i.f",
+      "bytes": 289,
+      "sha256": "7b9361b19b030e5ffda5483fab68c35848203252f305c94b6b6554f131561862",
+      "title": "Generative complex number one-minus-i"
+    },
+    {
+      "id": "quaternion-one",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/quaternion-one.f",
+      "bytes": 394,
+      "sha256": "e4c9d9032d2693f99d64c4e7246f4020de6de8268438263835630949ac0292ae",
+      "title": "Generative quaternion one"
+    },
+    {
+      "id": "quaternion-i",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/quaternion-i.f",
+      "bytes": 397,
+      "sha256": "e4f780352a6991f40918dca303bce90ea8615ec945f3bdb439f7bb2e992d30ab",
+      "title": "Generative quaternion i"
+    },
+    {
+      "id": "quaternion-j",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/quaternion-j.f",
+      "bytes": 394,
+      "sha256": "8e0de7fda8e3fcfed75cadb0d2fdca87788507f8c54e50f9e6ac5b5d903bbe66",
+      "title": "Generative quaternion j"
+    },
+    {
+      "id": "quaternion-k",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/quaternion-k.f",
+      "bytes": 397,
+      "sha256": "5a4fdeb5bf214ffe59cc8454241014440745393772c7af850ae07e211bd7b3e2",
+      "title": "Generative quaternion k"
+    },
+    {
+      "id": "quaternion-all-one",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/quaternion-all-one.f",
+      "bytes": 580,
+      "sha256": "b7c7b8ec4fb6765d185290b4b7a94153c3dfbc794e4f9c7f84dcdc87156b92d2",
+      "title": "Generative quaternion all-one"
+    },
+    {
+      "id": "type-n",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/type-n.f",
+      "bytes": 10,
+      "sha256": "d81d5cc8f4d7a3a66da6d9b4669f0178da2fe73a5a867b966ac2e49a9b2906b2",
+      "title": "Type N"
+    },
+    {
+      "id": "type-z",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/type-z.f",
+      "bytes": 13,
+      "sha256": "036ba09a1c52fff04cc42d0836f5321f8a2ec124be5d0d52086e95735f0c93a0",
+      "title": "Type Z"
+    },
+    {
+      "id": "type-q",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/type-q.f",
+      "bytes": 16,
+      "sha256": "cc230dd163117703dedca2e65e872d99b75c0f4dedf71beabf1e1bcc43bc62de",
+      "title": "Type Q"
+    },
+    {
+      "id": "type-m",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/type-m.f",
+      "bytes": 19,
+      "sha256": "ac4a809713e59dc4fcc54750ebfbcff118acf66a9bfcd625befd99dbfbc35abd",
+      "title": "Type M"
+    },
+    {
+      "id": "type-f",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/type-f.f",
+      "bytes": 22,
+      "sha256": "7635fbf2fd51ebd0589ebf6681c3ef4c8fe300c7b4eb3570afbfd4645085bddb",
+      "title": "Type F"
+    },
+    {
+      "id": "type-c",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/type-c.f",
+      "bytes": 25,
+      "sha256": "19d481011121e405a66223380e37fad733ae2d673d22fbda605aa0de215dc34f",
+      "title": "Type C"
+    },
+    {
+      "id": "type-h",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/type-h.f",
+      "bytes": 28,
+      "sha256": "d088879c286e4687b78c83bbdda72591a5df373dccfec96449725454cd06aa8b",
+      "title": "Type H"
+    },
+    {
+      "id": "type-bool",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/type-bool.f",
+      "bytes": 31,
+      "sha256": "8f3342a1026fb46e4b22a58fa4e1da28836196e2dbac2407ac064c8d42b108b5",
+      "title": "Type Bool"
+    },
+    {
+      "id": "type-text",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/type-text.f",
+      "bytes": 34,
+      "sha256": "e6a0dad322b711b36ce5b88f3f12e6d3839ee355e01aa77bc1076501006c6415",
+      "title": "Type Text"
+    },
+    {
+      "id": "type-arrow",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/type-arrow.f",
+      "bytes": 37,
+      "sha256": "f05f33cde3fc0395d856592a7e7590f367cf58a569f40cbf9c10ce8a0ed11371",
+      "title": "Type Arrow"
+    },
+    {
+      "id": "type-lambda",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/type-lambda.f",
+      "bytes": 40,
+      "sha256": "35cbf7c2525d664115379cc2413608b9e0fb945094ad05e8dc7e0f51eafb7ecd",
+      "title": "Type Lambda"
+    },
+    {
+      "id": "type-proposition",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/type-proposition.f",
+      "bytes": 43,
+      "sha256": "930849c7427edd7002a41023c35f8323f81360acd18b89248d8aede88182a63c",
+      "title": "Type Proposition"
+    },
+    {
+      "id": "type-proof",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/type-proof.f",
+      "bytes": 46,
+      "sha256": "94ef48eee5c4481f8f85864b35ba4b19351039597f8c38c2521a7a6167c11563",
+      "title": "Type Proof"
+    },
+    {
+      "id": "type-unit",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/type-unit.f",
+      "bytes": 49,
+      "sha256": "917f74be999ef841c91ddede2c6ab5314a4afd7705251cf785c05c20aee6b6a3",
+      "title": "Type Unit"
+    },
+    {
+      "id": "type-list",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/type-list.f",
+      "bytes": 70,
+      "sha256": "8c1e7242e7598e06b4793ee6406bc320d746b3f3b20173eb178d12dbc87a0f20",
+      "title": "Type List(Q)"
+    },
+    {
+      "id": "type-pair",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/type-pair.f",
+      "bytes": 85,
+      "sha256": "f75ce8dd65f10c2ffbd24b99188471c741df191b2c077634bd8cbc46ca3c299f",
+      "title": "Type Pair(N,Q)"
+    },
+    {
+      "id": "type-option",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/type-option.f",
+      "bytes": 70,
+      "sha256": "6c37e10a3e875f1b019c4858dcee516904937e8251690ff5144f023a5e676456",
+      "title": "Type Option(N)"
+    },
+    {
+      "id": "type-function",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/type-function.f",
+      "bytes": 97,
+      "sha256": "f0ff72a347eaca60d1695af281325e18cc8e1dc333142c6d9a339688cde7ff88",
+      "title": "Type Function(Q,Q)"
+    },
+    {
+      "id": "type-ordering",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/type-ordering.f",
+      "bytes": 64,
+      "sha256": "63521a067a73be75c429c76ff99aba4c4139ab2f4369bfa00224031025fd5dbd",
+      "title": "Type Ordering"
+    },
+    {
+      "id": "type-interval",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/type-interval.f",
+      "bytes": 67,
+      "sha256": "7f71b14e697c2022bc75ef13474c66d2ad363f6df100f327971089d53db8fdc3",
+      "title": "Type Interval"
+    },
+    {
+      "id": "type-generator",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/type-generator.f",
+      "bytes": 151,
+      "sha256": "8aa92a8ca7a3019974531f5995ed246763be34b538da7371143588538bcb7789",
+      "title": "Type Generator(N,Interval)"
+    },
+    {
+      "id": "type-qrep",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/type-qrep.f",
+      "bytes": 73,
+      "sha256": "410c1abd699eb817ebd45861ad84f094d13c7e81dea79fefb19992fc938d7388",
+      "title": "Auxiliary type QRep"
+    },
+    {
+      "id": "type-result",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/type-result.f",
+      "bytes": 151,
+      "sha256": "0328ef929b8ec087d4cd6c38632bb5b0a2b162463dd84cf3a4ead34819910a1c",
+      "title": "Type Result(QRep)"
+    },
+    {
+      "id": "qrep-four-four",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/qrep-four-four.f",
+      "bytes": 46,
+      "sha256": "a31b8920ecafcf02d686845c55835a62294b9338052ae57f1cfe4f786865bbb2",
+      "title": "Unreduced fraction representation 4/4"
+    },
+    {
+      "id": "type-t",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/type-t.f",
+      "bytes": 79,
+      "sha256": "f8ebc2af136724df82bca4ed0e55e511cd0f4767a161047226f1581148f16497",
+      "title": "Type T"
+    },
+    {
+      "id": "t-zero",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/t-zero.f",
+      "bytes": 82,
+      "sha256": "9083ea3eb70b32ec358d4f85c7f5bcb6b35f09d231025d2c7988430ad8342e10",
+      "title": "T value 0"
+    },
+    {
+      "id": "t-one",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/t-one.f",
+      "bytes": 112,
+      "sha256": "af2d8b632f16ea58e59923c0355e3311bf7400e320c561c52ddeab56972adbe1",
+      "title": "T value 1"
+    },
+    {
+      "id": "t-minus-one",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/t-minus-one.f",
+      "bytes": 115,
+      "sha256": "2efe30a99ab285bb56ee2261851600a946d0939ef971bbe05b73aa2b4c97ea2b",
+      "title": "T value −1"
+    },
+    {
+      "id": "t-two",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/t-two.f",
+      "bytes": 115,
+      "sha256": "12b6b2171f5483766af3e6231b42b04fa12e5d71e4fcaef12a1ba652ce7d6f40",
+      "title": "T value 2"
+    },
+    {
+      "id": "t-sigma",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/t-sigma.f",
+      "bytes": 112,
+      "sha256": "2cfc2bc59a5ba05b5bcb49fecf144453c5686c884f6f3b630e2bbfadcdf1cd90",
+      "title": "T value σ"
+    },
+    {
+      "id": "t-sigma-half",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/t-sigma-half.f",
+      "bytes": 115,
+      "sha256": "2b7e9a95154381cd76d6b8d8b6a3b5117c28570a505f7e2529ce742bb60a7737",
+      "title": "T value σ/2"
+    },
+    {
+      "id": "t-one-plus-sigma",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/t-one-plus-sigma.f",
+      "bytes": 142,
+      "sha256": "c1b93df067e9015805a0d190d24a95cb0791489a266982ffa5c78117f2740b40",
+      "title": "T value 1+σ"
+    },
+    {
+      "id": "t-one-minus-sigma",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/t-one-minus-sigma.f",
+      "bytes": 145,
+      "sha256": "5686126760b1c2f8f622667375612af35cdd7ae7cb7ff74e0ced0282f156770f",
+      "title": "T value 1−σ"
+    },
+    {
+      "id": "fixed-t-product-conjugate",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/fixed-t-product-conjugate.f",
+      "bytes": 1429,
+      "sha256": "cbe7efee41d1266b884cf871fcf78710050e70c75d38960c3971070599cfd637",
+      "title": "Product with type fixed to T: (1,1)(1,−1)=(−1,0)"
+    },
+    {
+      "id": "fixed-t-product-sigma-square",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/fixed-t-product-sigma-square.f",
+      "bytes": 1366,
+      "sha256": "8e9e3848f593202fb1844d4263f0d9fd85a2b5f89ceafe5919c1bcf5b3f9e781",
+      "title": "Product with type fixed to T: σ²=(2,0)"
+    },
+    {
+      "id": "natform-program",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/natform-program.f",
+      "bytes": 70,
+      "sha256": "cca15a0cbde2ab975e58b5e4a9df316fbd68bf81a53b731f8efbe50e1968439c",
+      "title": "Finite NatForm program checking the formation conditions for the specified type N"
+    },
+    {
+      "id": "natform-zero",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/natform-zero.f",
+      "bytes": 103,
+      "sha256": "8efee0552f5763c084ae698f2e5c94ddc3399ca04650ab775ecd3ca57ccc24c1",
+      "title": "NatForm(f())=true"
+    },
+    {
+      "id": "natform-successor",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/natform-successor.f",
+      "bytes": 106,
+      "sha256": "82cf3951388351040529c6aae953e528f72b2c7ec067551bc97339323cea1eae",
+      "title": "NatForm(f(f()))=true"
+    },
+    {
+      "id": "natform-pair",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/natform-pair.f",
+      "bytes": 106,
+      "sha256": "5326aef807de515bd87ba31a24c8ed0ae0f3c944848befa56ed5ef898c83965f",
+      "title": "NatForm(f(f()f()))=false"
+    },
+    {
+      "id": "natform-nested-pair",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/natform-nested-pair.f",
+      "bytes": 109,
+      "sha256": "72096e1c1b63b2476c602494a0f87ece7dc0dc31da6390395b67bc2bffc57ce6",
+      "title": "NatForm(f(f(f()f())))=false"
+    },
+    {
+      "id": "lambda-true",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/lambda-true.f",
+      "bytes": 61,
+      "sha256": "8809cd4c64b768cb904f2628affbf6235a810aaca62540647b929ca1b9376553",
+      "title": "λ-definition True"
+    },
+    {
+      "id": "lambda-false",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/lambda-false.f",
+      "bytes": 58,
+      "sha256": "09c92adf062962430ac42da40623862f7d00f264de07f7fbbbf17c161d2887b9",
+      "title": "λ-definition False"
+    },
+    {
+      "id": "lambda-if",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/lambda-if.f",
+      "bytes": 160,
+      "sha256": "3b84d8005184ac501ce8616e751ee93e513c5ac9e27c094f5c013bd94bf6199c",
+      "title": "λ-definition If"
+    },
+    {
+      "id": "lambda-and",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/lambda-and.f",
+      "bytes": 136,
+      "sha256": "35d280480e69f48d6fbdbf7df92dfe6549f0a78c51fc07e1570b2fadce75b470",
+      "title": "λ-definition And"
+    },
+    {
+      "id": "lambda-or",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/lambda-or.f",
+      "bytes": 136,
+      "sha256": "cbf558e11860633a96ded13289d4fec419f5b6680be9d617ba559c2a8033c9ac",
+      "title": "λ-definition Or"
+    },
+    {
+      "id": "lambda-not",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/lambda-not.f",
+      "bytes": 2890,
+      "sha256": "9ea48dc8ce7a72750bbbff449e3c544965a9b7595a21a2cef8230c03b783ff6b",
+      "title": "λ-definition Not"
+    },
+    {
+      "id": "lambda-pair",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/lambda-pair.f",
+      "bytes": 160,
+      "sha256": "94103036b741317f3d98f017a2025b5b9de3448c6c8e978da65aabd0843119b4",
+      "title": "λ-definition Pair"
+    },
+    {
+      "id": "lambda-fst",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/lambda-fst.f",
+      "bytes": 118,
+      "sha256": "4e1bcc0882052012fa31913f163945fcbe6ea0f88200c96f1c88438a6d93d8af",
+      "title": "λ-definition Fst"
+    },
+    {
+      "id": "lambda-snd",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/lambda-snd.f",
+      "bytes": 115,
+      "sha256": "bf841066d9475defb79e14b4d8c4d23266b0fcc14da94baef048ebe1020987bd",
+      "title": "λ-definition Snd"
+    },
+    {
+      "id": "lambda-zero",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/lambda-zero.f",
+      "bytes": 58,
+      "sha256": "09c92adf062962430ac42da40623862f7d00f264de07f7fbbbf17c161d2887b9",
+      "title": "λ-definition Zero"
+    },
+    {
+      "id": "lambda-succ",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/lambda-succ.f",
+      "bytes": 199,
+      "sha256": "67601cdd614354ad5ea3960598b64423e0043fea5d5b7506f3ecb2bcc1cc662b",
+      "title": "λ-definition Succ"
+    },
+    {
+      "id": "lambda-one",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/lambda-one.f",
+      "bytes": 2548,
+      "sha256": "590512941e5a161f8c98e82539992ceaeb9b36713c82e4268a25b67abe4d3f2f",
+      "title": "λ-definition One"
+    },
+    {
+      "id": "lambda-two",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/lambda-two.f",
+      "bytes": 2164,
+      "sha256": "fa4b2e9be36aeb123a6e69de4894e0fb3575f1739d1bda8ea49bbfe4685ff0e1",
+      "title": "λ-definition Two"
+    },
+    {
+      "id": "lambda-three",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/lambda-three.f",
+      "bytes": 2236,
+      "sha256": "9896d4d583e0baad4f190e5c9480ebccd6c31f3d2bec6f075c6abc7c39ceecc9",
+      "title": "λ-definition Three"
+    },
+    {
+      "id": "lambda-four",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/lambda-four.f",
+      "bytes": 2818,
+      "sha256": "b24e49e23ddbca01f08c6f9581dfe4a357fa77707f991432a54582dc4767e35d",
+      "title": "λ-definition Four"
+    },
+    {
+      "id": "lambda-add",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/lambda-add.f",
+      "bytes": 265,
+      "sha256": "56070bdc1c83b116b93eed809f56617096f62d7dba5a1654fb6f3a5624092a83",
+      "title": "λ-definition Add"
+    },
+    {
+      "id": "lambda-mul",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/lambda-mul.f",
+      "bytes": 226,
+      "sha256": "e1a1ff557b04db9e40ed489937e1cd83950ee97f1992e34fc973b5f2ff6424ad",
+      "title": "λ-definition Mul"
+    },
+    {
+      "id": "lambda-pred",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/lambda-pred.f",
+      "bytes": 364,
+      "sha256": "00c940b97122a92841669353be4e736058a96af000856120a2da541224b5e0ae",
+      "title": "λ-definition Pred"
+    },
+    {
+      "id": "lambda-sub",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/lambda-sub.f",
+      "bytes": 1345,
+      "sha256": "a4a32def01d7e54c046829400e2197f16df07e77dc287bf5a1335f3fe5dbd98f",
+      "title": "λ-definition Sub"
+    },
+    {
+      "id": "lambda-iszero",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/lambda-iszero.f",
+      "bytes": 2911,
+      "sha256": "4a68db2716225f94bb6a2ba8411c030c68d47864a1cc44d8ba078e187f82b4e7",
+      "title": "λ-definition IsZero"
+    },
+    {
+      "id": "lambda-leq",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/lambda-leq.f",
+      "bytes": 2935,
+      "sha256": "bea0d426117e04552f60a56f6997a1d3eb9574796abef77ed53b77b775ba5fe1",
+      "title": "λ-definition Leq"
+    },
+    {
+      "id": "lambda-eqnat",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/lambda-eqnat.f",
+      "bytes": 2908,
+      "sha256": "2e236ad706534e5807417301f9a948b59b2008deef31d756ac10befdd7435b8a",
+      "title": "λ-definition EqNat"
+    },
+    {
+      "id": "lambda-n0",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/lambda-n0.f",
+      "bytes": 1291,
+      "sha256": "ad3a7c7bdcefdf7623c9338cadb676c0506706a534d0df0f8004f57058febcb2",
+      "title": "λ-definition N0"
+    },
+    {
+      "id": "lambda-n1",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/lambda-n1.f",
+      "bytes": 907,
+      "sha256": "6a6efbeca08fce5d1bf306e4ff9332447563eb23e0f0de34edb5aaf03dba0cb7",
+      "title": "λ-definition N1"
+    },
+    {
+      "id": "lambda-n2",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/lambda-n2.f",
+      "bytes": 979,
+      "sha256": "46eff4c841a10d1ebccf2daf46d8248f314cfca84567cfef81b34d361bb59919",
+      "title": "λ-definition N2"
+    },
+    {
+      "id": "lambda-n3",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/lambda-n3.f",
+      "bytes": 1561,
+      "sha256": "69b5e6e03fd22a5bc92537d30f1f73f04b3778f885acc7158d7811f49c0800df",
+      "title": "λ-definition N3"
+    },
+    {
+      "id": "lambda-n4",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/lambda-n4.f",
+      "bytes": 1279,
+      "sha256": "96abda57e0d33f53514189d553b7af2adaf6f70f2376e88261758c4ca5c8b825",
+      "title": "λ-definition N4"
+    },
+    {
+      "id": "lambda-0",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/lambda-0.f",
+      "bytes": 1291,
+      "sha256": "ad3a7c7bdcefdf7623c9338cadb676c0506706a534d0df0f8004f57058febcb2",
+      "title": "λ-definition 0"
+    },
+    {
+      "id": "lambda-1",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/lambda-1.f",
+      "bytes": 907,
+      "sha256": "6a6efbeca08fce5d1bf306e4ff9332447563eb23e0f0de34edb5aaf03dba0cb7",
+      "title": "λ-definition 1"
+    },
+    {
+      "id": "lambda-2",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/lambda-2.f",
+      "bytes": 979,
+      "sha256": "46eff4c841a10d1ebccf2daf46d8248f314cfca84567cfef81b34d361bb59919",
+      "title": "λ-definition 2"
+    },
+    {
+      "id": "lambda-3",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/lambda-3.f",
+      "bytes": 1561,
+      "sha256": "69b5e6e03fd22a5bc92537d30f1f73f04b3778f885acc7158d7811f49c0800df",
+      "title": "λ-definition 3"
+    },
+    {
+      "id": "lambda-4",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/lambda-4.f",
+      "bytes": 1279,
+      "sha256": "96abda57e0d33f53514189d553b7af2adaf6f70f2376e88261758c4ca5c8b825",
+      "title": "λ-definition 4"
+    },
+    {
+      "id": "lambda-resultok",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/lambda-resultok.f",
+      "bytes": 124,
+      "sha256": "1536db6b19d91a7691a94193bbe7b561645f3fde2c52ae0562bbb6d83cf99c8d",
+      "title": "λ-definition ResultOk"
+    },
+    {
+      "id": "lambda-resulterr",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/lambda-resulterr.f",
+      "bytes": 121,
+      "sha256": "b5027547f75ad0a85ba2ed7a37f42c1a4d2b530065ee1410d16982e3461bd24c",
+      "title": "λ-definition ResultErr"
+    },
+    {
+      "id": "lambda-resultbind",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/lambda-resultbind.f",
+      "bytes": 2998,
+      "sha256": "7ef98bbd2eb890c3a7b3e6682fcf04d5248e7a574c5b9aeaf79242e5fa3a51d2",
+      "title": "λ-definition ResultBind"
+    },
+    {
+      "id": "lambda-zmake",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/lambda-zmake.f",
+      "bytes": 5158,
+      "sha256": "04a0c26bc69214b3202e7fe5b18778fbe26c56530ded6789c21099f8d6f45fcc",
+      "title": "λ-definition ZMake"
+    },
+    {
+      "id": "lambda-zsign",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/lambda-zsign.f",
+      "bytes": 940,
+      "sha256": "47447c2ab0ab543494f68425403dff00d852c9f57da744dd912253454a259837",
+      "title": "λ-definition ZSign"
+    },
+    {
+      "id": "lambda-zmagnitude",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/lambda-zmagnitude.f",
+      "bytes": 916,
+      "sha256": "bd888f91e7933cf12a28a09557d75e513380e484b9a800da6ba1034339937295",
+      "title": "λ-definition ZMagnitude"
+    },
+    {
+      "id": "lambda-zzero",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/lambda-zzero.f",
+      "bytes": 4087,
+      "sha256": "f13251bae0a44262a2f1e1524db2d901b6bdd6425092497871ce8d7306449c81",
+      "title": "λ-definition ZZero"
+    },
+    {
+      "id": "lambda-zone",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/lambda-zone.f",
+      "bytes": 3703,
+      "sha256": "98a628bbbb91b5f4212cf82bb40900dac59b19bcee6b675edba56ab0bf4980e9",
+      "title": "λ-definition ZOne"
+    },
+    {
+      "id": "lambda-ztwo",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/lambda-ztwo.f",
+      "bytes": 3775,
+      "sha256": "4ced51c3c3630b7d2c520e1f7970b23dc56e953a38b3e2b276623bddd95b0c9f",
+      "title": "λ-definition ZTwo"
+    },
+    {
+      "id": "lambda-zminusone",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/lambda-zminusone.f",
+      "bytes": 3319,
+      "sha256": "32233b6613390c89e0003210703a94cb858590ea8589db5ea000f4f70438bb63",
+      "title": "λ-definition ZMinusOne"
+    },
+    {
+      "id": "lambda-zneg",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/lambda-zneg.f",
+      "bytes": 8155,
+      "sha256": "f840e4e9dab73bc429546a9a70af53601804c3a96a447db655fed25dd38374e8",
+      "title": "λ-definition ZNeg"
+    },
+    {
+      "id": "lambda-zadd",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/lambda-zadd.f",
+      "bytes": 23575,
+      "sha256": "6fc2ab7a6dd347cb4d02cd517634d5015977fa0e1ca4c8ecd20a91667283c030",
+      "title": "λ-definition ZAdd"
+    },
+    {
+      "id": "lambda-zsub",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/lambda-zsub.f",
+      "bytes": 2404,
+      "sha256": "9876a3e61c3ae6bc80a17f7027b09a765ffb1fe5ab7caa5c352da0b45677efc6",
+      "title": "λ-definition ZSub"
+    },
+    {
+      "id": "lambda-zmul",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/lambda-zmul.f",
+      "bytes": 10714,
+      "sha256": "b874bfc313243f75277472f04799e958c88357f030dfa841a667af61b62f8497",
+      "title": "λ-definition ZMul"
+    },
+    {
+      "id": "lambda-zeq",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/lambda-zeq.f",
+      "bytes": 7822,
+      "sha256": "6ac40514f2262c7843ea8e0192e31fc3a688c978a726a02c0b3188c45c8f13df",
+      "title": "λ-definition ZEq"
+    },
+    {
+      "id": "lambda-zleq",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/lambda-zleq.f",
+      "bytes": 16174,
+      "sha256": "d0558d5b419cf7b4b9f1030021eb281630037210575a5cb08bad5cbfe5fc83b5",
+      "title": "λ-definition ZLeq"
+    },
+    {
+      "id": "lambda-zfromdiff",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/lambda-zfromdiff.f",
+      "bytes": 8860,
+      "sha256": "ddbd043b639e3e0e39ee103765bc0a342b9154029c7e693becd53a8e30291e89",
+      "title": "λ-definition ZFromDiff"
+    },
+    {
+      "id": "lambda-ztodiff",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/lambda-ztodiff.f",
+      "bytes": 10528,
+      "sha256": "e9b5a15a7372d3f92f7498718e4d521feef27770eef00988143d38422302a2d1",
+      "title": "λ-definition ZToDiff"
+    },
+    {
+      "id": "lambda-qrep",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/lambda-qrep.f",
+      "bytes": 1231,
+      "sha256": "78f0aed8aea5c3cef7802cd0807e109ac605de8eea57db2a3493a0e16cccbdbe",
+      "title": "λ-definition QRep"
+    },
+    {
+      "id": "lambda-qrepnum",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/lambda-qrepnum.f",
+      "bytes": 940,
+      "sha256": "47447c2ab0ab543494f68425403dff00d852c9f57da744dd912253454a259837",
+      "title": "λ-definition QRepNum"
+    },
+    {
+      "id": "lambda-qrepden",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/lambda-qrepden.f",
+      "bytes": 916,
+      "sha256": "bd888f91e7933cf12a28a09557d75e513380e484b9a800da6ba1034339937295",
+      "title": "λ-definition QRepDen"
+    },
+    {
+      "id": "lambda-qrepvalid",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/lambda-qrepvalid.f",
+      "bytes": 9469,
+      "sha256": "41d2c2e1281620912616ba80515eab8825e1bdd2161f0be624c6cfc00437b502",
+      "title": "λ-definition QRepValid"
+    },
+    {
+      "id": "lambda-qmake",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/lambda-qmake.f",
+      "bytes": 19966,
+      "sha256": "b9bef994240033d8ba3fd335b9ddebe8157e2abaa2ee4904dedf8e3d9bf9a5ae",
+      "title": "λ-definition QMake"
+    },
+    {
+      "id": "lambda-qzero",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/lambda-qzero.f",
+      "bytes": 3961,
+      "sha256": "eab313f7db6c7194c122ccf1b22aebf5b9c79262f4afa2f7aa202e21d22f9754",
+      "title": "λ-definition QZero"
+    },
+    {
+      "id": "lambda-qone",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/lambda-qone.f",
+      "bytes": 3577,
+      "sha256": "ba0e9066df3262d4d1902d884bbe09f34f3465c8f8b0cf96fba5678568aa36cc",
+      "title": "λ-definition QOne"
+    },
+    {
+      "id": "lambda-qhalf",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/lambda-qhalf.f",
+      "bytes": 3649,
+      "sha256": "985ed8f92e725bed7fb7ae6fc18b42b72ab246da895740fade29ee19712224c4",
+      "title": "λ-definition QHalf"
+    },
+    {
+      "id": "lambda-qrepneg",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/lambda-qrepneg.f",
+      "bytes": 4339,
+      "sha256": "46009f58be8046e60c3bbfc010f9fe6f0e944c024c624a54253da7cf1ac4a7af",
+      "title": "λ-definition QRepNeg"
+    },
+    {
+      "id": "lambda-qrepadd",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/lambda-qrepadd.f",
+      "bytes": 11947,
+      "sha256": "bc0e5ed6b3e07e19b8514d2bfaf33c164654167744092a3fd9771be50d648830",
+      "title": "λ-definition QRepAdd"
+    },
+    {
+      "id": "lambda-qrepsub",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/lambda-qrepsub.f",
+      "bytes": 4156,
+      "sha256": "7e0d7b0165dc7368476572d973fc6edcf7597b5d01721824dc5255043761720a",
+      "title": "λ-definition QRepSub"
+    },
+    {
+      "id": "lambda-qrepmul",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/lambda-qrepmul.f",
+      "bytes": 7633,
+      "sha256": "e9cfa00a52f52bb17f94985505a13aedccfd432d8c6ab0dd627ca3267fc821df",
+      "title": "λ-definition QRepMul"
+    },
+    {
+      "id": "lambda-qrepeq",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/lambda-qrepeq.f",
+      "bytes": 7315,
+      "sha256": "19e7d172498789f9bfc7cffcc5ab120ae528e17b76c8aa080fd300751f46a071",
+      "title": "λ-definition QRepEq"
+    },
+    {
+      "id": "lambda-qrepleq",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/lambda-qrepleq.f",
+      "bytes": 7645,
+      "sha256": "8f291688f05efb66b5796c5fd48c6961030fc8e328b2c637ec5927ee76d09047",
+      "title": "λ-definition QRepLeq"
+    },
+    {
+      "id": "lambda-qrepinv",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/lambda-qrepinv.f",
+      "bytes": 3427,
+      "sha256": "2f05c331c810b5ba9c660b3164065f51524aa17d4b963ae0fd2453064b87c923",
+      "title": "λ-definition QRepInv"
+    },
+    {
+      "id": "lambda-qrepdiv",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/lambda-qrepdiv.f",
+      "bytes": 7900,
+      "sha256": "3705005df48ee97ab546fc5719cb29ffea325ad24b7a6e3e05b3bfc86dea340a",
+      "title": "λ-definition QRepDiv"
+    },
+    {
+      "id": "lambda-identity",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/lambda-identity.f",
+      "bytes": 37,
+      "sha256": "d45ebdead9fd2d8217c7a332792bdfc36b2e6e15676f611fd904faa9d82cf5ef",
+      "title": "λ-definition Identity"
+    },
+    {
+      "id": "lambda-fixy",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/lambda-fixy.f",
+      "bytes": 265,
+      "sha256": "fe9ab48ef6a84ab25fe771228810ac7838ce77affe366f52ea7f1eee3021418c",
+      "title": "λ-definition FixY"
+    },
+    {
+      "id": "lambda-application",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/lambda-application.f",
+      "bytes": 94,
+      "sha256": "5d53d177d4f3ccb3e6338dcc9621d6386d386f8bfeeb9ed831bec199f4e49688",
+      "title": "λ-definition Application"
+    },
+    {
+      "id": "lambda-environment",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/lambda-environment.f",
+      "bytes": 337444,
+      "sha256": "a27d37e875ec997e8ff3739633e22260765b372313227f31052d95617bd42561",
+      "title": "Environment of all built-in definitions"
+    },
+    {
+      "id": "term-variable",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/term-variable.f",
+      "bytes": 16,
+      "sha256": "f75822fa8057ad06885b73dfa9cb4756d364c4e1731bdd7d3cee5d1087b9df00",
+      "title": "Bound-variable index zero in a term"
+    },
+    {
+      "id": "term-literal",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/term-literal.f",
+      "bytes": 34,
+      "sha256": "15985e551ce0db6942d54f0869a386734ce6d4a176440d527ac128fa6f92ad07",
+      "title": "Constant term for natural number one"
+    },
+    {
+      "id": "term-add-call",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/term-add-call.f",
+      "bytes": 913,
+      "sha256": "acf74a111513f61b9914cb200d1cc05b854d5752b5d72506173071bb99bde107",
+      "title": "Addition call expression"
+    },
+    {
+      "id": "proposition-equal",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/proposition-equal.f",
+      "bytes": 94,
+      "sha256": "86e4eddafd4d95e852df684f479c9305086663d11405b44205a035399944f1a3",
+      "title": "Equality 1=1"
+    },
+    {
+      "id": "proposition-less",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/proposition-less.f",
+      "bytes": 94,
+      "sha256": "d9755c90c661a9014a9a0d1be1595933d057207e581ebd4bcc327fe3b660cd95",
+      "title": "Order 0<1"
+    },
+    {
+      "id": "proposition-and",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/proposition-and.f",
+      "bytes": 208,
+      "sha256": "56f3d7fdf161e0ea76489bf15590fb4205dfd4698373453cb397573ccd30ad85",
+      "title": "Conjunction"
+    },
+    {
+      "id": "proposition-or",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/proposition-or.f",
+      "bytes": 211,
+      "sha256": "bdc1df8818fade0f01366ff8acaf74229933bc3f065c3ef8f92b94380782ddfc",
+      "title": "Disjunction"
+    },
+    {
+      "id": "proposition-implies",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/proposition-implies.f",
+      "bytes": 214,
+      "sha256": "b75d08845a48a295e3deb139302b1589692049398d0defec97017406f938d0d7",
+      "title": "Implication"
+    },
+    {
+      "id": "proposition-false",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/proposition-false.f",
+      "bytes": 25,
+      "sha256": "19d481011121e405a66223380e37fad733ae2d673d22fbda605aa0de215dc34f",
+      "title": "Falsity"
+    },
+    {
+      "id": "proposition-forall",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/proposition-forall.f",
+      "bytes": 100,
+      "sha256": "c3246b83b666f5d2ffb58d29336392f9a09c193dedb80734ec60775e2576803b",
+      "title": "For every n, n=n"
+    },
+    {
+      "id": "proposition-exists",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/proposition-exists.f",
+      "bytes": 118,
+      "sha256": "9f2a68a18e60ca7cd08a3348444fa6a1df7c2dfe41f0ec35f07f82db24f3ba96",
+      "title": "For some n, n=0"
+    },
+    {
+      "id": "proposition-predicate",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/proposition-predicate.f",
+      "bytes": 2461,
+      "sha256": "63b6142ba4464e2cbc6b45ea7cb3b23f70215aeef8d72bb422dc4c97dbec1d5b",
+      "title": "Named predicate nonzero(1)"
+    },
+    {
+      "id": "proposition-not",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/proposition-not.f",
+      "bytes": 145,
+      "sha256": "06cff8e7d71075224ceaf48c4aaa7155510d508668fc3351ade730a7a9ac4d01",
+      "title": "Negation: 1=1 implies falsity"
+    },
+    {
+      "id": "proposition-associativity",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/proposition-associativity.f",
+      "bytes": 3646,
+      "sha256": "d8a3ce9a0d4e214b6de172dfb82c0d7db88f7dde876e5ab052b8d185e7354f08",
+      "title": "Universally quantified proposition for associativity of addition"
+    },
+    {
+      "id": "judgment",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/judgment.f",
+      "bytes": 100,
+      "sha256": "61c683e56428a87b74f2a128bfd64188b46edb5b70af5bc5bb69f5485c0fd13c",
+      "title": "Judgment asserting 1=1 from no assumptions"
+    },
+    {
+      "id": "proof-node-reflexivity",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/proof-node-reflexivity.f",
+      "bytes": 169,
+      "sha256": "dd16b1792d6326ed62ad42d16c57cedc7fe5d70aa2e7997100958da3eb2c6caf",
+      "title": "Proof node for the reflexivity rule: proposed representation"
+    },
+    {
+      "id": "proof-induction-data",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/proof-induction-data.f",
+      "bytes": 31,
+      "sha256": "3db4a75ae63505449eabe656d54cc1ddb69e8dd62d64d3b18eb9461bd64a51d2",
+      "title": "Rule-specific data for natural-number induction: specification example"
+    },
+    {
+      "id": "interval-unit",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/interval-unit.f",
+      "bytes": 55,
+      "sha256": "cbb4305298e048de16f164e0bfdcbc9b571d4e4436460235d6ca832665c7fc00",
+      "title": "Interval from 0/1 to 1/1"
+    },
+    {
+      "id": "interval-sqrt2-initial",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/interval-sqrt2-initial.f",
+      "bytes": 58,
+      "sha256": "77da3f1fd5c351f5363e3f22b16a067eab92a90757a7f46bb3d5f2aaf891ab42",
+      "title": "Interval from 0/1 to 2/1"
+    },
+    {
+      "id": "interval-sqrt2-refined",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/interval-sqrt2-refined.f",
+      "bytes": 67,
+      "sha256": "515599f9865a19e32d3464cc10d349c9b62e3e731859c54acff6a195dd83de7a",
+      "title": "Interval from 1/1 to 3/2"
+    },
+    {
+      "id": "precision-two",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/precision-two.f",
+      "bytes": 10,
+      "sha256": "dbd34bca5e825e8b8508174c5a4d592820c781bd84c199b03d2ce0fd618836ca",
+      "title": "Precision request p=2"
+    },
+    {
+      "id": "precision-width",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/precision-width.f",
+      "bytes": 37,
+      "sha256": "a581ef273efbcaa97638dee009be614ffceae63629a8f28c8686ec3680c88d53",
+      "title": "Error tolerance 1/4 for p=2"
+    },
+    {
+      "id": "approx-value-error-bracket",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/approx-value-error-bracket.f",
+      "bytes": 763,
+      "sha256": "d00166d3d352f2bd4d307b2483f0f2aaf725d8f50babaf9ff178efe268cacfd1",
+      "title": "Approximate value and error bound: bounds from interval endpoints"
+    },
+    {
+      "id": "approx-value-error-residual",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/approx-value-error-residual.f",
+      "bytes": 1015,
+      "sha256": "5ed1e45554b23ba5d2b892969275180583b812430d603772a621bef8c94ec62f",
+      "title": "Approximate value and error bound: bound from the residual"
+    },
+    {
+      "id": "qlim-parameters",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/qlim-parameters.f",
+      "bytes": 55,
+      "sha256": "cbb4305298e048de16f164e0bfdcbc9b571d4e4436460235d6ca832665c7fc00",
+      "title": "Parameters of the sequence-generating label qlim(0,1)"
+    },
+    {
+      "id": "qlim-call",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/qlim-call.f",
+      "bytes": 1516,
+      "sha256": "45dcab53155dbc6e9c71b6d060ea3f8c317c71fc31b758fea0d7e682b6f9af7d",
+      "title": "Input n=1 to qlim(0,1)"
+    },
+    {
+      "id": "qlim-response",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/qlim-response.f",
+      "bytes": 31,
+      "sha256": "7c3d5f0d56c4e3619d44fcf050142338cb903f13e3bc8651804c247700083be0",
+      "title": "Response of qlim(0,1)(1)"
+    },
+    {
+      "id": "relation-g-half",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/relation-g-half.f",
+      "bytes": 58,
+      "sha256": "99a031cd0e25f25225a588021e5af3bda91ea7519ac8962d0b94ad75da90ce7d",
+      "title": "Generation record retaining b: G(0,1/2)"
+    },
+    {
+      "id": "relation-g-three-quarters",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/relation-g-three-quarters.f",
+      "bytes": 70,
+      "sha256": "c23040baa65a2feb8fd2c670a14341dc77887985538870d59894102a2db3caf5",
+      "title": "Generation record retaining b: G(0,3/4)"
+    },
+    {
+      "id": "relation-common-1",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/relation-common-1.f",
+      "bytes": 232,
+      "sha256": "76d8a834c48d624747a0875d46cf0dfade4c164cc4e9158756dd6f35a88a6e7f",
+      "title": "Common subsequence at t=1: indices 1 and 2 give 1/4"
+    },
+    {
+      "id": "relation-common-2",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/relation-common-2.f",
+      "bytes": 262,
+      "sha256": "0e87eb3d699a78f3464a4996f2959436f8daa48473f77dfd8737a897a475d923",
+      "title": "Common subsequence at t=2: indices 3 and 5 give 1/8"
+    },
+    {
+      "id": "relation-common-3",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/relation-common-3.f",
+      "bytes": 292,
+      "sha256": "912c93c66f50583447b030a38d56dcc65dc1fb91f134cdb18c8d3c06a3223e5f",
+      "title": "Common subsequence at t=3: indices 5 and 8 give 1/12"
+    },
+    {
+      "id": "relation-intro-positive-half",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/relation-intro-positive-half.f",
+      "bytes": 109,
+      "sha256": "167ca2e0d39b1a0866adb6e0081713d57905028e3c20ad563bbbccdf4c69faff",
+      "title": "Φ(G(0,1/2))=0##"
+    },
+    {
+      "id": "relation-intro-positive-three-quarters",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/relation-intro-positive-three-quarters.f",
+      "bytes": 121,
+      "sha256": "d79bf8b88568cc23da42ce0b3c25c44e6d9b285c1e91d7365da93ed2badb2367",
+      "title": "Φ(G(0,3/4))=0##"
+    },
+    {
+      "id": "relation-intro-negative",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/relation-intro-negative.f",
+      "bytes": 115,
+      "sha256": "7f444e785eb7631ed0c2b67c888677072efdcf40e47c0f7006969f616f378c6a",
+      "title": "Φ(G(0,−1/2))=0♭♭"
+    },
+    {
+      "id": "relation-intro-zero",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/relation-intro-zero.f",
+      "bytes": 109,
+      "sha256": "fa3ccfd1817e4252b91556007fc9f526fc71f13ce462af63d12c9b162a9773e1",
+      "title": "Φ(G(2,0))=2"
+    },
+    {
+      "id": "relation-l-one-step",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/relation-l-one-step.f",
+      "bytes": 40,
+      "sha256": "41e03bf71ba88cd26ec432428b825e5699c7d5be5ea4962e04212faf790d2a82",
+      "title": "Relation label (k,q)=(1,0)"
+    },
+    {
+      "id": "relation-l-two-steps",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/relation-l-two-steps.f",
+      "bytes": 43,
+      "sha256": "e508beb8b3edd1f71c71869ad4f555c604a3a4fd3ef5b3c0128c39ebfb18961a",
+      "title": "Relation label (k,q)=(2,0)"
+    },
+    {
+      "id": "relation-l-four-steps",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/relation-l-four-steps.f",
+      "bytes": 49,
+      "sha256": "b4d04b0768cbbb4fdc0895b4cbb6abca9b931537418ddb96579f4bbebfffd576",
+      "title": "Relation label (k,q)=(4,0)"
+    },
+    {
+      "id": "relation-l-addition",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/relation-l-addition.f",
+      "bytes": 145,
+      "sha256": "5a3ebbc80655d61bba2860c48b4608874cf08dd9aa562f74afa7abbcd6a46124",
+      "title": "Addition of relation labels: 0##+0##=0####"
+    },
+    {
+      "id": "relation-l-order",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/relation-l-order.f",
+      "bytes": 181,
+      "sha256": "67ca8c3f1a6d668920fd59f99d5ad5c9b3b1090183fd407cd775ea26f07ab6a0",
+      "title": "Order: 0<0#<0##<0####"
+    },
+    {
+      "id": "relation-intro-not-additive",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/relation-intro-not-additive.f",
+      "bytes": 217,
+      "sha256": "be0337c986c0813547507b3397ad1815f54ecfe2a5ff26628642acc28d30b5f0",
+      "title": "Φ(u+u) differs from Φ(u)+Φ(u)"
+    },
+    {
+      "id": "relation-rational-error",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/relation-rational-error.f",
+      "bytes": 166,
+      "sha256": "828e7484766f4ddf5ebe3c84c2d9340dfaad883c93b9da2db55627a373f84913",
+      "title": "Rational approximation to (3/2)##: return 3/2 at p=3"
+    },
+    {
+      "id": "relation-reject-malformed-label",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/relation-reject-malformed-label.f",
+      "bytes": 2065,
+      "sha256": "4970bd3d6ab5b716cbdc07d27a8611a327f3378be9455d93c75e0085d3bfe154",
+      "title": "Reject malformed L with a natural-number-only integer field"
+    },
+    {
+      "id": "relation-reject-false-introduction",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/relation-reject-false-introduction.f",
+      "bytes": 1018,
+      "sha256": "840f3aabc229d8df439cc24c911d406534641a7d829066277e9b4020d8293083",
+      "title": "Reject the false output L(4,0) for Φ"
+    },
+    {
+      "id": "relation-reject-compressed-sum",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/relation-reject-compressed-sum.f",
+      "bytes": 1204,
+      "sha256": "77deba5ee94db13ce445af2943c820b7c05624475ef3eb5a26b438d46a3fb03a",
+      "title": "Reject a false sum that compresses k back to 2"
+    },
+    {
+      "id": "geometric-h-third-lower",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/geometric-h-third-lower.f",
+      "bytes": 130,
+      "sha256": "7c39a92758f86ae58b5a411000563f5880683d4cb3982082cda9aa5daf780c29",
+      "title": "Lower procedure approaching 1/3"
+    },
+    {
+      "id": "geometric-trace-third-lower",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/geometric-trace-third-lower.f",
+      "bytes": 4744,
+      "sha256": "8444bd9d7995a535a79fac355468d5602fdc4c795041f063f43ead11d28b7a7a",
+      "title": "Lower procedure approaching 1/3: responses at n=0,1,2,3"
+    },
+    {
+      "id": "geometric-intro-third-lower",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/geometric-intro-third-lower.f",
+      "bytes": 193,
+      "sha256": "ec07ae4f0929fdce089fdafebda19fb70da86d830dafc959de989a734ae90869",
+      "title": "Introduce an L label from lower procedure approaching 1/3 using Psi"
+    },
+    {
+      "id": "geometric-h-third-upper",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/geometric-h-third-upper.f",
+      "bytes": 130,
+      "sha256": "a8669d553edf6fae693331b1bc9db5f4631c04dbff1cc6afda53f9030d46fc1e",
+      "title": "Upper procedure approaching 1/3"
+    },
+    {
+      "id": "geometric-trace-third-upper",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/geometric-trace-third-upper.f",
+      "bytes": 2533,
+      "sha256": "25c40a992eac4c76450175ec609d441a39fe631fc9017752c5d21b9e94a3bb84",
+      "title": "Upper procedure approaching 1/3: responses at n=0,1,2,3"
+    },
+    {
+      "id": "geometric-intro-third-upper",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/geometric-intro-third-upper.f",
+      "bytes": 190,
+      "sha256": "47adad9f74e5c7c963a9f19fbecccb34725b22084e77b6045d19f3b6d85d1521",
+      "title": "Introduce an L label from upper procedure approaching 1/3 using Psi"
+    },
+    {
+      "id": "geometric-h-third-fixed",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/geometric-h-third-fixed.f",
+      "bytes": 118,
+      "sha256": "e2eeea39cf18766359d9102bfc659462c04019672be634fbe5c4bd062b6b3339",
+      "title": "Constant procedure returning the exact rational number 1/3"
+    },
+    {
+      "id": "geometric-trace-third-fixed",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/geometric-trace-third-fixed.f",
+      "bytes": 340,
+      "sha256": "42dc8d23500a838397c20b6a50b039e63e3b2a60ff0aad6697aa31d143c0f654",
+      "title": "Constant procedure returning the exact rational number 1/3: responses at n=0,1,2,3"
+    },
+    {
+      "id": "geometric-intro-third-fixed",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/geometric-intro-third-fixed.f",
+      "bytes": 172,
+      "sha256": "0536c6d2158c1d79749eed8a7d983c6e3ea546a13d636d86cb4f2e6f83d374b8",
+      "title": "Introduce an L label from constant procedure returning the exact rational number 1/3 using Psi"
+    },
+    {
+      "id": "geometric-h-two-thirds-lower",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/geometric-h-two-thirds-lower.f",
+      "bytes": 136,
+      "sha256": "db661828344357f5d4336163b24e7daacea365d0155961661c6683100339ea67",
+      "title": "Lower procedure approaching 2/3"
+    },
+    {
+      "id": "geometric-trace-two-thirds-lower",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/geometric-trace-two-thirds-lower.f",
+      "bytes": 3085,
+      "sha256": "5575188d3f306d46cdbfd5be4d257ce53152b3272ed15175fd7c4072ca9df527",
+      "title": "Lower procedure approaching 2/3: responses at n=0,1,2,3"
+    },
+    {
+      "id": "geometric-intro-two-thirds-lower",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/geometric-intro-two-thirds-lower.f",
+      "bytes": 202,
+      "sha256": "ad129e3f07fa9e11ae6a7390afb1898c1b6cc73ab9af2eb9f359a88beddbdfc0",
+      "title": "Introduce an L label from lower procedure approaching 2/3 using Psi"
+    },
+    {
+      "id": "geometric-h-menger-volume",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/geometric-h-menger-volume.f",
+      "bytes": 220,
+      "sha256": "9618578a6505ce82a59be7fa66b8246c3002360c0bb9d2d025b1c4bc3c0aae3e",
+      "title": "Finite-stage volume of the Menger sponge"
+    },
+    {
+      "id": "geometric-trace-menger-volume",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/geometric-trace-menger-volume.f",
+      "bytes": 86977,
+      "sha256": "f55b146b76e264b9e1d0290756111a0f95d243b12dace2459a3d77097bc1b146",
+      "title": "Finite-stage volume of the Menger sponge: responses at n=0,1,2,3"
+    },
+    {
+      "id": "geometric-intro-menger-volume",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/geometric-intro-menger-volume.f",
+      "bytes": 271,
+      "sha256": "c63b0c0e37028328eb57ec8744107c59e6e2c170b673d34d996f6d187f65c5cd",
+      "title": "Introduce an L label from finite-stage volume of the menger sponge using Psi"
+    },
+    {
+      "id": "decimal-record-third",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/decimal-record-third.f",
+      "bytes": 37,
+      "sha256": "3e7d18f0a9de6c73e5bf944c85ae3b0d3830f96a76a0f75401e0770a584b6fda",
+      "title": "Repeating-decimal record 0._3"
+    },
+    {
+      "id": "decimal-exact-third",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/decimal-exact-third.f",
+      "bytes": 127,
+      "sha256": "103dbe3546491b4ade711300f2704c9fa87e0254a1f2427ada69d9c7ce55405e",
+      "title": "Exact rational interpretation of 0._3"
+    },
+    {
+      "id": "decimal-record-two-thirds",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/decimal-record-two-thirds.f",
+      "bytes": 46,
+      "sha256": "51cd7d95837ac1d2160e32594c5c361d078a49836401b869e2a0d03bab3d3316",
+      "title": "Repeating-decimal record 0._6"
+    },
+    {
+      "id": "decimal-exact-two-thirds",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/decimal-exact-two-thirds.f",
+      "bytes": 142,
+      "sha256": "bc120a7fc61add3b29ea391d650a42853a08db2e02e5f22f6e2dce7bc4731e62",
+      "title": "Exact rational interpretation of 0._6"
+    },
+    {
+      "id": "decimal-prefix-1",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/decimal-prefix-1.f",
+      "bytes": 376,
+      "sha256": "ecabd5257c105d78d696363fac6771df45a97c9e32ef29340f6b1f5fd5824a7d",
+      "title": "The same first 1 decimal digits with distinct labels for 1/3"
+    },
+    {
+      "id": "decimal-prefix-2",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/decimal-prefix-2.f",
+      "bytes": 1009,
+      "sha256": "0eaa53745ccf6070f2e923cc901fe4f289b3ab62cafb7f9eef6727dcbf066ad5",
+      "title": "The same first 2 decimal digits with distinct labels for 1/3"
+    },
+    {
+      "id": "decimal-prefix-3",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/decimal-prefix-3.f",
+      "bytes": 7312,
+      "sha256": "f9d83b635792a533eaf9667c348d216d09c696e64028c4307af97a706648bdb3",
+      "title": "The same first 3 decimal digits with distinct labels for 1/3"
+    },
+    {
+      "id": "decimal-lower-sum",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/decimal-lower-sum.f",
+      "bytes": 178,
+      "sha256": "5a87eef3960b7bc965cf9247352be0a6640b1e8f9cf942533a5dbb4aee8cfbfe",
+      "title": "Lower 1/3 plus lower 2/3: L(−4,1)"
+    },
+    {
+      "id": "decimal-mixed-sum",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/decimal-mixed-sum.f",
+      "bytes": 160,
+      "sha256": "c5309d7e42e6d5a57d6faeea4ebfecbba4c2513a551005946fda755d0f51dcee",
+      "title": "Upper 1/3 plus lower 2/3: the exact number 1"
+    },
+    {
+      "id": "geometric-decimal-reject-invalid-ratio",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/geometric-decimal-reject-invalid-ratio.f",
+      "bytes": 2101,
+      "sha256": "3bdd2ed81af384a4cdfc5f94531d5da8da96cd3d431a5329c3f74ce49b484cea",
+      "title": "Reject an H record with contraction ratio r=1"
+    },
+    {
+      "id": "geometric-decimal-reject-invalid-digit",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/geometric-decimal-reject-invalid-digit.f",
+      "bytes": 3955,
+      "sha256": "15362a769a01476b05f31b1e9f11fde0b3a7e50c64a8971148a6a8ac2ef0ce6d",
+      "title": "Reject a repeating-decimal record containing digit 10"
+    },
+    {
+      "id": "geometric-decimal-reject-empty-repeat",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/geometric-decimal-reject-empty-repeat.f",
+      "bytes": 3919,
+      "sha256": "da6350d1ff67bea9287d8b97c45ef22458222a50b8c38dc9acb83c984ed7737c",
+      "title": "Reject an empty repeating block"
+    },
+    {
+      "id": "geometric-decimal-reject-false-recurrence",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/geometric-decimal-reject-false-recurrence.f",
+      "bytes": 1987,
+      "sha256": "0cedda1d8c89521f4830ceadf989322a2920ca6bc897b7ad7eda2848f4cc8c80",
+      "title": "Reject a false lower-procedure response equal to 1/3"
+    },
+    {
+      "id": "geometric-decimal-reject-false-direction",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/geometric-decimal-reject-false-direction.f",
+      "bytes": 1126,
+      "sha256": "b513c53f37ab81a25d98eaa2da058cef220d6b0c7f68c2bd5bc7803303fb7d00",
+      "title": "Reject introduction of a lower H procedure with positive index k=2"
+    },
+    {
+      "id": "geometric-decimal-reject-false-exact-label",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/geometric-decimal-reject-false-exact-label.f",
+      "bytes": 3790,
+      "sha256": "ade6659cb561a4231d7455cff461f93432d1023898c5b0b5d9010bf75ab56a8c",
+      "title": "Reject identification of exact 1/3 with a label having k=−2"
+    },
+    {
+      "id": "pi-rule",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/pi-rule.f",
+      "bytes": 13,
+      "sha256": "77d5f08b6cc75efc8569ae6ee51150b1b1d24a8337f42744610f39a6fe1c8f53",
+      "title": "Pi rule: local identifier 0, specification version 1"
+    },
+    {
+      "id": "pi-recurrence-two-steps",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/pi-recurrence-two-steps.f",
+      "bytes": 1780,
+      "sha256": "e1a994cc0d1ecc716399074db821e336e5b348b925d8a55689ab56a44ab6008a",
+      "title": "Two finite recurrence steps: 1, 2/3, 13/15"
+    },
+    {
+      "id": "pi-lower-witness",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/pi-lower-witness.f",
+      "bytes": 76,
+      "sha256": "31d55849a99ae7f4b877359e01918e183de85d0f1fbac63deacc425662f303b6",
+      "title": "A left-membership witness: 3 < B3"
+    },
+    {
+      "id": "pi-upper-witness",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/pi-upper-witness.f",
+      "bytes": 88,
+      "sha256": "7a1c9f8788292d115cf13f8f933c583b73527631b1065007529aad1c70ed1448",
+      "title": "A right-membership witness: A1 < 7/2"
+    },
+    {
+      "id": "pi-bracket-0",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/pi-bracket-0.f",
+      "bytes": 1918,
+      "sha256": "b059f86c806e604355e07492c3015560a24e6d808a790b115a4bf0746e5d4459",
+      "title": "A finite pi interval response at precision p=0"
+    },
+    {
+      "id": "pi-bracket-1",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/pi-bracket-1.f",
+      "bytes": 2872,
+      "sha256": "f5279b57f794edd9e9b1ff6b671bfb106d120f7ee0577361a5516cb6fc7f63e5",
+      "title": "A finite pi interval response at precision p=1"
+    },
+    {
+      "id": "pi-bracket-2",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/pi-bracket-2.f",
+      "bytes": 5113,
+      "sha256": "2ba45ee8cacaba39695a56fadfc6ae5e45bf405c941e8efec4cd825a9d9893f9",
+      "title": "A finite pi interval response at precision p=2"
+    },
+    {
+      "id": "pi-bracket-3",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/pi-bracket-3.f",
+      "bytes": 9076,
+      "sha256": "ba60549c50f7803571af6a9d2569ff724fa2a1fa5df0ccfce19ea2e713328e50",
+      "title": "A finite pi interval response at precision p=3"
+    },
+    {
+      "id": "pi-located-left",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/pi-located-left.f",
+      "bytes": 106,
+      "sha256": "d8169a7cff1656b150aeb77656684aa08a4da464fa223129c10e766231f9723c",
+      "title": "Finite locatedness choice: left branch"
+    },
+    {
+      "id": "pi-located-right",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/pi-located-right.f",
+      "bytes": 115,
+      "sha256": "93e689e0fefb502a63b1a4229e036db9ff4bdf0ed3e4bf40b56171f1739373cd",
+      "title": "Finite locatedness choice: right branch"
+    },
+    {
+      "id": "pi-reject-lower-boundary",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/pi-reject-lower-boundary.f",
+      "bytes": 2962,
+      "sha256": "41225cd09e4d360a0916f0328c1b90f9b5ba693e2e78eacab6ced6452bb94c64",
+      "title": "Reject stage m=0 as a left witness for q=B0"
+    },
+    {
+      "id": "pi-reject-upper-boundary",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/pi-reject-upper-boundary.f",
+      "bytes": 2947,
+      "sha256": "0bd1a02f363837e40fa3d245c7642224fce8fb0def5b56adeba0bfcc387b26f1",
+      "title": "Reject stage m=0 as a right witness for q=A0"
+    },
+    {
+      "id": "pi-reject-changed-witness",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/pi-reject-changed-witness.f",
+      "bytes": 2941,
+      "sha256": "eb9d9b729734c70478d7f79924bedfc32e84665cd8e1821c86492ae77e2bc7c1",
+      "title": "Reject changing the left witness for q=3 to m=0"
+    },
+    {
+      "id": "pi-reject-false-recurrence",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/pi-reject-false-recurrence.f",
+      "bytes": 3556,
+      "sha256": "011a6fc7bb510b3ff8cf3e463545e40baae157373f607edb0a31bdab66106e6c",
+      "title": "Reject the false recurrence value S2=1"
+    },
+    {
+      "id": "pi-reject-unknown-version",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/pi-reject-unknown-version.f",
+      "bytes": 1849,
+      "sha256": "11305a042e791e539cd6ae37a5e0777728fa96adf6ede1ee75d88b640e01df80",
+      "title": "Reject undefined specification version 2"
+    },
+    {
+      "id": "sqrt2-state",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/sqrt2-state.f",
+      "bytes": 85,
+      "sha256": "497d31560bedefbe58fc4db8d3dc9ab5d8424601bcfb1a15d8ef13dcca5d5867",
+      "title": "State of the generator specified by the interval-generating label for √2"
+    },
+    {
+      "id": "leibniz-state",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/leibniz-state.f",
+      "bytes": 106,
+      "sha256": "6c6aef1c2ad6dd85b11f1e26147d8e350f8b5a417b53e509715877c6947e961d",
+      "title": "Initial state of the generator specified by the Leibniz interval-generating label"
+    },
+    {
+      "id": "label-with-evidence",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/label-with-evidence.f",
+      "bytes": 25222,
+      "sha256": "97328ea6854b3ce32043975d67c791208b79dcc8fff87ab7dc3ffd591d50ad73",
+      "title": "Record retaining the qlim rule, arguments, specification, and evidence"
+    },
+    {
+      "id": "label-pending-division",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/label-pending-division.f",
+      "bytes": 10420,
+      "sha256": "948c2f13893542dcefee4d4340cb3692c23c5e14263ead0dbbfa6f4ae319f77f",
+      "title": "Syntax of division awaiting evidence of separation"
+    },
+    {
+      "id": "newton-state",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/newton-state.f",
+      "bytes": 97,
+      "sha256": "f71c7de2df956d7b0b3d19a86b0e54c300fd1a85c55e7ee43d288ab44dcacba9",
+      "title": "State after one Newton update"
+    },
+    {
+      "id": "separation-witness",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/separation-witness.f",
+      "bytes": 67,
+      "sha256": "5c04fed62e8baf86cd3565560bf5600278e6dd3e4fd5a258c0c49fe2cdab4c63",
+      "title": "Evidence data for a response separated from zero"
+    },
+    {
+      "id": "zero-classification-zero",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/zero-classification-zero.f",
+      "bytes": 10,
+      "sha256": "d81d5cc8f4d7a3a66da6d9b4669f0178da2fe73a5a867b966ac2e49a9b2906b2",
+      "title": "Zero classification: zero"
+    },
+    {
+      "id": "zero-classification-nonzero",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/zero-classification-nonzero.f",
+      "bytes": 13,
+      "sha256": "036ba09a1c52fff04cc42d0836f5321f8a2ec124be5d0d52086e95735f0c93a0",
+      "title": "Zero classification: nonzero"
+    },
+    {
+      "id": "zero-classification-unknown",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/zero-classification-unknown.f",
+      "bytes": 16,
+      "sha256": "cc230dd163117703dedca2e65e872d99b75c0f4dedf71beabf1e1bcc43bc62de",
+      "title": "Zero classification: unknown"
+    },
+    {
+      "id": "alternating-rule",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/alternating-rule.f",
+      "bytes": 10528,
+      "sha256": "a93f293124dfcfbc609ca2d6705d08c1321be15c8ed527083dbecc5d80e65aee",
+      "title": "Finite rule data for an alternating sum"
+    },
+    {
+      "id": "cauchy-modulus",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/cauchy-modulus.f",
+      "bytes": 898,
+      "sha256": "6ae717d3160613b8070718cfc43ad839b75403e5f8c2cdde7f7781ccc383a029",
+      "title": "Syntax of the error modulus μ(k)=k+2"
+    },
+    {
+      "id": "cauchy-center-radius",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/cauchy-center-radius.f",
+      "bytes": 76,
+      "sha256": "4772429e06a7be8468b9592e9d63197629377209c64b88fd2abaa43d4b5868d6",
+      "title": "Center and radius for finite interval construction"
+    },
+    {
+      "id": "translated-label",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/translated-label.f",
+      "bytes": 271,
+      "sha256": "69cf483ae5c42c5f09a4b0dc36e19b972e6e1c6ffeaa62c4327afbf1aa921405",
+      "title": "Label retaining an integer translation"
+    },
+    {
+      "id": "translation-arrow",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/translation-arrow.f",
+      "bytes": 292,
+      "sha256": "f22926809f286570dcd7081e67a1844959538d9e5ad9e134dfeb6f687df3aa74",
+      "title": "Translation arrow τ(P,2;−1)"
+    },
+    {
+      "id": "register-state",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/register-state.f",
+      "bytes": 43,
+      "sha256": "41e2ddbf1c53582d5ebceb2f7e0fff5a89842a673794c700330179e4609b095b",
+      "title": "Initial state of the three-register machine"
+    },
+    {
+      "id": "register-program",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/register-program.f",
+      "bytes": 31207,
+      "sha256": "c4062470eaa64fc1d7c618d52d9c816dd2144efe28c249f12d6328e88b96385d",
+      "title": "Complete instruction sequence for three-register addition"
+    },
+    {
+      "id": "precision-field-epsilon",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/precision-field-epsilon.f",
+      "bytes": 97,
+      "sha256": "598dadd3b2b0c797dc2a45c426d5ef4513f30856d221e8494d45fe84a9e1bed0",
+      "title": "Full F precision request ε"
+    },
+    {
+      "id": "polynomial-derivative",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/polynomial-derivative.f",
+      "bytes": 64,
+      "sha256": "c5719ed223c16994019a211a015334356823f493701c03a9c6bfc1f80507d1c4",
+      "title": "Formal derivative 2x of 1+x²"
+    },
+    {
+      "id": "polynomial-primitive",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/polynomial-primitive.f",
+      "bytes": 124,
+      "sha256": "94c04bfa91ced1b8d448987664f52462f13f39fddac6cb42be0bf4d4883c70ee",
+      "title": "Antiderivative x+x³/3 of 1+x² with zero constant term"
+    },
+    {
+      "id": "polynomial-integral",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/polynomial-integral.f",
+      "bytes": 43,
+      "sha256": "a01e14caaa117867998fdad94d971dc9576bebdbee11dae5ddc55834b98c280a",
+      "title": "Formal integral 4/3 of 1+x² between endpoints 0 and 1"
+    },
+    {
+      "id": "beta-step",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/beta-step.f",
+      "bytes": 157,
+      "sha256": "d9f691dd0f01451bed596e7f42911ceb33e5df8c0babfe50d4911af317848e26",
+      "title": "Record of one β-reduction step"
+    },
+    {
+      "id": "identity-arrow",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/identity-arrow.f",
+      "bytes": 43,
+      "sha256": "0d8f5b156b42e8dfba7a89201e56bb82510bf6dc1e839159b04dcf6779e43b93",
+      "title": "Identity arrow"
+    },
+    {
+      "id": "one-step-arrow",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/one-step-arrow.f",
+      "bytes": 259,
+      "sha256": "a62cf109072a3e22746d70d930d189c995388c6c0f7264d394c723fd0d122046",
+      "title": "Arrow for one β-reduction step"
+    },
+    {
+      "id": "lambda-position",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/lambda-position.f",
+      "bytes": 31,
+      "sha256": "3db4a75ae63505449eabe656d54cc1ddb69e8dd62d64d3b18eb9461bd64a51d2",
+      "title": "Positions for the λ-body, function side, and argument side"
+    },
+    {
+      "id": "status-normal-form",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/status-normal-form.f",
+      "bytes": 10,
+      "sha256": "d81d5cc8f4d7a3a66da6d9b4669f0178da2fe73a5a867b966ac2e49a9b2906b2",
+      "title": "Termination status normal-form"
+    },
+    {
+      "id": "status-step-limit",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/status-step-limit.f",
+      "bytes": 13,
+      "sha256": "036ba09a1c52fff04cc42d0836f5321f8a2ec124be5d0d52086e95735f0c93a0",
+      "title": "Termination status step-limit"
+    },
+    {
+      "id": "status-stopped",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/status-stopped.f",
+      "bytes": 16,
+      "sha256": "cc230dd163117703dedca2e65e872d99b75c0f4dedf71beabf1e1bcc43bc62de",
+      "title": "Termination status stopped"
+    },
+    {
+      "id": "status-error",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/status-error.f",
+      "bytes": 19,
+      "sha256": "ac4a809713e59dc4fcc54750ebfbcff118acf66a9bfcd625befd99dbfbc35abd",
+      "title": "Termination status error"
+    },
+    {
+      "id": "json-null",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/json-null.f",
+      "bytes": 10,
+      "sha256": "d81d5cc8f4d7a3a66da6d9b4669f0178da2fe73a5a867b966ac2e49a9b2906b2",
+      "title": "JSON null"
+    },
+    {
+      "id": "json-false",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/json-false.f",
+      "bytes": 13,
+      "sha256": "036ba09a1c52fff04cc42d0836f5321f8a2ec124be5d0d52086e95735f0c93a0",
+      "title": "JSON false"
+    },
+    {
+      "id": "json-true",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/json-true.f",
+      "bytes": 16,
+      "sha256": "cc230dd163117703dedca2e65e872d99b75c0f4dedf71beabf1e1bcc43bc62de",
+      "title": "JSON true"
+    },
+    {
+      "id": "json-2",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/json-2.f",
+      "bytes": 175,
+      "sha256": "d87ab4877d4496568e77bcd43abd6a5e50ce9bac76049a2b1eb1330504626e06",
+      "title": "JSON 2"
+    },
+    {
+      "id": "json-a",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/json-a.f",
+      "bytes": 319,
+      "sha256": "83ccf822345a73f257b3bc9a362677f5f8cc2dfe1843177089812ac769c41165",
+      "title": "JSON \"a\""
+    },
+    {
+      "id": "json-array",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/json-array.f",
+      "bytes": 376,
+      "sha256": "f9f0509ddc16f4c2729000ef797870d0cb028f6e74ada1153e57352ffa66e8af",
+      "title": "JSON [1,2]"
+    },
+    {
+      "id": "json-record",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/json-record.f",
+      "bytes": 505,
+      "sha256": "1dbdde4db1714a9a8e34f50b6aa08eec3ec0fed6c9c8f98c24a471c69502d3b7",
+      "title": "JSON {\"a\":1}"
+    },
+    {
+      "id": "proof-nat-paths",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/proof-nat-paths.f",
+      "bytes": 1200829,
+      "sha256": "d60eeddc4e0f56b7d2f67e3d84cfd477373e29433ee90b0d5f9d14cb2122ac48",
+      "title": "General proofs of all 16 propositions"
+    },
+    {
+      "id": "proof-lambda",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/proof-lambda.f",
+      "bytes": 5707771,
+      "sha256": "6d5489a0f1a80d33d2ff03cbab40720be9d63053f17a61566070f8a7c9f37fc9",
+      "title": "All saved λ-calculus computation traces"
+    },
+    {
+      "id": "proof-applications",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/proof-applications.f",
+      "bytes": 2930581,
+      "sha256": "e5137a2282b2f352b6517d53750e2ef1d51e5b662397614db825ae30eee7d93c",
+      "title": "All saved application evidence"
+    },
+    {
+      "id": "proof-field",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/proof-field.f",
+      "bytes": 745408,
+      "sha256": "0384aece0240973a237fb095d4989d6ed843f77d984de543010cb8cc19c1a155",
+      "title": "All saved F-arithmetic evidence"
+    },
+    {
+      "id": "proof-generators",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/proof-generators.f",
+      "bytes": 6110440,
+      "sha256": "2b38e7b7031465a5dceb23d75ec3604410a0e0267eb1f74a8c6953dd425b83a8",
+      "title": "All finite traces for the generative-label extensions"
+    },
+    {
+      "id": "proof-models",
+      "kind": "shared-structural",
+      "path": "verification/f-only-v1.5.8/proof-models.f",
+      "bytes": 812239,
+      "sha256": "cac0bc253bc909ecfee60ac1cc8af30c6e94aaf065358c03a4d2e9bad869a715",
+      "title": "All register-computation and conditional-equational traces"
+    },
+    {
+      "id": "paper-00",
+      "kind": "english-manuscript-text",
+      "title": "Title, reader introduction, and abstract",
+      "path": "verification/f-only-en-v1.5.8/paper-00.f",
+      "bytes": 2551078,
+      "sha256": "adbfe8ab8f846890a6c7a6ad89697c8ac4110e98ea254795b4205aeb67af94f7",
+      "source": "manuscripts/A_New_Foundation_of_Mathematics_en_v1.5.8.md",
+      "sourceStart": 0,
+      "sourceEnd": 8792,
+      "sourceBytes": 8831,
+      "sourceSha256": "0d04ea8c553a81b61e1fa934279c0b579b71f6d7d751792b6016fd180ff9ac47"
+    },
+    {
+      "id": "paper-01",
+      "kind": "english-manuscript-text",
+      "title": "Position and Explicit Minimal Assumptions",
+      "path": "verification/f-only-en-v1.5.8/paper-01.f",
+      "bytes": 4625620,
+      "sha256": "07073c7064c991d7136ba0555b9469a95adc842f257a500be7c6e9bb07ebb02e",
+      "source": "manuscripts/A_New_Foundation_of_Mathematics_en_v1.5.8.md",
+      "sourceStart": 8792,
+      "sourceEnd": 24723,
+      "sourceBytes": 16013,
+      "sourceSha256": "5862070d4a7c569f4b071f2e9469ee26a6623eb443a294420a81b039a4ea2e10"
+    },
+    {
+      "id": "paper-02",
+      "kind": "english-manuscript-text",
+      "title": "The Base, Constructors, and Lambda Calculus",
+      "path": "verification/f-only-en-v1.5.8/paper-02.f",
+      "bytes": 6930265,
+      "sha256": "8622c076a00fea71a89ad74a5d809519d4e737a51eafa23e18864022eaf86b1c",
+      "source": "manuscripts/A_New_Foundation_of_Mathematics_en_v1.5.8.md",
+      "sourceStart": 24723,
+      "sourceEnd": 49344,
+      "sourceBytes": 24669,
+      "sourceSha256": "e1dd73f420e5f0288a8a0922e5afbeb9615cdca371774e4f3b85d75b75b0bd67"
+    },
+    {
+      "id": "paper-03",
+      "kind": "english-manuscript-text",
+      "title": "Natural Numbers and a Commutative Semiring",
+      "path": "verification/f-only-en-v1.5.8/paper-03.f",
+      "bytes": 1147366,
+      "sha256": "7ccb5e73b4b6111be48800e810ca31e17227aa86c0aba5eb1525a1bd987b1eaf",
+      "source": "manuscripts/A_New_Foundation_of_Mathematics_en_v1.5.8.md",
+      "sourceStart": 49344,
+      "sourceEnd": 53672,
+      "sourceBytes": 4336,
+      "sourceSha256": "2bff2430c0d4d13186caaeb70385d5e819800136b7d151ff120dae36b31d00cd"
+    },
+    {
+      "id": "paper-04",
+      "kind": "english-manuscript-text",
+      "title": "Signed Integers and a Commutative Ring",
+      "path": "verification/f-only-en-v1.5.8/paper-04.f",
+      "bytes": 1144003,
+      "sha256": "ff6c440e7b01ed8bd12bca44ebf2671ae44233846c2755c0e70b1c7956afc100",
+      "source": "manuscripts/A_New_Foundation_of_Mathematics_en_v1.5.8.md",
+      "sourceStart": 53672,
+      "sourceEnd": 57878,
+      "sourceBytes": 4210,
+      "sourceSha256": "78f4383cdf740da8d37a50bd62693e49a39dabc4cf9d1a1d69de3da925b0871e"
+    },
+    {
+      "id": "paper-05",
+      "kind": "english-manuscript-text",
+      "title": "Rational Numbers, Normalization, and an Ordered Field",
+      "path": "verification/f-only-en-v1.5.8/paper-05.f",
+      "bytes": 1662004,
+      "sha256": "ca4f85abff84372684864c1640b79fc6729bff59ad385c8d181e79f1b7e20db4",
+      "source": "manuscripts/A_New_Foundation_of_Mathematics_en_v1.5.8.md",
+      "sourceStart": 57878,
+      "sourceEnd": 63900,
+      "sourceBytes": 6027,
+      "sourceSha256": "d6fb36bdc7f2a43f62022b9f47862abfab2624e2794463fe12a23a45b20ccad7"
+    },
+    {
+      "id": "paper-06",
+      "kind": "english-manuscript-text",
+      "title": "Introducing Relation Labels from Processes Approaching Rational Numbers",
+      "path": "verification/f-only-en-v1.5.8/paper-06.f",
+      "bytes": 2398174,
+      "sha256": "a355210cadaddd69677e87038aee07a18775748374d88ac1bb574cde55a75a8e",
+      "source": "manuscripts/A_New_Foundation_of_Mathematics_en_v1.5.8.md",
+      "sourceStart": 63900,
+      "sourceEnd": 72398,
+      "sourceBytes": 8525,
+      "sourceSha256": "1f4615c39356872a60a99a0dc2d0b72c381bd763ca1697fa54a1c9ec7570cc09"
+    },
+    {
+      "id": "paper-07",
+      "kind": "english-manuscript-text",
+      "title": "The Linear Representation L of Relation Labels and Its Operations",
+      "path": "verification/f-only-en-v1.5.8/paper-07.f",
+      "bytes": 1838398,
+      "sha256": "1796a247027c6ab953be7f9ec989cae0d04649876b37954800a32409ea5b95ae",
+      "source": "manuscripts/A_New_Foundation_of_Mathematics_en_v1.5.8.md",
+      "sourceStart": 72398,
+      "sourceEnd": 79031,
+      "sourceBytes": 6645,
+      "sourceSha256": "c955cc7723560afcd4228c374e43476ba71ff12f258b4d09b94456722685b8a2"
+    },
+    {
+      "id": "paper-08",
+      "kind": "english-manuscript-text",
+      "title": "M-polynomials, Fε, and adjoining elements as needed",
+      "path": "verification/f-only-en-v1.5.8/paper-08.f",
+      "bytes": 7834642,
+      "sha256": "991b3e4683807ed2a2468ffd2e15c857f187c6c925c0df1c8ca0f20892035416",
+      "source": "manuscripts/A_New_Foundation_of_Mathematics_en_v1.5.8.md",
+      "sourceStart": 79031,
+      "sourceEnd": 107127,
+      "sourceBytes": 28177,
+      "sourceSha256": "1a571326d20ffdd86b111e3e16374246285f6d4757bf30a39d82f5f22a3671e1"
+    },
+    {
+      "id": "paper-09",
+      "kind": "english-manuscript-text",
+      "title": "Connecting the Constructions — Finite Traces and Responses to Precision Requests",
+      "path": "verification/f-only-en-v1.5.8/paper-09.f",
+      "bytes": 7783558,
+      "sha256": "290adbf369ab5f9c6b155bb3546d93312aae30c4294b247ae48ae214c67c3d17",
+      "source": "manuscripts/A_New_Foundation_of_Mathematics_en_v1.5.8.md",
+      "sourceStart": 107127,
+      "sourceEnd": 134926,
+      "sourceBytes": 27889,
+      "sourceSha256": "f72213ab7984e062214573ce72bf7d279e0d9de5d8b7616cc509a1149cd23574"
+    },
+    {
+      "id": "paper-10",
+      "kind": "english-manuscript-text",
+      "title": "The Scope of Treating Proof as Processing",
+      "path": "verification/f-only-en-v1.5.8/paper-10.f",
+      "bytes": 3023047,
+      "sha256": "5d5bc7af405d5206a55f505be9e0350c2125b7edffaf6c7b3b7a405024cf4cb5",
+      "source": "manuscripts/A_New_Foundation_of_Mathematics_en_v1.5.8.md",
+      "sourceStart": 134926,
+      "sourceEnd": 145451,
+      "sourceBytes": 10567,
+      "sourceSha256": "b28fbde9aafaaa3c136a5e2cbf3b80f3c5e2d678522ad54ce2802d2926e9b8ce"
+    },
+    {
+      "id": "paper-11",
+      "kind": "english-manuscript-text",
+      "title": "Claims Refuted by Counterexamples and Unresolved Questions",
+      "path": "verification/f-only-en-v1.5.8/paper-11.f",
+      "bytes": 774217,
+      "sha256": "f6c870589dc3c4516d2910a9b2d4c8f95b1091265259d113c80f74f62a22c6aa",
+      "source": "manuscripts/A_New_Foundation_of_Mathematics_en_v1.5.8.md",
+      "sourceStart": 145451,
+      "sourceEnd": 148126,
+      "sourceBytes": 2681,
+      "sourceSha256": "3dfc478764531354adf0e606d9182d598d1dee9d8ea74ee2032f7edc11cc338e"
+    },
+    {
+      "id": "paper-12",
+      "kind": "english-manuscript-text",
+      "title": "Principal Results and Proof Status",
+      "path": "verification/f-only-en-v1.5.8/paper-12.f",
+      "bytes": 4410604,
+      "sha256": "0c5e779bb4b1a16a96d3ec7e52680d9c7167f6ad75a4f09642dff2439e32c0e5",
+      "source": "manuscripts/A_New_Foundation_of_Mathematics_en_v1.5.8.md",
+      "sourceStart": 148126,
+      "sourceEnd": 163302,
+      "sourceBytes": 15233,
+      "sourceSha256": "569bd9b1e21479abcc2312d77bd81ca1f0948fcdf5bde05731edfb1b257cfbdc"
+    },
+    {
+      "id": "paper-13",
+      "kind": "english-manuscript-text",
+      "title": "Tasks for the Next Version",
+      "path": "verification/f-only-en-v1.5.8/paper-13.f",
+      "bytes": 14278690,
+      "sha256": "df9f31a5da1e17c85f3f5fd710879fd428d4420d412d8828cc7a81d3b4821de7",
+      "source": "manuscripts/A_New_Foundation_of_Mathematics_en_v1.5.8.md",
+      "sourceStart": 163302,
+      "sourceEnd": 213816,
+      "sourceBytes": 50671,
+      "sourceSha256": "111e8e76247c6469e876539d4ef4960efcf9ebaabcee0e7ab0e5da9617c536c7",
+      "endmatterIncluded": [
+        "Appendix A",
+        "Appendix B",
+        "Related work",
+        "References"
+      ]
+    },
+    {
+      "id": "program-applications",
+      "path": "verification/f-only-v1.5.8/program-applications.f",
+      "bytes": 6562315,
+      "sha256": "0c2bae468a7b5f9a512cd08e53f273319b8d8f8d54cf42c5f06bbed4ef12bd9c",
+      "kind": "shared-program-source-text",
+      "title": "Rational arithmetic, generators, computation traces, and calculus",
+      "source": "verification/applications.mjs",
+      "sourceBytes": 24945,
+      "sourceSha256": "2dea5723eb8dc7edea7d47f7a0e65de16c87ce4963e9fe9476b4dd39fc7ac572",
+      "checkKind": "lossless-source-recovery-not-pure-lambda-port"
+    },
+    {
+      "id": "program-formal-field",
+      "path": "verification/f-only-v1.5.8/program-formal-field.f",
+      "bytes": 3846775,
+      "sha256": "9bc5452571dfebd30455e7c65f14549c9f60e43e8765ccc8c27a69c4c7ca6590",
+      "kind": "shared-program-source-text",
+      "title": "Polynomial and F arithmetic",
+      "source": "verification/formal-field.mjs",
+      "sourceBytes": 14425,
+      "sourceSha256": "0fdcbb1053824a871ec1e03203c16842cc72a9a340d52c454606693bb64bb892",
+      "checkKind": "lossless-source-recovery-not-pure-lambda-port"
+    },
+    {
+      "id": "program-equational-checker",
+      "path": "verification/f-only-v1.5.8/program-equational-checker.f",
+      "bytes": 2665546,
+      "sha256": "8319362a60b4310317c1e74121116ccf5705bf12d1df178291dc3c1e9c655d0e",
+      "kind": "shared-program-source-text",
+      "title": "Equational and induction proof checker",
+      "source": "verification/equational-checker.mjs",
+      "sourceBytes": 10392,
+      "sourceSha256": "2b4caa2b1170478e0288598eb05854d8ab60170b6ba97dd3d862ad2474c6b452",
+      "checkKind": "lossless-source-recovery-not-pure-lambda-port"
+    },
+    {
+      "id": "program-lambda-core",
+      "path": "verification/f-only-v1.5.8/program-lambda-core.f",
+      "bytes": 5245216,
+      "sha256": "0eae0346ed3bd1de4d2913924b884eb1dc71553b629eb7360f683f3dfa81f286",
+      "kind": "shared-program-source-text",
+      "title": "Lambda kernel and computation-trace replay",
+      "source": "interpreter/lambda_interpreter_v8.0.1.html",
+      "sourceBytes": 18059,
+      "sourceSha256": "0082d1c62e2981e31d6f2d8bc57d7ac30af0e58348c8f38b2b500286c4b17bdf",
+      "selection": "script#lambda-core",
+      "checkKind": "lossless-source-recovery-not-pure-lambda-port"
+    },
+    {
+      "id": "program-generator-extensions",
+      "path": "verification/f-only-v1.5.8/program-generator-extensions.f",
+      "bytes": 5642932,
+      "sha256": "5d9c3db8d00a2e0efb449bdb14eb250396de0362445e6323e08369c24fd1c55d",
+      "kind": "shared-program-source-text",
+      "title": "Interval-label extensions and finite-response checking",
+      "source": "verification/generator-extensions.mjs",
+      "sourceBytes": 21421,
+      "sourceSha256": "4eb1e442cf74948360b503b04e64d42c47eb854cac0a07736c4aa4113d358398",
+      "checkKind": "lossless-source-recovery-not-pure-lambda-port"
+    },
+    {
+      "id": "program-model-extensions",
+      "path": "verification/f-only-v1.5.8/program-model-extensions.f",
+      "bytes": 4934101,
+      "sha256": "f45ab14bd977f15c08ecd371944b9f22775c22c94c1e9058f38311f9e573a5a1",
+      "kind": "shared-program-source-text",
+      "title": "Register machine and conditional equational proofs",
+      "source": "verification/model-extensions.mjs",
+      "sourceBytes": 18892,
+      "sourceSha256": "ae27fb6d3ae87dc0daed2b243c3f6d12676bef1714423680264c2ee9286f3b57",
+      "checkKind": "lossless-source-recovery-not-pure-lambda-port"
+    },
+    {
+      "id": "program-concept-examples",
+      "path": "verification/f-only-v1.5.8/program-concept-examples.f",
+      "bytes": 20177440,
+      "sha256": "8edb88ad1a2720390311490a6b8bb48531d3470d538c8a6c9524aaf5822265c8",
+      "kind": "shared-program-source-text",
+      "title": "Structural examples, NatForm, fixed-type T products, G/H introductions, decimal interpretations, and finite pi evidence checks",
+      "source": "scripts/generate-concepts.mjs",
+      "sourceBytes": 60576,
+      "sourceSha256": "b5409b644d63c488499fd2c11bc0e435f32d7fe2b1a79a0c4a1544a768b7c14f",
+      "checkKind": "lossless-source-recovery-not-pure-lambda-port"
+    }
+  ]
+}
