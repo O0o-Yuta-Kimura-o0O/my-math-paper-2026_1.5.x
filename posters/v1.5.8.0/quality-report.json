@@ -1,0 +1,26 @@
+[
+  {
+    "edition": "ja",
+    "pages": 1,
+    "pageSizeMM": [
+      420.0,
+      594.0
+    ],
+    "embeddedFonts": 7,
+    "pdfRasterImages": 0,
+    "svgEditableTextElements": 78,
+    "visualReview": "passed"
+  },
+  {
+    "edition": "en",
+    "pages": 1,
+    "pageSizeMM": [
+      420.0,
+      594.0
+    ],
+    "embeddedFonts": 5,
+    "pdfRasterImages": 0,
+    "svgEditableTextElements": 78,
+    "visualReview": "passed"
+  }
+]

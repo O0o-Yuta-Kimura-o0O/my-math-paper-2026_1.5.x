@@ -22,6 +22,8 @@ v1.5.4では、別稿 `Generative_Reals_ja_v1.4.1.md` から有限構成と証�
 
 ## 読む・使う
 
+- [数の構成ポスター（日英・A2／PDF・編集用SVG）](posters/v1.5.8.0/README.md) — 論文v1.5.8対応。
+
 - [ビジュアライザーのオンライン版（Pages有効化後）](https://o0o-yuta-kimura-o0o.github.io/my-math-paper-2026_1.5.x/) — f-Generative Atlas v1.5.8.4。
 - [HTMLを保存して使う](docs/f-generative-atlas-v1.5.8.4.html) · [GitHub Pagesの公開手順](PAGES.md)
 

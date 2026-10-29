@@ -21,6 +21,7 @@ if (fs.existsSync(manifestPath)) {
   for (const edition of Object.values(release.translations || {}))
     files.push(...[edition.paper, edition.readme, edition.fOnlyAppendix].filter(Boolean));
   files.push(...(release.site?.files || []));
+  files.push(...(release.posters?.files || []));
   if (release.labelDesign) files.push(release.labelDesign);
   if (release.authorDecisions) files.push(release.authorDecisions);
 }

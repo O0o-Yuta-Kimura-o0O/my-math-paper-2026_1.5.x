@@ -41,5 +41,29 @@
       "docs/index.html",
       "docs/f-generative-atlas-v1.5.8.4.html"
     ]
+  },
+  "posters": {
+    "version": "1.5.8.0",
+    "paperVersion": "1.5.8",
+    "directory": "posters/v1.5.8.0",
+    "files": [
+      "posters/v1.5.8.0/README.md",
+      "posters/v1.5.8.0/build-report.json",
+      "posters/v1.5.8.0/build.py",
+      "posters/v1.5.8.0/f-generative-number-construction_en_v1.5.8.0.pdf",
+      "posters/v1.5.8.0/f-generative-number-construction_en_v1.5.8.0.svg",
+      "posters/v1.5.8.0/f-generative-number-construction_ja_v1.5.8.0.pdf",
+      "posters/v1.5.8.0/f-generative-number-construction_ja_v1.5.8.0.svg",
+      "posters/v1.5.8.0/fonts/DejaVuSans.ttf",
+      "posters/v1.5.8.0/fonts/LICENSE-DejaVuSans.txt",
+      "posters/v1.5.8.0/fonts/LiberationMono-Regular.ttf",
+      "posters/v1.5.8.0/fonts/NotoSansJP-Bold.ttf",
+      "posters/v1.5.8.0/fonts/NotoSansJP-Regular.ttf",
+      "posters/v1.5.8.0/fonts/OFL-LiberationMono.txt",
+      "posters/v1.5.8.0/fonts/OFL-NotoSansJP.txt",
+      "posters/v1.5.8.0/preview-en.png",
+      "posters/v1.5.8.0/preview-ja.png",
+      "posters/v1.5.8.0/quality-report.json"
+    ]
   }
 }

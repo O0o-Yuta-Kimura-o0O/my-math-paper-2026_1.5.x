@@ -1,0 +1,26 @@
+{
+  "paperVersion": "1.5.8",
+  "posterVersion": "1.5.8.0",
+  "pageSizeMM": [
+    420,
+    594
+  ],
+  "editions": [
+    {
+      "language": "en",
+      "pdf": "f-generative-number-construction_en_v1.5.8.0.pdf",
+      "svg": "f-generative-number-construction_en_v1.5.8.0.svg",
+      "textObjects": 78,
+      "allTextBoundsChecked": true,
+      "allGlyphsAvailable": true
+    },
+    {
+      "language": "ja",
+      "pdf": "f-generative-number-construction_ja_v1.5.8.0.pdf",
+      "svg": "f-generative-number-construction_ja_v1.5.8.0.svg",
+      "textObjects": 78,
+      "allTextBoundsChecked": true,
+      "allGlyphsAvailable": true
+    }
+  ]
+}

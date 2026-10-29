@@ -12,8 +12,8 @@
     },
     {
       "path": "CHANGELOG.md",
-      "sha256": "0ba3fb267c251b8eab26c23a3abc7e61713d7a4ebba68aeb1e5289018df673a8",
-      "bytes": 15982
+      "sha256": "0fb12f86366800aa54db2ede95c4caf7a2afe5f13ac69af6797bcba00ead9540",
+      "bytes": 16283
     },
     {
       "path": "PAGES.md",
@@ -22,13 +22,13 @@
     },
     {
       "path": "README.en.md",
-      "sha256": "154adc461c32de370e01dc69fafaffda6eb004d27d8e626bcb9d5826c410a3f8",
-      "bytes": 8786
+      "sha256": "2f17bf7bec2b64df3d9fe522210af4e468aec538eb307a9e832d2eb97d10959e",
+      "bytes": 8919
     },
     {
       "path": "README.md",
-      "sha256": "dfe7663653d5a48a4fef0948a65fac515876c1eb2960d37584c5ef4fea30daad",
-      "bytes": 14314
+      "sha256": "626063269a123a2a725ad4c385c450174261f876f86ef502aab86e0a21adea92",
+      "bytes": 14436
     },
     {
       "path": "appendices/A_New_Foundation_of_Mathematics_en_v1.5.8_f_only.md",
@@ -76,9 +76,94 @@
       "bytes": 198021
     },
     {
+      "path": "posters/v1.5.8.0/README.md",
+      "sha256": "35827eb80281cb58c2f946763df1e6520d88c4c7811425f17c0c400b1753762d",
+      "bytes": 3932
+    },
+    {
+      "path": "posters/v1.5.8.0/build-report.json",
+      "sha256": "a21f40dc4ee90dc0cc22960a8dee86f5d97562fc7bf18a3cd68f3459de0ed00c",
+      "bytes": 642
+    },
+    {
+      "path": "posters/v1.5.8.0/build.py",
+      "sha256": "9796c735eadabe73ef780f212d9abd2af56c1b865571d726b5629cb1c3e21be7",
+      "bytes": 9943
+    },
+    {
+      "path": "posters/v1.5.8.0/f-generative-number-construction_en_v1.5.8.0.pdf",
+      "sha256": "2e88bc71fe93e2c770b7c4aedcd6bc211b8f378b0a00c7b800ce317ac478437c",
+      "bytes": 133903
+    },
+    {
+      "path": "posters/v1.5.8.0/f-generative-number-construction_en_v1.5.8.0.svg",
+      "sha256": "bf8fcef4da43dec948d198e88d68e28e8003fca07f561a4e44d4be69916c37a3",
+      "bytes": 1449310
+    },
+    {
+      "path": "posters/v1.5.8.0/f-generative-number-construction_ja_v1.5.8.0.pdf",
+      "sha256": "e42bf82b64b66ea506454315be4beb401a5b0a91b498c73923b1c54419ca092f",
+      "bytes": 179019
+    },
+    {
+      "path": "posters/v1.5.8.0/f-generative-number-construction_ja_v1.5.8.0.svg",
+      "sha256": "320dcde2c40ad02e96c961158d325ccb9b4a45bbf9a8d22508883daad4f64396",
+      "bytes": 16821467
+    },
+    {
+      "path": "posters/v1.5.8.0/fonts/DejaVuSans.ttf",
+      "sha256": "7da195a74c55bef988d0d48f9508bd5d849425c1770dba5d7bfc6ce9ed848954",
+      "bytes": 757076
+    },
+    {
+      "path": "posters/v1.5.8.0/fonts/LICENSE-DejaVuSans.txt",
+      "sha256": "24da3dd89c4ff4815a6a7bb0178c2fcd86e9b548d35d17564839c3fbb57bccd8",
+      "bytes": 4973
+    },
+    {
+      "path": "posters/v1.5.8.0/fonts/LiberationMono-Regular.ttf",
+      "sha256": "f2b83c763e8afd21709333370bed4774337fae82267937e2b5aea7e2fbd922c1",
+      "bytes": 319508
+    },
+    {
+      "path": "posters/v1.5.8.0/fonts/NotoSansJP-Bold.ttf",
+      "sha256": "93ab915c47b9911fa46994fe254822a9e75457be911e94fd1b292eb73aa7d566",
+      "bytes": 5761788
+    },
+    {
+      "path": "posters/v1.5.8.0/fonts/NotoSansJP-Regular.ttf",
+      "sha256": "3368bd343b6e06fb67a70d5ad243ade69c7643326fd67e648d7ba0bbe66991cc",
+      "bytes": 5767000
+    },
+    {
+      "path": "posters/v1.5.8.0/fonts/OFL-LiberationMono.txt",
+      "sha256": "839b86a7ea82ed4b5c6881b40a92c5ceaea5fcba0a97fbdb0c2bc246a8cb575c",
+      "bytes": 4157
+    },
+    {
+      "path": "posters/v1.5.8.0/fonts/OFL-NotoSansJP.txt",
+      "sha256": "1c05c68c34f9708415aada51f17e1b0092d2cea709bf4a94cd38114f9e73d7d9",
+      "bytes": 4388
+    },
+    {
+      "path": "posters/v1.5.8.0/preview-en.png",
+      "sha256": "76113e92dfe7935237ea05c47af5ae121a92a170ec19e3e57cc5ba28e88998a0",
+      "bytes": 196199
+    },
+    {
+      "path": "posters/v1.5.8.0/preview-ja.png",
+      "sha256": "f666acc76139855391e1dd6f42ef6eadc795255dcab58ab9175a785f410bdd50",
+      "bytes": 203299
+    },
+    {
+      "path": "posters/v1.5.8.0/quality-report.json",
+      "sha256": "8cd92122590e5ecc753caf501aec3c95fbf0c9ed6828009cf0d548aee64c3c75",
+      "bytes": 427
+    },
+    {
       "path": "release.json",
-      "sha256": "1bd0832e7ad33ab231cf8acb064807aacb7a06314a1443b76ebfd4d683d3602e",
-      "bytes": 1873
+      "sha256": "2cd4e349ec6833b2baec24cd2769a3a23b2aa8d12e323de48dcc3627e710a79d",
+      "bytes": 2922
     },
     {
       "path": "research/applications-v1.5.8.md",
@@ -152,8 +237,8 @@
     },
     {
       "path": "scripts/check-release.mjs",
-      "sha256": "34ec3991772c28ca1255cd22957d04811f34cce519b16373c4193a1fcb67b1a9",
-      "bytes": 3668
+      "sha256": "9901abaaa7297483ed875457e2a2c1b36371a4b3a480b57ec3f2f7703d58455f",
+      "bytes": 3717
     },
     {
       "path": "scripts/generate-concepts.mjs",

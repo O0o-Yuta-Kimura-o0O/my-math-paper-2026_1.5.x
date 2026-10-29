@@ -2,6 +2,8 @@
 
 [日本語](README.md)
 
+[Number construction posters: English and Japanese, A2 PDF and editable SVG](posters/v1.5.8.0/README.md) — based on paper v1.5.8.
+
 [Open the visualizer (after Pages is enabled)](https://o0o-yuta-kimura-o0o.github.io/my-math-paper-2026_1.5.x/) · [Download the standalone HTML](docs/f-generative-atlas-v1.5.8.4.html) · [GitHub Pages setup](PAGES.md)
 
 The f-Generative Atlas v1.5.8.4 is bundled as a standalone static page. Publish the `docs` directory from `main` using GitHub Pages. The manuscript remains available in this repository.
