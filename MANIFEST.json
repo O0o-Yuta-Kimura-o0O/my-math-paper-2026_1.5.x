@@ -12,8 +12,8 @@
     },
     {
       "path": "CHANGELOG.md",
-      "sha256": "35d2213dadf8875ffa2f81ca1a0b3f041d789f241b2874d7532b22ae6a83e629",
-      "bytes": 16761
+      "sha256": "64e04d945f6f74e00bb12cd98d22c4f93185156c0ba7d9e183ee8300a0f8a220",
+      "bytes": 17069
     },
     {
       "path": "PAGES.md",
@@ -52,8 +52,8 @@
     },
     {
       "path": "docs/index.html",
-      "sha256": "dd61595398fb26f93111937ec069b6e53eb8bc84977f4b694a6003ed4e8c3946",
-      "bytes": 80947
+      "sha256": "9b817abf1129b1768271cff6e3b312ee283ef025962c9ce7bbb5b9273c05d125",
+      "bytes": 82876
     },
     {
       "path": "docs/lab/README.md",
@@ -62,8 +62,8 @@
     },
     {
       "path": "docs/lab/index.html",
-      "sha256": "0d24cd71a4c18c27dbaa91555e20e1f6c14284bc04b8219043bba1d48781f49a",
-      "bytes": 321
+      "sha256": "ee1a929ffefc04f7e8b92148d6031097d54a488f096dcb18c3b9c22d4ad241a0",
+      "bytes": 2439
     },
     {
       "path": "docs/lab/v1.5.8.0/app.css",
@@ -107,13 +107,38 @@
     },
     {
       "path": "docs/lab/v1.5.8.0/index.html",
-      "sha256": "b4e76358843d815bea3d8e82763e957eee8ee0071585ba343a11f702112e6c22",
-      "bytes": 737
+      "sha256": "662a66e870b0e7b16d19d932cd4439766de5e12c1ad21f30a83eb09a278a1a6d",
+      "bytes": 2686
     },
     {
       "path": "docs/lab/v1.5.8.0/worker.mjs",
       "sha256": "f5a7b1ac1b34ae7d7422e19782c5d11f73357db811a5eac7415f4a37ff3cddee",
       "bytes": 900
+    },
+    {
+      "path": "docs/social/README.md",
+      "sha256": "7b43a6a6d0f4907429c506c059b7343f3d26cea481d80a0d11af2bfa82960861",
+      "bytes": 1948
+    },
+    {
+      "path": "docs/social/atlas-v1.5.8.4-og-v1.png",
+      "sha256": "42ce1dc9adf81178e42ff33d1967e33354b6f6e561cdf721b4c67c12b8bddd74",
+      "bytes": 129541
+    },
+    {
+      "path": "docs/social/atlas-v1.5.8.4-og-v1.svg",
+      "sha256": "5810d4617f232e81c9304f7fc025cc49c30ed71b20660ce16d5d23292333c203",
+      "bytes": 3608
+    },
+    {
+      "path": "docs/social/lab-v1.5.8.0-og-v1.png",
+      "sha256": "ddb471b253982c7be4c2e11c7353bfe8bb1d2d884bcda4df1f4d61167d351094",
+      "bytes": 99672
+    },
+    {
+      "path": "docs/social/lab-v1.5.8.0-og-v1.svg",
+      "sha256": "67a95f39ad52c43887e38a57b66af666cbac1c5ac693cf0c75cd67418944d2ce",
+      "bytes": 2196
     },
     {
       "path": "interpreter/README.md",
@@ -222,8 +247,8 @@
     },
     {
       "path": "release.json",
-      "sha256": "aec37f222d506737fcdf13381dcb81aca27a42b3365a2ea183f5bb53b291f1a1",
-      "bytes": 3500
+      "sha256": "94c5099daabd0fe7320d0a96694b421a015cb261eb528af08d9412d1c3a2d420",
+      "bytes": 3972
     },
     {
       "path": "research/applications-v1.5.8.md",
@@ -289,6 +314,11 @@
       "path": "research/trace-extensions-v1.5.8.md",
       "sha256": "659001f297e437ff0aef5bc8882dd99f90df52efdf6ab9d4aec74706bb538ba0",
       "bytes": 15689
+    },
+    {
+      "path": "scripts/build-social-cards.py",
+      "sha256": "c578e417700d1ddf14203aaf6a81512b1b91559f5cf006b3efdf4a93adf98630",
+      "bytes": 3972
     },
     {
       "path": "scripts/check-english-translation.mjs",

@@ -51,10 +51,25 @@
       "docs/lab/v1.5.8.0/engine/applications.mjs",
       "docs/lab/v1.5.8.0/engine/formal-field.mjs",
       "docs/lab/v1.5.8.0/index.html",
-      "docs/lab/v1.5.8.0/worker.mjs"
+      "docs/lab/v1.5.8.0/worker.mjs",
+      "scripts/build-social-cards.py",
+      "docs/social/README.md",
+      "docs/social/atlas-v1.5.8.4-og-v1.png",
+      "docs/social/atlas-v1.5.8.4-og-v1.svg",
+      "docs/social/lab-v1.5.8.0-og-v1.png",
+      "docs/social/lab-v1.5.8.0-og-v1.svg"
     ],
     "labVersion": "1.5.8.0",
-    "labUrl": "https://o0o-yuta-kimura-o0o.github.io/my-math-paper-2026_1.5.x/lab/"
+    "labUrl": "https://o0o-yuta-kimura-o0o.github.io/my-math-paper-2026_1.5.x/lab/",
+    "socialPreview": {
+      "revision": 1,
+      "imageSize": [
+        1200,
+        630
+      ],
+      "labImage": "docs/social/lab-v1.5.8.0-og-v1.png",
+      "atlasImage": "docs/social/atlas-v1.5.8.4-og-v1.png"
+    }
   },
   "posters": {
     "version": "1.5.8.0",
