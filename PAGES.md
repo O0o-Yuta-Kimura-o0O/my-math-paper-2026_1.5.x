@@ -25,7 +25,7 @@ SNSには通常、最新版の入口を使えます。特定の版を参照し�
 - `docs/f-generative-atlas-v1.5.8.4.html`：その版を固定して参照するためのHTML。
 - `docs/.nojekyll`：HTMLをそのまま配信するための指定。
 
-HTMLはCSS・JavaScriptを内包し、外部ライブラリやバックエンドを必要としません。提供された元HTMLの内容は変更していません。HTMLソースをGitHubで開くとコードが表示されるため、操作するときは上記のPages URLか、保存したHTMLをブラウザで開いてください。
+版付きHTMLはCSS・JavaScriptを内包した単独ファイルです。最新版の入口は、言語設定用の共有モジュール`docs/language-preference.mjs`も読み込みます。外部ライブラリやバックエンドは不要です。最新版の入口と実験室はPagesまたはローカルHTTPサーバーで開いてください。HTMLソースをGitHubで開くとコードが表示されます。
 
 今後は新しい版付きHTMLを追加し、その内容で`index.html`を更新してCommit・Pushします。既存の版付きファイルを残せば、SNSからの過去のリンクも維持できます。Pagesの設定は通常、一度だけで済みます。
 
@@ -38,3 +38,7 @@ Commit and push the prepared changes. In the repository's **Settings → Pages**
 ## 数学実験室 v1.5.8.0
 
 [数学実験室](https://o0o-yuta-kimura-o0o.github.io/my-math-paper-2026_1.5.x/lab/)を同じPagesサイトの`lab/`へ追加しました。既存の`main`・`/docs`設定で配信されるため、公開元の再設定は不要です。固定版は`lab/v1.5.8.0/`です。計算モジュールとWorkerを使うため、ローカルでは[手順](docs/lab/README.md)に従いHTTPで配信してください。
+
+## 言語の初期表示
+
+数学実験室とビジュアライザーは、ブラウザの最優先言語が日本語なら日本語、それ以外はEnglishで開始します。手動選択をサイト内だけに記憶して優先します。外部の国判定サービスは使いません。通常の実験室URLへ付けた`?lang=ja`や`?lang=en`も版付きURLへ引き継ぎます。

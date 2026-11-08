@@ -39,6 +39,7 @@
       "PAGES.md",
       "docs/.nojekyll",
       "docs/index.html",
+      "docs/language-preference.mjs",
       "docs/f-generative-atlas-v1.5.8.4.html",
       "docs/lab/README.md",
       "docs/lab/index.html",
@@ -69,6 +70,13 @@
       ],
       "labImage": "docs/social/lab-v1.5.8.0-og-v1.png",
       "atlasImage": "docs/social/atlas-v1.5.8.4-og-v1.png"
+    },
+    "languagePreference": {
+      "revision": 1,
+      "default": "primary browser language: ja/ja-* -> ja; otherwise en",
+      "manualStorageKey": "f-generative-language",
+      "urlParameter": "lang",
+      "externalLookup": false
     }
   },
   "posters": {

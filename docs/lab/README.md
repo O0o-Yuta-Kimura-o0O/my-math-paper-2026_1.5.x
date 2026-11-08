@@ -4,6 +4,14 @@
 
 論文v1.5.8に基づく、日英切替付きの小さな数学実験室です。公開版の固定URLは[こちら](https://o0o-yuta-kimura-o0o.github.io/my-math-paper-2026_1.5.x/lab/v1.5.8.0/)。内部構成にZF/ZFCや選択公理を追加する変更はありません。計算は有理数と有限の多項式処理で行います。
 
+## 初期言語と手動選択
+
+ブラウザの最優先言語が日本語（jaまたはja-*）なら日本語、それ以外はEnglishで開始します。所在地・IP・GPSによる判定や、追加の外部サービスへの照会は行いません。手動で選んだ言語は、このサイトのlocalStorageに言語コードだけを保存し、次回以降優先します。実験室とビジュアライザーで共有されます。ブラウザのサイトデータを削除すると、この記憶も削除されます。
+
+明示した`?lang=ja`／`?lang=en`は保存済みの選択より優先します。手動変更時にはURLもその言語へ更新します。ビジュアライザーのFrançais／中文の手動選択も保持しますが、その言語に未対応の実験室ではEnglishで表示します。localStorageが利用できない場合も画面の切替は動きますが、次回の記憶はできません。
+
+The initial language follows the browser's first preferred language: Japanese for ja/ja-*, English otherwise. A manually chosen language is stored locally and takes precedence on later visits. Explicit URL language parameters override it. No IP lookup, GPS, or external locale service is used.
+
 ## できること
 
 1. **無限小計算。** 有理関数R(x)=P(x)/Q(x)と有理点aを指定し、R(a+ε)、R(a)、差商、標準部、厳密な残差とその最小次数を計算します。例えばR(x)=x²、a=3なら差商は6+ε、標準部は6、残差はεです。入力したQ(a)が零なら受理しません。取り除ける穴も、点での値を勝手に定義し直すことはしません。

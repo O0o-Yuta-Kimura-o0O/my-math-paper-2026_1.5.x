@@ -10,6 +10,7 @@ const checks = [
   'verification/generator-extensions-tests.mjs', 'verification/model-extensions-tests.mjs',
   'verification/lambda-arithmetic-tests.mjs',
   'verification/concept-codec-tests.mjs', 'verification/f-only-codec-tests.mjs',
+  'verification/language-preference-tests.mjs',
   'verification/lab-tests-v1.5.8.0.mjs', 'verification/lab-encoding-tests-v1.5.8.0.mjs',
 ];
 const reports = [];

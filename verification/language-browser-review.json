@@ -1,0 +1,19 @@
+{
+  "format": "browser-language-review/1",
+  "date": "2026-11-08",
+  "scope": "Targeted UI review of the current Atlas entry and Lab; preference branching is covered by language-preference-tests.mjs.",
+  "status": "passed",
+  "checks": [
+    "Lab manual English survives a fresh visit without a language query.",
+    "English selection is shared from Lab to Atlas.",
+    "Atlas manual Japanese is shared back to Lab.",
+    "Atlas French survives reload and a fresh visit without a query; its selector and translated body agree.",
+    "Lab uses English for the saved unsupported French choice.",
+    "Stable Lab redirect preserves ?lang=ja and #result; explicit query overrides saved choice.",
+    "Japanese and English Lab results still display the verified change quotient 6 + epsilon."
+  ],
+  "limits": [
+    "Browser preference variants and denied-storage paths are verified in Node with injected values, not by changing the browser profile.",
+    "This review does not certify every UI feature or mathematical theorem."
+  ]
+}
