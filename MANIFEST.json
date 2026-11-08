@@ -12,23 +12,23 @@
     },
     {
       "path": "CHANGELOG.md",
-      "sha256": "0fb12f86366800aa54db2ede95c4caf7a2afe5f13ac69af6797bcba00ead9540",
-      "bytes": 16283
+      "sha256": "35d2213dadf8875ffa2f81ca1a0b3f041d789f241b2874d7532b22ae6a83e629",
+      "bytes": 16761
     },
     {
       "path": "PAGES.md",
-      "sha256": "048f38787a67e12f9f28e5a92258f8e96bf889cd5707ee9858b6b90fb769fc0a",
-      "bytes": 3252
+      "sha256": "073b9d3078bad540adc6303b497a86fe1d8d0a539e77d06ecae5e07bfdc43fe8",
+      "bytes": 3745
     },
     {
       "path": "README.en.md",
-      "sha256": "2f17bf7bec2b64df3d9fe522210af4e468aec538eb307a9e832d2eb97d10959e",
-      "bytes": 8919
+      "sha256": "031c3633f264ca3fee9db68e5051dedc0ce2f900f06c855c20dd4d27d3f45002",
+      "bytes": 9221
     },
     {
       "path": "README.md",
-      "sha256": "626063269a123a2a725ad4c385c450174261f876f86ef502aab86e0a21adea92",
-      "bytes": 14436
+      "sha256": "036c1151f32a84d771f98380da5a99f626b2a8d9e079cbfcaa895def3ee20cd2",
+      "bytes": 14710
     },
     {
       "path": "appendices/A_New_Foundation_of_Mathematics_en_v1.5.8_f_only.md",
@@ -52,8 +52,68 @@
     },
     {
       "path": "docs/index.html",
-      "sha256": "41139773af0fa0e46e3b7409c01934542e02db513abb34e9216c30f94bb59834",
-      "bytes": 80607
+      "sha256": "dd61595398fb26f93111937ec069b6e53eb8bc84977f4b694a6003ed4e8c3946",
+      "bytes": 80947
+    },
+    {
+      "path": "docs/lab/README.md",
+      "sha256": "07ce81c215b8327eb92523b3fe6efa18193090efaedcdc22254865b75b725087",
+      "bytes": 6717
+    },
+    {
+      "path": "docs/lab/index.html",
+      "sha256": "0d24cd71a4c18c27dbaa91555e20e1f6c14284bc04b8219043bba1d48781f49a",
+      "bytes": 321
+    },
+    {
+      "path": "docs/lab/v1.5.8.0/app.css",
+      "sha256": "f664404a0cfb4f47eeee1c7f342d5231604420fcff8e7bb897c2e9313583e303",
+      "bytes": 8281
+    },
+    {
+      "path": "docs/lab/v1.5.8.0/app.mjs",
+      "sha256": "1c72b4e0ef5f998062a84410d9c76d76fb712fdd35d6eb0dddd976d4a619b931",
+      "bytes": 27142
+    },
+    {
+      "path": "docs/lab/v1.5.8.0/checker.mjs",
+      "sha256": "2d8ffb0ae6882ce885461518d5c1e63f35e7074014281420871a15d708b16f4d",
+      "bytes": 10099
+    },
+    {
+      "path": "docs/lab/v1.5.8.0/core.mjs",
+      "sha256": "0d774ccb7bd396d37871c79b1e1b5afdf4d17a4255927fed7b590ee4bfcc443d",
+      "bytes": 5698
+    },
+    {
+      "path": "docs/lab/v1.5.8.0/encoding.mjs",
+      "sha256": "20fd4648ce8449bfbe905646de28b742a7263c569e84fdffd41ed36a24c83dbe",
+      "bytes": 12285
+    },
+    {
+      "path": "docs/lab/v1.5.8.0/engine/README.md",
+      "sha256": "8667df86a2f063d9b1e7f82a0dc00d22d632793608cdc9bd6d7f9d96e48ef501",
+      "bytes": 1492
+    },
+    {
+      "path": "docs/lab/v1.5.8.0/engine/applications.mjs",
+      "sha256": "2dea5723eb8dc7edea7d47f7a0e65de16c87ce4963e9fe9476b4dd39fc7ac572",
+      "bytes": 24945
+    },
+    {
+      "path": "docs/lab/v1.5.8.0/engine/formal-field.mjs",
+      "sha256": "0fdcbb1053824a871ec1e03203c16842cc72a9a340d52c454606693bb64bb892",
+      "bytes": 14425
+    },
+    {
+      "path": "docs/lab/v1.5.8.0/index.html",
+      "sha256": "b4e76358843d815bea3d8e82763e957eee8ee0071585ba343a11f702112e6c22",
+      "bytes": 737
+    },
+    {
+      "path": "docs/lab/v1.5.8.0/worker.mjs",
+      "sha256": "f5a7b1ac1b34ae7d7422e19782c5d11f73357db811a5eac7415f4a37ff3cddee",
+      "bytes": 900
     },
     {
       "path": "interpreter/README.md",
@@ -162,8 +222,8 @@
     },
     {
       "path": "release.json",
-      "sha256": "2cd4e349ec6833b2baec24cd2769a3a23b2aa8d12e323de48dcc3627e710a79d",
-      "bytes": 2922
+      "sha256": "aec37f222d506737fcdf13381dcb81aca27a42b3365a2ea183f5bb53b291f1a1",
+      "bytes": 3500
     },
     {
       "path": "research/applications-v1.5.8.md",
@@ -262,8 +322,8 @@
     },
     {
       "path": "scripts/verify.mjs",
-      "sha256": "fd9cda4d768ab98354bcb94e22a9549f822bb64320b01a30a5592859c5f9f5fb",
-      "bytes": 1989
+      "sha256": "18fed7389bc27528bce830973388f55cb900581cb436cb05610f5f5367da4f42",
+      "bytes": 2165
     },
     {
       "path": "verification/README.md",
@@ -3621,6 +3681,21 @@
       "bytes": 6763
     },
     {
+      "path": "verification/lab-browser-review-v1.5.8.0.json",
+      "sha256": "69049787bc326fb6290f36824d516c0e4b8186074a9094933f0ce5b0a2cfbe60",
+      "bytes": 936
+    },
+    {
+      "path": "verification/lab-encoding-tests-v1.5.8.0.mjs",
+      "sha256": "66a590ad6ed75a23e0225b10d5b0a04c6fb57096e068ed4f36f652c646f0f3fc",
+      "bytes": 5787
+    },
+    {
+      "path": "verification/lab-tests-v1.5.8.0.mjs",
+      "sha256": "966e34ae62aca6998e63ed6dd00f2657f86cfe4d0405f108c9db46961ac20e59",
+      "bytes": 12417
+    },
+    {
       "path": "verification/lambda-arithmetic-tests.mjs",
       "sha256": "fd1fc8078882efe30a4291f12a5ed676b90e517e64b09bbb171000b12efdc917",
       "bytes": 5707
@@ -3642,8 +3717,8 @@
     },
     {
       "path": "verification/verification-report.json",
-      "sha256": "5adaeda9ef5d525d6098b562c52db4387a7f3ebdfca4cce5f49c32e53f610223",
-      "bytes": 15088
+      "sha256": "71627d92a2356133065d23a8865d8ed560b518eed1fa01c86dc664a93c1bbc8e",
+      "bytes": 19242
     }
   ]
 }

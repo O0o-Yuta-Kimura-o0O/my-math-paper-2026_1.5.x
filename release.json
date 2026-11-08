@@ -39,8 +39,22 @@
       "PAGES.md",
       "docs/.nojekyll",
       "docs/index.html",
-      "docs/f-generative-atlas-v1.5.8.4.html"
-    ]
+      "docs/f-generative-atlas-v1.5.8.4.html",
+      "docs/lab/README.md",
+      "docs/lab/index.html",
+      "docs/lab/v1.5.8.0/app.css",
+      "docs/lab/v1.5.8.0/app.mjs",
+      "docs/lab/v1.5.8.0/checker.mjs",
+      "docs/lab/v1.5.8.0/core.mjs",
+      "docs/lab/v1.5.8.0/encoding.mjs",
+      "docs/lab/v1.5.8.0/engine/README.md",
+      "docs/lab/v1.5.8.0/engine/applications.mjs",
+      "docs/lab/v1.5.8.0/engine/formal-field.mjs",
+      "docs/lab/v1.5.8.0/index.html",
+      "docs/lab/v1.5.8.0/worker.mjs"
+    ],
+    "labVersion": "1.5.8.0",
+    "labUrl": "https://o0o-yuta-kimura-o0o.github.io/my-math-paper-2026_1.5.x/lab/"
   },
   "posters": {
     "version": "1.5.8.0",

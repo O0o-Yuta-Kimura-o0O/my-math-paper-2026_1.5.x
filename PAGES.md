@@ -21,7 +21,7 @@ SNSには通常、最新版の入口を使えます。特定の版を参照し�
 
 ## ファイルと今後の更新
 
-- `docs/index.html`：最新版のHTMLの複製。今回の内容はv1.5.8.4です。
+- `docs/index.html`：v1.5.8.4を基にしたビジュアライザーの入口。数学実験室へのリンクも設けています。
 - `docs/f-generative-atlas-v1.5.8.4.html`：その版を固定して参照するためのHTML。
 - `docs/.nojekyll`：HTMLをそのまま配信するための指定。
 
@@ -34,3 +34,7 @@ HTMLはCSS・JavaScriptを内包し、外部ライブラリやバックエンド
 ## English setup
 
 Commit and push the prepared changes. In the repository's **Settings → Pages**, choose **Deploy from a branch**, select **main** and **/docs**, and click **Save**. Wait for the Pages deployment to succeed. The stable URL above opens the current atlas; the versioned URL preserves a specific release. Future updates require replacing `docs/index.html`, adding the new versioned HTML, and pushing the changes while retaining previously published versions.
+
+## 数学実験室 v1.5.8.0
+
+[数学実験室](https://o0o-yuta-kimura-o0o.github.io/my-math-paper-2026_1.5.x/lab/)を同じPagesサイトの`lab/`へ追加しました。既存の`main`・`/docs`設定で配信されるため、公開元の再設定は不要です。固定版は`lab/v1.5.8.0/`です。計算モジュールとWorkerを使うため、ローカルでは[手順](docs/lab/README.md)に従いHTTPで配信してください。

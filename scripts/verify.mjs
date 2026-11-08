@@ -10,6 +10,7 @@ const checks = [
   'verification/generator-extensions-tests.mjs', 'verification/model-extensions-tests.mjs',
   'verification/lambda-arithmetic-tests.mjs',
   'verification/concept-codec-tests.mjs', 'verification/f-only-codec-tests.mjs',
+  'verification/lab-tests-v1.5.8.0.mjs', 'verification/lab-encoding-tests-v1.5.8.0.mjs',
 ];
 const reports = [];
 for (const file of checks) {
@@ -26,7 +27,7 @@ const report = {
   format: 'release-verification/1', paperVersion: release.paperVersion,
   interpreterVersion: release.interpreterVersion, checkedAt: new Date().toISOString(),
   runtime: process.version, status: 'passed', checks: reports,
-  browserReview: {status: 'not-performed', reason: 'The browser security policy blocked opening the local file URL. No alternate browser route was used.'},
+  browserReview: {status: 'separate-record', report: 'verification/lab-browser-review-v1.5.8.0.json', scope: 'The lab is reviewed in a browser separately; this regression runner does not perform browser tests or certify the interpreter UI.'},
   scope: 'Executable regression tests and finite certificates. This report does not certify every handwritten theorem or the verifier implementation itself.'
 };
 if (!fs.existsSync(path.join(root, 'MANIFEST.json'))) {

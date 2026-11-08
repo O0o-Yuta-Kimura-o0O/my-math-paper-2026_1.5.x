@@ -2,6 +2,8 @@
 
 [日本語](README.md)
 
+[Open the f-Generative Lab](https://o0o-yuta-kimura-o0o.github.io/my-math-paper-2026_1.5.x/lab/) — exact change quotients, finite jets, geometric orientation, typed f-only constructions, and exportable/recheckable evidence. Japanese/English UI. [Definitions and checking scope](docs/lab/README.md).
+
 [Number construction posters: English and Japanese, A2 PDF and editable SVG](posters/v1.5.8.0/README.md) — based on paper v1.5.8.
 
 [Open the visualizer (after Pages is enabled)](https://o0o-yuta-kimura-o0o.github.io/my-math-paper-2026_1.5.x/) · [Download the standalone HTML](docs/f-generative-atlas-v1.5.8.4.html) · [GitHub Pages setup](PAGES.md)

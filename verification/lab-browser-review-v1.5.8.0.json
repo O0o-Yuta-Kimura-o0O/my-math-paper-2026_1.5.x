@@ -1,0 +1,22 @@
+{
+  "format": "f-generative-lab-browser-review/1",
+  "date": "2026-11-08",
+  "paperVersion": "1.5.8",
+  "labVersion": "1.5.8.0",
+  "status": "passed",
+  "checks": [
+    "Japanese and English interface",
+    "calculus x² at3: quotient6+epsilon, standardpart6",
+    "finite jet1/(1-epsilon) throughdegree2, exactresidualorder3",
+    "tampered arithmetic claim rejected",
+    "edited JSON visibly becomes unchecked",
+    "original vs perturbed geometry orientation",
+    "vertical baseline geometry",
+    "N throughH typed examples and completef encoding",
+    "module Worker computation and5second termination ofdense rational input",
+    "JSON evidence download",
+    "375px and1280px responsive layouts; no horizontaloverflow at375",
+    "no browser console errors"
+  ],
+  "scope": "Manual browser QA of finite examples and UI; no general theorem machine verification. File picker import is not part of the recorded browser checks."
+}
