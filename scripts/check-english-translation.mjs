@@ -30,8 +30,8 @@ function inline(s){return [...s.replace(/^\$\$\n[\s\S]*?^\$\$/gm,'').matchAll(/(
 function count(values){const result={};for(const x of values)result[x]=(result[x]||0)+1;return result;}
 const inlineJA=count(inline(ja)),inlineEN=count(inline(en));
 const expectedInline={...inlineJA};
-// One referent explicitly repeated in the English prose of §4.2.
-const addedInlineReferents=['D(a,b)'];
+// Inline mathematics is carried over verbatim; no referent is added in the English prose.
+const addedInlineReferents=[];
 for(const x of addedInlineReferents)expectedInline[x]=(expectedInline[x]||0)+1;
 assert.deepEqual(inlineEN,expectedInline,'no inline mathematics omitted or altered');
 function fences(s){
@@ -53,7 +53,9 @@ for(let i=0;i<fencedJA.length;i++){
   if(a.lines[0]?.startsWith('空列')){
     assert.deepEqual(b.lines,['empty list  := f()','cons(x,xs)  := (x,xs)']);translatedCodeLabels.push('empty list and cons');
   }else if(a.lines[0]?.startsWith('整数の二')){
-    assert.deepEqual(b.lines,['integer two (intermediate notation): (f(),f(f(f())))','integer two (appendix notation):     f(f()f(f(f())))']);translatedCodeLabels.push('integer-two captions');
+    assert.deepEqual(b.lines,['integer two (intermediate notation): (f(),f(f(f())))','integer two (common syntax):         f(f()f(f(f())))']);translatedCodeLabels.push('integer-two captions');
+  }else if(a.lines[0]==='N → Z → Q → M → Fε → T'){
+    assert.deepEqual(b.lines,['N → Z → Q → M → Fε → T','Fε → Cε → Hε','Q → generation records G, H → introduction Φ, Ψ → L','Q → interval-generating labels → rational-cut description (pi)']);translatedCodeLabels.push('construction diagram');
   }else assert.fail(`Unexpected change to code block ${i}`);
 }
 assert(!/[\u3040-\u30ff\u3400-\u9fff]/u.test(en),'untranslated Japanese remains in English manuscript');

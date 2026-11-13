@@ -8,7 +8,7 @@ const checks = [
   'verification/equational-tests.mjs', 'verification/interpreter-tests.mjs',
   'verification/applications-tests.mjs', 'verification/formal-field-tests.mjs',
   'verification/generator-extensions-tests.mjs', 'verification/model-extensions-tests.mjs',
-  'verification/lambda-arithmetic-tests.mjs',
+  'verification/lambda-arithmetic-tests.mjs', 'verification/menger-dimension-tests.mjs', 'verification/binary-addition-tests.mjs',
   'verification/concept-codec-tests.mjs', 'verification/f-only-codec-tests.mjs',
   'verification/language-preference-tests.mjs',
   'verification/lab-tests-v1.5.8.0.mjs', 'verification/lab-encoding-tests-v1.5.8.0.mjs',

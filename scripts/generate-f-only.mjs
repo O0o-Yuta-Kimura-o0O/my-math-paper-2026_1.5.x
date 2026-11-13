@@ -85,14 +85,21 @@ assert.equal(read(`${folder}/int-2.f`).trim(),'f(f()f(f(f())))','the author inte
 const paper=read(config.paper);
 const chapterStarts=[...paper.matchAll(/^## (\d+)\. (.+)$/gm)].map(m=>({number:Number(m[1]),title:m[2],start:m.index}));
 assert.deepEqual(chapterStarts.map(x=>x.number),Array.from({length:13},(_,i)=>i+1));
-const pieces=[{number:0,title:'表紙・付録への案内・要旨',start:0},...chapterStarts];
+// 第13節の後の付録A、付録B、関連研究、参考文献は、それぞれ別の断片として保存する。
+// 一つの断片がf表記の読取り器の資源の上限（節点の数と文字数）を超えないようにするためである。
+const endKeys={'付録A':'appendix-a','付録B':'appendix-b','関連研究':'related-work','参考文献':'references'};
+const endPieces=[...paper.matchAll(/^## (?!\d+\. )(.+)$/gm)].filter(m=>m.index>chapterStarts.at(-1).start).map(m=>{
+  const key=Object.keys(endKeys).find(k=>m[1].startsWith(k));assert(key,`unknown end-matter heading: ${m[1]}`);
+  return {id:`paper-${endKeys[key]}`,title:m[1],start:m.index};
+});
+assert.deepEqual(endPieces.map(x=>x.id),['paper-appendix-a','paper-appendix-b','paper-related-work','paper-references']);
+const pieces=[{number:0,title:'表紙・付録への案内・要旨',start:0},...chapterStarts,...endPieces];
 const textRows=[],decodedPieces=[];
 for(let i=0;i<pieces.length;i++){
   const section=pieces[i],text=paper.slice(section.start,pieces[i+1]?.start??paper.length);
-  const id=`paper-${String(section.number).padStart(2,'0')}`;
+  const id=section.id??`paper-${String(section.number).padStart(2,'0')}`;
   const item=writeTree(id,E.encodeText(text),{
     kind:'manuscript-text',title:section.title,source:config.paper,sourceStart:section.start,
-    ...(section.number===13?{endmatterIncluded:['付録A','付録B','関連研究','参考文献']}:{}),
     sourceEnd:section.start+text.length,sourceBytes:Buffer.byteLength(text),sourceSha256:sha(text),
     encoding:'UTF-8 bytes as unary natural list, then the single-f constructor',
     checkKind:'lossless-text-recovery-not-formal-proof',
@@ -130,7 +137,7 @@ const lines=[
   '**Iは数・構文・実プログラム・証拠の構造を直接たどる部分、IIは説明文と手書き証明を含む本文全文を復元する部分である。** IIの文字列保存は、手書き証明を新しく形式検証したという意味ではない。計算開始前に型を指定し、全入力と結果をその型で読む。型の自動推論・自動昇格は行わない。読むための詳しい規則は[本文の第2.6–2.8節](../'+config.paper+')、[概念説明](../'+config.concepts+')、[章別対応表](../'+config.fOnlyCoverage+')に置いた。\n\n',
   '## I. 構造をたどる\n\n',
 ];
-lines.push('### 入口：自然数から生成四元数、有限対Tへ\n\n同じfの入れ子を使い、必要な数と演算を構成する。TはFの対として独立に加える拡張例であり、生成四元数の次へ自動昇格する型ではない。まず各値の指定型を見て、その後で本文章順の全例へ進んでほしい。\n\n');
+lines.push('### 入口：自然数から生成四元数、有限対Tへ\n\n同じfの入れ子を使い、必要な数と演算を構成する。TはFεの対として加える拡張例であり、生成四元数の次へ自動昇格する型ではない。まず各値の指定型を見て、その後で本文章順の全例へ進んでほしい。\n\n');
 for(const id of ['nat-0','nat-1','nat-2','int-2','rat-1-2','m-epsilon-squared','f-square-ratio','complex-one-plus-i','quaternion-all-one','t-sigma','t-two','t-minus-one']){
   const item=allExamples.find(e=>e.id===id);assert(item?.display);
   lines.push(`**${item.title}**\n\n`,'```text\n'+item.display+'```\n\n');
@@ -154,18 +161,18 @@ function chapterOf(e){
 }
 const shortNotes={
   1:'同じfの形を、有限回組み合わせる。基底・一段・二つの内容という読み方を共有する。',
-  2:'計算開始前に型を指定し、全入力と結果を固定する。NatFormは指定Nの形成条件だけを再帰検査し、二子の形を拒否する。型を推論・昇格する手続きではない。',
+  2:'計算の前に型を指定し、入力と結果をその型で扱う。NatFormは指定した型Nの形成条件だけを再帰的に検査し、二つの子を持つ形を拒否する。型を推測したり昇格したりする手続きではない。',
   3:'基底の外側にfを一つずつ加える。演算のλ本体も同じ記号の木へ戻る。',
   4:'非負・負の符号と、大きさの自然数を二つの内容として持つ。',
   5:'分子と分母の整数を持つ。分母は正、既約、零は0/1とする。',
   6:'G(q,b)は係数bを保持する実行記録である。b/c=r/sのときの共通部分列を有限添字で照合し、別の導入規則Φ(G(q,b))=(2sgn(b),q)で関係子ラベルを得る。b>0の導入先はq##。近似の添字nと、導入先で保持する関係子の整数kを区別する。付録AのH(q,b,r)についても、有限の再帰応答と別の導入規則Ψを照合する。',
-  7:'関係子ラベルL(k,q)の成分加法と順序を保つ。0##+0##=0####であり、結果のk=4を符号だけへ圧縮しない。生成記録の点ごとの加法とラベルの加法は別で、Φ(u+u)とΦ(u)+Φ(u)は異なる。現在のMは次章の全有限多項式である。',
-  8:'有理係数の列としてのM多項式、その分数F、生成複素数の行列、生成複素数二つの対としての生成四元数を構成する。さらにF二つの対Tへσ²=2の乗法を定め、Tに固定した積の入力と結果を示す。',
-  9:'区間・精度・状態・有限履歴も、数とその組み合わせで表す。近似は必要なときの別操作である。q##の厳密な差2εが有理誤差内に入る具体例を検査するが、近似の一致を厳密な等値とせず、全ての数に生成器との統合ラベルを要求しない。付録Aの循環小数は記録と読みを分け、厳密値・下側・上側に同じ有限接頭桁があっても等値とはしない。付録Bの円周率では、規則参照・有限再帰・所属証拠・区間応答・所在性の具体例を同じfの記号列に収める。',
-  10:'命題の形と証明の形を分ける。全16命題と保存済みの各証拠束も省略せず収録する。',
-  11:'確定反例と未確定事項の区別は本文に記し、その全文をIIに保持する。',
-  12:'個別の構文往復、元の検査器による証拠再検査、手書き証明の状態を区別する。',
-  13:'残る課題を含む本文の全文と付録Bの超現実数比較・円周率の指定規則はIIで復元できる。記号を統一しても、課題を解決済みに変更しない。',
+  7:'関係子ラベルL(k,q)の成分加法と順序を保つ。0##+0##=0####であり、結果のk=4を符号だけへ圧縮しない。生成記録の点ごとの加法とラベルの加法は別で、Φ(u+u)とΦ(u)+Φ(u)は異なる。',
+  8:'有理係数の列としてのM多項式、その分数Fε、行列としての生成複素数、生成複素数二つの対としての生成四元数を構成する。さらにFε二つの対である型Tにσ²=2の乗法を定め、型Tに固定した積の入力と結果を示す。',
+  9:'区間・精度・状態・有限履歴も、数とその組み合わせで表す。近似は必要なときの別操作である。q##の厳密な差2εが有理誤差内に入る具体例を検査するが、近似の一致を厳密な等値とせず、すべての数に生成器との統合ラベルを要求しない。付録Aの循環小数は記録と読みを分け、厳密値・下側・上側に同じ有限接頭桁があっても等値とはしない。付録Bの円周率では、規則参照・有限再帰・所属証拠・区間応答・所在性の具体例を同じfの記号列に収める。',
+  10:'命題の形と証明の形を分ける。16命題と保存した各証拠束を省略せずに収録し、それぞれの検査器で再検査する。',
+  11:'従来の数学との違い、反例で否定した主張、主張しないことは本文に記し、その全文をIIに保持する。',
+  12:'構文の往復、元の検査器による証拠の再検査、各結果の証明の種類（手書き証明、機械検査、実行検査、外部比較）を区別する。',
+  13:'未解決の課題、付録A、付録B、関連研究、参考文献を含む本文の全文は、IIで復元できる。記号を統一しても、課題を解決済みにはしない。',
 };
 for(const section of chapterStarts){
   lines.push(`\n### ${section.number}. ${section.title}\n\n${shortNotes[section.number]}\n\n`);
@@ -183,7 +190,7 @@ for(const section of chapterStarts){
 lines.push('\n## II. 本文全文の保存\n\n',
   '各ファイルは、本文の該当部分をUTF-8のバイト列として自然数の列へ戻し、さらに同じfの形にしたものである。第13章後の付録A・付録B・関連研究・参考文献も含め、表紙から最後までを保持し、順番に復号して連結すると本文ファイルの全内容に一致する。これは文章の可逆保存であり、Iの数学的なデータ構造や証拠形式とは区別する。\n\n',
   '| 本文の範囲 | fだけの全文 |\n|---|---|\n');
-for(const item of textRows)lines.push(`| ${item.number?`${item.number}. `:''}${item.title}${item.number===13?'、付録A、付録B、関連研究、参考文献':''} | [${item.record.id}.f](../${item.record.path}) |\n`);
+for(const item of textRows)lines.push(`| ${item.number?`${item.number}. `:''}${item.title} | [${item.record.id}.f](../${item.record.path}) |\n`);
 lines.push('\n## III. 実行定義の全文保存\n\n',
   '数や証拠の操作名が参照する既存の実行定義も、同じ文字列保存の規約で収録する。復号後は元の言語のプログラムである。JavaScriptの算術を純粋なλ簡約へ移植した、という意味ではない。\n\n',
   '| 実行定義 | fだけの全文 |\n|---|---|\n');
