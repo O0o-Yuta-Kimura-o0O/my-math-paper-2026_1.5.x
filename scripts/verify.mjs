@@ -5,7 +5,7 @@ import {fileURLToPath} from 'node:url';
 const root = fileURLToPath(new URL('../', import.meta.url));
 const release = JSON.parse(fs.readFileSync(path.join(root, 'release.json'), 'utf8'));
 const checks = [
-  'verification/equational-tests.mjs', 'verification/interpreter-tests.mjs',
+  'verification/equational-tests.mjs', 'verification/interpreter-tests.mjs', 'verification/interpreter-multilingual-tests.mjs',
   'verification/applications-tests.mjs', 'verification/formal-field-tests.mjs',
   'verification/generator-extensions-tests.mjs', 'verification/model-extensions-tests.mjs',
   'verification/lambda-arithmetic-tests.mjs', 'verification/menger-dimension-tests.mjs', 'verification/binary-addition-tests.mjs',

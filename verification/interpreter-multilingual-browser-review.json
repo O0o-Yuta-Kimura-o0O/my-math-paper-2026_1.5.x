@@ -1,0 +1,22 @@
+{
+  "format": "browser-language-review/1",
+  "date": "2026-11-15",
+  "file": "interpreter/lambda_interpreter_v8.0.1_multilingual.html",
+  "browser": "Chromium (browser pane of the Claude desktop app), page served from a local HTTP server",
+  "scope": "Targeted review of the language menu and of the screen in a real browser; messages, records and the choice of the start language are covered by interpreter-multilingual-tests.mjs.",
+  "status": "passed",
+  "checks": [
+    "With browser languages ja and ja-JP and no saved choice, the screen started in Japanese.",
+    "Add Two Three was re-verified with 34 steps (δ 13 / β 21) and read as the Church numeral 5; the input λx. was recorded as an error before the start with the message 式が途中で終わっています。",
+    "Choosing Français in the menu switched the whole screen, including the computation history, to French and saved the choice; after a reload without a language parameter the screen was still in French.",
+    "The URL parameter lang=zh-Hant overrode the saved choice; the step-limit results of QRepInv QZero and (λx.x x) (λx.x x) and an error before the start were shown in Traditional Chinese.",
+    "In Russian, saving the history reported one trace and one error before the start.",
+    "At a width of 375 px, no element of the screen in any of the 11 languages extended beyond its panel, and the page did not scroll sideways."
+  ],
+  "limits": [
+    "Opening the file directly from the disk (a file: URL) was not checked in this browser.",
+    "Loading a JSON file through the file dialog was not driven in the browser; loading, rejection of tampered traces and saving are checked with a simulated screen in interpreter-multilingual-tests.mjs.",
+    "Browser language settings other than ja were not set in the browser profile; the choice of the start language is checked in Node with given values.",
+    "This review does not certify every interface feature or any mathematical theorem."
+  ]
+}

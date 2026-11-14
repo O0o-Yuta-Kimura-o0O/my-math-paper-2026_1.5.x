@@ -1,6 +1,35 @@
 # λ計算インタプリタ v8.0.1
 
-[lambda_interpreter_v8.0.1.html](lambda_interpreter_v8.0.1.html) をブラウザで開きます。外部のスクリプト、ネット接続、インストールは不要です。原版とv8.0.0は作業フォルダに保存し、最新ファイルを配布用の `output/` に複製します。配布物に原資料の旧HTMLは含めません。
+[English](README.en.md)
+
+型なし λ 計算の式を、定義展開δとβ簡約で一段ずつ計算し、その記録（証跡）を保存して再検証するブラウザ用のツールです。HTML の一つのファイルで動き、外部のスクリプト、ネット接続、インストールは要りません。
+
+## 使い方
+
+1. 下の表の多言語版のファイルを保存し、ブラウザで開きます。GitHub のファイル画面では HTML のソースが表示されるので、ファイルを保存してから開いてください。
+2. 式を入力するか「例」から選び、「評価して記録」を押します。
+
+| ファイル | 画面の言語 | 用途 |
+|---|---|---|
+| [lambda_interpreter_v8.0.1_multilingual.html](lambda_interpreter_v8.0.1_multilingual.html) | 11 言語（画面の右上で選ぶ） | ふだん使うファイル |
+| [lambda_interpreter_v8.0.1.html](lambda_interpreter_v8.0.1.html) | 日本語 | 証拠を作る検査が読む基準のファイル（`release.json` の `interpreter`） |
+
+二つのファイルの計算の核（`script#lambda-core`）は 1 バイトまで同じです。計算、証跡の形式、版（`8.0.1`）が同じなので、どちらで保存した証跡も、もう一方で再検証できます。違うのは画面だけです。
+
+## 画面の言語
+
+画面の右上のメニューで、日本語、English、简体中文、繁體中文、한국어、Français、Deutsch、Español、Português、Italiano、Русский から選べます。選び直すと、それまでの計算の履歴も含めて、画面全体がその言語になります。
+
+起動したときの言語は、次の順に決まります。
+
+1. URL の `lang`（例：`lambda_interpreter_v8.0.1_multilingual.html?lang=fr`）
+2. メニューで前に選んだ言語。ブラウザの localStorage に `lambda-interpreter-language` として保存します。保存できないブラウザでは、毎回 3 から決まります。
+3. ブラウザの言語の設定。例えば `ja-JP` なら日本語、`pt-BR` ならポルトガル語、`zh-TW` なら繁體中文です。設定の中に対応する言語がなければ、設定の地域で選びます（`ca-ES` ならスペイン語）。
+4. どれにも当てはまらなければ English
+
+位置情報、IP アドレスによる問い合わせ、ネットワークは使いません。ブラウザの言語の設定は、ふつうは使う人の地域に合わせてあります。
+
+保存する証跡（JSON）は、画面の言語によらず同じです。証跡と開始前のエラーの記録には、計算の核のエラーの文言が原文（日本語）のまま入り、画面にだけ選んだ言語で表示します。英語の画面のインタプリタで保存した記録の英語の文言も、選んだ言語で表示します。
 
 ## 対象
 
@@ -10,7 +39,7 @@
 
 有理数の補助表示QRepは整数二つの対で、分母は正かつ非零、未約分を許します。`QRepAdd`・`QRepSub`・`QRepMul`・比較を提供します。`QMake`・`QRepInv`・`QRepDiv`は `ResultOk` と `ResultErr` を区別して返すので、その結果を裸の分数として射影しないでください。零分母の失敗値と、有理数の零は別のデータです。
 
-これらは指定の入力型に対するλ定義です。任意のλ項の型を自動認定するものではありません。本文の有理数Qは既約正規形であり、QRepとは区別します。λによるgcd・既約化、M・Fε・区間生成ラベルの全演算、帰納的な一般証明や収束証明の検査はHTMLに含めません。Fεや区間の別実装をβ規則の内部へ隠していません。[λ算術の定義と本文との接続](../research/lambda-arithmetic-v1.5.8.md)に仕様と手書きの対応証明があります。
+これらは指定の入力型に対するλ定義です。任意のλ項の型を自動認定するものではありません。本文の有理数Qは既約正規形であり、QRepとは区別します。λによるgcd・既約化、M・Fε・区間生成ラベルの全演算、帰納的な一般証明や収束証明の検査はHTMLに含めません。Fεや区間の別実装をβ規則の内部へ隠していません。[λ算術の定義と本文との接続](../research/lambda-arithmetic-v1.5.9.md)に仕様と手書きの対応証明があります。
 
 内蔵の例から `ZAdd ZTwo ZMinusOne`、`QRepAdd QHalf QHalf`、`QRepInv QZero` を選べます。二つ目は約分前の4/4、三つ目は明示的な失敗値を返します。一般のChurch算術では小さい入力でも変換数が増えるため、上限内での終了と数学的な停止根拠は区別します。
 
@@ -34,17 +63,32 @@
 
 ## 検証
 
-リポジトリのルートで、Node.js を使って次を実行します。
+リポジトリのルートで、Node.js（20 以降）を使って次を実行します。
 
 ```sh
 node verification/interpreter-tests.mjs
 node verification/lambda-arithmetic-tests.mjs
+node verification/interpreter-multilingual-tests.mjs
 ```
 
-HTML の `script#lambda-core` を DOM なしで読み込みます。公開 API は `globalThis.LambdaCore` にあり、`parse`、`print`、`alphaEqual`、`freeVariables`、`createEnvironment`、`parseDefinitions`、`splitExpressions`、`evaluate`、`verifyTrace`、`decodeNat`、`VERSION`、`SCHEMA`、`LIMITS`、`BUILTINS` を提供します。
+最初の二つは、`release.json` が指す基準のファイルの `script#lambda-core` を DOM なしで読み込んで検査します。公開 API は `globalThis.LambdaCore` にあり、`parse`、`print`、`alphaEqual`、`freeVariables`、`createEnvironment`、`parseDefinitions`、`splitExpressions`、`evaluate`、`verifyTrace`、`decodeNat`、`VERSION`、`SCHEMA`、`LIMITS`、`BUILTINS` を提供します。
 
 `evaluate(source, { definitions, maxSteps, onStep, signal })` は `{ status, term, trace }` またはエラー情報を非同期で返します。`definitions` には `{name, source}` の配列を渡します。省略時は内蔵定義を使い、`[]` なら純粋な λ 項だけを評価します。`verifyTrace(trace)` は `{valid, ...}` を返します。
 
+三つ目は多言語版について、次のことを確かめます。
+
+- 計算の核が基準のファイルと 1 バイトまで同じこと
+- 日本語の画面の文言と、計算・停止・エラー・保存・読込・再検証・消去の操作で出る表示と保存する JSON が、基準のファイルと同じこと
+- 11 言語の文言が、同じ項目、同じ差し込み（`{count}` など）、同じ HTML のタグを持つこと
+- 計算の核の日本語の文言がすべて各言語に訳され、日本語以外の画面に日本語が残らないこと。どの言語でも、保存する JSON が基準のファイルと同じこと
+- 起動時の言語の選び方と、メニューで選んだ言語の記憶
+
+多言語版は、画面の言語のために `globalThis.LambdaI18n`（言語の一覧、文言、言語の選び方）を加えます。多言語版の画面は、ブラウザ（Chromium）でローカルのサーバーから開いて確かめました（[記録](../verification/interpreter-multilingual-browser-review.json)）。ファイルを直接開いた場合は、ブラウザでは確かめていません。
+
 入力長 100,000 文字、項 50,000 ノード、深さ 512、最大 100,000 変換に制限しています。全中間項を保存するため、大きな計算はメモリを消費します。停止操作は変換の境界で処理されます。大量の記録を再検証する UI は処理中に一時的に応答しにくくなる場合があります。
 
-実ブラウザでの画面操作は、ローカルファイルURLの表示がブラウザの安全ポリシーで拒否されたため未確認です。制約を迂回せず、計算核、UIスクリプトの構文、保存証跡、旧証跡との互換性をコードとして検査しています。最新の結果と証明の範囲は [検証資料](../verification/README.md) に記載します。
+最新の結果と証明の範囲は [検証資料](../verification/README.md) に記載します。
+
+## ライセンス
+
+プログラムは MIT License です（[LICENSE](../LICENSE)）。多言語版のファイルの先頭にも、ライセンスの全文を入れています。この README などの文書は CC BY 4.0 です（[リポジトリのライセンスの説明](../README.md#ライセンス)）。

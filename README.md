@@ -38,7 +38,7 @@ v1.5.4では、別稿 `Generative_Reals_ja_v1.4.1.md` から有限構成と証�
 - [本文全節と実装の概念対応表](research/concept-inventory-v1.5.9.md)
 - [論文日本語版 v1.5.9](manuscripts/A_New_Foundation_of_Mathematics_ja_v1.5.9.md)
 - [論文英語版 v1.5.9](manuscripts/A_New_Foundation_of_Mathematics_en_v1.5.9.md) · [英語版fのみ付録](appendices/A_New_Foundation_of_Mathematics_en_v1.5.9_f_only.md)
-- [λ計算インタプリタ v8.0.1](interpreter/lambda_interpreter_v8.0.1.html) — ダウンロードしてブラウザで開くと、ネット接続なしで使用できます。
+- [λ計算インタプリタ v8.0.1（多言語版）](interpreter/lambda_interpreter_v8.0.1_multilingual.html) — ダウンロードしてブラウザで開くと、ネット接続なしで使用できます。画面は11言語から選べ、起動時はブラウザの言語の設定に合わせます。計算の核は[日本語の画面の基準のファイル](interpreter/lambda_interpreter_v8.0.1.html)と同じです。[使い方と仕様](interpreter/README.md)。
 - [関係子ラベルの導入と近似への接続](research/label-design-v1.5.9.md)
 - [有限対による型Tの拡張例](research/extension-example-v1.5.9.md)
 - [原資料の監査と修正根拠](research/source-audit-v1.5.9.md)
@@ -91,7 +91,7 @@ node scripts/check-english-translation.mjs --check
 node scripts/generate-english-appendix.mjs --check
 ```
 
-実行した検査群と成否は、[実装の検査報告](verification/verification-report.json) と [証拠の再検査報告](verification/evidence-report.json) を参照してください。報告内のテスト件数は、実装の回帰・拒否検査の数であり、一般数学定理の数ではありません。実ブラウザの操作確認は、ローカルファイルの表示がブラウザの安全ポリシーで拒否されたため未実施です。制約を迂回せず、計算核・証跡・UIスクリプトの構文をコードとして検査しています。
+実行した検査群と成否は、[実装の検査報告](verification/verification-report.json) と [証拠の再検査報告](verification/evidence-report.json) を参照してください。報告内のテスト件数は、実装の回帰・拒否検査の数であり、一般数学定理の数ではありません。多言語版のインタプリタの画面は、ブラウザ（Chromium）でローカルのサーバーから開いて確かめました（[記録](verification/interpreter-multilingual-browser-review.json)）。ファイルを直接開いた場合と、日本語の画面の基準のファイルは、ブラウザでは確かめていません。計算核・証跡・UIスクリプトはコードとしても検査しています。
 
 基本記号の資料を作り直す場合は、`node scripts/generate-concepts.mjs`、`node scripts/generate-f-only.mjs` の順に実行します。保存済みの公開用コピーを確認する場合は `--check` を付け、配布ファイルを変更せず検査できます。
 
@@ -106,3 +106,10 @@ node scripts/generate-english-appendix.mjs --check
 GitHubへの更新では、`output/MANIFEST.json` に列挙されたファイルと `MANIFEST.json` 自身を、既存の公開配置に合わせて追加・上書きします。公開用フォルダは `output/` と分け、SNS等から参照される旧版とそのリンク先を元の場所に残します。コピー元にないファイルを削除する同期は行いません。非公開の原稿やメモはコピー対象に含めません。
 
 この作業で行うのは最新ファイルの複製と検査です。GitHubへのアップロードや公開は行っていません。
+
+## ライセンス
+
+- **プログラム**（`.mjs`、`.html`、`.css`、`.py`、`.sh`、`.lean`、`.v`、`.agda` のソースコード）は [MIT License](LICENSE) です。
+- **論文と文書、図、データ**（論文・付録・研究資料・README・変更履歴などの `.md`、証拠や記号などの `.json`・`.f`、図とポスターの `.svg`・`.pdf`・`.png`）は [クリエイティブ・コモンズ 表示 4.0 国際（CC BY 4.0）](LICENSE-CC-BY-4.0.txt) です。出典として、著者名（木村祐太）、題名、このリポジトリのURL、ライセンスを示し、変更したときはそのことを示してください。
+- **ポスターのフォント**（`posters/v1.5.8.0/fonts/` の `.ttf` と、ポスターの SVG・PDF に埋め込んだフォント）は、それぞれのライセンスに従います。Noto Sans JP と Liberation Mono は SIL Open Font License 1.1、DejaVu Sans は DejaVu Fonts のライセンスで、ライセンスの全文は同じフォルダにあります。
+- 引用した他の著作物は、それぞれの権利者の条件に従います。

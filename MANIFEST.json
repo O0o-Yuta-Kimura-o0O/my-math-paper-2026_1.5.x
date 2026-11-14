@@ -12,8 +12,18 @@
     },
     {
       "path": "CHANGELOG.md",
-      "sha256": "f587b21138a8e8ee18548345f9bd97fa1a03c1aa657b664f85cc3caab82661e0",
-      "bytes": 20955
+      "sha256": "9146350e033392584b22ea1dfacc7a3dc459da4b3de2bfbb72450e46d88606a5",
+      "bytes": 22947
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "1de081f179e21181b59b0a88d980522b9c2e26eafd91bb060d0eca8269c09eaa",
+      "bytes": 1068
+    },
+    {
+      "path": "LICENSE-CC-BY-4.0.txt",
+      "sha256": "9ba9550ad48438d0836ddab3da480b3b69ffa0aac7b7878b5a0039e7ab429411",
+      "bytes": 18657
     },
     {
       "path": "PAGES.md",
@@ -22,13 +32,13 @@
     },
     {
       "path": "README.en.md",
-      "sha256": "fe61423cca5921c5eb9ab1fb7bc5ca12e54e4fa65ccbe53e98fde9f014d67c0e",
-      "bytes": 10190
+      "sha256": "8a1304b6fcd560b6f7114f7d41cbfd2aa1678e86cbc25697c1b1075239527eac",
+      "bytes": 11694
     },
     {
       "path": "README.md",
-      "sha256": "b87ee2d5cdee171cddb1e603cf6b77b98c00b01aaa523824f81cca2f0b853d85",
-      "bytes": 15868
+      "sha256": "d49982d0e598cee74ba6016f4a69b004656c18ca36462b1948663db3c15326d4",
+      "bytes": 17456
     },
     {
       "path": "appendices/A_New_Foundation_of_Mathematics_en_v1.5.9_f_only.md",
@@ -146,14 +156,24 @@
       "bytes": 2196
     },
     {
+      "path": "interpreter/README.en.md",
+      "sha256": "4fb454a8c038e339c12e997f0d55fc54cca48ce28731956fb62dc85420af2262",
+      "bytes": 11521
+    },
+    {
       "path": "interpreter/README.md",
-      "sha256": "ae6d26f25f01e9a96e81f58beef5fd350411fddb7a55c64ec6787530a5f52170",
-      "bytes": 7619
+      "sha256": "2c49a8ddbf53bece3c2b27997b1fd1cc92710d18a62797820f4f6425e9305120",
+      "bytes": 11468
     },
     {
       "path": "interpreter/lambda_interpreter_v8.0.1.html",
       "sha256": "f54bcf86ce3b143972e2bbfab35127d98699f1ee458b423d8914fa2e0f723d6c",
       "bytes": 30108
+    },
+    {
+      "path": "interpreter/lambda_interpreter_v8.0.1_multilingual.html",
+      "sha256": "cf309b06cc64c01052fd11bb1e3c506ac0c35e0e0d95d23eb4e3002d32dc8f92",
+      "bytes": 125313
     },
     {
       "path": "manuscripts/A_New_Foundation_of_Mathematics_en_v1.5.9.md",
@@ -252,8 +272,8 @@
     },
     {
       "path": "release.json",
-      "sha256": "24aec5588e48a8f33dd178aa6e52127321194937fc7cccf4c365f46cde3e2ffb",
-      "bytes": 4683
+      "sha256": "61abae893589fbb30109878ffa49dfa3ee72d0fde6963d6c04f7876fade0dcdb",
+      "bytes": 5594
     },
     {
       "path": "research/applications-v1.5.9.md",
@@ -362,13 +382,13 @@
     },
     {
       "path": "scripts/verify.mjs",
-      "sha256": "f04062a7598a3133560c8d4eaac25f197206dddfde2e453a7ffa59b123f96434",
-      "bytes": 2298
+      "sha256": "5538d9b6bea1e61fe13e67bacd949d935752033f790b22246ada2d07c58b5230",
+      "bytes": 2349
     },
     {
       "path": "verification/README.md",
-      "sha256": "05f6ca35bcc180feffd8bf195dcd270a6c74e0e5faed777c26a96f01fecb47bf",
-      "bytes": 21828
+      "sha256": "5383566575c62296c37f071e065890bfc8c1b4fbe3b152660f59545566a5c4bd",
+      "bytes": 21998
     },
     {
       "path": "verification/applications-tests.mjs",
@@ -3761,6 +3781,16 @@
       "bytes": 21421
     },
     {
+      "path": "verification/interpreter-multilingual-browser-review.json",
+      "sha256": "029a1bfe80e2864d109451a9b0223acd08f11f1e56db137a0f1ef9606169f2f1",
+      "bytes": 1985
+    },
+    {
+      "path": "verification/interpreter-multilingual-tests.mjs",
+      "sha256": "865cc8d4382865e35b7e06b261533276e57bfd6542011b02a54c05ac68d092e1",
+      "bytes": 16707
+    },
+    {
       "path": "verification/interpreter-tests.mjs",
       "sha256": "49e8d28f2cd9864e04a79089f7c282058a6b23361224631bb2c09a4b92745355",
       "bytes": 6763
@@ -3842,8 +3872,8 @@
     },
     {
       "path": "verification/verification-report.json",
-      "sha256": "a99206fbd87c18db4e01a3ed5f9e7c74590343a236648a92acbfadeae25a73c9",
-      "bytes": 22103
+      "sha256": "ed99fcc5ead84a355f946a7a439600a8d95a074ebeb92e4d8eb549eae160ea0c",
+      "bytes": 23186
     }
   ]
 }
