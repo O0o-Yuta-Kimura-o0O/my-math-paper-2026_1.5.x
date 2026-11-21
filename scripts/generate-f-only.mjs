@@ -85,8 +85,8 @@ assert.equal(read(`${folder}/int-2.f`).trim(),'f(f()f(f(f())))','the author inte
 const paper=read(config.paper);
 const chapterStarts=[...paper.matchAll(/^## (\d+)\. (.+)$/gm)].map(m=>({number:Number(m[1]),title:m[2],start:m.index}));
 assert.deepEqual(chapterStarts.map(x=>x.number),Array.from({length:13},(_,i)=>i+1));
-// 第13節の後の付録A、付録B、関連研究、参考文献は、それぞれ別の断片として保存する。
-// 一つの断片がf表記の読取り器の資源の上限（節点の数と文字数）を超えないようにするためである。
+// Appendix A, Appendix B, related work and references after Section 13 are saved as
+// separate pieces, so that no piece exceeds the limits of parseFOnly (maxNodes, maxChars).
 const endKeys={'付録A':'appendix-a','付録B':'appendix-b','関連研究':'related-work','参考文献':'references'};
 const endPieces=[...paper.matchAll(/^## (?!\d+\. )(.+)$/gm)].filter(m=>m.index>chapterStarts.at(-1).start).map(m=>{
   const key=Object.keys(endKeys).find(k=>m[1].startsWith(k));assert(key,`unknown end-matter heading: ${m[1]}`);
