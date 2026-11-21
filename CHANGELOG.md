@@ -1,5 +1,14 @@
 # 変更履歴
 
+## インタプリタ多言語版 v8.0.2 — 2026-11-21
+
+λ計算インタプリタの多言語版 `interpreter/lambda_interpreter_v8.0.2_multilingual.html` を加えた。画面の幅の上限（1120px）を外し、ウインドウの横幅いっぱいに広がるようにした。
+
+- 計算の核（`script#lambda-core`）と画面の文言の表は v8.0.1 と1バイトまで同じで、計算、証跡の形式、証跡に記録する版（`8.0.1`）、保存するファイルの名前は変わらない。`release.json` の `interpreterVersion` は 8.0.1 のまま。
+- 題と見出しの版の表示を v8.0.2 にした。言語を切り替えたときに付け直す題も、核の版ではなく v8.0.2 にした。
+- v8.0.1 の多言語版は残す（計算の核は同じ、画面の幅は 1120px で止まる）。`release.json` の多言語版の欄に `version` と `previous` を加えた。
+- 検査：`verification/interpreter-multilingual-tests.mjs` は、版の表示を除いて日本語の画面が基準のファイルと同じことを確かめ、前の多言語版の核も確かめるようにした。画面の幅は Chrome で確かめた（`verification/interpreter-multilingual-layout-review-v8.0.2.json`）。
+
 ## インタプリタ v8.0.1 多言語版とライセンス — 2026-11-15
 
 λ計算インタプリタに、画面の言語を11言語（日本語、English、简体中文、繁體中文、한국어、Français、Deutsch、Español、Português、Italiano、Русский）から選べる多言語版 `interpreter/lambda_interpreter_v8.0.1_multilingual.html` を加えた。計算の核（`script#lambda-core`）は v8.0.1 と1バイトまで同じで、計算、証跡の形式、版は変わらない。`release.json` が指す日本語の画面のファイル、証拠、論文は変えていない。

@@ -1,0 +1,1636 @@
+<!doctype html>
+<html lang="ja">
+<meta charset="utf-8">
+<!--
+Lambda Calculus Interpreter v8.0.2, multilingual edition
+https://github.com/O0o-Yuta-Kimura-o0O/my-math-paper-2026_1.5.x
+script#lambda-core is byte-identical to interpreter/lambda_interpreter_v8.0.1.html, so the computation and the saved traces, including their version 8.0.1, are the same.
+
+MIT License
+
+Copyright (c) 2026 Yuta Kimura
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+-->
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>λ計算インタプリタ v8.0.2</title>
+<style>
+:root{color-scheme:light dark;--bg:#f5f7fa;--panel:#fff;--ink:#172538;--muted:#54657a;--line:#cbd5e1;--accent:#155e75}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.7 system-ui,sans-serif}main{padding:24px}h1{font-size:25px;margin:0}h2{font-size:18px}p{margin:8px 0}.muted{color:var(--muted)}.panel{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px;margin:18px 0}.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}button,input,select,textarea{font:inherit}button{border:1px solid var(--line);border-radius:7px;padding:7px 13px;background:var(--panel);color:var(--ink);cursor:pointer}button.primary{background:var(--accent);color:white}button:disabled{opacity:.5;cursor:default}textarea{width:100%;min-height:120px;resize:vertical;border:1px solid var(--line);border-radius:7px;padding:12px;background:var(--bg);color:var(--ink);font-family:ui-monospace,monospace}input[type=number]{width:100px;padding:5px}pre{white-space:pre-wrap;overflow-wrap:anywhere;max-height:420px;overflow:auto;font:13px/1.6 ui-monospace,monospace;background:var(--bg);padding:12px;border-radius:6px}summary{cursor:pointer}label{display:block}.status{font-weight:650}.ok{color:#047857}.bad{color:#b91c1c}.run{border-top:1px solid var(--line);padding-top:16px;margin-top:16px}.run h3{font-size:16px;margin:0}.small{font-size:13px}a{color:var(--accent)}@media(prefers-color-scheme:dark){:root{--bg:#101923;--panel:#172432;--ink:#e4edf7;--muted:#a1b1c5;--line:#3a4c61;--accent:#16768d}.ok{color:#68ddb2}.bad{color:#ffaaaa}}@media(max-width:600px){main{padding:12px}.panel{padding:12px}}.top{display:flex;justify-content:space-between;align-items:center;gap:8px 16px;flex-wrap:wrap}.lang{display:flex;align-items:center;gap:6px}.lang label{display:flex;align-items:center;gap:5px;color:var(--muted)}.lang svg{width:18px;height:18px;flex:none}#language{padding:4px 8px;border:1px solid var(--line);border-radius:7px;background:var(--panel);color:var(--ink)}.row select{max-width:100%;min-width:0}
+</style>
+<main>
+<div class="top"><h1><span data-i18n="app.name">λ計算インタプリタ</span> <span class="muted">v8.0.2</span></h1><!--language--><div class="lang"><label for="language"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.7 3.9 5.7 3.9 9s-1.3 6.3-3.9 9M12 3c-2.6 2.7-3.9 5.7-3.9 9s1.3 6.3 3.9 9"/></svg><span data-i18n="language">言語</span></label><select id="language"></select></div><!--/language--></div>
+<p data-i18n="app.lead">名前付きの式を読み、捕獲を避けて定義展開と β 簡約を記録します。ネット接続は不要です。</p>
+<p class="muted small" data-i18n="app.scope">履歴が証明するのは、記録した規則による有限の変換です。任意の数についての帰納的な定理や、収束性を自動で証明する機能は含みません。</p>
+<section class="panel">
+<label for="source" data-i18n-html="source.label"><strong>式</strong>（複数の式は ; で区切ります）</label>
+<textarea id="source" spellcheck="false">Add Two Three</textarea>
+<div class="row" style="margin:10px 0"><label for="example" data-i18n="example.label">例</label><select id="example"><option value="Add Two Three">2 + 3</option><option value="Mul Two Three">2 × 3</option><option value="EqNat (Add Two Three) (Succ Four)" data-i18n="ex.eq">2 + 3 = 5 の具体的な計算</option><option value="(λy_1.λy.y) y" data-i18n="ex.capture">束縛を保つ置換</option><option value="Fst (Pair Two Three)" data-i18n="ex.fst">対の第1成分</option><option value="(λx.x x) (λx.x x)" data-i18n="ex.omega">停止しない例（上限で打切り）</option><option value="ZAdd ZTwo ZMinusOne" data-i18n="ex.zadd">整数 2 + (−1)</option><option value="QRepAdd QHalf QHalf" data-i18n="ex.qadd">有理表示 1/2 + 1/2（約分前の4/4）</option><option value="QRepInv QZero" data-i18n="ex.qinv">零の逆数：明示的な失敗値</option></select><button id="useExample" data-i18n="example.use">例を入力</button></div>
+<details><summary data-i18n="defs.summary">追加の定義と構文</summary><p class="small muted" data-i18n-html="defs.intro">定義は <code>A = λx.x;</code> の形式です。定義を使う式の束縛変数は定義内部の自由変数を捕獲しません。名前付きの循環定義は拒否します。再帰を表す場合は固定点コンビネータ等の λ 項を明示してください。</p><label for="definitions" data-i18n="defs.label">追加の定義</label><textarea id="definitions" spellcheck="false" placeholder="Identity = λx.x;"></textarea><p class="small" data-i18n-html="syntax.note">変数名は英数字と _（数字で始まる場合は数字のみ）。λ または \、単一の束縛変数、ピリオド、括弧、関数適用を使います。例：<code>λf.λx.f x</code>。適用は左結合です。<code>//</code> 以降は行コメントです。# / ♭ の表層記法は未実装です。</p><details><summary data-i18n="builtins.summary">内蔵の定義（自然数・整数・有理表示・真偽値・対）</summary><pre id="builtinList"></pre></details></details>
+<p class="small" data-i18n="types.note">整数は符号0/1と自然数の対です。有理表示 QRep は正の非零分母を持つ整数対で、約分前の表示も許します。QMake・QRepInv・QRepDiv は ResultOk または ResultErr を返します。各演算の入力は指定した型を前提とします。</p>
+<div class="row" style="margin-top:12px"><label for="maxSteps" data-i18n="maxSteps.label">変換の上限</label><input id="maxSteps" type="number" min="1" max="100000" value="5000"><button id="evaluate" class="primary" data-i18n="evaluate">評価して記録</button><button id="stop" disabled data-i18n="stop">停止</button><span id="liveStatus" role="status" aria-live="polite"></span></div>
+<p class="small muted" data-i18n="strategy.note">定義展開 δ と β 簡約を合わせて左端最外の位置から行い、λ の内部も処理します。上限は定義展開 δ と β の合計です。上限到達や手動停止は、発散の証明を意味しません。</p>
+</section>
+<section class="panel"><div class="row"><h2 style="margin:0" data-i18n="history.heading">計算履歴と再検証</h2><button id="export" data-i18n="export">全履歴を JSON 保存</button><button id="import" data-i18n="import">JSON を読み込み検証</button><input id="file" type="file" accept=".json,application/json" hidden><button id="clear" data-i18n="clear">表示を消去</button></div><p class="small muted" data-i18n="history.note">入力と定義を固定した証跡を保存します。再検証器は評価器の β 簡約関数を呼ばず、各変換を別の置換手順で検査します。α 同値は内部の束縛位置で判定します。</p><p id="message" role="status"></p><div id="history"><p id="empty" class="muted" data-i18n="history.empty">まだ履歴はありません。</p></div></section>
+</main>
+<script id="lambda-core">
+'use strict';
+(() => {
+const VERSION = '8.0.1', SCHEMA = 'lambda-trace/1';
+const LIMITS = Object.freeze({sourceLength:100000, nodes:50000, depth:512, steps:100000});
+const V = n => ({t:'v',n}), B = i => ({t:'b',i}), L = b => ({t:'l',b}), A = (f,a) => ({t:'a',f,a});
+const identifier = /^(?:[A-Za-z_][A-Za-z0-9_]*|[0-9]+)$/;
+function assert(c,m) { if (!c) throw new Error(m); }
+function lex(source) {
+  assert(typeof source === 'string' && source.length <= LIMITS.sourceLength,'入力が文字列でないか、長さの上限を超えています。');
+  const tokens=[]; let i=0;
+  while(i<source.length){
+    if(/\s/.test(source[i])){i++;continue;}
+    if(source.slice(i,i+2)==='//'){while(i<source.length&&source[i]!=='\n')i++;continue;}
+    const c=source[i];
+    if('().λ\\'.includes(c)){tokens.push({s:c==='\\'?'λ':c,p:i});i++;continue;}
+    const m=source.slice(i).match(/^(?:[A-Za-z_][A-Za-z0-9_]*|[0-9]+)/);
+    assert(m,`位置 ${i+1}: 使用できない文字 ${JSON.stringify(c)}。`);
+    assert(!/^[0-9]+$/.test(m[0])||!/[A-Za-z_]/.test(source[i+m[0].length]||''),`位置 ${i+1}: 数字で始まる名前は数字だけにしてください。`);
+    tokens.push({s:m[0],p:i});i+=m[0].length;
+  }
+  return tokens;
+}
+function parse(source){
+  const ts=lex(source);let p=0,nodes=0;
+  function expr(scope,depth){
+    assert(depth<LIMITS.depth,'構文の入れ子が上限を超えています。');
+    if(ts[p]?.s==='λ'){
+      p++;const name=ts[p++]?.s;assert(name&&identifier.test(name),'λ の後に変数名が必要です。');
+      assert(ts[p++]?.s==='.',"束縛変数の後に . が必要です。");
+      assert(++nodes<=LIMITS.nodes,'項の大きさが上限を超えています。');
+      return L(expr([name,...scope],depth+1));
+    }
+    let out=atom(scope,depth);
+    while(ts[p]&&(ts[p].s==='('||identifier.test(ts[p].s))){
+      assert(++nodes<=LIMITS.nodes,'項の大きさが上限を超えています。');
+      out=A(out,atom(scope,depth));
+    }
+    return out;
+  }
+  function atom(scope,depth){
+    const tok=ts[p++];assert(tok,'式が途中で終わっています。');
+    if(tok.s==='('){const out=expr(scope,depth+1);assert(ts[p++]?.s===')',') が必要です。');return out;}
+    assert(identifier.test(tok.s),`位置 ${tok.p+1}: 変数または ( が必要です。`);
+    assert(++nodes<=LIMITS.nodes,'項の大きさが上限を超えています。');
+    const index=scope.indexOf(tok.s);return index<0?V(tok.s):B(index);
+  }
+  const result=expr([],0);assert(p===ts.length,`末尾に解釈されない構文があります: ${ts[p]?.s||''}`);validateTerm(result);return result;
+}
+function validateTerm(term){
+  let count=0;
+  function go(t,scope,depth){
+    assert(t&&typeof t==='object'&&++count<=LIMITS.nodes&&depth<LIMITS.depth,'項の構造・大きさ・深さが不正です。');
+    if(t.t==='v'){assert(identifier.test(t.n),'自由変数名が不正です。');return;}
+    if(t.t==='b'){assert(Number.isInteger(t.i)&&t.i>=0&&t.i<scope,'束縛位置が不正です。');return;}
+    if(t.t==='l'){go(t.b,scope+1,depth+1);return;}
+    assert(t.t==='a','未知の項です。');go(t.f,scope,depth+1);go(t.a,scope,depth+1);
+  }
+  go(term,0,0);return term;
+}
+function freeVariables(term){
+  const names=new Set();function go(t){if(t.t==='v')names.add(t.n);else if(t.t==='l')go(t.b);else if(t.t==='a'){go(t.f);go(t.a);}}go(term);return [...names].sort();
+}
+function print(term){
+  const forbidden=new Set(freeVariables(term));
+  function go(t,scope){
+    if(t.t==='v')return t.n;if(t.t==='b'){assert(scope[t.i]!==undefined,'束縛位置が不正です。');return scope[t.i];}
+    if(t.t==='a')return '('+go(t.f,scope)+' '+go(t.a,scope)+')';
+    let n='x'+scope.length;while(forbidden.has(n)||scope.includes(n))n+='_';return '(λ'+n+'.'+go(t.b,[n,...scope])+')';
+  }const out=go(term,[]);assert(out.length<=LIMITS.sourceLength,'表示される項の長さが上限を超えています。');return out;
+}
+function alphaEqual(a,b){
+  if(typeof a==='string')a=parse(a);if(typeof b==='string')b=parse(b);
+  if(!a||!b||a.t!==b.t)return false;
+  if(a.t==='v')return a.n===b.n;if(a.t==='b')return a.i===b.i;
+  if(a.t==='l')return alphaEqual(a.b,b.b);return alphaEqual(a.f,b.f)&&alphaEqual(a.a,b.a);
+}
+function shift(t,amount,cutoff=0){
+  if(t.t==='b')return B(t.i>=cutoff?t.i+amount:t.i);
+  if(t.t==='l')return L(shift(t.b,amount,cutoff+1));
+  if(t.t==='a')return A(shift(t.f,amount,cutoff),shift(t.a,amount,cutoff));return t;
+}
+function substituteIndex(t,index,value,depth=0){
+  if(t.t==='b')return t.i===index+depth?shift(value,depth):t;
+  if(t.t==='l')return L(substituteIndex(t.b,index,value,depth+1));
+  if(t.t==='a')return A(substituteIndex(t.f,index,value,depth),substituteIndex(t.a,index,value,depth));return t;
+}
+function contract(redex){return shift(substituteIndex(redex.f.b,0,shift(redex.a,1)),-1);}
+function at(term,path){let t=term;for(const k of path){assert((k==='body'&&t.t==='l')||((k==='fn'||k==='arg')&&t.t==='a'),'変換位置が不正です。');t=k==='body'?t.b:k==='fn'?t.f:t.a;}return t;}
+function replaceAt(t,path,replacement){
+  if(path.length===0)return replacement;
+  const [k,...rest]=path;
+  if(k==='body'&&t.t==='l')return L(replaceAt(t.b,rest,replacement));
+  if(k==='fn'&&t.t==='a')return A(replaceAt(t.f,rest,replacement),t.a);
+  if(k==='arg'&&t.t==='a')return A(t.f,replaceAt(t.a,rest,replacement));throw new Error('変換位置が不正です。');
+}
+function firstBeta(t,path=[]){
+  if(t.t==='a'){if(t.f.t==='l')return path;return firstBeta(t.f,[...path,'fn'])??firstBeta(t.a,[...path,'arg']);}
+  if(t.t==='l')return firstBeta(t.b,[...path,'body']);return null;
+}
+function firstDefinition(t,env,path=[]){
+  if(t.t==='v')return env.has(t.n)?path:null;
+  if(t.t==='l')return firstDefinition(t.b,env,[...path,'body']);
+  if(t.t==='a')return firstDefinition(t.f,env,[...path,'fn'])??firstDefinition(t.a,env,[...path,'arg']);return null;
+}
+function firstReduction(t,env,path=[]){
+  if(t.t==='v'&&env.has(t.n))return {rule:'delta',path};
+  if(t.t==='a'){
+    if(t.f.t==='l')return {rule:'beta',path};
+    return firstReduction(t.f,env,[...path,'fn'])??firstReduction(t.a,env,[...path,'arg']);
+  }
+  if(t.t==='l')return firstReduction(t.b,env,[...path,'body']);
+  return null;
+}
+const BUILTINS=Object.freeze([
+['True','λt.λf.t'],['False','λt.λf.f'],['If','λb.λt.λe.b t e'],['And','λp.λq.p q p'],['Or','λp.λq.p p q'],['Not','λb.b False True'],
+['Pair','λa.λb.λf.f a b'],['Fst','λp.p (λa.λb.a)'],['Snd','λp.p (λa.λb.b)'],
+['Zero','λf.λx.x'],['Succ','λn.λf.λx.f (n f x)'],['One','Succ Zero'],['Two','Succ One'],['Three','Succ Two'],['Four','Succ Three'],
+['Add','λm.λn.λf.λx.m f (n f x)'],['Mul','λm.λn.λf.λx.m (n f) x'],['Pred','λn.λf.λx.n (λg.λh.h (g f)) (λu.x) (λu.u)'],
+['Sub','λm.λn.n Pred m'],['IsZero','λn.n (λx.False) True'],['Leq','λm.λn.IsZero (Sub m n)'],['EqNat','λm.λn.And (Leq m n) (Leq n m)'],
+['N0','Zero'],['N1','One'],['N2','Two'],['N3','Three'],['N4','Four'],['0','Zero'],['1','One'],['2','Two'],['3','Three'],['4','Four']
+,
+["ResultOk", "λv.λok.λerr.ok v"],
+["ResultErr", "λe.λok.λerr.err e"],
+["ResultBind", "λr.λk.r k ResultErr"],
+["ZMake", "λs.λn.Pair (If (IsZero n) Zero s) n"],
+["ZSign", "Fst"],
+["ZMagnitude", "Snd"],
+["ZZero", "ZMake Zero Zero"],
+["ZOne", "ZMake Zero One"],
+["ZTwo", "ZMake Zero Two"],
+["ZMinusOne", "ZMake One One"],
+["ZNeg", "λz.ZMake (If (IsZero (Fst z)) One Zero) (Snd z)"],
+["ZAdd", "λa.λb.If (EqNat (Fst a) (Fst b)) (ZMake (Fst a) (Add (Snd a) (Snd b))) (If (Leq (Snd a) (Snd b)) (ZMake (Fst b) (Sub (Snd b) (Snd a))) (ZMake (Fst a) (Sub (Snd a) (Snd b))))"],
+["ZSub", "λa.λb.ZAdd a (ZNeg b)"],
+["ZMul", "λa.λb.ZMake (If (EqNat (Fst a) (Fst b)) Zero One) (Mul (Snd a) (Snd b))"],
+["ZEq", "λa.λb.And (EqNat (Fst a) (Fst b)) (EqNat (Snd a) (Snd b))"],
+["ZLeq", "λa.λb.If (EqNat (Fst a) (Fst b)) (If (IsZero (Fst a)) (Leq (Snd a) (Snd b)) (Leq (Snd b) (Snd a))) (IsZero (Fst b))"],
+["ZFromDiff", "λp.λn.If (Leq p n) (ZMake One (Sub n p)) (ZMake Zero (Sub p n))"],
+["ZToDiff", "λz.If (IsZero (Fst z)) (Pair (Snd z) Zero) (Pair Zero (Snd z))"],
+["QRep", "Pair"],
+["QRepNum", "Fst"],
+["QRepDen", "Snd"],
+["QRepValid", "λr.And (IsZero (Fst (Snd r))) (Not (IsZero (Snd (Snd r))))"],
+["QMake", "λn.λd.If (IsZero (Snd d)) (ResultErr Zero) (ResultOk (Pair (If (IsZero (Fst d)) n (ZNeg n)) (ZMake Zero (Snd d))))"],
+["QZero", "QRep ZZero ZOne"],
+["QOne", "QRep ZOne ZOne"],
+["QHalf", "QRep ZOne ZTwo"],
+["QRepNeg", "λr.QRep (ZNeg (Fst r)) (Snd r)"],
+["QRepAdd", "λa.λb.QRep (ZAdd (ZMul (Fst a) (Snd b)) (ZMul (Fst b) (Snd a))) (ZMul (Snd a) (Snd b))"],
+["QRepSub", "λa.λb.QRepAdd a (QRepNeg b)"],
+["QRepMul", "λa.λb.QRep (ZMul (Fst a) (Fst b)) (ZMul (Snd a) (Snd b))"],
+["QRepEq", "λa.λb.ZEq (ZMul (Fst a) (Snd b)) (ZMul (Fst b) (Snd a))"],
+["QRepLeq", "λa.λb.ZLeq (ZMul (Fst a) (Snd b)) (ZMul (Fst b) (Snd a))"],
+["QRepInv", "λr.QMake (Snd r) (Fst r)"],
+["QRepDiv", "λa.λb.QMake (ZMul (Fst a) (Snd b)) (ZMul (Snd a) (Fst b))"]
+].map(([name,source])=>Object.freeze({name,source})));
+function createEnvironment(extra=[]){
+  assert(Array.isArray(extra),'定義は配列で指定してください。');
+  const env=new Map(BUILTINS.map(d=>[d.name,{...d}]));
+  for(const d of extra){assert(d&&identifier.test(d.name)&&typeof d.source==='string','定義が不正です。');parse(d.source);env.set(d.name,{name:d.name,source:d.source});}
+  return [...env.values()];
+}
+function compileDefinitions(definitions){
+  assert(Array.isArray(definitions)&&definitions.length<=1000,'定義の一覧が不正です。');
+  const env=new Map();for(const d of definitions){assert(d&&typeof d.name==='string'&&identifier.test(d.name)&&!env.has(d.name),'定義名が不正または重複しています。');env.set(d.name,parse(d.source));}return env;
+}
+function checkCycles(term,env){
+  const done=new Set(),active=new Set();
+  function visit(name){if(!env.has(name)||done.has(name))return;assert(!active.has(name),'循環定義を展開できません: '+name);active.add(name);for(const n of freeVariables(env.get(name)))visit(n);active.delete(name);done.add(name);}
+  for(const name of freeVariables(term))visit(name);
+}
+function splitExpressions(text){return text.split('\n').map(s=>s.replace(/\/\/.*$/,'')).join('\n').split(';').map(s=>s.trim()).filter(Boolean);}
+function parseDefinitions(text){return splitExpressions(text).map(s=>{const m=s.match(/^([A-Za-z_][A-Za-z0-9_]*|[0-9]+)\s*=\s*([\s\S]+)$/);assert(m,'定義は Name = 式; の形式で入力してください。');parse(m[2]);return {name:m[1],source:m[2]};});}
+async function evaluate(source,{definitions=createEnvironment(),maxSteps=5000,onStep,signal}={}){
+  let trace=null;
+  try{
+    assert(Number.isInteger(maxSteps)&&maxSteps>=0&&maxSteps<=LIMITS.steps,'変換上限が不正です。');
+    const snapshot=definitions.map(d=>({name:d.name,source:d.source})),env=compileDefinitions(snapshot);let cur=parse(source);checkCycles(cur,env);
+    trace={schema:SCHEMA,version:VERSION,strategy:'leftmost-outermost-interleaved',source,definitions:snapshot,maxSteps,initial:print(cur),expandedStart:null,steps:[],final:null,status:'running'};
+    while(true){
+      if(trace.expandedStart===null&&firstDefinition(cur,env)===null)trace.expandedStart=print(cur);
+      const next=firstReduction(cur,env),path=next?.path??null,rule=next?.rule;
+      if(signal?.aborted){trace.status='stopped';break;}
+      if(path===null){trace.status='normal-form';break;}
+      if(trace.steps.length>=maxSteps){trace.status='step-limit';break;}
+      const target=at(cur,path),record={index:trace.steps.length+1,rule,path,before:print(cur)};
+      if(rule==='delta'){record.definition=target.n;cur=replaceAt(cur,path,env.get(target.n));}
+      else cur=replaceAt(cur,path,contract(target));
+      validateTerm(cur);record.after=print(cur);trace.steps.push(record);
+      if(onStep)await onStep({...record,path:[...record.path]});
+      if(trace.steps.length%16===0)await new Promise(resolve=>setTimeout(resolve,0));
+    }
+    trace.final=print(cur);return {status:trace.status,term:cur,trace};
+  }catch(error){
+    if(trace){trace.status='error';trace.error=String(error.message||error);trace.final=trace.steps.at(-1)?.after||trace.initial;
+      if(trace.expandedStart===null&&firstDefinition(parse(trace.final),compileDefinitions(trace.definitions))===null)trace.expandedStart=trace.final;
+    }
+    return {status:'error',source,error:String(error.message||error),trace};
+  }
+}
+// Replay uses direct removal of a binder, independently of contract/shift/substituteIndex.
+// Parser, immutable term constructors and path access are the shared trusted syntax layer.
+function replayBeta(redex){
+  assert(redex.t==='a'&&redex.f.t==='l','β 規則の位置に簡約可能な項がありません。');
+  function lift(t,depth,inside){
+    if(t.t==='b')return B(t.i<inside?t.i:t.i+depth);
+    if(t.t==='l')return L(lift(t.b,depth,inside+1));
+    if(t.t==='a')return A(lift(t.f,depth,inside),lift(t.a,depth,inside));return t;
+  }
+  function remove(t,depth){
+    if(t.t==='b'){if(t.i<depth)return t;if(t.i===depth)return lift(redex.a,depth,0);return B(t.i-1);}
+    if(t.t==='l')return L(remove(t.b,depth+1));
+    if(t.t==='a')return A(remove(t.f,depth),remove(t.a,depth));return t;
+  }return remove(redex.f.b,0);
+}
+function replayNext(term,env,interleaved=false){
+  if(interleaved){
+    const todo=[{term,path:[]}];
+    while(todo.length){
+      const item=todo.pop(),t=item.term,p=item.path;
+      if(t.t==='v'&&env.has(t.n))return {rule:'delta',path:p};
+      if(t.t==='a'&&t.f.t==='l')return {rule:'beta',path:p};
+      if(t.t==='a'){todo.push({term:t.a,path:p.concat('arg')});todo.push({term:t.f,path:p.concat('fn')});}
+      else if(t.t==='l')todo.push({term:t.b,path:p.concat('body')});
+    }
+    return null;
+  }
+  function scan(t,kind,path){
+    if(kind==='delta'&&t.t==='v'&&env.has(t.n))return path;
+    if(kind==='beta'&&t.t==='a'&&t.f.t==='l')return path;
+    if(t.t==='l')return scan(t.b,kind,path.concat('body'));
+    if(t.t==='a')return scan(t.f,kind,path.concat('fn'))??scan(t.a,kind,path.concat('arg'));return null;
+  }
+  const delta=scan(term,'delta',[]);if(delta!==null)return {rule:'delta',path:delta};
+  const beta=scan(term,'beta',[]);return beta===null?null:{rule:'beta',path:beta};
+}
+function verifyTrace(trace){
+  try{
+    assert(trace&&trace.schema===SCHEMA&&((trace.version==='8.0.0'&&trace.strategy==='leftmost-outermost')||(trace.version===VERSION&&trace.strategy==='leftmost-outermost-interleaved')),'証跡の形式または版が対応していません。');
+    const interleaved=trace.version===VERSION;
+    assert(Number.isInteger(trace.maxSteps)&&trace.maxSteps>=0&&trace.maxSteps<=LIMITS.steps,'証跡の上限が不正です。');
+    assert(Array.isArray(trace.steps)&&trace.steps.length<=trace.maxSteps,'段数が不正です。');
+    assert(['normal-form','step-limit','stopped','error'].includes(trace.status),'終了状態が不正です。');
+    const env=compileDefinitions(trace.definitions);let cur=parse(trace.source);checkCycles(cur,env);
+    assert(typeof trace.initial==='string'&&alphaEqual(cur,parse(trace.initial)),'開始項が入力と一致しません。');
+    let expandedStart=null,betaSteps=0,deltaSteps=0;
+    for(let i=0;i<trace.steps.length;i++){
+      const s=trace.steps[i],next=replayNext(cur,env,interleaved);
+      if(firstDefinition(cur,env)===null&&expandedStart===null)expandedStart=print(cur);
+      assert(s&&s.index===i+1&&next&&s.rule===next.rule&&Array.isArray(s.path)&&JSON.stringify(s.path)===JSON.stringify(next.path),`第 ${i+1} 段: 規則・位置・順序が不正です。`);
+      assert(typeof s.before==='string'&&alphaEqual(cur,parse(s.before)),`第 ${i+1} 段: 前項が一致しません。`);
+      const target=at(cur,s.path);let replacement;
+      if(s.rule==='delta'){assert(target.t==='v'&&s.definition===target.n&&env.has(s.definition),'定義展開の根拠が不正です。');replacement=env.get(s.definition);deltaSteps++;}
+      else {replacement=replayBeta(target);betaSteps++;}
+      cur=replaceAt(cur,s.path,replacement);validateTerm(cur);
+      assert(typeof s.after==='string'&&alphaEqual(cur,parse(s.after)),`第 ${i+1} 段: 規則の結果と到達項が一致しません。`);
+    }
+    const pending=replayNext(cur,env,interleaved);if(firstDefinition(cur,env)===null&&expandedStart===null)expandedStart=print(cur);
+    assert(trace.expandedStart===null?expandedStart===null:typeof trace.expandedStart==='string'&&expandedStart!==null&&alphaEqual(parse(expandedStart),parse(trace.expandedStart)),'定義名が初めてなくなった項が一致しません。');
+    assert(typeof trace.final==='string'&&alphaEqual(cur,parse(trace.final)),'最終項が一致しません。');
+    if(trace.status==='normal-form')assert(pending===null,'正規形という終了表示が誤っています。');
+    if(trace.status==='step-limit')assert(pending!==null&&trace.steps.length===trace.maxSteps,'上限による打切りという終了表示が誤っています。');
+    if(trace.status==='error')assert(typeof trace.error==='string'&&trace.error.length>0,'エラーの説明がありません。');
+    return {valid:true,status:trace.status,steps:trace.steps.length,betaSteps,deltaSteps,normalForm:pending===null,note:trace.status==='stopped'||trace.status==='error'?'有限の接頭履歴を検証しました。停止操作・外部エラーの発生自体はこの証跡から証明しません。':'各変換と終了条件を検証しました。'};
+  }catch(error){return {valid:false,error:String(error.message||error)};}
+}
+function decodeNat(term){
+  if(term?.t!=='l'||term.b.t!=='l')return null;let t=term.b.b,n=0;
+  while(t.t==='a'&&t.f.t==='b'&&t.f.i===1){n++;t=t.a;}return t.t==='b'&&t.i===0?n:null;
+}
+globalThis.LambdaCore=Object.freeze({VERSION,SCHEMA,LIMITS,BUILTINS,parse,print,alphaEqual,freeVariables,createEnvironment,parseDefinitions,splitExpressions,evaluate,verifyTrace,decodeNat});
+})();
+</script>
+<script id="lambda-i18n">
+'use strict';
+(() => {
+// Screen language only: no network, IP lookup or geolocation. Saved traces do not depend on the language.
+const LANGUAGES=Object.freeze([['ja','日本語'],['en','English'],['zh-Hans','简体中文'],['zh-Hant','繁體中文'],['ko','한국어'],['fr','Français'],['de','Deutsch'],['es','Español'],['pt','Português'],['it','Italiano'],['ru','Русский']].map(([code,name])=>Object.freeze({code,name})));
+const CODES=Object.freeze(LANGUAGES.map(l=>l.code));
+const STORAGE_KEY='lambda-interpreter-language';
+const MESSAGES={
+"ja":{
+"app.name":"λ計算インタプリタ",
+"app.lead":"名前付きの式を読み、捕獲を避けて定義展開と β 簡約を記録します。ネット接続は不要です。",
+"app.scope":"履歴が証明するのは、記録した規則による有限の変換です。任意の数についての帰納的な定理や、収束性を自動で証明する機能は含みません。",
+"language":"言語",
+"source.label":"<strong>式</strong>（複数の式は ; で区切ります）",
+"example.label":"例",
+"ex.eq":"2 + 3 = 5 の具体的な計算",
+"ex.capture":"束縛を保つ置換",
+"ex.fst":"対の第1成分",
+"ex.omega":"停止しない例（上限で打切り）",
+"ex.zadd":"整数 2 + (−1)",
+"ex.qadd":"有理表示 1/2 + 1/2（約分前の4/4）",
+"ex.qinv":"零の逆数：明示的な失敗値",
+"example.use":"例を入力",
+"defs.summary":"追加の定義と構文",
+"defs.intro":"定義は <code>A = λx.x;</code> の形式です。定義を使う式の束縛変数は定義内部の自由変数を捕獲しません。名前付きの循環定義は拒否します。再帰を表す場合は固定点コンビネータ等の λ 項を明示してください。",
+"defs.label":"追加の定義",
+"syntax.note":"変数名は英数字と _（数字で始まる場合は数字のみ）。λ または \\、単一の束縛変数、ピリオド、括弧、関数適用を使います。例：<code>λf.λx.f x</code>。適用は左結合です。<code>//</code> 以降は行コメントです。# / ♭ の表層記法は未実装です。",
+"builtins.summary":"内蔵の定義（自然数・整数・有理表示・真偽値・対）",
+"types.note":"整数は符号0/1と自然数の対です。有理表示 QRep は正の非零分母を持つ整数対で、約分前の表示も許します。QMake・QRepInv・QRepDiv は ResultOk または ResultErr を返します。各演算の入力は指定した型を前提とします。",
+"maxSteps.label":"変換の上限",
+"evaluate":"評価して記録",
+"stop":"停止",
+"strategy.note":"定義展開 δ と β 簡約を合わせて左端最外の位置から行い、λ の内部も処理します。上限は定義展開 δ と β の合計です。上限到達や手動停止は、発散の証明を意味しません。",
+"history.heading":"計算履歴と再検証",
+"export":"全履歴を JSON 保存",
+"import":"JSON を読み込み検証",
+"clear":"表示を消去",
+"history.note":"入力と定義を固定した証跡を保存します。再検証器は評価器の β 簡約関数を呼ばず、各変換を別の置換手順で検査します。α 同値は内部の束縛位置で判定します。",
+"history.empty":"まだ履歴はありません。",
+"status.normal-form":"正規形に到達",
+"status.step-limit":"上限で打切り",
+"status.stopped":"手動停止",
+"status.error":"エラー",
+"run.computed":"計算：{status}",
+"run.imported":"読込：{status}",
+"run.verified":"再検証済み：{count} 段（δ {delta} / β {beta}）",
+"run.failed":"検証失敗：{error}",
+"run.final":"到達項",
+"run.church":"Church 自然数として読むと {n} です。",
+"run.details":"入力・定義展開・全変換を表示",
+"log.initial":"入力項: {term}",
+"log.expanded":"定義名が初めてなくなった項: {term}",
+"log.unreached":"未到達",
+"run.reverify":"この証跡を再検証",
+"msg.reverified":"各段の変換を再検証しました。 {note}",
+"failure.default":"開始前のエラー",
+"failure.note":"開始前のエラー記録です。検証対象となる変換証跡はありません。",
+"live.stopping":"停止を処理しています…",
+"error.noExpression":"式を入力してください。",
+"live.progress":"式 {i}/{n}：{step} 段",
+"live.done":"処理を終了しました。",
+"msg.nothingToSave":"保存できる履歴がありません。",
+"msg.saved":"{traces} 件の証跡と {failures} 件の開始前エラーを保存しました。",
+"error.fileTooLarge":"読込ファイルの上限は 20 MiB です。",
+"error.traceList":"証跡一覧が不正です。",
+"error.failureList":"開始前エラーの記録が不正です。",
+"error.traceN":"{n} 件目の証跡：{error}",
+"msg.loaded":"{traces} 件の証跡を再検証して読み込みました。開始前エラー {failures} 件は証跡と区別して表示しました。",
+"msg.loadFailed":"読込・検証失敗：{error}",
+"msg.cleared":"表示と保存対象の履歴を消去しました。",
+"core.input":"入力が文字列でないか、長さの上限を超えています。",
+"core.badChar":"位置 {pos}: 使用できない文字 {char}。",
+"core.digitName":"位置 {pos}: 数字で始まる名前は数字だけにしてください。",
+"core.nesting":"構文の入れ子が上限を超えています。",
+"core.lambdaName":"λ の後に変数名が必要です。",
+"core.binderDot":"束縛変数の後に . が必要です。",
+"core.termSize":"項の大きさが上限を超えています。",
+"core.end":"式が途中で終わっています。",
+"core.closeParen":") が必要です。",
+"core.atom":"位置 {pos}: 変数または ( が必要です。",
+"core.trailing":"末尾に解釈されない構文があります: {token}",
+"core.termShape":"項の構造・大きさ・深さが不正です。",
+"core.freeName":"自由変数名が不正です。",
+"core.binding":"束縛位置が不正です。",
+"core.unknown":"未知の項です。",
+"core.printLength":"表示される項の長さが上限を超えています。",
+"core.path":"変換位置が不正です。",
+"core.defsArray":"定義は配列で指定してください。",
+"core.def":"定義が不正です。",
+"core.defList":"定義の一覧が不正です。",
+"core.defName":"定義名が不正または重複しています。",
+"core.cycle":"循環定義を展開できません: {name}",
+"core.defForm":"定義は Name = 式; の形式で入力してください。",
+"core.maxSteps":"変換上限が不正です。",
+"core.betaRedex":"β 規則の位置に簡約可能な項がありません。",
+"core.traceFormat":"証跡の形式または版が対応していません。",
+"core.traceLimit":"証跡の上限が不正です。",
+"core.stepCount":"段数が不正です。",
+"core.status":"終了状態が不正です。",
+"core.initial":"開始項が入力と一致しません。",
+"core.stepRule":"第 {n} 段: 規則・位置・順序が不正です。",
+"core.stepBefore":"第 {n} 段: 前項が一致しません。",
+"core.deltaBasis":"定義展開の根拠が不正です。",
+"core.stepAfter":"第 {n} 段: 規則の結果と到達項が一致しません。",
+"core.expandedStart":"定義名が初めてなくなった項が一致しません。",
+"core.final":"最終項が一致しません。",
+"core.normalForm":"正規形という終了表示が誤っています。",
+"core.stepLimit":"上限による打切りという終了表示が誤っています。",
+"core.errorMissing":"エラーの説明がありません。",
+"core.notePrefix":"有限の接頭履歴を検証しました。停止操作・外部エラーの発生自体はこの証跡から証明しません。",
+"core.noteFull":"各変換と終了条件を検証しました。"
+},
+"en":{
+"app.name":"Lambda Calculus Interpreter",
+"app.lead":"Reads named expressions and records definition expansion and β-reduction, avoiding variable capture. No network connection is needed.",
+"app.scope":"A history proves a finite conversion by the recorded rules. There is no feature for automatically proving inductive theorems about arbitrary numbers, or convergence.",
+"language":"Language",
+"source.label":"<strong>Expression</strong> (separate multiple expressions with ;)",
+"example.label":"Example",
+"ex.eq":"Concrete computation of 2 + 3 = 5",
+"ex.capture":"Substitution that preserves binding",
+"ex.fst":"First component of a pair",
+"ex.omega":"Non-terminating example (cut off at the limit)",
+"ex.zadd":"Integers 2 + (−1)",
+"ex.qadd":"Rational representation 1/2 + 1/2 (unreduced 4/4)",
+"ex.qinv":"Reciprocal of zero: explicit failure value",
+"example.use":"Use example",
+"defs.summary":"Additional definitions and syntax",
+"defs.intro":"A definition has the form <code>A = λx.x;</code>. Bound variables of an expression that uses a definition do not capture free variables inside the definition. Cyclic named definitions are rejected. To express recursion, write a λ-term such as a fixed-point combinator explicitly.",
+"defs.label":"Additional definitions",
+"syntax.note":"Variable names consist of letters, digits, and _ (a name beginning with a digit must consist of digits only). Use λ or \\, a single bound variable, a period, parentheses, and function application. Example: <code>λf.λx.f x</code>. Application is left-associative. Text after <code>//</code> is a line comment. There is no surface notation for # or ♭.",
+"builtins.summary":"Built-in definitions (natural numbers, integers, rational representations, truth values, pairs)",
+"types.note":"An integer is a pair of a sign 0/1 and a natural number. The rational representation QRep is a pair of integers with a positive nonzero denominator; unreduced representations are allowed. QMake, QRepInv, and QRepDiv return ResultOk or ResultErr. Each operation assumes inputs of the specified types.",
+"maxSteps.label":"Step limit",
+"evaluate":"Evaluate and record",
+"stop":"Stop",
+"strategy.note":"δ-expansion of definitions and β-reduction are performed together from the leftmost-outermost position, including under λ. The limit counts δ and β steps together. Reaching the limit or stopping manually does not prove divergence.",
+"history.heading":"Computation history and re-verification",
+"export":"Save all history as JSON",
+"import":"Load and verify JSON",
+"clear":"Clear display",
+"history.note":"Traces are saved with the input and definitions fixed. The re-verifier does not call the evaluator's β-reduction function; it checks each conversion with a separate substitution procedure. α-equivalence is decided by the internal binding positions.",
+"history.empty":"No history yet.",
+"status.normal-form":"Reached normal form",
+"status.step-limit":"Cut off at the limit",
+"status.stopped":"Stopped manually",
+"status.error":"Error",
+"run.computed":"Computed: {status}",
+"run.imported":"Loaded: {status}",
+"run.verified":"Re-verified: {count} step(s) (δ {delta} / β {beta})",
+"run.failed":"Verification failed: {error}",
+"run.final":"Final term",
+"run.church":"Read as a Church numeral, this is {n}.",
+"run.details":"Show input, definition expansion, and all conversions",
+"log.initial":"Input term: {term}",
+"log.expanded":"Term in which definition names first disappear: {term}",
+"log.unreached":"not reached",
+"run.reverify":"Re-verify this trace",
+"msg.reverified":"Re-verified each conversion. {note}",
+"failure.default":"Error before the start",
+"failure.note":"This is a record of an error before the start. There is no conversion trace to verify.",
+"live.stopping":"Processing the stop…",
+"error.noExpression":"Please enter an expression.",
+"live.progress":"Expression {i}/{n}: step {step}",
+"live.done":"Finished.",
+"msg.nothingToSave":"There is no history to save.",
+"msg.saved":"{traces} trace(s) and {failures} pre-start error(s) saved.",
+"error.fileTooLarge":"The maximum file size for loading is 20 MiB.",
+"error.traceList":"Invalid list of traces.",
+"error.failureList":"Invalid record of pre-start errors.",
+"error.traceN":"Trace {n}: {error}",
+"msg.loaded":"{traces} trace(s) re-verified and loaded. {failures} pre-start error(s) are shown separately from the traces.",
+"msg.loadFailed":"Load or verification failed: {error}",
+"msg.cleared":"The display and the history to be saved have been cleared.",
+"core.input":"The input is not a string or exceeds the length limit.",
+"core.badChar":"Position {pos}: invalid character {char}.",
+"core.digitName":"Position {pos}: a name beginning with a digit must consist of digits only.",
+"core.nesting":"The syntax nesting exceeds the limit.",
+"core.lambdaName":"A variable name is required after λ.",
+"core.binderDot":"A . is required after the bound variable.",
+"core.termSize":"The term size exceeds the limit.",
+"core.end":"The expression ended unexpectedly.",
+"core.closeParen":"A ) is required.",
+"core.atom":"Position {pos}: a variable or ( is required.",
+"core.trailing":"Uninterpreted syntax remains at the end: {token}",
+"core.termShape":"The structure, size, or depth of the term is invalid.",
+"core.freeName":"Invalid free-variable name.",
+"core.binding":"Invalid binding position.",
+"core.unknown":"Unknown term.",
+"core.printLength":"The printed term exceeds the length limit.",
+"core.path":"Invalid conversion position.",
+"core.defsArray":"Definitions must be given as an array.",
+"core.def":"Invalid definition.",
+"core.defList":"Invalid list of definitions.",
+"core.defName":"A definition name is invalid or duplicated.",
+"core.cycle":"Cannot expand a cyclic definition: {name}",
+"core.defForm":"Enter definitions in the form Name = expression;",
+"core.maxSteps":"Invalid step limit.",
+"core.betaRedex":"There is no reducible term at the position of the β-rule.",
+"core.traceFormat":"The trace format or version is not supported.",
+"core.traceLimit":"Invalid step limit in the trace.",
+"core.stepCount":"Invalid number of steps.",
+"core.status":"Invalid terminal status.",
+"core.initial":"The initial term does not match the input.",
+"core.stepRule":"Step {n}: invalid rule, position, or order.",
+"core.stepBefore":"Step {n}: the preceding term does not match.",
+"core.deltaBasis":"Invalid justification for the definition expansion.",
+"core.stepAfter":"Step {n}: the result of the rule does not match the term reached.",
+"core.expandedStart":"The term in which definition names first disappear does not match.",
+"core.final":"The final term does not match.",
+"core.normalForm":"The terminal status normal-form is false.",
+"core.stepLimit":"The terminal status step-limit is false.",
+"core.errorMissing":"The error has no description.",
+"core.notePrefix":"The finite prefix of the history was verified. This trace does not prove that a stop operation or external error occurred.",
+"core.noteFull":"Each conversion and the terminal condition were verified."
+},
+"zh-Hans":{
+"app.name":"λ演算解释器",
+"app.lead":"读取带名称的表达式，避免变量捕获，并记录定义展开与 β 归约。无需联网。",
+"app.scope":"历史记录所证明的，是按所记录规则进行的有限次变换。本工具不包含自动证明关于任意数的归纳定理或收敛性的功能。",
+"language":"语言",
+"source.label":"<strong>表达式</strong>（多个表达式用 ; 分隔）",
+"example.label":"示例",
+"ex.eq":"2 + 3 = 5 的具体计算",
+"ex.capture":"保持约束关系的代换",
+"ex.fst":"序对的第一分量",
+"ex.omega":"不终止的示例（在上限处截断）",
+"ex.zadd":"整数 2 + (−1)",
+"ex.qadd":"有理表示 1/2 + 1/2（约分前的 4/4）",
+"ex.qinv":"零的倒数：显式的失败值",
+"example.use":"填入示例",
+"defs.summary":"附加定义与语法",
+"defs.intro":"定义的形式为 <code>A = λx.x;</code>。使用定义的表达式中的约束变量不会捕获定义内部的自由变量。带名称的循环定义会被拒绝。如需表示递归，请明确写出不动点组合子等 λ 项。",
+"defs.label":"附加定义",
+"syntax.note":"变量名由英文字母、数字和 _ 组成（以数字开头的名称只能由数字组成）。可使用 λ 或 \\、单个约束变量、句点、括号和函数应用。例：<code>λf.λx.f x</code>。应用为左结合。<code>//</code> 之后的内容为行注释。# / ♭ 的表层记法尚未实现。",
+"builtins.summary":"内置定义（自然数、整数、有理表示、真值、序对）",
+"types.note":"整数是由符号 0/1 与自然数组成的序对。有理表示 QRep 是分母为正且非零的整数对，也允许约分前的表示。QMake、QRepInv、QRepDiv 返回 ResultOk 或 ResultErr。各运算均假定输入属于指定的类型。",
+"maxSteps.label":"变换上限",
+"evaluate":"求值并记录",
+"stop":"停止",
+"strategy.note":"定义展开 δ 与 β 归约合并进行，从最左最外的位置开始，λ 的内部也会处理。上限是定义展开 δ 与 β 的合计步数。达到上限或手动停止并不意味着证明了发散。",
+"history.heading":"计算历史与重新验证",
+"export":"将全部历史保存为 JSON",
+"import":"读取 JSON 并验证",
+"clear":"清除显示",
+"history.note":"保存固定了输入和定义的轨迹。重新验证器不调用求值器的 β 归约函数，而是用另一套代换程序检查每一步变换。α 等价根据内部的约束位置判定。",
+"history.empty":"尚无历史记录。",
+"status.normal-form":"到达范式",
+"status.step-limit":"在上限处截断",
+"status.stopped":"手动停止",
+"status.error":"错误",
+"run.computed":"计算：{status}",
+"run.imported":"读取：{status}",
+"run.verified":"已重新验证：{count} 步（δ {delta} / β {beta}）",
+"run.failed":"验证失败：{error}",
+"run.final":"最终项",
+"run.church":"按 Church 数解读，结果为 {n}。",
+"run.details":"显示输入、定义展开和全部变换",
+"log.initial":"输入项：{term}",
+"log.expanded":"定义名首次全部消失时的项：{term}",
+"log.unreached":"未到达",
+"run.reverify":"重新验证此轨迹",
+"msg.reverified":"已重新验证每一步变换。{note}",
+"failure.default":"开始前的错误",
+"failure.note":"这是开始前发生的错误的记录，没有可供验证的变换轨迹。",
+"live.stopping":"正在处理停止…",
+"error.noExpression":"请输入表达式。",
+"live.progress":"表达式 {i}/{n}：第 {step} 步",
+"live.done":"处理已结束。",
+"msg.nothingToSave":"没有可以保存的历史记录。",
+"msg.saved":"已保存 {traces} 条轨迹和 {failures} 条开始前的错误。",
+"error.fileTooLarge":"读取文件的大小上限为 20 MiB。",
+"error.traceList":"轨迹列表无效。",
+"error.failureList":"开始前错误的记录无效。",
+"error.traceN":"第 {n} 条轨迹：{error}",
+"msg.loaded":"已重新验证并读取 {traces} 条轨迹。{failures} 条开始前的错误与轨迹分开显示。",
+"msg.loadFailed":"读取或验证失败：{error}",
+"msg.cleared":"已清除显示内容和待保存的历史记录。",
+"core.input":"输入不是字符串，或超出了长度上限。",
+"core.badChar":"位置 {pos}：不可使用的字符 {char}。",
+"core.digitName":"位置 {pos}：以数字开头的名称只能由数字组成。",
+"core.nesting":"语法的嵌套层数超出了上限。",
+"core.lambdaName":"λ 之后需要变量名。",
+"core.binderDot":"约束变量之后需要“.”。",
+"core.termSize":"项的大小超出了上限。",
+"core.end":"表达式意外结束。",
+"core.closeParen":"需要“)”。",
+"core.atom":"位置 {pos}：需要变量或“(”。",
+"core.trailing":"末尾有无法解析的语法：{token}",
+"core.termShape":"项的结构、大小或深度无效。",
+"core.freeName":"自由变量名无效。",
+"core.binding":"约束位置无效。",
+"core.unknown":"未知的项。",
+"core.printLength":"显示的项的长度超出了上限。",
+"core.path":"变换位置无效。",
+"core.defsArray":"定义必须以数组形式给出。",
+"core.def":"定义无效。",
+"core.defList":"定义列表无效。",
+"core.defName":"定义名无效或重复。",
+"core.cycle":"无法展开循环定义：{name}",
+"core.defForm":"请按 Name = 表达式; 的形式输入定义。",
+"core.maxSteps":"变换上限无效。",
+"core.betaRedex":"β 规则的位置上没有可归约的项。",
+"core.traceFormat":"不支持该轨迹的格式或版本。",
+"core.traceLimit":"轨迹中的上限无效。",
+"core.stepCount":"步数无效。",
+"core.status":"结束状态无效。",
+"core.initial":"起始项与输入不一致。",
+"core.stepRule":"第 {n} 步：规则、位置或顺序无效。",
+"core.stepBefore":"第 {n} 步：变换前的项不一致。",
+"core.deltaBasis":"定义展开的依据无效。",
+"core.stepAfter":"第 {n} 步：规则的结果与到达的项不一致。",
+"core.expandedStart":"定义名首次全部消失时的项不一致。",
+"core.final":"最终项不一致。",
+"core.normalForm":"“到达范式”的结束状态有误。",
+"core.stepLimit":"“在上限处截断”的结束状态有误。",
+"core.errorMissing":"缺少错误说明。",
+"core.notePrefix":"已验证有限的前缀历史。此轨迹本身并不证明停止操作或外部错误确实发生过。",
+"core.noteFull":"已验证每一步变换和结束条件。"
+},
+"zh-Hant":{
+"app.name":"λ演算直譯器",
+"app.lead":"讀取具名的運算式，避免變數捕獲，並記錄定義展開與 β 歸約。無需連網。",
+"app.scope":"歷史紀錄所證明的，是依所記錄規則進行的有限次變換。本工具不含自動證明關於任意數的歸納定理或收斂性的功能。",
+"language":"語言",
+"source.label":"<strong>運算式</strong>（多個運算式以 ; 分隔）",
+"example.label":"範例",
+"ex.eq":"2 + 3 = 5 的具體計算",
+"ex.capture":"保持約束關係的代換",
+"ex.fst":"序對的第一分量",
+"ex.omega":"不會終止的範例（於上限處截斷）",
+"ex.zadd":"整數 2 + (−1)",
+"ex.qadd":"有理表示 1/2 + 1/2（約分前的 4/4）",
+"ex.qinv":"零的倒數：明確的失敗值",
+"example.use":"填入範例",
+"defs.summary":"附加定義與語法",
+"defs.intro":"定義的形式為 <code>A = λx.x;</code>。使用定義的運算式中的約束變數，不會捕獲定義內部的自由變數。具名的循環定義會被拒絕。若要表示遞迴，請明確寫出不動點組合子等 λ 項。",
+"defs.label":"附加定義",
+"syntax.note":"變數名稱由英文字母、數字與 _ 組成（以數字開頭的名稱只能由數字組成）。可使用 λ 或 \\、單一約束變數、句點、括號與函數應用。例：<code>λf.λx.f x</code>。應用為左結合。<code>//</code> 之後的內容為單行註解。# / ♭ 的表層記法尚未實作。",
+"builtins.summary":"內建定義（自然數、整數、有理表示、真值、序對）",
+"types.note":"整數是由符號 0/1 與自然數組成的序對。有理表示 QRep 是分母為正且非零的整數對，也允許約分前的表示。QMake、QRepInv、QRepDiv 會傳回 ResultOk 或 ResultErr。各運算皆假定輸入屬於指定的型別。",
+"maxSteps.label":"變換上限",
+"evaluate":"求值並記錄",
+"stop":"停止",
+"strategy.note":"定義展開 δ 與 β 歸約合併進行，從最左最外的位置開始，λ 的內部也會處理。上限是定義展開 δ 與 β 的合計步數。達到上限或手動停止，並不代表證明了發散。",
+"history.heading":"計算歷史與重新驗證",
+"export":"將全部歷史儲存為 JSON",
+"import":"讀取 JSON 並驗證",
+"clear":"清除顯示",
+"history.note":"儲存固定了輸入與定義的軌跡。重新驗證器不呼叫求值器的 β 歸約函式，而是以另一套代換程序檢查每一步變換。α 等價依內部的約束位置判定。",
+"history.empty":"尚無歷史紀錄。",
+"status.normal-form":"到達範式",
+"status.step-limit":"於上限處截斷",
+"status.stopped":"手動停止",
+"status.error":"錯誤",
+"run.computed":"計算：{status}",
+"run.imported":"讀取：{status}",
+"run.verified":"已重新驗證：{count} 步（δ {delta} / β {beta}）",
+"run.failed":"驗證失敗：{error}",
+"run.final":"最終項",
+"run.church":"以 Church 數解讀，結果為 {n}。",
+"run.details":"顯示輸入、定義展開與全部變換",
+"log.initial":"輸入項：{term}",
+"log.expanded":"定義名稱首次全部消失時的項：{term}",
+"log.unreached":"未到達",
+"run.reverify":"重新驗證此軌跡",
+"msg.reverified":"已重新驗證每一步變換。{note}",
+"failure.default":"開始前的錯誤",
+"failure.note":"這是開始前發生之錯誤的紀錄，沒有可供驗證的變換軌跡。",
+"live.stopping":"正在處理停止…",
+"error.noExpression":"請輸入運算式。",
+"live.progress":"運算式 {i}/{n}：第 {step} 步",
+"live.done":"處理已結束。",
+"msg.nothingToSave":"沒有可儲存的歷史紀錄。",
+"msg.saved":"已儲存 {traces} 筆軌跡與 {failures} 筆開始前的錯誤。",
+"error.fileTooLarge":"讀取檔案的大小上限為 20 MiB。",
+"error.traceList":"軌跡清單無效。",
+"error.failureList":"開始前錯誤的紀錄無效。",
+"error.traceN":"第 {n} 筆軌跡：{error}",
+"msg.loaded":"已重新驗證並讀取 {traces} 筆軌跡。{failures} 筆開始前的錯誤與軌跡分開顯示。",
+"msg.loadFailed":"讀取或驗證失敗：{error}",
+"msg.cleared":"已清除顯示內容與待儲存的歷史紀錄。",
+"core.input":"輸入不是字串，或超出長度上限。",
+"core.badChar":"位置 {pos}：無法使用的字元 {char}。",
+"core.digitName":"位置 {pos}：以數字開頭的名稱只能由數字組成。",
+"core.nesting":"語法的巢狀層數超出上限。",
+"core.lambdaName":"λ 之後需要變數名稱。",
+"core.binderDot":"約束變數之後需要「.」。",
+"core.termSize":"項的大小超出上限。",
+"core.end":"運算式意外結束。",
+"core.closeParen":"需要「)」。",
+"core.atom":"位置 {pos}：需要變數或「(」。",
+"core.trailing":"結尾有無法解析的語法：{token}",
+"core.termShape":"項的結構、大小或深度無效。",
+"core.freeName":"自由變數名稱無效。",
+"core.binding":"約束位置無效。",
+"core.unknown":"未知的項。",
+"core.printLength":"顯示的項的長度超出上限。",
+"core.path":"變換位置無效。",
+"core.defsArray":"定義必須以陣列形式提供。",
+"core.def":"定義無效。",
+"core.defList":"定義清單無效。",
+"core.defName":"定義名稱無效或重複。",
+"core.cycle":"無法展開循環定義：{name}",
+"core.defForm":"請以 Name = 運算式; 的形式輸入定義。",
+"core.maxSteps":"變換上限無效。",
+"core.betaRedex":"β 規則的位置上沒有可歸約的項。",
+"core.traceFormat":"不支援此軌跡的格式或版本。",
+"core.traceLimit":"軌跡中的上限無效。",
+"core.stepCount":"步數無效。",
+"core.status":"結束狀態無效。",
+"core.initial":"起始項與輸入不一致。",
+"core.stepRule":"第 {n} 步：規則、位置或順序無效。",
+"core.stepBefore":"第 {n} 步：變換前的項不一致。",
+"core.deltaBasis":"定義展開的依據無效。",
+"core.stepAfter":"第 {n} 步：規則的結果與到達的項不一致。",
+"core.expandedStart":"定義名稱首次全部消失時的項不一致。",
+"core.final":"最終項不一致。",
+"core.normalForm":"「到達範式」的結束狀態有誤。",
+"core.stepLimit":"「於上限處截斷」的結束狀態有誤。",
+"core.errorMissing":"缺少錯誤說明。",
+"core.notePrefix":"已驗證有限的前綴歷史。此軌跡本身並不證明停止操作或外部錯誤確實發生過。",
+"core.noteFull":"已驗證每一步變換與結束條件。"
+},
+"ko":{
+"app.name":"λ 대수 인터프리터",
+"app.lead":"이름이 붙은 식을 읽고, 변수 포획을 피하면서 정의 전개와 β 축약을 기록합니다. 네트워크 연결은 필요하지 않습니다.",
+"app.scope":"이력이 증명하는 것은 기록된 규칙에 따른 유한한 변환입니다. 임의의 수에 대한 귀납적 정리나 수렴성을 자동으로 증명하는 기능은 포함하지 않습니다.",
+"language":"언어",
+"source.label":"<strong>식</strong> (여러 식은 ; 으로 구분합니다)",
+"example.label":"예제",
+"ex.eq":"2 + 3 = 5의 구체적인 계산",
+"ex.capture":"속박을 보존하는 치환",
+"ex.fst":"순서쌍의 첫째 성분",
+"ex.omega":"정지하지 않는 예 (상한에서 중단)",
+"ex.zadd":"정수 2 + (−1)",
+"ex.qadd":"유리수 표현 1/2 + 1/2 (약분 전의 4/4)",
+"ex.qinv":"0의 역수: 명시적인 실패 값",
+"example.use":"예제 입력",
+"defs.summary":"추가 정의와 구문",
+"defs.intro":"정의는 <code>A = λx.x;</code> 형식입니다. 정의를 사용하는 식의 속박 변수는 정의 내부의 자유 변수를 포획하지 않습니다. 이름이 붙은 순환 정의는 거부합니다. 재귀를 나타내려면 고정점 콤비네이터 등의 λ 항을 명시적으로 쓰십시오.",
+"defs.label":"추가 정의",
+"syntax.note":"변수 이름은 영문자, 숫자, _ 로 이루어집니다(숫자로 시작하는 이름은 숫자만으로 이루어져야 합니다). λ 또는 \\, 하나의 속박 변수, 마침표, 괄호, 함수 적용을 사용합니다. 예: <code>λf.λx.f x</code>. 적용은 왼쪽 결합입니다. <code>//</code> 뒤는 한 줄 주석입니다. # / ♭ 의 표층 표기는 구현되어 있지 않습니다.",
+"builtins.summary":"내장 정의 (자연수, 정수, 유리수 표현, 진릿값, 순서쌍)",
+"types.note":"정수는 부호 0/1과 자연수의 순서쌍입니다. 유리수 표현 QRep은 0이 아닌 양의 분모를 가진 정수 쌍이며, 약분 전의 표현도 허용합니다. QMake, QRepInv, QRepDiv는 ResultOk 또는 ResultErr를 반환합니다. 각 연산은 입력이 지정된 타입이라고 가정합니다.",
+"maxSteps.label":"변환 상한",
+"evaluate":"평가하고 기록",
+"stop":"정지",
+"strategy.note":"정의 전개 δ와 β 축약을 함께, 최좌측 최외곽 위치부터 수행하며 λ 내부도 처리합니다. 상한은 정의 전개 δ와 β의 합계입니다. 상한에 도달하거나 수동으로 정지한 것은 발산의 증명을 뜻하지 않습니다.",
+"history.heading":"계산 이력과 재검증",
+"export":"전체 이력을 JSON으로 저장",
+"import":"JSON 불러와 검증",
+"clear":"표시 지우기",
+"history.note":"입력과 정의를 고정한 트레이스를 저장합니다. 재검증기는 평가기의 β 축약 함수를 호출하지 않고, 별도의 치환 절차로 각 변환을 검사합니다. α 동치는 내부의 속박 위치로 판정합니다.",
+"history.empty":"아직 이력이 없습니다.",
+"status.normal-form":"정규형에 도달",
+"status.step-limit":"상한에서 중단",
+"status.stopped":"수동 정지",
+"status.error":"오류",
+"run.computed":"계산: {status}",
+"run.imported":"불러옴: {status}",
+"run.verified":"재검증 완료: {count}단계 (δ {delta} / β {beta})",
+"run.failed":"검증 실패: {error}",
+"run.final":"도달한 항",
+"run.church":"Church 수로 읽으면 {n}입니다.",
+"run.details":"입력, 정의 전개, 모든 변환 표시",
+"log.initial":"입력 항: {term}",
+"log.expanded":"정의 이름이 처음으로 모두 사라진 항: {term}",
+"log.unreached":"도달하지 않음",
+"run.reverify":"이 트레이스를 재검증",
+"msg.reverified":"각 단계의 변환을 재검증했습니다. {note}",
+"failure.default":"시작 전 오류",
+"failure.note":"시작 전에 발생한 오류의 기록입니다. 검증할 변환 트레이스는 없습니다.",
+"live.stopping":"정지를 처리하고 있습니다…",
+"error.noExpression":"식을 입력하십시오.",
+"live.progress":"식 {i}/{n}: {step}단계",
+"live.done":"처리를 마쳤습니다.",
+"msg.nothingToSave":"저장할 이력이 없습니다.",
+"msg.saved":"트레이스 {traces}건과 시작 전 오류 {failures}건을 저장했습니다.",
+"error.fileTooLarge":"불러올 파일의 상한은 20 MiB입니다.",
+"error.traceList":"트레이스 목록이 올바르지 않습니다.",
+"error.failureList":"시작 전 오류의 기록이 올바르지 않습니다.",
+"error.traceN":"{n}번째 트레이스: {error}",
+"msg.loaded":"트레이스 {traces}건을 재검증하여 불러왔습니다. 시작 전 오류 {failures}건은 트레이스와 구별하여 표시했습니다.",
+"msg.loadFailed":"불러오기·검증 실패: {error}",
+"msg.cleared":"표시와 저장 대상 이력을 지웠습니다.",
+"core.input":"입력이 문자열이 아니거나 길이 상한을 넘었습니다.",
+"core.badChar":"위치 {pos}: 사용할 수 없는 문자 {char}.",
+"core.digitName":"위치 {pos}: 숫자로 시작하는 이름은 숫자만으로 이루어져야 합니다.",
+"core.nesting":"구문의 중첩이 상한을 넘었습니다.",
+"core.lambdaName":"λ 다음에 변수 이름이 필요합니다.",
+"core.binderDot":"속박 변수 다음에 . 이 필요합니다.",
+"core.termSize":"항의 크기가 상한을 넘었습니다.",
+"core.end":"식이 도중에 끝났습니다.",
+"core.closeParen":") 가 필요합니다.",
+"core.atom":"위치 {pos}: 변수 또는 ( 가 필요합니다.",
+"core.trailing":"끝에 해석되지 않은 구문이 있습니다: {token}",
+"core.termShape":"항의 구조, 크기 또는 깊이가 올바르지 않습니다.",
+"core.freeName":"자유 변수 이름이 올바르지 않습니다.",
+"core.binding":"속박 위치가 올바르지 않습니다.",
+"core.unknown":"알 수 없는 항입니다.",
+"core.printLength":"표시되는 항의 길이가 상한을 넘었습니다.",
+"core.path":"변환 위치가 올바르지 않습니다.",
+"core.defsArray":"정의는 배열로 지정하십시오.",
+"core.def":"정의가 올바르지 않습니다.",
+"core.defList":"정의 목록이 올바르지 않습니다.",
+"core.defName":"정의 이름이 올바르지 않거나 중복되었습니다.",
+"core.cycle":"순환 정의를 전개할 수 없습니다: {name}",
+"core.defForm":"정의는 Name = 식; 형식으로 입력하십시오.",
+"core.maxSteps":"변환 상한이 올바르지 않습니다.",
+"core.betaRedex":"β 규칙의 위치에 축약 가능한 항이 없습니다.",
+"core.traceFormat":"트레이스의 형식 또는 버전을 지원하지 않습니다.",
+"core.traceLimit":"트레이스의 상한이 올바르지 않습니다.",
+"core.stepCount":"단계 수가 올바르지 않습니다.",
+"core.status":"종료 상태가 올바르지 않습니다.",
+"core.initial":"시작 항이 입력과 일치하지 않습니다.",
+"core.stepRule":"{n}단계: 규칙, 위치 또는 순서가 올바르지 않습니다.",
+"core.stepBefore":"{n}단계: 이전 항이 일치하지 않습니다.",
+"core.deltaBasis":"정의 전개의 근거가 올바르지 않습니다.",
+"core.stepAfter":"{n}단계: 규칙의 결과와 도달한 항이 일치하지 않습니다.",
+"core.expandedStart":"정의 이름이 처음으로 모두 사라진 항이 일치하지 않습니다.",
+"core.final":"최종 항이 일치하지 않습니다.",
+"core.normalForm":"정규형이라는 종료 표시가 잘못되었습니다.",
+"core.stepLimit":"상한에 의한 중단이라는 종료 표시가 잘못되었습니다.",
+"core.errorMissing":"오류에 대한 설명이 없습니다.",
+"core.notePrefix":"유한한 접두 이력을 검증했습니다. 정지 조작이나 외부 오류가 실제로 일어났다는 것은 이 트레이스로 증명하지 않습니다.",
+"core.noteFull":"각 변환과 종료 조건을 검증했습니다."
+},
+"fr":{
+"app.name":"Interpréteur du λ-calcul",
+"app.lead":"Lit des expressions nommées et enregistre l’expansion des définitions et la β-réduction, sans capture de variables. Aucune connexion réseau n’est nécessaire.",
+"app.scope":"Un historique prouve une conversion finie selon les règles enregistrées. Aucune fonctionnalité ne permet de prouver automatiquement des théorèmes par récurrence sur des nombres quelconques, ni la convergence.",
+"language":"Langue",
+"source.label":"<strong>Expression</strong> (séparez plusieurs expressions par ;)",
+"example.label":"Exemple",
+"ex.eq":"Calcul concret de 2 + 3 = 5",
+"ex.capture":"Substitution qui préserve les liaisons",
+"ex.fst":"Première composante d’une paire",
+"ex.omega":"Exemple qui ne termine pas (arrêté à la limite)",
+"ex.zadd":"Entiers 2 + (−1)",
+"ex.qadd":"Représentation rationnelle 1/2 + 1/2 (4/4 non réduit)",
+"ex.qinv":"Inverse de zéro : valeur d’échec explicite",
+"example.use":"Utiliser l’exemple",
+"defs.summary":"Définitions supplémentaires et syntaxe",
+"defs.intro":"Une définition a la forme <code>A = λx.x;</code>. Les variables liées d’une expression qui utilise une définition ne capturent pas les variables libres à l’intérieur de la définition. Les définitions nommées cycliques sont refusées. Pour exprimer la récursion, écrivez explicitement un λ-terme, par exemple un combinateur de point fixe.",
+"defs.label":"Définitions supplémentaires",
+"syntax.note":"Les noms de variables se composent de lettres (A–Z, a–z), de chiffres et de _ (un nom qui commence par un chiffre ne contient que des chiffres). Utilisez λ ou \\, une seule variable liée, un point, des parenthèses et l’application de fonction. Exemple : <code>λf.λx.f x</code>. L’application est associative à gauche. Le texte après <code>//</code> est un commentaire de ligne. La notation de surface pour # et ♭ n’est pas implémentée.",
+"builtins.summary":"Définitions intégrées (entiers naturels, entiers, représentations rationnelles, valeurs de vérité, paires)",
+"types.note":"Un entier est une paire formée d’un signe 0/1 et d’un entier naturel. La représentation rationnelle QRep est une paire d’entiers dont le dénominateur est positif et non nul ; les représentations non réduites sont admises. QMake, QRepInv et QRepDiv renvoient ResultOk ou ResultErr. Chaque opération suppose que ses entrées sont du type indiqué.",
+"maxSteps.label":"Limite d’étapes",
+"evaluate":"Évaluer et enregistrer",
+"stop":"Arrêter",
+"strategy.note":"L’expansion δ des définitions et la β-réduction sont effectuées ensemble à partir de la position la plus à gauche et la plus externe, y compris sous λ. La limite compte ensemble les étapes δ et β. Atteindre la limite ou arrêter manuellement ne prouve pas la divergence.",
+"history.heading":"Historique des calculs et revérification",
+"export":"Enregistrer tout l’historique en JSON",
+"import":"Charger et vérifier un JSON",
+"clear":"Effacer l’affichage",
+"history.note":"Les traces sont enregistrées avec l’entrée et les définitions figées. Le revérificateur n’appelle pas la fonction de β-réduction de l’évaluateur ; il contrôle chaque conversion par une procédure de substitution distincte. L’α-équivalence est décidée d’après les positions de liaison internes.",
+"history.empty":"Pas encore d’historique.",
+"status.normal-form":"Forme normale atteinte",
+"status.step-limit":"Arrêté à la limite",
+"status.stopped":"Arrêté manuellement",
+"status.error":"Erreur",
+"run.computed":"Calculé : {status}",
+"run.imported":"Chargé : {status}",
+"run.verified":"Revérifié : {count} étape(s) (δ {delta} / β {beta})",
+"run.failed":"Échec de la vérification : {error}",
+"run.final":"Terme final",
+"run.church":"Lu comme un entier de Church, c’est {n}.",
+"run.details":"Afficher l’entrée, l’expansion des définitions et toutes les conversions",
+"log.initial":"Terme d’entrée : {term}",
+"log.expanded":"Terme où les noms de définitions disparaissent pour la première fois : {term}",
+"log.unreached":"non atteint",
+"run.reverify":"Revérifier cette trace",
+"msg.reverified":"Chaque conversion a été revérifiée. {note}",
+"failure.default":"Erreur avant le démarrage",
+"failure.note":"Ceci est l’enregistrement d’une erreur survenue avant le démarrage. Il n’y a pas de trace de conversion à vérifier.",
+"live.stopping":"Arrêt en cours…",
+"error.noExpression":"Veuillez saisir une expression.",
+"live.progress":"Expression {i}/{n} : étape {step}",
+"live.done":"Terminé.",
+"msg.nothingToSave":"Aucun historique à enregistrer.",
+"msg.saved":"Traces enregistrées : {traces} ; erreurs avant le démarrage : {failures}.",
+"error.fileTooLarge":"La taille maximale d’un fichier à charger est de 20 Mio.",
+"error.traceList":"Liste de traces invalide.",
+"error.failureList":"L’enregistrement des erreurs avant le démarrage est invalide.",
+"error.traceN":"Trace {n} : {error}",
+"msg.loaded":"Traces revérifiées et chargées : {traces}. Erreurs avant le démarrage, affichées séparément des traces : {failures}.",
+"msg.loadFailed":"Échec du chargement ou de la vérification : {error}",
+"msg.cleared":"L’affichage et l’historique à enregistrer ont été effacés.",
+"core.input":"L’entrée n’est pas une chaîne ou dépasse la longueur maximale.",
+"core.badChar":"Position {pos} : caractère non autorisé {char}.",
+"core.digitName":"Position {pos} : un nom qui commence par un chiffre ne doit contenir que des chiffres.",
+"core.nesting":"L’imbrication de la syntaxe dépasse la limite.",
+"core.lambdaName":"Un nom de variable est requis après λ.",
+"core.binderDot":"Un . est requis après la variable liée.",
+"core.termSize":"La taille du terme dépasse la limite.",
+"core.end":"L’expression se termine prématurément.",
+"core.closeParen":"Une ) est requise.",
+"core.atom":"Position {pos} : une variable ou ( est requise.",
+"core.trailing":"Syntaxe non interprétée à la fin : {token}",
+"core.termShape":"La structure, la taille ou la profondeur du terme est invalide.",
+"core.freeName":"Nom de variable libre invalide.",
+"core.binding":"Position de liaison invalide.",
+"core.unknown":"Terme inconnu.",
+"core.printLength":"Le terme affiché dépasse la longueur maximale.",
+"core.path":"Position de conversion invalide.",
+"core.defsArray":"Les définitions doivent être fournies sous forme de tableau.",
+"core.def":"Définition invalide.",
+"core.defList":"Liste de définitions invalide.",
+"core.defName":"Un nom de définition est invalide ou en double.",
+"core.cycle":"Impossible d’effectuer l’expansion d’une définition cyclique : {name}",
+"core.defForm":"Saisissez les définitions sous la forme Name = expression;",
+"core.maxSteps":"Limite d’étapes invalide.",
+"core.betaRedex":"Il n’y a pas de terme réductible à la position de la règle β.",
+"core.traceFormat":"Le format ou la version de la trace ne sont pas pris en charge.",
+"core.traceLimit":"Limite d’étapes invalide dans la trace.",
+"core.stepCount":"Nombre d’étapes invalide.",
+"core.status":"État final invalide.",
+"core.initial":"Le terme initial ne correspond pas à l’entrée.",
+"core.stepRule":"Étape {n} : règle, position ou ordre invalide.",
+"core.stepBefore":"Étape {n} : le terme précédent ne correspond pas.",
+"core.deltaBasis":"La justification de l’expansion de définition est invalide.",
+"core.stepAfter":"Étape {n} : le résultat de la règle ne correspond pas au terme atteint.",
+"core.expandedStart":"Le terme où les noms de définitions disparaissent pour la première fois ne correspond pas.",
+"core.final":"Le terme final ne correspond pas.",
+"core.normalForm":"L’état final « forme normale » est faux.",
+"core.stepLimit":"L’état final « arrêté à la limite » est faux.",
+"core.errorMissing":"L’erreur n’a pas de description.",
+"core.notePrefix":"Le préfixe fini de l’historique a été vérifié. Cette trace ne prouve pas la survenue d’un arrêt manuel ou d’une erreur externe.",
+"core.noteFull":"Chaque conversion et la condition d’arrêt ont été vérifiées."
+},
+"de":{
+"app.name":"λ-Kalkül-Interpreter",
+"app.lead":"Liest benannte Ausdrücke und protokolliert die Expansion von Definitionen und die β-Reduktion, ohne Variablen einzufangen. Es ist keine Netzwerkverbindung nötig.",
+"app.scope":"Ein Verlauf beweist eine endliche Umformung nach den protokollierten Regeln. Funktionen, die induktive Sätze über beliebige Zahlen oder Konvergenz automatisch beweisen, sind nicht enthalten.",
+"language":"Sprache",
+"source.label":"<strong>Ausdruck</strong> (mehrere Ausdrücke mit ; trennen)",
+"example.label":"Beispiel",
+"ex.eq":"Konkrete Berechnung von 2 + 3 = 5",
+"ex.capture":"Substitution, die Bindungen erhält",
+"ex.fst":"Erste Komponente eines Paares",
+"ex.omega":"Nicht terminierendes Beispiel (an der Grenze abgebrochen)",
+"ex.zadd":"Ganze Zahlen 2 + (−1)",
+"ex.qadd":"Rationale Darstellung 1/2 + 1/2 (ungekürzt 4/4)",
+"ex.qinv":"Kehrwert von null: expliziter Fehlschlagwert",
+"example.use":"Beispiel einsetzen",
+"defs.summary":"Zusätzliche Definitionen und Syntax",
+"defs.intro":"Eine Definition hat die Form <code>A = λx.x;</code>. Gebundene Variablen eines Ausdrucks, der eine Definition verwendet, fangen keine freien Variablen innerhalb der Definition ein. Zyklische benannte Definitionen werden abgelehnt. Um Rekursion auszudrücken, schreiben Sie einen λ-Term wie einen Fixpunktkombinator explizit aus.",
+"defs.label":"Zusätzliche Definitionen",
+"syntax.note":"Variablennamen bestehen aus Buchstaben (A–Z, a–z), Ziffern und _ (ein Name, der mit einer Ziffer beginnt, darf nur aus Ziffern bestehen). Verwendet werden λ oder \\, eine einzelne gebundene Variable, ein Punkt, Klammern und Funktionsanwendung. Beispiel: <code>λf.λx.f x</code>. Die Anwendung ist linksassoziativ. Text nach <code>//</code> ist ein Zeilenkommentar. Die Oberflächennotation für # und ♭ ist nicht implementiert.",
+"builtins.summary":"Eingebaute Definitionen (natürliche Zahlen, ganze Zahlen, rationale Darstellungen, Wahrheitswerte, Paare)",
+"types.note":"Eine ganze Zahl ist ein Paar aus einem Vorzeichen 0/1 und einer natürlichen Zahl. Die rationale Darstellung QRep ist ein Paar ganzer Zahlen mit positivem, von null verschiedenem Nenner; ungekürzte Darstellungen sind erlaubt. QMake, QRepInv und QRepDiv liefern ResultOk oder ResultErr. Jede Operation setzt Eingaben des angegebenen Typs voraus.",
+"maxSteps.label":"Schrittgrenze",
+"evaluate":"Auswerten und protokollieren",
+"stop":"Stopp",
+"strategy.note":"Die δ-Expansion von Definitionen und die β-Reduktion werden gemeinsam von der linkesten äußersten Position aus durchgeführt, auch unter λ. Die Grenze zählt δ- und β-Schritte zusammen. Das Erreichen der Grenze oder ein manueller Stopp beweist keine Divergenz.",
+"history.heading":"Berechnungsverlauf und erneute Prüfung",
+"export":"Gesamten Verlauf als JSON speichern",
+"import":"JSON laden und prüfen",
+"clear":"Anzeige löschen",
+"history.note":"Protokolle werden mit festgelegter Eingabe und festgelegten Definitionen gespeichert. Der Nachprüfer ruft die β-Reduktionsfunktion des Auswerters nicht auf; er prüft jede Umformung mit einem eigenen Substitutionsverfahren. α-Äquivalenz wird anhand der internen Bindungspositionen entschieden.",
+"history.empty":"Noch kein Verlauf.",
+"status.normal-form":"Normalform erreicht",
+"status.step-limit":"An der Grenze abgebrochen",
+"status.stopped":"Manuell gestoppt",
+"status.error":"Fehler",
+"run.computed":"Berechnet: {status}",
+"run.imported":"Geladen: {status}",
+"run.verified":"Erneut geprüft: {count} Schritt(e) (δ {delta} / β {beta})",
+"run.failed":"Prüfung fehlgeschlagen: {error}",
+"run.final":"Erreichter Term",
+"run.church":"Als Church-Numeral gelesen ist dies {n}.",
+"run.details":"Eingabe, Definitionsexpansion und alle Umformungen anzeigen",
+"log.initial":"Eingabeterm: {term}",
+"log.expanded":"Term, in dem erstmals keine Definitionsnamen mehr vorkommen: {term}",
+"log.unreached":"nicht erreicht",
+"run.reverify":"Dieses Protokoll erneut prüfen",
+"msg.reverified":"Jede Umformung wurde erneut geprüft. {note}",
+"failure.default":"Fehler vor dem Start",
+"failure.note":"Dies ist die Aufzeichnung eines Fehlers vor dem Start. Es gibt kein Umformungsprotokoll, das geprüft werden könnte.",
+"live.stopping":"Stopp wird verarbeitet …",
+"error.noExpression":"Bitte geben Sie einen Ausdruck ein.",
+"live.progress":"Ausdruck {i}/{n}: Schritt {step}",
+"live.done":"Fertig.",
+"msg.nothingToSave":"Es gibt keinen Verlauf zum Speichern.",
+"msg.saved":"Gespeichert: {traces} Protokoll(e) und {failures} Fehler vor dem Start.",
+"error.fileTooLarge":"Die maximale Dateigröße zum Laden beträgt 20 MiB.",
+"error.traceList":"Ungültige Liste von Protokollen.",
+"error.failureList":"Ungültige Aufzeichnung der Fehler vor dem Start.",
+"error.traceN":"Protokoll {n}: {error}",
+"msg.loaded":"{traces} Protokoll(e) erneut geprüft und geladen. Fehler vor dem Start (getrennt von den Protokollen angezeigt): {failures}.",
+"msg.loadFailed":"Laden oder Prüfung fehlgeschlagen: {error}",
+"msg.cleared":"Die Anzeige und der zu speichernde Verlauf wurden gelöscht.",
+"core.input":"Die Eingabe ist keine Zeichenkette oder überschreitet die Längengrenze.",
+"core.badChar":"Position {pos}: unzulässiges Zeichen {char}.",
+"core.digitName":"Position {pos}: Ein Name, der mit einer Ziffer beginnt, darf nur aus Ziffern bestehen.",
+"core.nesting":"Die Verschachtelung der Syntax überschreitet die Grenze.",
+"core.lambdaName":"Nach λ ist ein Variablenname erforderlich.",
+"core.binderDot":"Nach der gebundenen Variablen ist ein . erforderlich.",
+"core.termSize":"Die Größe des Terms überschreitet die Grenze.",
+"core.end":"Der Ausdruck endet unerwartet.",
+"core.closeParen":"Eine ) ist erforderlich.",
+"core.atom":"Position {pos}: Eine Variable oder ( ist erforderlich.",
+"core.trailing":"Am Ende bleibt nicht interpretierte Syntax: {token}",
+"core.termShape":"Struktur, Größe oder Tiefe des Terms ist ungültig.",
+"core.freeName":"Ungültiger Name einer freien Variablen.",
+"core.binding":"Ungültige Bindungsposition.",
+"core.unknown":"Unbekannter Term.",
+"core.printLength":"Der angezeigte Term überschreitet die Längengrenze.",
+"core.path":"Ungültige Umformungsposition.",
+"core.defsArray":"Definitionen müssen als Array angegeben werden.",
+"core.def":"Ungültige Definition.",
+"core.defList":"Ungültige Liste von Definitionen.",
+"core.defName":"Ein Definitionsname ist ungültig oder doppelt vorhanden.",
+"core.cycle":"Eine zyklische Definition kann nicht expandiert werden: {name}",
+"core.defForm":"Geben Sie Definitionen in der Form Name = Ausdruck; ein.",
+"core.maxSteps":"Ungültige Schrittgrenze.",
+"core.betaRedex":"An der Position der β-Regel gibt es keinen reduzierbaren Term.",
+"core.traceFormat":"Format oder Version des Protokolls wird nicht unterstützt.",
+"core.traceLimit":"Ungültige Schrittgrenze im Protokoll.",
+"core.stepCount":"Ungültige Anzahl von Schritten.",
+"core.status":"Ungültiger Endzustand.",
+"core.initial":"Der Anfangsterm stimmt nicht mit der Eingabe überein.",
+"core.stepRule":"Schritt {n}: Regel, Position oder Reihenfolge ungültig.",
+"core.stepBefore":"Schritt {n}: Der vorherige Term stimmt nicht überein.",
+"core.deltaBasis":"Ungültige Begründung der Definitionsexpansion.",
+"core.stepAfter":"Schritt {n}: Das Ergebnis der Regel stimmt nicht mit dem erreichten Term überein.",
+"core.expandedStart":"Der Term, in dem erstmals keine Definitionsnamen mehr vorkommen, stimmt nicht überein.",
+"core.final":"Der Endterm stimmt nicht überein.",
+"core.normalForm":"Der Endzustand „Normalform“ ist falsch.",
+"core.stepLimit":"Der Endzustand „an der Grenze abgebrochen“ ist falsch.",
+"core.errorMissing":"Der Fehler hat keine Beschreibung.",
+"core.notePrefix":"Das endliche Anfangsstück des Verlaufs wurde geprüft. Dieses Protokoll beweist nicht, dass ein Stopp oder ein externer Fehler tatsächlich eingetreten ist.",
+"core.noteFull":"Jede Umformung und die Endbedingung wurden geprüft."
+},
+"es":{
+"app.name":"Intérprete del cálculo λ",
+"app.lead":"Lee expresiones con nombre y registra la expansión de definiciones y la β-reducción, evitando la captura de variables. No necesita conexión a la red.",
+"app.scope":"Un historial demuestra una conversión finita según las reglas registradas. El intérprete no incluye funciones para demostrar automáticamente teoremas inductivos sobre números arbitrarios ni la convergencia.",
+"language":"Idioma",
+"source.label":"<strong>Expresión</strong> (separe varias expresiones con ;)",
+"example.label":"Ejemplo",
+"ex.eq":"Cálculo concreto de 2 + 3 = 5",
+"ex.capture":"Sustitución que preserva las ligaduras",
+"ex.fst":"Primera componente de un par",
+"ex.omega":"Ejemplo que no termina (se corta en el límite)",
+"ex.zadd":"Enteros 2 + (−1)",
+"ex.qadd":"Representación racional 1/2 + 1/2 (4/4 sin reducir)",
+"ex.qinv":"Inverso de cero: valor de fallo explícito",
+"example.use":"Usar el ejemplo",
+"defs.summary":"Definiciones adicionales y sintaxis",
+"defs.intro":"Una definición tiene la forma <code>A = λx.x;</code>. Las variables ligadas de una expresión que usa una definición no capturan las variables libres del interior de la definición. Se rechazan las definiciones cíclicas con nombre. Para expresar recursión, escriba explícitamente un λ-término, como un combinador de punto fijo.",
+"defs.label":"Definiciones adicionales",
+"syntax.note":"Los nombres de variable constan de letras (A–Z, a–z), dígitos y _ (un nombre que empieza por un dígito solo puede contener dígitos). Se usan λ o \\, una sola variable ligada, un punto, paréntesis y aplicación de funciones. Ejemplo: <code>λf.λx.f x</code>. La aplicación es asociativa por la izquierda. El texto tras <code>//</code> es un comentario de línea. La notación de superficie para # y ♭ no está implementada.",
+"builtins.summary":"Definiciones integradas (números naturales, enteros, representaciones racionales, valores de verdad, pares)",
+"types.note":"Un entero es un par formado por un signo 0/1 y un número natural. La representación racional QRep es un par de enteros con denominador positivo y distinto de cero; se admiten representaciones sin reducir. QMake, QRepInv y QRepDiv devuelven ResultOk o ResultErr. Cada operación supone entradas del tipo especificado.",
+"maxSteps.label":"Límite de pasos",
+"evaluate":"Evaluar y registrar",
+"stop":"Detener",
+"strategy.note":"La expansión δ de definiciones y la β-reducción se realizan juntas desde la posición más a la izquierda y más externa, también bajo λ. El límite cuenta juntos los pasos δ y β. Alcanzar el límite o detener el cálculo manualmente no demuestra la divergencia.",
+"history.heading":"Historial de cálculo y reverificación",
+"export":"Guardar todo el historial como JSON",
+"import":"Cargar y verificar JSON",
+"clear":"Borrar la pantalla",
+"history.note":"Las trazas se guardan con la entrada y las definiciones fijadas. El reverificador no llama a la función de β-reducción del evaluador; comprueba cada conversión con un procedimiento de sustitución distinto. La α-equivalencia se decide por las posiciones de ligadura internas.",
+"history.empty":"Todavía no hay historial.",
+"status.normal-form":"Forma normal alcanzada",
+"status.step-limit":"Cortado en el límite",
+"status.stopped":"Detenido manualmente",
+"status.error":"Error",
+"run.computed":"Calculado: {status}",
+"run.imported":"Cargado: {status}",
+"run.verified":"Reverificado: {count} paso(s) (δ {delta} / β {beta})",
+"run.failed":"Verificación fallida: {error}",
+"run.final":"Término final",
+"run.church":"Leído como numeral de Church, es {n}.",
+"run.details":"Mostrar la entrada, la expansión de definiciones y todas las conversiones",
+"log.initial":"Término de entrada: {term}",
+"log.expanded":"Término en el que desaparecen por primera vez los nombres de definiciones: {term}",
+"log.unreached":"no alcanzado",
+"run.reverify":"Reverificar esta traza",
+"msg.reverified":"Se reverificó cada conversión. {note}",
+"failure.default":"Error antes del inicio",
+"failure.note":"Este es el registro de un error anterior al inicio. No hay traza de conversión que verificar.",
+"live.stopping":"Procesando la detención…",
+"error.noExpression":"Introduzca una expresión.",
+"live.progress":"Expresión {i}/{n}: paso {step}",
+"live.done":"Terminado.",
+"msg.nothingToSave":"No hay historial que guardar.",
+"msg.saved":"Guardado: {traces} traza(s) y {failures} error(es) antes del inicio.",
+"error.fileTooLarge":"El tamaño máximo de archivo para cargar es de 20 MiB.",
+"error.traceList":"Lista de trazas no válida.",
+"error.failureList":"Registro de errores antes del inicio no válido.",
+"error.traceN":"Traza {n}: {error}",
+"msg.loaded":"Trazas reverificadas y cargadas: {traces}. Errores antes del inicio, mostrados aparte de las trazas: {failures}.",
+"msg.loadFailed":"Fallo al cargar o verificar: {error}",
+"msg.cleared":"Se borraron la pantalla y el historial que se iba a guardar.",
+"core.input":"La entrada no es una cadena o supera el límite de longitud.",
+"core.badChar":"Posición {pos}: carácter no permitido {char}.",
+"core.digitName":"Posición {pos}: un nombre que empieza por un dígito solo puede contener dígitos.",
+"core.nesting":"El anidamiento de la sintaxis supera el límite.",
+"core.lambdaName":"Se requiere un nombre de variable después de λ.",
+"core.binderDot":"Se requiere un . después de la variable ligada.",
+"core.termSize":"El tamaño del término supera el límite.",
+"core.end":"La expresión terminó de forma inesperada.",
+"core.closeParen":"Se requiere un ).",
+"core.atom":"Posición {pos}: se requiere una variable o (.",
+"core.trailing":"Queda sintaxis sin interpretar al final: {token}",
+"core.termShape":"La estructura, el tamaño o la profundidad del término no es válida.",
+"core.freeName":"Nombre de variable libre no válido.",
+"core.binding":"Posición de ligadura no válida.",
+"core.unknown":"Término desconocido.",
+"core.printLength":"El término mostrado supera el límite de longitud.",
+"core.path":"Posición de conversión no válida.",
+"core.defsArray":"Las definiciones deben darse como un arreglo.",
+"core.def":"Definición no válida.",
+"core.defList":"Lista de definiciones no válida.",
+"core.defName":"Un nombre de definición no es válido o está duplicado.",
+"core.cycle":"No se puede expandir una definición cíclica: {name}",
+"core.defForm":"Introduzca las definiciones con la forma Name = expresión;",
+"core.maxSteps":"Límite de pasos no válido.",
+"core.betaRedex":"No hay ningún término reducible en la posición de la regla β.",
+"core.traceFormat":"El formato o la versión de la traza no es compatible.",
+"core.traceLimit":"Límite de pasos no válido en la traza.",
+"core.stepCount":"Número de pasos no válido.",
+"core.status":"Estado final no válido.",
+"core.initial":"El término inicial no coincide con la entrada.",
+"core.stepRule":"Paso {n}: regla, posición u orden no válidos.",
+"core.stepBefore":"Paso {n}: el término anterior no coincide.",
+"core.deltaBasis":"Justificación no válida para la expansión de la definición.",
+"core.stepAfter":"Paso {n}: el resultado de la regla no coincide con el término alcanzado.",
+"core.expandedStart":"El término en el que desaparecen por primera vez los nombres de definiciones no coincide.",
+"core.final":"El término final no coincide.",
+"core.normalForm":"El estado final «forma normal» es incorrecto.",
+"core.stepLimit":"El estado final «cortado en el límite» es incorrecto.",
+"core.errorMissing":"El error no tiene descripción.",
+"core.notePrefix":"Se verificó el prefijo finito del historial. Esta traza no demuestra que se haya producido una detención manual o un error externo.",
+"core.noteFull":"Se verificaron cada conversión y la condición de terminación."
+},
+"pt":{
+"app.name":"Interpretador do cálculo λ",
+"app.lead":"Lê expressões com nome e registra a expansão de definições e a β-redução, evitando a captura de variáveis. Não é necessária uma conexão com a rede.",
+"app.scope":"Um histórico prova uma conversão finita segundo as regras registradas. Não há função para provar automaticamente teoremas indutivos sobre números arbitrários nem a convergência.",
+"language":"Idioma",
+"source.label":"<strong>Expressão</strong> (separe várias expressões com ;)",
+"example.label":"Exemplo",
+"ex.eq":"Cálculo concreto de 2 + 3 = 5",
+"ex.capture":"Substituição que preserva as ligações",
+"ex.fst":"Primeira componente de um par",
+"ex.omega":"Exemplo que não termina (interrompido no limite)",
+"ex.zadd":"Inteiros 2 + (−1)",
+"ex.qadd":"Representação racional 1/2 + 1/2 (4/4 não reduzido)",
+"ex.qinv":"Inverso de zero: valor de falha explícito",
+"example.use":"Usar exemplo",
+"defs.summary":"Definições adicionais e sintaxe",
+"defs.intro":"Uma definição tem a forma <code>A = λx.x;</code>. As variáveis ligadas de uma expressão que usa uma definição não capturam as variáveis livres dentro da definição. Definições nomeadas cíclicas são rejeitadas. Para expressar recursão, escreva explicitamente um λ-termo, como um combinador de ponto fixo.",
+"defs.label":"Definições adicionais",
+"syntax.note":"Os nomes de variáveis são formados por letras (A–Z, a–z), dígitos e _ (um nome que começa por dígito só pode conter dígitos). Usam-se λ ou \\, uma única variável ligada, um ponto, parênteses e aplicação de funções. Exemplo: <code>λf.λx.f x</code>. A aplicação é associativa à esquerda. O texto após <code>//</code> é um comentário de linha. A notação de superfície para # e ♭ não está implementada.",
+"builtins.summary":"Definições embutidas (números naturais, inteiros, representações racionais, valores de verdade, pares)",
+"types.note":"Um inteiro é um par formado por um sinal 0/1 e um número natural. A representação racional QRep é um par de inteiros com denominador positivo e não nulo; representações não reduzidas são permitidas. QMake, QRepInv e QRepDiv retornam ResultOk ou ResultErr. Cada operação pressupõe entradas do tipo especificado.",
+"maxSteps.label":"Limite de passos",
+"evaluate":"Avaliar e registrar",
+"stop":"Parar",
+"strategy.note":"A expansão δ de definições e a β-redução são feitas em conjunto a partir da posição mais à esquerda e mais externa, inclusive sob λ. O limite conta juntos os passos δ e β. Atingir o limite ou parar manualmente não prova divergência.",
+"history.heading":"Histórico de cálculo e reverificação",
+"export":"Salvar todo o histórico como JSON",
+"import":"Carregar e verificar JSON",
+"clear":"Limpar a exibição",
+"history.note":"Os rastros são salvos com a entrada e as definições fixadas. O reverificador não chama a função de β-redução do avaliador; ele verifica cada conversão com um procedimento de substituição separado. A α-equivalência é decidida pelas posições de ligação internas.",
+"history.empty":"Ainda não há histórico.",
+"status.normal-form":"Forma normal atingida",
+"status.step-limit":"Interrompido no limite",
+"status.stopped":"Parado manualmente",
+"status.error":"Erro",
+"run.computed":"Calculado: {status}",
+"run.imported":"Carregado: {status}",
+"run.verified":"Reverificado: {count} passo(s) (δ {delta} / β {beta})",
+"run.failed":"Falha na verificação: {error}",
+"run.final":"Termo final",
+"run.church":"Lido como numeral de Church, é {n}.",
+"run.details":"Mostrar a entrada, a expansão de definições e todas as conversões",
+"log.initial":"Termo de entrada: {term}",
+"log.expanded":"Termo em que os nomes de definições desaparecem pela primeira vez: {term}",
+"log.unreached":"não atingido",
+"run.reverify":"Reverificar este rastro",
+"msg.reverified":"Cada conversão foi reverificada. {note}",
+"failure.default":"Erro antes do início",
+"failure.note":"Este é o registro de um erro anterior ao início. Não há rastro de conversão a verificar.",
+"live.stopping":"Processando a parada…",
+"error.noExpression":"Digite uma expressão.",
+"live.progress":"Expressão {i}/{n}: passo {step}",
+"live.done":"Concluído.",
+"msg.nothingToSave":"Não há histórico para salvar.",
+"msg.saved":"Salvos: {traces} rastro(s) e {failures} erro(s) antes do início.",
+"error.fileTooLarge":"O tamanho máximo do arquivo para carregar é 20 MiB.",
+"error.traceList":"Lista de rastros inválida.",
+"error.failureList":"Registro de erros antes do início inválido.",
+"error.traceN":"Rastro {n}: {error}",
+"msg.loaded":"Rastros reverificados e carregados: {traces}. Erros antes do início, mostrados separadamente dos rastros: {failures}.",
+"msg.loadFailed":"Falha ao carregar ou verificar: {error}",
+"msg.cleared":"A exibição e o histórico a salvar foram limpos.",
+"core.input":"A entrada não é uma string ou excede o limite de comprimento.",
+"core.badChar":"Posição {pos}: caractere não permitido {char}.",
+"core.digitName":"Posição {pos}: um nome que começa por dígito só pode conter dígitos.",
+"core.nesting":"O aninhamento da sintaxe excede o limite.",
+"core.lambdaName":"É necessário um nome de variável após λ.",
+"core.binderDot":"É necessário um . após a variável ligada.",
+"core.termSize":"O tamanho do termo excede o limite.",
+"core.end":"A expressão terminou inesperadamente.",
+"core.closeParen":"É necessário um ).",
+"core.atom":"Posição {pos}: é necessária uma variável ou (.",
+"core.trailing":"Resta sintaxe não interpretada no final: {token}",
+"core.termShape":"A estrutura, o tamanho ou a profundidade do termo é inválida.",
+"core.freeName":"Nome de variável livre inválido.",
+"core.binding":"Posição de ligação inválida.",
+"core.unknown":"Termo desconhecido.",
+"core.printLength":"O termo exibido excede o limite de comprimento.",
+"core.path":"Posição de conversão inválida.",
+"core.defsArray":"As definições devem ser dadas como um array.",
+"core.def":"Definição inválida.",
+"core.defList":"Lista de definições inválida.",
+"core.defName":"Um nome de definição é inválido ou está duplicado.",
+"core.cycle":"Não é possível expandir uma definição cíclica: {name}",
+"core.defForm":"Digite as definições na forma Name = expressão;",
+"core.maxSteps":"Limite de passos inválido.",
+"core.betaRedex":"Não há termo redutível na posição da regra β.",
+"core.traceFormat":"O formato ou a versão do rastro não é compatível.",
+"core.traceLimit":"Limite de passos inválido no rastro.",
+"core.stepCount":"Número de passos inválido.",
+"core.status":"Estado final inválido.",
+"core.initial":"O termo inicial não corresponde à entrada.",
+"core.stepRule":"Passo {n}: regra, posição ou ordem inválida.",
+"core.stepBefore":"Passo {n}: o termo anterior não corresponde.",
+"core.deltaBasis":"Justificativa inválida para a expansão da definição.",
+"core.stepAfter":"Passo {n}: o resultado da regra não corresponde ao termo atingido.",
+"core.expandedStart":"O termo em que os nomes de definições desaparecem pela primeira vez não corresponde.",
+"core.final":"O termo final não corresponde.",
+"core.normalForm":"O estado final “forma normal” está errado.",
+"core.stepLimit":"O estado final “interrompido no limite” está errado.",
+"core.errorMissing":"O erro não tem descrição.",
+"core.notePrefix":"O prefixo finito do histórico foi verificado. Este rastro não prova que uma parada manual ou um erro externo tenha ocorrido.",
+"core.noteFull":"Cada conversão e a condição de término foram verificadas."
+},
+"it":{
+"app.name":"Interprete del λ-calcolo",
+"app.lead":"Legge espressioni con nome e registra l’espansione delle definizioni e la β-riduzione, evitando la cattura delle variabili. Non serve alcuna connessione di rete.",
+"app.scope":"Una cronologia dimostra una conversione finita secondo le regole registrate. Non sono incluse funzioni che dimostrino automaticamente teoremi induttivi su numeri arbitrari o la convergenza.",
+"language":"Lingua",
+"source.label":"<strong>Espressione</strong> (separare più espressioni con ;)",
+"example.label":"Esempio",
+"ex.eq":"Calcolo concreto di 2 + 3 = 5",
+"ex.capture":"Sostituzione che preserva i legami",
+"ex.fst":"Prima componente di una coppia",
+"ex.omega":"Esempio che non termina (interrotto al limite)",
+"ex.zadd":"Interi 2 + (−1)",
+"ex.qadd":"Rappresentazione razionale 1/2 + 1/2 (4/4 non ridotto)",
+"ex.qinv":"Reciproco di zero: valore di fallimento esplicito",
+"example.use":"Usa l’esempio",
+"defs.summary":"Definizioni aggiuntive e sintassi",
+"defs.intro":"Una definizione ha la forma <code>A = λx.x;</code>. Le variabili legate di un’espressione che usa una definizione non catturano le variabili libere all’interno della definizione. Le definizioni cicliche con nome vengono rifiutate. Per esprimere la ricorsione, scrivere esplicitamente un λ-termine, ad esempio un combinatore di punto fisso.",
+"defs.label":"Definizioni aggiuntive",
+"syntax.note":"I nomi delle variabili sono formati da lettere (A–Z, a–z), cifre e _ (un nome che inizia con una cifra deve contenere solo cifre). Si usano λ o \\, una sola variabile legata, un punto, parentesi e applicazione di funzioni. Esempio: <code>λf.λx.f x</code>. L’applicazione è associativa a sinistra. Il testo dopo <code>//</code> è un commento di riga. La notazione di superficie per # e ♭ non è implementata.",
+"builtins.summary":"Definizioni integrate (numeri naturali, interi, rappresentazioni razionali, valori di verità, coppie)",
+"types.note":"Un intero è una coppia formata da un segno 0/1 e da un numero naturale. La rappresentazione razionale QRep è una coppia di interi con denominatore positivo e non nullo; sono ammesse rappresentazioni non ridotte. QMake, QRepInv e QRepDiv restituiscono ResultOk o ResultErr. Ogni operazione presuppone input del tipo specificato.",
+"maxSteps.label":"Limite di passi",
+"evaluate":"Valuta e registra",
+"stop":"Ferma",
+"strategy.note":"L’espansione δ delle definizioni e la β-riduzione sono eseguite insieme a partire dalla posizione più a sinistra e più esterna, anche sotto λ. Il limite conta insieme i passi δ e β. Il raggiungimento del limite o l’arresto manuale non dimostra la divergenza.",
+"history.heading":"Cronologia dei calcoli e riverifica",
+"export":"Salva tutta la cronologia in JSON",
+"import":"Carica e verifica JSON",
+"clear":"Cancella la visualizzazione",
+"history.note":"Le tracce vengono salvate con input e definizioni fissati. Il riverificatore non chiama la funzione di β-riduzione del valutatore; controlla ogni conversione con una procedura di sostituzione distinta. L’α-equivalenza è decisa in base alle posizioni di legame interne.",
+"history.empty":"Ancora nessuna cronologia.",
+"status.normal-form":"Forma normale raggiunta",
+"status.step-limit":"Interrotto al limite",
+"status.stopped":"Fermato manualmente",
+"status.error":"Errore",
+"run.computed":"Calcolato: {status}",
+"run.imported":"Caricato: {status}",
+"run.verified":"Riverificato – passi: {count} (δ {delta} / β {beta})",
+"run.failed":"Verifica non riuscita: {error}",
+"run.final":"Termine finale",
+"run.church":"Letto come numerale di Church, è {n}.",
+"run.details":"Mostra input, espansione delle definizioni e tutte le conversioni",
+"log.initial":"Termine di input: {term}",
+"log.expanded":"Termine in cui i nomi delle definizioni scompaiono per la prima volta: {term}",
+"log.unreached":"non raggiunto",
+"run.reverify":"Riverifica questa traccia",
+"msg.reverified":"Ogni conversione è stata riverificata. {note}",
+"failure.default":"Errore prima dell’avvio",
+"failure.note":"Questa è la registrazione di un errore avvenuto prima dell’avvio. Non c’è alcuna traccia di conversione da verificare.",
+"live.stopping":"Arresto in corso…",
+"error.noExpression":"Inserire un’espressione.",
+"live.progress":"Espressione {i}/{n}: passo {step}",
+"live.done":"Completato.",
+"msg.nothingToSave":"Non c’è cronologia da salvare.",
+"msg.saved":"Salvataggio completato (tracce: {traces}; errori prima dell’avvio: {failures}).",
+"error.fileTooLarge":"La dimensione massima del file da caricare è 20 MiB.",
+"error.traceList":"Elenco di tracce non valido.",
+"error.failureList":"Registrazione degli errori prima dell’avvio non valida.",
+"error.traceN":"Traccia {n}: {error}",
+"msg.loaded":"Tracce riverificate e caricate: {traces}. Errori prima dell’avvio, mostrati separatamente dalle tracce: {failures}.",
+"msg.loadFailed":"Caricamento o verifica non riusciti: {error}",
+"msg.cleared":"La visualizzazione e la cronologia da salvare sono state cancellate.",
+"core.input":"L’input non è una stringa o supera il limite di lunghezza.",
+"core.badChar":"Posizione {pos}: carattere non consentito {char}.",
+"core.digitName":"Posizione {pos}: un nome che inizia con una cifra deve contenere solo cifre.",
+"core.nesting":"L’annidamento della sintassi supera il limite.",
+"core.lambdaName":"Dopo λ è richiesto un nome di variabile.",
+"core.binderDot":"È richiesto un . dopo la variabile legata.",
+"core.termSize":"La dimensione del termine supera il limite.",
+"core.end":"L’espressione è terminata in modo inatteso.",
+"core.closeParen":"È richiesta una ).",
+"core.atom":"Posizione {pos}: è richiesta una variabile o (.",
+"core.trailing":"Alla fine rimane sintassi non interpretata: {token}",
+"core.termShape":"La struttura, la dimensione o la profondità del termine non è valida.",
+"core.freeName":"Nome di variabile libera non valido.",
+"core.binding":"Posizione di legame non valida.",
+"core.unknown":"Termine sconosciuto.",
+"core.printLength":"Il termine visualizzato supera il limite di lunghezza.",
+"core.path":"Posizione di conversione non valida.",
+"core.defsArray":"Le definizioni devono essere fornite come array.",
+"core.def":"Definizione non valida.",
+"core.defList":"Elenco di definizioni non valido.",
+"core.defName":"Un nome di definizione non è valido o è duplicato.",
+"core.cycle":"Impossibile espandere una definizione ciclica: {name}",
+"core.defForm":"Inserire le definizioni nella forma Name = espressione;",
+"core.maxSteps":"Limite di passi non valido.",
+"core.betaRedex":"Nella posizione della regola β non c’è alcun termine riducibile.",
+"core.traceFormat":"Il formato o la versione della traccia non sono supportati.",
+"core.traceLimit":"Limite di passi non valido nella traccia.",
+"core.stepCount":"Numero di passi non valido.",
+"core.status":"Stato finale non valido.",
+"core.initial":"Il termine iniziale non corrisponde all’input.",
+"core.stepRule":"Passo {n}: regola, posizione o ordine non validi.",
+"core.stepBefore":"Passo {n}: il termine precedente non corrisponde.",
+"core.deltaBasis":"La giustificazione dell’espansione della definizione non è valida.",
+"core.stepAfter":"Passo {n}: il risultato della regola non corrisponde al termine raggiunto.",
+"core.expandedStart":"Il termine in cui i nomi delle definizioni scompaiono per la prima volta non corrisponde.",
+"core.final":"Il termine finale non corrisponde.",
+"core.normalForm":"Lo stato finale «forma normale» è errato.",
+"core.stepLimit":"Lo stato finale «interrotto al limite» è errato.",
+"core.errorMissing":"L’errore non ha una descrizione.",
+"core.notePrefix":"È stato verificato il prefisso finito della cronologia. Questa traccia non dimostra che sia avvenuto un arresto manuale o un errore esterno.",
+"core.noteFull":"Sono state verificate tutte le conversioni e la condizione finale."
+},
+"ru":{
+"app.name":"Интерпретатор λ-исчисления",
+"app.lead":"Читает именованные выражения и записывает раскрытие определений и β-редукцию, избегая захвата переменных. Подключение к сети не требуется.",
+"app.scope":"История доказывает конечное преобразование по записанным правилам. Функций для автоматического доказательства сходимости или индуктивных теорем о произвольных числах нет.",
+"language":"Язык",
+"source.label":"<strong>Выражение</strong> (несколько выражений разделяйте символом ;)",
+"example.label":"Пример",
+"ex.eq":"Конкретное вычисление 2 + 3 = 5",
+"ex.capture":"Подстановка, сохраняющая связывание",
+"ex.fst":"Первая компонента пары",
+"ex.omega":"Пример незавершающегося вычисления (обрывается на пределе)",
+"ex.zadd":"Целые числа 2 + (−1)",
+"ex.qadd":"Рациональное представление 1/2 + 1/2 (несокращённое 4/4)",
+"ex.qinv":"Обратное к нулю: явное значение неудачи",
+"example.use":"Подставить пример",
+"defs.summary":"Дополнительные определения и синтаксис",
+"defs.intro":"Определение имеет вид <code>A = λx.x;</code>. Связанные переменные выражения, использующего определение, не захватывают свободные переменные внутри определения. Циклические именованные определения отклоняются. Чтобы выразить рекурсию, явно запишите λ-терм, например комбинатор неподвижной точки.",
+"defs.label":"Дополнительные определения",
+"syntax.note":"Имена переменных состоят из латинских букв, цифр и _ (имя, начинающееся с цифры, должно состоять только из цифр). Используются λ или \\, одна связанная переменная, точка, скобки и применение функции. Пример: <code>λf.λx.f x</code>. Применение левоассоциативно. Текст после <code>//</code> — однострочный комментарий. Поверхностная запись для # и ♭ не реализована.",
+"builtins.summary":"Встроенные определения (натуральные числа, целые числа, рациональные представления, логические значения, пары)",
+"types.note":"Целое число — это пара из знака 0/1 и натурального числа. Рациональное представление QRep — пара целых чисел с положительным ненулевым знаменателем; несокращённые представления допускаются. QMake, QRepInv и QRepDiv возвращают ResultOk или ResultErr. Каждая операция предполагает входные данные указанного типа.",
+"maxSteps.label":"Предел шагов",
+"evaluate":"Вычислить и записать",
+"stop":"Остановить",
+"strategy.note":"Раскрытие определений δ и β-редукция выполняются совместно, начиная с самой левой внешней позиции, в том числе под λ. Предел учитывает шаги δ и β вместе. Достижение предела или ручная остановка не доказывает расходимость.",
+"history.heading":"История вычислений и перепроверка",
+"export":"Сохранить всю историю в JSON",
+"import":"Загрузить и проверить JSON",
+"clear":"Очистить экран",
+"history.note":"Трассы сохраняются с зафиксированными входом и определениями. Модуль перепроверки не вызывает функцию β-редукции вычислителя: каждое преобразование проверяется отдельной процедурой подстановки. α-эквивалентность определяется по внутренним позициям связывания.",
+"history.empty":"Истории пока нет.",
+"status.normal-form":"Достигнута нормальная форма",
+"status.step-limit":"Оборвано на пределе",
+"status.stopped":"Остановлено вручную",
+"status.error":"Ошибка",
+"run.computed":"Вычислено: {status}",
+"run.imported":"Загружено: {status}",
+"run.verified":"Перепроверено, шагов: {count} (δ {delta} / β {beta})",
+"run.failed":"Проверка не пройдена: {error}",
+"run.final":"Итоговый терм",
+"run.church":"Если читать как нумерал Чёрча, это {n}.",
+"run.details":"Показать вход, раскрытие определений и все преобразования",
+"log.initial":"Входной терм: {term}",
+"log.expanded":"Терм, в котором впервые не осталось имён определений: {term}",
+"log.unreached":"не достигнут",
+"run.reverify":"Перепроверить эту трассу",
+"msg.reverified":"Каждое преобразование перепроверено. {note}",
+"failure.default":"Ошибка до запуска",
+"failure.note":"Это запись ошибки, возникшей до запуска. Трассы преобразований для проверки нет.",
+"live.stopping":"Выполняется остановка…",
+"error.noExpression":"Введите выражение.",
+"live.progress":"Выражение {i}/{n}: шаг {step}",
+"live.done":"Готово.",
+"msg.nothingToSave":"Нет истории для сохранения.",
+"msg.saved":"Сохранено трасс: {traces}; ошибок до запуска: {failures}.",
+"error.fileTooLarge":"Максимальный размер загружаемого файла — 20 MiB.",
+"error.traceList":"Недопустимый список трасс.",
+"error.failureList":"Недопустимая запись ошибок до запуска.",
+"error.traceN":"Трасса {n}: {error}",
+"msg.loaded":"Перепроверено и загружено трасс: {traces}. Ошибок до запуска (показаны отдельно от трасс): {failures}.",
+"msg.loadFailed":"Ошибка загрузки или проверки: {error}",
+"msg.cleared":"Экран и история для сохранения очищены.",
+"core.input":"Вход не является строкой или превышает предельную длину.",
+"core.badChar":"Позиция {pos}: недопустимый символ {char}.",
+"core.digitName":"Позиция {pos}: имя, начинающееся с цифры, должно состоять только из цифр.",
+"core.nesting":"Вложенность синтаксиса превышает предел.",
+"core.lambdaName":"После λ требуется имя переменной.",
+"core.binderDot":"После связанной переменной требуется точка (.).",
+"core.termSize":"Размер терма превышает предел.",
+"core.end":"Выражение неожиданно оборвалось.",
+"core.closeParen":"Требуется ).",
+"core.atom":"Позиция {pos}: требуется переменная или (.",
+"core.trailing":"В конце остался неразобранный синтаксис: {token}",
+"core.termShape":"Недопустимая структура, размер или глубина терма.",
+"core.freeName":"Недопустимое имя свободной переменной.",
+"core.binding":"Недопустимая позиция связывания.",
+"core.unknown":"Неизвестный терм.",
+"core.printLength":"Выводимый терм превышает предельную длину.",
+"core.path":"Недопустимая позиция преобразования.",
+"core.defsArray":"Определения должны быть заданы массивом.",
+"core.def":"Недопустимое определение.",
+"core.defList":"Недопустимый список определений.",
+"core.defName":"Имя определения недопустимо или повторяется.",
+"core.cycle":"Невозможно раскрыть циклическое определение: {name}",
+"core.defForm":"Вводите определения в виде Name = выражение;",
+"core.maxSteps":"Недопустимый предел шагов.",
+"core.betaRedex":"В позиции β-правила нет редуцируемого терма.",
+"core.traceFormat":"Формат или версия трассы не поддерживается.",
+"core.traceLimit":"Недопустимый предел шагов в трассе.",
+"core.stepCount":"Недопустимое число шагов.",
+"core.status":"Недопустимое конечное состояние.",
+"core.initial":"Начальный терм не совпадает со входом.",
+"core.stepRule":"Шаг {n}: недопустимые правило, позиция или порядок.",
+"core.stepBefore":"Шаг {n}: предыдущий терм не совпадает.",
+"core.deltaBasis":"Недопустимое обоснование раскрытия определения.",
+"core.stepAfter":"Шаг {n}: результат правила не совпадает с достигнутым термом.",
+"core.expandedStart":"Терм, в котором впервые не осталось имён определений, не совпадает.",
+"core.final":"Итоговый терм не совпадает.",
+"core.normalForm":"Конечное состояние «нормальная форма» указано неверно.",
+"core.stepLimit":"Конечное состояние «оборвано на пределе» указано неверно.",
+"core.errorMissing":"У ошибки нет описания.",
+"core.notePrefix":"Проверен конечный начальный отрезок истории. Эта трасса не доказывает, что ручная остановка или внешняя ошибка действительно произошла.",
+"core.noteFull":"Проверены каждое преобразование и условие завершения."
+}
+};
+for(const table of Object.values(MESSAGES))Object.freeze(table);
+Object.freeze(MESSAGES);
+// Regions whose main language is supported. Used only when no browser language is supported (e.g. ca-ES -> es).
+const REGIONS=Object.freeze({jp:'ja',cn:'zh-Hans',sg:'zh-Hans',tw:'zh-Hant',hk:'zh-Hant',mo:'zh-Hant',kr:'ko',fr:'fr',mc:'fr',de:'de',at:'de',li:'de',es:'es',mx:'es',ar:'es',co:'es',cl:'es',pe:'es',ve:'es',ec:'es',gt:'es',cu:'es',bo:'es',do:'es',hn:'es',py:'es',sv:'es',ni:'es',cr:'es',pa:'es',uy:'es',pr:'es','419':'es',br:'pt',pt:'pt',ao:'pt',mz:'pt',it:'it',sm:'it',ru:'ru'});
+function subtags(tag){return typeof tag==='string'?tag.trim().replace(/_/g,'-').toLowerCase().split('-').filter(Boolean):[];}
+function fromTag(tag){
+  const [base,...rest]=subtags(tag);
+  if(!base)return null;
+  if(base==='zh'){
+    if(rest.includes('hans'))return 'zh-Hans';
+    if(rest.includes('hant'))return 'zh-Hant';
+    return rest.some(p=>p==='tw'||p==='hk'||p==='mo')?'zh-Hant':'zh-Hans';
+  }
+  return CODES.includes(base)?base:null;
+}
+function regionOf(tag){
+  for(const part of subtags(tag).slice(1)){if(part.length===1)break;if(/^(?:[a-z]{2}|[0-9]{3})$/.test(part))return part;}
+  return null;
+}
+function normalize(value){
+  if(typeof value!=='string')return null;
+  const wanted=value.trim().toLowerCase();
+  return CODES.find(code=>code.toLowerCase()===wanted)??fromTag(value);
+}
+// Order: ?lang= in the URL, the choice saved from the menu, the browser languages, their regions, English.
+function chooseLanguage({search='',stored=null,languages=[],language=''}={}){
+  let explicit=null;
+  try{explicit=normalize(new URLSearchParams(search).get('lang'));}catch{}
+  if(explicit)return explicit;
+  const saved=normalize(stored);
+  if(saved)return saved;
+  const list=(Array.isArray(languages)?languages:[]).filter(v=>typeof v==='string'&&v.trim());
+  if(!list.length&&typeof language==='string'&&language.trim())list.push(language);
+  for(const tag of list){const code=fromTag(tag);if(code)return code;}
+  for(const tag of list){const region=regionOf(tag);if(region&&Object.hasOwn(REGIONS,region))return REGIONS[region];}
+  return 'en';
+}
+function format(lang,key,params){
+  const table=Object.hasOwn(MESSAGES,lang)?MESSAGES[lang]:MESSAGES.en;
+  const template=Object.hasOwn(table,key)?table[key]:Object.hasOwn(MESSAGES.en,key)?MESSAGES.en[key]:key;
+  return template.replace(/\{(\w+)\}/g,(whole,name)=>params&&Object.hasOwn(params,name)?String(params[name]):whole);
+}
+// Messages that the core or the records contain in the original Japanese (or in the English edition).
+const CANONICAL_KEYS=Object.freeze(Object.keys(MESSAGES.ja).filter(key=>key.startsWith('core.')||key==='failure.default'||key==='error.noExpression'));
+const escapeRegExp=s=>s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
+function compile(template){
+  const names=[];let pattern='',last=0;
+  for(const m of template.matchAll(/\{(\w+)\}/g)){pattern+=escapeRegExp(template.slice(last,m.index))+'([\\s\\S]*?)';names.push(m[1]);last=m.index+m[0].length;}
+  return Object.freeze({re:new RegExp('^'+pattern+escapeRegExp(template.slice(last))+'$'),names});
+}
+const MATCHERS=Object.freeze(['ja','en'].flatMap(source=>CANONICAL_KEYS.map(key=>Object.freeze({key,...compile(MESSAGES[source][key])}))));
+function match(text){
+  const value=String(text);
+  for(const {key,re,names} of MATCHERS){const m=re.exec(value);if(m)return {key,params:Object.fromEntries(names.map((name,i)=>[name,m[i+1]]))};}
+  return null;
+}
+const canonical=(key,params)=>format('ja',key,params);
+function translate(lang,text){const found=match(text);return found?format(lang,found.key,found.params):String(text);}
+globalThis.LambdaI18n=Object.freeze({LANGUAGES,CODES,STORAGE_KEY,MESSAGES,REGIONS,CANONICAL_KEYS,fromTag,regionOf,chooseLanguage,format,canonical,match,translate});
+})();
+</script>
+<script id="lambda-ui">
+'use strict';
+(() => {
+const C=globalThis.LambdaCore,I=globalThis.LambdaI18n,$=id=>document.getElementById(id),saved=[],failures=[],entries=[];
+let controller=null,busy=false,note=null,live=null;
+function readChoice(){try{return localStorage.getItem(I.STORAGE_KEY);}catch{return null;}}
+function writeChoice(code){try{localStorage.setItem(I.STORAGE_KEY,code);}catch{}}
+let lang=I.chooseLanguage({search:location.search,stored:readChoice(),languages:navigator.languages,language:navigator.language});
+// Records keep the core's original messages; only the screen shows them in the chosen language.
+const tr=text=>I.translate(lang,text);
+function resolve(value){return value&&typeof value==='object'?t(value.key,value.params):tr(value);}
+function t(key,params){const p={...params};for(const name of ['error','note'])if(Object.hasOwn(p,name))p[name]=resolve(p[name]);return I.format(lang,key,p);}
+function uiError(key,params){const error=new Error(I.canonical(key,params));error.i18n={key,params};return error;}
+const statusName=status=>['normal-form','step-limit','stopped','error'].includes(status)?t('status.'+status):String(status);
+$('builtinList').textContent=C.BUILTINS.map(d=>d.name+' = '+d.source+';').join('\n');
+function element(name,text,cls){const e=document.createElement(name);if(text!==undefined)e.textContent=text;if(cls)e.className=cls;return e;}
+function paintNote(){$('message').textContent=note?t(note.key,note.params):'';$('message').className=note?.bad?'bad':'ok';}
+function show(value){note=value;paintNote();}
+function setLive(value){live=value;$('liveStatus').textContent=live?t(live.key,live.params):'';}
+function renderEntry(entry){
+  const {result,trace}=entry,box=element('article',undefined,'run');
+  box.append(element('h3',t(entry.imported?'run.imported':'run.computed',{status:statusName(result.status)})));
+  if(trace){
+    const v=entry.check,count=trace.steps.length;box.append(element('pre',trace.source));
+    box.append(element('p',v.valid?t('run.verified',{count,delta:v.deltaSteps,beta:v.betaSteps}):t('run.failed',{error:v.error}),v.valid?'ok':'bad'));
+    if(v.valid&&(trace.status==='stopped'||trace.status==='error'))box.append(element('p',tr(v.note),'small muted'));
+    box.append(element('p',t('run.final')),element('pre',trace.final));
+    if(entry.nat!==null)box.append(element('p',t('run.church',{n:entry.nat}),'small'));
+    const detail=element('details');detail.open=entry.open;detail.addEventListener('toggle',()=>{entry.open=detail.open;});detail.append(element('summary',t('run.details')));
+    const log=[t('log.initial',{term:trace.initial}),t('log.expanded',{term:trace.expandedStart??t('log.unreached')}),...trace.steps.map(s=>`${s.index}. ${s.rule==='delta'?'δ '+s.definition:'β'} @ ${s.path.join('/')||'root'}\n${s.after}`)];detail.append(element('pre',log.join('\n\n')));box.append(detail);
+    const verify=element('button',t('run.reverify'));verify.addEventListener('click',()=>{const check=C.verifyTrace(trace);show(check.valid?{key:'msg.reverified',params:{note:check.note}}:{key:'run.failed',params:{error:check.error},bad:true});});box.append(verify);
+  }
+  if(!trace){if(entry.failure.source)box.append(element('pre',entry.failure.source));box.append(element('p',t('failure.note'),'small muted'));}
+  if(result.error||trace?.error)box.append(element('p',tr(result.error||trace.error),'bad'));
+  return box;
+}
+function addResult(result,imported=false){
+  $('empty')?.remove();const trace=result.trace,entry={result,imported,trace,open:false,nat:null};
+  if(trace){saved.push(trace);entry.check=C.verifyTrace(trace);try{entry.nat=C.decodeNat(C.parse(trace.final));}catch{}}
+  else{entry.failure={status:'error',source:typeof result.source==='string'?result.source:'',error:String(result.error||I.canonical('failure.default'))};failures.push(entry.failure);}
+  entries.push(entry);$('history').append(renderEntry(entry));
+}
+function renderHistory(){
+  const nodes=entries.map(renderEntry);
+  if(!nodes.length){const empty=element('p',t('history.empty'),'muted');empty.id='empty';nodes.push(empty);}
+  $('history').replaceChildren(...nodes);
+}
+function applyLanguage(code){
+  lang=code;document.documentElement.lang=code;document.title=I.format(code,'app.name')+' v8.0.2';
+  for(const e of document.querySelectorAll('[data-i18n]'))e.textContent=I.format(code,e.dataset.i18n);
+  for(const e of document.querySelectorAll('[data-i18n-html]'))e.innerHTML=I.format(code,e.dataset.i18nHtml);
+  $('language').value=code;renderHistory();if(note)paintNote();setLive(live);
+}
+const select=$('language');
+for(const {code,name} of I.LANGUAGES){const option=element('option',name);option.value=code;option.lang=code;select.append(option);}
+select.addEventListener('change',()=>{
+  const code=select.value;if(!I.CODES.includes(code))return;
+  writeChoice(code);
+  try{const url=new URL(location.href);if(url.searchParams.has('lang')){url.searchParams.set('lang',code);history.replaceState(history.state??null,'',url);}}catch{}
+  applyLanguage(code);
+});
+applyLanguage(lang);
+function setBusy(value){busy=value;for(const id of ['evaluate','source','definitions','maxSteps','useExample','import','clear'])$(id).disabled=value;$('stop').disabled=!value;}
+$('useExample').addEventListener('click',()=>{$('source').value=$('example').value;});
+$('stop').addEventListener('click',()=>{controller?.abort();setLive({key:'live.stopping'});});
+$('evaluate').addEventListener('click',async()=>{
+  if(busy)return;setBusy(true);controller=new AbortController();show(null);
+  try{
+    const definitions=C.createEnvironment(C.parseDefinitions($('definitions').value));
+    const expressions=C.splitExpressions($('source').value);if(!expressions.length)throw uiError('error.noExpression');
+    const maxSteps=Number($('maxSteps').value);
+    for(let i=0;i<expressions.length;i++){
+      if(controller.signal.aborted)break;
+      const result=await C.evaluate(expressions[i],{definitions,maxSteps,signal:controller.signal,onStep:s=>{setLive({key:'live.progress',params:{i:i+1,n:expressions.length,step:s.index}});}});addResult(result);
+    }
+  }catch(error){addResult({status:'error',source:$('source').value,error:error.message,trace:null});}
+  finally{setBusy(false);controller=null;setLive({key:'live.done'});}
+});
+$('export').addEventListener('click',()=>{
+  if(!saved.length&&!failures.length){show({key:'msg.nothingToSave',bad:true});return;}
+  const blob=new Blob([JSON.stringify({schema:'lambda-trace-bundle/1',version:C.VERSION,traces:saved,failures},null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=element('a');a.href=url;a.download='lambda-traces-v8.0.1.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);show({key:'msg.saved',params:{traces:saved.length,failures:failures.length}});
+});
+$('import').addEventListener('click',()=>$('file').click());
+$('file').addEventListener('change',async()=>{
+  const file=$('file').files[0];if(!file)return;
+  try{
+    if(file.size>20*1024*1024)throw uiError('error.fileTooLarge');
+    const data=JSON.parse(await file.text()),traces=data.schema==='lambda-trace-bundle/1'?data.traces:[data],errors=data.schema==='lambda-trace-bundle/1'?(data.failures??[]):[];
+    if(!Array.isArray(traces)||traces.length>1000)throw uiError('error.traceList');
+    if(!Array.isArray(errors)||errors.length>1000||errors.some(e=>!e||e.status!=='error'||typeof e.source!=='string'||typeof e.error!=='string'))throw uiError('error.failureList');
+    for(let i=0;i<traces.length;i++){const v=C.verifyTrace(traces[i]);if(!v.valid)throw uiError('error.traceN',{n:i+1,error:v.error});}
+    for(const trace of traces)addResult({status:trace.status,trace},true);for(const error of errors)addResult({...error,trace:null},true);show({key:'msg.loaded',params:{traces:traces.length,failures:errors.length}});
+  }catch(error){show({key:'msg.loadFailed',params:{error:error.i18n??error.message},bad:true});}finally{$('file').value='';}
+});
+$('clear').addEventListener('click',()=>{saved.length=0;failures.length=0;entries.length=0;renderHistory();show({key:'msg.cleared'});});
+})();
+</script>
+</html>

@@ -1,0 +1,14 @@
+{
+  "format": "browser-layout-review/1",
+  "date": "2026-11-21",
+  "file": "interpreter/lambda_interpreter_v8.0.2_multilingual.html",
+  "browser": "Google Chrome (headless), the file opened directly from the disk",
+  "scope": "The width of the screen and the version shown. Messages, records and the choice of the start language are covered by interpreter-multilingual-tests.mjs; the review of the language menu in a browser is recorded for v8.0.1 in interpreter-multilingual-browser-review.json.",
+  "status": "passed",
+  "checks": [
+    "At a window width of 2200 px, the panels, the expression box and the history filled the window except for the padding of 24 px; the multilingual edition v8.0.1 stayed within a centred column about 1120 px wide.",
+    "At 2200 px, Add Two Three was re-verified with 34 steps (δ 13 / β 21) and read as the Church numeral 5, and the result spanned the full width.",
+    "With lang=en, the page title was Lambda Calculus Interpreter v8.0.2 and the heading showed v8.0.2.",
+    "At a window width of 1000 px, below the former limit, the screen of v8.0.2 differed from that of v8.0.1 only in the last digit of the version in the heading."
+  ]
+}

@@ -11,10 +11,11 @@
 
 | ファイル | 画面の言語 | 用途 |
 |---|---|---|
-| [lambda_interpreter_v8.0.1_multilingual.html](lambda_interpreter_v8.0.1_multilingual.html) | 11 言語（画面の右上で選ぶ） | ふだん使うファイル |
+| [lambda_interpreter_v8.0.2_multilingual.html](lambda_interpreter_v8.0.2_multilingual.html) | 11 言語（画面の右上で選ぶ） | ふだん使うファイル |
 | [lambda_interpreter_v8.0.1.html](lambda_interpreter_v8.0.1.html) | 日本語 | 証拠を作る検査が読む基準のファイル（`release.json` の `interpreter`） |
+| [lambda_interpreter_v8.0.1_multilingual.html](lambda_interpreter_v8.0.1_multilingual.html) | 11 言語 | 前の多言語版（画面の幅が 1120px で止まる） |
 
-二つのファイルの計算の核（`script#lambda-core`）は 1 バイトまで同じです。計算、証跡の形式、版（`8.0.1`）が同じなので、どちらで保存した証跡も、もう一方で再検証できます。違うのは画面だけです。
+三つのファイルの計算の核（`script#lambda-core`）は 1 バイトまで同じです。計算、証跡の形式、証跡に記録する版（`8.0.1`）が同じなので、どのファイルで保存した証跡も、ほかのファイルで再検証できます。違うのは画面だけです。多言語版 v8.0.2 の画面は、ウインドウの横幅いっぱいに広がります。
 
 ## 画面の言語
 
@@ -22,7 +23,7 @@
 
 起動したときの言語は、次の順に決まります。
 
-1. URL の `lang`（例：`lambda_interpreter_v8.0.1_multilingual.html?lang=fr`）
+1. URL の `lang`（例：`lambda_interpreter_v8.0.2_multilingual.html?lang=fr`）
 2. メニューで前に選んだ言語。ブラウザの localStorage に `lambda-interpreter-language` として保存します。保存できないブラウザでは、毎回 3 から決まります。
 3. ブラウザの言語の設定。例えば `ja-JP` なら日本語、`pt-BR` ならポルトガル語、`zh-TW` なら繁體中文です。設定の中に対応する言語がなければ、設定の地域で選びます（`ca-ES` ならスペイン語）。
 4. どれにも当てはまらなければ English
@@ -78,12 +79,13 @@ node verification/interpreter-multilingual-tests.mjs
 三つ目は多言語版について、次のことを確かめます。
 
 - 計算の核が基準のファイルと 1 バイトまで同じこと
-- 日本語の画面の文言と、計算・停止・エラー・保存・読込・再検証・消去の操作で出る表示と保存する JSON が、基準のファイルと同じこと
+- 日本語の画面の文言（版の表示を除く）と、計算・停止・エラー・保存・読込・再検証・消去の操作で出る表示と保存する JSON が、基準のファイルと同じこと
 - 11 言語の文言が、同じ項目、同じ差し込み（`{count}` など）、同じ HTML のタグを持つこと
 - 計算の核の日本語の文言がすべて各言語に訳され、日本語以外の画面に日本語が残らないこと。どの言語でも、保存する JSON が基準のファイルと同じこと
 - 起動時の言語の選び方と、メニューで選んだ言語の記憶
+- 前の多言語版（v8.0.1）の計算の核も、基準のファイルと 1 バイトまで同じこと
 
-多言語版は、画面の言語のために `globalThis.LambdaI18n`（言語の一覧、文言、言語の選び方）を加えます。多言語版の画面は、ブラウザ（Chromium）でローカルのサーバーから開いて確かめました（[記録](../verification/interpreter-multilingual-browser-review.json)）。ファイルを直接開いた場合は、ブラウザでは確かめていません。
+多言語版は、画面の言語のために `globalThis.LambdaI18n`（言語の一覧、文言、言語の選び方）を加えます。多言語版の画面は、ブラウザ（Chromium）でローカルのサーバーから開いて確かめました（v8.0.1 の[記録](../verification/interpreter-multilingual-browser-review.json)）。v8.0.2 の画面の幅は、Chrome でファイルを直接開いて確かめました（[記録](../verification/interpreter-multilingual-layout-review-v8.0.2.json)）。
 
 入力長 100,000 文字、項 50,000 ノード、深さ 512、最大 100,000 変換に制限しています。全中間項を保存するため、大きな計算はメモリを消費します。停止操作は変換の境界で処理されます。大量の記録を再検証する UI は処理中に一時的に応答しにくくなる場合があります。
 

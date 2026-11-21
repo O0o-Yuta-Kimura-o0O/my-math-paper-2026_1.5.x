@@ -12,8 +12,8 @@
     },
     {
       "path": "CHANGELOG.md",
-      "sha256": "9146350e033392584b22ea1dfacc7a3dc459da4b3de2bfbb72450e46d88606a5",
-      "bytes": 22947
+      "sha256": "f5c8746e340a836aa9759a20fc24c6036d2395c7a647811f287c7aa1cbb89e52",
+      "bytes": 24189
     },
     {
       "path": "LICENSE",
@@ -32,13 +32,13 @@
     },
     {
       "path": "README.en.md",
-      "sha256": "8a1304b6fcd560b6f7114f7d41cbfd2aa1678e86cbc25697c1b1075239527eac",
-      "bytes": 11694
+      "sha256": "ccdce213863d0301fc5f71a167856ce6f09c8dac9f8b943539382e87bdd5aed5",
+      "bytes": 11763
     },
     {
       "path": "README.md",
-      "sha256": "d49982d0e598cee74ba6016f4a69b004656c18ca36462b1948663db3c15326d4",
-      "bytes": 17456
+      "sha256": "41c4ee7a73ab8ae79857e3556b64031ccf5fb5a30c48c9bcd5c772ab0f9a10ad",
+      "bytes": 17529
     },
     {
       "path": "appendices/A_New_Foundation_of_Mathematics_en_v1.5.9_f_only.md",
@@ -157,13 +157,13 @@
     },
     {
       "path": "interpreter/README.en.md",
-      "sha256": "4fb454a8c038e339c12e997f0d55fc54cca48ce28731956fb62dc85420af2262",
-      "bytes": 11521
+      "sha256": "5fc6714f70aa85e9d6cf7cc91604372c5105dce3640944ece7e6ccafa7562292",
+      "bytes": 12081
     },
     {
       "path": "interpreter/README.md",
-      "sha256": "2c49a8ddbf53bece3c2b27997b1fd1cc92710d18a62797820f4f6425e9305120",
-      "bytes": 11468
+      "sha256": "63f9a8c534e71b4859bf894043c90d825437ac5ca530be8e1b238be9ae06b2ed",
+      "bytes": 11997
     },
     {
       "path": "interpreter/lambda_interpreter_v8.0.1.html",
@@ -174,6 +174,11 @@
       "path": "interpreter/lambda_interpreter_v8.0.1_multilingual.html",
       "sha256": "06c1b8b4dde22886d6f5812f29539b088983db057b9c7855a77a4064b7e58054",
       "bytes": 125264
+    },
+    {
+      "path": "interpreter/lambda_interpreter_v8.0.2_multilingual.html",
+      "sha256": "22126c7bf6df4f342780911affd05daf37a39cf1af7579f01c8b9232be56d0c5",
+      "bytes": 125316
     },
     {
       "path": "manuscripts/A_New_Foundation_of_Mathematics_en_v1.5.9.md",
@@ -272,8 +277,8 @@
     },
     {
       "path": "release.json",
-      "sha256": "61abae893589fbb30109878ffa49dfa3ee72d0fde6963d6c04f7876fade0dcdb",
-      "bytes": 5594
+      "sha256": "181468ab0738b95c1e0de23c9156a77faeb3eb6e96ed68d3f869d1492655d462",
+      "bytes": 5761
     },
     {
       "path": "research/applications-v1.5.9.md",
@@ -3786,9 +3791,14 @@
       "bytes": 1985
     },
     {
+      "path": "verification/interpreter-multilingual-layout-review-v8.0.2.json",
+      "sha256": "ad56c86e75438c8a97c939b04b3db7b66cdffed3a1d3486be278599180ea6701",
+      "bytes": 1181
+    },
+    {
       "path": "verification/interpreter-multilingual-tests.mjs",
-      "sha256": "865cc8d4382865e35b7e06b261533276e57bfd6542011b02a54c05ac68d092e1",
-      "bytes": 16707
+      "sha256": "4aa6731e90dcaad3dcfe7ef1635fb30910d1116fcedc9254555ee25d87a10ef9",
+      "bytes": 17519
     },
     {
       "path": "verification/interpreter-tests.mjs",
@@ -3872,8 +3882,8 @@
     },
     {
       "path": "verification/verification-report.json",
-      "sha256": "ed99fcc5ead84a355f946a7a439600a8d95a074ebeb92e4d8eb549eae160ea0c",
-      "bytes": 23186
+      "sha256": "c196a1732bd734acc26c76c34d87047969b5de493e35082f73370a76fdd8bc14",
+      "bytes": 23300
     }
   ]
 }

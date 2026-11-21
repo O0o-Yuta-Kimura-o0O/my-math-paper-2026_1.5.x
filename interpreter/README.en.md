@@ -11,10 +11,11 @@ A browser tool that computes untyped lambda-calculus expressions one step at a t
 
 | File | Interface language | Purpose |
 |---|---|---|
-| [lambda_interpreter_v8.0.1_multilingual.html](lambda_interpreter_v8.0.1_multilingual.html) | 11 languages (chosen at the top right of the screen) | The file for everyday use |
+| [lambda_interpreter_v8.0.2_multilingual.html](lambda_interpreter_v8.0.2_multilingual.html) | 11 languages (chosen at the top right of the screen) | The file for everyday use |
 | [lambda_interpreter_v8.0.1.html](lambda_interpreter_v8.0.1.html) | Japanese | The reference file read by the checks that generate the evidence (`interpreter` in `release.json`) |
+| [lambda_interpreter_v8.0.1_multilingual.html](lambda_interpreter_v8.0.1_multilingual.html) | 11 languages | The earlier multilingual edition (the screen stops at a width of 1120 px) |
 
-The computation core (`script#lambda-core`) of the two files is byte-identical. The computation, the trace format, and the version (`8.0.1`) are the same, so a trace saved by either file can be re-verified by the other. Only the interface differs.
+The computation core (`script#lambda-core`) of the three files is byte-identical. The computation, the trace format, and the version recorded in traces (`8.0.1`) are the same, so a trace saved by any of the files can be re-verified by the others. Only the interface differs. The screen of the multilingual edition v8.0.2 uses the full width of the window.
 
 ## Interface language
 
@@ -22,7 +23,7 @@ The menu at the top right of the screen offers 日本語, English, 简体中文,
 
 At start-up, the language is chosen in this order:
 
-1. The `lang` parameter of the URL (for example `lambda_interpreter_v8.0.1_multilingual.html?lang=fr`).
+1. The `lang` parameter of the URL (for example `lambda_interpreter_v8.0.2_multilingual.html?lang=fr`).
 2. The language last chosen from the menu. It is saved in the browser's localStorage as `lambda-interpreter-language`. In browsers that do not allow this, the language is chosen from step 3 every time.
 3. The browser's language settings. For example, `ja-JP` gives Japanese, `pt-BR` Portuguese, and `zh-TW` Traditional Chinese. If none of the listed languages is supported, the region of the setting is used (`ca-ES` gives Spanish).
 4. Otherwise, English.
@@ -78,12 +79,13 @@ The first two load `script#lambda-core` of the reference file named in `release.
 The third checks the multilingual edition:
 
 - the computation core is byte-identical to the reference file;
-- the Japanese screen text, and the display and the saved JSON produced by computing, stopping, errors, saving, loading, re-verifying, and clearing, are the same as those of the reference file;
+- the Japanese screen text (except for the version shown), and the display and the saved JSON produced by computing, stopping, errors, saving, loading, re-verifying, and clearing, are the same as those of the reference file;
 - the messages of the 11 languages have the same keys, the same placeholders (such as `{count}`), and the same HTML tags;
 - every Japanese message of the core is translated into each language, no Japanese text remains on the screen in the other languages, and in every language the saved JSON is the same as that of the reference file;
-- the choice of the language at start-up, and the memory of the language chosen from the menu.
+- the choice of the language at start-up, and the memory of the language chosen from the menu;
+- the computation core of the earlier multilingual edition (v8.0.1) is also byte-identical to the reference file.
 
-For the interface language, the multilingual edition adds `globalThis.LambdaI18n` (the list of languages, the messages, and the choice of the language). The screen of the multilingual edition was checked in a browser (Chromium), served from a local server ([record](../verification/interpreter-multilingual-browser-review.json)); opening the file directly was not checked in a browser.
+For the interface language, the multilingual edition adds `globalThis.LambdaI18n` (the list of languages, the messages, and the choice of the language). The screen of the multilingual edition was checked in a browser (Chromium), served from a local server ([record](../verification/interpreter-multilingual-browser-review.json) for v8.0.1). The width of the screen of v8.0.2 was checked in Chrome with the file opened directly ([record](../verification/interpreter-multilingual-layout-review-v8.0.2.json)).
 
 The input is limited to 100,000 characters, terms to 50,000 nodes and depth 512, and runs to 100,000 conversions. All intermediate terms are saved, so large computations use memory. A stop is processed at a boundary between conversions. The interface may briefly respond slowly while it re-verifies many records.
 

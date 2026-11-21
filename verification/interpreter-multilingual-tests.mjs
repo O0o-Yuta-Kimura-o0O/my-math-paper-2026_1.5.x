@@ -22,19 +22,30 @@ test('the computation core is byte-identical to the reference interpreter', () =
   assert.ok(core && core.length > 10000);
   assert.equal(script(html, 'lambda-core'), core);
   assert.notEqual(edition.file, release.interpreter);
-  assert.ok(html.includes(`v${release.interpreterVersion}`));
+  assert.ok(core.includes(`const VERSION = '${release.interpreterVersion}'`), 'the core keeps the trace version of the release');
+  assert.ok(html.includes(`<span class="muted">v${edition.version}</span>`), 'the heading shows the version of the edition');
   assert.ok(html.indexOf('<meta charset="utf-8">') < 100, 'the charset must be declared at the start');
 });
 
-test('the Japanese screen markup equals the reference except for the language menu', () => {
+test('the Japanese screen markup equals the reference except for the language menu and the version of the edition', () => {
   const main = source => source.match(/<main>[\s\S]*?<\/main>/)[0];
   const normalized = main(html)
     .replace(/<!--language-->[\s\S]*?<!--\/language-->/, '')
     .replace(/ data-i18n(?:-html)?="[^"]*"/g, '')
     .replace('<div class="top"><h1><span>λ計算インタプリタ</span> ', '<h1>λ計算インタプリタ ')
-    .replace('</h1></div>', '</h1>');
+    .replace('</h1></div>', '</h1>')
+    .replace(`<span class="muted">v${edition.version}</span>`, `<span class="muted">v${release.interpreterVersion}</span>`);
   assert.equal(normalized, main(reference));
-  assert.equal(html.match(/<title>(.*)<\/title>/)[1], reference.match(/<title>(.*)<\/title>/)[1]);
+  assert.equal(html.match(/<title>(.*)<\/title>/)[1], reference.match(/<title>(.*)<\/title>/)[1].replace(`v${release.interpreterVersion}`, `v${edition.version}`));
+});
+
+test('the earlier multilingual editions kept in the repository have the same computation core', () => {
+  const core = script(reference, 'lambda-core');
+  assert.ok(edition.previous.length > 0);
+  for (const file of edition.previous) {
+    assert.notEqual(file, edition.file);
+    assert.equal(script(fs.readFileSync(new URL(file, root), 'utf8'), 'lambda-core'), core, file);
+  }
 });
 
 test('every screen text in the markup is the Japanese message of its key', () => {
@@ -202,7 +213,7 @@ test('in Japanese, the screen and the saved records equal the reference interpre
   assert.deepEqual(b.views, translated);
   assert.ok(a.views.some(v => v.history.includes('手動停止')) && a.views.some(v => v.message.includes('1 件目の証跡')));
   assert.equal(after.document.documentElement.lang, 'ja');
-  assert.equal(after.document.title, 'λ計算インタプリタ v8.0.1');
+  assert.equal(after.document.title, `λ計算インタプリタ v${edition.version}`);
 });
 
 test('in every other language, the records are unchanged and no Japanese text remains on the screen', async () => {

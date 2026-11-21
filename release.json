@@ -5,8 +5,12 @@
   "interpreter": "interpreter/lambda_interpreter_v8.0.1.html",
   "interpreterEditions": {
     "multilingual": {
-      "file": "interpreter/lambda_interpreter_v8.0.1_multilingual.html",
-      "core": "script#lambda-core is byte-identical to the interpreter file; the computation, trace format and version are the same",
+      "file": "interpreter/lambda_interpreter_v8.0.2_multilingual.html",
+      "version": "8.0.2",
+      "core": "script#lambda-core is byte-identical to the interpreter file; the computation, the trace format and the trace version are the same, and only the interface differs",
+      "previous": [
+        "interpreter/lambda_interpreter_v8.0.1_multilingual.html"
+      ],
       "languages": [
         "ja",
         "en",

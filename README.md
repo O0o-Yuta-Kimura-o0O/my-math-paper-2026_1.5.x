@@ -38,7 +38,7 @@ v1.5.4では、別稿 `Generative_Reals_ja_v1.4.1.md` から有限構成と証�
 - [本文全節と実装の概念対応表](research/concept-inventory-v1.5.9.md)
 - [論文日本語版 v1.5.9](manuscripts/A_New_Foundation_of_Mathematics_ja_v1.5.9.md)
 - [論文英語版 v1.5.9](manuscripts/A_New_Foundation_of_Mathematics_en_v1.5.9.md) · [英語版fのみ付録](appendices/A_New_Foundation_of_Mathematics_en_v1.5.9_f_only.md)
-- [λ計算インタプリタ v8.0.1（多言語版）](interpreter/lambda_interpreter_v8.0.1_multilingual.html) — ダウンロードしてブラウザで開くと、ネット接続なしで使用できます。画面は11言語から選べ、起動時はブラウザの言語の設定に合わせます。計算の核は[日本語の画面の基準のファイル](interpreter/lambda_interpreter_v8.0.1.html)と同じです。[使い方と仕様](interpreter/README.md)。
+- [λ計算インタプリタ 多言語版 v8.0.2](interpreter/lambda_interpreter_v8.0.2_multilingual.html) — ダウンロードしてブラウザで開くと、ネット接続なしで使用できます。画面は11言語から選べ、起動時はブラウザの言語の設定に合わせます。画面はウインドウの横幅いっぱいに広がります。計算の核は[日本語の画面の基準のファイル](interpreter/lambda_interpreter_v8.0.1.html)（v8.0.1）と同じです。[使い方と仕様](interpreter/README.md)。
 - [関係子ラベルの導入と近似への接続](research/label-design-v1.5.9.md)
 - [有限対による型Tの拡張例](research/extension-example-v1.5.9.md)
 - [原資料の監査と修正根拠](research/source-audit-v1.5.9.md)
